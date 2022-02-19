@@ -1,0 +1,2110 @@
+make all -f /home/janreggie/dev/djvulibre-cpp/Makefile --print-data-base --no-builtin-variables --no-builtin-rules --question
+for d in libdjvu tools xmltools  desktopfiles ; \
+  do ( cd $d && make all ) || exit ; done
+ 
+# make[1]: Entering directory '/home/janreggie/dev/djvulibre-cpp/libdjvu'
+ 
+make[1]: Circular Makefile.dep <- Makefile.dep dependency dropped.
+ 
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat Feb 19 14:39:26 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 45)
+CXXRPOFLAGS = 
+# makefile (from 'Makefile', line 47)
+JPEG_CFLAGS = 
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'Makefile', line 44)
+OPTS = -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor
+# makefile (from 'Makefile', line 43)
+DEFS = -DHAVE_CONFIG_H
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/janreggie/dev/djvulibre-cpp/libdjvu
+# makefile (from 'Makefile', line 14)
+SHELL = /bin/bash
+# makefile (from 'Makefile', line 34)
+RM = /usr/bin/rm -f
+# makefile (from 'Makefile', line 46)
+JPEG_LIBS = -ljpeg
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /usr/bin/make
+# makefile (from 'Makefile', line 57)
+CFLAGS = ${FLAGS}   
+# makefile (from 'Makefile.dep', line 1)
+MAKEFILE_LIST :=  Makefile Makefile.dep
+# makefile (from 'Makefile', line 38)
+INSTALL = /usr/bin/install -c
+# environment
+OMF_PATH = /home/janreggie/.local/share/omf
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 58)
+CXXFLAGS = ${FLAGS} ${CXXPICFLAGS} ${CXXRPOFLAGS}   
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 65)
+OBJS = DjVuGlobal.lo DjVuGlobalMemory.lo GOS.lo GException.lo GContainer.lo GString.lo GThreads.lo GRect.lo atomic.lo GSmartPointer.lo MMX.lo Arrays.lo GBitmap.lo GPixmap.lo GScaler.lo DjVuPalette.lo ByteStream.lo IFFByteStream.lo BSByteStream.lo BSEncodeByteStream.lo ZPCodec.lo JB2Image.lo JB2EncodeCodec.lo IW44Image.lo IW44EncodeCodec.lo MMRDecoder.lo JPEGDecoder.lo DataPool.lo GURL.lo DjVuFileCache.lo DjVuPort.lo GMapAreas.lo DjVuAnno.lo GIFFManager.lo DjVuText.lo DjVuInfo.lo DjVuFile.lo DjVuImage.lo DjVuDocument.lo DjVmDir.lo DjVmDoc.lo DjVmDir0.lo DjVmNav.lo DjVuNavDir.lo DjVuErrorList.lo DjVuDocEditor.lo DjVuToPS.lo DjVuDumpHelper.lo DjVuMessageLite.lo DjVuMessage.lo GUnicode.lo UnicodeByteStream.lo XMLParser.lo XMLTags.lo miniexp.lo ddjvuapi.lo debug.lo
+# makefile (from 'Makefile', line 54)
+INCS = -I${top_builddir} -I${srcdir}
+# environment
+USER = janreggie
+# environment
+VSCODE_CWD = /mnt/c/Program Files/Microsoft VS Code
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/janreggie/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/bin/remote-cli:/home/janreggie/.local/bin:/home/janreggie/go/bin:/usr/local/go/bin:/home/janreggie/.cargo/bin:/home/janreggie/dev/depot_tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/PowerShell/7/:/mnt/c/Program Files (x86)/GnuPG/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/janreg/AppData/Local/Microsoft/WindowsApps
+# makefile (from 'Makefile', line 20)
+top_srcdir = ..
+# makefile (from 'Makefile', line 17)
+PACKAGE_VERSION = 3.5.25
+# makefile (from 'Makefile', line 30)
+includedir = ${prefix}/include
+# makefile (from 'Makefile', line 35)
+AR = /usr/bin/ar
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-8721530c-4114-4d35-93ce-aa7f0419d276.sock
+# environment
+VSCODE_SERVER_TAR = /mnt/c/Users/janreg/AppData/Local/Temp/vscode-remote-wsl/f80445acd5a3dadef24aa209168452a3d97cc326/vscode-server-stable-linux-x64.tar.gz
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# automatic
+%F = $(notdir $%)
+# makefile (from 'Makefile', line 26)
+datarootdir = ${prefix}/share
+# makefile (from 'Makefile', line 41)
+LIBTOOL = $(SHELL) $(top_builddir)/libtool
+# makefile (from 'Makefile', line 24)
+exec_prefix = ${prefix}
+# makefile (from 'Makefile', line 19)
+srcdir = .
+# makefile (from 'Makefile', line 23)
+prefix = /usr/local
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/janreggie/dev/djvulibre-cpp/libdjvu
+# makefile (from 'Makefile', line 25)
+bindir = ${exec_prefix}/bin
+# default
+.LOADED := 
+# environment
+WSL_INTEROP = /run/WSL/12_interop
+# makefile (from 'Makefile', line 29)
+mandir = ${datarootdir}/man
+# makefile (from 'Makefile', line 28)
+libdir = ${exec_prefix}/lib
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/janreggie
+# environment
+LOGNAME = janreggie
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 1
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 2
+# makefile (from 'Makefile', line 32)
+CC = gcc
+# makefile (from 'Makefile', line 52)
+LIBDJVU_VER = 25:0:4
+# default
+MAKE_VERSION := 4.2.1
+# environment
+EDITOR = nvim
+# makefile
+.DEFAULT_GOAL := all
+# environment
+OMF_CONFIG = /home/janreggie/.config/omf
+# environment
+NAME = DESKTOP-6273OQS
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from 'Makefile', line 59)
+DLLFLAGS = 
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/janreg/.vscode/extensions/ms-vscode-remote.remote-wsl-0.64.2
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /home/janreggie/dev/djvulibre-cpp
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = pqrRw
+# environment
+MFLAGS = -pqrRw
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# makefile (from 'Makefile', line 16)
+PACKAGE_NAME = djvulibre
+# default
+MAKEFILES := 
+# makefile (from 'Makefile', line 21)
+top_builddir = ..
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 36)
+LN_S = ln -s
+# makefile (from 'Makefile', line 49)
+THREAD_CFLAGS = -pthread -DTHREADMODEL=POSIXTHREADS
+# makefile (from 'Makefile', line 33)
+CXX = g++
+# makefile (from 'Makefile', line 51)
+LIBDJVU_LA = libdjvulibre.la
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 39)
+INSTALL_PROGRAM = ${INSTALL}
+# makefile (from 'Makefile', line 48)
+THREAD_LIBS = -lpthread
+# environment
+HOSTTYPE = x86_64
+# makefile (from 'Makefile', line 56)
+LIBS = ${JPEG_LIBS} ${THREAD_LIBS} -lm 
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 55)
+FLAGS = ${DEFS} ${INCS} ${OPTS} ${JPEG_CFLAGS} ${THREAD_CFLAGS}
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile (from 'Makefile', line 40)
+INSTALL_DATA = ${INSTALL} -m 644
+# default
+.RECIPEPREFIX := 
+# makefile (from 'Makefile', line 37)
+TOUCH = /usr/bin/touch
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# makefile (from 'Makefile', line 27)
+datadir = ${datarootdir}
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu
+# variable set hash-table stats:
+# Load=106/1024=10%, Rehash=0, Collisions=11/160=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2064, inode 5183): 176 files, no impossibilities.
+
+# 176 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+%.c:
+
+%.lo: %.c
+#  recipe to execute (from 'Makefile', line 138):
+	${LIBTOOL} --mode=compile ${CC} ${CFLAGS} -c $<
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 132):
+	${CC} ${CFLAGS} -c $<
+
+%.cpp:
+
+%.lo: %.cpp
+#  recipe to execute (from 'Makefile', line 141):
+	${LIBTOOL} --mode=compile ${CXX} ${CXXFLAGS} -c $<
+
+%.o: %.cpp
+#  recipe to execute (from 'Makefile', line 135):
+	${CXX} ${CXXFLAGS} -c $<
+
+%.lo:
+
+%.o:
+
+# 8 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+GUnicode.lo: GUnicode.cpp ../config.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuPalette.o: DjVuPalette.cpp ../config.h GException.h DjVuGlobal.h ByteStream.h Arrays.h GSmartPointer.h atomic.h BSByteStream.h ZPCodec.h GContainer.h DjVuPalette.h GPixmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+XMLParser.o: XMLParser.cpp ../config.h XMLParser.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h GURL.h GString.h Arrays.h GThreads.h XMLTags.h ByteStream.h GOS.h DjVuDocument.h DjVuPort.h DjVuText.h GMapAreas.h GRect.h DjVuAnno.h DjVuFile.h DjVuInfo.h DjVuPalette.h GPixmap.h DjVuImage.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GException.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
+DjVuFileCache.o: DjVuFileCache.cpp ../config.h DjVuFileCache.h DjVuFile.h DjVuInfo.h GSmartPointer.h DjVuGlobal.h atomic.h GRect.h DjVuPalette.h GContainer.h GException.h GPixmap.h DjVuPort.h GThreads.h GURL.h GString.h Arrays.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ZPCodec.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Arrays.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuImage.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuDocEditor.o: DjVuDocEditor.cpp ../config.h DjVuDocEditor.h DjVuDocument.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVmDoc.h DjVmDir.h DjVuImage.h DjVuFile.h DjVuInfo.h GRect.h DjVuPalette.h GPixmap.h DjVuAnno.h IFFByteStream.h ByteStream.h DataPool.h IW44Image.h ZPCodec.h GOS.h DjVmNav.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GIFFManager.o: GIFFManager.cpp ../config.h GIFFManager.h IFFByteStream.h DjVuGlobal.h GException.h GString.h GContainer.h GSmartPointer.h atomic.h ByteStream.h Arrays.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+JPEGDecoder.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuGlobalMemory.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1771562
+#  File has been updated.
+#  Successfully updated.
+
+DataPool.lo: DataPool.cpp ../config.h DataPool.h GThreads.h DjVuGlobal.h GException.h GString.h GContainer.h GSmartPointer.h atomic.h GURL.h Arrays.h IFFByteStream.h ByteStream.h GOS.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuPalette.lo: DjVuPalette.cpp ../config.h GException.h DjVuGlobal.h ByteStream.h Arrays.h GSmartPointer.h atomic.h BSByteStream.h ZPCodec.h GContainer.h DjVuPalette.h GPixmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuMessage.lo: DjVuMessage.cpp ../config.h DjVuMessage.h DjVuMessageLite.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GOS.h XMLTags.h ByteStream.h Arrays.h GURL.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+XMLParser.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GURL.o: GURL.cpp ../config.h GException.h DjVuGlobal.h GOS.h GString.h GContainer.h GSmartPointer.h atomic.h GURL.h Arrays.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuGlobalMemory.o: DjVuGlobalMemory.cpp ../config.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: libdjvulibre.la
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/18=0%
+
+DjVuFile.lo: DjVuFile.cpp ../config.h DjVuFile.h DjVuInfo.h GSmartPointer.h DjVuGlobal.h atomic.h GRect.h DjVuPalette.h GContainer.h GException.h GPixmap.h DjVuPort.h GThreads.h GURL.h GString.h Arrays.h IFFByteStream.h ByteStream.h GOS.h MMRDecoder.h JPEGDecoder.h DjVuAnno.h DjVuText.h GMapAreas.h DataPool.h JB2Image.h ZPCodec.h IW44Image.h DjVuNavDir.h BSByteStream.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+FORCE:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+DjVuText.o: DjVuText.cpp ../config.h DjVuText.h GMapAreas.h GSmartPointer.h DjVuGlobal.h atomic.h GContainer.h GException.h GString.h GRect.h GURL.h Arrays.h GThreads.h IFFByteStream.h ByteStream.h BSByteStream.h ZPCodec.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+JB2EncodeCodec.o: JB2EncodeCodec.cpp ../config.h JB2Image.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h ZPCodec.h GBitmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuErrorList.o: DjVuErrorList.cpp ../config.h DjVuErrorList.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVmDoc.h DjVmDir.h GOS.h DataPool.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+IFFByteStream.lo: IFFByteStream.cpp ../config.h IFFByteStream.h DjVuGlobal.h GException.h GString.h GContainer.h GSmartPointer.h atomic.h ByteStream.h Arrays.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuAnno.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+BSEncodeByteStream.lo: BSEncodeByteStream.cpp ../config.h BSByteStream.h ByteStream.h Arrays.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ZPCodec.h GContainer.h GString.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+JPEGDecoder.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuMessage.o: DjVuMessage.cpp ../config.h DjVuMessage.h DjVuMessageLite.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GOS.h XMLTags.h ByteStream.h Arrays.h GURL.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GURL.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1871562
+#  File has been updated.
+#  Successfully updated.
+
+GString.lo: GString.cpp ../config.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuGlobal.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-14 19:41:01.583290629
+#  File has been updated.
+#  Successfully updated.
+
+GBitmap.o: GBitmap.cpp ../config.h GBitmap.h GSmartPointer.h DjVuGlobal.h atomic.h ByteStream.h Arrays.h GException.h GRect.h GString.h GContainer.h GThreads.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GThreads.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1871562
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+DjVuInfo.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+IW44EncodeCodec.lo: IW44EncodeCodec.cpp ../config.h IW44Image.h GSmartPointer.h DjVuGlobal.h atomic.h ZPCodec.h GContainer.h GException.h GBitmap.h GPixmap.h IFFByteStream.h GString.h ByteStream.h Arrays.h GRect.h MMX.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+MMX.o: MMX.cpp ../config.h MMX.h DjVuGlobal.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distclean: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 125):
+	-${RM} -r 2>/dev/null Makefile *.rpo ii_files
+
+install-pkgconfig: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 111):
+	${INSTALL} -d ${DESTDIR}${libdir}/pkgconfig
+	${INSTALL_DATA} ddjvuapi.pc ${DESTDIR}${libdir}/pkgconfig
+
+JB2Image.lo: JB2Image.cpp ../config.h JB2Image.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h ZPCodec.h GThreads.h GRect.h GBitmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuAnno.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GOS.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1871562
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+DjVuDumpHelper.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GURL.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GPixmap.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuGlobal.o: DjVuGlobal.cpp ../config.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Makefile.dep:
+#  Implicit rule search has not been done.
+#  Last modified 2022-02-13 18:09:19.977151184
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 146):
+	cp ${srcdir}/Makefile.dep $@
+
+# Not a target:
+DjVuGlobal.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1771562
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+DjVuPort.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GThreads.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+BSByteStream.o: BSByteStream.cpp ../config.h BSByteStream.h ByteStream.h Arrays.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ZPCodec.h GContainer.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+JPEGDecoder.o: JPEGDecoder.cpp ../config.h JPEGDecoder.h GSmartPointer.h DjVuGlobal.h atomic.h ByteStream.h Arrays.h GException.h GPixmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ZPCodec.o: ZPCodec.cpp ../config.h ZPCodec.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ByteStream.h Arrays.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+BSByteStream.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+miniexp.lo: miniexp.cpp ../config.h miniexp.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.SUFFIXES: .c .cpp .lo .o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GOS.o: GOS.cpp ../config.h GException.h DjVuGlobal.h GThreads.h GOS.h GString.h GContainer.h GSmartPointer.h atomic.h GURL.h Arrays.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DataPool.o: DataPool.cpp ../config.h DataPool.h GThreads.h DjVuGlobal.h GException.h GString.h GContainer.h GSmartPointer.h atomic.h GURL.h Arrays.h IFFByteStream.h ByteStream.h GOS.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GScaler.lo: GScaler.cpp ../config.h GScaler.h GException.h DjVuGlobal.h GRect.h GBitmap.h GSmartPointer.h atomic.h GPixmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuFileCache.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:08:24.457152916
+#  File has been updated.
+#  Successfully updated.
+
+GRect.lo: GRect.cpp ../config.h GRect.h DjVuGlobal.h GException.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuInfo.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GOS.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1871562
+#  File has been updated.
+#  Successfully updated.
+
+DjVuImage.o: DjVuImage.cpp ../config.h DjVuImage.h DjVuFile.h DjVuInfo.h GSmartPointer.h DjVuGlobal.h atomic.h GRect.h DjVuPalette.h GContainer.h GException.h GPixmap.h DjVuPort.h GThreads.h GURL.h GString.h Arrays.h DjVuAnno.h GScaler.h GBitmap.h DjVuDocument.h JB2Image.h ZPCodec.h IW44Image.h DataPool.h ByteStream.h GMapAreas.h DjVuText.h IFFByteStream.h BSByteStream.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
+# Not a target:
+DjVuDumpHelper.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GString.o: GString.cpp ../config.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GPixmap.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVmDoc.lo: DjVmDoc.cpp ../config.h DjVmDoc.h DjVmDir.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GThreads.h DjVmNav.h DataPool.h GURL.h Arrays.h IFFByteStream.h ByteStream.h GOS.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ddjvuapi.lo: ddjvuapi.cpp ../config.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h GThreads.h GContainer.h ByteStream.h Arrays.h IFFByteStream.h GString.h BSByteStream.h ZPCodec.h GBitmap.h GPixmap.h GScaler.h GRect.h DjVuPort.h GURL.h DataPool.h DjVuInfo.h IW44Image.h DjVuImage.h DjVuFile.h DjVuPalette.h DjVuAnno.h DjVuFileCache.h DjVuDocument.h DjVuDumpHelper.h DjVuMessageLite.h DjVuMessage.h DjVmNav.h DjVuText.h GMapAreas.h DjVuToPS.h DjVmDir.h DjVmDir0.h DjVuNavDir.h DjVmDoc.h miniexp.h ddjvuapi.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+debug.lo: debug.cpp ../config.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuPort.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GContainer.o: GContainer.cpp ../config.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+JB2EncodeCodec.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuFile.o: DjVuFile.cpp ../config.h DjVuFile.h DjVuInfo.h GSmartPointer.h DjVuGlobal.h atomic.h GRect.h DjVuPalette.h GContainer.h GException.h GPixmap.h DjVuPort.h GThreads.h GURL.h GString.h Arrays.h IFFByteStream.h ByteStream.h GOS.h MMRDecoder.h JPEGDecoder.h DjVuAnno.h DjVuText.h GMapAreas.h DataPool.h JB2Image.h ZPCodec.h IW44Image.h DjVuNavDir.h BSByteStream.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+BSByteStream.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GBitmap.lo: GBitmap.cpp ../config.h GBitmap.h GSmartPointer.h DjVuGlobal.h atomic.h ByteStream.h Arrays.h GException.h GRect.h GString.h GContainer.h GThreads.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuDocument.lo: DjVuDocument.cpp ../config.h DjVuDocument.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVmDoc.h DjVmDir.h DjVmDir0.h DjVmNav.h DjVuNavDir.h DjVuImage.h DjVuFile.h DjVuInfo.h GRect.h DjVuPalette.h GPixmap.h DjVuAnno.h DjVuFileCache.h IFFByteStream.h ByteStream.h GOS.h DataPool.h IW44Image.h ZPCodec.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuErrorList.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVmDir.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.c.lo:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 138):
+	${LIBTOOL} --mode=compile ${CC} ${CFLAGS} -c $<
+
+GMapAreas.lo: GMapAreas.cpp ../config.h GMapAreas.h GSmartPointer.h DjVuGlobal.h atomic.h GContainer.h GException.h GString.h GRect.h GURL.h Arrays.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GMapAreas.o: GMapAreas.cpp ../config.h GMapAreas.h GSmartPointer.h DjVuGlobal.h atomic.h GContainer.h GException.h GString.h GRect.h GURL.h Arrays.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuMessageLite.lo: DjVuMessageLite.cpp ../config.h DjVuMessageLite.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GOS.h XMLTags.h ByteStream.h Arrays.h GURL.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+MMRDecoder.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuFileCache.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuToPS.o: DjVuToPS.cpp ../config.h DjVuToPS.h DjVuGlobal.h GRect.h DjVuDocument.h DjVuPort.h GThreads.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVuText.h GMapAreas.h IFFByteStream.h ByteStream.h BSByteStream.h ZPCodec.h DjVuImage.h DjVuFile.h DjVuInfo.h DjVuPalette.h GPixmap.h DjVuAnno.h DataPool.h IW44Image.h JB2Image.h GBitmap.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+MMX.lo: MMX.cpp ../config.h MMX.h DjVuGlobal.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Arrays.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1771562
+#  File has been updated.
+#  Successfully updated.
+
+DjVuDocEditor.lo: DjVuDocEditor.cpp ../config.h DjVuDocEditor.h DjVuDocument.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVmDoc.h DjVmDir.h DjVuImage.h DjVuFile.h DjVuInfo.h GRect.h DjVuPalette.h GPixmap.h DjVuAnno.h IFFByteStream.h ByteStream.h DataPool.h IW44Image.h ZPCodec.h GOS.h DjVmNav.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuNavDir.o: DjVuNavDir.cpp ../config.h DjVuNavDir.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GThreads.h GURL.h Arrays.h debug.h GOS.h ByteStream.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+IW44Image.o: IW44Image.cpp ../config.h IW44Image.h GSmartPointer.h DjVuGlobal.h atomic.h ZPCodec.h GContainer.h GException.h GBitmap.h GPixmap.h IFFByteStream.h GString.h ByteStream.h Arrays.h GRect.h MMX.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+IW44EncodeCodec.o: IW44EncodeCodec.cpp ../config.h IW44Image.h GSmartPointer.h DjVuGlobal.h atomic.h ZPCodec.h GContainer.h GException.h GBitmap.h GPixmap.h IFFByteStream.h GString.h ByteStream.h Arrays.h GRect.h MMX.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+JB2EncodeCodec.lo: JB2EncodeCodec.cpp ../config.h JB2Image.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h ZPCodec.h GBitmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GThreads.o: GThreads.cpp ../config.h GThreads.h DjVuGlobal.h GException.h DjVuMessageLite.h GString.h GContainer.h GSmartPointer.h atomic.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuNavDir.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+miniexp.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GSmartPointer.lo: GSmartPointer.cpp ../config.h GThreads.h DjVuGlobal.h GException.h GSmartPointer.h atomic.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-lib: libdjvulibre.la FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 101):
+	${INSTALL} -d ${DESTDIR}${libdir}
+	${LIBTOOL} --mode=install \
+	  ${INSTALL_DATA} ${LIBDJVU_LA} ${DESTDIR}${libdir}
+
+XMLTags.lo: XMLTags.cpp ../config.h XMLTags.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h GString.h UnicodeByteStream.h ByteStream.h Arrays.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuDocument.o: DjVuDocument.cpp ../config.h DjVuDocument.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVmDoc.h DjVmDir.h DjVmDir0.h DjVmNav.h DjVuNavDir.h DjVuImage.h DjVuFile.h DjVuInfo.h GRect.h DjVuPalette.h GPixmap.h DjVuAnno.h DjVuFileCache.h IFFByteStream.h ByteStream.h GOS.h DataPool.h IW44Image.h ZPCodec.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuMessageLite.o: DjVuMessageLite.cpp ../config.h DjVuMessageLite.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GOS.h XMLTags.h ByteStream.h Arrays.h GURL.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuErrorList.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVmDir.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ByteStream.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+MMRDecoder.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GContainer.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1871562
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.lo:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+atomic.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1871562
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+DjVmNav.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GIFFManager.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuToPS.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVmDir0.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+IW44Image.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GException.lo: GException.cpp ../config.h GException.h DjVuGlobal.h DjVuMessageLite.h GString.h GContainer.h GSmartPointer.h atomic.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.c.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 132):
+	${CC} ${CFLAGS} -c $<
+
+ZPCodec.lo: ZPCodec.cpp ../config.h ZPCodec.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ByteStream.h Arrays.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Arrays.lo: Arrays.cpp ../config.h Arrays.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ByteStream.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuImage.lo: DjVuImage.cpp ../config.h DjVuImage.h DjVuFile.h DjVuInfo.h GSmartPointer.h DjVuGlobal.h atomic.h GRect.h DjVuPalette.h GContainer.h GException.h GPixmap.h DjVuPort.h GThreads.h GURL.h GString.h Arrays.h DjVuAnno.h GScaler.h GBitmap.h DjVuDocument.h JB2Image.h ZPCodec.h IW44Image.h DataPool.h ByteStream.h GMapAreas.h DjVuText.h IFFByteStream.h BSByteStream.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ByteStream.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+UnicodeByteStream.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuText.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GContainer.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+atomic.o: atomic.cpp ../config.h atomic.h GThreads.h DjVuGlobal.h GException.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuGlobalMemory.lo: DjVuGlobalMemory.cpp DjVuGlobalMemory.cpp ../config.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'DjVuGlobalMemory'
+ 
+#  Last modified 2022-02-13 18:09:38.677150601
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 141):
+	${LIBTOOL} --mode=compile ${CXX} ${CXXFLAGS} -c $<
+
+# Not a target:
+DjVmNav.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GSmartPointer.o: GSmartPointer.cpp ../config.h GThreads.h DjVuGlobal.h GException.h GSmartPointer.h atomic.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVmDir0.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+IW44Image.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GIFFManager.lo: GIFFManager.cpp ../config.h GIFFManager.h IFFByteStream.h DjVuGlobal.h GException.h GString.h GContainer.h GSmartPointer.h atomic.h ByteStream.h Arrays.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuMessage.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ddjvuapi.o: ddjvuapi.cpp ../config.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h GThreads.h GContainer.h ByteStream.h Arrays.h IFFByteStream.h GString.h BSByteStream.h ZPCodec.h GBitmap.h GPixmap.h GScaler.h GRect.h DjVuPort.h GURL.h DataPool.h DjVuInfo.h IW44Image.h DjVuImage.h DjVuFile.h DjVuPalette.h DjVuAnno.h DjVuFileCache.h DjVuDocument.h DjVuDumpHelper.h DjVuMessageLite.h DjVuMessage.h DjVmNav.h DjVuText.h GMapAreas.h DjVuToPS.h DjVmDir.h DjVmDir0.h DjVuNavDir.h DjVmDoc.h miniexp.h ddjvuapi.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+depend: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 115):
+	for n in ${srcdir}/*.cpp ; do \
+	  ${CXX} -MM ${CXXFLAGS} $$n | \
+	    sed -e 's/^\([^.]*\)\.o:/\1.lo \1.o:/'; \
+	done > Makefile.dep
+
+# Not a target:
+DjVuToPS.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+UnicodeByteStream.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuText.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.cpp.lo:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 141):
+	${LIBTOOL} --mode=compile ${CXX} ${CXXFLAGS} -c $<
+
+ByteStream.o: ByteStream.cpp ../config.h DjVuGlobal.h ByteStream.h Arrays.h GException.h GSmartPointer.h atomic.h GOS.h GString.h GContainer.h GURL.h GThreads.h DjVuMessage.h DjVuMessageLite.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DataPool.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GUnicode.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuPalette.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuMessage.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Arrays.o: Arrays.cpp ../config.h Arrays.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ByteStream.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+JPEGDecoder.lo: JPEGDecoder.cpp ../config.h JPEGDecoder.h GSmartPointer.h DjVuGlobal.h atomic.h ByteStream.h Arrays.h GException.h GPixmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuInfo.o: DjVuInfo.cpp ../config.h DjVuInfo.h GSmartPointer.h DjVuGlobal.h atomic.h GRect.h GException.h ByteStream.h Arrays.h GString.h GContainer.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+XMLParser.lo: XMLParser.cpp ../config.h XMLParser.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h GURL.h GString.h Arrays.h GThreads.h XMLTags.h ByteStream.h GOS.h DjVuDocument.h DjVuPort.h DjVuText.h GMapAreas.h GRect.h DjVuAnno.h DjVuFile.h DjVuInfo.h DjVuPalette.h GPixmap.h DjVuImage.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuFile.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+miniexp.o: miniexp.cpp ../config.h miniexp.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GScaler.o: GScaler.cpp ../config.h GScaler.h GException.h DjVuGlobal.h GRect.h GBitmap.h GSmartPointer.h atomic.h GPixmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-data: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 92):
+	${INSTALL} -d ${DESTDIR}${datadir}/djvu
+	for n in `cd ${top_srcdir}/share && \
+	          find djvu -name '*.xml' -print` ; do \
+	  src="${top_srcdir}/share/$$n" ; \
+	  dir="`dirname ${datadir}/$$n`" ;\
+	  test -d ${DESTDIR}$$dir || ${INSTALL} -d ${DESTDIR}$$dir ; \
+	  ${INSTALL_DATA} $$src ${DESTDIR}$$dir || exit ; done
+
+UnicodeByteStream.o: UnicodeByteStream.cpp ../config.h UnicodeByteStream.h DjVuGlobal.h GString.h GContainer.h GException.h GSmartPointer.h atomic.h ByteStream.h Arrays.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+IFFByteStream.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DataPool.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GException.o: GException.cpp ../config.h GException.h DjVuGlobal.h DjVuMessageLite.h GString.h GContainer.h GSmartPointer.h atomic.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+JB2Image.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuPalette.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuAnno.lo: DjVuAnno.cpp ../config.h DjVuAnno.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h IFFByteStream.h ByteStream.h Arrays.h BSByteStream.h ZPCodec.h GMapAreas.h GRect.h GURL.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVmDir.o: DjVmDir.cpp ../config.h DjVmDir.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GThreads.h BSByteStream.h ByteStream.h Arrays.h ZPCodec.h GURL.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GString.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1871562
+#  File has been updated.
+#  Successfully updated.
+
+GURL.lo: GURL.cpp ../config.h GException.h DjVuGlobal.h GOS.h GString.h GContainer.h GSmartPointer.h atomic.h GURL.h Arrays.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-include: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 106):
+	${INSTALL} -d ${DESTDIR}${includedir}/libdjvu
+	${INSTALL_DATA} ${srcdir}/ddjvuapi.h ${DESTDIR}${includedir}/libdjvu
+	${INSTALL_DATA} ${srcdir}/miniexp.h ${DESTDIR}${includedir}/libdjvu
+
+XMLTags.o: XMLTags.cpp ../config.h XMLTags.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h GString.h UnicodeByteStream.h ByteStream.h Arrays.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuGlobal.lo: DjVuGlobal.cpp DjVuGlobal.cpp ../config.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'DjVuGlobal'
+#  Last modified 2022-02-13 18:09:38.637150602
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 141):
+	${LIBTOOL} --mode=compile ${CXX} ${CXXFLAGS} -c $<
+
+.cpp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 135):
+	${CXX} ${CXXFLAGS} -c $<
+
+# Not a target:
+.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 121):
+	-${LIBTOOL} --mode=clean ${RM} 2>/dev/null *.lo *.la 
+	-${RM} 2>/dev/null libdjvu-rpo
+
+GThreads.lo: GThreads.cpp ../config.h GThreads.h DjVuGlobal.h GException.h DjVuMessageLite.h GString.h GContainer.h GSmartPointer.h atomic.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+IFFByteStream.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+BSEncodeByteStream.o: BSEncodeByteStream.cpp ../config.h BSByteStream.h ByteStream.h Arrays.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ZPCodec.h GContainer.h GString.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuFile.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+BSEncodeByteStream.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GOS.lo: GOS.cpp GOS.cpp ../config.h GException.h DjVuGlobal.h GThreads.h GOS.h GString.h GContainer.h GSmartPointer.h atomic.h GURL.h Arrays.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'GOS'
+#  Last modified 2022-02-13 18:09:38.947150593
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := GOS.lo
+# automatic
+# % := 
+# automatic
+# * := GOS
+# automatic
+# + := GOS.cpp GOS.cpp ../config.h GException.h DjVuGlobal.h GThreads.h GOS.h GString.h GContainer.h GSmartPointer.h atomic.h GURL.h Arrays.h
+# automatic
+# | := 
+# automatic
+# < := GOS.cpp
+# automatic
+# ^ := GOS.cpp ../config.h GException.h DjVuGlobal.h GThreads.h GOS.h GString.h GContainer.h GSmartPointer.h atomic.h GURL.h Arrays.h
+# automatic
+# ? := DjVuGlobal.h
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/27=11%
+#  recipe to execute (from 'Makefile', line 141):
+	${LIBTOOL} --mode=compile ${CXX} ${CXXFLAGS} -c $<
+
+# Not a target:
+GString.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuDumpHelper.lo: DjVuDumpHelper.cpp ../config.h DjVuDumpHelper.h GSmartPointer.h DjVuGlobal.h atomic.h DataPool.h GThreads.h GException.h GString.h GContainer.h GURL.h Arrays.h DjVmDir.h DjVuInfo.h GRect.h IFFByteStream.h ByteStream.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GPixmap.lo: GPixmap.cpp ../config.h GPixmap.h GSmartPointer.h DjVuGlobal.h atomic.h GString.h GContainer.h GException.h ByteStream.h Arrays.h GRect.h GBitmap.h GThreads.h JPEGDecoder.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuNavDir.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuPort.lo: DjVuPort.cpp ../config.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h GOS.h DjVuImage.h DjVuFile.h DjVuInfo.h GRect.h DjVuPalette.h GPixmap.h DjVuAnno.h DjVuDocument.h DjVuMessageLite.h DataPool.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVmDir0.o: DjVmDir0.cpp ../config.h DjVmDir0.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h ByteStream.h Arrays.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+IW44EncodeCodec.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+BSByteStream.lo: BSByteStream.cpp ../config.h BSByteStream.h ByteStream.h Arrays.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ZPCodec.h GContainer.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuPort.o: DjVuPort.cpp ../config.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h GOS.h DjVuImage.h DjVuFile.h DjVuInfo.h GRect.h DjVuPalette.h GPixmap.h DjVuAnno.h DjVuDocument.h DjVuMessageLite.h DataPool.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GScaler.h:
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GRect.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+JB2Image.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuFileCache.lo: DjVuFileCache.cpp ../config.h DjVuFileCache.h DjVuFile.h DjVuInfo.h GSmartPointer.h DjVuGlobal.h atomic.h GRect.h DjVuPalette.h GContainer.h GException.h GPixmap.h DjVuPort.h GThreads.h GURL.h GString.h Arrays.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVmNav.o: DjVmNav.cpp ../config.h DjVuDocument.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVmNav.h BSByteStream.h ByteStream.h ZPCodec.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuMessageLite.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuInfo.lo: DjVuInfo.cpp ../config.h DjVuInfo.h GSmartPointer.h DjVuGlobal.h atomic.h GRect.h GException.h ByteStream.h Arrays.h GString.h GContainer.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVmDoc.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ddjvuapi.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+debug.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+debug.o: debug.cpp ../config.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+miniexp.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GBitmap.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuDocument.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GMapAreas.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GScaler.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuMessageLite.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuErrorList.lo: DjVuErrorList.cpp ../config.h DjVuErrorList.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVmDoc.h DjVmDir.h GOS.h DataPool.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GIFFManager.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVmDir.lo: DjVmDir.cpp ../config.h DjVmDir.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GThreads.h BSByteStream.h ByteStream.h Arrays.h ZPCodec.h GURL.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GRect.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+MMX.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GRect.o: GRect.cpp ../config.h GRect.h DjVuGlobal.h GException.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuDocEditor.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+MMRDecoder.lo: MMRDecoder.cpp ../config.h MMRDecoder.h GSmartPointer.h DjVuGlobal.h atomic.h JB2Image.h GString.h GContainer.h GException.h ZPCodec.h ByteStream.h Arrays.h GBitmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+JB2Image.o: JB2Image.cpp ../config.h JB2Image.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h ZPCodec.h GThreads.h GRect.h GBitmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVmDoc.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ddjvuapi.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GSmartPointer.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1871562
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+debug.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+XMLTags.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+XMLParser.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+MMRDecoder.o: MMRDecoder.cpp ../config.h MMRDecoder.h GSmartPointer.h DjVuGlobal.h atomic.h JB2Image.h GString.h GContainer.h GException.h ZPCodec.h ByteStream.h Arrays.h GBitmap.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuNavDir.lo: DjVuNavDir.cpp ../config.h DjVuNavDir.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GThreads.h GURL.h Arrays.h debug.h GOS.h ByteStream.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+atomic.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GBitmap.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuDocument.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GMapAreas.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+libdjvulibre.la: DjVuGlobal.lo DjVuGlobalMemory.lo GOS.lo GException.lo GContainer.lo GString.lo GThreads.lo GRect.lo atomic.lo GSmartPointer.lo MMX.lo Arrays.lo GBitmap.lo GPixmap.lo GScaler.lo DjVuPalette.lo ByteStream.lo IFFByteStream.lo BSByteStream.lo BSEncodeByteStream.lo ZPCodec.lo JB2Image.lo JB2EncodeCodec.lo IW44Image.lo IW44EncodeCodec.lo MMRDecoder.lo JPEGDecoder.lo DataPool.lo GURL.lo DjVuFileCache.lo DjVuPort.lo GMapAreas.lo DjVuAnno.lo GIFFManager.lo DjVuText.lo DjVuInfo.lo DjVuFile.lo DjVuImage.lo DjVuDocument.lo DjVmDir.lo DjVmDoc.lo DjVmDir0.lo DjVmNav.lo DjVuNavDir.lo DjVuErrorList.lo DjVuDocEditor.lo DjVuToPS.lo DjVuDumpHelper.lo DjVuMessageLite.lo DjVuMessage.lo GUnicode.lo UnicodeByteStream.lo XMLParser.lo XMLTags.lo miniexp.lo ddjvuapi.lo debug.lo
+#  Implicit rule search has not been done.
+#  Last modified 2022-02-13 18:10:10.277149615
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/18=0%
+#  recipe to execute (from 'Makefile', line 79):
+	@echo "[ generating $@ ... ]"
+	${LIBTOOL} --mode=link ${CXX} ${CXXFLAGS} -no-undefined \
+	    -rpath ${libdir} -version-info ${LIBDJVU_VER} ${DLLFLAGS} \
+	    ${OBJS} ${LIBS} -o ${LIBDJVU_LA}
+
+ByteStream.lo: ByteStream.cpp ../config.h DjVuGlobal.h ByteStream.h Arrays.h GException.h GSmartPointer.h atomic.h GOS.h GString.h GContainer.h GURL.h GThreads.h DjVuMessage.h DjVuMessageLite.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+MMX.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+DjVuDocEditor.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuAnno.o: DjVuAnno.cpp ../config.h DjVuAnno.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h IFFByteStream.h ByteStream.h Arrays.h BSByteStream.h ZPCodec.h GMapAreas.h GRect.h GURL.h GThreads.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GContainer.lo: GContainer.cpp ../config.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+atomic.lo: atomic.cpp ../config.h atomic.h GThreads.h DjVuGlobal.h GException.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuDumpHelper.o: DjVuDumpHelper.cpp ../config.h DjVuDumpHelper.h GSmartPointer.h DjVuGlobal.h atomic.h DataPool.h GThreads.h GException.h GString.h GContainer.h GURL.h Arrays.h DjVmDir.h DjVuInfo.h GRect.h IFFByteStream.h ByteStream.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVmNav.lo: DjVmNav.cpp ../config.h DjVuDocument.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVmNav.h BSByteStream.h ByteStream.h ZPCodec.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GException.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:06:39.1871562
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+GSmartPointer.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+XMLTags.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVmDir0.lo: DjVmDir0.cpp ../config.h DjVmDir0.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h ByteStream.h Arrays.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+IW44Image.lo: IW44Image.cpp ../config.h IW44Image.h GSmartPointer.h DjVuGlobal.h atomic.h ZPCodec.h GContainer.h GException.h GBitmap.h GPixmap.h IFFByteStream.h GString.h ByteStream.h Arrays.h GRect.h MMX.h
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ZPCodec.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../config.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:08:24.547152913
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+DjVuImage.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GUnicode.o: GUnicode.cpp ../config.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GPixmap.o: GPixmap.cpp ../config.h GPixmap.h GSmartPointer.h DjVuGlobal.h atomic.h GString.h GContainer.h GException.h ByteStream.h Arrays.h GRect.h GBitmap.h GThreads.h JPEGDecoder.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuToPS.lo: DjVuToPS.cpp ../config.h DjVuToPS.h DjVuGlobal.h GRect.h DjVuDocument.h DjVuPort.h GThreads.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVuText.h GMapAreas.h IFFByteStream.h ByteStream.h BSByteStream.h ZPCodec.h DjVuImage.h DjVuFile.h DjVuInfo.h DjVuPalette.h GPixmap.h DjVuAnno.h DataPool.h IW44Image.h JB2Image.h GBitmap.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install: install-lib install-data install-include install-pkgconfig
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+IFFByteStream.o: IFFByteStream.cpp ../config.h IFFByteStream.h DjVuGlobal.h GException.h GString.h GContainer.h GSmartPointer.h atomic.h ByteStream.h Arrays.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+UnicodeByteStream.lo: UnicodeByteStream.cpp ../config.h UnicodeByteStream.h DjVuGlobal.h GString.h GContainer.h GException.h GSmartPointer.h atomic.h ByteStream.h Arrays.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVmDoc.o: DjVmDoc.cpp ../config.h DjVmDoc.h DjVmDir.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h GThreads.h DjVmNav.h DataPool.h GURL.h Arrays.h IFFByteStream.h ByteStream.h GOS.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+DjVuText.lo: DjVuText.cpp ../config.h DjVuText.h GMapAreas.h GSmartPointer.h DjVuGlobal.h atomic.h GContainer.h GException.h GString.h GRect.h GURL.h Arrays.h GThreads.h IFFByteStream.h ByteStream.h BSByteStream.h ZPCodec.h debug.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=248/1024=24%, Rehash=0, Collisions=182/1259=14%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 267 / storage = 3312 B / avg = 12 B
+# current buf: size = 8162 B / used = 3312 B / count = 267 / avg = 12 B
+
+# strcache performance: lookups = 1388 / hit rate = 80%
+# hash-table stats:
+# Load=267/8192=3%, Rehash=0, Collisions=144/1388=10%
+# Finished Make data base on Sat Feb 19 14:39:26 2022
+
+# make[1]: Leaving directory '/home/janreggie/dev/djvulibre-cpp/libdjvu'
+ 
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Sat Feb 19 14:39:26 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+# default
+.SHELLFLAGS := -c
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/janreggie/dev/djvulibre-cpp
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 14)
+SHELL = /bin/bash
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 16)
+RM = /usr/bin/rm -f 
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 30)
+SUBDIRS_FIRST = libdjvu tools
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 1)
+MAKEFILE_LIST :=  /home/janreggie/dev/djvulibre-cpp/Makefile
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 15)
+INSTALL = /usr/bin/install -c
+# environment
+OMF_PATH = /home/janreggie/.local/share/omf
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_CWD = /mnt/c/Program Files/Microsoft VS Code
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/janreggie/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc326/bin/remote-cli:/home/janreggie/.local/bin:/home/janreggie/go/bin:/usr/local/go/bin:/home/janreggie/.cargo/bin:/home/janreggie/dev/depot_tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/PowerShell/7/:/mnt/c/Program Files (x86)/GnuPG/bin:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/janreg/AppData/Local/Microsoft/WindowsApps
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-8721530c-4114-4d35-93ce-aa7f0419d276.sock
+# environment
+VSCODE_SERVER_TAR = /mnt/c/Users/janreg/AppData/Local/Temp/vscode-remote-wsl/f80445acd5a3dadef24aa209168452a3d97cc326/vscode-server-stable-linux-x64.tar.gz
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# automatic
+%F = $(notdir $%)
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 24)
+datarootdir = ${prefix}/share
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 17)
+LIBTOOL = $(SHELL) $(top_builddir)/libtool
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 22)
+exec_prefix = ${prefix}
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 20)
+srcdir = .
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/janreggie/dev/djvulibre-cpp
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 23)
+bindir = ${exec_prefix}/bin
+# default
+.LOADED := 
+# environment
+WSL_INTEROP = /run/WSL/12_interop
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 28)
+mandir = ${datarootdir}/man
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 27)
+libdir = ${exec_prefix}/lib
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/janreggie
+# environment
+LOGNAME = janreggie
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = janreggie
+# makefile
+.DEFAULT_GOAL := world
+# environment
+OMF_CONFIG = /home/janreggie/.config/omf
+# environment
+NAME = DESKTOP-6273OQS
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/janreg/.vscode/extensions/ms-vscode-remote.remote-wsl-0.64.2
+# default
+MAKE_COMMAND := make
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 21)
+prefix = /usr/local
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 18)
+LIBTOOL_DEPS = config/ltmain.sh
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 32)
+SUBDIRS_XML = xmltools
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+EDITOR = nvim
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 35)
+SUBDIRS_LAST = desktopfiles
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 37)
+SUBDIRS = ${SUBDIRS_FIRST} ${SUBDIRS_XML} ${SUBDIRS_I18N} ${SUBDIRS_LAST}
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 26)
+datadir = ${datarootdir}
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu
+# variable set hash-table stats:
+# Load=81/1024=8%, Rehash=0, Collisions=7/118=6%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+
+# No files, no impossibilities in 0 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+libtool: config/ltmain.sh configure.ac
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 77):
+	${SHELL} ./config.status --recheck
+
+# Not a target:
+/home/janreggie/dev/djvulibre-cpp/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-13 18:08:24.437152917
+#  File has been updated.
+#  Successfully updated.
+
+install-utils: install-tools install-xmltools
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: FORCE
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  Modification time never checked.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := FORCE
+# automatic
+# | := 
+# automatic
+# < := FORCE
+# automatic
+# ^ := FORCE
+# automatic
+# ? := FORCE
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/19=16%
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 43):
+	for d in ${SUBDIRS} ; \
+	  do ( cd $$d && ${MAKE} $@ ) || exit ; done
+
+FORCE:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+configure.ac:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distclean: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 47):
+	for d in ${SUBDIRS}; do ( cd $$d && ${MAKE} $@ ); done
+	-find . -name Makefile -exec ${RM} {} \;
+	-${RM} config.h config.log config.status
+	-${RM} libtool
+
+world: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 40):
+	@echo "Congratulations: the compilation was successful!"
+
+install-libdjvu: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 65):
+	( cd libdjvu && ${MAKE} install )
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+depend: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 43):
+	for d in ${SUBDIRS} ; \
+	  do ( cd $$d && ${MAKE} $@ ) || exit ; done
+
+install-tools: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 68):
+	( cd tools && ${MAKE} install )
+
+install-desktopfiles: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 74):
+	( cd desktopfiles && ${MAKE} install )
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+config/ltmain.sh:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 43):
+	for d in ${SUBDIRS} ; \
+	  do ( cd $$d && ${MAKE} $@ ) || exit ; done
+
+install-xmltools: FORCE
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 71):
+	( cd xmltools && ${MAKE} install )
+
+install: install-libdjvu install-utils install-desktopfiles
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=19/1024=2%, Rehash=0, Collisions=0/56=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 21 / storage = 268 B / avg = 12 B
+# current buf: size = 8162 B / used = 268 B / count = 21 / avg = 12 B
+
+# strcache performance: lookups = 59 / hit rate = 64%
+# hash-table stats:
+# Load=21/8192=0%, Rehash=0, Collisions=0/59=0%
+# Finished Make data base on Sat Feb 19 14:39:26 2022
+
+ 
