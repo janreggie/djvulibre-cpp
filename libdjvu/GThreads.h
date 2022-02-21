@@ -478,6 +478,7 @@ GSafeFlags::operator&=(long mask)
 
 // -- these classes are no longer documented.
 
+// This is what you probably mean by a "mutex".
 class GCriticalSection : protected GMonitor 
 {
 public:
@@ -487,6 +488,7 @@ public:
     { GMonitor::leave(); };
 };
 
+// Methods on a mutex?
 class GEvent : protected GMonitor 
 {
 private:
