@@ -13,7 +13,7 @@ make[1]: Circular Makefile.dep <- Makefile.dep dependency dropped.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Feb 19 14:39:26 2022
+# Make data base, printed on Mon Feb 21 20:18:42 2022
 
 # Variables
 
@@ -22,7 +22,7 @@ make[1]: Circular Makefile.dep <- Makefile.dep dependency dropped.
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # makefile (from 'Makefile', line 45)
@@ -90,9 +90,7 @@ AR = /usr/bin/ar
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-8721530c-4114-4d35-93ce-aa7f0419d276.sock
-# environment
-VSCODE_SERVER_TAR = /mnt/c/Users/janreg/AppData/Local/Temp/vscode-remote-wsl/f80445acd5a3dadef24aa209168452a3d97cc326/vscode-server-stable-linux-x64.tar.gz
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b51bbc15-271d-4cca-999b-13341fa14f68.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -116,7 +114,7 @@ bindir = ${exec_prefix}/bin
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/12_interop
+WSL_INTEROP = /run/WSL/11_interop
 # makefile (from 'Makefile', line 29)
 mandir = ${datarootdir}/man
 # makefile (from 'Makefile', line 28)
@@ -230,7 +228,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=106/1024=10%, Rehash=0, Collisions=11/160=7%
+# Load=105/1024=10%, Rehash=0, Collisions=11/159=7%
 
 # Pattern-specific Variable Values
 
@@ -283,6 +281,7 @@ DjVuPalette.o: DjVuPalette.cpp ../config.h GException.h DjVuGlobal.h ByteStream.
 #  File has not been updated.
 
 XMLParser.o: XMLParser.cpp ../config.h XMLParser.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h GURL.h GString.h Arrays.h GThreads.h XMLTags.h ByteStream.h GOS.h DjVuDocument.h DjVuPort.h DjVuText.h GMapAreas.h GRect.h DjVuAnno.h DjVuFile.h DjVuInfo.h DjVuPalette.h GPixmap.h DjVuImage.h debug.h
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -293,7 +292,6 @@ GException.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 DjVuFileCache.o: DjVuFileCache.cpp ../config.h DjVuFileCache.h DjVuFile.h DjVuInfo.h GSmartPointer.h DjVuGlobal.h atomic.h GRect.h DjVuPalette.h GContainer.h GException.h GPixmap.h DjVuPort.h GThreads.h GURL.h GString.h Arrays.h debug.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -453,7 +451,7 @@ GString.lo: GString.cpp ../config.h GString.h DjVuGlobal.h GContainer.h GExcepti
 # Not a target:
 DjVuGlobal.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-14 19:41:01.583290629
+#  Last modified 2022-02-19 14:43:43.350586655
 #  File has been updated.
 #  Successfully updated.
 
@@ -557,6 +555,7 @@ DjVuGlobal.cpp:
 #  Successfully updated.
 
 # Not a target:
+ 
 DjVuPort.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -650,7 +649,6 @@ DjVuImage.o: DjVuImage.cpp ../config.h DjVuImage.h DjVuFile.h DjVuInfo.h GSmartP
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 DjVuDumpHelper.cpp:
 #  Implicit rule search has not been done.
@@ -829,6 +827,7 @@ miniexp.h:
 GSmartPointer.lo: GSmartPointer.cpp ../config.h GThreads.h DjVuGlobal.h GException.h GSmartPointer.h atomic.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 install-lib: libdjvulibre.la FORCE
@@ -994,7 +993,6 @@ atomic.o: atomic.cpp ../config.h atomic.h GThreads.h DjVuGlobal.h GException.h
 DjVuGlobalMemory.lo: DjVuGlobalMemory.cpp DjVuGlobalMemory.cpp ../config.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'DjVuGlobalMemory'
- 
 #  Last modified 2022-02-13 18:09:38.677150601
 #  File has been updated.
 #  Successfully updated.
@@ -1107,6 +1105,7 @@ DjVuMessage.h:
 Arrays.o: Arrays.cpp ../config.h Arrays.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ByteStream.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 JPEGDecoder.lo: JPEGDecoder.cpp ../config.h JPEGDecoder.h GSmartPointer.h DjVuGlobal.h atomic.h ByteStream.h Arrays.h GException.h GPixmap.h
@@ -1364,7 +1363,6 @@ DjVuPort.o: DjVuPort.cpp ../config.h DjVuPort.h GThreads.h DjVuGlobal.h GExcepti
 
 # Not a target:
 GScaler.h:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1393,6 +1391,7 @@ DjVmNav.o: DjVmNav.cpp ../config.h DjVuDocument.h DjVuPort.h GThreads.h DjVuGlob
 
 # Not a target:
 DjVuMessageLite.cpp:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1662,11 +1661,11 @@ DjVmDir0.lo: DjVmDir0.cpp ../config.h DjVmDir0.h GString.h DjVuGlobal.h GContain
 
 IW44Image.lo: IW44Image.cpp ../config.h IW44Image.h GSmartPointer.h DjVuGlobal.h atomic.h ZPCodec.h GContainer.h GException.h GBitmap.h GPixmap.h IFFByteStream.h GString.h ByteStream.h Arrays.h GRect.h MMX.h
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
+ 
 ZPCodec.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1745,7 +1744,7 @@ DjVuText.lo: DjVuText.cpp ../config.h DjVuText.h GMapAreas.h GSmartPointer.h DjV
 # strcache performance: lookups = 1388 / hit rate = 80%
 # hash-table stats:
 # Load=267/8192=3%, Rehash=0, Collisions=144/1388=10%
-# Finished Make data base on Sat Feb 19 14:39:26 2022
+# Finished Make data base on Mon Feb 21 20:18:42 2022
 
 # make[1]: Leaving directory '/home/janreggie/dev/djvulibre-cpp/libdjvu'
  
@@ -1757,7 +1756,7 @@ DjVuText.lo: DjVuText.cpp ../config.h DjVuText.h GMapAreas.h GSmartPointer.h DjV
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sat Feb 19 14:39:26 2022
+# Make data base, printed on Mon Feb 21 20:18:42 2022
 
 # Variables
 
@@ -1766,7 +1765,7 @@ DjVuText.lo: DjVuText.cpp ../config.h DjVuText.h GMapAreas.h GSmartPointer.h DjV
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -1806,9 +1805,7 @@ PATH = /home/janreggie/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc3
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-8721530c-4114-4d35-93ce-aa7f0419d276.sock
-# environment
-VSCODE_SERVER_TAR = /mnt/c/Users/janreg/AppData/Local/Temp/vscode-remote-wsl/f80445acd5a3dadef24aa209168452a3d97cc326/vscode-server-stable-linux-x64.tar.gz
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b51bbc15-271d-4cca-999b-13341fa14f68.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -1830,7 +1827,7 @@ bindir = ${exec_prefix}/bin
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/12_interop
+WSL_INTEROP = /run/WSL/11_interop
 # makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 28)
 mandir = ${datarootdir}/man
 # makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 27)
@@ -1924,7 +1921,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=81/1024=8%, Rehash=0, Collisions=7/118=6%
+# Load=80/1024=8%, Rehash=0, Collisions=7/117=6%
 
 # Pattern-specific Variable Values
 
@@ -2037,6 +2034,7 @@ install-libdjvu: FORCE
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 depend: FORCE
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -2105,6 +2103,6 @@ install: install-libdjvu install-utils install-desktopfiles
 # strcache performance: lookups = 59 / hit rate = 64%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/59=0%
-# Finished Make data base on Sat Feb 19 14:39:26 2022
+# Finished Make data base on Mon Feb 21 20:18:42 2022
 
  

@@ -72,6 +72,8 @@ namespace DJVU {
 #endif
 #endif
 
+// These classes have been declared to be referenced in the h file
+// but are actually #include'd in the cpp file.
 class DjVmDoc;
 class DjVmDir;
 class DjVmDir0;
