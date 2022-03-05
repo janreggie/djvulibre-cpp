@@ -115,6 +115,9 @@ namespace DJVU {
 class DJVUAPI GURL
 {
 public:
+// Okay, so these three are "subclasses".
+// Their definitions can be found waaay below.
+// I don't think Native is necessary... right?
   class Filename;
   class UTF8;
   class Native;

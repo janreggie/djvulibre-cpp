@@ -2,16 +2,8 @@ make -f /home/janreggie/dev/djvulibre-cpp/Makefile --dry-run --always-make --kee
 make: Entering directory '/home/janreggie/dev/djvulibre-cpp'
 for d in libdjvu tools xmltools  desktopfiles ; \
   do ( cd $d && make all ) || exit ; done
- 
 make[1]: Entering directory '/home/janreggie/dev/djvulibre-cpp/libdjvu'
 cp ./Makefile.dep Makefile.dep
- 
-make[1]: Circular Makefile.dep <- Makefile.dep dependency dropped.
- 
-cp: './Makefile.dep' and 'Makefile.dep' are the same file
-make[1]: *** [Makefile:146: Makefile.dep] Error 1
-make[1]: Failed to remake makefile 'Makefile.dep'.
- 
 /bin/bash ../libtool --mode=compile g++ -DHAVE_CONFIG_H -I.. -I. -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor  -pthread -DTHREADMODEL=POSIXTHREADS      -c DjVuGlobal.cpp
 /bin/bash ../libtool --mode=compile g++ -DHAVE_CONFIG_H -I.. -I. -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor  -pthread -DTHREADMODEL=POSIXTHREADS      -c DjVuGlobalMemory.cpp
 /bin/bash ../libtool --mode=compile g++ -DHAVE_CONFIG_H -I.. -I. -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor  -pthread -DTHREADMODEL=POSIXTHREADS      -c GOS.cpp
@@ -62,7 +54,6 @@ make[1]: Failed to remake makefile 'Makefile.dep'.
 /bin/bash ../libtool --mode=compile g++ -DHAVE_CONFIG_H -I.. -I. -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor  -pthread -DTHREADMODEL=POSIXTHREADS      -c DjVuDumpHelper.cpp
 /bin/bash ../libtool --mode=compile g++ -DHAVE_CONFIG_H -I.. -I. -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor  -pthread -DTHREADMODEL=POSIXTHREADS      -c DjVuMessageLite.cpp
 /bin/bash ../libtool --mode=compile g++ -DHAVE_CONFIG_H -I.. -I. -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor  -pthread -DTHREADMODEL=POSIXTHREADS      -c DjVuMessage.cpp
- 
 /bin/bash ../libtool --mode=compile g++ -DHAVE_CONFIG_H -I.. -I. -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor  -pthread -DTHREADMODEL=POSIXTHREADS      -c GUnicode.cpp
 /bin/bash ../libtool --mode=compile g++ -DHAVE_CONFIG_H -I.. -I. -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor  -pthread -DTHREADMODEL=POSIXTHREADS      -c UnicodeByteStream.cpp
 /bin/bash ../libtool --mode=compile g++ -DHAVE_CONFIG_H -I.. -I. -DNDEBUG -Wall -O3 -Wno-non-virtual-dtor  -pthread -DTHREADMODEL=POSIXTHREADS      -c XMLParser.cpp
@@ -77,5 +68,9 @@ echo "[ generating libdjvulibre.la ... ]"
 make[1]: Leaving directory '/home/janreggie/dev/djvulibre-cpp/libdjvu'
 make: Leaving directory '/home/janreggie/dev/djvulibre-cpp'
  
+make[1]: Circular Makefile.dep <- Makefile.dep dependency dropped.
+cp: './Makefile.dep' and 'Makefile.dep' are the same file
+make[1]: *** [Makefile:146: Makefile.dep] Error 1
+make[1]: Failed to remake makefile 'Makefile.dep'.
 make: *** [/home/janreggie/dev/djvulibre-cpp/Makefile:43: all] Error 2
  

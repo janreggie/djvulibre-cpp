@@ -1,11 +1,7 @@
 make all -f /home/janreggie/dev/djvulibre-cpp/Makefile --print-data-base --no-builtin-variables --no-builtin-rules --question
 for d in libdjvu tools xmltools  desktopfiles ; \
   do ( cd $d && make all ) || exit ; done
- 
 # make[1]: Entering directory '/home/janreggie/dev/djvulibre-cpp/libdjvu'
- 
-make[1]: Circular Makefile.dep <- Makefile.dep dependency dropped.
- 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -13,7 +9,7 @@ make[1]: Circular Makefile.dep <- Makefile.dep dependency dropped.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Feb 21 20:18:42 2022
+# Make data base, printed on Wed Feb 23 19:52:17 2022
 
 # Variables
 
@@ -90,7 +86,7 @@ AR = /usr/bin/ar
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b51bbc15-271d-4cca-999b-13341fa14f68.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4a50e1bc-3abe-4934-8685-80d0ff4c113a.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -114,7 +110,7 @@ bindir = ${exec_prefix}/bin
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/14_interop
 # makefile (from 'Makefile', line 29)
 mandir = ${datarootdir}/man
 # makefile (from 'Makefile', line 28)
@@ -126,7 +122,7 @@ HOME = /home/janreggie
 # environment
 LOGNAME = janreggie
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -280,8 +276,8 @@ DjVuPalette.o: DjVuPalette.cpp ../config.h GException.h DjVuGlobal.h ByteStream.
 #  Modification time never checked.
 #  File has not been updated.
 
-XMLParser.o: XMLParser.cpp ../config.h XMLParser.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h GURL.h GString.h Arrays.h GThreads.h XMLTags.h ByteStream.h GOS.h DjVuDocument.h DjVuPort.h DjVuText.h GMapAreas.h GRect.h DjVuAnno.h DjVuFile.h DjVuInfo.h DjVuPalette.h GPixmap.h DjVuImage.h debug.h
  
+XMLParser.o: XMLParser.cpp ../config.h XMLParser.h GContainer.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h GURL.h GString.h Arrays.h GThreads.h XMLTags.h ByteStream.h GOS.h DjVuDocument.h DjVuPort.h DjVuText.h GMapAreas.h GRect.h DjVuAnno.h DjVuFile.h DjVuInfo.h DjVuPalette.h GPixmap.h DjVuImage.h debug.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -463,7 +459,7 @@ GBitmap.o: GBitmap.cpp ../config.h GBitmap.h GSmartPointer.h DjVuGlobal.h atomic
 # Not a target:
 GThreads.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-13 18:06:39.1871562
+#  Last modified 2022-02-21 22:07:00.208991119
 #  File has been updated.
 #  Successfully updated.
 
@@ -541,7 +537,7 @@ DjVuGlobal.o: DjVuGlobal.cpp ../config.h
 
 Makefile.dep:
 #  Implicit rule search has not been done.
-#  Last modified 2022-02-13 18:09:19.977151184
+#  Last modified 2022-02-21 22:07:00.208991119
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 146):
@@ -554,8 +550,10 @@ DjVuGlobal.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
  
+make[1]: Circular Makefile.dep <- Makefile.dep dependency dropped.
+ 
+# Not a target:
 DjVuPort.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1104,8 +1102,8 @@ DjVuMessage.h:
 
 Arrays.o: Arrays.cpp ../config.h Arrays.h GException.h DjVuGlobal.h GSmartPointer.h atomic.h ByteStream.h
 #  Implicit rule search has not been done.
-#  Modification time never checked.
  
+#  Modification time never checked.
 #  File has not been updated.
 
 JPEGDecoder.lo: JPEGDecoder.cpp ../config.h JPEGDecoder.h GSmartPointer.h DjVuGlobal.h atomic.h ByteStream.h Arrays.h GException.h GPixmap.h
@@ -1307,7 +1305,7 @@ GOS.lo: GOS.cpp GOS.cpp ../config.h GException.h DjVuGlobal.h GThreads.h GOS.h G
 # automatic
 # ^ := GOS.cpp ../config.h GException.h DjVuGlobal.h GThreads.h GOS.h GString.h GContainer.h GSmartPointer.h atomic.h GURL.h Arrays.h
 # automatic
-# ? := DjVuGlobal.h
+# ? := DjVuGlobal.h GThreads.h
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=3/27=11%
 #  recipe to execute (from 'Makefile', line 141):
@@ -1384,6 +1382,7 @@ DjVuFileCache.lo: DjVuFileCache.cpp ../config.h DjVuFileCache.h DjVuFile.h DjVuI
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 DjVmNav.o: DjVmNav.cpp ../config.h DjVuDocument.h DjVuPort.h GThreads.h DjVuGlobal.h GException.h GURL.h GString.h GContainer.h GSmartPointer.h atomic.h Arrays.h DjVmNav.h BSByteStream.h ByteStream.h ZPCodec.h debug.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1391,7 +1390,6 @@ DjVmNav.o: DjVmNav.cpp ../config.h DjVuDocument.h DjVuPort.h GThreads.h DjVuGlob
 
 # Not a target:
 DjVuMessageLite.cpp:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1657,6 +1655,7 @@ XMLTags.cpp:
 DjVmDir0.lo: DjVmDir0.cpp ../config.h DjVmDir0.h GString.h DjVuGlobal.h GContainer.h GException.h GSmartPointer.h atomic.h ByteStream.h Arrays.h debug.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 IW44Image.lo: IW44Image.cpp ../config.h IW44Image.h GSmartPointer.h DjVuGlobal.h atomic.h ZPCodec.h GContainer.h GException.h GBitmap.h GPixmap.h IFFByteStream.h GString.h ByteStream.h Arrays.h GRect.h MMX.h
@@ -1665,7 +1664,6 @@ IW44Image.lo: IW44Image.cpp ../config.h IW44Image.h GSmartPointer.h DjVuGlobal.h
 #  File has not been updated.
 
 # Not a target:
- 
 ZPCodec.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1744,19 +1742,17 @@ DjVuText.lo: DjVuText.cpp ../config.h DjVuText.h GMapAreas.h GSmartPointer.h DjV
 # strcache performance: lookups = 1388 / hit rate = 80%
 # hash-table stats:
 # Load=267/8192=3%, Rehash=0, Collisions=144/1388=10%
-# Finished Make data base on Mon Feb 21 20:18:42 2022
+# Finished Make data base on Wed Feb 23 19:52:17 2022
 
 # make[1]: Leaving directory '/home/janreggie/dev/djvulibre-cpp/libdjvu'
- 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Mon Feb 21 20:18:42 2022
+# Make data base, printed on Wed Feb 23 19:52:17 2022
 
 # Variables
 
@@ -1805,7 +1801,7 @@ PATH = /home/janreggie/.vscode-server/bin/f80445acd5a3dadef24aa209168452a3d97cc3
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-b51bbc15-271d-4cca-999b-13341fa14f68.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4a50e1bc-3abe-4934-8685-80d0ff4c113a.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # automatic
@@ -1827,7 +1823,7 @@ bindir = ${exec_prefix}/bin
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/14_interop
 # makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 28)
 mandir = ${datarootdir}/man
 # makefile (from '/home/janreggie/dev/djvulibre-cpp/Makefile', line 27)
@@ -1839,7 +1835,7 @@ HOME = /home/janreggie
 # environment
 LOGNAME = janreggie
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -1939,6 +1935,7 @@ WSL_DISTRO_NAME = Ubuntu
 # Files
 
 libtool: config/ltmain.sh configure.ac
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2034,7 +2031,6 @@ install-libdjvu: FORCE
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 depend: FORCE
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -2103,6 +2099,6 @@ install: install-libdjvu install-utils install-desktopfiles
 # strcache performance: lookups = 59 / hit rate = 64%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/59=0%
-# Finished Make data base on Mon Feb 21 20:18:42 2022
+# Finished Make data base on Wed Feb 23 19:52:17 2022
 
  

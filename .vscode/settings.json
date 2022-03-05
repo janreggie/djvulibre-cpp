@@ -8,7 +8,10 @@
     "optional": "cpp",
     "istream": "cpp",
     "fstream": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "unordered_map": "cpp",
+    "numeric": "cpp",
+    "sstream": "cpp"
   },
   "makefile.makefilePath": "./Makefile",
 }

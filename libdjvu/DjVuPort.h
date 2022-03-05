@@ -144,6 +144,8 @@ public:
    DjVuPort();
    virtual ~DjVuPort();
    static void *operator new (size_t sz);
+   
+   // Append this MF to the Corpse
    static void operator delete(void *addr);
 
       /**  Use this function to get a copy of the global \Ref{DjVuPortcaster}. */
@@ -261,6 +263,8 @@ public:
 public:
    class DjVuPortCorpse;
 private:
+
+   // Linked list of "dead" ports
    static GCriticalSection	* corpse_lock;
    static DjVuPortCorpse	* corpse_head;
    static DjVuPortCorpse        * corpse_tail;
