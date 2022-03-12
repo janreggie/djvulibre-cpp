@@ -151,11 +151,7 @@
 #include "GRect.h"
 #include "DjVuMessage.h"
 
-#include <locale.h>
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <ctype.h>
+#include "common.h"
 
 int flag_contains_fg      = 0;
 int flag_contains_bg      = 0;
@@ -360,6 +356,8 @@ analyze_jb2_chunk(const GURL &url)
 void
 analyze_incl_chunk(const GURL &url)
 {
+  if (! url.is_file())
+    return;
   GP<ByteStream> gbs = ByteStream::create(url,"rb");
   char buffer[24];
   memset(buffer, 0, sizeof(buffer));
@@ -526,6 +524,8 @@ create_jb2_chunk(IFFByteStream &iff, const char *chkid, const GURL &url)
 void 
 create_incl_chunk(IFFByteStream &iff, const char *chkid, const char *fileid)
 {
+  if (strchr(fileid, '/') || strchr(fileid, '\\') || strchr(fileid, ':'))
+    G_THROW( ERR_MSG("DjVuFile.malformed") );
   iff.put_chunk("INCL");
   iff.write(fileid, strlen(fileid));
   iff.close_chunk();
@@ -864,9 +864,7 @@ parse_color_zones(const char *s)
 int
 main(int argc, char **argv)
 {
-  setlocale(LC_ALL,"");
-  setlocale(LC_NUMERIC,"C");
-  djvu_programname(argv[0]);
+  DJVU_LOCALE;
   GArray<GUTF8String> dargv(0,argc-1);
   for(int i=0;i<argc;++i)
     dargv[i]=GNativeString(argv[i]);
@@ -961,7 +959,7 @@ main(int argc, char **argv)
             }
           else if (!dargv[i].cmp("INCL=",5))
             {
-              create_incl_chunk(iff, "INCL", GURL::Filename::UTF8(5+(const char *)dargv[i]).fname());
+              create_incl_chunk(iff, "INCL", (const char *)GUTF8String(dargv[i].substr(5,-1)));
               flag_contains_incl = 1;
             }
           else if (!dargv[i].cmp("PPM=",4))

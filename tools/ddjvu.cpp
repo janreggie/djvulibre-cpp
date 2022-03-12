@@ -76,8 +76,11 @@
 # include <sys/types.h>
 # include <unistd.h>
 #endif
-#if defined(WIN32) && !defined(__CYGWIN32__)
+#if defined(_WIN32) || defined(__CYGWIN32__)
 # include <io.h>
+#endif
+#if defined(_WIN32) && !defined(__CYGWIN32__)
+# include <mbctype.h>
 #endif
 
 #include "libdjvu/ddjvuapi.h"
@@ -276,7 +279,7 @@ render(ddjvu_page_t *page, int pageno)
       prect.h = (ih * 100) / dpi;
     }
   /* Process aspect ratio */
-  if (flag_aspect <= 0)
+  if (flag_aspect <= 0 && iw>0 && ih>0)
     {
       double dw = (double)iw / prect.w;
       double dh = (double)ih / prect.h;
@@ -607,7 +610,7 @@ openfile(int pageno)
           strcpy(tempfilename, outputfilename);
           strcat(tempfilename, ".XXXXXX");
           tiff = 0;
-# ifdef WIN32
+# ifdef _WIN32
           if (_mktemp(tempfilename))
             tiff = TIFFOpen(tempfilename,"w");
 # elif HAVE_MKSTEMP
@@ -631,7 +634,7 @@ openfile(int pageno)
         fout = stdout;
 #if defined(__CYGWIN32__)
         setmode(fileno(fout), O_BINARY);
-#elif defined(WIN32)
+#elif defined(_WIN32)
         _setmode(_fileno(fout), _O_BINARY);
 #endif
       } else if (! (fout = fopen(filename, "wb")))
@@ -663,7 +666,7 @@ closefile(int pageno)
         die(i18n("Error while flushing TIFF file."));
       if (flag_verbose)
         fprintf(stderr,i18n("Converting temporary TIFF to PDF.\n"));
-#ifndef WIN32
+#ifndef _WIN32
       if (tiffd >= 0)
         {
           int fd = dup(tiffd);
@@ -688,10 +691,10 @@ closefile(int pageno)
       args[1] = "-o";
       args[2] = filename;
       if (tiff2pdf(tiff, fout, 3, args) != EXIT_SUCCESS)
-        die(i18n("Error occured while creating PDF file."));
+        die(i18n("Error occurred while creating PDF file."));
       TIFFClose(tiff);
       tiff = 0;
-#ifndef WIN32
+#ifndef _WIN32
       close(tiffd);
       tiffd = -1;
 #endif
@@ -1160,8 +1163,11 @@ check_eachpage(const char *s)
 int
 main(int argc, char **argv)
 {
-  /* Parse options */
   int i;
+#if defined(_WIN32) && !defined(__CYGWIN32__)
+  _setmbcp(_MB_CP_OEM);
+#endif
+  /* Parse options */
   for (i=1; i<argc; i++)
     {
       char *s = argv[i];

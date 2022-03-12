@@ -222,12 +222,7 @@
 #include "GURL.h"
 #include "DjVuMessage.h"
 #include "JPEGDecoder.h"
-
-#include <locale.h>
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-#include <stdlib.h>
+#include "common.h"
 
 // command line data
 
@@ -688,9 +683,7 @@ create_photo_djvu_file(IW44Image &iw, int w, int h,
 int
 main(int argc, char **argv)
 {
-  setlocale(LC_ALL,"");
-  setlocale(LC_NUMERIC,"C");
-  djvu_programname(argv[0]);
+  DJVU_LOCALE;
   GArray<GUTF8String> dargv(0,argc-1);
   for(int i=0;i<argc;++i)
     dargv[i]=GNativeString(argv[i]);
@@ -703,7 +696,7 @@ main(int argc, char **argv)
       ByteStream &ibs=*gibs;
       char prefix[16];
       memset(prefix, 0, sizeof(prefix));
-      if (ibs.read((void*)prefix, sizeof(prefix)) < 0)
+      if (ibs.readall((void*)prefix, sizeof(prefix)) < sizeof(prefix))
         G_THROW( ERR_MSG("c44.failed_pnm_header") );
 #ifdef DEFAULT_JPEG_TO_HALF_SIZE
       // Default specification for jpeg files

@@ -70,6 +70,10 @@
 #include <fcntl.h>
 #include <errno.h>
 
+#if defined(_WIN32) && !defined(__CYGWIN32__)
+# include <mbctype.h>
+#endif
+
 #include "libdjvu/miniexp.h"
 #include "libdjvu/ddjvuapi.h"
 
@@ -146,7 +150,12 @@ dopage(int pageno)
     {
       miniexp_io_t io;
       miniexp_io_init(&io);
+#ifdef miniexp_io_print7bits
+      int flags = (escape) ? miniexp_io_print7bits : 0;
+      io.p_flags = &flags;
+#else
       io.p_print7bits = &escape;
+#endif
       miniexp_pprint_r(&io, r, 72);
     }
   else if ((r = miniexp_nth(5, r)) && miniexp_stringp(r))
@@ -268,8 +277,11 @@ usage()
 int
 main(int argc, char **argv)
 {
-  /* Parse options */
   int i;
+#if defined(_WIN32) && !defined(__CYGWIN32__)
+  _setmbcp(_MB_CP_OEM);
+#endif
+  /* Parse options */
   for (i=1; i<argc; i++)
     {
       char *s = argv[i];

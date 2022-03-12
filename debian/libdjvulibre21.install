@@ -1,4 +1,1 @@
-#! /bin/sh
-cat <<EOF
-usr/lib/${DEB_HOST_MULTIARCH}/lib*.so.*
-EOF
+usr/lib/*/lib*.so.*

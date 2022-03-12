@@ -16,126 +16,116 @@ dnl MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 dnl GNU General Public License for more details.
 dnl
 dnl You should have received a copy of the GNU General Public License
-dnl along with this program; if not, write to the Free Software
-dnl Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA02111 USA
+dnl along with this program.  If not, see <http://www.gnu.org/licenses/>.
 dnl
-
-dnl -------------------------------------------------------
-dnl @synopsis AC_DEFINE_INSTALL_PATHS
-dnl Define various installation paths
-dnl -------------------------------------------------------
-AC_DEFUN([AC_DEFINE_INSTALL_PATHS],[
-  save_prefix="${prefix}"
-  save_exec_prefix="${exec_prefix}"
-  test "x$prefix" = xNONE && prefix="$ac_default_prefix"
-  test "x$exec_prefix" = xNONE && exec_prefix="$prefix"
-  DIR_PREFIX="`eval echo \"$prefix\"`"
-  AC_DEFINE_UNQUOTED(DIR_PREFIX,["${DIR_PREFIX}"],
-        [directory "prefix"])
-  DIR_EXEC_PREFIX="`eval echo \"$exec_prefix\"`"
-  DIR_EXEC_PREFIX="`eval echo \"$DIR_EXEC_PREFIX\"`"
-  AC_DEFINE_UNQUOTED(DIR_EXEC_PREFIX,["${DIR_EXEC_PREFIX}"],
-        [directory "exec_prefix"])
-  DIR_BINDIR="`eval echo \"$bindir\"`"
-  DIR_BINDIR="`eval echo \"$DIR_BINDIR\"`"
-  AC_DEFINE_UNQUOTED(DIR_BINDIR,["${DIR_BINDIR}"],
-        [directory "bindir"])
-  DIR_LIBDIR="`eval echo \"$libdir\"`"
-  DIR_LIBDIR="`eval echo \"$DIR_LIBDIR\"`"
-  AC_DEFINE_UNQUOTED(DIR_LIBDIR,["${DIR_LIBDIR}"],
-        [directory "libdir"])
-  DIR_DATADIR="`eval echo \"$datadir\"`"
-  DIR_DATADIR="`eval echo \"$DIR_DATADIR\"`"
-  AC_DEFINE_UNQUOTED(DIR_DATADIR,["${DIR_DATADIR}"],
-        [directory "datadir"])
-  DIR_MANDIR="`eval echo \"$mandir\"`"
-  DIR_MANDIR="`eval echo \"$DIR_MANDIR\"`"
-  AC_DEFINE_UNQUOTED(DIR_MANDIR,["${DIR_MANDIR}"],
-        [directory "mandir"])
-  prefix="${save_prefix}"
-  exec_prefix="${save_exec_prefix}"
-])
 
 dnl -------------------------------------------------------
 dnl @synopsis AC_CHECK_CXX_OPT(OPTION,
 dnl               ACTION-IF-OKAY,ACTION-IF-NOT-OKAY)
 dnl Check if compiler accepts option OPTION.
+dnl Default action is to add option to CXXFLAGS.
 dnl -------------------------------------------------------
-AC_DEFUN(AC_CHECK_CXX_OPT,[
+AC_DEFUN([AC_CHECK_CXX_OPT],[
  opt="$1"
  AC_MSG_CHECKING([if $CXX accepts $opt])
  echo 'void f(){}' > conftest.cc
- if test -z "`${CXX} ${CXXFLAGS} ${OPTS} $opt -c conftest.cc 2>&1`"; then
+ if test -z "`${CXX} ${CXXFLAGS} $opt -c conftest.cc 2>&1`"; then
     AC_MSG_RESULT(yes)
     rm conftest.* 
-    $2
+    ifelse($2,,[CXXFLAGS="$CXXFLAGS $opt"],$2)
  else
     AC_MSG_RESULT(no)
     rm conftest.*
-    $3
+    ifelse($3,,:,$3)
  fi
 ])
 
 dnl -------------------------------------------------------
-dnl @synopsis AC_CXX_OPTIMIZE
-dnl Setup option --enable-debug
-dnl Collects optimization/debug option in variable OPTS
-dnl Filter options from CFLAGS and CXXFLAGS
+dnl @synopsis AC_CHECK_CC_OPT(OPTION,
+dnl               ACTION-IF-OKAY,ACTION-IF-NOT-OKAY)
+dnl Check if compiler accepts option OPTION.
+dnl Default action is to add option to CFLAGS.
 dnl -------------------------------------------------------
-AC_DEFUN(AC_CXX_OPTIMIZE,[
+AC_DEFUN([AC_CHECK_CC_OPT],[
+ opt="$1"
+ AC_MSG_CHECKING([if $CXX accepts $opt])
+ echo 'void f(){}' > conftest.c
+ if test -z "`${CC} ${CFLAGS} $opt -c conftest.c 2>&1`"; then
+    AC_MSG_RESULT(yes)
+    rm conftest.* 
+    ifelse($2,,[CFLAGS="$CFLAGS $opt"],$2)
+ else
+    AC_MSG_RESULT(no)
+    rm conftest.*
+    ifelse($3,,:,$3)
+ fi
+])
+
+dnl ------------------------------------------------------
+dnl @synopsis AC_REMOVE_OPTIONS(VAR,PATTERN)
+dnl ------------------------------------------------------
+AC_DEFUN([AC_REMOVE_OPTIONS],[
+   saved_var=${$1}
+   $1=
+   for opt in ${saved_var} ; do
+     case "$opt" in 
+      $2) ;;
+      *) $1="${$1} $opt" ;;
+     esac
+   done
+])
+
+dnl -------------------------------------------------------
+dnl @synopsis AC_OPTIMIZE
+dnl Setup option --enable-debug
+dnl Determine optimization options
+dnl Add them to CFLAGS and CXXFLAGS
+dnl -------------------------------------------------------
+AC_DEFUN([AC_OPTIMIZE],[
    AC_REQUIRE([AC_CANONICAL_HOST])
    AC_ARG_ENABLE(debug,
-        AC_HELP_STRING([--enable-debug],
+        AS_HELP_STRING([--enable-debug],
                        [Compile with debugging options (default: no)]),
         [ac_debug=$enableval],[ac_debug=no])
-   OPTS=
-   AC_SUBST(OPTS)
-   saved_CXXFLAGS="$CXXFLAGS"
-   saved_CFLAGS="$CFLAGS"
-   CXXFLAGS=
-   CFLAGS=
-   for opt in $saved_CXXFLAGS ; do
-     case $opt in
-       -g*) test $ac_debug != no && OPTS="$OPTS $opt" ;;
-       -O*) ;;
-       *) CXXFLAGS="$CXXFLAGS $opt" ;;
-     esac
-   done
-   for opt in $saved_CFLAGS ; do
-     case $opt in
-       -O*|-g*) ;;
-       *) CFLAGS="$CFLAGS $opt" ;;
-     esac
-   done
+   defines=
    if test x$ac_debug = xno ; then
-     OPTS=-DNDEBUG
-     AC_CHECK_CXX_OPT([-Wall],[OPTS="$OPTS -Wall"])
-     AC_CHECK_CXX_OPT([-O3],[OPTS="$OPTS -O3"],
-        [ AC_CHECK_CXX_OPT([-O2], [OPTS="$OPTS -O2"] ) ] )
-     dnl This triggers compiler bugs with gcc-3.2.2:
-     dnl AC_CHECK_CXX_OPT([-funroll-loops], [OPTS="$OPTS -funroll-loops"])
-     dnl QT3 has plenty of this:
-     AC_CHECK_CXX_OPT([-Wno-non-virtual-dtor],[OPTS="$OPTS -Wno-non-virtual-dtor"])
+     AC_REMOVE_OPTIONS([CFLAGS],[-O*])
+     AC_REMOVE_OPTIONS([CXXFLAGS],[-O*])
+     if test x$GCC != xyes ; then
+       AC_REMOVE_OPTIONS([CFLAGS],[-g*])
+       AC_REMOVE_OPTIONS([CXXFLAGS],[-g*])
+     fi
+     defines="-DNDEBUG"
+     AC_CHECK_CC_OPT([-O3],,[AC_CHECK_CC_OPT([-O2])])
+     AC_CHECK_CXX_OPT([-O3],,[AC_CHECK_CXX_OPT([-O2])])
      cpu=`uname -m 2>/dev/null`
      test -z "$cpu" && cpu=${host_cpu}
      case "${host_cpu}" in
         i?86)
            opt="-mtune=${host_cpu}"
-           AC_CHECK_CXX_OPT([$opt], [OPTS="$OPTS $opt"],
-             [ opt="-mcpu=${host_cpu}"
-               AC_CHECK_CXX_OPT([$opt], [OPTS="$OPTS $opt"]) ])
+           AC_CHECK_CXX_OPT([-mtune=${host_cpu}],,
+                [AC_CHECK_CXX_OPT([-mcpu=${host_cpu}])])
+           AC_CHECK_CC_OPT([-mtune=${host_cpu}],,
+                [AC_CHECK_CC_OPT([-mcpu=${host_cpu}])])
            ;;
       esac
    else
-     AC_CHECK_CXX_OPT([-Wall],[OPTS="$OPTS -Wall"])
-     AC_CHECK_CXX_OPT([-Wno-non-virtual-dtor],[OPTS="$OPTS -Wno-non-virtual-dtor"])
+     AC_REMOVE_OPTIONS([CFLAGS],[-O*|-g*])
+     AC_REMOVE_OPTIONS([CXXFLAGS],[-O*|-g*])
+     AC_CHECK_CC_OPT([-g])
+     AC_CHECK_CXX_OPT([-g])
+     AC_CHECK_CXX_OPT([-Wno-non-virtual-dtor])
    fi
+   AC_CHECK_CC_OPT([-Wall])
+   AC_CHECK_CXX_OPT([-Wall])
    case x"$ac_debug" in
 changequote(<<, >>)dnl
-     x[0-9])  OPTS="$OPTS -DDEBUGLVL=$ac_debug" ;;
-     xr*)   OPTS="$OPTS -DRUNTIME_DEBUG_ONLY" ;;
+     x[0-9]) defines="-DDEBUGLVL=$ac_debug" ;;
+     xr*)    defines="-DRUNTIME_DEBUG_ONLY" ;;
 changequote([, ])dnl 
    esac
+   CFLAGS="$CFLAGS $defines"
+   CXXFLAGS="$CXXFLAGS $defines"
 ])
 
 dnl -------------------------------------------------------
@@ -146,16 +136,23 @@ dnl -------------------------------------------------------
 AC_DEFUN([AC_CXX_INTEL_ATOMIC_BUILTINS],
 [AC_CACHE_CHECK(whether the compiler supports intel atomic builtins,
 ac_cv_cxx_intel_atomic_builtins,
-[AC_LANG_SAVE
- AC_LANG_CPLUSPLUS
- AC_TRY_LINK([static int volatile l;],
- [__sync_lock_test_and_set(&l,1); 
-  __sync_lock_release(&l);
-  __sync_add_and_fetch(&l,1);
-  __sync_bool_compare_and_swap(&l,&l,1);
-  return 0;],
- ac_cv_cxx_intel_atomic_builtins=yes, ac_cv_cxx_intel_atomic_builtins=no)
- AC_LANG_RESTORE
+[AC_LANG_PUSH([C++])
+ AC_LINK_IFELSE(
+ [AC_LANG_PROGRAM(
+  [[
+static int volatile l;
+  ]],
+  [
+__sync_lock_test_and_set(&l,1);
+__sync_lock_release(&l);
+__sync_add_and_fetch(&l,1);
+__sync_bool_compare_and_swap(&l,&l,1);
+__sync_synchronize();
+return 0;
+  ])],
+ [ac_cv_cxx_intel_atomic_builtins=yes],
+ [ac_cv_cxx_intel_atomic_builtins=no])
+ AC_LANG_POP([C++])
 ])
 if test "$ac_cv_cxx_intel_atomic_builtins" = yes; then
   AC_DEFINE(HAVE_INTEL_ATOMIC_BUILTINS,1,
@@ -171,15 +168,23 @@ dnl -------------------------------------------------------
 AC_DEFUN([AC_CXX_MEMBER_TEMPLATES],
 [AC_CACHE_CHECK(whether the compiler supports member templates,
 ac_cv_cxx_member_templates,
-[AC_LANG_SAVE
- AC_LANG_CPLUSPLUS
- AC_TRY_COMPILE([
+[AC_LANG_PUSH([C++])
+ AC_COMPILE_IFELSE(
+ [AC_LANG_PROGRAM(
+  [[
 template<class T, int N> class A
 { public:
   template<int N2> A<T,N> operator=(const A<T,N2>& z) { return A<T,N>(); }
-};],[A<double,4> x; A<double,7> y; x = y; return 0;],
- ac_cv_cxx_member_templates=yes, ac_cv_cxx_member_templates=no)
- AC_LANG_RESTORE
+};
+  ]],
+  [[
+A<double,4> x; A<double,7> y;
+x = y;
+return 0;
+  ]])],
+ [ac_cv_cxx_member_templates=yes],
+ [ac_cv_cxx_member_templates=no])
+ AC_LANG_POP([C++])
 ])
 if test "$ac_cv_cxx_member_templates" = yes; then
   AC_DEFINE(HAVE_MEMBER_TEMPLATES,1,
@@ -196,12 +201,19 @@ dnl -------------------------------------------------------
 AC_DEFUN([AC_CXX_NAMESPACES],
 [AC_CACHE_CHECK(whether the compiler implements namespaces,
 ac_cv_cxx_namespaces,
-[ AC_LANG_SAVE
-  AC_LANG_CPLUSPLUS
-  AC_TRY_COMPILE([namespace Outer { namespace Inner { int i = 0; }}],
-                 [using namespace Outer::Inner; return i;],
-                 ac_cv_cxx_namespaces=yes, ac_cv_cxx_namespaces=no)
-  AC_LANG_RESTORE
+[ AC_LANG_PUSH([C++])
+  AC_COMPILE_IFELSE(
+  [AC_LANG_PROGRAM(
+   [[
+namespace Outer { namespace Inner { int i = 0; }}
+   ]],
+   [[
+using namespace Outer::Inner;
+return i;
+   ]])],
+  [ac_cv_cxx_namespaces=yes],
+  [ac_cv_cxx_namespaces=no])
+  AC_LANG_POP([C++])
 ])
 if test "$ac_cv_cxx_namespaces" = yes && test "$ac_debug" = no; then
   AC_DEFINE(HAVE_NAMESPACES,1,
@@ -219,12 +231,19 @@ dnl -------------------------------------------------------
 AC_DEFUN([AC_CXX_TYPENAME],
 [AC_CACHE_CHECK(whether the compiler recognizes typename,
 ac_cv_cxx_typename,
-[AC_LANG_SAVE
- AC_LANG_CPLUSPLUS
- AC_TRY_COMPILE([template<typename T>class X {public:X(){}};],
-[X<float> z; return 0;],
- ac_cv_cxx_typename=yes, ac_cv_cxx_typename=no)
- AC_LANG_RESTORE
+[AC_LANG_PUSH([C++])
+ AC_COMPILE_IFELSE(
+ [AC_LANG_PROGRAM(
+  [[
+template<typename T>class X {public:X(){}};
+  ]],
+  [[
+X<float> z;
+return 0;
+  ]])],
+ [ac_cv_cxx_typename=yes],
+ [ac_cv_cxx_typename=no])
+ AC_LANG_POP([C++])
 ])
 if test "$ac_cv_cxx_typename" = yes; then
   AC_DEFINE(HAVE_TYPENAME,1,[define if the compiler recognizes typename])
@@ -240,13 +259,19 @@ dnl -------------------------------------------------------
 AC_DEFUN([AC_CXX_STDINCLUDES],
 [AC_CACHE_CHECK(whether the compiler comes with standard includes,
 ac_cv_cxx_stdincludes,
-[AC_LANG_SAVE
- AC_LANG_CPLUSPLUS
- AC_TRY_COMPILE([#include <new>
-struct X { int a; X(int a):a(a){}; };
-X* foo(void *x) { return new(x) X(2); } ],[],
- ac_cv_cxx_stdincludes=yes, ac_cv_cxx_stdincludes=no)
- AC_LANG_RESTORE
+[AC_LANG_PUSH([C++])
+ AC_COMPILE_IFELSE(
+ [AC_LANG_PROGRAM(
+  [[
+#include <new>
+struct X { int a; X(int a):a(a){} };
+X* foo(void *x) { return new(x) X(2); }
+  ]],
+  [[
+  ]])],
+ [ac_cv_cxx_stdincludes=yes],
+ [ac_cv_cxx_stdincludes=no])
+ AC_LANG_POP([C++])
 ])
 if test "$ac_cv_cxx_stdincludes" = yes; then
   AC_DEFINE(HAVE_STDINCLUDES,1,
@@ -265,15 +290,21 @@ dnl -------------------------------------------------------
 AC_DEFUN([AC_CXX_BOOL],
 [AC_CACHE_CHECK(whether the compiler recognizes bool as a built-in type,
 ac_cv_cxx_bool,
-[AC_LANG_SAVE
- AC_LANG_CPLUSPLUS
- AC_TRY_COMPILE([
+[AC_LANG_PUSH([C++])
+ AC_COMPILE_IFELSE(
+ [AC_LANG_PROGRAM(
+  [[
 int f(int  x){return 1;}
 int f(char x){return 1;}
 int f(bool x){return 1;}
-],[bool b = true; return f(b);],
- ac_cv_cxx_bool=yes, ac_cv_cxx_bool=no)
- AC_LANG_RESTORE
+  ]],
+  [[
+bool b = true;
+return f(b);
+  ]])],
+ [ac_cv_cxx_bool=yes],
+ [ac_cv_cxx_bool=no])
+ AC_LANG_POP([C++])
 ])
 if test "$ac_cv_cxx_bool" = yes; then
   AC_DEFINE(HAVE_BOOL,1,[define if bool is a built-in type])
@@ -288,11 +319,17 @@ dnl -------------------------------------------------------
 AC_DEFUN([AC_CXX_EXCEPTIONS],
 [AC_CACHE_CHECK(whether the compiler supports exceptions,
 ac_cv_cxx_exceptions,
-[AC_LANG_SAVE
- AC_LANG_CPLUSPLUS
- AC_TRY_COMPILE(,[try { throw  1; } catch (int i) { return i; }],
- ac_cv_cxx_exceptions=yes, ac_cv_cxx_exceptions=no)
- AC_LANG_RESTORE
+[AC_LANG_PUSH([C++])
+ AC_COMPILE_IFELSE(
+ [AC_LANG_PROGRAM(
+  [[
+  ]],
+  [[
+try { throw  1; } catch (int i) { return i; }
+  ]])],
+ [ac_cv_cxx_exceptions=yes],
+ [ac_cv_cxx_exceptions=no])
+ AC_LANG_POP([C++])
 ])
 if test "$ac_cv_cxx_exceptions" = yes; then
   AC_DEFINE(HAVE_EXCEPTIONS,1,[define if the compiler supports exceptions])
@@ -301,28 +338,29 @@ fi
 
 
 dnl -------------------------------------------------------
-dnl @synopsis AC_CXX_RPO
-dnl Defines option --enable-rpo and searches program RPO.
-dnl Set output variables CXXRPOFLAGS and RPO. 
+dnl @synopsis AC_CXX_GCCTLS
+dnl Define HAVE_GCCTLS if the compiler recognizes 
+dnl keyword __thread for TLS variables.
 dnl -------------------------------------------------------
-AC_DEFUN([AC_CXX_RPO],
-[ CXXRPOFLAGS=
-  RPO_YES='#'
-  RPO_NO=''
-  if test x$GXX = xyes ; then
-    AC_ARG_ENABLE([rpo],
-      AC_HELP_STRING([--enable-rpo],
-                     [Enable compilation with option -frepo]),
-      [ac_rpo=$enableval], [ac_rpo=no] )
-    if test x$ac_rpo != xno ; then
-      CXXRPOFLAGS='-frepo -fno-rtti'
-      RPO_YES=''
-      RPO_NO='#'
-    fi
-  fi
-  AC_SUBST(CXXRPOFLAGS)
-  AC_SUBST(RPO_YES)
-  AC_SUBST(RPO_NO)
+AC_DEFUN([AC_CXX_GCCTLS],
+[AC_CACHE_CHECK(whether the compiler supports keyword __thread,
+ac_cv_cxx_gcctls,
+[AC_LANG_PUSH([C++])
+ AC_COMPILE_IFELSE(
+ [AC_LANG_PROGRAM(
+  [[
+__thread int i;
+  ]],
+  [[
+return i;
+  ]])],
+ [ac_cv_cxx_gcctls=yes],
+ [ac_cv_cxx_gcctls=no])
+ AC_LANG_POP([C++])
+])
+if test "$ac_cv_cxx_gcctls" = yes; then
+  AC_DEFINE(HAVE_GCCTLS,1,[define if the compiler supports keyword __thread])
+fi
 ])
 
 
@@ -461,11 +499,18 @@ for flag in $acx_pthread_flags; do
         # pthread_cleanup_push because it is one of the few pthread
         # functions on Solaris that doesn't have a non-functional libc stub.
         # We try pthread_create on general principles.
-        AC_TRY_LINK([#include <pthread.h>],
-                    [pthread_t th; pthread_join(th, 0);
-                     pthread_attr_init(0); pthread_cleanup_push(0, 0);
-                     pthread_create(0,0,0,0); pthread_cleanup_pop(0); ],
-                    [acx_pthread_ok=yes])
+        AC_LINK_IFELSE(
+        [AC_LANG_PROGRAM(
+         [[
+#include <pthread.h>
+         ]],
+         [
+pthread_t th; pthread_join(th, 0);
+pthread_attr_init(0); pthread_cleanup_push(0, 0);
+pthread_create(0,0,0,0); pthread_cleanup_pop(0);
+         ])],
+         [acx_pthread_ok=yes],
+         [acx_pthread_ok=no])
         LIBS="$save_LIBS"
         CFLAGS="$save_CFLAGS"
         CXXFLAGS="$save_CXXFLAGS"
@@ -510,66 +555,6 @@ else
 fi
 ])
 
-
-dnl ------------------------------------------------------------------
-dnl @synopsis AC_PATH_THREADS([ACTION-IF-FOUND[, ACTION-IF-NOT-FOUND]])
-dnl Process optional option --enable-threads
-dnl Check availability of pthreads or cothreads using AC_PATH_PTHREAD
-dnl Set output variable THREADS_LIBS and THREADS_CFLAGS
-dnl ------------------------------------------------------------------
-
-AC_DEFUN([AC_PATH_THREADS], [
-AC_ARG_ENABLE(threads,
-            AC_HELP_STRING([--enable-threads],
-                           [select threading model (default is auto)]),
-            ac_use_threads=$enableval, ac_use_threads=auto)
-ac_threads=no
-if test x$ac_use_threads != xno ; then
-  if test x$ac_threads = xno ; then
-    case x$ac_use_threads in
-    x|xyes|xauto|xposix|xpthread)
-        AC_PATH_PTHREAD(
-                [ ac_threads=pthread
-                  ac_use_threads=pthread
-                  THREAD_LIBS="$PTHREAD_LIBS"
-                  THREAD_CFLAGS="$PTHREAD_CFLAGS -DTHREADMODEL=POSIXTHREADS"
-                ] )
-        ;;
-    esac
-  fi
-  if test x$ac_threads = xno ; then
-    case x$ac_use_threads in
-    x|xyes|xauto|xwin32|xwindows)
-	AC_TRY_LINK([#include <windows.h>],
-	        [CreateThread(NULL,4096,NULL,NULL,0,NULL);],
-	        [ ac_threads=win32
-                  ac_use_threads=win32
-                  THREAD_LIBS=""
-                  THREAD_CFLAGS="-DTHREADMODEL=WINTHREADS"
-                ] )
-        ;;
-    esac
-  fi
-fi
-AC_SUBST(THREAD_LIBS)
-AC_SUBST(THREAD_CFLAGS)
-AC_SUBST(PTHREAD_LIBS)
-AC_SUBST(PTHREAD_CFLAGS)
-AC_MSG_CHECKING([threading model])
-AC_MSG_RESULT($ac_threads)
-if test x$ac_threads = xwin32 ; then
-   AC_CHECK_CXX_OPT([-mthreads],
-	 [THREAD_CFLAGS="-mthreads $THREAD_CFLAGS"])
-fi
-if test $ac_threads != no ; then
-   AC_MSG_RESULT([setting THREAD_CFLAGS=$THREAD_CFLAGS])
-   AC_MSG_RESULT([setting THREAD_LIBS=$THREAD_LIBS])
-   ifelse([$1],,:,[$1])
-else
-   ifelse([$2],,:,[$2])
-fi
-])
-
 dnl ------------------------------------------------------------------
 dnl @synopsis AC_PATH_JPEG([ACTION-IF-FOUND[, ACTION-IF-NOT-FOUND]])
 dnl Process option --with-jpeg.
@@ -583,7 +568,7 @@ AC_DEFUN([AC_PATH_JPEG],
   AC_ARG_VAR(JPEG_CFLAGS)
   ac_jpeg=no
   AC_ARG_WITH(jpeg,
-     AC_HELP_STRING([--with-jpeg=DIR],
+     AS_HELP_STRING([--with-jpeg=DIR],
                     [where the IJG jpeg library is located]),
      [ac_jpeg=$withval], [ac_jpeg=yes] )
   # Process specification
@@ -602,17 +587,23 @@ AC_DEFUN([AC_PATH_JPEG],
      CFLAGS="$CFLAGS $JPEG_CFLAGS"
      CXXFLAGS="$CXXFLAGS $JPEG_CFLAGS"
      LIBS="$LIBS $JPEG_LIBS"
-     AC_TRY_LINK([
+     AC_LINK_IFELSE(
+     [AC_LANG_PROGRAM(
+      [[
 #ifdef __cplusplus
 extern "C" {
 #endif
-#include <stdio.h> 
+#include <stdio.h>
 #include <jpeglib.h>
 #ifdef __cplusplus
 }
-#endif ],[
-jpeg_CreateDecompress(0,0,0);],
-       [ac_jpeg=yes], [ac_jpeg=no] )
+#endif
+      ]],
+      [
+jpeg_CreateDecompress(0,0,0);
+      ])],
+      [ac_jpeg=yes],
+      [ac_jpeg=no])
      CFLAGS="$save_CFLAGS"
      CXXFLAGS="$save_CXXFLAGS"
      LIBS="$save_LIBS"
@@ -624,8 +615,8 @@ jpeg_CreateDecompress(0,0,0);],
       ifelse([$2],,:,[$2])
    else
       AC_DEFINE(HAVE_JPEG,1,[Define if you have the IJG JPEG library.])
-      AC_MSG_RESULT([setting JPEG_CFLAGS=$JPEG_CFLAGS])
-      AC_MSG_RESULT([setting JPEG_LIBS=$JPEG_LIBS])
+      dnl AC_MSG_RESULT([setting JPEG_CFLAGS=$JPEG_CFLAGS])
+      dnl AC_MSG_RESULT([setting JPEG_LIBS=$JPEG_LIBS])
       ifelse([$1],,:,[$1])
    fi
 ])
@@ -643,7 +634,7 @@ AC_DEFUN([AC_PATH_TIFF],
   AC_ARG_VAR(TIFF_CFLAGS)
   ac_tiff=no
   AC_ARG_WITH(tiff,
-     AC_HELP_STRING([--with-tiff=DIR],
+     AS_HELP_STRING([--with-tiff=DIR],
                     [where libtiff is located]),
      [ac_tiff=$withval], [ac_tiff=yes] )
   # Process specification
@@ -662,17 +653,23 @@ AC_DEFUN([AC_PATH_TIFF],
      CFLAGS="$CFLAGS $TIFF_CFLAGS"
      CXXFLAGS="$CXXFLAGS $TIFF_CFLAGS"
      LIBS="$LIBS $TIFF_LIBS"
-     AC_TRY_LINK([
+     AC_LINK_IFELSE(
+     [AC_LANG_PROGRAM(
+      [[
 #ifdef __cplusplus
 extern "C" {
 #endif
-#include <stdio.h> 
+#include <stdio.h>
 #include <tiffio.h>
 #ifdef __cplusplus
 }
-#endif ],[
-TIFFOpen(0,0);],
-       [ac_tiff=yes], [ac_tiff=no] )
+#endif
+      ]],
+      [
+TIFFOpen(0,0);
+      ])],
+      [ac_tiff=yes],
+      [ac_tiff=no])
      CFLAGS="$save_CFLAGS"
      CXXFLAGS="$save_CXXFLAGS"
      LIBS="$save_LIBS"
@@ -684,8 +681,8 @@ TIFFOpen(0,0);],
       ifelse([$2],,:,[$2])
    else
       AC_DEFINE(HAVE_TIFF,1,[Define if you have libtiff.])
-      AC_MSG_RESULT([setting TIFF_CFLAGS=$TIFF_CFLAGS])
-      AC_MSG_RESULT([setting TIFF_LIBS=$TIFF_LIBS])
+      dnl AC_MSG_RESULT([setting TIFF_CFLAGS=$TIFF_CFLAGS])
+      dnl AC_MSG_RESULT([setting TIFF_LIBS=$TIFF_LIBS])
       ifelse([$1],,:,[$1])
    fi
 ])

@@ -3,19 +3,21 @@ Section: libs
 Priority: optional
 Maintainer: Barak A. Pearlmutter <bap@debian.org>
 Uploaders: Leon Bottou <leonb@bottou.org>
-Build-Depends: dh-autoreconf,
-	       debhelper (>= 9),
+Build-Depends: pkg-config,
+	       debhelper-compat (= 13),
 	       libjpeg-dev,
-	       libtiff5-dev | libtiff4-dev | libtiff3g-dev | libtiff-dev,
+	       libtiff-dev,
 	       librsvg2-bin | imagemagick
-Vcs-Git: git://git.debian.org/git/collab-maint/djvulibre.git
-Vcs-Browser: http://git.debian.org/?p=collab-maint/djvulibre.git
+Vcs-Git: https://salsa.debian.org/debian/djvulibre.git
+Vcs-Browser: https://salsa.debian.org/debian/djvulibre
 Homepage: http://djvu.sourceforge.net/
-Standards-Version: 3.9.3
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
 
 Package: libdjvulibre-dev
 Section: libdevel
 Architecture: any
+Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends},
 	 libdjvulibre21 (= ${binary:Version}), libjpeg-dev
 Description: Development files for the DjVu image format
@@ -35,6 +37,7 @@ Description: Development files for the DjVu image format
 
 Package: libdjvulibre21
 Architecture: any
+Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}, libdjvulibre-text (>= ${source:Version})
 Conflicts: libdjvulibre1
@@ -44,18 +47,11 @@ Description: Runtime support for the DjVu image format
 
 Package: libdjvulibre-text
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Replaces: libdjvulibre15, djview3 (= 3.5.20-9), djvulibre-desktop (<< 3.5.20-9)
 Description: Linguistic support files for libdjvulibre
  Runtime linguistic support files for the libdjvulibre library.
-
-Package: djvulibre-dbg
-Section: debug
-Priority: extra
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libdjvulibre21 (= ${binary:Version})
-Description: Debug symbols for the DjVu image format
- DjVu runtime debug symbols.
 
 Package: djvulibre-desktop
 Architecture: all
@@ -68,21 +64,21 @@ Description: Desktop support for the DjVu image format
 
 Package: djview
 Section: graphics
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, djview4 | djview3
 Description: Transition package, djview3 to djview4
- Ease transition from djview3 to djview4 with this dummy package.
+ Ease transition from djview or djview3 to djview4 with this dummy package.
 
 Package: djview3
 Section: graphics
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, djview4
 Description: Transition package, djview3 to djview4
  Ease transition from djview3 to djview4 with this dummy package.
 
 Package: djvuserve
 Section: web
-Recommends: apache | httpd-cgi | httpd
+Recommends: apache2 | apache | httpd-cgi | httpd
 Conflicts: djvulibre-bin (<< 3.5.9-3)
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -94,6 +90,7 @@ Description: CGI program for unbundling DjVu files on the fly
 Package: djvulibre-bin
 Section: graphics
 Architecture: any
+Multi-Arch: foreign
 Depends: ${shlibs:Depends}, ${misc:Depends}, curl, libdjvulibre21 (= ${binary:Version})
 Recommends: pdf2djvu
 Suggests: djvulibre-desktop, djview4 | djvu-viewer | evince

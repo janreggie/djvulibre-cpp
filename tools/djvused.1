@@ -372,27 +372,27 @@ with option
 .BR -f .
 .TP
 .BI "print-meta"
-Print the meta-data part of the annotations for the selected component file.
+Print the metadata part of the annotations for the selected component file.
 This command displays a subset of the information printed by command
 .B print-ant
-using a different syntax.  Meta-data are organized as key\-value pairs.
+using a different syntax.  metadata are organized as key\-value pairs.
 Each printed line contains the key name such as
 .BR "author" ", " "title" ",etc.,"
 followed by a tab character ("\\t") and
 a double-quoted string representing the 
 .SM UTF-8
-encoded meta-data value.
+encoded metadata value.
 .TP
 .BI "remove-meta"
-Remove the meta-data part of the annotations of 
+Remove the metadata part of the annotations of 
 the selected component files.
 .TP
 .BI "set-meta [" "djvusedmetafile" "]"
-Set the meta-data part of the annotations of the selected component file.
+Set the metadata part of the annotations of the selected component file.
 The remaining part of the annotations is left unchanged.
 The optional argument
 .I djvusedmetafile
-names a file containing the meta-data.
+names a file containing the metadata.
 This file must contain data similar to what is produced
 by command
 .BR print-meta . 
@@ -542,7 +542,29 @@ Display the width and the height of the selected pages.  The
 dimensions of each page are displayed using a syntax suitable for
 direct insertion into the
 .SM <EMBED...></EMBED>
-tags.
+tags. This command also displays the default page orientation
+when it is different from zero.
+.TP
+.BI "set-rotation [+-]" "rot"
+Changes the default orientation of the selected pages.
+The orientation is expressed as an integer in range 0..3
+representing a number of 90 degree counter-clockwise rotations.
+When the argument is preceded by a sign
+.BR "+" " or " "-" ","
+argument
+.I rot
+counts how many additional 90 degree counter-clockwise rotations
+should be applied to the page. Otherwise, argument
+.I rot
+represents the desired absolute page orientation.
+Only DjVu pages can be rotated.
+Pages represented as a raw IW44 image cannot be rotated.
+.TP
+.BI "set-dpi " "dpi"
+Sets the resolution of the page image in dots per inche.
+Argument
+.I dpi
+should be in range 25..6000.
 .TP
 .BI "set-page-title " "title"
 Sets a page title for the selected page.
@@ -815,7 +837,9 @@ and parameter thickness is an integer in range 1 to 32.
 The last four border options are only supported for 
 .B rect
 hyperlink areas. 
-The default border is a simple black line.
+Although the border mode defaults to   
+.BR (xor) ,
+it is wise to always specify the border mode.
 Border options do not apply to 
 .B line 
 areas.
@@ -832,6 +856,10 @@ The following two options may be used with
 hyperlink areas.
 The complete area will be highlighted using the 
 specified color at the specified opacity (0-100, default 50).
+Some viewers (e.g.,
+.BR djview4 )
+support opacities in range 0-200 with 200
+representing a fully opaque color.
 .IP "" 3
 .BI "(hilite " color ")"
 .br
@@ -870,7 +898,7 @@ Clicking the icon reveals the text.
 .RE
 .TP
 .BI "(metadata ... (" key " " value ") ... )"
-Define meta-data entries.
+Define metadata entries.
 Each entry is identified by a symbol
 .I key
 representing the nature of the meta data entry.

@@ -67,8 +67,11 @@
 
 #include "libdjvu/ddjvuapi.h"
 
-#if defined(WIN32) || defined(__CYGWIN32__)
+#if defined(_WIN32) || defined(__CYGWIN32__)
 # include <io.h>
+#endif
+#if defined(_WIN32) && !defined(__CYGWIN32__)
+# include <mbctype.h>
 #endif
 
 /* Some day we'll redo i18n right. */
@@ -218,13 +221,16 @@ check_option(char *s)
 int
 main(int argc, char **argv)
 {
+
   int i;
   int optc = 0;
   char **optv;
   const char *infile = 0;
   const char *outfile = 0;
   FILE *fout;
-
+#if defined(_WIN32) && !defined(__CYGWIN32__)
+  _setmbcp(_MB_CP_OEM);
+#endif
   /* Sort options */
   if (! (optv = (char**)malloc(argc*sizeof(char*))))
     die(i18n("Out of memory"));
@@ -263,7 +269,7 @@ main(int argc, char **argv)
       fout = stdout;
 #if defined(__CYGWIN32__)
       setmode(fileno(fout), O_BINARY);
-#elif defined(WIN32)
+#elif defined(_WIN32)
       _setmode(_fileno(fout), _O_BINARY);
 #endif
     } 

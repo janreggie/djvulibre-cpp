@@ -104,10 +104,7 @@
 #include "DjVuFile.h"
 #include "GOS.h"
 #include "DjVuMessage.h"
-#include <locale.h>
-#include <stddef.h>
-#include <stdlib.h>
-
+#include "common.h"
 
 struct DejaVuInfo
 {
@@ -207,12 +204,11 @@ usage()
 int
 main(int argc, char **argv)
 {
-  setlocale(LC_ALL,"");
-  setlocale(LC_NUMERIC,"C");
-  djvu_programname(argv[0]);
+  DJVU_LOCALE;
   GArray<GUTF8String> dargv(0,argc-1);
   for(int i=0;i<argc;++i)
     dargv[i]=GNativeString(argv[i]);
+  int retcode = 0;
   G_TRY
     {
       int i;
@@ -222,7 +218,7 @@ main(int argc, char **argv)
       for(i=1;i<argc;i++)
 	 if (!dargv[i].cmp("-page=", 6))
            {
-              page_num = dargv[i].substr(6,dargv[i].length()).toInt() - 1; // atoi(6+(const char *)dargv[i]) - 1;
+	     page_num = dargv[i].substr(6,dargv[i].length()).toInt() - 1;
              for(int j=i;j<argc-1;j++) 
                dargv[j]=dargv[j+1];
              argc--;
@@ -258,6 +254,7 @@ main(int argc, char **argv)
           if (mbs.size() == 0)
             {
               DjVuPrintErrorUTF8("  %s --> not found!\n", (const char *)dargv[i]);
+	      retcode = 64;
             }
           else
             {
@@ -276,5 +273,5 @@ main(int argc, char **argv)
       exit(1);
     }
   G_ENDCATCH;
-  return 0;
+  return retcode;
 }

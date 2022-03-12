@@ -67,11 +67,7 @@
 #include "DjVuDocument.h"
 #include "ByteStream.h"
 #include "DjVuMessage.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <locale.h>
-#include <stddef.h>
-#include <stdlib.h>
+#include "common.h"
 
 static void 
 usage(char *argv0)
@@ -90,8 +86,7 @@ nofile(char *s)
 int 
 main(int argc,char *argv[],char *[])
 {
-  setlocale(LC_ALL,"");
-  djvu_programname(argv[0]);
+  DJVU_LOCALE;
   G_TRY
     {
       int i;
@@ -128,7 +123,7 @@ main(int argc,char *argv[],char *[])
     }
   G_ENDCATCH;
   exit(0);
-#ifdef WIN32
+#ifdef _WIN32
   return 0;
 #endif
 }

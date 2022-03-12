@@ -22,20 +22,34 @@
 # Initialization
 # ----------------------------------------
 
+m4_define([v_maj], [3])
+m4_define([v_min], [5])
+m4_define([v_mic], [28])
+m4_define([v_ver], [v_maj.v_min.v_mic])
+
+m4_define([lt_compat], [21])
+m4_define([lt_cur], [v_mic])
+m4_define([lt_rev], [0])
+m4_define([lt_age], [m4_eval(v_mic - lt_compat)])
+
 AC_PREREQ([2.65])
-AC_INIT([djvulibre],[3.5.25])
+AC_INIT([djvulibre],[v_ver])
+
 AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_MACRO_DIR(config)
 AC_CONFIG_SRCDIR(libdjvu/ddjvuapi.cpp)
 AC_CONFIG_HEADER(config.h:config/config.h.in)
-AC_PREFIX_DEFAULT(/usr/local)
 AC_CANONICAL_HOST
 
+AM_INIT_AUTOMAKE([1.6 subdir-objects dist-bzip2 dist-xz -Wall])
+m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+m4_ifdef([AM_PROG_AR], [AM_PROG_AR])
+
+LT_INIT([win32-dll disable-static])
+
 # Library version
-LIBDJVU_VER_COMPAT=21
-LIBDJVU_VER=`echo $PACKAGE_VERSION | sed -e 's/^3\.5\.//'`
-LIBDJVU_VER=$LIBDJVU_VER:0:`expr $LIBDJVU_VER - $LIBDJVU_VER_COMPAT`
-AC_SUBST(LIBDJVU_VER)
+version_info="lt_cur:lt_rev:lt_age"
+AC_SUBST([version_info])
 
 # Additional libraries
 AC_ARG_WITH(extra-includes,
@@ -63,26 +77,21 @@ if test -d $curwd/gnu/lib ; then
    LDFLAGS="$LDFLAGS -L$curwd/gnu/lib"
 fi
 
-# Extra flags to make dll
-DLLFLAGS=
-AC_SUBST(DLLFLAGS)
-
 # Special cases
-case "$host" in
-  *-mingw32)
-     DLLFLAGS="$DLLFLAGS -Wl,--export-all-symbols"
-     LIBS=-lmsvcp60
-  ;;
-  *-darwin* | *-macos10*)
-     if test -d /opt/local ; then
-       CPPFLAGS="$CPPFLAGS -I/opt/local/include"
-       LDFLAGS="$LDFLAGS -L/opt/local/lib"
-     elif test -d /sw ; then
-       CPPFLAGS="$CPPFLAGS -I/sw/include"
-       LDFLAGS="$LDFLAGS -L/sw/lib"
-     fi
-  ;;
-esac
+
+AC_CHECK_DECL([_WIN32],[have_os_win32=yes],[have_os_win32=no])
+AM_CONDITIONAL([HAVE_OS_WIN32], [test "x${have_os_win32}" = "xyes"])
+
+AC_CHECK_DECL([__APPLE__],[have_os_apple=yes],[have_os_apple=no])
+AM_CONDITIONAL([HAVE_OS_APPLE], [test "x${have_os_apple}" = "xyes"])
+
+if test x$have_os_apple = xyes && test -d /opt/local ; then
+    CPPFLAGS="$CPPFLAGS -I/opt/local/include"
+    LDFLAGS="$LDFLAGS -L/opt/local/lib"
+elif test x$have_os_apple = xyes && test -d /sw ; then
+    CPPFLAGS="$CPPFLAGS -I/sw/include"
+    LDFLAGS="$LDFLAGS -L/sw/lib"
+fi
 
 
 
@@ -94,30 +103,38 @@ esac
 AC_PROG_MAKE_SET
 
 # Programs
-AC_PROG_LN_S
-AC_PATH_PROG(AR, ar)
-AC_PATH_PROG(TOUCH, touch)
-AC_PATH_PROG(MKDIR, mkdir)
-AC_PATH_PROG(RSVG, rsvg-convert, false)
-AC_PATH_PROG(CONVERT, convert, false)
-AC_PATH_PROG(INKSCAPE, inkscape, false)
 AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MKDIR_P
+AC_PROG_SED
+AC_PATH_PROG([TOUCH], [touch])
+AC_PATH_PROG([RSVG], [rsvg-convert], [false])
+AC_PATH_PROG([INKSCAPE], [inkscape], [false])
+AC_PATH_PROG([CONVERT], [convert], [false])
+conversion_tool=no
+if test "x${RSVG}" != xfalse ; then
+  conversion_tool=rsvg
+elif test "x${INKSCAPE}" != xfalse ; then
+  conversion_tool=inkscape
+elif test "x${CONVERT}" != xfalse ; then
+  ( ${CONVERT} --version 2>&1 | grep -q ImageMagick ) && conversion_tool=convert
+fi
+AM_CONDITIONAL([HAVE_CONVERSION_RSVG], [test x${conversion_tool} = xrsvg])
+AM_CONDITIONAL([HAVE_CONVERSION_INKSCAPE], [test x${conversion_tool} = xinkscape])
+AM_CONDITIONAL([HAVE_CONVERSION_CONVERT], [test x${conversion_tool} = xconvert])
+AM_CONDITIONAL([HAVE_CONVERSION_TOOL], [test x${conversion_tool} != xno])
 
 # tweak rm to make libtool happy
 AC_PATH_PROG(RM, rm) 
 RM="$RM -f"
 
 # Libtool & Compilers
-AC_DISABLE_STATIC
-LT_INIT
 AC_PROG_CC
 AC_PROG_CXX
-AC_SUBST(LIBTOOL_DEPS)
-
+AC_OPTIMIZE
 
 # C++
 AC_LANG(C++)
-AC_CXX_OPTIMIZE
 AC_CXX_BOOL
 AC_CXX_EXCEPTIONS
 AC_CXX_TYPENAME
@@ -125,7 +142,7 @@ AC_CXX_STDINCLUDES
 AC_CXX_NAMESPACES
 AC_CXX_MEMBER_TEMPLATES
 AC_CXX_INTEL_ATOMIC_BUILTINS
-AC_CXX_RPO
+AC_CXX_GCCTLS
 
 # ----------------------------------------
 # Libraries
@@ -140,12 +157,13 @@ AC_CHECK_LIB(m,sqrt)
 # Header Files
 # ----------------------------------------
 
-AC_HEADER_STDC
 AC_HEADER_DIRENT
 AC_HEADER_TIME
 AC_HEADER_SYS_WAIT     
-AC_CHECK_HEADERS(wchar.h wctype.h sys/mman.h iconv.h)
+AC_CHECK_HEADERS(wchar.h wctype.h sys/mman.h iconv.h getopt.h)
+AC_CHECK_HEADERS(langinfo.h sched.h new.h)
 AC_CHECK_HEADERS(stdint.h inttypes.h sys/ipc.h sys/shm.h)
+AC_CHECK_HEADERS(cpuid.h)
 
 # ----------------------------------------
 # Types
@@ -167,16 +185,18 @@ AC_SYS_LARGEFILE
 AC_FUNC_MMAP
 AC_FUNC_FORK
 AC_FUNC_FSEEKO
-AC_CHECK_FUNCS(wcrtomb iswspace setenv)
+AC_CHECK_FUNCS(wcrtomb iswspace setenv nl_langinfo)
 AC_CHECK_FUNCS(putc_unlocked strerror vsnprintf)
 AC_CHECK_FUNCS(gethostname strftime getpwuid)
-AC_CHECK_FUNCS(sigaction mkstemp)
+AC_CHECK_FUNCS(sigaction mkstemp sched_yield)
 
 # iconv function might be defined as libiconv in iconv.h
 AC_MSG_CHECKING([for iconv])
 ac_has_iconv=no
 AC_LANG_PUSH(C)
-AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include "iconv.h"]], [[iconv((iconv_t)0, (char**)0, (size_t*)0, (char**)0, (size_t*)0);]])],[ac_has_iconv=yes],[])
+AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include "iconv.h"]], 
+  [[iconv((iconv_t)0, (char**)0, (size_t*)0, (char**)0, (size_t*)0);]])],
+  [ac_has_iconv=yes],[])
 AC_MSG_RESULT($ac_has_iconv)
 AC_LANG_POP(C)
 if test x$ac_has_iconv = xyes ; then
@@ -189,108 +209,95 @@ fi
 # Test auxilliary packages
 # ----------------------------------------
 
+# Search for PTHREADS (when not on windows)
+have_pthread=no
+AM_COND_IF([HAVE_OS_WIN32],,[AC_PATH_PTHREAD([have_pthread=yes])])
+
 # Search JPEG library
-AC_PATH_JPEG(,
-[ no_jpeg=yes
-  AC_MSG_WARN([JPEG support is disabled]) ])
+AC_PATH_JPEG([have_jpeg="yes"], [have_jpeg="no"])
+AC_MSG_CHECKING([for libjpeg])
+AC_MSG_RESULT([${have_jpeg}])
 
 # Search TIFF library
-AC_PATH_TIFF(,
-[ no_tiff=yes
-  AC_MSG_WARN([Tiff support is disabled]) ])
+AC_PATH_TIFF([have_tiff="yes"], [have_tiff="no"])
+AC_MSG_CHECKING([for libtiff])
+AC_MSG_RESULT([${have_tiff}])
 
-# Search MULTITHREADING library
-AC_PATH_THREADS(,
-[ no_threads=yes
-  AC_MSG_WARN([Thread support is disabled]) ])
 
 # ----------------------------------------
 # What to compile
 # ----------------------------------------
 
 # Check compilation of xmltools
-ac_enable_xmltools=yes
-AC_ARG_ENABLE(xmltools,
-   AS_HELP_STRING([--disable-xmltools],[Do not compile the djvu xml tools.]),
-   [ac_enable_xmltools=$enableval])
-if test x$ac_enable_xmltools != xno ; then
-   XML_YES=''
-   XML_NO='#'
-else
-   XML_YES='#'
-   XML_NO=''
-fi
-AC_SUBST(XML_YES)
-AC_SUBST(XML_NO)
+want_xmltools="yes"
+AC_ARG_ENABLE([xmltools],
+   [AS_HELP_STRING([--disable-xmltools],
+           [Disable djvu xml tools. @<:@default=enabled@:>@])],
+   [want_xmltools=${enableval}])
+
+AM_CONDITIONAL([WANT_XMLTOOLS], [test "x${want_xmltools}" = "xyes"])
 
 # ----------------------------------------
 # Desktop files
 # ----------------------------------------
 
-ac_desktopfiles=yes
+ac_desktopfiles="yes"
 AC_ARG_ENABLE(desktopfiles,
-    AS_HELP_STRING([--disable-desktopfiles],[Do not install scripts to register icons and menus.]),
+    AS_HELP_STRING([--disable-desktopfiles], 
+        [Do not install icons and mime types. @<:@default=enabled@:>@]),
     [ac_desktopfiles=$enableval])
 
-# Check for xdg tools
-AC_PATH_PROG(XDG_MIME, xdg-mime)
-AC_PATH_PROG(XDG_ICON_RESOURCE, xdg-icon-resource)
-AC_PATH_PROG(XDG_DESKTOP_MENU, xdg-desktop-menu)
-if test -x ${XDG_MIME} && \
-   test -x ${XDG_ICON_RESOURCE} && \
-   test -x ${XDG_DESKTOP_MENU}
-then 
-  true
-elif test "$ac_desktopfiles" != no ; then
-  ac_desktopfiles=no
-  AC_MSG_WARN([Cannot find the Xdg Portland tools.
---------------------------------------------------------
-*** The scripts to register icons and menus 
-*** ${datadir}/djvu/osi/desktop/register-djvu-mimetype, and
-*** ${datadir}/djvu/djview3/desktop/register-djview3-menu
-*** will not be installed.
---------------------------------------------------------])
-fi
-
-if test ${ac_desktopfiles} != no ; then
-  DESKTOP_YES=''
-  DESKTOP_NO='#'
-else
-  DESKTOP_YES='#'
-  DESKTOP_NO=''
-fi
-AC_SUBST(DESKTOP_YES)
-AC_SUBST(DESKTOP_NO)
+AM_CONDITIONAL([WANT_DESKTOPFILES], [test "x${ac_desktopfiles}" = "xyes"])
 
 # ----------------------------------------
 # End
 # ----------------------------------------
 
+# Define installation path for .pc files
+PKG_INSTALLDIR
+
 # Define installation paths and version string
-AC_DEFINE_INSTALL_PATHS
 AC_DEFINE_UNQUOTED(DJVULIBRE_VERSION,["${PACKAGE_VERSION}"],[version string])
 
 # Output files
-AC_CONFIG_FILES(Makefile)
-AC_CONFIG_FILES(libdjvu/Makefile)
-AC_CONFIG_FILES(libdjvu/ddjvuapi.pc)
-AC_CONFIG_FILES(tools/Makefile)
-AC_CONFIG_FILES(tools/jb2cmp/Makefile)
-AC_CONFIG_FILES(xmltools/Makefile)
-AC_CONFIG_FILES(desktopfiles/Makefile)
+AC_CONFIG_FILES([
+Makefile
+libdjvu/Makefile
+tools/Makefile
+xmltools/Makefile
+share/Makefile
+desktopfiles/Makefile
+])
 
 # Go
 AC_OUTPUT
 
 # Final message
-echo ""
-echo "Configuration is done."
-echo "Compile with command:"
-test x$GXX = xyes && \
-echo "    $ make depend     (optional!)"
-echo "    $ make"
-echo "Then install the binaries in $prefix with command:"
-echo "    # make install"
+
+echo
+echo "$PACKAGE $VERSION"
+echo
+echo "Configuration Options Summary:"
+echo
+echo "  OS.................: ${host_os}"
+echo "  Win32 support......: ${have_os_win32}"
+echo "  Pthread support....: ${have_pthread}"
+echo "  Iconv support......: ${ac_has_iconv}"
+echo "  JPEG support.......: ${have_jpeg}"
+echo "  TIFF support.......: ${have_tiff}"
+echo "  XML tools..........: ${want_xmltools}"
+echo "  Desktop files......: ${ac_desktopfiles}"
+echo "  Icon generation....: ${conversion_tool}"
+echo
+echo "Compilation..........: make (or gmake)"
+echo "  CPPFLAGS...........: $CPPFLAGS"
+echo "  CFLAGS.............: $CFLAGS"
+echo "  CXXFLAGS...........: $CXXFLAGS"
+echo "  LDFLAGS............: $LDFLAGS"
+echo
+echo "Installation...........: make install (as root if needed, with 'su' or 'sudo')"
+echo "  prefix...............: $prefix"
+echo
 
 # ----------------------------------------
 # Stuff added to config.h
@@ -308,7 +315,7 @@ AH_BOTTOM([
 
 /* - Miscellaneous */
 #define AUTOCONF 1
-#if defined(__CYGWIN32__) || !defined(WIN32)
+#if defined(__CYGWIN32__) || !defined(_WIN32)
 # define UNIX 1
 #endif
 
@@ -365,7 +372,3 @@ AH_BOTTOM([
 /* config.h: end */
 #endif
 ])
-
-
-
-
