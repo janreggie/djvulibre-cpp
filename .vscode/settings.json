@@ -11,7 +11,14 @@
     "ostream": "cpp",
     "unordered_map": "cpp",
     "numeric": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "vector": "cpp",
+    "string_view": "cpp",
+    "system_error": "cpp",
+    "atomic": "cpp",
+    "limits": "cpp"
   },
   "makefile.makefilePath": "./Makefile",
 }
