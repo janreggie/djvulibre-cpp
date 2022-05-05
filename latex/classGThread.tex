@@ -1,0 +1,88 @@
+\hypertarget{classGThread}{}\doxysection{G\+Thread Class Reference}
+\label{classGThread}\index{GThread@{GThread}}
+
+
+{\ttfamily \#include $<$G\+Threads.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGThread_a2f19088fb6bc3ec139876e63b95d9a03}{G\+Thread}} (int stacksize=-\/1)
+\item 
+\mbox{\hyperlink{classGThread_a4f73dbddd6d00a2c12b8a6b8a4e8ae25}{$\sim$\+G\+Thread}} ()
+\item 
+int \mbox{\hyperlink{classGThread_a6fbfcb03fe19741152e9a3d3a55490cb}{create}} (void($\ast$entry)(void $\ast$), void $\ast$arg)
+\item 
+void \mbox{\hyperlink{classGThread_a92dc830b2947d6ce82f26c17f8e10f63}{terminate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classGThread_afaab53579229a1731ed6bc3eb95481d0}{yield}} ()
+\item 
+static void $\ast$ \mbox{\hyperlink{classGThread_a385c1de73ef8914871224ac8830f373b}{current}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGThread_a86f92674685ca8b81bca2f617e02c073}\label{classGThread_a86f92674685ca8b81bca2f617e02c073}} 
+void($\ast$ {\bfseries xentry} )(void $\ast$)
+\item 
+\mbox{\Hypertarget{classGThread_a70dd851aafcde3c47965a60ef5819c18}\label{classGThread_a70dd851aafcde3c47965a60ef5819c18}} 
+void $\ast$ {\bfseries xarg}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Thread class. A multithreaded process is composed of a main execution thread and of several secondary threads. Each secondary thread is represented by a \mbox{\hyperlink{classGThread}{G\+Thread}}\# object. The amount of memory required for the stack of a secondary thread is defined when the \mbox{\hyperlink{classGThread}{G\+Thread}}\# object is constructed. The execution thread is started when function \textbackslash{}\+Ref\{\mbox{\hyperlink{classGThread_a6fbfcb03fe19741152e9a3d3a55490cb}{G\+Thread\+::create}}\} is called. The destructor of class \mbox{\hyperlink{classGThread}{G\+Thread}} waits until the thread terminanes. Note that the execution can be terminated at any time (with possible prejudice) by calling \textbackslash{}\+Ref\{\mbox{\hyperlink{classGThread_a92dc830b2947d6ce82f26c17f8e10f63}{G\+Thread\+::terminate}}\}.
+
+Several static member functions control the thread scheduler. Function \textbackslash{}\+Ref\{\mbox{\hyperlink{classGThread_afaab53579229a1731ed6bc3eb95481d0}{G\+Thread\+::yield}}\} relinquishes the processor to another thread. Function \textbackslash{}\+Ref\{G\+Thread\+::select\} (\#\+C\+O\+T\+H\+R\+E\+A\+DS\# only) provides a thread-\/aware replacement for the well-\/known unix system call \#select\#. ~\newline
+
+
+\{\textbackslash{}bf Note\} --- Both the copy constructor and the copy operator are declared as private members. It is therefore not possible to make multiple copies of instances of this class, as implied by the class semantic. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGThread_a2f19088fb6bc3ec139876e63b95d9a03}\label{classGThread_a2f19088fb6bc3ec139876e63b95d9a03}} 
+\index{GThread@{GThread}!GThread@{GThread}}
+\index{GThread@{GThread}!GThread@{GThread}}
+\doxysubsubsection{\texorpdfstring{GThread()}{GThread()}}
+{\footnotesize\ttfamily G\+Thread\+::\+G\+Thread (\begin{DoxyParamCaption}\item[{int}]{stacksize = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Constructs a new thread object. Memory is allocated for the thread, but the thread is not started. Argument \#stacksize\# is used by the \#\+C\+O\+T\+H\+R\+E\+A\+DS\# model only for specifying the amount of memory needed for the processor stack. A negative value will be replaced by a suitable default value of 128Kb. A minimum value of 32Kb is silently enforced. \mbox{\Hypertarget{classGThread_a4f73dbddd6d00a2c12b8a6b8a4e8ae25}\label{classGThread_a4f73dbddd6d00a2c12b8a6b8a4e8ae25}} 
+\index{GThread@{GThread}!````~GThread@{$\sim$GThread}}
+\index{````~GThread@{$\sim$GThread}!GThread@{GThread}}
+\doxysubsubsection{\texorpdfstring{$\sim$GThread()}{~GThread()}}
+{\footnotesize\ttfamily G\+Thread\+::$\sim$\+G\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. Destroying the thread object while the thread is running is perfectly ok since it only destroys the thread identifier. Execution will continue without interference. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGThread_a6fbfcb03fe19741152e9a3d3a55490cb}\label{classGThread_a6fbfcb03fe19741152e9a3d3a55490cb}} 
+\index{GThread@{GThread}!create@{create}}
+\index{create@{create}!GThread@{GThread}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily int G\+Thread\+::create (\begin{DoxyParamCaption}\item[{void($\ast$)(void $\ast$)}]{entry,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Starts the thread. The new thread executes function \#entry\# with argument \#arg\#. The thread terminates when the function returns. A thread cannot be restarted after its termination. You must create a new \mbox{\hyperlink{classGThread}{G\+Thread}}\# object. \mbox{\Hypertarget{classGThread_a385c1de73ef8914871224ac8830f373b}\label{classGThread_a385c1de73ef8914871224ac8830f373b}} 
+\index{GThread@{GThread}!current@{current}}
+\index{current@{current}!GThread@{GThread}}
+\doxysubsubsection{\texorpdfstring{current()}{current()}}
+{\footnotesize\ttfamily static void$\ast$ G\+Thread\+::current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a value which uniquely identifies the current thread. \mbox{\Hypertarget{classGThread_a92dc830b2947d6ce82f26c17f8e10f63}\label{classGThread_a92dc830b2947d6ce82f26c17f8e10f63}} 
+\index{GThread@{GThread}!terminate@{terminate}}
+\index{terminate@{terminate}!GThread@{GThread}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily void G\+Thread\+::terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Terminates a thread with extreme prejudice. The thread is removed from the scheduling list. Execution terminates regardless of the execution status of the thread function. Automatic variables may or may not be destroyed. This function must be considered as a last resort since memory may be lost. \mbox{\Hypertarget{classGThread_afaab53579229a1731ed6bc3eb95481d0}\label{classGThread_afaab53579229a1731ed6bc3eb95481d0}} 
+\index{GThread@{GThread}!yield@{yield}}
+\index{yield@{yield}!GThread@{GThread}}
+\doxysubsubsection{\texorpdfstring{yield()}{yield()}}
+{\footnotesize\ttfamily static int G\+Thread\+::yield (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Causes the current thread to relinquish the processor. The scheduler selects a thread ready to run and transfers control to that thread. The actual effect of \mbox{\hyperlink{classGThread_afaab53579229a1731ed6bc3eb95481d0}{yield}}\# heavily depends on the selected implementation. Function \mbox{\hyperlink{classGThread_afaab53579229a1731ed6bc3eb95481d0}{yield}}\# usually returns zero when the execution of the current thread is resumed. It may return a positive number when it can determine that the current thread will remain the only runnable thread for some time. You may then call function \textbackslash{}\+Ref\{get\+\_\+select\} to obtain more information. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Threads.\+h\end{DoxyCompactItemize}

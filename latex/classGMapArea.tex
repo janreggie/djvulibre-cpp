@@ -1,0 +1,316 @@
+\hypertarget{classGMapArea}{}\doxysection{G\+Map\+Area Class Reference}
+\label{classGMapArea}\index{GMapArea@{GMapArea}}
+
+
+{\ttfamily \#include $<$G\+Map\+Areas.\+h$>$}
+
+
+
+Inheritance diagram for G\+Map\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classGMapArea__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Map\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classGMapArea__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapArea_a53c03c7e15115790df892a88efa89bdf}\label{classGMapArea_a53c03c7e15115790df892a88efa89bdf}} 
+enum {\bfseries Border\+Type} \{ \newline
+{\bfseries N\+O\+\_\+\+B\+O\+R\+D\+ER} =0, 
+{\bfseries X\+O\+R\+\_\+\+B\+O\+R\+D\+ER} =1, 
+{\bfseries S\+O\+L\+I\+D\+\_\+\+B\+O\+R\+D\+ER} =2, 
+{\bfseries S\+H\+A\+D\+O\+W\+\_\+\+I\+N\+\_\+\+B\+O\+R\+D\+ER} =3, 
+\newline
+{\bfseries S\+H\+A\+D\+O\+W\+\_\+\+O\+U\+T\+\_\+\+B\+O\+R\+D\+ER} =4, 
+{\bfseries S\+H\+A\+D\+O\+W\+\_\+\+E\+I\+N\+\_\+\+B\+O\+R\+D\+ER} =5, 
+{\bfseries S\+H\+A\+D\+O\+W\+\_\+\+E\+O\+U\+T\+\_\+\+B\+O\+R\+D\+ER} =6
+ \}
+\item 
+\mbox{\Hypertarget{classGMapArea_a13019598222dc2c922fe66996d790732}\label{classGMapArea_a13019598222dc2c922fe66996d790732}} 
+enum {\bfseries Special\+\_\+\+Hilite\+\_\+\+Color} \{ {\bfseries N\+O\+\_\+\+H\+I\+L\+I\+TE} =0x\+F\+F\+F\+F\+F\+F\+FF, 
+{\bfseries X\+O\+R\+\_\+\+H\+I\+L\+I\+TE} =0x\+F\+F000000
+ \}
+\item 
+\mbox{\Hypertarget{classGMapArea_a724a567ba7a0a7086fef42a2e463fcb3}\label{classGMapArea_a724a567ba7a0a7086fef42a2e463fcb3}} 
+enum {\bfseries Map\+Area\+Type} \{ {\bfseries U\+N\+K\+N\+O\+WN}, 
+{\bfseries R\+E\+CT}, 
+{\bfseries O\+V\+AL}, 
+{\bfseries P\+O\+LY}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapArea_af12c96ae792c947d68ba5990ff2bbbc3}\label{classGMapArea_af12c96ae792c947d68ba5990ff2bbbc3}} 
+virtual \mbox{\hyperlink{classGMapArea_af12c96ae792c947d68ba5990ff2bbbc3}{$\sim$\+G\+Map\+Area}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapArea_a7f2a7620f651fcf4ac759c080dffc0cf}\label{classGMapArea_a7f2a7620f651fcf4ac759c080dffc0cf}} 
+bool \mbox{\hyperlink{classGMapArea_a7f2a7620f651fcf4ac759c080dffc0cf}{is\+\_\+point\+\_\+inside}} (int x, int y) const
+\begin{DoxyCompactList}\small\item\em Returns 1 if the given point is inside the hyperlink area. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapArea_a8c314fa7f4e9fe98763c1351a5b27e85}\label{classGMapArea_a8c314fa7f4e9fe98763c1351a5b27e85}} 
+int \mbox{\hyperlink{classGMapArea_a8c314fa7f4e9fe98763c1351a5b27e85}{get\+\_\+xmin}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns xmin of the bounding rectangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapArea_a466ff5301cfaf1dd6bb1dca1d244f18f}\label{classGMapArea_a466ff5301cfaf1dd6bb1dca1d244f18f}} 
+int \mbox{\hyperlink{classGMapArea_a466ff5301cfaf1dd6bb1dca1d244f18f}{get\+\_\+ymin}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns ymin of the bounding rectangle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGMapArea_a16fbd9fd2c6103c12d047d886b1410d7}{get\+\_\+xmax}} (void) const
+\item 
+int \mbox{\hyperlink{classGMapArea_a1ed426f072818a8b8fd4341caa05a646}{get\+\_\+ymax}} (void) const
+\item 
+\mbox{\Hypertarget{classGMapArea_a6c32b40e30d39f7df0039b406365575c}\label{classGMapArea_a6c32b40e30d39f7df0039b406365575c}} 
+\mbox{\hyperlink{classGRect}{G\+Rect}} \mbox{\hyperlink{classGMapArea_a6c32b40e30d39f7df0039b406365575c}{get\+\_\+bound\+\_\+rect}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the hyperlink bounding rectangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGMapArea_a68cc9037dd785739cd0a295a6d204cd9}{move}} (int dx, int dy)
+\item 
+void \mbox{\hyperlink{classGMapArea_a1a02c773e0fb117a4e88ea1caa420c74}{resize}} (int new\+\_\+width, int new\+\_\+height)
+\item 
+void \mbox{\hyperlink{classGMapArea_ad2ace4dd4a23d71c70632494c5c24d16}{transform}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&grect)
+\item 
+const char $\ast$const \mbox{\hyperlink{classGMapArea_a657bc071f526b0d3ce76b04b567236cb}{check\+\_\+object}} (void)
+\item 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classGMapArea_abcfdca2232fa2b28bb705a917a652a76}{print}} (void)
+\item 
+\mbox{\Hypertarget{classGMapArea_a0871efa1348c945450f4dd57a3a1a3c5}\label{classGMapArea_a0871efa1348c945450f4dd57a3a1a3c5}} 
+virtual \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} {\bfseries get\+\_\+xmltag} (const int height) const =0
+\item 
+\mbox{\Hypertarget{classGMapArea_aa24b271a17fc447de5cbfb4be126d51a}\label{classGMapArea_aa24b271a17fc447de5cbfb4be126d51a}} 
+virtual const Map\+Area\+Type \mbox{\hyperlink{classGMapArea_aa24b271a17fc447de5cbfb4be126d51a}{get\+\_\+shape\+\_\+type}} (void) const
+\begin{DoxyCompactList}\small\item\em Virtual function returning the shape type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapArea_a566023fceba3d7fe5a434c98d9698c7b}\label{classGMapArea_a566023fceba3d7fe5a434c98d9698c7b}} 
+virtual const char $\ast$const \mbox{\hyperlink{classGMapArea_a566023fceba3d7fe5a434c98d9698c7b}{get\+\_\+shape\+\_\+name}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Virtual function returning the shape name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapArea_a35405ac0071531cb2da8cf602b426b37}\label{classGMapArea_a35405ac0071531cb2da8cf602b426b37}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGMapArea}{G\+Map\+Area}} $>$ \mbox{\hyperlink{classGMapArea_a35405ac0071531cb2da8cf602b426b37}{get\+\_\+copy}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Virtual function generating a copy of this object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGMapArea_a82b3dcdd981d1d62df3cc6c66f92c9ce}{get\+\_\+coords}} (\mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&Coord\+List) const
+\item 
+\mbox{\Hypertarget{classGMapArea_ad74eb71d247e8aed748bb2c4a138ff3d}\label{classGMapArea_ad74eb71d247e8aed748bb2c4a138ff3d}} 
+virtual void \mbox{\hyperlink{classGMapArea_ad74eb71d247e8aed748bb2c4a138ff3d}{map}} (\mbox{\hyperlink{classGRectMapper}{G\+Rect\+Mapper}} \&mapper)=0
+\begin{DoxyCompactList}\small\item\em Virtual function maps maparea from one area to another using mapper. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapArea_a6749413bb1c6885ff6b159933f093a64}\label{classGMapArea_a6749413bb1c6885ff6b159933f093a64}} 
+virtual void \mbox{\hyperlink{classGMapArea_a6749413bb1c6885ff6b159933f093a64}{unmap}} (\mbox{\hyperlink{classGRectMapper}{G\+Rect\+Mapper}} \&mapper)=0
+\begin{DoxyCompactList}\small\item\em Virtual function unmaps maparea from one area to another using mapper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classGMapArea_ad0a56b6bd099852cb444fc705fa91864}{url}}
+\item 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classGMapArea_aea992b37a3d1fdb8665c5c5c129be4e9}{target}}
+\item 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classGMapArea_aad3364122ef1e274838abbb72d91af25}{comment}}
+\item 
+Border\+Type \mbox{\hyperlink{classGMapArea_a2b12ed98955212d4a8c9abf062216569}{border\+\_\+type}}
+\item 
+bool \mbox{\hyperlink{classGMapArea_a8a04dc5f33b9dde72745ed2e54156785}{border\+\_\+always\+\_\+visible}}
+\item 
+\mbox{\Hypertarget{classGMapArea_aed297d702f1082df48257f44d7887eaa}\label{classGMapArea_aed297d702f1082df48257f44d7887eaa}} 
+unsigned long int \mbox{\hyperlink{classGMapArea_aed297d702f1082df48257f44d7887eaa}{border\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em Border color (when relevant) in \#0x00\+R\+R\+G\+G\+BB\# format. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapArea_a473b46580d92ea34a14d79b8108dae3a}\label{classGMapArea_a473b46580d92ea34a14d79b8108dae3a}} 
+int \mbox{\hyperlink{classGMapArea_a473b46580d92ea34a14d79b8108dae3a}{border\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Border width in pixels. \end{DoxyCompactList}\item 
+unsigned long int \mbox{\hyperlink{classGMapArea_a942830557d3657db78c936978e4e587c}{hilite\+\_\+color}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapArea_a50be95213cec4659bd6b4204dae61098}\label{classGMapArea_a50be95213cec4659bd6b4204dae61098}} 
+static const char {\bfseries M\+A\+P\+A\+R\+E\+A\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}maparea\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_a15933aa9833567b3e63bacb96b4b90a4}\label{classGMapArea_a15933aa9833567b3e63bacb96b4b90a4}} 
+static const char {\bfseries R\+E\+C\+T\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}rect\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_a37006baa170aa21df192d88d1acdb758}\label{classGMapArea_a37006baa170aa21df192d88d1acdb758}} 
+static const char {\bfseries P\+O\+L\+Y\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}poly\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_a19ca83d408e18af6e6bdd4ac594858af}\label{classGMapArea_a19ca83d408e18af6e6bdd4ac594858af}} 
+static const char {\bfseries O\+V\+A\+L\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}oval\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_a34b9f801ff81e2636b2ac75db7d52301}\label{classGMapArea_a34b9f801ff81e2636b2ac75db7d52301}} 
+static const char {\bfseries N\+O\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}none\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_aff7e633d0d53a2ecdd016883c634b0a3}\label{classGMapArea_aff7e633d0d53a2ecdd016883c634b0a3}} 
+static const char {\bfseries X\+O\+R\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}xor\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_abf176952629ec9b1fa99f22c003501ee}\label{classGMapArea_abf176952629ec9b1fa99f22c003501ee}} 
+static const char {\bfseries S\+O\+L\+I\+D\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}border\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_abf1661d68253bfac89606f05086f0ed7}\label{classGMapArea_abf1661d68253bfac89606f05086f0ed7}} 
+static const char {\bfseries S\+H\+A\+D\+O\+W\+\_\+\+I\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}shadow\+\_\+in\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_aecd7851216684683bbd379543680bc1f}\label{classGMapArea_aecd7851216684683bbd379543680bc1f}} 
+static const char {\bfseries S\+H\+A\+D\+O\+W\+\_\+\+O\+U\+T\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}shadow\+\_\+out\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_a199fce7a882196c6fda5146e9455f74e}\label{classGMapArea_a199fce7a882196c6fda5146e9455f74e}} 
+static const char {\bfseries S\+H\+A\+D\+O\+W\+\_\+\+E\+I\+N\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}shadow\+\_\+ein\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_aa0d567b0a269e3aebd48e02272d6df96}\label{classGMapArea_aa0d567b0a269e3aebd48e02272d6df96}} 
+static const char {\bfseries S\+H\+A\+D\+O\+W\+\_\+\+E\+O\+U\+T\+\_\+\+B\+O\+R\+D\+E\+R\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}shadow\+\_\+eout\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_a05e51c2b601ffe9bce1c81067c089057}\label{classGMapArea_a05e51c2b601ffe9bce1c81067c089057}} 
+static const char {\bfseries B\+O\+R\+D\+E\+R\+\_\+\+A\+V\+I\+S\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}border\+\_\+avis\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_a14aec2d1ddbbf1eb995ea0efb3c9e96c}\label{classGMapArea_a14aec2d1ddbbf1eb995ea0efb3c9e96c}} 
+static const char {\bfseries H\+I\+L\+I\+T\+E\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}hilite\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_a970d5abb0c2cd949f87c04ac9b295fe6}\label{classGMapArea_a970d5abb0c2cd949f87c04ac9b295fe6}} 
+static const char {\bfseries U\+R\+L\+\_\+\+T\+AG} \mbox{[}$\,$\mbox{]} = \char`\"{}url\char`\"{}
+\item 
+\mbox{\Hypertarget{classGMapArea_a9d930dd85eb5d7fda4d328d29c92451a}\label{classGMapArea_a9d930dd85eb5d7fda4d328d29c92451a}} 
+static const char {\bfseries T\+A\+R\+G\+E\+T\+\_\+\+S\+E\+LF} \mbox{[}$\,$\mbox{]} = \char`\"{}\+\_\+self\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapArea_af0922f4255e38167b12f1e21fdd6933d}\label{classGMapArea_af0922f4255e38167b12f1e21fdd6933d}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+xmin} (void) const =0
+\item 
+\mbox{\Hypertarget{classGMapArea_affc7d18921b63df534473b7cade35449}\label{classGMapArea_affc7d18921b63df534473b7cade35449}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+ymin} (void) const =0
+\item 
+\mbox{\Hypertarget{classGMapArea_a4af9f02b169de418798bd7c34254dd07}\label{classGMapArea_a4af9f02b169de418798bd7c34254dd07}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+xmax} (void) const =0
+\item 
+\mbox{\Hypertarget{classGMapArea_aa13ca3c2a1637988a21fd0c68d21477e}\label{classGMapArea_aa13ca3c2a1637988a21fd0c68d21477e}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+ymax} (void) const =0
+\item 
+\mbox{\Hypertarget{classGMapArea_a2f4d707def0a79879b1a7e3ba1afc0ae}\label{classGMapArea_a2f4d707def0a79879b1a7e3ba1afc0ae}} 
+virtual void {\bfseries gma\+\_\+move} (int dx, int dy)=0
+\item 
+\mbox{\Hypertarget{classGMapArea_a2d9c1c22a27f69270d1f1f4414f5e74a}\label{classGMapArea_a2d9c1c22a27f69270d1f1f4414f5e74a}} 
+virtual void {\bfseries gma\+\_\+resize} (int new\+\_\+width, int new\+\_\+height)=0
+\item 
+\mbox{\Hypertarget{classGMapArea_a43c1ecfef6dffdcd4400ef4ec7557a39}\label{classGMapArea_a43c1ecfef6dffdcd4400ef4ec7557a39}} 
+virtual void {\bfseries gma\+\_\+transform} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&grect)=0
+\item 
+\mbox{\Hypertarget{classGMapArea_aed6e60053aa106eb60e4ad486a666bea}\label{classGMapArea_aed6e60053aa106eb60e4ad486a666bea}} 
+virtual bool {\bfseries gma\+\_\+is\+\_\+point\+\_\+inside} (const int x, const int y) const =0
+\item 
+\mbox{\Hypertarget{classGMapArea_ae804018c0ea9aa270fff0048e23e6d7f}\label{classGMapArea_ae804018c0ea9aa270fff0048e23e6d7f}} 
+virtual const char $\ast$const {\bfseries gma\+\_\+check\+\_\+object} (void) const =0
+\item 
+\mbox{\Hypertarget{classGMapArea_aebf0f651b55bab044db4ee28b501e2c7}\label{classGMapArea_aebf0f651b55bab044db4ee28b501e2c7}} 
+virtual \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} {\bfseries gma\+\_\+print} (void)=0
+\item 
+\mbox{\Hypertarget{classGMapArea_a73146d4d42ed65b6f9d137d2cea771ac}\label{classGMapArea_a73146d4d42ed65b6f9d137d2cea771ac}} 
+void {\bfseries clear\+\_\+bounds} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This is the base object for all map areas. It defines some standard interface to access the geometrical properties of the areas and describes the area itsef\+: \textbackslash{}begin\{itemize\} \textbackslash{}item \mbox{\hyperlink{classGMapArea_ad0a56b6bd099852cb444fc705fa91864}{url}}\# If the optional \#\+U\+RL\# is specified, the map area will also work as a hyperlink meaning that if you click it with your mouse pointer, the browser will be advised to load the page referenced by the \#\+U\+RL\#. \textbackslash{}item \mbox{\hyperlink{classGMapArea_aea992b37a3d1fdb8665c5c5c129be4e9}{target}}\# Defines where the specified \#\+U\+RL\# should be loaded \textbackslash{}item \mbox{\hyperlink{classGMapArea_aad3364122ef1e274838abbb72d91af25}{comment}}\# This is a string displayed in a status line or in a popup window when the mouse pointer moves over the hyperlink area \textbackslash{}item \mbox{\hyperlink{classGMapArea_a2b12ed98955212d4a8c9abf062216569}{border\+\_\+type}}\#, \mbox{\hyperlink{classGMapArea_aed297d702f1082df48257f44d7887eaa}{border\+\_\+color}}\# and \mbox{\hyperlink{classGMapArea_a473b46580d92ea34a14d79b8108dae3a}{border\+\_\+width}}\# describes how the area border should be drawn \textbackslash{}item \#area\+\_\+color\# describes how the area should be highlighted. \textbackslash{}end\{itemize\}
+
+The map areas can be displayed using two different techniques, which can be combined together\+: \textbackslash{}begin\{itemize\} \textbackslash{}item Visible border. The border of a map area can be drawn in several different ways (like \#\+X\+O\+R\+\_\+\+B\+O\+R\+D\+ER\# or \#\+S\+H\+A\+D\+O\+W\+\_\+\+I\+N\+\_\+\+B\+O\+R\+D\+ER\#). It can be made always visible, or appearing only when the mouse pointer moves over the map area. \textbackslash{}item Highlighted contents. Contents of rectangular map areas can also be highlighted with some given color. \textbackslash{}end\{itemize\} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGMapArea_a657bc071f526b0d3ce76b04b567236cb}\label{classGMapArea_a657bc071f526b0d3ce76b04b567236cb}} 
+\index{GMapArea@{GMapArea}!check\_object@{check\_object}}
+\index{check\_object@{check\_object}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{check\_object()}{check\_object()}}
+{\footnotesize\ttfamily const char $\ast$const G\+Map\+Area\+::check\+\_\+object (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Checks if the object is OK. Especially useful with \textbackslash{}\+Ref\{\mbox{\hyperlink{classGMapPoly}{G\+Map\+Poly}}\} where edges may intersect. If there is a problem it returns a string describing it. \mbox{\Hypertarget{classGMapArea_a82b3dcdd981d1d62df3cc6c66f92c9ce}\label{classGMapArea_a82b3dcdd981d1d62df3cc6c66f92c9ce}} 
+\index{GMapArea@{GMapArea}!get\_coords@{get\_coords}}
+\index{get\_coords@{get\_coords}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{get\_coords()}{get\_coords()}}
+{\footnotesize\ttfamily void G\+Map\+Area\+::get\+\_\+coords (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&}]{Coord\+List }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Virtual function generating a list of defining coordinates (default are the opposite corners of the enclosing rectangle) 
+
+Reimplemented in \mbox{\hyperlink{classGMapPoly_a8a5c177954ddeafc57593d8c6925e48b}{G\+Map\+Poly}}.
+
+\mbox{\Hypertarget{classGMapArea_a16fbd9fd2c6103c12d047d886b1410d7}\label{classGMapArea_a16fbd9fd2c6103c12d047d886b1410d7}} 
+\index{GMapArea@{GMapArea}!get\_xmax@{get\_xmax}}
+\index{get\_xmax@{get\_xmax}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{get\_xmax()}{get\_xmax()}}
+{\footnotesize\ttfamily int G\+Map\+Area\+::get\+\_\+xmax (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns xmax of the bounding rectangle. In other words, if \#X\# is a coordinate of the last point in the right direction, the function will return \#X+1\# \mbox{\Hypertarget{classGMapArea_a1ed426f072818a8b8fd4341caa05a646}\label{classGMapArea_a1ed426f072818a8b8fd4341caa05a646}} 
+\index{GMapArea@{GMapArea}!get\_ymax@{get\_ymax}}
+\index{get\_ymax@{get\_ymax}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{get\_ymax()}{get\_ymax()}}
+{\footnotesize\ttfamily int G\+Map\+Area\+::get\+\_\+ymax (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns xmax of the bounding rectangle. In other words, if \#Y\# is a coordinate of the last point in the top direction, the function will return \#Y+1\# \mbox{\Hypertarget{classGMapArea_a68cc9037dd785739cd0a295a6d204cd9}\label{classGMapArea_a68cc9037dd785739cd0a295a6d204cd9}} 
+\index{GMapArea@{GMapArea}!move@{move}}
+\index{move@{move}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void G\+Map\+Area\+::move (\begin{DoxyParamCaption}\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})}
+
+Moves the hyperlink along the given vector. Is used by the hyperlinks editor. \mbox{\Hypertarget{classGMapArea_abcfdca2232fa2b28bb705a917a652a76}\label{classGMapArea_abcfdca2232fa2b28bb705a917a652a76}} 
+\index{GMapArea@{GMapArea}!print@{print}}
+\index{print@{print}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} G\+Map\+Area\+::print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Stores the contents of the hyperlink object in a lisp-\/like format for saving into \#\+A\+N\+Ta\# chunk (see \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuAnno}{Dj\+Vu\+Anno}}\}) \mbox{\Hypertarget{classGMapArea_a1a02c773e0fb117a4e88ea1caa420c74}\label{classGMapArea_a1a02c773e0fb117a4e88ea1caa420c74}} 
+\index{GMapArea@{GMapArea}!resize@{resize}}
+\index{resize@{resize}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void G\+Map\+Area\+::resize (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+width,  }\item[{int}]{new\+\_\+height }\end{DoxyParamCaption})}
+
+Resizes the hyperlink to fit new bounding rectangle while keeping the (xmin, ymin) points at rest. \mbox{\Hypertarget{classGMapArea_ad2ace4dd4a23d71c70632494c5c24d16}\label{classGMapArea_ad2ace4dd4a23d71c70632494c5c24d16}} 
+\index{GMapArea@{GMapArea}!transform@{transform}}
+\index{transform@{transform}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily void G\+Map\+Area\+::transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{grect }\end{DoxyParamCaption})}
+
+Transforms the hyperlink to be within the specified rectangle 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGMapArea_a8a04dc5f33b9dde72745ed2e54156785}\label{classGMapArea_a8a04dc5f33b9dde72745ed2e54156785}} 
+\index{GMapArea@{GMapArea}!border\_always\_visible@{border\_always\_visible}}
+\index{border\_always\_visible@{border\_always\_visible}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{border\_always\_visible}{border\_always\_visible}}
+{\footnotesize\ttfamily bool G\+Map\+Area\+::border\+\_\+always\+\_\+visible}
+
+If \#\+T\+R\+UE\#, the border will be made always visible. Otherwise it will be drawn when the mouse moves over the map area. \mbox{\Hypertarget{classGMapArea_a2b12ed98955212d4a8c9abf062216569}\label{classGMapArea_a2b12ed98955212d4a8c9abf062216569}} 
+\index{GMapArea@{GMapArea}!border\_type@{border\_type}}
+\index{border\_type@{border\_type}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{border\_type}{border\_type}}
+{\footnotesize\ttfamily Border\+Type G\+Map\+Area\+::border\+\_\+type}
+
+Border type. Defines how the map area border should be drawn \textbackslash{}begin\{itemize\} \textbackslash{}item \#\+N\+O\+\_\+\+B\+O\+R\+D\+ER\# -\/ No border drawn \textbackslash{}item \#\+X\+O\+R\+\_\+\+B\+O\+R\+D\+ER\# -\/ The border is drawn using X\+OR method. \textbackslash{}item \#\+S\+O\+L\+I\+D\+\_\+\+B\+O\+R\+D\+ER\# -\/ The border is drawn as a solid line of a given color. \textbackslash{}item \#\+S\+H\+A\+D\+O\+W\+\_\+\+I\+N\+\_\+\+B\+O\+R\+D\+ER\# -\/ Supported for \textbackslash{}\+Ref\{\mbox{\hyperlink{classGMapRect}{G\+Map\+Rect}}\} only. The map area area looks as if it was \char`\"{}pushed-\/in\char`\"{}. \textbackslash{}item \#\+S\+H\+A\+D\+O\+W\+\_\+\+O\+U\+T\+\_\+\+B\+O\+R\+D\+ER\# -\/ The opposite of \#\+S\+H\+A\+D\+O\+W\+\_\+\+O\+U\+T\+\_\+\+B\+O\+R\+D\+ER\# \textbackslash{}item \#\+S\+H\+A\+D\+O\+W\+\_\+\+E\+I\+N\+\_\+\+B\+O\+R\+D\+ER\# -\/ Also for \textbackslash{}\+Ref\{\mbox{\hyperlink{classGMapRect}{G\+Map\+Rect}}\} only. Is translated as \char`\"{}shadow etched in\char`\"{} \textbackslash{}item \#\+S\+H\+A\+D\+O\+W\+\_\+\+E\+O\+U\+T\+\_\+\+B\+O\+R\+D\+ER\# -\/ The opposite of \#\+S\+H\+A\+D\+O\+W\+\_\+\+E\+I\+N\+\_\+\+B\+O\+R\+D\+ER\#. \textbackslash{}end\{itemize\} \mbox{\Hypertarget{classGMapArea_aad3364122ef1e274838abbb72d91af25}\label{classGMapArea_aad3364122ef1e274838abbb72d91af25}} 
+\index{GMapArea@{GMapArea}!comment@{comment}}
+\index{comment@{comment}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{comment}{comment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} G\+Map\+Area\+::comment}
+
+Comment (displayed in a status line or as a popup hint when the mouse pointer moves over the map area \mbox{\Hypertarget{classGMapArea_a942830557d3657db78c936978e4e587c}\label{classGMapArea_a942830557d3657db78c936978e4e587c}} 
+\index{GMapArea@{GMapArea}!hilite\_color@{hilite\_color}}
+\index{hilite\_color@{hilite\_color}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{hilite\_color}{hilite\_color}}
+{\footnotesize\ttfamily unsigned long int G\+Map\+Area\+::hilite\+\_\+color}
+
+Specified a color for highlighting the internal area of the map area. Will work with rectangular map areas only. The color is specified in \#00R\+R\+G\+G\+BB format. A special value of \#F\+F\+F\+F\+F\+F\+FF disables highlighting and \#F\+F000000 is for X\+OR highlighting. \mbox{\Hypertarget{classGMapArea_aea992b37a3d1fdb8665c5c5c129be4e9}\label{classGMapArea_aea992b37a3d1fdb8665c5c5c129be4e9}} 
+\index{GMapArea@{GMapArea}!target@{target}}
+\index{target@{target}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} G\+Map\+Area\+::target}
+
+The target for the \#\+U\+RL\#. Standard targets are\+: \textbackslash{}begin\{itemize\} \textbackslash{}item \#\+\_\+blank\# -\/ Load the link in a new blank window \textbackslash{}item \#\+\_\+self\# -\/ Load the link into the plugin window \textbackslash{}item \#\+\_\+top\# -\/ Load the link into the top-\/level frame \textbackslash{}end\{itemize\} \mbox{\Hypertarget{classGMapArea_ad0a56b6bd099852cb444fc705fa91864}\label{classGMapArea_ad0a56b6bd099852cb444fc705fa91864}} 
+\index{GMapArea@{GMapArea}!url@{url}}
+\index{url@{url}!GMapArea@{GMapArea}}
+\doxysubsubsection{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} G\+Map\+Area\+::url}
+
+Optional U\+RL which this map area can be associated with. If it\textquotesingle{}s not empty then clicking this map area with the mouse will make the browser load the H\+T\+ML page referenced by this \mbox{\hyperlink{classGMapArea_ad0a56b6bd099852cb444fc705fa91864}{url}}\#. Note\+: This may also be a relative U\+RL, so the \mbox{\hyperlink{classGURL}{G\+U\+RL}} class is not used. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Map\+Areas.\+h\item 
+libdjvu/G\+Map\+Areas.\+cpp\end{DoxyCompactItemize}

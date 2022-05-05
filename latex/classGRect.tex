@@ -1,0 +1,216 @@
+\hypertarget{classGRect}{}\doxysection{G\+Rect Class Reference}
+\label{classGRect}\index{GRect@{GRect}}
+
+
+{\ttfamily \#include $<$G\+Rect.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classGRect_affc2185e8f8d932cb9fa62ecc1814bdf}{contains}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect) const
+\item 
+int \mbox{\hyperlink{classGRect_a2b668e319d3373f7b824a3eab57c6ec8}{inflate}} (int dx, int dy)
+\item 
+int \mbox{\hyperlink{classGRect_aa5be59ac44fc76e2fc1725060ce47b08}{translate}} (int dx, int dy)
+\item 
+int \mbox{\hyperlink{classGRect_a1c9e50324077fb747d5ab2be34b1fbd4}{intersect}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect1, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect2)
+\item 
+int \mbox{\hyperlink{classGRect_af98ecb04089f12e33de92fa3d760cb18}{recthull}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect1, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect2)
+\item 
+void \mbox{\hyperlink{classGRect_a985a37690b03a9e387368fbcf89ad2f8}{scale}} (float factor)
+\item 
+void \mbox{\hyperlink{classGRect_a73988df700511d0b8903cd15f7dea1c1}{scale}} (float xfactor, float yfactor)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Point Coordinates vs. Pixel Coordinates}\par
+{\em The Dj\+Vu technology relies on the accurate superposition of images at different resolutions. Such an accuracy cannot be reached with the usual assumption that pixels are small enough to be considered infinitesimally small. We must distinguish very precisely {\ttfamily points\textquotesingle{}\textquotesingle{} and}pixels\textquotesingle{}\textquotesingle{}. This distinction is essential for performing scaling operations.
+
+The pixels of an image are identified by \`{}`pixel coordinates'\textquotesingle{}. The bottom-\/left corner pixel has coordinates \#(0,0)\# and the top-\/right corner pixel has coordinates \#(w-\/1,h-\/1)\# where \#w\# and \#h\# are the image size. Pixel coordinates are necessarily integers since pixels never overlap.
+
+An infinitesimally small point is identified by its \`{}`point coordinates'\textquotesingle{}. There may be fractional point coordinates, although this library does not make use of them. Points with integer coordinates are located \{{\itshape on} the corners of each pixel\}. They are not located on the pixel centers. The center of the pixel with pixel coordinates \#(i,j)\# is located at point coordinates \#(i+1/2,j+1/2)\#. In other words, the pixel \#(i,j)\# extends from point \#(i,j)\# to point \#(i+1,j+1)\#.
+
+Therefore, the point located on the bottom left corner of an image has coordinates \#(0,0)\#. This point is in fact the bottom left corner of the bottom left pixel of the image. The point located on the top right corner of an image has coordinates \#(w,h)\# where \#w\# and \#h\# are the image size. This is in fact the top right corner of pixel \#(w-\/1,h-\/1)\# which is the image pixel with the highest coordinates. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGRect_a66651711fd959d226869ba99a0a266c7}{G\+Rect}} ()
+\item 
+\mbox{\hyperlink{classGRect_a15d3de5bbc7b1642031f3826a4584d8b}{G\+Rect}} (int \mbox{\hyperlink{classGRect_a62c1c5b80fb56a3735f52b416bbe95dc}{xmin}}, int \mbox{\hyperlink{classGRect_aa1d9a8bde9131b6c473cb883579dafe2}{ymin}}, unsigned int \mbox{\hyperlink{classGRect_a7157a0d97284fcf65d79802e6a58caf6}{width}}=0, unsigned int \mbox{\hyperlink{classGRect_ab4d892f2d7fbf923f76156dc512c0e97}{height}}=0)
+\item 
+int \mbox{\hyperlink{classGRect_a7157a0d97284fcf65d79802e6a58caf6}{width}} () const
+\item 
+int \mbox{\hyperlink{classGRect_ab4d892f2d7fbf923f76156dc512c0e97}{height}} () const
+\item 
+int \mbox{\hyperlink{classGRect_a9f7da66d3ef19f7b20c7483cf5b02835}{area}} () const
+\item 
+bool \mbox{\hyperlink{classGRect_a60c8ac25951ef8c76aaf4e23c36851cb}{isempty}} () const
+\item 
+int \mbox{\hyperlink{classGRect_a9eae7ff22912d94c72d4edab88a5f4ee}{contains}} (int x, int y) const
+\item 
+void \mbox{\hyperlink{classGRect_a739990ca284e868365e5736e95482838}{clear}} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classGRect_a62c1c5b80fb56a3735f52b416bbe95dc}{xmin}}
+\item 
+int \mbox{\hyperlink{classGRect_aa1d9a8bde9131b6c473cb883579dafe2}{ymin}}
+\item 
+int \mbox{\hyperlink{classGRect_ae0aca36cf5f582822c8fb72a984fc07a}{xmax}}
+\item 
+int \mbox{\hyperlink{classGRect_a557fb568f4365e0655f1ec745ed37f8b}{ymax}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classGRect_a7d6981cdf2d3765596d4bf2240f9b40f}{operator==}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&r1, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&r2)
+\item 
+int \mbox{\hyperlink{classGRect_aac00020ce0869fe728077d13601a75be}{operator!=}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&r1, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&r2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Rectangle class. Each instance of this class represents a rectangle whose sides are parallel to the axis. Such a rectangle represents all the points whose coordinates lies between well defined minimal and maximal values. Member functions can combine several rectangles by computing the intersection of rectangles (\textbackslash{}\+Ref\{intersect\}) or the smallest rectangle enclosing two rectangles (\textbackslash{}\+Ref\{recthull\}). ~\newline
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGRect_a66651711fd959d226869ba99a0a266c7}\label{classGRect_a66651711fd959d226869ba99a0a266c7}} 
+\index{GRect@{GRect}!GRect@{GRect}}
+\index{GRect@{GRect}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{GRect()}{GRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Rect\+::\+G\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs an empty rectangle \mbox{\Hypertarget{classGRect_a15d3de5bbc7b1642031f3826a4584d8b}\label{classGRect_a15d3de5bbc7b1642031f3826a4584d8b}} 
+\index{GRect@{GRect}!GRect@{GRect}}
+\index{GRect@{GRect}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{GRect()}{GRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Rect\+::\+G\+Rect (\begin{DoxyParamCaption}\item[{int}]{xmin,  }\item[{int}]{ymin,  }\item[{unsigned int}]{width = {\ttfamily 0},  }\item[{unsigned int}]{height = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a rectangle given its minimal coordinates \mbox{\hyperlink{classGRect_a62c1c5b80fb56a3735f52b416bbe95dc}{xmin}}\# and \mbox{\hyperlink{classGRect_aa1d9a8bde9131b6c473cb883579dafe2}{ymin}}\#, and its measurements \mbox{\hyperlink{classGRect_a7157a0d97284fcf65d79802e6a58caf6}{width}}\# and \mbox{\hyperlink{classGRect_ab4d892f2d7fbf923f76156dc512c0e97}{height}}\#. Setting \mbox{\hyperlink{classGRect_a7157a0d97284fcf65d79802e6a58caf6}{width}}\# or \mbox{\hyperlink{classGRect_ab4d892f2d7fbf923f76156dc512c0e97}{height}}\# to zero produces an empty rectangle. ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGRect_a9f7da66d3ef19f7b20c7483cf5b02835}\label{classGRect_a9f7da66d3ef19f7b20c7483cf5b02835}} 
+\index{GRect@{GRect}!area@{area}}
+\index{area@{area}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{area()}{area()}}
+{\footnotesize\ttfamily int G\+Rect\+::area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the area of the rectangle. \mbox{\Hypertarget{classGRect_a739990ca284e868365e5736e95482838}\label{classGRect_a739990ca284e868365e5736e95482838}} 
+\index{GRect@{GRect}!clear@{clear}}
+\index{clear@{clear}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void G\+Rect\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets the rectangle to the empty rectangle \mbox{\Hypertarget{classGRect_affc2185e8f8d932cb9fa62ecc1814bdf}\label{classGRect_affc2185e8f8d932cb9fa62ecc1814bdf}} 
+\index{GRect@{GRect}!contains@{contains}}
+\index{contains@{contains}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int G\+Rect\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption}) const}
+
+Returns true if this rectangle contains the passed rectangle \#rect\#. The function basically checks, that the intersection of this rectangle with \#rect\# is \#rect\#. \mbox{\Hypertarget{classGRect_a9eae7ff22912d94c72d4edab88a5f4ee}\label{classGRect_a9eae7ff22912d94c72d4edab88a5f4ee}} 
+\index{GRect@{GRect}!contains@{contains}}
+\index{contains@{contains}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int G\+Rect\+::contains (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if the rectangle contains pixel (\#x\#,\#y\#). A rectangle contains all pixels with horizontal pixel coordinates in range \mbox{\hyperlink{classGRect_a62c1c5b80fb56a3735f52b416bbe95dc}{xmin}}\# (inclusive) to \mbox{\hyperlink{classGRect_ae0aca36cf5f582822c8fb72a984fc07a}{xmax}}\# (exclusive) and vertical coordinates \mbox{\hyperlink{classGRect_aa1d9a8bde9131b6c473cb883579dafe2}{ymin}}\# (inclusive) to \mbox{\hyperlink{classGRect_a557fb568f4365e0655f1ec745ed37f8b}{ymax}}\# (exclusive). \mbox{\Hypertarget{classGRect_ab4d892f2d7fbf923f76156dc512c0e97}\label{classGRect_ab4d892f2d7fbf923f76156dc512c0e97}} 
+\index{GRect@{GRect}!height@{height}}
+\index{height@{height}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily int G\+Rect\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the rectangle height. \mbox{\Hypertarget{classGRect_a2b668e319d3373f7b824a3eab57c6ec8}\label{classGRect_a2b668e319d3373f7b824a3eab57c6ec8}} 
+\index{GRect@{GRect}!inflate@{inflate}}
+\index{inflate@{inflate}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{inflate()}{inflate()}}
+{\footnotesize\ttfamily int G\+Rect\+::inflate (\begin{DoxyParamCaption}\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})}
+
+Fatten the rectangle. Both vertical sides of the rectangle are pushed apart by \#dx\# units. Both horizontal sides of the rectangle are pushed apart by \#dy\# units. Setting arguments \#dx\# (resp. \#dy\#) to a negative value reduces the rectangle horizontal (resp. vertical) size. \mbox{\Hypertarget{classGRect_a1c9e50324077fb747d5ab2be34b1fbd4}\label{classGRect_a1c9e50324077fb747d5ab2be34b1fbd4}} 
+\index{GRect@{GRect}!intersect@{intersect}}
+\index{intersect@{intersect}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{intersect()}{intersect()}}
+{\footnotesize\ttfamily int G\+Rect\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect1,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect2 }\end{DoxyParamCaption})}
+
+Sets the rectangle to the intersection of rectangles \#rect1\# and \#rect2\#. This function returns true if the intersection rectangle is not empty. \mbox{\Hypertarget{classGRect_a60c8ac25951ef8c76aaf4e23c36851cb}\label{classGRect_a60c8ac25951ef8c76aaf4e23c36851cb}} 
+\index{GRect@{GRect}!isempty@{isempty}}
+\index{isempty@{isempty}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{isempty()}{isempty()}}
+{\footnotesize\ttfamily bool G\+Rect\+::isempty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if the rectangle is empty. \mbox{\Hypertarget{classGRect_af98ecb04089f12e33de92fa3d760cb18}\label{classGRect_af98ecb04089f12e33de92fa3d760cb18}} 
+\index{GRect@{GRect}!recthull@{recthull}}
+\index{recthull@{recthull}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{recthull()}{recthull()}}
+{\footnotesize\ttfamily int G\+Rect\+::recthull (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect1,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect2 }\end{DoxyParamCaption})}
+
+Sets the rectangle to the smallest rectangle containing the points of both rectangles \#rect1\# and \#rect2\#. This function returns true if the created rectangle is not empty. \mbox{\Hypertarget{classGRect_a985a37690b03a9e387368fbcf89ad2f8}\label{classGRect_a985a37690b03a9e387368fbcf89ad2f8}} 
+\index{GRect@{GRect}!scale@{scale}}
+\index{scale@{scale}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+Rect\+::scale (\begin{DoxyParamCaption}\item[{float}]{factor }\end{DoxyParamCaption})}
+
+Multiplies xmin, ymin, xmax, ymax by factor and scales the rectangle \mbox{\Hypertarget{classGRect_a73988df700511d0b8903cd15f7dea1c1}\label{classGRect_a73988df700511d0b8903cd15f7dea1c1}} 
+\index{GRect@{GRect}!scale@{scale}}
+\index{scale@{scale}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+Rect\+::scale (\begin{DoxyParamCaption}\item[{float}]{xfactor,  }\item[{float}]{yfactor }\end{DoxyParamCaption})}
+
+Multiplies xmin, xmax by xfactor and ymin, ymax by yfactor and scales the rectangle \mbox{\Hypertarget{classGRect_aa5be59ac44fc76e2fc1725060ce47b08}\label{classGRect_aa5be59ac44fc76e2fc1725060ce47b08}} 
+\index{GRect@{GRect}!translate@{translate}}
+\index{translate@{translate}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily int G\+Rect\+::translate (\begin{DoxyParamCaption}\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})}
+
+Translate the rectangle. The new rectangle is composed of all the points of the old rectangle translated by \#dx\# units horizontally and \#dy\# units vertically. \mbox{\Hypertarget{classGRect_a7157a0d97284fcf65d79802e6a58caf6}\label{classGRect_a7157a0d97284fcf65d79802e6a58caf6}} 
+\index{GRect@{GRect}!width@{width}}
+\index{width@{width}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily int G\+Rect\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the rectangle width. 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classGRect_aac00020ce0869fe728077d13601a75be}\label{classGRect_aac00020ce0869fe728077d13601a75be}} 
+\index{GRect@{GRect}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily int operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{r1,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{r2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Returns true if rectangles \#r1\# and \#r2\# are not equal. \mbox{\Hypertarget{classGRect_a7d6981cdf2d3765596d4bf2240f9b40f}\label{classGRect_a7d6981cdf2d3765596d4bf2240f9b40f}} 
+\index{GRect@{GRect}!operator==@{operator==}}
+\index{operator==@{operator==}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily int operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{r1,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{r2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Returns true if rectangles \#r1\# and \#r2\# are equal. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGRect_ae0aca36cf5f582822c8fb72a984fc07a}\label{classGRect_ae0aca36cf5f582822c8fb72a984fc07a}} 
+\index{GRect@{GRect}!xmax@{xmax}}
+\index{xmax@{xmax}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{xmax}{xmax}}
+{\footnotesize\ttfamily int G\+Rect\+::xmax}
+
+Maximal horizontal point coordinate of the rectangle. \mbox{\Hypertarget{classGRect_a62c1c5b80fb56a3735f52b416bbe95dc}\label{classGRect_a62c1c5b80fb56a3735f52b416bbe95dc}} 
+\index{GRect@{GRect}!xmin@{xmin}}
+\index{xmin@{xmin}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{xmin}{xmin}}
+{\footnotesize\ttfamily int G\+Rect\+::xmin}
+
+Minimal horizontal point coordinate of the rectangle. \mbox{\Hypertarget{classGRect_a557fb568f4365e0655f1ec745ed37f8b}\label{classGRect_a557fb568f4365e0655f1ec745ed37f8b}} 
+\index{GRect@{GRect}!ymax@{ymax}}
+\index{ymax@{ymax}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{ymax}{ymax}}
+{\footnotesize\ttfamily int G\+Rect\+::ymax}
+
+Maximal vertical point coordinate of the rectangle. \mbox{\Hypertarget{classGRect_aa1d9a8bde9131b6c473cb883579dafe2}\label{classGRect_aa1d9a8bde9131b6c473cb883579dafe2}} 
+\index{GRect@{GRect}!ymin@{ymin}}
+\index{ymin@{ymin}!GRect@{GRect}}
+\doxysubsubsection{\texorpdfstring{ymin}{ymin}}
+{\footnotesize\ttfamily int G\+Rect\+::ymin}
+
+Minimal vertical point coordinate of the rectangle. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Rect.\+h\item 
+libdjvu/G\+Rect.\+cpp\end{DoxyCompactItemize}

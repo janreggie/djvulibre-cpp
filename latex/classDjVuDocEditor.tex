@@ -1,0 +1,493 @@
+\hypertarget{classDjVuDocEditor}{}\doxysection{Dj\+Vu\+Doc\+Editor Class Reference}
+\label{classDjVuDocEditor}\index{DjVuDocEditor@{DjVuDocEditor}}
+
+
+{\ttfamily \#include $<$Dj\+Vu\+Doc\+Editor.\+h$>$}
+
+
+
+Inheritance diagram for Dj\+Vu\+Doc\+Editor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classDjVuDocEditor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+Doc\+Editor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDjVuDocEditor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDjVuDocEditor_1_1File}{File}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuDocEditor_a36c6b0b391c5a5f43f5e8fe0d5933bf1}\label{classDjVuDocEditor_a36c6b0b391c5a5f43f5e8fe0d5933bf1}} 
+virtual \mbox{\hyperlink{classDjVuDocEditor_a36c6b0b391c5a5f43f5e8fe0d5933bf1}{$\sim$\+Dj\+Vu\+Doc\+Editor}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDjVuDocEditor_ae65970a2196c8bda8a3b32f06a65554d}{get\+\_\+orig\+\_\+doc\+\_\+type}} (void) const
+\item 
+bool \mbox{\hyperlink{classDjVuDocEditor_a0f393a255a7a518083087c9483c08804}{can\+\_\+be\+\_\+saved}} (void) const
+\item 
+int \mbox{\hyperlink{classDjVuDocEditor_a4ee3ab168123a92b6e946d3de670a54b}{get\+\_\+save\+\_\+doc\+\_\+type}} (void) const
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_a82a74ab167ac758497d4eb028d6821b6}{save}} (void)
+\item 
+virtual void \mbox{\hyperlink{classDjVuDocEditor_ac081e3c161f75498c6c95471e3ed9abf}{save\+\_\+as}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&where, bool bundled)
+\item 
+virtual void \mbox{\hyperlink{classDjVuDocEditor_a02338ba5c0833a590602c8cf1bdd73c0}{write}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&str, bool force\+\_\+djvm=false)
+\item 
+virtual void \mbox{\hyperlink{classDjVuDocEditor_ac0110c3e41732b8e0c8f657d30e7810b}{write}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&str, const \mbox{\hyperlink{classGMap}{G\+Map}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, void $\ast$ $>$ \&reserved)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_aa679d4d03f27aecdeb16a98689ed6d14}{save\+\_\+pages\+\_\+as}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&str, const \mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&page\+\_\+list)
+\item 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuDocEditor_a49dfdf714c9f9a9c3a5d4e1335b33799}{page\+\_\+to\+\_\+id}} (int page\+\_\+num) const
+\item 
+\mbox{\Hypertarget{classDjVuDocEditor_a0169c509f7a5f6d47281081584ebfb5b}\label{classDjVuDocEditor_a0169c509f7a5f6d47281081584ebfb5b}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} {\bfseries insert\+\_\+file} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&parent\+\_\+id, int chunk\+\_\+num=1, \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source=0)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_a0babc0d61006be872b65ead4616e79bf}{insert\+\_\+page}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&fname, int page\+\_\+num=-\/1)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_ad4d5859e2a18a5c70ea12b87059ca29c}{insert\+\_\+page}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&file\+\_\+pool, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&fname, int page\+\_\+num=-\/1)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_afd8ca2af53e02540975f1749d64d147d}{insert\+\_\+group}} (const \mbox{\hyperlink{classGList}{G\+List}}$<$ \mbox{\hyperlink{classGURL}{G\+U\+RL}} $>$ \&furl\+\_\+list, int page\+\_\+num=-\/1, void($\ast$refresh\+\_\+cb)(void $\ast$)=0, void $\ast$cl\+\_\+data=0)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_ab46bd33c8cc716fadc88ed07a8731774}{remove\+\_\+page}} (int page\+\_\+num, bool remove\+\_\+unref=true)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_ad523abd1f33442d5c0259e91164c5737}{remove\+\_\+pages}} (const \mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&page\+\_\+list, bool remove\+\_\+unref=true)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_afb561aeeaabeb1b24f2116c0550ba46d}{remove\+\_\+file}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id, bool remove\+\_\+unref=true)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_a8facdd2566d2060dcf7db81d093f7dc2}{move\+\_\+page}} (int page\+\_\+num, int new\+\_\+page\+\_\+num)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_acca1cf84461fc5154cc14b478be38f77}{move\+\_\+pages}} (const \mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&page\+\_\+list, int shift)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_a3bf38f10ba131547696d1ed2a57ffb82}{set\+\_\+file\+\_\+name}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_a7c1d41a83928891866e8351ca101871f}{set\+\_\+page\+\_\+name}} (int page\+\_\+num, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_af464e727a02333fd5bf80a3734880f85}{set\+\_\+file\+\_\+title}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&title)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_a9924a912282f8b0708391e258c62a36b}{set\+\_\+page\+\_\+title}} (int page\+\_\+num, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&title)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}} $>$ \mbox{\hyperlink{classDjVuDocEditor_a370120620b8d0e92220c94f6af0fecc2}{create\+\_\+wait}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}} $>$ \mbox{\hyperlink{classDjVuDocEditor_a3d9a98d4117979b754f1788a18f6cbde}{create\+\_\+wait}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuDocEditor_a3c6526a39aec5d812367b92e8f71dd7d}\label{classDjVuDocEditor_a3c6526a39aec5d812367b92e8f71dd7d}} 
+static int {\bfseries thumbnails\+\_\+per\+\_\+file} =10
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuDocEditor_a235c761e865e21ed20d9a263e2deb400}\label{classDjVuDocEditor_a235c761e865e21ed20d9a263e2deb400}} 
+\mbox{\hyperlink{classDjVuDocEditor_a235c761e865e21ed20d9a263e2deb400}{Dj\+Vu\+Doc\+Editor}} (void)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDjVuDocEditor_a00fc01bda4b3f32892e16352e6096936}{init}} (void)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_aad9dc507bb395b1c2c7678086d0fcc8d}{init}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url)
+\end{DoxyCompactItemize}
+\doxysubsection*{Thumbnails}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuDocEditor_acd2f24a91ee6616d40bad3641a892925}\label{classDjVuDocEditor_acd2f24a91ee6616d40bad3641a892925}} 
+class {\bfseries C\+Thumb\+Nails}
+\item 
+\mbox{\Hypertarget{classDjVuDocEditor_a717b528bf461ba9768d27313d7a39fc6}\label{classDjVuDocEditor_a717b528bf461ba9768d27313d7a39fc6}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ {\bfseries url\+\_\+to\+\_\+file} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, bool dont\+\_\+create) const
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuDocEditor_a0730e899c8133889336415747cdb62af}{get\+\_\+thumbnail}} (int page\+\_\+num, bool dont\+\_\+decode)
+\item 
+int \mbox{\hyperlink{classDjVuDocEditor_a3c7555d0f7c290aaac32c8dabd6e570b}{get\+\_\+thumbnails\+\_\+num}} (void) const
+\item 
+int \mbox{\hyperlink{classDjVuDocEditor_a7eff96d7ef17207b5e510aae06adbae7}{get\+\_\+thumbnails\+\_\+size}} (void) const
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_aad378060a1f557012a6568918bf61a26}{remove\+\_\+thumbnails}} (void)
+\item 
+int \mbox{\hyperlink{classDjVuDocEditor_ac7105653a5570c7db364d4dcee73535f}{generate\+\_\+thumbnails}} (int thumb\+\_\+size, int page\+\_\+num)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_afb23e73a3510c6c583338d1aa16a2a0e}{generate\+\_\+thumbnails}} (int thumb\+\_\+size, bool($\ast$cb)(int page\+\_\+num, void $\ast$)=0, void $\ast$cl\+\_\+data=0)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_aad8f579e5f3316a377e4716ffb2ab15c}{simplify\+\_\+anno}} (void($\ast$progress\+\_\+cb)(float progress, void $\ast$)=0, void $\ast$cl\+\_\+data=0)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_ac9ed6ed34a0dea8b17aa2d19177690ea}{create\+\_\+shared\+\_\+anno\+\_\+file}} (void($\ast$progress\+\_\+cb)(float progress, void $\ast$)=0, void $\ast$cl\+\_\+data=0)
+\item 
+void \mbox{\hyperlink{classDjVuDocEditor_ac2a6fe5df58c618cf02d78080d895825}{set\+\_\+djvm\+\_\+nav}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmNav}{Dj\+Vm\+Nav}} $>$ nav)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \mbox{\hyperlink{classDjVuDocEditor_ad8843f3f5ecbe6ff409b6704b2443f52}{get\+\_\+shared\+\_\+anno\+\_\+file}} (void)
+\item 
+\mbox{\Hypertarget{classDjVuDocEditor_a92dc0e2152130b08155776d50155fb13}\label{classDjVuDocEditor_a92dc0e2152130b08155776d50155fb13}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} {\bfseries get\+\_\+doc\+\_\+url} (void) const
+\item 
+virtual bool \mbox{\hyperlink{classDjVuDocEditor_aad3d65d9764efc9a270a192a4fcd3e9d}{inherits}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&class\+\_\+name) const
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuDocEditor_a03ac8920fbc3267e5d82fb299683d680}{request\+\_\+data}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}}\# is an extension of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} class with additional capabilities for editing the document contents.
+
+It can be used to\+: \textbackslash{}begin\{enumerate\} \textbackslash{}item Create (compose) new multipage Dj\+Vu documents using single page Dj\+Vu documents. The class does \{\textbackslash{}bf not\} do compression. \textbackslash{}item Insert and remove different pages of multipage Dj\+Vu documents. \textbackslash{}item Change attributes (\{{\itshape names\}}, \{{\itshape I\+Ds\}} and \{{\itshape titles\}}) of files composing the Dj\+Vu document. \textbackslash{}item Generate thumbnail images and integrate them into the document. \textbackslash{}end\{enumerate\} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuDocEditor_a0f393a255a7a518083087c9483c08804}\label{classDjVuDocEditor_a0f393a255a7a518083087c9483c08804}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!can\_be\_saved@{can\_be\_saved}}
+\index{can\_be\_saved@{can\_be\_saved}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{can\_be\_saved()}{can\_be\_saved()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Doc\+Editor\+::can\+\_\+be\+\_\+saved (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns \#\+T\+R\+UE\# if the document can be \char`\"{}saved\char`\"{} (sometimes the only possibility is to do a \char`\"{}save as\char`\"{}). The reason why we have this function is that \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}}\# can save documents in new formats only (\#\+B\+U\+N\+D\+L\+ED\# and \#\+I\+N\+D\+I\+R\+E\+CT\#). At the same time it recognizes all Dj\+Vu formats (\#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\#, \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\#, \#\+B\+U\+N\+D\+L\+ED\#, and \#\+I\+N\+D\+I\+R\+E\+CT\#).
+
+\#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# and \#\+B\+U\+N\+D\+L\+ED\# documents occupy only one file, so in this case \char`\"{}saving\char`\"{} involves the automatic conversion to \#\+B\+U\+N\+D\+L\+ED\# format and storing data into the same file.
+
+\#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\# documents, on the other hand, occupy more than one file. They could be converted to \#\+I\+N\+D\+I\+R\+E\+CT\# format if these two formats had the same set of files. Unfortunately, these formats are too different, and the best thing to do is to use \char`\"{}save as\char`\"{} capability. \mbox{\Hypertarget{classDjVuDocEditor_ac9ed6ed34a0dea8b17aa2d19177690ea}\label{classDjVuDocEditor_ac9ed6ed34a0dea8b17aa2d19177690ea}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!create\_shared\_anno\_file@{create\_shared\_anno\_file}}
+\index{create\_shared\_anno\_file@{create\_shared\_anno\_file}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{create\_shared\_anno\_file()}{create\_shared\_anno\_file()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::create\+\_\+shared\+\_\+anno\+\_\+file (\begin{DoxyParamCaption}\item[{void($\ast$)(float progress, void $\ast$)}]{progress\+\_\+cb = {\ttfamily 0},  }\item[{void $\ast$}]{cl\+\_\+data = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Will create a file that will be included into every page and marked with the \#\+S\+H\+A\+R\+E\+D\+\_\+\+A\+N\+NO\# flag. This file can be used to store global annotations (annotations applicable to every page).
+
+\{\textbackslash{}bf Note\+:\} There may be only one \#\+S\+H\+A\+R\+E\+D\+\_\+\+A\+N\+NO\# file in any Dj\+Vu multipage document. \mbox{\Hypertarget{classDjVuDocEditor_a370120620b8d0e92220c94f6af0fecc2}\label{classDjVuDocEditor_a370120620b8d0e92220c94f6af0fecc2}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!create\_wait@{create\_wait}}
+\index{create\_wait@{create\_wait}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{create\_wait()}{create\_wait()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}} $>$ Dj\+Vu\+Doc\+Editor\+::create\+\_\+wait (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}} class and initializes with \#fname\#. \mbox{\Hypertarget{classDjVuDocEditor_a3d9a98d4117979b754f1788a18f6cbde}\label{classDjVuDocEditor_a3d9a98d4117979b754f1788a18f6cbde}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!create\_wait@{create\_wait}}
+\index{create\_wait@{create\_wait}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{create\_wait()}{create\_wait()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}} $>$ Dj\+Vu\+Doc\+Editor\+::create\+\_\+wait (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}} class and initializes an empty document. \mbox{\Hypertarget{classDjVuDocEditor_afb23e73a3510c6c583338d1aa16a2a0e}\label{classDjVuDocEditor_afb23e73a3510c6c583338d1aa16a2a0e}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!generate\_thumbnails@{generate\_thumbnails}}
+\index{generate\_thumbnails@{generate\_thumbnails}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{generate\_thumbnails()}{generate\_thumbnails()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::generate\+\_\+thumbnails (\begin{DoxyParamCaption}\item[{int}]{thumb\+\_\+size,  }\item[{bool($\ast$)(int page\+\_\+num, void $\ast$)}]{cb = {\ttfamily 0},  }\item[{void $\ast$}]{cl\+\_\+data = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Generates thumbnails for those pages, which do not have them yet. If you want to regenerate thumbnails for all pages, call \textbackslash{}\+Ref\{remove\+\_\+thumbnails\}() prior to calling this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thumb\+\_\+size} & The size of the thumbnails in pixels. Dj\+Vu viewer is able to rescale the thumbnail images if necessary, so this parameter affects thumbnails quality only. 128 is a good number. \\
+\hline
+{\em cb} & The callback, which will be called after thumbnail image for the next page has been generated. Regardless of if the document already has thumbnail images for some of its pages, the callback will be called \#pages\+\_\+num\# times, where \#pages\+\_\+num\# is the total number of pages in the document. The callback should return \#\+F\+A\+L\+SE\# if thumbnails generating should proceed. \#\+T\+R\+UE\# will stop it. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuDocEditor_ac7105653a5570c7db364d4dcee73535f}\label{classDjVuDocEditor_ac7105653a5570c7db364d4dcee73535f}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!generate\_thumbnails@{generate\_thumbnails}}
+\index{generate\_thumbnails@{generate\_thumbnails}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{generate\_thumbnails()}{generate\_thumbnails()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Dj\+Vu\+Doc\+Editor\+::generate\+\_\+thumbnails (\begin{DoxyParamCaption}\item[{int}]{thumb\+\_\+size,  }\item[{int}]{page\+\_\+num }\end{DoxyParamCaption})}
+
+Generates thumbnails for the specified page, if and only if it does not have a thumbnail yet. If you want to regenerate thumbnails for all pages, call \textbackslash{}\+Ref\{remove\+\_\+thumbnails\}() prior to calling this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thumb\+\_\+size} & The size of the thumbnails in pixels. Dj\+Vu viewer is able to rescale the thumbnail images if necessary, so this parameter affects thumbnails quality only. 128 is a good number. \\
+\hline
+{\em page\+\_\+num} & The page number to genate the thumbnail for. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuDocEditor_ae65970a2196c8bda8a3b32f06a65554d}\label{classDjVuDocEditor_ae65970a2196c8bda8a3b32f06a65554d}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!get\_orig\_doc\_type@{get\_orig\_doc\_type}}
+\index{get\_orig\_doc\_type@{get\_orig\_doc\_type}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{get\_orig\_doc\_type()}{get\_orig\_doc\_type()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Doc\+Editor\+::get\+\_\+orig\+\_\+doc\+\_\+type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns type of open document. \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}}\# silently converts any open Dj\+Vu document to \#\+B\+U\+N\+D\+L\+ED\# format (see \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\}. Thus, \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument_abeaa7adb929282cc7e5a413e0a487001}{Dj\+Vu\+Document\+::get\+\_\+doc\+\_\+type}}\}() will always be returning \#\+B\+U\+N\+D\+L\+ED\#. Use this function to learn the original format of the document being edited. \mbox{\Hypertarget{classDjVuDocEditor_a4ee3ab168123a92b6e946d3de670a54b}\label{classDjVuDocEditor_a4ee3ab168123a92b6e946d3de670a54b}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!get\_save\_doc\_type@{get\_save\_doc\_type}}
+\index{get\_save\_doc\_type@{get\_save\_doc\_type}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{get\_save\_doc\_type()}{get\_save\_doc\_type()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Doc\+Editor\+::get\+\_\+save\+\_\+doc\+\_\+type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns type of the document, which can be created by \textbackslash{}\+Ref\{save\}() function. Can be \#\+I\+N\+D\+I\+R\+E\+CT\#, \#\+B\+U\+N\+D\+L\+ED\#, \#\+S\+I\+N\+G\+L\+E\+\_\+\+P\+A\+GE\#, or \#\+U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+PE\#. The latter indicates, that \textbackslash{}\+Ref\{save\}() will fail, and that \textbackslash{}\+Ref\{save\+\_\+as\}() should be used instead \mbox{\Hypertarget{classDjVuDocEditor_ad8843f3f5ecbe6ff409b6704b2443f52}\label{classDjVuDocEditor_ad8843f3f5ecbe6ff409b6704b2443f52}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!get\_shared\_anno\_file@{get\_shared\_anno\_file}}
+\index{get\_shared\_anno\_file@{get\_shared\_anno\_file}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{get\_shared\_anno\_file()}{get\_shared\_anno\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ Dj\+Vu\+Doc\+Editor\+::get\+\_\+shared\+\_\+anno\+\_\+file (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns a pointer to the file with \#\+S\+H\+A\+R\+E\+D\+\_\+\+A\+N\+NO\# flag on. This file should be used for storing document-\/wide annotations.
+
+\{\textbackslash{}bf Note\+:\} There may be only one \#\+S\+H\+A\+R\+E\+D\+\_\+\+A\+N\+NO\# file in any Dj\+Vu multipage document. \mbox{\Hypertarget{classDjVuDocEditor_a0730e899c8133889336415747cdb62af}\label{classDjVuDocEditor_a0730e899c8133889336415747cdb62af}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!get\_thumbnail@{get\_thumbnail}}
+\index{get\_thumbnail@{get\_thumbnail}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{get\_thumbnail()}{get\_thumbnail()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+Doc\+Editor\+::get\+\_\+thumbnail (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num,  }\item[{bool}]{dont\+\_\+decode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\} containing one chunk \#\+T\+H44\# with the encoded thumbnail for the specified page. The function first looks for thumbnails enclosed into the document and if it fails to find one, it decodes the required page and creates the thumbnail on the fly (unless \#dont\+\_\+decode\# is true).
+
+\{\textbackslash{}bf Note\+:\} It may happen that the returned \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\} will not contain all the data you need. In this case you will need to install a trigger into the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\} to learn when the data actually arrives. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuDocument_a05a77ebb3ba6590c40afcc160c3e5ab6}{Dj\+Vu\+Document}}.
+
+\mbox{\Hypertarget{classDjVuDocEditor_a3c7555d0f7c290aaac32c8dabd6e570b}\label{classDjVuDocEditor_a3c7555d0f7c290aaac32c8dabd6e570b}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!get\_thumbnails\_num@{get\_thumbnails\_num}}
+\index{get\_thumbnails\_num@{get\_thumbnails\_num}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{get\_thumbnails\_num()}{get\_thumbnails\_num()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Doc\+Editor\+::get\+\_\+thumbnails\+\_\+num (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the number of thumbnails stored inside this document.
+
+It may be \#\+Z\+E\+RO\#, which means, that there are no thumbnails at all.
+
+It may be equal to the number of pages, which is what should normally be.
+
+Finally, it may be greater than \#\+Z\+E\+RO\# and less than the number of pages, in which case thumbnails should be regenerated before the document can be saved. \mbox{\Hypertarget{classDjVuDocEditor_a7eff96d7ef17207b5e510aae06adbae7}\label{classDjVuDocEditor_a7eff96d7ef17207b5e510aae06adbae7}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!get\_thumbnails\_size@{get\_thumbnails\_size}}
+\index{get\_thumbnails\_size@{get\_thumbnails\_size}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{get\_thumbnails\_size()}{get\_thumbnails\_size()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Doc\+Editor\+::get\+\_\+thumbnails\+\_\+size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the size of the first encountered thumbnail image. Since thumbnails can currently be generated by \textbackslash{}\+Ref\{generate\+\_\+thumbnails\}() only, all thumbnail images should be of the same size. Thus, the number returned is actually the size of \{{\itshape all\}} document thumbnails.
+
+The function will return \#-\/1\# if there are no thumbnails. \mbox{\Hypertarget{classDjVuDocEditor_aad3d65d9764efc9a270a192a4fcd3e9d}\label{classDjVuDocEditor_aad3d65d9764efc9a270a192a4fcd3e9d}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!inherits@{inherits}}
+\index{inherits@{inherits}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{inherits()}{inherits()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Doc\+Editor\+::inherits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{class\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns T\+R\+UE if \#class\+\_\+name\# is \#\char`\"{}\+Dj\+Vu\+Doc\+Editor\char`\"{}\#, \#\char`\"{}\+Dj\+Vu\+Document\char`\"{}\# or \#\char`\"{}\+Dj\+Vu\+Port\char`\"{}\# 
+
+Reimplemented from \mbox{\hyperlink{classDjVuDocument_a3e45f0cc79c6d835d65852cbc1d98a60}{Dj\+Vu\+Document}}.
+
+\mbox{\Hypertarget{classDjVuDocEditor_aad9dc507bb395b1c2c7678086d0fcc8d}\label{classDjVuDocEditor_aad9dc507bb395b1c2c7678086d0fcc8d}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!init@{init}}
+\index{init@{init}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Initialization function. Opens document with name \#filename\#.
+
+\{\textbackslash{}bf Note\}\+: You must call either of the two available \textbackslash{}\+Ref\{init\}() function before you start doing anything else with the \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}}\#. \mbox{\Hypertarget{classDjVuDocEditor_a00fc01bda4b3f32892e16352e6096936}\label{classDjVuDocEditor_a00fc01bda4b3f32892e16352e6096936}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!init@{init}}
+\index{init@{init}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Initialization function. Initializes an empty document.
+
+\{\textbackslash{}bf Note\}\+: You must call either of the two available \textbackslash{}\+Ref\{init\}() function before you start doing anything else with the \mbox{\hyperlink{classDjVuDocEditor}{Dj\+Vu\+Doc\+Editor}}\#. \mbox{\Hypertarget{classDjVuDocEditor_afd8ca2af53e02540975f1749d64d147d}\label{classDjVuDocEditor_afd8ca2af53e02540975f1749d64d147d}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!insert\_group@{insert\_group}}
+\index{insert\_group@{insert\_group}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{insert\_group()}{insert\_group()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::insert\+\_\+group (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGList}{G\+List}}$<$ \mbox{\hyperlink{classGURL}{G\+U\+RL}} $>$ \&}]{furl\+\_\+list,  }\item[{int}]{page\+\_\+num = {\ttfamily -\/1},  }\item[{void($\ast$)(void $\ast$)}]{refresh\+\_\+cb = {\ttfamily 0},  }\item[{void $\ast$}]{cl\+\_\+data = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Inserts a group of pages into this Dj\+Vu document.
+
+Like \textbackslash{}\+Ref\{insert\+\_\+page\}() it will insert every page into the document. The main advantage of calling this function once for the whole group instead of calling \textbackslash{}\+Ref\{insert\+\_\+page\}() for every page is the processing of included files\+:
+
+The group of files may include one or more files, which are thus shared by them. If you call \textbackslash{}\+Ref\{insert\+\_\+page\}() for every page, this shared file will be inserted into the document more than once though under different names. This is how \textbackslash{}\+Ref\{insert\+\_\+page\}() works\+: whenever it inserts something, it checks for duplicate names with only one purpose\+: invent a new name if a given one is already in use.
+
+On the other hand, if you call \mbox{\hyperlink{classDjVuDocEditor_afd8ca2af53e02540975f1749d64d147d}{insert\+\_\+group}}\#(), it will insert shared included files only once. This is because it can analyze the group of files before inserting them and figure out what files are shared and thus should be inserted only once.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname\+\_\+list} & List of top-\/level files for the pages to be inserted \\
+\hline
+{\em page\+\_\+num} & Position where the new pages should be inserted at. Negative value means \char`\"{}append\char`\"{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuDocEditor_a0babc0d61006be872b65ead4616e79bf}\label{classDjVuDocEditor_a0babc0d61006be872b65ead4616e79bf}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!insert\_page@{insert\_page}}
+\index{insert\_page@{insert\_page}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{insert\_page()}{insert\_page()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::insert\+\_\+page (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{fname,  }\item[{int}]{page\+\_\+num = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Inserts the referenced file into this Dj\+Vu document.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & Name of the top-\/level file containing the image of the page to be inserted. This file must be a Dj\+Vu file and may include one or more other Dj\+Vu files.\\
+\hline
+\end{DoxyParams}
+If it include other Dj\+Vu files, the function will try to insert them into the document too. Should this attempt fail, the corresponding \#\+I\+N\+CL\# chunk will be removed from the referencing file and an exception will be thrown.
+
+When inserting a file, the function may modify its name to be unique in the Dj\+Vu document. 
+\begin{DoxyParams}{Parameters}
+{\em page\+\_\+num} & Position where the new page should be inserted at. Negative value means \char`\"{}append\char`\"{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuDocEditor_ad4d5859e2a18a5c70ea12b87059ca29c}\label{classDjVuDocEditor_ad4d5859e2a18a5c70ea12b87059ca29c}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!insert\_page@{insert\_page}}
+\index{insert\_page@{insert\_page}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{insert\_page()}{insert\_page()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::insert\+\_\+page (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&}]{file\+\_\+pool,  }\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{fname,  }\item[{int}]{page\+\_\+num = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Inserts a new page with data inside the \#data\+\_\+pool\# as page number \#page\+\_\+num.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+pool} & \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\} with data for this page. \\
+\hline
+{\em file\+\_\+name} & Name, which will be assigned to this page. If you try to save the document in \#\+I\+N\+D\+I\+R\+E\+CT\# format, a file with this name will be created to hold the page\textquotesingle{}s data. If there is already a file in the document with the same name, the function will derive a new unique name from file\+\_\+name, which will be assigned to the page. \\
+\hline
+{\em page\+\_\+num} & Describes where the page should be inserted. Negative number means \char`\"{}append\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuDocEditor_a8facdd2566d2060dcf7db81d093f7dc2}\label{classDjVuDocEditor_a8facdd2566d2060dcf7db81d093f7dc2}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!move\_page@{move\_page}}
+\index{move\_page@{move\_page}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{move\_page()}{move\_page()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::move\+\_\+page (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num,  }\item[{int}]{new\+\_\+page\+\_\+num }\end{DoxyParamCaption})}
+
+Makes page number \#page\+\_\+num\# to be \#new\+\_\+page\+\_\+num\#. If \#new\+\_\+page\+\_\+num\# is negative or too big, the function will move page \#page\+\_\+num\# to the end of the document. \mbox{\Hypertarget{classDjVuDocEditor_acca1cf84461fc5154cc14b478be38f77}\label{classDjVuDocEditor_acca1cf84461fc5154cc14b478be38f77}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!move\_pages@{move\_pages}}
+\index{move\_pages@{move\_pages}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{move\_pages()}{move\_pages()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::move\+\_\+pages (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&}]{page\+\_\+list,  }\item[{int}]{shift }\end{DoxyParamCaption})}
+
+Shifts all pags from the \#page\+\_\+list\# according to the \#shift\#. The \#shift\# can be positive (shift toward the end of the document) or negative (shift toward the beginning of the document).
+
+It is OK to make \#shift\# too big in value. Pages will just be moved to the end (or to the beginning, depending on the \#shift\# sign) of the document. \mbox{\Hypertarget{classDjVuDocEditor_a49dfdf714c9f9a9c3a5d4e1335b33799}\label{classDjVuDocEditor_a49dfdf714c9f9a9c3a5d4e1335b33799}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!page\_to\_id@{page\_to\_id}}
+\index{page\_to\_id@{page\_to\_id}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{page\_to\_id()}{page\_to\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} Dj\+Vu\+Doc\+Editor\+::page\+\_\+to\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num }\end{DoxyParamCaption}) const}
+
+Translates page number \#page\+\_\+num\# to ID. If \#page\+\_\+num\# is invalid, an exception is thrown. \mbox{\Hypertarget{classDjVuDocEditor_afb561aeeaabeb1b24f2116c0550ba46d}\label{classDjVuDocEditor_afb561aeeaabeb1b24f2116c0550ba46d}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!remove\_file@{remove\_file}}
+\index{remove\_file@{remove\_file}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{remove\_file()}{remove\_file()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::remove\+\_\+file (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id,  }\item[{bool}]{remove\+\_\+unref = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Removes a Dj\+Vu file with the specified \#id\#.
+
+If some other files include this file, the corresponding \#\+I\+N\+CL\# chunks will be removed to avoid dead links.
+
+If \#remove\+\_\+unref\# is \#\+T\+R\+UE\#, the function will also remove every file, which will become unreferenced after the removal of this file. \mbox{\Hypertarget{classDjVuDocEditor_ab46bd33c8cc716fadc88ed07a8731774}\label{classDjVuDocEditor_ab46bd33c8cc716fadc88ed07a8731774}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!remove\_page@{remove\_page}}
+\index{remove\_page@{remove\_page}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{remove\_page()}{remove\_page()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::remove\+\_\+page (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num,  }\item[{bool}]{remove\+\_\+unref = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Removes the specified page from the document. If \#remove\+\_\+unref\# is \#\+T\+R\+UE\#, the function will also remove from the document any file, which became unreferenced due to the page\textquotesingle{}s removal \mbox{\Hypertarget{classDjVuDocEditor_ad523abd1f33442d5c0259e91164c5737}\label{classDjVuDocEditor_ad523abd1f33442d5c0259e91164c5737}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!remove\_pages@{remove\_pages}}
+\index{remove\_pages@{remove\_pages}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{remove\_pages()}{remove\_pages()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::remove\+\_\+pages (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&}]{page\+\_\+list,  }\item[{bool}]{remove\+\_\+unref = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Removes the specified pages from the document. If \#remove\+\_\+unref\# is \#\+T\+R\+UE\#, the function will also remove from the document any file, which became unreferenced due to the pages\textquotesingle{} removal \mbox{\Hypertarget{classDjVuDocEditor_aad378060a1f557012a6568918bf61a26}\label{classDjVuDocEditor_aad378060a1f557012a6568918bf61a26}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!remove\_thumbnails@{remove\_thumbnails}}
+\index{remove\_thumbnails@{remove\_thumbnails}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{remove\_thumbnails()}{remove\_thumbnails()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::remove\+\_\+thumbnails (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Removes all thumbnails from the document \mbox{\Hypertarget{classDjVuDocEditor_a03ac8920fbc3267e5d82fb299683d680}\label{classDjVuDocEditor_a03ac8920fbc3267e5d82fb299683d680}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!request\_data@{request\_data}}
+\index{request\_data@{request\_data}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{request\_data()}{request\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+Doc\+Editor\+::request\+\_\+data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This request is issued when decoder needs additional data for decoding. Both \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} are initialized with a U\+RL, not the document data. As soon as they need the data, they call this function, whose responsibility is to locate the source of the data basing on the \#\+U\+RL\# passed and return it back in the form of the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\}. If this particular receiver is unable to fullfil the request, it should return \#0\#. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuDocument_aacdeef00678b80fad8dd6a61e4786eb9}{Dj\+Vu\+Document}}.
+
+\mbox{\Hypertarget{classDjVuDocEditor_a82a74ab167ac758497d4eb028d6821b6}\label{classDjVuDocEditor_a82a74ab167ac758497d4eb028d6821b6}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!save@{save}}
+\index{save@{save}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::save (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Saves the document. May generate exception if the document can not be saved, and \textbackslash{}\+Ref\{save\+\_\+as\}() should be used. See \textbackslash{}\+Ref\{can\+\_\+be\+\_\+saved\}() for details. \mbox{\Hypertarget{classDjVuDocEditor_ac081e3c161f75498c6c95471e3ed9abf}\label{classDjVuDocEditor_ac081e3c161f75498c6c95471e3ed9abf}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!save\_as@{save\_as}}
+\index{save\_as@{save\_as}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{save\_as()}{save\_as()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::save\+\_\+as (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{where,  }\item[{bool}]{bundled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Saves the document. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuDocument_af24cfa661e3b5a8664edafd31e9d614f}{Dj\+Vu\+Document}}.
+
+\mbox{\Hypertarget{classDjVuDocEditor_aa679d4d03f27aecdeb16a98689ed6d14}\label{classDjVuDocEditor_aa679d4d03f27aecdeb16a98689ed6d14}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!save\_pages\_as@{save\_pages\_as}}
+\index{save\_pages\_as@{save\_pages\_as}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{save\_pages\_as()}{save\_pages\_as()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::save\+\_\+pages\+\_\+as (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{str,  }\item[{const \mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&}]{page\+\_\+list }\end{DoxyParamCaption})}
+
+Saves the specified pages in Dj\+Vu \#\+B\+U\+N\+D\+L\+ED\# multipage document. \mbox{\Hypertarget{classDjVuDocEditor_ac2a6fe5df58c618cf02d78080d895825}\label{classDjVuDocEditor_ac2a6fe5df58c618cf02d78080d895825}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!set\_djvm\_nav@{set\_djvm\_nav}}
+\index{set\_djvm\_nav@{set\_djvm\_nav}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{set\_djvm\_nav()}{set\_djvm\_nav()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::set\+\_\+djvm\+\_\+nav (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmNav}{Dj\+Vm\+Nav}} $>$}]{nav }\end{DoxyParamCaption})}
+
+Sets bookmark data \mbox{\Hypertarget{classDjVuDocEditor_a3bf38f10ba131547696d1ed2a57ffb82}\label{classDjVuDocEditor_a3bf38f10ba131547696d1ed2a57ffb82}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!set\_file\_name@{set\_file\_name}}
+\index{set\_file\_name@{set\_file\_name}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{set\_file\_name()}{set\_file\_name()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::set\+\_\+file\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{name }\end{DoxyParamCaption})}
+
+Changes the name of the file with ID \#id\# to \#name\#. Refer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}}\} for the explanation of \{{\itshape I\+Ds\}}, \{{\itshape names\}} and \{{\itshape titles\}}. \mbox{\Hypertarget{classDjVuDocEditor_af464e727a02333fd5bf80a3734880f85}\label{classDjVuDocEditor_af464e727a02333fd5bf80a3734880f85}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!set\_file\_title@{set\_file\_title}}
+\index{set\_file\_title@{set\_file\_title}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{set\_file\_title()}{set\_file\_title()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::set\+\_\+file\+\_\+title (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{title }\end{DoxyParamCaption})}
+
+Changes the title of the file with ID \#id\# to \#title\#. Refer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}}\} for the explanation of \{{\itshape I\+Ds\}}, \{{\itshape names\}} and \{{\itshape titles\}}. \mbox{\Hypertarget{classDjVuDocEditor_a7c1d41a83928891866e8351ca101871f}\label{classDjVuDocEditor_a7c1d41a83928891866e8351ca101871f}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!set\_page\_name@{set\_page\_name}}
+\index{set\_page\_name@{set\_page\_name}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{set\_page\_name()}{set\_page\_name()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::set\+\_\+page\+\_\+name (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{name }\end{DoxyParamCaption})}
+
+Changes the name of the page \#page\+\_\+num\# to \#name\#. Refer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}}\} for the explanation of \{{\itshape I\+Ds\}}, \{{\itshape names\}} and \{{\itshape titles\}}. \mbox{\Hypertarget{classDjVuDocEditor_a9924a912282f8b0708391e258c62a36b}\label{classDjVuDocEditor_a9924a912282f8b0708391e258c62a36b}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!set\_page\_title@{set\_page\_title}}
+\index{set\_page\_title@{set\_page\_title}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{set\_page\_title()}{set\_page\_title()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::set\+\_\+page\+\_\+title (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{title }\end{DoxyParamCaption})}
+
+Changes the title of the page \#page\+\_\+num\# to \#title\#. Refer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}}\} for the explanation of \{{\itshape I\+Ds\}}, \{{\itshape names\}} and \{{\itshape titles\}}. \mbox{\Hypertarget{classDjVuDocEditor_aad8f579e5f3316a377e4716ffb2ab15c}\label{classDjVuDocEditor_aad8f579e5f3316a377e4716ffb2ab15c}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!simplify\_anno@{simplify\_anno}}
+\index{simplify\_anno@{simplify\_anno}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{simplify\_anno()}{simplify\_anno()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::simplify\+\_\+anno (\begin{DoxyParamCaption}\item[{void($\ast$)(float progress, void $\ast$)}]{progress\+\_\+cb = {\ttfamily 0},  }\item[{void $\ast$}]{cl\+\_\+data = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Use this function to simplify annotations in the document. The \char`\"{}simplified\char`\"{} format is when annotations are only allowed either in top-\/level page files or in a special file with \#\+S\+H\+A\+R\+E\+D\+\_\+\+A\+N\+NO\# flag on. This file is supposed to be included into every page. \mbox{\Hypertarget{classDjVuDocEditor_a02338ba5c0833a590602c8cf1bdd73c0}\label{classDjVuDocEditor_a02338ba5c0833a590602c8cf1bdd73c0}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!write@{write}}
+\index{write@{write}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{str,  }\item[{bool}]{force\+\_\+djvm = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Saves the document in the \{{\itshape new} bundled\} format. All the data is \char`\"{}bundled\char`\"{} into one file and this file is written into the passed stream.
+
+If \#force\+\_\+djvm\# is \#\+T\+R\+UE\# then even one page documents will be saved in the \#\+D\+J\+VM B\+U\+N\+D\+L\+ED\# format (inside a \#\+F\+O\+RM\+:D\+J\+VM\#);
+
+\{\textbackslash{}bf Plugin Warning\}. This function will read contents of the whole document. Thus, if you call it from the main thread (the thread, which transfers data from Netscape), the plugin will block. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuDocument_a83d0b0e54f455500f8b88774591a359e}{Dj\+Vu\+Document}}.
+
+\mbox{\Hypertarget{classDjVuDocEditor_ac0110c3e41732b8e0c8f657d30e7810b}\label{classDjVuDocEditor_ac0110c3e41732b8e0c8f657d30e7810b}} 
+\index{DjVuDocEditor@{DjVuDocEditor}!write@{write}}
+\index{write@{write}!DjVuDocEditor@{DjVuDocEditor}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Doc\+Editor\+::write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{str,  }\item[{const \mbox{\hyperlink{classGMap}{G\+Map}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, void $\ast$ $>$ \&}]{reserved }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Always save as bundled, renaming any files conflicting with the the names in the supplied \mbox{\hyperlink{classGMap}{G\+Map}}. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuDocument_abd4cd79ee7c7971ed590ea035aa48061}{Dj\+Vu\+Document}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+Doc\+Editor.\+h\item 
+libdjvu/Dj\+Vu\+Doc\+Editor.\+cpp\end{DoxyCompactItemize}

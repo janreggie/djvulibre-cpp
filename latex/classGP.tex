@@ -1,0 +1,200 @@
+\hypertarget{classGP}{}\doxysection{GP$<$ T\+Y\+PE $>$ Class Template Reference}
+\label{classGP}\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+
+
+{\ttfamily \#include $<$G\+Smart\+Pointer.\+h$>$}
+
+
+
+Inheritance diagram for GP$<$ T\+Y\+PE $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classGP__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for GP$<$ T\+Y\+PE $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classGP__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ G\+Smart\+Pointer.\+h}\par
+{\em Files \#\char`\"{}\+G\+Smart\+Pointer.\+h\char`\"{}\# and \#\char`\"{}\+G\+Smart\+Pointer.\+cpp\char`\"{}\# define a smart-\/pointer class which automatically performs thread-\/safe reference counting. \mbox{\hyperlink{structClass}{Class}} \textbackslash{}\+Ref\{\mbox{\hyperlink{classGP}{GP}}\} implements smart-\/pointers by overloading the usual pointer assignment and dereferencing operators. The overloaded operators maintain the reference counters and destroy the pointed objects as soon as their reference counter reaches zero. Transparent type conversions are provided between smart-\/pointers and regular pointers. Objects referenced by smart-\/pointers must be derived from class \textbackslash{}\+Ref\{\mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\}.
+
+@memo Thread-\/\+Safe reference counting smart-\/pointers. \begin{DoxyAuthor}{Author}
+L\textbackslash{}\textquotesingle{}eon Bottou \href{mailto:leonb@research.att.com}{\texttt{ leonb@research.\+att.\+com}} -- initial implementation\textbackslash{} Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} -- bug fix.
+\end{DoxyAuthor}
+From\+: Leon Bottou, 1/31/2002 \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}} has been added (but not documented) by Lizardtech. Our original implementation consisted of multiple classes. \href{http://prdownloads.sourceforge.net/djvu/DjVu2_2b-src.tgz}{\texttt{ http\+://prdownloads.\+sourceforge.\+net/djvu/\+Dj\+Vu2\+\_\+2b-\/src.\+tgz}}. \begin{DoxyVerb}@args
+\end{DoxyVerb}
+ }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGP_aaedff106fd47e1b00135be85651105cb}{GP}} ()
+\item 
+\mbox{\hyperlink{classGP_a50dd20aa5e15a7298309831afc4c6f5d}{GP}} (const \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$ \&sptr)
+\item 
+\mbox{\hyperlink{classGP_a8cfec79029bbde851fcf75ea3378b47a}{GP}} (T\+Y\+PE $\ast$nptr)
+\item 
+\mbox{\hyperlink{classGP_ac3ab2df856688772835b500dcc633fff}{operator T\+Y\+P\+E $\ast$}} () const
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$ \& \mbox{\hyperlink{classGP_ad4c0b19a2e70bec941678ac007683e1d}{operator=}} (T\+Y\+PE $\ast$nptr)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$ \& \mbox{\hyperlink{classGP_af77a887d40e395348662d78c20d1dd0c}{operator=}} (const \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$ \&sptr)
+\item 
+T\+Y\+PE $\ast$ \mbox{\hyperlink{classGP_afc620c04bb53f0c7821efa8d2768c5d3}{operator-\/$>$}} () const
+\item 
+T\+Y\+PE \& \mbox{\hyperlink{classGP_a32a870910847be6c8be7eb5ae3362f7e}{operator$\ast$}} () const
+\item 
+int \mbox{\hyperlink{classGP_a85e03b03313470804063b283f67dd14f}{operator==}} (T\+Y\+PE $\ast$nptr) const
+\item 
+int \mbox{\hyperlink{classGP_aa5caac56a8538a29de62e0d7fda83392}{operator!=}} (T\+Y\+PE $\ast$nptr) const
+\item 
+int \mbox{\hyperlink{classGP_ae9a9b2165a2c0b5c1881ba8e0b6e1d86}{operator!}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T\+Y\+PE$>$\newline
+class G\+P$<$ T\+Y\+P\+E $>$}
+
+Reference counting pointer. \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classGP_aaedff106fd47e1b00135be85651105cb}{G\+P$<$\+T\+Y\+P\+E$>$}}\# represents a smart-\/pointer to an object of type \#\+T\+Y\+PE\#. Type \#\+T\+Y\+PE\# must be a subclass of \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\#. This class overloads the usual pointer assignment and dereferencing operators. The overloaded operators maintain the reference counters and destroy the pointed object as soon as their reference counter reaches zero. Transparent type conversions are provided between smart-\/pointers and regular pointers.
+
+Using a smart-\/pointer is a convenience and not an obligation. There is no need to use a smart-\/pointer to access a \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\# object. As long as you never use a smart-\/pointer to access a \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\# object, its reference counter remains zero. Since the reference counter is never decremented from one to zero, the object is never destroyed by the reference counting code. You can therefore choose to only use regular pointers to access objects allocated on the stack (automatic variables) or objects allocated dynamically. In the latter case you must explicitly destroy the dynamically allocated object with operator \#delete\#.
+
+The first time you use a smart-\/pointer to access \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\# object, the reference counter is incremented to one. Object destruction will then happen automatically when the reference counter is decremented back to zero (i.\+e. when the last smart-\/pointer referencing this object stops doing so). This will happen regardless of how many regular pointers reference this object. In other words, if you start using smart-\/pointers with a \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\# object, you engage automatic mode for this object. You should only do this with objects dynamically allocated with operator \#new\#. You should never destroy the object yourself, but let the smart-\/pointers control the life of the object.
+
+\{\textbackslash{}bf Performance considerations\} --- Thread safe reference counting incurs a significant overhead. Smart-\/pointer are best used with sizeable objects for which the cost of maintaining the counters represent a small fraction of the processing time. It is always possible to cache a smart-\/pointer into a regular pointer. The cached pointer will remain valid until the smart-\/pointer object is destroyed or the smart-\/pointer value is changed.
+
+\{\textbackslash{}bf Safety considerations\} --- As explained above, a \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\# object switches to automatic mode as soon as it becomes referenced by a smart-\/pointer. There is no way to switch the object back to manual mode. Suppose that you have decided to only use regular pointers with a particular \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\# object. You therefore plan to destroy the object explicitly when you no longer need it. When you pass a regular pointer to this object as argument to a function, you really need to be certain that the function implementation will not assign this pointer to a smart-\/pointer. Doing so would indeed destroy the object as soon as the function returns. The bad news is that the fact that a function assigns a pointer argument to a smart-\/pointer does not necessarily appear in the function prototype. Such a behavior must be \{{\itshape documented\}} with the function public interface. As a convention, we usually write such functions with smart-\/pointer arguments instead of a regular pointer arguments. This is not enough to catch the error at compile time, but this is a simple way to document such a behavior. We still believe that this is a small problem in regard to the benefits of the smart-\/pointer. But one has to be aware of its existence. ~\newline
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGP_aaedff106fd47e1b00135be85651105cb}\label{classGP_aaedff106fd47e1b00135be85651105cb}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!GP@{GP}}
+\index{GP@{GP}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{GP()}{GP()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+\mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::\mbox{\hyperlink{classGP}{GP}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a null smart-\/pointer. \mbox{\Hypertarget{classGP_a50dd20aa5e15a7298309831afc4c6f5d}\label{classGP_a50dd20aa5e15a7298309831afc4c6f5d}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!GP@{GP}}
+\index{GP@{GP}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{GP()}{GP()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+\mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::\mbox{\hyperlink{classGP}{GP}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$ \&}]{sptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a copy of a smart-\/pointer. 
+\begin{DoxyParams}{Parameters}
+{\em sptr} & smart-\/pointer to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGP_a8cfec79029bbde851fcf75ea3378b47a}\label{classGP_a8cfec79029bbde851fcf75ea3378b47a}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!GP@{GP}}
+\index{GP@{GP}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{GP()}{GP()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+\mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::\mbox{\hyperlink{classGP}{GP}} (\begin{DoxyParamCaption}\item[{T\+Y\+PE $\ast$}]{nptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a smart-\/pointer from a regular pointer. The pointed object must be dynamically allocated (with operator \#new\#). You should no longer explicitly destroy the object referenced by \#sptr\# since the object life is now controlled by smart-\/pointers. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em nptr} & regular pointer to a \{{\itshape dynamically} allocated object\}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGP_ac3ab2df856688772835b500dcc633fff}\label{classGP_ac3ab2df856688772835b500dcc633fff}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!operator TYPE $\ast$@{operator TYPE $\ast$}}
+\index{operator TYPE $\ast$@{operator TYPE $\ast$}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{operator TYPE $\ast$()}{operator TYPE *()}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+\mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::operator T\+Y\+PE $\ast$\hspace{0.3cm}{\ttfamily [inline]}}
+
+Converts a smart-\/pointer into a regular pointer. ~\newline
+ This is useful for caching the value of a smart-\/pointer for performances purposes. The cached pointer will remain valid until the smart-\/pointer is destroyed or until the smart-\/pointer value is changed. \mbox{\Hypertarget{classGP_ae9a9b2165a2c0b5c1881ba8e0b6e1d86}\label{classGP_ae9a9b2165a2c0b5c1881ba8e0b6e1d86}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!()}{operator!()}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+int \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::operator!\hspace{0.3cm}{\ttfamily [inline]}}
+
+Test operator. Returns true if the smart-\/pointer is null. The automatic conversion from smart-\/pointers to regular pointers allows you to test whether a smart-\/pointer is non-\/null. You can use both following constructs\+: \textbackslash{}begin\{verbatim\} if (gp) \{ ... \} while (! gp) \{ ... \} \textbackslash{}end\{verbatim\} \mbox{\Hypertarget{classGP_aa5caac56a8538a29de62e0d7fda83392}\label{classGP_aa5caac56a8538a29de62e0d7fda83392}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+int \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::\mbox{\hyperlink{classGP_ae9a9b2165a2c0b5c1881ba8e0b6e1d86}{operator!}}= (\begin{DoxyParamCaption}\item[{T\+Y\+PE $\ast$}]{nptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Comparison operator. ~\newline
+ Returns true if this smart-\/pointer and pointer \#nptr\# point to different objects. The automatic conversion from smart-\/pointers to regular pointers allows you to compare two smart-\/pointers as well. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em nptr} & pointer to compare with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGP_a32a870910847be6c8be7eb5ae3362f7e}\label{classGP_a32a870910847be6c8be7eb5ae3362f7e}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+T\+Y\+PE \& \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::operator$\ast$\hspace{0.3cm}{\ttfamily [inline]}}
+
+Dereferencement operator. This operator provides a convenient access to the smart-\/pointed object. Operator \#$\ast$\# works with smart-\/pointers exactly as with regular pointers. \mbox{\Hypertarget{classGP_afc620c04bb53f0c7821efa8d2768c5d3}\label{classGP_afc620c04bb53f0c7821efa8d2768c5d3}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+T\+Y\+PE $\ast$ \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::operator-\/$>$\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indirection operator. This operator provides a convenient access to the members of a smart-\/pointed object. Operator \#-\/$>$\# works with smart-\/pointers exactly as with regular pointers. \mbox{\Hypertarget{classGP_af77a887d40e395348662d78c20d1dd0c}\label{classGP_af77a887d40e395348662d78c20d1dd0c}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+\mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$ \& \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$ \&}]{sptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assigns a smart-\/pointer to a smart-\/pointer lvalue. 
+\begin{DoxyParams}{Parameters}
+{\em sptr} & smart-\/pointer copied into this smart-\/pointer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGP_ad4c0b19a2e70bec941678ac007683e1d}\label{classGP_ad4c0b19a2e70bec941678ac007683e1d}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+\mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$ \& \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::operator= (\begin{DoxyParamCaption}\item[{T\+Y\+PE $\ast$}]{nptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assigns a regular pointer to a smart-\/pointer lvalue. The pointed object must be dynamically allocated (with operator \#new\#). You should no longer explicitly destroy the object referenced by \#sptr\# since the object life is now controlled by smart-\/pointers. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em nptr} & regular pointer to a \{{\itshape dynamically} allocated object\}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGP_a85e03b03313470804063b283f67dd14f}\label{classGP_a85e03b03313470804063b283f67dd14f}} 
+\index{GP$<$ TYPE $>$@{GP$<$ TYPE $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!GP$<$ TYPE $>$@{GP$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+int \mbox{\hyperlink{classGP}{GP}}$<$ T\+Y\+PE $>$\+::operator== (\begin{DoxyParamCaption}\item[{T\+Y\+PE $\ast$}]{nptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Comparison operator. Returns true if both this smart-\/pointer and pointer \#nptr\# point to the same object. The automatic conversion from smart-\/pointers to regular pointers allows you to compare two smart-\/pointers as well. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em nptr} & pointer to compare with. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Smart\+Pointer.\+h\end{DoxyCompactItemize}

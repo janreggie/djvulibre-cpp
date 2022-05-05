@@ -1,0 +1,137 @@
+\hypertarget{classDjVuInfo}{}\doxysection{Dj\+Vu\+Info Class Reference}
+\label{classDjVuInfo}\index{DjVuInfo@{DjVuInfo}}
+
+
+{\ttfamily \#include $<$Dj\+Vu\+Info.\+h$>$}
+
+
+
+Inheritance diagram for Dj\+Vu\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classDjVuInfo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classDjVuInfo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDjVuInfo_a0a749a392c104fe57fbe3a156c92a9b4}{decode}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&bs)
+\item 
+void \mbox{\hyperlink{classDjVuInfo_a95710d5daa0343354860652346258903}{encode}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&bs)
+\item 
+unsigned int \mbox{\hyperlink{classDjVuInfo_a12d158921fdcdfab72217d6d7b0a06bb}{get\+\_\+memory\+\_\+usage}} () const
+\item 
+\mbox{\Hypertarget{classDjVuInfo_a7be211cfa1e5d2e04213889566ac197b}\label{classDjVuInfo_a7be211cfa1e5d2e04213889566ac197b}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuInfo_a7be211cfa1e5d2e04213889566ac197b}{get\+\_\+paramtags}} (void) const
+\begin{DoxyCompactList}\small\item\em Obtain the flags for the default specifications. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuInfo_abdf5935f635dc580acc3841eb089be47}\label{classDjVuInfo_abdf5935f635dc580acc3841eb089be47}} 
+void \mbox{\hyperlink{classDjVuInfo_abdf5935f635dc580acc3841eb089be47}{write\+Param}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&out\+\_\+str) const
+\begin{DoxyCompactList}\small\item\em Obtain the flags for the default specifications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuInfo}{Dj\+Vu\+Info}} $>$ \mbox{\hyperlink{classDjVuInfo_a6e1721aeadfb06d2338655ed6adf478c}{create}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classDjVuInfo_aae9d2f79051e17f1e4a0233951603690}{width}}
+\item 
+int \mbox{\hyperlink{classDjVuInfo_a9ed88fb5be15a670c7bb5ac003a6ebb4}{height}}
+\item 
+int \mbox{\hyperlink{classDjVuInfo_af6e66c9166f9570509e92bab384a285e}{version}}
+\item 
+int \mbox{\hyperlink{classDjVuInfo_a9d33ca0ec9fdd9374dfb87ed31ad64b8}{dpi}}
+\item 
+double \mbox{\hyperlink{classDjVuInfo_a662f8c6593334fa428e6b43c8d93e471}{gamma}}
+\item 
+int \mbox{\hyperlink{classDjVuInfo_afb0a34e579c3095fce7d9ff510369196}{orientation}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Information component. Each instance of class \mbox{\hyperlink{classDjVuInfo}{Dj\+Vu\+Info}}\# represents the information contained in the information chunk of a Dj\+Vu file. This \#\char`\"{}\+I\+N\+F\+O\char`\"{}\# chunk is always the first chunk of a Dj\+Vu file. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuInfo_a6e1721aeadfb06d2338655ed6adf478c}\label{classDjVuInfo_a6e1721aeadfb06d2338655ed6adf478c}} 
+\index{DjVuInfo@{DjVuInfo}!create@{create}}
+\index{create@{create}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classDjVuInfo}{Dj\+Vu\+Info}}$>$ Dj\+Vu\+Info\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates an empty \mbox{\hyperlink{classDjVuInfo}{Dj\+Vu\+Info}} object. The \mbox{\hyperlink{classDjVuInfo_aae9d2f79051e17f1e4a0233951603690}{width}}\# and \mbox{\hyperlink{classDjVuInfo_a9ed88fb5be15a670c7bb5ac003a6ebb4}{height}}\# fields are set to zero. All other fields are initialized with suitable default values. \mbox{\Hypertarget{classDjVuInfo_a0a749a392c104fe57fbe3a156c92a9b4}\label{classDjVuInfo_a0a749a392c104fe57fbe3a156c92a9b4}} 
+\index{DjVuInfo@{DjVuInfo}!decode@{decode}}
+\index{decode@{decode}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Info\+::decode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{bs }\end{DoxyParamCaption})}
+
+Decodes the Dj\+Vu \#\char`\"{}\+I\+N\+F\+O\char`\"{}\# chunk. This function reads binary data from \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#bs\# and populates the fields of this \mbox{\hyperlink{classDjVuInfo}{Dj\+Vu\+Info}} object. It is normally called after detecting an \#\char`\"{}\+I\+N\+F\+O\char`\"{}\# chunk header with function \textbackslash{}\+Ref\{\mbox{\hyperlink{classIFFByteStream_a090b649ebbbf504069eac0d62452c8a6}{I\+F\+F\+Byte\+Stream\+::get\+\_\+chunk}}\}. \mbox{\Hypertarget{classDjVuInfo_a95710d5daa0343354860652346258903}\label{classDjVuInfo_a95710d5daa0343354860652346258903}} 
+\index{DjVuInfo@{DjVuInfo}!encode@{encode}}
+\index{encode@{encode}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Info\+::encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{bs }\end{DoxyParamCaption})}
+
+Encodes the Dj\+Vu \#\char`\"{}\+I\+N\+F\+O\char`\"{}\# chunk. This function writes the fields of this \mbox{\hyperlink{classDjVuInfo}{Dj\+Vu\+Info}} object into \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#bs\#. It is normally called after creating an \#\char`\"{}\+I\+N\+F\+O\char`\"{}\# chunk header with function \textbackslash{}\+Ref\{\mbox{\hyperlink{classIFFByteStream_a577fe0c110b716ab62d4ee26fcdeaffe}{I\+F\+F\+Byte\+Stream\+::put\+\_\+chunk}}\}. \mbox{\Hypertarget{classDjVuInfo_a12d158921fdcdfab72217d6d7b0a06bb}\label{classDjVuInfo_a12d158921fdcdfab72217d6d7b0a06bb}} 
+\index{DjVuInfo@{DjVuInfo}!get\_memory\_usage@{get\_memory\_usage}}
+\index{get\_memory\_usage@{get\_memory\_usage}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{get\_memory\_usage()}{get\_memory\_usage()}}
+{\footnotesize\ttfamily unsigned int Dj\+Vu\+Info\+::get\+\_\+memory\+\_\+usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of bytes used by this object. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDjVuInfo_a9d33ca0ec9fdd9374dfb87ed31ad64b8}\label{classDjVuInfo_a9d33ca0ec9fdd9374dfb87ed31ad64b8}} 
+\index{DjVuInfo@{DjVuInfo}!dpi@{dpi}}
+\index{dpi@{dpi}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{dpi}{dpi}}
+{\footnotesize\ttfamily int Dj\+Vu\+Info\+::dpi}
+
+Resolution of the Dj\+Vu image. The resolution is given in {\ttfamily pixels per 2.\+54 centimeters\textquotesingle{}\textquotesingle{} (this unit is sometimes called}pixels per inch\textquotesingle{}\textquotesingle{}). Display programs can use this information to determine the natural magnification to use for rendering a Dj\+Vu image. \mbox{\Hypertarget{classDjVuInfo_a662f8c6593334fa428e6b43c8d93e471}\label{classDjVuInfo_a662f8c6593334fa428e6b43c8d93e471}} 
+\index{DjVuInfo@{DjVuInfo}!gamma@{gamma}}
+\index{gamma@{gamma}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{gamma}{gamma}}
+{\footnotesize\ttfamily double Dj\+Vu\+Info\+::gamma}
+
+Gamma coefficient of the display for which the image was designed. The rendering functions can use this information in order to perform color correction for the intended display device. \mbox{\Hypertarget{classDjVuInfo_a9ed88fb5be15a670c7bb5ac003a6ebb4}\label{classDjVuInfo_a9ed88fb5be15a670c7bb5ac003a6ebb4}} 
+\index{DjVuInfo@{DjVuInfo}!height@{height}}
+\index{height@{height}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Dj\+Vu\+Info\+::height}
+
+Height of the Dj\+Vu image (in pixels). \mbox{\Hypertarget{classDjVuInfo_afb0a34e579c3095fce7d9ff510369196}\label{classDjVuInfo_afb0a34e579c3095fce7d9ff510369196}} 
+\index{DjVuInfo@{DjVuInfo}!orientation@{orientation}}
+\index{orientation@{orientation}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{orientation}{orientation}}
+{\footnotesize\ttfamily int Dj\+Vu\+Info\+::orientation}
+
+Image orientation\+: 0\+: no rotation 1\+: 90 degrees counter-\/clockwise 2\+: 180 degrees 3\+: 270 degrees counter-\/clockwise \mbox{\Hypertarget{classDjVuInfo_af6e66c9166f9570509e92bab384a285e}\label{classDjVuInfo_af6e66c9166f9570509e92bab384a285e}} 
+\index{DjVuInfo@{DjVuInfo}!version@{version}}
+\index{version@{version}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily int Dj\+Vu\+Info\+::version}
+
+Dj\+Vu file version number. This number characterizes the file format version used by the encoder to generate this Dj\+Vu image. A decoder should compare this version number with the constants described in section \char`\"{}\textbackslash{}\+Ref\{\+Dj\+Vu version constants\}\char`\"{}. \mbox{\Hypertarget{classDjVuInfo_aae9d2f79051e17f1e4a0233951603690}\label{classDjVuInfo_aae9d2f79051e17f1e4a0233951603690}} 
+\index{DjVuInfo@{DjVuInfo}!width@{width}}
+\index{width@{width}!DjVuInfo@{DjVuInfo}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Dj\+Vu\+Info\+::width}
+
+Width of the Dj\+Vu image (in pixels). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+Info.\+h\item 
+libdjvu/Dj\+Vu\+Info.\+cpp\end{DoxyCompactItemize}

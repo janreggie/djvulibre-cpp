@@ -1,0 +1,109 @@
+\hypertarget{structddjvu__job__s}{}\doxysection{ddjvu\+\_\+job\+\_\+s Struct Reference}
+\label{structddjvu__job__s}\index{ddjvu\_job\_s@{ddjvu\_job\_s}}
+
+
+Inheritance diagram for ddjvu\+\_\+job\+\_\+s\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structddjvu__job__s__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ddjvu\+\_\+job\+\_\+s\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structddjvu__job__s__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{structddjvu__job__s_a98cb2b9bcba490cadd398cb41b85c8bc}{inherits}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&) const
+\item 
+virtual bool \mbox{\hyperlink{structddjvu__job__s_a2af9b110b8f04a0502494131effc0798}{notify\+\_\+error}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&)
+\item 
+virtual bool \mbox{\hyperlink{structddjvu__job__s_a8380cdf79b50652bcf3b12d30890e109}{notify\+\_\+status}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&)
+\item 
+\mbox{\Hypertarget{structddjvu__job__s_a3ef94d4f3bab980f2fab59f9261dd882}\label{structddjvu__job__s_a3ef94d4f3bab980f2fab59f9261dd882}} 
+virtual ddjvu\+\_\+status\+\_\+t {\bfseries status} ()
+\item 
+\mbox{\Hypertarget{structddjvu__job__s_a5cdbbe0be1f2c68180004b36f08400e4}\label{structddjvu__job__s_a5cdbbe0be1f2c68180004b36f08400e4}} 
+virtual void {\bfseries release} ()
+\item 
+\mbox{\Hypertarget{structddjvu__job__s_ae91e9417fe2ef60901ad28f4fedaf74d}\label{structddjvu__job__s_ae91e9417fe2ef60901ad28f4fedaf74d}} 
+virtual void {\bfseries stop} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structddjvu__job__s_a5628e9374aafc2c7b1e7eac4408a096e}\label{structddjvu__job__s_a5628e9374aafc2c7b1e7eac4408a096e}} 
+\mbox{\hyperlink{classGMonitor}{G\+Monitor}} {\bfseries monitor}
+\item 
+\mbox{\Hypertarget{structddjvu__job__s_a982ceaf9212f13428bfbc74f22b2ed3e}\label{structddjvu__job__s_a982ceaf9212f13428bfbc74f22b2ed3e}} 
+void $\ast$ {\bfseries userdata}
+\item 
+\mbox{\Hypertarget{structddjvu__job__s_a1bb2c40c9cd42e9a1197a7168c44979b}\label{structddjvu__job__s_a1bb2c40c9cd42e9a1197a7168c44979b}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{structddjvu__context__s}{ddjvu\+\_\+context\+\_\+s}} $>$ {\bfseries myctx}
+\item 
+\mbox{\Hypertarget{structddjvu__job__s_a06f20f6d006aeb16e8199004fc2fa941}\label{structddjvu__job__s_a06f20f6d006aeb16e8199004fc2fa941}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{structddjvu__document__s}{ddjvu\+\_\+document\+\_\+s}} $>$ {\bfseries mydoc}
+\item 
+\mbox{\Hypertarget{structddjvu__job__s_a3778da9f6145ff43e482dacc4cda206b}\label{structddjvu__job__s_a3778da9f6145ff43e482dacc4cda206b}} 
+bool {\bfseries released}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structddjvu__job__s_a98cb2b9bcba490cadd398cb41b85c8bc}\label{structddjvu__job__s_a98cb2b9bcba490cadd398cb41b85c8bc}} 
+\index{ddjvu\_job\_s@{ddjvu\_job\_s}!inherits@{inherits}}
+\index{inherits@{inherits}!ddjvu\_job\_s@{ddjvu\_job\_s}}
+\doxysubsubsection{\texorpdfstring{inherits()}{inherits()}}
+{\footnotesize\ttfamily bool ddjvu\+\_\+job\+\_\+s\+::inherits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{class\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Should return 1 if the called class inherits class \#class\+\_\+name\#. When a destination receives a request, it can retrieve the pointer to the source \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. This virtual function should be able to help to identify the source of the request. For example, \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} is also derived from \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. In order for the receiver to recognize the sender, the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} should override this function to return \#\+T\+R\+UE\# when the \#class\+\_\+name\# is either \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\# or \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_abb7ca38a52f07ac67a390e2e6ee4f4c3}{Dj\+Vu\+Port}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{structddjvu__savejob__s_a83bdae001e34eb98b60bb2cae822c284}{ddjvu\+\_\+savejob\+\_\+s}}, \mbox{\hyperlink{structddjvu__printjob__s_a8a8157189380d992be586d87f0686ca8}{ddjvu\+\_\+printjob\+\_\+s}}, \mbox{\hyperlink{structddjvu__runnablejob__s_aa9cc48d5a6d5b95affcc90513d996c15}{ddjvu\+\_\+runnablejob\+\_\+s}}, \mbox{\hyperlink{structddjvu__page__s_ab42e5e7e347191faf60f22aef427914a}{ddjvu\+\_\+page\+\_\+s}}, and \mbox{\hyperlink{structddjvu__document__s_abdf7164a36e4c75c5930190fd7ab116e}{ddjvu\+\_\+document\+\_\+s}}.
+
+\mbox{\Hypertarget{structddjvu__job__s_a2af9b110b8f04a0502494131effc0798}\label{structddjvu__job__s_a2af9b110b8f04a0502494131effc0798}} 
+\index{ddjvu\_job\_s@{ddjvu\_job\_s}!notify\_error@{notify\_error}}
+\index{notify\_error@{notify\_error}!ddjvu\_job\_s@{ddjvu\_job\_s}}
+\doxysubsubsection{\texorpdfstring{notify\_error()}{notify\_error()}}
+{\footnotesize\ttfamily bool ddjvu\+\_\+job\+\_\+s\+::notify\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent when an error occurs and the error message should be shown to the user. The receiver should return \#0\# if it is unable to process the request. Otherwise the receiver should return 1. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_aa347211538752ebfb9de12f1d5ed1fd3}{Dj\+Vu\+Port}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{structddjvu__page__s_a56f61f03e9cc2dd01e576c3350ba1e41}{ddjvu\+\_\+page\+\_\+s}}, and \mbox{\hyperlink{structddjvu__document__s_ac58e42dd9f8b942713b24e6c94e9b44b}{ddjvu\+\_\+document\+\_\+s}}.
+
+\mbox{\Hypertarget{structddjvu__job__s_a8380cdf79b50652bcf3b12d30890e109}\label{structddjvu__job__s_a8380cdf79b50652bcf3b12d30890e109}} 
+\index{ddjvu\_job\_s@{ddjvu\_job\_s}!notify\_status@{notify\_status}}
+\index{notify\_status@{notify\_status}!ddjvu\_job\_s@{ddjvu\_job\_s}}
+\doxysubsubsection{\texorpdfstring{notify\_status()}{notify\_status()}}
+{\footnotesize\ttfamily bool ddjvu\+\_\+job\+\_\+s\+::notify\+\_\+status (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent to update the decoding status. The receiver should return \#0\# if it is unable to process the request. Otherwise the receiver should return 1. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_a67a50edaef92e6158c6f57d8075b1308}{Dj\+Vu\+Port}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{structddjvu__page__s_ac7a3fafbae8e26ceb2518218a7dcb112}{ddjvu\+\_\+page\+\_\+s}}, and \mbox{\hyperlink{structddjvu__document__s_aeb44a59f61618469e74fd78ee56eea9a}{ddjvu\+\_\+document\+\_\+s}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/ddjvuapi.\+cpp\end{DoxyCompactItemize}

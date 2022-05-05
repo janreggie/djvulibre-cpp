@@ -1,0 +1,127 @@
+\hypertarget{classGPosition}{}\doxysection{G\+Position Class Reference}
+\label{classGPosition}\index{GPosition@{GPosition}}
+
+
+{\ttfamily \#include $<$G\+Container.\+h$>$}
+
+
+
+Inheritance diagram for G\+Position\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classGPosition__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Position\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classGPosition__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPosition_adc8632aebe0eee6b5ba9422c633dfb08}{G\+Position}} ()
+\item 
+\mbox{\hyperlink{classGPosition_ac3eb59a525ce88f2215133e75aaf27bc}{G\+Position}} (const \mbox{\hyperlink{classGPosition}{G\+Position}} \&ref)
+\item 
+\mbox{\hyperlink{classGPosition_a0b1d44ea9cd6154c505657a8429849ef}{operator int}} () const
+\item 
+int \mbox{\hyperlink{classGPosition_a13729d7f1e225ea3dc80357797312a3d}{operator!}} () const
+\item 
+\mbox{\hyperlink{classGPosition}{G\+Position}} \& \mbox{\hyperlink{classGPosition_a6cc146080956ade7ad09beb2e182753a}{operator++}} ()
+\item 
+\mbox{\hyperlink{classGPosition}{G\+Position}} \& \mbox{\hyperlink{classGPosition_ac4f8492736bbe5dabd4963f1f95cbc0c}{operator-\/-\/}} ()
+\item 
+\mbox{\Hypertarget{classGPosition_a7f9d0d5f748daad59686952ad2333792}\label{classGPosition_a7f9d0d5f748daad59686952ad2333792}} 
+{\bfseries G\+Position} (\mbox{\hyperlink{structGCont_1_1Node}{Node}} $\ast$p, void $\ast$c)
+\item 
+\mbox{\Hypertarget{classGPosition_a1878cf91af4683725f82115d54832538}\label{classGPosition_a1878cf91af4683725f82115d54832538}} 
+\mbox{\hyperlink{structGCont_1_1Node}{Node}} $\ast$ {\bfseries check} (void $\ast$c)
+\item 
+\mbox{\Hypertarget{classGPosition_ab22d3ff14bf44040f9fd89bbd480b02a}\label{classGPosition_ab22d3ff14bf44040f9fd89bbd480b02a}} 
+const \mbox{\hyperlink{structGCont_1_1Node}{Node}} $\ast$ {\bfseries check} (void $\ast$c) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGPosition_a65a2581de22c36409288ec1889d327a2}\label{classGPosition_a65a2581de22c36409288ec1889d327a2}} 
+void {\bfseries throw\+\_\+invalid} (void $\ast$c) const no\+\_\+return
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGPosition_a94402045cd53bbc9a7e01e703048c56b}\label{classGPosition_a94402045cd53bbc9a7e01e703048c56b}} 
+\mbox{\hyperlink{structGCont_1_1Node}{Node}} $\ast$ {\bfseries ptr}
+\item 
+\mbox{\Hypertarget{classGPosition_a7ec0b84aad20c6ede4c0cc65b223281f}\label{classGPosition_a7ec0b84aad20c6ede4c0cc65b223281f}} 
+void $\ast$ {\bfseries cont}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGPosition_a9304b2a76040ae023acc7ddd41f42125}\label{classGPosition_a9304b2a76040ae023acc7ddd41f42125}} 
+class {\bfseries G\+List\+Base}
+\item 
+\mbox{\Hypertarget{classGPosition_a682174785926fb3b55578cd01ed5c818}\label{classGPosition_a682174785926fb3b55578cd01ed5c818}} 
+class {\bfseries G\+Set\+Base}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generic iterator class. This class represents a position in a list (see \textbackslash{}\+Ref\{\mbox{\hyperlink{classGList}{G\+List}}\}) or a map (see \textbackslash{}\+Ref\{\mbox{\hyperlink{classGMap}{G\+Map}}\}). As demonstrated by the following examples, this class should be used to iterate over the objects contained in a list or a map\+: \textbackslash{}begin\{verbatim\} void print\+\_\+list(\+G\+List$<$\+G\+String$>$ a) \{ for (\mbox{\hyperlink{classGPosition}{G\+Position}} i = a ; i; ++i) Dj\+Vu\+Print\+Message(\char`\"{}\%s\textbackslash{}n\char`\"{}, (const char$\ast$) a\mbox{[}i\mbox{]} ); \}
+
+void print\+\_\+list\+\_\+backwards(\+G\+List$<$\+G\+String$>$ a) \{ for (\mbox{\hyperlink{classGPosition}{G\+Position}} i = a.\+lastpos() ; i; --i) Dj\+Vu\+Print\+Message(\char`\"{}\%s\textbackslash{}n\char`\"{}, (const char$\ast$) a\mbox{[}i\mbox{]} ); \} \textbackslash{}end\{verbatim\} \mbox{\hyperlink{classGPosition}{G\+Position}} objects should only be used with the list or map for which they have been created (using the member functions \#firstpos\# or \#lastpos\# of the container). Furthermore, you should never use a \mbox{\hyperlink{classGPosition}{G\+Position}} object which designates a list element which has been removed from the list (using member function \#del\# or by other means.) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGPosition_adc8632aebe0eee6b5ba9422c633dfb08}\label{classGPosition_adc8632aebe0eee6b5ba9422c633dfb08}} 
+\index{GPosition@{GPosition}!GPosition@{GPosition}}
+\index{GPosition@{GPosition}!GPosition@{GPosition}}
+\doxysubsubsection{\texorpdfstring{GPosition()}{GPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily G\+Position\+::\+G\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a null \mbox{\hyperlink{classGPosition}{G\+Position}} object. \mbox{\Hypertarget{classGPosition_ac3eb59a525ce88f2215133e75aaf27bc}\label{classGPosition_ac3eb59a525ce88f2215133e75aaf27bc}} 
+\index{GPosition@{GPosition}!GPosition@{GPosition}}
+\index{GPosition@{GPosition}!GPosition@{GPosition}}
+\doxysubsubsection{\texorpdfstring{GPosition()}{GPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily G\+Position\+::\+G\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPosition}{G\+Position}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a copy of a \mbox{\hyperlink{classGPosition}{G\+Position}} object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGPosition_a0b1d44ea9cd6154c505657a8429849ef}\label{classGPosition_a0b1d44ea9cd6154c505657a8429849ef}} 
+\index{GPosition@{GPosition}!operator int@{operator int}}
+\index{operator int@{operator int}!GPosition@{GPosition}}
+\doxysubsubsection{\texorpdfstring{operator int()}{operator int()}}
+{\footnotesize\ttfamily G\+Position\+::operator int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests whether this \mbox{\hyperlink{classGPosition}{G\+Position}} object is non null. \mbox{\Hypertarget{classGPosition_a13729d7f1e225ea3dc80357797312a3d}\label{classGPosition_a13729d7f1e225ea3dc80357797312a3d}} 
+\index{GPosition@{GPosition}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!GPosition@{GPosition}}
+\doxysubsubsection{\texorpdfstring{operator"!()}{operator!()}}
+{\footnotesize\ttfamily int G\+Position\+::operator! (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Tests whether this \mbox{\hyperlink{classGPosition}{G\+Position}} object is null. \mbox{\Hypertarget{classGPosition_a6cc146080956ade7ad09beb2e182753a}\label{classGPosition_a6cc146080956ade7ad09beb2e182753a}} 
+\index{GPosition@{GPosition}!operator++@{operator++}}
+\index{operator++@{operator++}!GPosition@{GPosition}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPosition}{G\+Position}}\& G\+Position\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Moves this \mbox{\hyperlink{classGPosition}{G\+Position}} object to the next object in the container. \mbox{\Hypertarget{classGPosition_ac4f8492736bbe5dabd4963f1f95cbc0c}\label{classGPosition_ac4f8492736bbe5dabd4963f1f95cbc0c}} 
+\index{GPosition@{GPosition}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!GPosition@{GPosition}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPosition}{G\+Position}}\& G\+Position\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Moves this \mbox{\hyperlink{classGPosition}{G\+Position}} object to the previous object in the container. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Container.\+h\item 
+libdjvu/G\+Container.\+cpp\end{DoxyCompactItemize}

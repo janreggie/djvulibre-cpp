@@ -1,0 +1,140 @@
+\hypertarget{classGNativeString}{}\doxysection{G\+Native\+String Class Reference}
+\label{classGNativeString}\index{GNativeString@{GNativeString}}
+
+
+{\ttfamily \#include $<$G\+String.\+h$>$}
+
+
+
+Inheritance diagram for G\+Native\+String\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classGNativeString__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Native\+String\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classGNativeString__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGNativeString_a44aedb4ed4e3f4143d9063fda5fe30b6}\label{classGNativeString_a44aedb4ed4e3f4143d9063fda5fe30b6}} 
+{\bfseries G\+Native\+String} (const \mbox{\hyperlink{classGBaseString}{G\+Base\+String}} \&str)
+\item 
+\mbox{\hyperlink{classGNativeString_a92d64ae62958c4aaf984086218f5ea26}{G\+Native\+String}} (const \mbox{\hyperlink{classGBaseString}{G\+Base\+String}} \&gs, int from, int len)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ G\+String.\+h}\par
+{\em Files \#\char`\"{}\+G\+String.\+h\char`\"{}\# and \#\char`\"{}\+G\+String.\+cpp\char`\"{}\# implement a general purpose string class \textbackslash{}\+Ref\{\mbox{\hyperlink{classGBaseString}{G\+Base\+String}}\}, with dirived types \textbackslash{}\+Ref\{\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classGNativeString}{G\+Native\+String}}\} for U\+T\+F8 M\+BS encoding and the current Native M\+BS encoding respectively. This implementation relies on smart pointers (see \textbackslash{}\+Ref\{\mbox{\hyperlink{GSmartPointer_8h_source}{G\+Smart\+Pointer.\+h}}\}).
+
+\{\textbackslash{}bf Historical \mbox{\hyperlink{classComments}{Comments}}\} --- At some point during the Dj\+Vu research era, it became clear that C++ compilers rarely provided portable libraries. We then decided to avoid fancy classes (like \#iostream\# or \#string\#) and to rely only on the good old C library. A good string class however is very useful. We had already randomly picked letter \textquotesingle{}G\textquotesingle{} to prefix class names and we logically derived the new class name. Native English speakers kept laughing in hiding. This is ironic because we completely forgot this letter \textquotesingle{}G\textquotesingle{} when creating more challenging things like the ZP Coder or the I\+W44 wavelets. ~\newline
+
+
+\{\textbackslash{}bf Later Changes\} When converting to I18N, we (Lizardtech) decided that two string classes where needing, replacing the original G\+String with \textbackslash{}\+Ref\{\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classGNativeString}{G\+Native\+String}}\}.
+
+@memo General purpose string class. \begin{DoxyAuthor}{Author}
+L\textbackslash{}\textquotesingle{}eon Bottou \href{mailto:leonb@research.att.com}{\texttt{ leonb@research.\+att.\+com}} -- initial implementation.\textbackslash{}
+\end{DoxyAuthor}
+From\+: Leon Bottou, 1/31/2002 This file has very little to do with my initial implementation. It has been practically rewritten by Lizardtech for i18n changes. My original implementation was very small in comparison \href{http://prdownloads.sourceforge.net/djvu/DjVu2_2b-src.tgz}{\texttt{ http\+://prdownloads.\+sourceforge.\+net/djvu/\+Dj\+Vu2\+\_\+2b-\/src.\+tgz}}. In my opinion, the duplication of the string classes is a failed attempt to use the type system to enforce coding policies. This could be fixed. But there are better things to do in djvulibre. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGNativeString_adcdf7bd8cddcaacc83e025c181576389}{G\+Native\+String}} (void)
+\item 
+\mbox{\Hypertarget{classGNativeString_a1d12267c78c45705deea55047a760d07}\label{classGNativeString_a1d12267c78c45705deea55047a760d07}} 
+\mbox{\hyperlink{classGNativeString_a1d12267c78c45705deea55047a760d07}{G\+Native\+String}} (const char dat)
+\begin{DoxyCompactList}\small\item\em Constructs a string from a character. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGNativeString_a9f434986e5f2aac7936dcc1fa6fb6522}\label{classGNativeString_a9f434986e5f2aac7936dcc1fa6fb6522}} 
+\mbox{\hyperlink{classGNativeString_a9f434986e5f2aac7936dcc1fa6fb6522}{G\+Native\+String}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Constructs a string from a null terminated character array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGNativeString_abcc803cfc00d7b7eecc3f2b9187bfc82}\label{classGNativeString_abcc803cfc00d7b7eecc3f2b9187bfc82}} 
+\mbox{\hyperlink{classGNativeString_abcc803cfc00d7b7eecc3f2b9187bfc82}{G\+Native\+String}} (const unsigned char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Constructs a string from a null terminated character array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGNativeString_a80dd03fdefcb3be178a6e588af8dd581}\label{classGNativeString_a80dd03fdefcb3be178a6e588af8dd581}} 
+{\bfseries G\+Native\+String} (const uint16\+\_\+t $\ast$str)
+\item 
+\mbox{\Hypertarget{classGNativeString_aa901c17c7e94a927018a3081b6bd11ff}\label{classGNativeString_aa901c17c7e94a927018a3081b6bd11ff}} 
+{\bfseries G\+Native\+String} (const uint32\+\_\+t $\ast$str)
+\item 
+\mbox{\hyperlink{classGNativeString_a13abee5f528323563b9859b7672a2a82}{G\+Native\+String}} (const char $\ast$dat, unsigned int len)
+\item 
+\mbox{\Hypertarget{classGNativeString_aacf046170e4e74491a844a40651b13c6}\label{classGNativeString_aacf046170e4e74491a844a40651b13c6}} 
+{\bfseries G\+Native\+String} (const uint16\+\_\+t $\ast$dat, unsigned int len)
+\item 
+\mbox{\Hypertarget{classGNativeString_ac5e6f576f1b5fdf6e39c6666901ed00c}\label{classGNativeString_ac5e6f576f1b5fdf6e39c6666901ed00c}} 
+{\bfseries G\+Native\+String} (const uint32\+\_\+t $\ast$dat, unsigned int len)
+\item 
+\mbox{\Hypertarget{classGNativeString_acb9eebed33eefab69f3fcd9e9c918468}\label{classGNativeString_acb9eebed33eefab69f3fcd9e9c918468}} 
+\mbox{\hyperlink{classGNativeString_acb9eebed33eefab69f3fcd9e9c918468}{G\+Native\+String}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&str)
+\begin{DoxyCompactList}\small\item\em Construct from base class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGNativeString_a57ea570ac79e724d1f5e162eed7dc79c}\label{classGNativeString_a57ea570ac79e724d1f5e162eed7dc79c}} 
+{\bfseries G\+Native\+String} (const \mbox{\hyperlink{classGNativeString}{G\+Native\+String}} \&str)
+\item 
+\mbox{\hyperlink{classGNativeString_aecd430a891b783267e0d620cdf66965b}{G\+Native\+String}} (const \mbox{\hyperlink{classGNativeString}{G\+Native\+String}} \&fmt, va\+\_\+list \&args)
+\item 
+\mbox{\hyperlink{classGNativeString_a8cd7135fc146052a4cc424892b9e7173}{G\+Native\+String}} (const int number)
+\item 
+\mbox{\hyperlink{classGNativeString_a32969dc7ad721df05fa6db16fd732555}{G\+Native\+String}} (const double number)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+General purpose character string. Each instance of class \mbox{\hyperlink{classGNativeString}{G\+Native\+String}}\# represents a character string. Overloaded operators provide a value semantic to \mbox{\hyperlink{classGNativeString}{G\+Native\+String}}\# objects. Conversion operators and constructors transparently convert between \mbox{\hyperlink{classGNativeString}{G\+Native\+String}}\# objects and \#const char$\ast$\# pointers.
+
+Functions taking strings as arguments should declare their arguments as \char`\"{}\#const char$\ast$\#\char`\"{}. Such functions will work equally well with \mbox{\hyperlink{classGNativeString}{G\+Native\+String}}\# objects since there is a fast conversion operator from \mbox{\hyperlink{classGNativeString}{G\+Native\+String}}\# to \char`\"{}\#const char$\ast$\#\char`\"{}. Functions returning strings should return \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}\# or \mbox{\hyperlink{classGNativeString}{G\+Native\+String}}\# objects because the class will automatically manage the necessary memory.
+
+Characters in the string can be identified by their position. The first character of a string is numbered zero. Negative positions represent characters relative to the end of the string (i.\+e. position \#-\/1\# accesses the last character of the string, position \#-\/2\# represents the second last character, etc.) ~\newline
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGNativeString_adcdf7bd8cddcaacc83e025c181576389}\label{classGNativeString_adcdf7bd8cddcaacc83e025c181576389}} 
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\doxysubsubsection{\texorpdfstring{GNativeString()}{GNativeString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily G\+Native\+String\+::\+G\+Native\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Null constructor. Constructs an empty string. \mbox{\Hypertarget{classGNativeString_a13abee5f528323563b9859b7672a2a82}\label{classGNativeString_a13abee5f528323563b9859b7672a2a82}} 
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\doxysubsubsection{\texorpdfstring{GNativeString()}{GNativeString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily G\+Native\+String\+::\+G\+Native\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{dat,  }\item[{unsigned int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a string from a character array. Elements of the character array \#dat\# are added into the string until the string length reaches \#len\# or until encountering a null character (whichever comes first). \mbox{\Hypertarget{classGNativeString_a92d64ae62958c4aaf984086218f5ea26}\label{classGNativeString_a92d64ae62958c4aaf984086218f5ea26}} 
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\doxysubsubsection{\texorpdfstring{GNativeString()}{GNativeString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily G\+Native\+String\+::\+G\+Native\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBaseString}{G\+Base\+String}} \&}]{gs,  }\item[{int}]{from,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+Constructs a string from a character array. Elements of the character array \#dat\# are added into the string until the string length reaches \#len\# or until encountering a null character (whichever comes first). \mbox{\Hypertarget{classGNativeString_aecd430a891b783267e0d620cdf66965b}\label{classGNativeString_aecd430a891b783267e0d620cdf66965b}} 
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\doxysubsubsection{\texorpdfstring{GNativeString()}{GNativeString()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily G\+Native\+String\+::\+G\+Native\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGNativeString}{G\+Native\+String}} \&}]{fmt,  }\item[{va\+\_\+list \&}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a string with a formatted string (as in \#vprintf\#). The string is re-\/initialized with the characters generated according to the specified format \#fmt\# and using the optional arguments. See the A\+N\+S\+I-\/C function \#vprintf()\# for more information. The current implementation will cause a segmentation violation if the resulting string is longer than 32768 characters. \mbox{\Hypertarget{classGNativeString_a8cd7135fc146052a4cc424892b9e7173}\label{classGNativeString_a8cd7135fc146052a4cc424892b9e7173}} 
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\doxysubsubsection{\texorpdfstring{GNativeString()}{GNativeString()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily G\+Native\+String\+::\+G\+Native\+String (\begin{DoxyParamCaption}\item[{const int}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a string with a human-\/readable representation of integer \#number\#. The format is similar to format \#\char`\"{}\%d\char`\"{}\# in function \#printf\#. \mbox{\Hypertarget{classGNativeString_a32969dc7ad721df05fa6db16fd732555}\label{classGNativeString_a32969dc7ad721df05fa6db16fd732555}} 
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\index{GNativeString@{GNativeString}!GNativeString@{GNativeString}}
+\doxysubsubsection{\texorpdfstring{GNativeString()}{GNativeString()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily G\+Native\+String\+::\+G\+Native\+String (\begin{DoxyParamCaption}\item[{const double}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a string with a human-\/readable representation of floating point number \#number\#. The format is similar to format \#\char`\"{}\%f\char`\"{}\# in function \#printf\#. ~\newline
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+String.\+h\item 
+libdjvu/G\+String.\+cpp\end{DoxyCompactItemize}

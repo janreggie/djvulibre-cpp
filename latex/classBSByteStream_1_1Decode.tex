@@ -1,0 +1,78 @@
+\hypertarget{classBSByteStream_1_1Decode}{}\doxysection{B\+S\+Byte\+Stream\+::Decode Class Reference}
+\label{classBSByteStream_1_1Decode}\index{BSByteStream::Decode@{BSByteStream::Decode}}
+
+
+Inheritance diagram for B\+S\+Byte\+Stream\+::Decode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classBSByteStream_1_1Decode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\+S\+Byte\+Stream\+::Decode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBSByteStream_1_1Decode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBSByteStream_1_1Decode_acaad5553dbf266c98f54fdd194434a5b}{Decode}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ bs)
+\item 
+\mbox{\Hypertarget{classBSByteStream_1_1Decode_aa02e477ca1ec2c39cafed365c359196f}\label{classBSByteStream_1_1Decode_aa02e477ca1ec2c39cafed365c359196f}} 
+void {\bfseries init} (void)
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classBSByteStream_1_1Decode_a861396dfe4dcc21160dc47619ee962a4}{read}} (void $\ast$buffer, size\+\_\+t sz)
+\item 
+virtual void \mbox{\hyperlink{classBSByteStream_1_1Decode_af053edb53f525bafd282cbe0c7cbe9c0}{flush}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBSByteStream_1_1Decode_aa59da26bba45993cc84f5f450af61026}\label{classBSByteStream_1_1Decode_aa59da26bba45993cc84f5f450af61026}} 
+unsigned int {\bfseries decode} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBSByteStream_1_1Decode_acaad5553dbf266c98f54fdd194434a5b}\label{classBSByteStream_1_1Decode_acaad5553dbf266c98f54fdd194434a5b}} 
+\index{BSByteStream::Decode@{BSByteStream::Decode}!Decode@{Decode}}
+\index{Decode@{Decode}!BSByteStream::Decode@{BSByteStream::Decode}}
+\doxysubsubsection{\texorpdfstring{Decode()}{Decode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBSByteStream_1_1Decode}{B\+S\+Byte\+Stream\+::\+Decode\+::\+Decode}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{bs }\end{DoxyParamCaption})}
+
+Creates a Static object for allocating the memory area of length \#sz\# starting at address \#buffer\#. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBSByteStream_1_1Decode_af053edb53f525bafd282cbe0c7cbe9c0}\label{classBSByteStream_1_1Decode_af053edb53f525bafd282cbe0c7cbe9c0}} 
+\index{BSByteStream::Decode@{BSByteStream::Decode}!flush@{flush}}
+\index{flush@{flush}!BSByteStream::Decode@{BSByteStream::Decode}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily void B\+S\+Byte\+Stream\+::\+Decode\+::flush (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Flushes all buffers in the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. Calling this function guarantees that pending data have been actually written (i.\+e. passed to the operating system). \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\# provides a default implementation which does nothing. 
+
+Implements \mbox{\hyperlink{classBSByteStream_ab4506bed8f8778ba256a43ae61d62646}{B\+S\+Byte\+Stream}}.
+
+\mbox{\Hypertarget{classBSByteStream_1_1Decode_a861396dfe4dcc21160dc47619ee962a4}\label{classBSByteStream_1_1Decode_a861396dfe4dcc21160dc47619ee962a4}} 
+\index{BSByteStream::Decode@{BSByteStream::Decode}!read@{read}}
+\index{read@{read}!BSByteStream::Decode@{BSByteStream::Decode}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily size\+\_\+t B\+S\+Byte\+Stream\+::\+Decode\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reads data from a \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. This function \{{\itshape must\}} be implemented by each subclass of \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\#. At most \#size\# bytes are read from the \mbox{\hyperlink{classByteStream}{Byte\+Stream}} and stored in the memory area pointed to by \#buffer\#. Function \mbox{\hyperlink{classBSByteStream_1_1Decode_a861396dfe4dcc21160dc47619ee962a4}{read}}\# returns immediately if \#size\# is zero. The actual number of bytes read is returned. Function \mbox{\hyperlink{classBSByteStream_1_1Decode_a861396dfe4dcc21160dc47619ee962a4}{read}}\# returns a number of bytes smaller than \#size\# if the end-\/of-\/file mark is reached before filling the buffer. Subsequent invocations will always return value \#0\#. Function \mbox{\hyperlink{classBSByteStream_1_1Decode_a861396dfe4dcc21160dc47619ee962a4}{read}}\# may also return a value greater than zero but smaller than \#size\# for internal reasons. Programs must be ready to handle these cases or use function \textbackslash{}\+Ref\{readall\}. Exception \textbackslash{}\+Ref\{\mbox{\hyperlink{classGException}{G\+Exception}}\} is thrown with a plain text error message whenever an error occurs. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_ae69bbdbc77545f72488bde0639ae0e95}{Byte\+Stream}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/B\+S\+Byte\+Stream.\+cpp\end{DoxyCompactItemize}

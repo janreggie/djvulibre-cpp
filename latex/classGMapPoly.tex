@@ -1,0 +1,151 @@
+\hypertarget{classGMapPoly}{}\doxysection{G\+Map\+Poly Class Reference}
+\label{classGMapPoly}\index{GMapPoly@{GMapPoly}}
+
+
+{\ttfamily \#include $<$G\+Map\+Areas.\+h$>$}
+
+
+
+Inheritance diagram for G\+Map\+Poly\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classGMapPoly__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Map\+Poly\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classGMapPoly__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapPoly_ade0c5d0d07738beca8b57f4458cfc850}\label{classGMapPoly_ade0c5d0d07738beca8b57f4458cfc850}} 
+virtual \mbox{\hyperlink{classGMapPoly_ade0c5d0d07738beca8b57f4458cfc850}{$\sim$\+G\+Map\+Poly}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a2efab1c07b3588851d615e32bd8b6e77}\label{classGMapPoly_a2efab1c07b3588851d615e32bd8b6e77}} 
+bool \mbox{\hyperlink{classGMapPoly_a2efab1c07b3588851d615e32bd8b6e77}{does\+\_\+side\+\_\+cross\+\_\+rect}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&grect, int side)
+\begin{DoxyCompactList}\small\item\em Returns 1 if side \#side\# crosses the specified rectangle \#rect\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_add781a567aaf1dd1ef539ea4aec83a76}\label{classGMapPoly_add781a567aaf1dd1ef539ea4aec83a76}} 
+void \mbox{\hyperlink{classGMapPoly_add781a567aaf1dd1ef539ea4aec83a76}{move\+\_\+vertex}} (int i, int x, int y)
+\begin{DoxyCompactList}\small\item\em Moves vertex \#i\# to position (\#x\#, \#y\#) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a0ef451a7263e015ad9e9f5457672283f}\label{classGMapPoly_a0ef451a7263e015ad9e9f5457672283f}} 
+int \mbox{\hyperlink{classGMapPoly_a0ef451a7263e015ad9e9f5457672283f}{add\+\_\+vertex}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Adds a new vertex and returns number of vertices in the polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_ac3c4e2eddb2a023dd0a1c164e11d8e58}\label{classGMapPoly_ac3c4e2eddb2a023dd0a1c164e11d8e58}} 
+void \mbox{\hyperlink{classGMapPoly_ac3c4e2eddb2a023dd0a1c164e11d8e58}{close\+\_\+poly}} ()
+\begin{DoxyCompactList}\small\item\em Closes the polygon if it is not closed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_aaeeac47bed77d28f04fa8864d90e39d2}\label{classGMapPoly_aaeeac47bed77d28f04fa8864d90e39d2}} 
+void \mbox{\hyperlink{classGMapPoly_aaeeac47bed77d28f04fa8864d90e39d2}{optimize\+\_\+data}} (void)
+\begin{DoxyCompactList}\small\item\em Optimizes the polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_aaace005c9133dcd99ff911079d8872f2}\label{classGMapPoly_aaace005c9133dcd99ff911079d8872f2}} 
+const char $\ast$const \mbox{\hyperlink{classGMapPoly_aaace005c9133dcd99ff911079d8872f2}{check\+\_\+data}} (void)
+\begin{DoxyCompactList}\small\item\em Checks validity of the polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_ad40621315dc1a1d9f9f6d281f09a9996}\label{classGMapPoly_ad40621315dc1a1d9f9f6d281f09a9996}} 
+virtual \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} {\bfseries get\+\_\+xmltag} (const int height) const
+\item 
+\mbox{\Hypertarget{classGMapPoly_aa8559ea3283f3a9333528193bfef987a}\label{classGMapPoly_aa8559ea3283f3a9333528193bfef987a}} 
+virtual const Map\+Area\+Type \mbox{\hyperlink{classGMapPoly_aa8559ea3283f3a9333528193bfef987a}{get\+\_\+shape\+\_\+type}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns Map\+Poly. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a623a5736eda29a67014c7f7745642066}\label{classGMapPoly_a623a5736eda29a67014c7f7745642066}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGMapArea}{G\+Map\+Area}} $>$ \mbox{\hyperlink{classGMapPoly_a623a5736eda29a67014c7f7745642066}{get\+\_\+copy}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns a copy of the polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a8a5c177954ddeafc57593d8c6925e48b}\label{classGMapPoly_a8a5c177954ddeafc57593d8c6925e48b}} 
+void \mbox{\hyperlink{classGMapPoly_a8a5c177954ddeafc57593d8c6925e48b}{get\+\_\+coords}} (\mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&Coord\+List) const
+\begin{DoxyCompactList}\small\item\em Virtual function generating a list of defining coordinates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a1695820c257aaa2e1a275be8fa45a143}\label{classGMapPoly_a1695820c257aaa2e1a275be8fa45a143}} 
+virtual void \mbox{\hyperlink{classGMapPoly_a1695820c257aaa2e1a275be8fa45a143}{map}} (\mbox{\hyperlink{classGRectMapper}{G\+Rect\+Mapper}} \&mapper)
+\begin{DoxyCompactList}\small\item\em Virtual function maps polygon from one area to another using mapper. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a3bd1a788c790a3276b066cb81206a5e4}\label{classGMapPoly_a3bd1a788c790a3276b066cb81206a5e4}} 
+virtual void \mbox{\hyperlink{classGMapPoly_a3bd1a788c790a3276b066cb81206a5e4}{unmap}} (\mbox{\hyperlink{classGRectMapper}{G\+Rect\+Mapper}} \&mapper)
+\begin{DoxyCompactList}\small\item\em Virtual function unmaps polygon from one area to another using mapper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ G\+Map\+Areas.\+h}\par
+{\em Files \#\char`\"{}\+G\+Map\+Areas.\+h\char`\"{}\# and \#\char`\"{}\+G\+Map\+Areas.\+cpp\char`\"{}\# implement base objects used by the plugin to display and manage hyperlinks and highlighted areas inside a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} page.
+
+The currently supported areas can be rectangular (\textbackslash{}\+Ref\{\mbox{\hyperlink{classGMapRect}{G\+Map\+Rect}}\}), elliptical (\textbackslash{}\+Ref\{\mbox{\hyperlink{classGMapOval}{G\+Map\+Oval}}\}) and polygonal (\textbackslash{}\+Ref\{\mbox{\hyperlink{classGMapPoly}{G\+Map\+Poly}}\}). Every map area besides the definition of its shape contains information about display style and optional \{\textbackslash{}bf U\+RL\}, which it may refer to. If this \{\textbackslash{}bf U\+RL\} is not empty then the map area will work like a hyperlink.
+
+The classes also implement some useful functions to ease geometry manipulations
+
+@memo Definition of base map area classes \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} 
+\end{DoxyAuthor}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapPoly_af0a866af9207893bb2b97649391e5ea6}\label{classGMapPoly_af0a866af9207893bb2b97649391e5ea6}} 
+int \mbox{\hyperlink{classGMapPoly_af0a866af9207893bb2b97649391e5ea6}{get\+\_\+points\+\_\+num}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the number of vertices in the polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a7d24d618f16d7e77ceb1b92f78d5e8f5}\label{classGMapPoly_a7d24d618f16d7e77ceb1b92f78d5e8f5}} 
+int \mbox{\hyperlink{classGMapPoly_a7d24d618f16d7e77ceb1b92f78d5e8f5}{get\+\_\+sides\+\_\+num}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the number sides in the polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a3c1b74d4b0e832372ffdf3e5fc2e6000}\label{classGMapPoly_a3c1b74d4b0e832372ffdf3e5fc2e6000}} 
+int \mbox{\hyperlink{classGMapPoly_a3c1b74d4b0e832372ffdf3e5fc2e6000}{get\+\_\+x}} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns x coordinate of vertex number \#i\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a342ad82cdbef463c9af0c77bf904f20e}\label{classGMapPoly_a342ad82cdbef463c9af0c77bf904f20e}} 
+int \mbox{\hyperlink{classGMapPoly_a342ad82cdbef463c9af0c77bf904f20e}{get\+\_\+y}} (int i) const
+\begin{DoxyCompactList}\small\item\em Returns y coordinate of vertex number \#i\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_aede5654f68e12577ac289cd25961c3d0}\label{classGMapPoly_aede5654f68e12577ac289cd25961c3d0}} 
+virtual const char $\ast$const \mbox{\hyperlink{classGMapPoly_aede5654f68e12577ac289cd25961c3d0}{get\+\_\+shape\+\_\+name}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns \#\char`\"{}poly\char`\"{}\# all the time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapPoly_a086c2880ba4ad00ea2946b4b262fba91}\label{classGMapPoly_a086c2880ba4ad00ea2946b4b262fba91}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGMapPoly}{G\+Map\+Poly}} $>$ \mbox{\hyperlink{classGMapPoly_a086c2880ba4ad00ea2946b4b262fba91}{create}} (void)
+\begin{DoxyCompactList}\small\item\em Default creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapPoly_a9b566c2d700f12ddfd8ae3ca36bfdaba}\label{classGMapPoly_a9b566c2d700f12ddfd8ae3ca36bfdaba}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGMapPoly}{G\+Map\+Poly}} $>$ \mbox{\hyperlink{classGMapPoly_a9b566c2d700f12ddfd8ae3ca36bfdaba}{create}} (const int xx\mbox{[}$\,$\mbox{]}, const int yy\mbox{[}$\,$\mbox{]}, const int points, const bool open=false)
+\begin{DoxyCompactList}\small\item\em Create from specified coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapPoly_aaba5da385d53cc27e79faa206211b4a8}\label{classGMapPoly_aaba5da385d53cc27e79faa206211b4a8}} 
+{\bfseries G\+Map\+Poly} (const int $\ast$xx, const int $\ast$yy, int points, bool open=false)
+\item 
+\mbox{\Hypertarget{classGMapPoly_a2dc105f7187c76c519a8fd6204a7fbc7}\label{classGMapPoly_a2dc105f7187c76c519a8fd6204a7fbc7}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+xmin} (void) const
+\item 
+\mbox{\Hypertarget{classGMapPoly_a834afbbfe5327e19babb70aa59c18028}\label{classGMapPoly_a834afbbfe5327e19babb70aa59c18028}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+ymin} (void) const
+\item 
+\mbox{\Hypertarget{classGMapPoly_aff9b6b6f6d0c207f9e7ad33c3da187c6}\label{classGMapPoly_aff9b6b6f6d0c207f9e7ad33c3da187c6}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+xmax} (void) const
+\item 
+\mbox{\Hypertarget{classGMapPoly_af56ce13f144c91e472f156db9e414bcf}\label{classGMapPoly_af56ce13f144c91e472f156db9e414bcf}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+ymax} (void) const
+\item 
+\mbox{\Hypertarget{classGMapPoly_a0e7d380d06e6b43b3fb68e279ebbf1c7}\label{classGMapPoly_a0e7d380d06e6b43b3fb68e279ebbf1c7}} 
+virtual void {\bfseries gma\+\_\+move} (int dx, int dy)
+\item 
+\mbox{\Hypertarget{classGMapPoly_a2c19cea11f779b25ebc4bba9925c59f6}\label{classGMapPoly_a2c19cea11f779b25ebc4bba9925c59f6}} 
+virtual void {\bfseries gma\+\_\+resize} (int new\+\_\+width, int new\+\_\+height)
+\item 
+\mbox{\Hypertarget{classGMapPoly_af6311660611b334367c72cdd3aa0e2f2}\label{classGMapPoly_af6311660611b334367c72cdd3aa0e2f2}} 
+virtual void {\bfseries gma\+\_\+transform} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&grect)
+\item 
+\mbox{\Hypertarget{classGMapPoly_a17414762fe01829f69e9220a16eaa785}\label{classGMapPoly_a17414762fe01829f69e9220a16eaa785}} 
+virtual bool {\bfseries gma\+\_\+is\+\_\+point\+\_\+inside} (const int x, const int y) const
+\item 
+\mbox{\Hypertarget{classGMapPoly_a26f2f822953886a9855237e429f9c78b}\label{classGMapPoly_a26f2f822953886a9855237e429f9c78b}} 
+virtual const char $\ast$const {\bfseries gma\+\_\+check\+\_\+object} (void) const
+\item 
+\mbox{\Hypertarget{classGMapPoly_a243063b081583bb588ee30154d7a5a2c}\label{classGMapPoly_a243063b081583bb588ee30154d7a5a2c}} 
+virtual \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} {\bfseries gma\+\_\+print} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implements polygonal map areas. The only supported types of border are \#\+N\+O\+\_\+\+B\+O\+R\+D\+ER\#, \#\+X\+O\+R\+\_\+\+B\+O\+R\+D\+ER\# and \#\+S\+O\+L\+I\+D\+\_\+\+B\+O\+R\+D\+ER\#. Its contents can not be highlighted either. It\textquotesingle{}s worth mentioning here that despite its name the polygon may be open, which basically makes it a broken line. This very specific mode is used by the hyperlink editor when creating the polygonal hyperlink. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Map\+Areas.\+h\item 
+libdjvu/G\+Map\+Areas.\+cpp\end{DoxyCompactItemize}

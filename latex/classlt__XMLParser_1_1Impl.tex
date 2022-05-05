@@ -1,0 +1,88 @@
+\hypertarget{classlt__XMLParser_1_1Impl}{}\doxysection{lt\+\_\+\+X\+M\+L\+Parser\+::Impl Class Reference}
+\label{classlt__XMLParser_1_1Impl}\index{lt\_XMLParser::Impl@{lt\_XMLParser::Impl}}
+
+
+Inheritance diagram for lt\+\_\+\+X\+M\+L\+Parser\+::Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classlt__XMLParser_1_1Impl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for lt\+\_\+\+X\+M\+L\+Parser\+::Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classlt__XMLParser_1_1Impl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a1fdb68eb69da4514baa22aa1ed0f7294}\label{classlt__XMLParser_1_1Impl_a1fdb68eb69da4514baa22aa1ed0f7294}} 
+virtual void \mbox{\hyperlink{classlt__XMLParser_1_1Impl_a1fdb68eb69da4514baa22aa1ed0f7294}{parse}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&bs, \mbox{\hyperlink{classGURL}{G\+U\+RL}} $\ast$pdjvufile)
+\begin{DoxyCompactList}\small\item\em Parse the specified bytestream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a206e9c21340008ddbe66dfc3ec0cc701}\label{classlt__XMLParser_1_1Impl_a206e9c21340008ddbe66dfc3ec0cc701}} 
+virtual void \mbox{\hyperlink{classlt__XMLParser_1_1Impl_a206e9c21340008ddbe66dfc3ec0cc701}{parse}} (const \mbox{\hyperlink{classlt__XMLTags}{lt\+\_\+\+X\+M\+L\+Tags}} \&tags, \mbox{\hyperlink{classGURL}{G\+U\+RL}} $\ast$pdjvufile)
+\begin{DoxyCompactList}\small\item\em Parse the specified tags -\/ this one does all the work. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_ad3f4a2c4f914ba2fd83aadd2ee715bf2}\label{classlt__XMLParser_1_1Impl_ad3f4a2c4f914ba2fd83aadd2ee715bf2}} 
+virtual void \mbox{\hyperlink{classlt__XMLParser_1_1Impl_ad3f4a2c4f914ba2fd83aadd2ee715bf2}{save}} (void)
+\begin{DoxyCompactList}\small\item\em write to disk. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_af0688f4c794c5144dd4bb4cfe51cf762}\label{classlt__XMLParser_1_1Impl_af0688f4c794c5144dd4bb4cfe51cf762}} 
+virtual void \mbox{\hyperlink{classlt__XMLParser_1_1Impl_af0688f4c794c5144dd4bb4cfe51cf762}{empty}} (void)
+\begin{DoxyCompactList}\small\item\em erase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a56ce7fae582b9b9bd25cdf517829244b}\label{classlt__XMLParser_1_1Impl_a56ce7fae582b9b9bd25cdf517829244b}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ {\bfseries get\+\_\+file} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} page)
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a5f6b059225395f2b5857d669b1a7d57b}\label{classlt__XMLParser_1_1Impl_a5f6b059225395f2b5857d669b1a7d57b}} 
+void {\bfseries parse\+\_\+anno} (const int width, const int height, const \mbox{\hyperlink{classlt__XMLTags}{lt\+\_\+\+X\+M\+L\+Tags}} \&G\+Object, \mbox{\hyperlink{classGMap}{G\+Map}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classlt__XMLTags}{lt\+\_\+\+X\+M\+L\+Tags}} $>$ $>$ \&Maps, \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} \&dfile)
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a2cfb5aa2e89806dde0f98bce1dd01c45}\label{classlt__XMLParser_1_1Impl_a2cfb5aa2e89806dde0f98bce1dd01c45}} 
+void {\bfseries parse\+\_\+text} (const int width, const int height, const \mbox{\hyperlink{classlt__XMLTags}{lt\+\_\+\+X\+M\+L\+Tags}} \&G\+Object, \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} \&dfile)
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_ac203ff27bc4ebefdcfdb4516699943f7}\label{classlt__XMLParser_1_1Impl_ac203ff27bc4ebefdcfdb4516699943f7}} 
+void {\bfseries parse\+\_\+meta} (const \mbox{\hyperlink{classlt__XMLTags}{lt\+\_\+\+X\+M\+L\+Tags}} \&G\+Object, \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} \&dfile)
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_ae0352a65af7bc3aea1d0e44c5721c813}\label{classlt__XMLParser_1_1Impl_ae0352a65af7bc3aea1d0e44c5721c813}} 
+void {\bfseries Change\+Anno} (const int width, const int height, \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} \&dfile, const \mbox{\hyperlink{classlt__XMLTags}{lt\+\_\+\+X\+M\+L\+Tags}} \&map)
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a71a3ee79c358725aedd4099c4c5c9903}\label{classlt__XMLParser_1_1Impl_a71a3ee79c358725aedd4099c4c5c9903}} 
+void {\bfseries Change\+Info} (\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} \&dfile, const int dpi, const double gamma)
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a95be563bc7f8e1a760022e59d5ff85ef}\label{classlt__XMLParser_1_1Impl_a95be563bc7f8e1a760022e59d5ff85ef}} 
+void {\bfseries Change\+Text} (const int width, const int height, \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} \&dfile, const \mbox{\hyperlink{classlt__XMLTags}{lt\+\_\+\+X\+M\+L\+Tags}} \&map)
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_ab32d87f9b43dd5aa3865f115b53669b8}\label{classlt__XMLParser_1_1Impl_ab32d87f9b43dd5aa3865f115b53669b8}} 
+void {\bfseries Change\+Meta} (\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} \&dfile, const \mbox{\hyperlink{classlt__XMLTags}{lt\+\_\+\+X\+M\+L\+Tags}} \&map)
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a7ed1caf0a62a845e749de51f6d92affe}\label{classlt__XMLParser_1_1Impl_a7ed1caf0a62a845e749de51f6d92affe}} 
+void {\bfseries Change\+Text\+O\+CR} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&value, const int width, const int height, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \&dfile)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a98b5e01abfc240d1ee7c41349be7528d}\label{classlt__XMLParser_1_1Impl_a98b5e01abfc240d1ee7c41349be7528d}} 
+\mbox{\hyperlink{classGMap}{G\+Map}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ $>$ {\bfseries m\+\_\+files}
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a851e3e46a3f617e26fd07ea4c31e76c9}\label{classlt__XMLParser_1_1Impl_a851e3e46a3f617e26fd07ea4c31e76c9}} 
+\mbox{\hyperlink{classGMap}{G\+Map}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ $>$ {\bfseries m\+\_\+docs}
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_a58453e0c28389fe96958547e00e7302b}\label{classlt__XMLParser_1_1Impl_a58453e0c28389fe96958547e00e7302b}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} {\bfseries m\+\_\+codebase}
+\item 
+\mbox{\Hypertarget{classlt__XMLParser_1_1Impl_af508f66d75d97f7d93e21f76819f842c}\label{classlt__XMLParser_1_1Impl_af508f66d75d97f7d93e21f76819f842c}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries xmlparser\+\_\+lock}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/X\+M\+L\+Parser.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,184 @@
+\hypertarget{classGIFFManager}{}\doxysection{G\+I\+F\+F\+Manager Class Reference}
+\label{classGIFFManager}\index{GIFFManager@{GIFFManager}}
+
+
+{\ttfamily \#include $<$G\+I\+F\+F\+Manager.\+h$>$}
+
+
+
+Inheritance diagram for G\+I\+F\+F\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classGIFFManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+I\+F\+F\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classGIFFManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGIFFManager_a4fbfafb486c4ab329d6280480d277583}\label{classGIFFManager_a4fbfafb486c4ab329d6280480d277583}} 
+virtual \mbox{\hyperlink{classGIFFManager_a4fbfafb486c4ab329d6280480d277583}{$\sim$\+G\+I\+F\+F\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGIFFManager_a10122162ea50c31a5c4cf9818a1bc318}{add\+\_\+chunk}} (\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} parent\+\_\+name, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGIFFChunk}{G\+I\+F\+F\+Chunk}} $>$ \&chunk, int pos=-\/1)
+\item 
+void \mbox{\hyperlink{classGIFFManager_af1266cd50ed56757bfc24d3cad9a9396}{add\+\_\+chunk}} (\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} name, const \mbox{\hyperlink{classTArray}{T\+Array}}$<$ char $>$ \&data)
+\item 
+void \mbox{\hyperlink{classGIFFManager_af2b152bf0846623363c8b60b821ff80e}{del\+\_\+chunk}} (\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} name)
+\item 
+\mbox{\Hypertarget{classGIFFManager_ab2b56400870518bf9bdf2339ced5d5ec}\label{classGIFFManager_ab2b56400870518bf9bdf2339ced5d5ec}} 
+void {\bfseries del\+\_\+chunk} (void)
+\item 
+int \mbox{\hyperlink{classGIFFManager_a5eca91060089f5635b1578af8d031725}{get\+\_\+chunks\+\_\+number}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\item 
+\mbox{\Hypertarget{classGIFFManager_ac56b0df495cfe4fb2a83cb40c2da4b6b}\label{classGIFFManager_ac56b0df495cfe4fb2a83cb40c2da4b6b}} 
+int {\bfseries get\+\_\+chunks\+\_\+number} (void)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGIFFChunk}{G\+I\+F\+F\+Chunk}} $>$ \mbox{\hyperlink{classGIFFManager_ae01776f9b12da7abeae4bbb54f69d60e}{get\+\_\+chunk}} (\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} name, int $\ast$position=0)
+\item 
+void \mbox{\hyperlink{classGIFFManager_acff6deb15696e43bae260a7f8a16f03e}{load\+\_\+chunk}} (\mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}} \&istr, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGIFFChunk}{G\+I\+F\+F\+Chunk}} $>$ chunk)
+\item 
+void \mbox{\hyperlink{classGIFFManager_a380e6652dc49efd6393534e9a2b7d869}{load\+\_\+file}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ str)
+\item 
+void \mbox{\hyperlink{classGIFFManager_a16da1f8a20b3ac23329e27f95aadaa49}{load\+\_\+file}} (const \mbox{\hyperlink{classTArray}{T\+Array}}$<$ char $>$ \&data)
+\item 
+void \mbox{\hyperlink{classGIFFManager_aa18142fe47d673b5467b6588eb24fc4d}{save\+\_\+file}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ str)
+\item 
+void \mbox{\hyperlink{classGIFFManager_ab813d2ca6d21031712228eff7f9a5644}{save\+\_\+file}} (\mbox{\hyperlink{classTArray}{T\+Array}}$<$ char $>$ \&data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGIFFManager_af94478f913d278f2d9c4973ab64621c4}\label{classGIFFManager_af94478f913d278f2d9c4973ab64621c4}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGIFFManager}{G\+I\+F\+F\+Manager}} $>$ \mbox{\hyperlink{classGIFFManager_af94478f913d278f2d9c4973ab64621c4}{create}} (void)
+\begin{DoxyCompactList}\small\item\em Default creator. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGIFFManager}{G\+I\+F\+F\+Manager}} $>$ \mbox{\hyperlink{classGIFFManager_a836340ad5fe76317a25cecd2bfa12e60}{create}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\end{DoxyCompactItemize}
+\doxysubsection*{G\+I\+F\+F\+Manager.\+h}
+\label{_amgrp06d37dd4bbc778ca1b9c9363531cb124}%
+Files \#\char`\"{}\+G\+I\+F\+F\+Manager.\+h\char`\"{}\# and \#\char`\"{}\+G\+I\+F\+F\+Manager.\+cpp\char`\"{}\# define more convenient interface to I\+FF files. You may want to use the \{\textbackslash{}\+Ref \mbox{\hyperlink{classGIFFManager}{G\+I\+F\+F\+Manager}}\} class instead of coping with \{\textbackslash{}\+Ref \mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}}\} especially when you have to insert or move chunks, which is a kind of tricky with sequential access provided by \{\textbackslash{}\+Ref \mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}}\}.
+
+You will mostly deal with \{\textbackslash{}\+Ref \mbox{\hyperlink{classGIFFManager}{G\+I\+F\+F\+Manager}}\} class, but sometimes you may want to use \{\textbackslash{}\+Ref \mbox{\hyperlink{classGIFFChunk}{G\+I\+F\+F\+Chunk}}\}s as well thus bypassing \{\textbackslash{}\+Ref \mbox{\hyperlink{classGIFFManager}{G\+I\+F\+F\+Manager}}\}\textquotesingle{}s interface and working with the chunks hierarchy yourself.
+
+Interface to I\+FF files. \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} -- Initial implementation. 
+\end{DoxyAuthor}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGIFFManager_a57d1a7bae1b7b3b23d0f10ef0c234a8c}\label{classGIFFManager_a57d1a7bae1b7b3b23d0f10ef0c234a8c}} 
+{\bfseries G\+I\+F\+F\+Manager} (void)
+\item 
+\mbox{\Hypertarget{classGIFFManager_a37936b86f1bf37f0eaf1d679783792fa}\label{classGIFFManager_a37936b86f1bf37f0eaf1d679783792fa}} 
+void {\bfseries init} (void)
+\item 
+\mbox{\Hypertarget{classGIFFManager_aaddb301c9688bbe0336d4fb43136372d}\label{classGIFFManager_aaddb301c9688bbe0336d4fb43136372d}} 
+void {\bfseries init} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\item 
+\mbox{\Hypertarget{classGIFFManager_acdb2c170b3ff982628fba98aa8d20547}\label{classGIFFManager_acdb2c170b3ff982628fba98aa8d20547}} 
+void \mbox{\hyperlink{classGIFFManager_acdb2c170b3ff982628fba98aa8d20547}{set\+\_\+name}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the top level chunk to \{{\itshape name\}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Intuitive interface to I\+FF files.
+
+It\textquotesingle{}s too terrible to keep reading/writing I\+FF files chunk after chunk using \{\textbackslash{}\+Ref \mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}}\}s. This class allows you to operate with chunks as with structures or arrays without even caring about the byte streams.
+
+Some of the examples are below\+: \textbackslash{}begin\{verbatim\} \mbox{\hyperlink{classGP}{G\+P$<$\+G\+I\+F\+F\+Chunk$>$}} chunk; chunk=manager1.\+get\+\_\+chunk(\char`\"{}\+B\+G44\mbox{[}2\mbox{]}\char`\"{}); manager2.\+add\+\_\+chunk(\char`\"{}.\+F\+O\+R\+M\+:\+D\+J\+V\+U.\+B\+G44\mbox{[}-\/1\mbox{]}\char`\"{}, chunk); \textbackslash{}end\{verbatim\}
+
+\{\textbackslash{}bf Chunk name\} \textbackslash{}begin\{itemize\} \textbackslash{}item Every chunk name may contain optional prefix \#\+F\+O\+RM\+:\#, \#\+L\+I\+ST\+:\#, \#\+P\+R\+OP\+:\# or \#\+C\+AT\+:\#. If the prefix is omitted and the chunk happens to contain other chunks, \#\+F\+O\+RM\+:\# will be assumed. \textbackslash{}item Every chunk name may be \{{\itshape short\}} or \{{\itshape complete\}}. \{{\itshape short\}} chunk names may not contain dots as they\textquotesingle{}re a subchunks names with respect to a given chunk. \{{\itshape complete\}} chunk names may contain dots. But there may be or may not be the \{{\itshape leading} dot\} in the name. If the \{{\itshape leading} dot\} is present, then the name is assumed to contain the name of the top-\/level chunk as well. Otherwise it\textquotesingle{}s treated \{{\itshape with} respect\} to the top-\/level chunk. You may want to use the leading dot only when you add a chunk to an empty document, since a command like \#manager.\+add\+Chunk(\char`\"{}.\+F\+O\+R\+M\+:\+D\+J\+V\+U.\+B\+G44\char`\"{}, chunk)\# will create the top level chunk of the requested type (\#\+F\+O\+RM\+:D\+J\+VU\#) and will add chunk \#\+B\+G44\# to it \{{\itshape automatically\}}. \textbackslash{}item You may use \{{\itshape brackets\}} in the name to specify the chunk\textquotesingle{}s position. The meaning of the number inside the brackets depends on the function you call. In most of the cases this is the number of the chunk with the given name in the parent chunk. But sometimes (as in \#add\+Chunk(name, buffer, length)\#) the brackets at the end of the \#name\# actually specify the \{{\itshape position\}} of the chunk in the parent. For example, to insert \#\+I\+N\+CL\# chunk into \#\+D\+J\+VU\# form at position \#1\# (make it the second) you may want to use \#manager.\+add\+Chunk(\char`\"{}.\+D\+J\+V\+U.\+I\+N\+C\+L\mbox{[}1\mbox{]}\char`\"{}, data, size)\#. At the same time, to get 2-\/nd chunk with name \#\+B\+G44\# from form \#\+D\+J\+VU\# you should do smth like \#chunk=manager.\+get\+Chunk(\char`\"{}\+B\+G44\mbox{[}1\mbox{]}\char`\"{})\#. Note, that here the manager will search for chunk \#\+B\+G44\# in form \#\+D\+J\+VU\# and will take the second \{{\itshape found\}} one. \textbackslash{}end\{itemize\} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGIFFManager_af1266cd50ed56757bfc24d3cad9a9396}\label{classGIFFManager_af1266cd50ed56757bfc24d3cad9a9396}} 
+\index{GIFFManager@{GIFFManager}!add\_chunk@{add\_chunk}}
+\index{add\_chunk@{add\_chunk}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{add\_chunk()}{add\_chunk()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+I\+F\+F\+Manager\+::add\+\_\+chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}}]{name,  }\item[{const \mbox{\hyperlink{classTArray}{T\+Array}}$<$ char $>$ \&}]{data }\end{DoxyParamCaption})}
+
+If \{{\itshape name\}=\{{\itshape name1\}}.\{{\itshape name2\}} where} \{{\itshape name2\}} doesn\textquotesingle{}t contain dots, then \#add\+Chunk()\# will create plain chunk with name \{{\itshape name2\}} with data \{{\itshape buffer\}} of size \{{\itshape length\}} and will add it to chunk \{{\itshape name1\}} in the same way as \#add\+Chunk(name, chunk, pos)\# function would do it. The \#pos\# in this case is either \#-\/1\# (append) or is extracted from between brackets if the \{{\itshape name\}} ends with them.
+
+\{\textbackslash{}bf Examples\+:\} \textbackslash{}begin\{verbatim\} ;; To insert I\+N\+CL chunk at position 2 (make it 3rd) m.\+add\+Chunk(\char`\"{}\+I\+N\+C\+L\mbox{[}2\mbox{]}\char`\"{}, data, length); ;; To append chunk B\+G44 to 2nd Dj\+Vu file inside Dj\+Vm archive\+: m.\+add\+Chunk(\char`\"{}.\+D\+J\+V\+M.\+D\+J\+V\+U\mbox{[}1\mbox{]}.\+B\+G44\char`\"{}, data, length); \textbackslash{}end\{verbatim\} \mbox{\Hypertarget{classGIFFManager_a10122162ea50c31a5c4cf9818a1bc318}\label{classGIFFManager_a10122162ea50c31a5c4cf9818a1bc318}} 
+\index{GIFFManager@{GIFFManager}!add\_chunk@{add\_chunk}}
+\index{add\_chunk@{add\_chunk}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{add\_chunk()}{add\_chunk()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+I\+F\+F\+Manager\+::add\+\_\+chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}}]{parent\+\_\+name,  }\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGIFFChunk}{G\+I\+F\+F\+Chunk}} $>$ \&}]{chunk,  }\item[{int}]{pos = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Adds the chunk \{{\itshape chunk\}} to chunk with name \{{\itshape parent\+\_\+name\}} at position \{{\itshape pos\}}. \{{\itshape parent\+\_\+name\}} may contain dots, brackets and colons. All missing chunks in the chain will be created.
+
+\{\textbackslash{}bf Examples\+:\} \textbackslash{}begin\{verbatim\} ;; To set the top-\/level chunk to \textquotesingle{}ch\textquotesingle{} m.\+add\+Chunk(\char`\"{}.\char`\"{}, ch); ;; To add \textquotesingle{}ch\textquotesingle{} to the top-\/level chunk \char`\"{}\+D\+J\+V\+U\char`\"{} creating it if necessary m.\+add\+Chunk(\char`\"{}.\+D\+J\+V\+U\char`\"{}, ch); ;; Same as above regardless of top-\/level chunk name m.\+add\+Chunk(\char`\"{}\char`\"{}, ch); ;; To add \textquotesingle{}ch\textquotesingle{} to 2nd F\+O\+RM D\+J\+VU in top-\/level form D\+J\+VM m.\+add\+Chunk(\char`\"{}.\+F\+O\+R\+M\+:\+D\+J\+V\+M.\+F\+O\+R\+M\+:\+D\+J\+V\+U\mbox{[}1\mbox{]}\char`\"{}, ch); ;; Same thing regardless of the top-\/level chunk name m.\+add\+Chunk(\char`\"{}\+F\+O\+R\+M\+:\+D\+J\+V\+U\mbox{[}1\mbox{]}\char`\"{}, ch); \textbackslash{}end\{verbatim\} \mbox{\Hypertarget{classGIFFManager_a836340ad5fe76317a25cecd2bfa12e60}\label{classGIFFManager_a836340ad5fe76317a25cecd2bfa12e60}} 
+\index{GIFFManager@{GIFFManager}!create@{create}}
+\index{create@{create}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGIFFManager}{G\+I\+F\+F\+Manager}} $>$ G\+I\+F\+F\+Manager\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates the \{\textbackslash{}\+Ref \mbox{\hyperlink{classGIFFManager}{G\+I\+F\+F\+Manager}}\} and assigns name \{{\itshape name\}} to the top-\/level chunk. you may use chunk type names (before colon) to set the top-\/level chunk type, or omit it to work with \#\+F\+O\+RM\# \mbox{\Hypertarget{classGIFFManager_af2b152bf0846623363c8b60b821ff80e}\label{classGIFFManager_af2b152bf0846623363c8b60b821ff80e}} 
+\index{GIFFManager@{GIFFManager}!del\_chunk@{del\_chunk}}
+\index{del\_chunk@{del\_chunk}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{del\_chunk()}{del\_chunk()}}
+{\footnotesize\ttfamily void G\+I\+F\+F\+Manager\+::del\+\_\+chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}}]{name }\end{DoxyParamCaption})}
+
+Will remove chunk with name \{{\itshape name\}}. You may use dots, colons and brackets to specify the chunk uniquely.
+
+\{\textbackslash{}bf Examples\+:\} \textbackslash{}begin\{verbatim\} ;; To remove 2nd Dj\+Vu document from Dj\+Vm archive use m.\+del\+Chunk(\char`\"{}.\+D\+J\+V\+M.\+D\+J\+V\+U\mbox{[}1\mbox{]}\char`\"{}); ;; Same thing without top-\/level chunk name specification m.\+del\+Chunk(\char`\"{}\+D\+J\+V\+U\mbox{[}1\mbox{]}\char`\"{}); ;; Same thing for the first D\+J\+VU chunk m.\+del\+Chunk(\char`\"{}\+D\+J\+V\+U\char`\"{}); \textbackslash{}end\{verbatim\} \mbox{\Hypertarget{classGIFFManager_ae01776f9b12da7abeae4bbb54f69d60e}\label{classGIFFManager_ae01776f9b12da7abeae4bbb54f69d60e}} 
+\index{GIFFManager@{GIFFManager}!get\_chunk@{get\_chunk}}
+\index{get\_chunk@{get\_chunk}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{get\_chunk()}{get\_chunk()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGIFFChunk}{G\+I\+F\+F\+Chunk}} $>$ G\+I\+F\+F\+Manager\+::get\+\_\+chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}}]{name,  }\item[{int $\ast$}]{position = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Returns the chunk with name \{{\itshape name\}}. The \{{\itshape name\}} may contain dots colons and slashes. If \{{\itshape position\}} is not zero, \#$\ast$position\# will be assigned the position of the found chunk in the parent chunk.
+
+\{\textbackslash{}bf Examples\+:\} \textbackslash{}begin\{verbatim\} ;; To get the directory chunk of Dj\+Vm document m.\+get\+Chunk(\char`\"{}.\+D\+J\+V\+M.\+D\+I\+R0\char`\"{}); ;; To get chunk corresponding to 2nd D\+J\+VU form m.\+get\+Chunk(\char`\"{}.\+D\+J\+V\+U\mbox{[}1\mbox{]}\char`\"{}); \textbackslash{}end\{verbatim\} \mbox{\Hypertarget{classGIFFManager_a5eca91060089f5635b1578af8d031725}\label{classGIFFManager_a5eca91060089f5635b1578af8d031725}} 
+\index{GIFFManager@{GIFFManager}!get\_chunks\_number@{get\_chunks\_number}}
+\index{get\_chunks\_number@{get\_chunks\_number}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{get\_chunks\_number()}{get\_chunks\_number()}}
+{\footnotesize\ttfamily int G\+I\+F\+F\+Manager\+::get\+\_\+chunks\+\_\+number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{name }\end{DoxyParamCaption})}
+
+Will return the number of chunks with given name. The \{{\itshape name\}} may not end with brackets, but may contain them inside. It may also contain dots and colons. If \{{\itshape name\}} is Z\+E\+RO, the total number of chunks will be returned.
+
+\{\textbackslash{}bf Examples\+:\} \textbackslash{}begin\{verbatim\} ;; To get the number of D\+J\+VU forms inside Dj\+Vm document m.\+get\+Chunks\+Number(\char`\"{}.\+D\+J\+V\+M.\+D\+J\+V\+U\char`\"{}); ;; Same thing without top-\/level chunk name specification m.\+get\+Chunks\+Number(\char`\"{}\+D\+J\+V\+U\char`\"{}); \textbackslash{}end\{verbatim\} \mbox{\Hypertarget{classGIFFManager_acff6deb15696e43bae260a7f8a16f03e}\label{classGIFFManager_acff6deb15696e43bae260a7f8a16f03e}} 
+\index{GIFFManager@{GIFFManager}!load\_chunk@{load\_chunk}}
+\index{load\_chunk@{load\_chunk}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{load\_chunk()}{load\_chunk()}}
+{\footnotesize\ttfamily void G\+I\+F\+F\+Manager\+::load\+\_\+chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}} \&}]{istr,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGIFFChunk}{G\+I\+F\+F\+Chunk}} $>$}]{chunk }\end{DoxyParamCaption})}
+
+Loads the composite \{{\itshape chunk\}\textquotesingle{}s} contents from stream \{{\itshape istr\}}. \mbox{\Hypertarget{classGIFFManager_a16da1f8a20b3ac23329e27f95aadaa49}\label{classGIFFManager_a16da1f8a20b3ac23329e27f95aadaa49}} 
+\index{GIFFManager@{GIFFManager}!load\_file@{load\_file}}
+\index{load\_file@{load\_file}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{load\_file()}{load\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+I\+F\+F\+Manager\+::load\+\_\+file (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTArray}{T\+Array}}$<$ char $>$ \&}]{data }\end{DoxyParamCaption})}
+
+Loads the file contents from the data array \{{\itshape data\}} \mbox{\Hypertarget{classGIFFManager_a380e6652dc49efd6393534e9a2b7d869}\label{classGIFFManager_a380e6652dc49efd6393534e9a2b7d869}} 
+\index{GIFFManager@{GIFFManager}!load\_file@{load\_file}}
+\index{load\_file@{load\_file}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{load\_file()}{load\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+I\+F\+F\+Manager\+::load\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{str }\end{DoxyParamCaption})}
+
+Loads the file contents from stream \{{\itshape str\}} \mbox{\Hypertarget{classGIFFManager_aa18142fe47d673b5467b6588eb24fc4d}\label{classGIFFManager_aa18142fe47d673b5467b6588eb24fc4d}} 
+\index{GIFFManager@{GIFFManager}!save\_file@{save\_file}}
+\index{save\_file@{save\_file}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{save\_file()}{save\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+I\+F\+F\+Manager\+::save\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{str }\end{DoxyParamCaption})}
+
+Saves all the chunks into stream \{{\itshape str\}} \mbox{\Hypertarget{classGIFFManager_ab813d2ca6d21031712228eff7f9a5644}\label{classGIFFManager_ab813d2ca6d21031712228eff7f9a5644}} 
+\index{GIFFManager@{GIFFManager}!save\_file@{save\_file}}
+\index{save\_file@{save\_file}!GIFFManager@{GIFFManager}}
+\doxysubsubsection{\texorpdfstring{save\_file()}{save\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+I\+F\+F\+Manager\+::save\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTArray}{T\+Array}}$<$ char $>$ \&}]{data }\end{DoxyParamCaption})}
+
+Saves all the chunks into the data array \{{\itshape data\}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+I\+F\+F\+Manager.\+h\item 
+libdjvu/G\+I\+F\+F\+Manager.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,245 @@
+\hypertarget{classDjVuToPS}{}\doxysection{Dj\+Vu\+To\+PS Class Reference}
+\label{classDjVuToPS}\index{DjVuToPS@{DjVuToPS}}
+
+
+{\ttfamily \#include $<$Dj\+Vu\+To\+P\+S.\+h$>$}
+
+
+
+Collaboration diagram for Dj\+Vu\+To\+PS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classDjVuToPS__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDjVuToPS_1_1DecodePort}{Decode\+Port}}
+\item 
+class \mbox{\hyperlink{classDjVuToPS_1_1Options}{Options}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classDjVuToPS_a60f7adcd4a5c2c852f30a4b28a12cf15}{Stage}} \{ {\bfseries D\+E\+C\+O\+D\+I\+NG}, 
+{\bfseries P\+R\+I\+N\+T\+I\+NG}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Callbacks}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDjVuToPS_a25af127c9bbe56b4af72e2d445323e5a}{set\+\_\+refresh\+\_\+cb}} (void($\ast$refresh\+\_\+cb)(void $\ast$), void $\ast$refresh\+\_\+cl\+\_\+data)
+\item 
+void \mbox{\hyperlink{classDjVuToPS_a49cf5ac62c7bddb9a36e5ac636c86181}{set\+\_\+prn\+\_\+progress\+\_\+cb}} (void($\ast$cb)(double, void $\ast$), void $\ast$data)
+\item 
+void \mbox{\hyperlink{classDjVuToPS_a1758672d0cfc21bedffd8178ac0f348c}{set\+\_\+dec\+\_\+progress\+\_\+cb}} (void($\ast$cb)(double, void $\ast$), void $\ast$data)
+\item 
+void \mbox{\hyperlink{classDjVuToPS_a5b6071bb459ea646ed829aad26acb0d9}{set\+\_\+info\+\_\+cb}} (void($\ast$cb)(int, int, int, \mbox{\hyperlink{classDjVuToPS_a60f7adcd4a5c2c852f30a4b28a12cf15}{Stage}}, void $\ast$), void $\ast$data)
+\item 
+void \mbox{\hyperlink{classDjVuToPS_a2b2a4866689380c6867504b65ee1d7bb}{print}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$ dimg, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&prn\+\_\+rect, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&img\+\_\+rect, int override\+\_\+dpi=-\/1)
+\item 
+void \mbox{\hyperlink{classDjVuToPS_a84138bfda95597a289082df0f15495cd}{print}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ doc, \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} page\+\_\+range)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_afb55a089a15d8c99d3fdf8a99e7b9929}\label{classDjVuToPS_afb55a089a15d8c99d3fdf8a99e7b9929}} 
+void {\bfseries print} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ doc)
+\item 
+\mbox{\hyperlink{classDjVuToPS_a034ada903c6b186b2bfb733008db6182}{Dj\+Vu\+To\+PS}} (void)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDjVuToPS_1_1Options}{Options}} \mbox{\hyperlink{classDjVuToPS_ad8a10204b50ab7372c65c5a58fc9975c}{options}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a58164980928609c56316a190a72f849b}\label{classDjVuToPS_a58164980928609c56316a190a72f849b}} 
+void {\bfseries store\+\_\+doc\+\_\+prolog} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, int, int, \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a9bdac2cf7bb1e304b3de66b7d6770b56}\label{classDjVuToPS_a9bdac2cf7bb1e304b3de66b7d6770b56}} 
+void {\bfseries store\+\_\+doc\+\_\+setup} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_ac47e5c9810a4b2427408e5897926d1c6}\label{classDjVuToPS_ac47e5c9810a4b2427408e5897926d1c6}} 
+void {\bfseries store\+\_\+doc\+\_\+trailer} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a70c52d0e99b8d7c554589b2c24a77d11}\label{classDjVuToPS_a70c52d0e99b8d7c554589b2c24a77d11}} 
+void {\bfseries store\+\_\+page\+\_\+setup} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, int, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&, int align=0)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a25511d1d6a81620bb47e4203b7a97857}\label{classDjVuToPS_a25511d1d6a81620bb47e4203b7a97857}} 
+void {\bfseries store\+\_\+page\+\_\+trailer} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a36ee2a356c14844efeca8ee6fb4bfca0}\label{classDjVuToPS_a36ee2a356c14844efeca8ee6fb4bfca0}} 
+void {\bfseries make\+\_\+gamma\+\_\+ramp} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_addec9be9fc64f9e0d458885d1b129b91}\label{classDjVuToPS_addec9be9fc64f9e0d458885d1b129b91}} 
+void {\bfseries print\+\_\+image\+\_\+lev1} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_af18d938bfca85217b8df3ecb7689d3e1}\label{classDjVuToPS_af18d938bfca85217b8df3ecb7689d3e1}} 
+void {\bfseries print\+\_\+image\+\_\+lev2} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_ab583a4117544d32a695f10576aa71b20}\label{classDjVuToPS_ab583a4117544d32a695f10576aa71b20}} 
+void {\bfseries print\+\_\+bg} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a8f65d57abfb9b547861d19a2cab82877}\label{classDjVuToPS_a8f65d57abfb9b547861d19a2cab82877}} 
+void {\bfseries print\+\_\+fg\+\_\+3layer} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&, unsigned char $\ast$)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a13e42e95c9ccea042f339739c1a4a827}\label{classDjVuToPS_a13e42e95c9ccea042f339739c1a4a827}} 
+void {\bfseries print\+\_\+fg\+\_\+2layer} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&, unsigned char $\ast$)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_ac3b5aa255097846f339644d8d1d8fa05}\label{classDjVuToPS_ac3b5aa255097846f339644d8d1d8fa05}} 
+void {\bfseries print\+\_\+fg} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_ab8808764b7b945ff0d07b98c05554856}\label{classDjVuToPS_ab8808764b7b945ff0d07b98c05554856}} 
+void {\bfseries print\+\_\+image} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuTXT}{Dj\+Vu\+T\+XT}} $>$)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a1f82a47da468c6cdb7ec2db20865169b}\label{classDjVuToPS_a1f82a47da468c6cdb7ec2db20865169b}} 
+void {\bfseries parse\+\_\+range} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$, \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, \mbox{\hyperlink{classGList}{G\+List}}$<$ int $>$ \&)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a4859e1824baf0d9f28af6f74df335035}\label{classDjVuToPS_a4859e1824baf0d9f28af6f74df335035}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$ {\bfseries decode\+\_\+page} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$, int, int, int)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_af4a3245861b422a64604e7f06fede7e0}\label{classDjVuToPS_af4a3245861b422a64604e7f06fede7e0}} 
+void {\bfseries process\+\_\+single\+\_\+page} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$, int, int, int, int)
+\item 
+\mbox{\Hypertarget{classDjVuToPS_a4cef1e76b5bff6bb0beb78ccac7c93a7}\label{classDjVuToPS_a4cef1e76b5bff6bb0beb78ccac7c93a7}} 
+void {\bfseries process\+\_\+double\+\_\+page} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$, void $\ast$, int, int)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} to Post\+Script converter. Use this class to print \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\}s and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\}s. The behavior is customizable. See \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuToPS_1_1Options}{Dj\+Vu\+To\+P\+S\+::\+Options}}\} for the description of available options. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDjVuToPS_a60f7adcd4a5c2c852f30a4b28a12cf15}\label{classDjVuToPS_a60f7adcd4a5c2c852f30a4b28a12cf15}} 
+\index{DjVuToPS@{DjVuToPS}!Stage@{Stage}}
+\index{Stage@{Stage}!DjVuToPS@{DjVuToPS}}
+\doxysubsubsection{\texorpdfstring{Stage}{Stage}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDjVuToPS_a60f7adcd4a5c2c852f30a4b28a12cf15}{Dj\+Vu\+To\+P\+S\+::\+Stage}}}
+
+Describes current page processing stage. This is passed to the \#info\+\_\+cb()\# callback. See \textbackslash{}\+Ref\{set\+\_\+info\+\_\+cb\}() for details. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDjVuToPS_a034ada903c6b186b2bfb733008db6182}\label{classDjVuToPS_a034ada903c6b186b2bfb733008db6182}} 
+\index{DjVuToPS@{DjVuToPS}!DjVuToPS@{DjVuToPS}}
+\index{DjVuToPS@{DjVuToPS}!DjVuToPS@{DjVuToPS}}
+\doxysubsubsection{\texorpdfstring{DjVuToPS()}{DjVuToPS()}}
+{\footnotesize\ttfamily Dj\+Vu\+To\+P\+S\+::\+Dj\+Vu\+To\+PS (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Default constructor. Initializes the class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuToPS_a84138bfda95597a289082df0f15495cd}\label{classDjVuToPS_a84138bfda95597a289082df0f15495cd}} 
+\index{DjVuToPS@{DjVuToPS}!print@{print}}
+\index{print@{print}!DjVuToPS@{DjVuToPS}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+To\+P\+S\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{str,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$}]{doc,  }\item[{\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}}]{page\+\_\+range }\end{DoxyParamCaption})}
+
+Outputs the specifies pages from the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} into the \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\} in Post\+Script format. The function will generate a multipage Post\+Script document conforming to PS D\+SC 3.\+0 by storing into it every page mentioned in the \#page\+\_\+range\#.
+
+If \#page\+\_\+range\# is empty, all pages from the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} \#doc\# will be printed. The \#page\+\_\+range\# is a set of ranges separated by commas. Every range has this form\+: \{{\itshape start\+\_\+page\}}\mbox{[}-\/\{{\itshape end\+\_\+page\}}\mbox{]}. \{{\itshape end\+\_\+page\}} is optional and can be less than the \{{\itshape start\+\_\+page\}}, in which case the pages will be printed in the reverse order.
+
+Examples\+: \textbackslash{}begin\{itemize\} \textbackslash{}item \{\textbackslash{}bf 1-\/10\} -\/ Will print pages 1 to 10. \textbackslash{}item \{\textbackslash{}bf 10-\/1\} -\/ Will print pages 1 to 10 in reverse order. \textbackslash{}item \{\textbackslash{}bf 1-\/10,12-\/20\} -\/ Will print pages 1 to 20 with page 11 skipped. \textbackslash{}end\{itemize\} \mbox{\Hypertarget{classDjVuToPS_a2b2a4866689380c6867504b65ee1d7bb}\label{classDjVuToPS_a2b2a4866689380c6867504b65ee1d7bb}} 
+\index{DjVuToPS@{DjVuToPS}!print@{print}}
+\index{print@{print}!DjVuToPS@{DjVuToPS}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+To\+P\+S\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{str,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$}]{dimg,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{prn\+\_\+rect,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{img\+\_\+rect,  }\item[{int}]{override\+\_\+dpi = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Prints the specified \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} \#dimg\# into the \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\} \#str\#. The function will first scale the image to fit the \#img\+\_\+rect\#, then extract \#prn\+\_\+rect\# from the obtained bitmap and will output it in the Post\+Script format. The function generates a legal Post\+Script (or Encapsulated Post\+Script) file taking care of all comments conforming to Document Structure Conventions v. 3.\+0.
+
+\{\textbackslash{}bf Warning\+:\} The zoom factor specified in \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuToPS_1_1Options}{Options}}\} does not affect the amount of data stored into the Post\+Script file. It will be used by the Post\+Script code to additionally scale the image. We cannot pre-\/scale it here, because we do not know the future resolution of the printer. The \#img\+\_\+rect\# and \#prn\+\_\+rect\# alone define how much data will be sent to printer.
+
+Using \#img\+\_\+rect\# one can upsample or downsample the image prior to sending it to the printer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\} where Post\+Script output will be sent \\
+\hline
+{\em dimg} & \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} to print \\
+\hline
+{\em img\+\_\+rect} & Rectangle to which the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} will be scaled. Note that this parameters defines the amount of data that will actually be sent to the printer. The Post\+Script code can futher resize the image according to the \#zoom\# parameter from the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuToPS_1_1Options}{Options}}\} structure. \\
+\hline
+{\em prn\+\_\+rect} & Part of img\+\_\+rect to send to printer. \\
+\hline
+{\em override\+\_\+dpi} & Optional parameter allowing you to override dpi setting that would otherwise be extracted from \#dimg\# \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuToPS_a1758672d0cfc21bedffd8178ac0f348c}\label{classDjVuToPS_a1758672d0cfc21bedffd8178ac0f348c}} 
+\index{DjVuToPS@{DjVuToPS}!set\_dec\_progress\_cb@{set\_dec\_progress\_cb}}
+\index{set\_dec\_progress\_cb@{set\_dec\_progress\_cb}!DjVuToPS@{DjVuToPS}}
+\doxysubsubsection{\texorpdfstring{set\_dec\_progress\_cb()}{set\_dec\_progress\_cb()}}
+{\footnotesize\ttfamily void Dj\+Vu\+To\+P\+S\+::set\+\_\+dec\+\_\+progress\+\_\+cb (\begin{DoxyParamCaption}\item[{void($\ast$)(double, void $\ast$)}]{cb,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Callback used to report the progress of decoding. The progress is a double number from 0 to 1. This callback is only used when printing a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} in a multithreaded environment. In all other cases it will not be called. Whenever you \textbackslash{}\+Ref\{print\}() a page range from a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\}, the \mbox{\hyperlink{classDjVuToPS}{Dj\+Vu\+To\+PS}}\# has to decode the mentioned pages before writing them to the output \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\}. This callback can be helpful to find out the status of the decoding. See \textbackslash{}\+Ref\{set\+\_\+prn\+\_\+progress\+\_\+cb\}() to find out how to learn the printing progress. See \textbackslash{}\+Ref\{set\+\_\+info\+\_\+cb\}() to learn how to find out the number of the page being processed, the total number of pages and the number of processed pages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cb} & Callback function to be called \\
+\hline
+{\em data} & Pointer passed to \#cb()\#. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuToPS_a5b6071bb459ea646ed829aad26acb0d9}\label{classDjVuToPS_a5b6071bb459ea646ed829aad26acb0d9}} 
+\index{DjVuToPS@{DjVuToPS}!set\_info\_cb@{set\_info\_cb}}
+\index{set\_info\_cb@{set\_info\_cb}!DjVuToPS@{DjVuToPS}}
+\doxysubsubsection{\texorpdfstring{set\_info\_cb()}{set\_info\_cb()}}
+{\footnotesize\ttfamily void Dj\+Vu\+To\+P\+S\+::set\+\_\+info\+\_\+cb (\begin{DoxyParamCaption}\item[{void($\ast$)(int, int, int, \mbox{\hyperlink{classDjVuToPS_a60f7adcd4a5c2c852f30a4b28a12cf15}{Stage}}, void $\ast$)}]{cb,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Callback used to report the current printing stage of a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\}. When printing a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} (\{\textbackslash{}bf not\} a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\}), the \mbox{\hyperlink{classDjVuToPS}{Dj\+Vu\+To\+PS}}\# class will decode and output every page mentioned in the \{{\itshape page} range\}. Before decoding and outputing, it will call this \#info\+\_\+cb()\# callback in order to let you know about what is going on. This can be quite useful in a G\+UI program to keep the user informed. This function is not called when you print a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\}.
+
+Description of the arguments passed to \#info\+\_\+cb\#\+: \textbackslash{}begin\{description\} \textbackslash{}item\mbox{[}page\+\_\+num\mbox{]} The number of the page being processed \textbackslash{}item\mbox{[}page\+\_\+cnt\mbox{]} Counts how many pages have already been processed. \textbackslash{}item\mbox{[}tot\+\_\+pages\mbox{]} Counts how many pages will be output enventually. \textbackslash{}item\mbox{[}stage\mbox{]} Describes the current processing stage (\#\+D\+E\+C\+O\+D\+I\+NG\# or \#\+P\+R\+I\+N\+T\+I\+NG\#). \textbackslash{}end\{description\} 
+\begin{DoxyParams}{Parameters}
+{\em cb} & Callback function to be called \\
+\hline
+{\em data} & Pointer, which will be passed to \#cb()\#. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuToPS_a49cf5ac62c7bddb9a36e5ac636c86181}\label{classDjVuToPS_a49cf5ac62c7bddb9a36e5ac636c86181}} 
+\index{DjVuToPS@{DjVuToPS}!set\_prn\_progress\_cb@{set\_prn\_progress\_cb}}
+\index{set\_prn\_progress\_cb@{set\_prn\_progress\_cb}!DjVuToPS@{DjVuToPS}}
+\doxysubsubsection{\texorpdfstring{set\_prn\_progress\_cb()}{set\_prn\_progress\_cb()}}
+{\footnotesize\ttfamily void Dj\+Vu\+To\+P\+S\+::set\+\_\+prn\+\_\+progress\+\_\+cb (\begin{DoxyParamCaption}\item[{void($\ast$)(double, void $\ast$)}]{cb,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Callback used to report the progress of printing. The progress is a double number from 0 to 1. If an existing \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} is printed, this callback will be called at least twice\+: in the beginning and at the end of printing. If a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} is being printed, this callback will be used to report printing progress of every page. To learn the number of the page being printed you can use \textbackslash{}\+Ref\{set\+\_\+info\+\_\+cb\}() function. See \textbackslash{}\+Ref\{set\+\_\+dec\+\_\+progress\+\_\+cb\}() to find out how to learn the decoding progress.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cb} & Callback function to be called \\
+\hline
+{\em data} & Pointer passed to \#cb()\#. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuToPS_a25af127c9bbe56b4af72e2d445323e5a}\label{classDjVuToPS_a25af127c9bbe56b4af72e2d445323e5a}} 
+\index{DjVuToPS@{DjVuToPS}!set\_refresh\_cb@{set\_refresh\_cb}}
+\index{set\_refresh\_cb@{set\_refresh\_cb}!DjVuToPS@{DjVuToPS}}
+\doxysubsubsection{\texorpdfstring{set\_refresh\_cb()}{set\_refresh\_cb()}}
+{\footnotesize\ttfamily void Dj\+Vu\+To\+P\+S\+::set\+\_\+refresh\+\_\+cb (\begin{DoxyParamCaption}\item[{void($\ast$)(void $\ast$)}]{refresh\+\_\+cb,  }\item[{void $\ast$}]{refresh\+\_\+cl\+\_\+data }\end{DoxyParamCaption})}
+
+Refresh callback is a function, which will be called fairly often while the image (document) is being printed. It can be used to refresh a G\+UI, if necessary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em refresh\+\_\+cb} & Callback function to be called periodically \\
+\hline
+{\em refresh\+\_\+cl\+\_\+data} & Pointer passed to \#refresh\+\_\+cb()\# \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDjVuToPS_ad8a10204b50ab7372c65c5a58fc9975c}\label{classDjVuToPS_ad8a10204b50ab7372c65c5a58fc9975c}} 
+\index{DjVuToPS@{DjVuToPS}!options@{options}}
+\index{options@{options}!DjVuToPS@{DjVuToPS}}
+\doxysubsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDjVuToPS_1_1Options}{Options}} Dj\+Vu\+To\+P\+S\+::options}
+
+\mbox{\hyperlink{classDjVuToPS_1_1Options}{Options}} affecting the print result. Please refer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuToPS_1_1Options}{Dj\+Vu\+To\+P\+S\+::\+Options}}\} for details. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+To\+P\+S.\+h\item 
+libdjvu/Dj\+Vu\+To\+P\+S.\+cpp\end{DoxyCompactItemize}

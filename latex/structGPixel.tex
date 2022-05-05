@@ -1,0 +1,107 @@
+\hypertarget{structGPixel}{}\doxysection{G\+Pixel Struct Reference}
+\label{structGPixel}\index{GPixel@{GPixel}}
+
+
+{\ttfamily \#include $<$G\+Pixmap.\+h$>$}
+
+
+
+Collaboration diagram for G\+Pixel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{structGPixel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{structGPixel_ad10ecdd0b88ddc56c71d63e032d5ffe5}{b}}
+\item 
+unsigned char \mbox{\hyperlink{structGPixel_a0b7123030699a686eaf318f92dee2d9a}{g}}
+\item 
+unsigned char \mbox{\hyperlink{structGPixel_a4464f662afa439bfacbd4f49fd986333}{r}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{Indent}\textbf{ Predefined colors.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structGPixel_acf7ae9e2278378fe9d891664d8dd034b}\label{structGPixel_acf7ae9e2278378fe9d891664d8dd034b}} 
+static const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \mbox{\hyperlink{structGPixel_acf7ae9e2278378fe9d891664d8dd034b}{W\+H\+I\+TE}} = \{ 255, 255, 255 \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structGPixel_acf7ae9e2278378fe9d891664d8dd034b}{G\+Pixel\+::\+W\+H\+I\+TE}} is initialized to \#rgb\+:255/255/255\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structGPixel_aaac0cc0ed544f4d9a92b3e5de0fc3342}\label{structGPixel_aaac0cc0ed544f4d9a92b3e5de0fc3342}} 
+static const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \mbox{\hyperlink{structGPixel_aaac0cc0ed544f4d9a92b3e5de0fc3342}{B\+L\+A\+CK}} = \{ 0, 0, 0 \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structGPixel_aaac0cc0ed544f4d9a92b3e5de0fc3342}{G\+Pixel\+::\+B\+L\+A\+CK}} is initialized to \#rgb\+:0/0/0\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structGPixel_a9226c8c90feeaf2fce297c89b38fc599}\label{structGPixel_a9226c8c90feeaf2fce297c89b38fc599}} 
+static const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \mbox{\hyperlink{structGPixel_a9226c8c90feeaf2fce297c89b38fc599}{B\+L\+UE}} = \{ 255, 0, 0 \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structGPixel_a9226c8c90feeaf2fce297c89b38fc599}{G\+Pixel\+::\+B\+L\+UE}} is initialized to \#rgb\+:0/0/255\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structGPixel_a5abbaab59c646083d228636e7c1a9a57}\label{structGPixel_a5abbaab59c646083d228636e7c1a9a57}} 
+static const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \mbox{\hyperlink{structGPixel_a5abbaab59c646083d228636e7c1a9a57}{G\+R\+E\+EN}} = \{ 0, 255, 0 \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structGPixel_a5abbaab59c646083d228636e7c1a9a57}{G\+Pixel\+::\+G\+R\+E\+EN}} is initialized to \#rgb\+:0/255/0\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structGPixel_ab335d987b84a5b4752c0bd7c0c674200}\label{structGPixel_ab335d987b84a5b4752c0bd7c0c674200}} 
+static const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \mbox{\hyperlink{structGPixel_ab335d987b84a5b4752c0bd7c0c674200}{R\+ED}} = \{ 0, 0, 255 \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structGPixel_ab335d987b84a5b4752c0bd7c0c674200}{G\+Pixel\+::\+R\+ED}} is initialized to \#rgb\+:255/0/0\#. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structGPixel_a039dc43dffdb89597dfc5ecfd73a1baa}{operator==}} (const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&p1, const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&p2)
+\item 
+int \mbox{\hyperlink{structGPixel_a43070e6a0fa073738dd5a06f60147d35}{operator!=}} (const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&p1, const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&p2)
+\item 
+unsigned int \mbox{\hyperlink{structGPixel_a6f2648c90bef7b035a3799c3ecc9ff08}{hash}} (const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Color pixel as a R\+GB triple. ~\newline
+ The colors are represented using three bytes named \mbox{\hyperlink{structGPixel_a4464f662afa439bfacbd4f49fd986333}{r}}\#, \mbox{\hyperlink{structGPixel_a0b7123030699a686eaf318f92dee2d9a}{g}}\# and \mbox{\hyperlink{structGPixel_ad10ecdd0b88ddc56c71d63e032d5ffe5}{b}}\#. The value of these bytes represent additive amounts of light. Color white is represented by setting all three bytes to \#255\#. Color black is represented by setting all three bytes to \#0\#. This convention should not be confused with the convention adopted for class \textbackslash{}\+Ref\{\mbox{\hyperlink{classGBitmap}{G\+Bitmap}}\} where the pixel values represent an ink level. ~\newline
+ 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structGPixel_a6f2648c90bef7b035a3799c3ecc9ff08}\label{structGPixel_a6f2648c90bef7b035a3799c3ecc9ff08}} 
+\index{GPixel@{GPixel}!hash@{hash}}
+\index{hash@{hash}!GPixel@{GPixel}}
+\doxysubsubsection{\texorpdfstring{hash}{hash}}
+{\footnotesize\ttfamily unsigned int hash (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Returns a hash code for the color. \mbox{\Hypertarget{structGPixel_a43070e6a0fa073738dd5a06f60147d35}\label{structGPixel_a43070e6a0fa073738dd5a06f60147d35}} 
+\index{GPixel@{GPixel}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!GPixel@{GPixel}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily int operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{p1,  }\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Returns true iff colors are different. \mbox{\Hypertarget{structGPixel_a039dc43dffdb89597dfc5ecfd73a1baa}\label{structGPixel_a039dc43dffdb89597dfc5ecfd73a1baa}} 
+\index{GPixel@{GPixel}!operator==@{operator==}}
+\index{operator==@{operator==}!GPixel@{GPixel}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily int operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{p1,  }\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Returns true iff colors are identical. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structGPixel_ad10ecdd0b88ddc56c71d63e032d5ffe5}\label{structGPixel_ad10ecdd0b88ddc56c71d63e032d5ffe5}} 
+\index{GPixel@{GPixel}!b@{b}}
+\index{b@{b}!GPixel@{GPixel}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily unsigned char G\+Pixel\+::b}
+
+Blue component. \mbox{\Hypertarget{structGPixel_a0b7123030699a686eaf318f92dee2d9a}\label{structGPixel_a0b7123030699a686eaf318f92dee2d9a}} 
+\index{GPixel@{GPixel}!g@{g}}
+\index{g@{g}!GPixel@{GPixel}}
+\doxysubsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily unsigned char G\+Pixel\+::g}
+
+Green component. \mbox{\Hypertarget{structGPixel_a4464f662afa439bfacbd4f49fd986333}\label{structGPixel_a4464f662afa439bfacbd4f49fd986333}} 
+\index{GPixel@{GPixel}!r@{r}}
+\index{r@{r}!GPixel@{GPixel}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily unsigned char G\+Pixel\+::r}
+
+Red component. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Pixmap.\+h\item 
+libdjvu/G\+Pixmap.\+cpp\end{DoxyCompactItemize}

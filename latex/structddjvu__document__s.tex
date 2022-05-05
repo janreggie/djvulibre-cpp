@@ -1,0 +1,133 @@
+\hypertarget{structddjvu__document__s}{}\doxysection{ddjvu\+\_\+document\+\_\+s Struct Reference}
+\label{structddjvu__document__s}\index{ddjvu\_document\_s@{ddjvu\_document\_s}}
+
+
+Inheritance diagram for ddjvu\+\_\+document\+\_\+s\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{structddjvu__document__s__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ddjvu\+\_\+document\+\_\+s\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structddjvu__document__s__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_af2602065737b2bfcd718eb9d3e9602b8}\label{structddjvu__document__s_af2602065737b2bfcd718eb9d3e9602b8}} 
+virtual ddjvu\+\_\+status\+\_\+t {\bfseries status} ()
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_a63579bde34b67290bac0b70343ceb0fe}\label{structddjvu__document__s_a63579bde34b67290bac0b70343ceb0fe}} 
+virtual void {\bfseries release} ()
+\item 
+virtual bool \mbox{\hyperlink{structddjvu__document__s_abdf7164a36e4c75c5930190fd7ab116e}{inherits}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&) const
+\item 
+virtual bool \mbox{\hyperlink{structddjvu__document__s_ac58e42dd9f8b942713b24e6c94e9b44b}{notify\+\_\+error}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&)
+\item 
+virtual bool \mbox{\hyperlink{structddjvu__document__s_aeb44a59f61618469e74fd78ee56eea9a}{notify\+\_\+status}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&)
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_af2aab943e3c4528e16b784c8367d6c2a}\label{structddjvu__document__s_af2aab943e3c4528e16b784c8367d6c2a}} 
+virtual void {\bfseries notify\+\_\+doc\+\_\+flags\+\_\+changed} (const \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $\ast$, long, long)
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{structddjvu__document__s_a764c9409e82d0196446f3881ebf36961}{request\+\_\+data}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&)
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_a1bf599d7d59c47535c7907d095466099}\label{structddjvu__document__s_a1bf599d7d59c47535c7907d095466099}} 
+bool {\bfseries want\+\_\+pageinfo} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_a73aa15e6eaa5d27f2fd224eecb4cd834}\label{structddjvu__document__s_a73aa15e6eaa5d27f2fd224eecb4cd834}} 
+static void {\bfseries callback} (void $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_ad5b080fef9fc9cc64a3f096f56bc183d}\label{structddjvu__document__s_ad5b080fef9fc9cc64a3f096f56bc183d}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ {\bfseries doc}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_a640ceab571c952cc3fabcd6a521a8d94}\label{structddjvu__document__s_a640ceab571c952cc3fabcd6a521a8d94}} 
+\mbox{\hyperlink{classGPMap}{G\+P\+Map}}$<$ int, \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ {\bfseries streams}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_a0358c77359598cb21a4a60d7867437de}\label{structddjvu__document__s_a0358c77359598cb21a4a60d7867437de}} 
+\mbox{\hyperlink{classGMap}{G\+Map}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, int $>$ {\bfseries names}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_a4101f19f6522b82bdd9acc213345346d}\label{structddjvu__document__s_a4101f19f6522b82bdd9acc213345346d}} 
+\mbox{\hyperlink{classGPMap}{G\+P\+Map}}$<$ int, \mbox{\hyperlink{structddjvu__thumbnail__p}{ddjvu\+\_\+thumbnail\+\_\+p}} $>$ {\bfseries thumbnails}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_a40758c11c37db6599506bcdce2ad49bb}\label{structddjvu__document__s_a40758c11c37db6599506bcdce2ad49bb}} 
+int {\bfseries streamid}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_ada659a27a4303b781f57b7bf9f4768b5}\label{structddjvu__document__s_ada659a27a4303b781f57b7bf9f4768b5}} 
+bool {\bfseries fileflag}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_aafe221d1eb03b386beaeb0088b2fd1fb}\label{structddjvu__document__s_aafe221d1eb03b386beaeb0088b2fd1fb}} 
+bool {\bfseries urlflag}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_acf54d942e164cbc2a17507e4f912a2d2}\label{structddjvu__document__s_acf54d942e164cbc2a17507e4f912a2d2}} 
+bool {\bfseries docinfoflag}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_a76f9363bf72062c1b553d946ea317e3d}\label{structddjvu__document__s_a76f9363bf72062c1b553d946ea317e3d}} 
+bool {\bfseries pageinfoflag}
+\item 
+\mbox{\Hypertarget{structddjvu__document__s_a477ba3e4ecc8c0ab51235a0deef14031}\label{structddjvu__document__s_a477ba3e4ecc8c0ab51235a0deef14031}} 
+minivar\+\_\+t {\bfseries protect}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structddjvu__document__s_abdf7164a36e4c75c5930190fd7ab116e}\label{structddjvu__document__s_abdf7164a36e4c75c5930190fd7ab116e}} 
+\index{ddjvu\_document\_s@{ddjvu\_document\_s}!inherits@{inherits}}
+\index{inherits@{inherits}!ddjvu\_document\_s@{ddjvu\_document\_s}}
+\doxysubsubsection{\texorpdfstring{inherits()}{inherits()}}
+{\footnotesize\ttfamily bool ddjvu\+\_\+document\+\_\+s\+::inherits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{class\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Should return 1 if the called class inherits class \#class\+\_\+name\#. When a destination receives a request, it can retrieve the pointer to the source \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. This virtual function should be able to help to identify the source of the request. For example, \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} is also derived from \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. In order for the receiver to recognize the sender, the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} should override this function to return \#\+T\+R\+UE\# when the \#class\+\_\+name\# is either \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\# or \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# 
+
+Reimplemented from \mbox{\hyperlink{structddjvu__job__s_a98cb2b9bcba490cadd398cb41b85c8bc}{ddjvu\+\_\+job\+\_\+s}}.
+
+\mbox{\Hypertarget{structddjvu__document__s_ac58e42dd9f8b942713b24e6c94e9b44b}\label{structddjvu__document__s_ac58e42dd9f8b942713b24e6c94e9b44b}} 
+\index{ddjvu\_document\_s@{ddjvu\_document\_s}!notify\_error@{notify\_error}}
+\index{notify\_error@{notify\_error}!ddjvu\_document\_s@{ddjvu\_document\_s}}
+\doxysubsubsection{\texorpdfstring{notify\_error()}{notify\_error()}}
+{\footnotesize\ttfamily bool ddjvu\+\_\+document\+\_\+s\+::notify\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent when an error occurs and the error message should be shown to the user. The receiver should return \#0\# if it is unable to process the request. Otherwise the receiver should return 1. 
+
+Reimplemented from \mbox{\hyperlink{structddjvu__job__s_a2af9b110b8f04a0502494131effc0798}{ddjvu\+\_\+job\+\_\+s}}.
+
+\mbox{\Hypertarget{structddjvu__document__s_aeb44a59f61618469e74fd78ee56eea9a}\label{structddjvu__document__s_aeb44a59f61618469e74fd78ee56eea9a}} 
+\index{ddjvu\_document\_s@{ddjvu\_document\_s}!notify\_status@{notify\_status}}
+\index{notify\_status@{notify\_status}!ddjvu\_document\_s@{ddjvu\_document\_s}}
+\doxysubsubsection{\texorpdfstring{notify\_status()}{notify\_status()}}
+{\footnotesize\ttfamily bool ddjvu\+\_\+document\+\_\+s\+::notify\+\_\+status (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent to update the decoding status. The receiver should return \#0\# if it is unable to process the request. Otherwise the receiver should return 1. 
+
+Reimplemented from \mbox{\hyperlink{structddjvu__job__s_a8380cdf79b50652bcf3b12d30890e109}{ddjvu\+\_\+job\+\_\+s}}.
+
+\mbox{\Hypertarget{structddjvu__document__s_a764c9409e82d0196446f3881ebf36961}\label{structddjvu__document__s_a764c9409e82d0196446f3881ebf36961}} 
+\index{ddjvu\_document\_s@{ddjvu\_document\_s}!request\_data@{request\_data}}
+\index{request\_data@{request\_data}!ddjvu\_document\_s@{ddjvu\_document\_s}}
+\doxysubsubsection{\texorpdfstring{request\_data()}{request\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ ddjvu\+\_\+document\+\_\+s\+::request\+\_\+data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This request is issued when decoder needs additional data for decoding. Both \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} are initialized with a U\+RL, not the document data. As soon as they need the data, they call this function, whose responsibility is to locate the source of the data basing on the \#\+U\+RL\# passed and return it back in the form of the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\}. If this particular receiver is unable to fullfil the request, it should return \#0\#. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_a3209546237c836dc716d852fd6219add}{Dj\+Vu\+Port}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/ddjvuapi.\+cpp\end{DoxyCompactItemize}

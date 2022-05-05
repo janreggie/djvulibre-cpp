@@ -1,0 +1,151 @@
+\hypertarget{classGPBase}{}\doxysection{G\+P\+Base Class Reference}
+\label{classGPBase}\index{GPBase@{GPBase}}
+
+
+{\ttfamily \#include $<$G\+Smart\+Pointer.\+h$>$}
+
+
+
+Inheritance diagram for G\+P\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGPBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+P\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classGPBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPBase}{G\+P\+Base}} \& \mbox{\hyperlink{classGPBase_a0c9099ee401f911801d38c43a56e6003}{assign}} (const \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \&sptr)
+\item 
+\mbox{\hyperlink{classGPBase}{G\+P\+Base}} \& \mbox{\hyperlink{classGPBase_a886220005545665ef7ecef5a6bb8fcbd}{assign}} (\mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}} $\ast$nptr)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ G\+Smart\+Pointer.\+h}\par
+{\em Files \#\char`\"{}\+G\+Smart\+Pointer.\+h\char`\"{}\# and \#\char`\"{}\+G\+Smart\+Pointer.\+cpp\char`\"{}\# define a smart-\/pointer class which automatically performs thread-\/safe reference counting. \mbox{\hyperlink{structClass}{Class}} \textbackslash{}\+Ref\{\mbox{\hyperlink{classGP}{GP}}\} implements smart-\/pointers by overloading the usual pointer assignment and dereferencing operators. The overloaded operators maintain the reference counters and destroy the pointed objects as soon as their reference counter reaches zero. Transparent type conversions are provided between smart-\/pointers and regular pointers. Objects referenced by smart-\/pointers must be derived from class \textbackslash{}\+Ref\{\mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\}.
+
+@memo Thread-\/\+Safe reference counting smart-\/pointers. \begin{DoxyAuthor}{Author}
+L\textbackslash{}\textquotesingle{}eon Bottou \href{mailto:leonb@research.att.com}{\texttt{ leonb@research.\+att.\+com}} -- initial implementation\textbackslash{} Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} -- bug fix.
+\end{DoxyAuthor}
+From\+: Leon Bottou, 1/31/2002 \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}} has been added (but not documented) by Lizardtech. Our original implementation consisted of multiple classes. \href{http://prdownloads.sourceforge.net/djvu/DjVu2_2b-src.tgz}{\texttt{ http\+://prdownloads.\+sourceforge.\+net/djvu/\+Dj\+Vu2\+\_\+2b-\/src.\+tgz}}. \begin{DoxyVerb}@args
+\end{DoxyVerb}
+ }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPBase_ae3430db576aa0e6e4409a1a4f277e69e}{G\+P\+Base}} ()
+\item 
+\mbox{\hyperlink{classGPBase_a93f4c21fd3ade24f3dab3453bf7978fb}{G\+P\+Base}} (const \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \&sptr)
+\item 
+\mbox{\hyperlink{classGPBase_aac5c8a660243d408994bae62cac5f43a}{G\+P\+Base}} (\mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}} $\ast$nptr)
+\item 
+\mbox{\hyperlink{classGPBase_a4a479e8a7f724398a19e8dbdc770ee07}{$\sim$\+G\+P\+Base}} ()
+\item 
+\mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}} $\ast$ \mbox{\hyperlink{classGPBase_a1eb105444a267bbe7e598dcf5079db39}{get}} () const
+\item 
+\mbox{\hyperlink{classGPBase}{G\+P\+Base}} \& \mbox{\hyperlink{classGPBase_ad4e1071cd63d9f944b948fa18c1934b3}{operator=}} (const \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \&obj)
+\item 
+int \mbox{\hyperlink{classGPBase_a8eb159437dd47942aee85549275bb8aa}{operator==}} (const \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \&g2) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}} $\ast$ \mbox{\hyperlink{classGPBase_a0009cd1b7bbfce9bbad957fe92da9b69}{ptr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all smart-\/pointers. This class implements common mechanisms for all smart-\/pointers (see \textbackslash{}\+Ref\{\mbox{\hyperlink{classGP}{GP}}\}). There should be no need to use this class directly. Its sole purpose consists in reducing the template expansion overhead. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGPBase_ae3430db576aa0e6e4409a1a4f277e69e}\label{classGPBase_ae3430db576aa0e6e4409a1a4f277e69e}} 
+\index{GPBase@{GPBase}!GPBase@{GPBase}}
+\index{GPBase@{GPBase}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{GPBase()}{GPBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily G\+P\+Base\+::\+G\+P\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Null Constructor. \mbox{\Hypertarget{classGPBase_a93f4c21fd3ade24f3dab3453bf7978fb}\label{classGPBase_a93f4c21fd3ade24f3dab3453bf7978fb}} 
+\index{GPBase@{GPBase}!GPBase@{GPBase}}
+\index{GPBase@{GPBase}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{GPBase()}{GPBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily G\+P\+Base\+::\+G\+P\+Base (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \&}]{sptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy Constructor. Increments the reference count. 
+\begin{DoxyParams}{Parameters}
+{\em sptr} & reference to a \mbox{\hyperlink{classGPBase}{G\+P\+Base}}\# object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGPBase_aac5c8a660243d408994bae62cac5f43a}\label{classGPBase_aac5c8a660243d408994bae62cac5f43a}} 
+\index{GPBase@{GPBase}!GPBase@{GPBase}}
+\index{GPBase@{GPBase}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{GPBase()}{GPBase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily G\+P\+Base\+::\+G\+P\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}} $\ast$}]{nptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a \mbox{\hyperlink{classGPBase}{G\+P\+Base}} from a pointer. Increments the reference count. 
+\begin{DoxyParams}{Parameters}
+{\em nptr} & pointer to a \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}\# object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGPBase_a4a479e8a7f724398a19e8dbdc770ee07}\label{classGPBase_a4a479e8a7f724398a19e8dbdc770ee07}} 
+\index{GPBase@{GPBase}!````~GPBase@{$\sim$GPBase}}
+\index{````~GPBase@{$\sim$GPBase}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$GPBase()}{~GPBase()}}
+{\footnotesize\ttfamily G\+P\+Base\+::$\sim$\+G\+P\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor. Decrements the reference count. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGPBase_a0c9099ee401f911801d38c43a56e6003}\label{classGPBase_a0c9099ee401f911801d38c43a56e6003}} 
+\index{GPBase@{GPBase}!assign@{assign}}
+\index{assign@{assign}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \& G\+P\+Base\+::assign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \&}]{sptr }\end{DoxyParamCaption})}
+
+Assignment from smartpointer. Increments the counter of the new value of the pointer. Decrements the counter of the previous value of the pointer. \mbox{\Hypertarget{classGPBase_a886220005545665ef7ecef5a6bb8fcbd}\label{classGPBase_a886220005545665ef7ecef5a6bb8fcbd}} 
+\index{GPBase@{GPBase}!assign@{assign}}
+\index{assign@{assign}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \& G\+P\+Base\+::assign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}} $\ast$}]{nptr }\end{DoxyParamCaption})}
+
+Assignment from pointer. Checks that the object is not being destroyed. Increments the counter of the new value of the pointer. Decrements the counter of the previous value of the pointer. \mbox{\Hypertarget{classGPBase_a1eb105444a267bbe7e598dcf5079db39}\label{classGPBase_a1eb105444a267bbe7e598dcf5079db39}} 
+\index{GPBase@{GPBase}!get@{get}}
+\index{get@{get}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}} $\ast$ G\+P\+Base\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Accesses the actual pointer. \mbox{\Hypertarget{classGPBase_ad4e1071cd63d9f944b948fa18c1934b3}\label{classGPBase_ad4e1071cd63d9f944b948fa18c1934b3}} 
+\index{GPBase@{GPBase}!operator=@{operator=}}
+\index{operator=@{operator=}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \& G\+P\+Base\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assignment operator. \mbox{\Hypertarget{classGPBase_a8eb159437dd47942aee85549275bb8aa}\label{classGPBase_a8eb159437dd47942aee85549275bb8aa}} 
+\index{GPBase@{GPBase}!operator==@{operator==}}
+\index{operator==@{operator==}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily int G\+P\+Base\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPBase}{G\+P\+Base}} \&}]{g2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Comparison operator. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGPBase_a0009cd1b7bbfce9bbad957fe92da9b69}\label{classGPBase_a0009cd1b7bbfce9bbad957fe92da9b69}} 
+\index{GPBase@{GPBase}!ptr@{ptr}}
+\index{ptr@{ptr}!GPBase@{GPBase}}
+\doxysubsubsection{\texorpdfstring{ptr}{ptr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPEnabled}{G\+P\+Enabled}}$\ast$ G\+P\+Base\+::ptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+Actual pointer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Smart\+Pointer.\+h\item 
+libdjvu/G\+Smart\+Pointer.\+cpp\end{DoxyCompactItemize}

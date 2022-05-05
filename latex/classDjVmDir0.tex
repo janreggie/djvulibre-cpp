@@ -1,0 +1,113 @@
+\hypertarget{classDjVmDir0}{}\doxysection{Dj\+Vm\+Dir0 Class Reference}
+\label{classDjVmDir0}\index{DjVmDir0@{DjVmDir0}}
+
+
+{\ttfamily \#include $<$Dj\+Vm\+Dir0.\+h$>$}
+
+
+
+Inheritance diagram for Dj\+Vm\+Dir0\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classDjVmDir0__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vm\+Dir0\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classDjVmDir0__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDjVmDir0_1_1FileRec}{File\+Rec}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVmDir0_a64e92985af2597d16bead29866252238}\label{classDjVmDir0_a64e92985af2597d16bead29866252238}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDir0_1_1FileRec}{File\+Rec}} $>$ \mbox{\hyperlink{classDjVmDir0_a64e92985af2597d16bead29866252238}{get\+\_\+file}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\begin{DoxyCompactList}\small\item\em Returns the file record with name \#name\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVmDir0_ac834ffbd4c922c8312f2b25f2c46345c}\label{classDjVmDir0_ac834ffbd4c922c8312f2b25f2c46345c}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDir0_1_1FileRec}{File\+Rec}} $>$ \mbox{\hyperlink{classDjVmDir0_ac834ffbd4c922c8312f2b25f2c46345c}{get\+\_\+file}} (int file\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Returns the file record number \#file\+\_\+num\#. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDjVmDir0_a6a4add661f5ce05a2d364914b6c8e2e7}{add\+\_\+file}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name, bool iff\+\_\+file, int offset=-\/1, int size=-\/1)
+\item 
+\mbox{\Hypertarget{classDjVmDir0_a704bbdadbe874c8439e6b2892b683c2e}\label{classDjVmDir0_a704bbdadbe874c8439e6b2892b683c2e}} 
+int \mbox{\hyperlink{classDjVmDir0_a704bbdadbe874c8439e6b2892b683c2e}{get\+\_\+size}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the size of the directory if it were encoded in \#\+D\+I\+R0\# chunk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDjVmDir0_a23d1b0b1a17b4af218241ac9dd7ff901}{encode}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&bs)
+\item 
+void \mbox{\hyperlink{classDjVmDir0_a327ea70051fd12b04b494c3bc1a122af}{decode}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&bs)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Dj\+Vm\+Dir0.\+h}\par
+{\em Files \#\char`\"{}\+Dj\+Vm\+Dir0.\+h\char`\"{}\# and \#\char`\"{}\+Dj\+Vm\+Dir0.\+cpp\char`\"{}\# contain implementation of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDir0}{Dj\+Vm\+Dir0}}\} class responsible for reading and writing the directory of a multipage all-\/in-\/one-\/file Dj\+Vu document (usually referred to as \{\textbackslash{}bf Dj\+Vm\} document.
+
+This is \{\textbackslash{}bf not\} a navigation directory, which lists all the pages in a multipage document. The navigation directory is supported by class \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}}\}. This is the directory of a Dj\+Vm archive.
+
+@memo Directory of Dj\+Vu all-\/in-\/one-\/file Dj\+Vu documents. \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} 
+\end{DoxyAuthor}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVmDir0_abb06825163cad36a104fc3b25bfd6f4e}\label{classDjVmDir0_abb06825163cad36a104fc3b25bfd6f4e}} 
+\mbox{\hyperlink{classDjVmDir0_abb06825163cad36a104fc3b25bfd6f4e}{Dj\+Vm\+Dir0}} (const \mbox{\hyperlink{classDjVmDir0}{Dj\+Vm\+Dir0}} \&d)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVmDir0_aa6c46f81d1b3f479f7bb74f0b7d2efd8}\label{classDjVmDir0_aa6c46f81d1b3f479f7bb74f0b7d2efd8}} 
+int \mbox{\hyperlink{classDjVmDir0_aa6c46f81d1b3f479f7bb74f0b7d2efd8}{get\+\_\+files\+\_\+num}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the number of files in the Dj\+Vm archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVmDir0_a563025df3b0327e67ecbce5af92b2dda}\label{classDjVmDir0_a563025df3b0327e67ecbce5af92b2dda}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDir0}{Dj\+Vm\+Dir0}} $>$ {\bfseries create} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVmDir0_a2f6c8a6a5f5d1d67e21332a931b9aa9c}\label{classDjVmDir0_a2f6c8a6a5f5d1d67e21332a931b9aa9c}} 
+\mbox{\hyperlink{classDjVmDir0_a2f6c8a6a5f5d1d67e21332a931b9aa9c}{Dj\+Vm\+Dir0}} (void)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Directory of all-\/in-\/one-\/file Dj\+Vu documents (also known as Dj\+Vm documents). This class can read and write the directory (table of contents, in other words) of a Dj\+Vm document. This table of contents lists all \{\textbackslash{}bf files\} included into the document, not \{\textbackslash{}bf pages\} like \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}}\} does. It is normally stored in the document inside \{\textbackslash{}bf D\+I\+R0\} chunk where \{\textbackslash{}bf \char`\"{}0\char`\"{}\} refers to the version number.
+
+An object of this class can be created either as a result of the decoding of an existing Dj\+Vm file, or manually by calling the default constructor and adding later directory entries by means of \textbackslash{}\+Ref\{add\+\_\+file\}() function.
+
+You normally will not want to create or decode this directory manually. \textbackslash{}\+Ref\{Dj\+Vm\+File\} class will do it for you. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVmDir0_a6a4add661f5ce05a2d364914b6c8e2e7}\label{classDjVmDir0_a6a4add661f5ce05a2d364914b6c8e2e7}} 
+\index{DjVmDir0@{DjVmDir0}!add\_file@{add\_file}}
+\index{add\_file@{add\_file}!DjVmDir0@{DjVmDir0}}
+\doxysubsubsection{\texorpdfstring{add\_file()}{add\_file()}}
+{\footnotesize\ttfamily void Dj\+Vm\+Dir0\+::add\+\_\+file (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{name,  }\item[{bool}]{iff\+\_\+file,  }\item[{int}]{offset = {\ttfamily -\/1},  }\item[{int}]{size = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Creates a new file record with name \#name\# at offset \#offset\# and size \#size\#, which is in I\+FF format if \#iff\+\_\+file\# is \#\+T\+R\+UE\#. \mbox{\Hypertarget{classDjVmDir0_a327ea70051fd12b04b494c3bc1a122af}\label{classDjVmDir0_a327ea70051fd12b04b494c3bc1a122af}} 
+\index{DjVmDir0@{DjVmDir0}!decode@{decode}}
+\index{decode@{decode}!DjVmDir0@{DjVmDir0}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily void Dj\+Vm\+Dir0\+::decode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{bs }\end{DoxyParamCaption})}
+
+Decodes the directory from \#\+D\+I\+R0\# chunk from the specified \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\} \mbox{\Hypertarget{classDjVmDir0_a23d1b0b1a17b4af218241ac9dd7ff901}\label{classDjVmDir0_a23d1b0b1a17b4af218241ac9dd7ff901}} 
+\index{DjVmDir0@{DjVmDir0}!encode@{encode}}
+\index{encode@{encode}!DjVmDir0@{DjVmDir0}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily void Dj\+Vm\+Dir0\+::encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{bs }\end{DoxyParamCaption})}
+
+Encodes the directory in \#\+D\+I\+R0\# chunk into the specified \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vm\+Dir0.\+h\item 
+libdjvu/Dj\+Vm\+Dir0.\+cpp\end{DoxyCompactItemize}

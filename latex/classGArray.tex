@@ -1,0 +1,76 @@
+\hypertarget{classGArray}{}\doxysection{G\+Array$<$ T\+Y\+PE $>$ Class Template Reference}
+\label{classGArray}\index{GArray$<$ TYPE $>$@{GArray$<$ TYPE $>$}}
+
+
+{\ttfamily \#include $<$G\+Container.\+h$>$}
+
+
+
+Inheritance diagram for G\+Array$<$ T\+Y\+PE $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classGArray__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Array$<$ T\+Y\+PE $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classGArray__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGArray_ab8934a5098809040dfc6fd8e49bdec77}{G\+Array}} ()
+\item 
+\mbox{\hyperlink{classGArray_a0f3d0120cfd4ce736faf5e6a75f36c2d}{G\+Array}} (int hi)
+\item 
+\mbox{\hyperlink{classGArray_a91ff1d57edf7c51e9c707ddd32fd94cb}{G\+Array}} (int lo, int hi)
+\item 
+\mbox{\Hypertarget{classGArray_a9cc254bdb5b0b9c28e61e6660701ec40}\label{classGArray_a9cc254bdb5b0b9c28e61e6660701ec40}} 
+\mbox{\hyperlink{classGArray}{G\+Array}} \& {\bfseries operator=} (const \mbox{\hyperlink{classGArray}{G\+Array}} \&r)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T\+Y\+PE$>$\newline
+class G\+Array$<$ T\+Y\+P\+E $>$}
+
+Dynamic array for general types. ~\newline
+ Template class \mbox{\hyperlink{classGArray_ab8934a5098809040dfc6fd8e49bdec77}{G\+Array$<$\+T\+Y\+P\+E$>$}}\# implements an array of elements of type \#\+T\+Y\+PE\#. This template class must be able to access the following functions. \textbackslash{}begin\{itemize\} \textbackslash{}item a default constructor \#\+T\+Y\+P\+E\+::\+T\+Y\+P\+E()\#, \textbackslash{}item a copy constructor \#\+T\+Y\+P\+E\+::\+T\+Y\+P\+E(const T\+Y\+P\+E \&)\#, \textbackslash{}item and optionally a destructor \#\+T\+Y\+P\+E\+::$\sim$\+T\+Y\+P\+E()\#. \textbackslash{}end\{itemize\} This class only implement constructors. See class \textbackslash{}\+Ref\{\mbox{\hyperlink{classGArrayTemplate}{G\+Array\+Template}}\} for a description of all access methods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGArray_ab8934a5098809040dfc6fd8e49bdec77}\label{classGArray_ab8934a5098809040dfc6fd8e49bdec77}} 
+\index{GArray$<$ TYPE $>$@{GArray$<$ TYPE $>$}!GArray@{GArray}}
+\index{GArray@{GArray}!GArray$<$ TYPE $>$@{GArray$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{GArray()}{GArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+\mbox{\hyperlink{classGArray}{G\+Array}}$<$ T\+Y\+PE $>$\+::\mbox{\hyperlink{classGArray}{G\+Array}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs an empty array. The valid subscript range is initially empty. Member function \mbox{\hyperlink{classGArrayTemplate_a53b1f513b2aeb53d17e01656429080ca}{touch}}\# and \mbox{\hyperlink{classGArrayTemplate_a443b17a021c08eff39c935cce254f0cc}{resize}}\# provide convenient ways to enlarge the subscript range. \mbox{\Hypertarget{classGArray_a0f3d0120cfd4ce736faf5e6a75f36c2d}\label{classGArray_a0f3d0120cfd4ce736faf5e6a75f36c2d}} 
+\index{GArray$<$ TYPE $>$@{GArray$<$ TYPE $>$}!GArray@{GArray}}
+\index{GArray@{GArray}!GArray$<$ TYPE $>$@{GArray$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{GArray()}{GArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+\mbox{\hyperlink{classGArray}{G\+Array}}$<$ T\+Y\+PE $>$\+::\mbox{\hyperlink{classGArray}{G\+Array}} (\begin{DoxyParamCaption}\item[{int}]{hi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs an array with subscripts in range 0 to \#hibound\#. The subscript range can be subsequently modified with member functions \mbox{\hyperlink{classGArrayTemplate_a53b1f513b2aeb53d17e01656429080ca}{touch}}\# and \mbox{\hyperlink{classGArrayTemplate_a443b17a021c08eff39c935cce254f0cc}{resize}}\#. \mbox{\Hypertarget{classGArray_a91ff1d57edf7c51e9c707ddd32fd94cb}\label{classGArray_a91ff1d57edf7c51e9c707ddd32fd94cb}} 
+\index{GArray$<$ TYPE $>$@{GArray$<$ TYPE $>$}!GArray@{GArray}}
+\index{GArray@{GArray}!GArray$<$ TYPE $>$@{GArray$<$ TYPE $>$}}
+\doxysubsubsection{\texorpdfstring{GArray()}{GArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T\+Y\+PE $>$ \\
+\mbox{\hyperlink{classGArray}{G\+Array}}$<$ T\+Y\+PE $>$\+::\mbox{\hyperlink{classGArray}{G\+Array}} (\begin{DoxyParamCaption}\item[{int}]{lo,  }\item[{int}]{hi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs an array with subscripts in range \#lobound\# to \#hibound\#. ~\newline
+ The subscript range can be subsequently modified with member functions \mbox{\hyperlink{classGArrayTemplate_a53b1f513b2aeb53d17e01656429080ca}{touch}}\# and \mbox{\hyperlink{classGArrayTemplate_a443b17a021c08eff39c935cce254f0cc}{resize}}\#. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Container.\+h\end{DoxyCompactItemize}

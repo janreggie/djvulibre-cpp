@@ -1,0 +1,62 @@
+\hypertarget{structIWEncoderParms}{}\doxysection{I\+W\+Encoder\+Parms Struct Reference}
+\label{structIWEncoderParms}\index{IWEncoderParms@{IWEncoderParms}}
+
+
+{\ttfamily \#include $<$I\+W44\+Image.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structIWEncoderParms_a647a2cbb695c303a6d03b6550df8e547}{I\+W\+Encoder\+Parms}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structIWEncoderParms_a2e22d6c34a86659c7edba0b8432582e2}{slices}}
+\item 
+int \mbox{\hyperlink{structIWEncoderParms_a1493b4125f7674d8a781a642264eabfb}{bytes}}
+\item 
+float \mbox{\hyperlink{structIWEncoderParms_af915b584cae513b724508c312e55bf3a}{decibels}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+W44 encoding parameters. ~\newline
+ This data structure gathers the quality specification parameters needed for encoding each chunk of an I\+W44 file. Chunk data is generated until meeting either the slice target, the size target or the decibel target. ~\newline
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structIWEncoderParms_a647a2cbb695c303a6d03b6550df8e547}\label{structIWEncoderParms_a647a2cbb695c303a6d03b6550df8e547}} 
+\index{IWEncoderParms@{IWEncoderParms}!IWEncoderParms@{IWEncoderParms}}
+\index{IWEncoderParms@{IWEncoderParms}!IWEncoderParms@{IWEncoderParms}}
+\doxysubsubsection{\texorpdfstring{IWEncoderParms()}{IWEncoderParms()}}
+{\footnotesize\ttfamily I\+W\+Encoder\+Parms\+::\+I\+W\+Encoder\+Parms (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor. Initializes the structure with the default values. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structIWEncoderParms_a1493b4125f7674d8a781a642264eabfb}\label{structIWEncoderParms_a1493b4125f7674d8a781a642264eabfb}} 
+\index{IWEncoderParms@{IWEncoderParms}!bytes@{bytes}}
+\index{bytes@{bytes}!IWEncoderParms@{IWEncoderParms}}
+\doxysubsubsection{\texorpdfstring{bytes}{bytes}}
+{\footnotesize\ttfamily int I\+W\+Encoder\+Parms\+::bytes}
+
+Size target. Data generation for the current chunk stops if the total data size (in this chunk and all the previous chunks), expressed in bytes, reaches value \#size\#. The default value \#0\# has a special meaning\+: data will be generated regardless of the file size. \mbox{\Hypertarget{structIWEncoderParms_af915b584cae513b724508c312e55bf3a}\label{structIWEncoderParms_af915b584cae513b724508c312e55bf3a}} 
+\index{IWEncoderParms@{IWEncoderParms}!decibels@{decibels}}
+\index{decibels@{decibels}!IWEncoderParms@{IWEncoderParms}}
+\doxysubsubsection{\texorpdfstring{decibels}{decibels}}
+{\footnotesize\ttfamily float I\+W\+Encoder\+Parms\+::decibels}
+
+Decibel target. Data generation for the current chunk stops if the estimated luminance error, expressed in decibels, reaches value \#decibel\#. The default value \#0\# has a special meaning\+: data will be generated regardless of the estimated luminance error. Specifying value \#0\# in fact shortcuts the computation of the estimated luminance error and sensibly speeds up the encoding process. ~\newline
+ \mbox{\Hypertarget{structIWEncoderParms_a2e22d6c34a86659c7edba0b8432582e2}\label{structIWEncoderParms_a2e22d6c34a86659c7edba0b8432582e2}} 
+\index{IWEncoderParms@{IWEncoderParms}!slices@{slices}}
+\index{slices@{slices}!IWEncoderParms@{IWEncoderParms}}
+\doxysubsubsection{\texorpdfstring{slices}{slices}}
+{\footnotesize\ttfamily int I\+W\+Encoder\+Parms\+::slices}
+
+Slice target. Data generation for the current chunk stops if the total number of slices (in this chunk and all the previous chunks) reaches value \#slice\#. The default value \#0\# has a special meaning\+: data will be generated regardless of the number of slices in the file. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/I\+W44\+Image.\+h\item 
+libdjvu/I\+W44\+Image.\+cpp\end{DoxyCompactItemize}

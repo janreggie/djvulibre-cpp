@@ -1,0 +1,67 @@
+\hypertarget{classDataPool_1_1OpenFiles__File}{}\doxysection{Data\+Pool\+::Open\+Files\+\_\+\+File Class Reference}
+\label{classDataPool_1_1OpenFiles__File}\index{DataPool::OpenFiles\_File@{DataPool::OpenFiles\_File}}
+
+
+Inheritance diagram for Data\+Pool\+::Open\+Files\+\_\+\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classDataPool_1_1OpenFiles__File__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Data\+Pool\+::Open\+Files\+\_\+\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDataPool_1_1OpenFiles__File__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_afd0fc008a1183aa546dc95e04a0c7151}\label{classDataPool_1_1OpenFiles__File_afd0fc008a1183aa546dc95e04a0c7151}} 
+int {\bfseries add\+\_\+pool} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&pool)
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_a2bb299a676e277c8f52b6f0d835078fc}\label{classDataPool_1_1OpenFiles__File_a2bb299a676e277c8f52b6f0d835078fc}} 
+int {\bfseries del\+\_\+pool} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&pool)
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_a7d1b91cbc6801e6b2dcdc9fa2b1676ea}\label{classDataPool_1_1OpenFiles__File_a7d1b91cbc6801e6b2dcdc9fa2b1676ea}} 
+{\bfseries Open\+Files\+\_\+\+File} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&pool)
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_ac6f49490ed678643ad1904230d48eaf7}\label{classDataPool_1_1OpenFiles__File_ac6f49490ed678643ad1904230d48eaf7}} 
+void {\bfseries clear\+\_\+stream} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_a101cc391a6b34dd7f27bdc6b6433f140}\label{classDataPool_1_1OpenFiles__File_a101cc391a6b34dd7f27bdc6b6433f140}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} {\bfseries url}
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_a75f92944968b2ff00ec58318bbc5e89b}\label{classDataPool_1_1OpenFiles__File_a75f92944968b2ff00ec58318bbc5e89b}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ {\bfseries stream}
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_a3d83088532fadf80043e9551bffee14f}\label{classDataPool_1_1OpenFiles__File_a3d83088532fadf80043e9551bffee14f}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries stream\+\_\+lock}
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_aa586d64015b8cd6b52cd7cd2db0f87b4}\label{classDataPool_1_1OpenFiles__File_aa586d64015b8cd6b52cd7cd2db0f87b4}} 
+\mbox{\hyperlink{classGPList}{G\+P\+List}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ {\bfseries pools\+\_\+list}
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_a61b2f77dae0bf50245d1e27c21991523}\label{classDataPool_1_1OpenFiles__File_a61b2f77dae0bf50245d1e27c21991523}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries pools\+\_\+lock}
+\item 
+\mbox{\Hypertarget{classDataPool_1_1OpenFiles__File_ad90f8f4a47a2154ea30204eeb8a3db21}\label{classDataPool_1_1OpenFiles__File_ad90f8f4a47a2154ea30204eeb8a3db21}} 
+unsigned long {\bfseries open\+\_\+time}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The purpose of this class is to limit the number of files open by connected Data\+Pools. Now, when a \mbox{\hyperlink{classDataPool}{Data\+Pool}} is connected to a file, it doesn\textquotesingle{}t necessarily has it open. Every time it needs access to data it\textquotesingle{}s supposed to ask this file for the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. It should also inform the class when it\textquotesingle{}s going to die (so that the file can be closed). \mbox{\hyperlink{classDataPool_1_1OpenFiles}{Open\+Files}} makes sure, that the number of open files doesn\textquotesingle{}t exceed M\+A\+X\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+L\+ES. When it does, it looks for the oldest file, closes it and asks all Data\+Pools working with it to Z\+E\+RO their G\+P$<$$>$ pointers. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Data\+Pool.\+cpp\end{DoxyCompactItemize}

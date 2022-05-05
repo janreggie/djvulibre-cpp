@@ -1,0 +1,45 @@
+\hypertarget{classGListImpl}{}\doxysection{G\+List\+Impl$<$ TI $>$ Class Template Reference}
+\label{classGListImpl}\index{GListImpl$<$ TI $>$@{GListImpl$<$ TI $>$}}
+
+
+Inheritance diagram for G\+List\+Impl$<$ TI $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classGListImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+List\+Impl$<$ TI $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classGListImpl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Doubly Linked Lists}
+\label{_amgrp261eba21f2443c0d50ecf4700e5c09ca}%
+The template classes \textbackslash{}\+Ref\{\mbox{\hyperlink{classGList}{G\+List}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classGPList}{G\+P\+List}}\} implement a doubly linked list of objects of arbitrary types. Member functions are provided to search the list for an element, to insert or delete elements at specified positions. Theses template class must be able to access \textbackslash{}begin\{itemize\} \textbackslash{}item a default constructor \#\+T\+Y\+P\+E\+::\+T\+Y\+P\+E()\#, \textbackslash{}item a copy constructor \#\+T\+Y\+P\+E\+::\+T\+Y\+P\+E(const T\+Y\+P\+E \&)\#, \textbackslash{}item optionally a destructor \#\+T\+Y\+P\+E\+::$\sim$\+T\+Y\+P\+E()\#, \textbackslash{}item and optionally a comparison operator \#\+T\+Y\+P\+E\+::operator==(const T\+Y\+P\+E \&)\#. \textbackslash{}end\{itemize\} @memo Doubly linked lists. ~\newline
+ \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGListImpl_a60240ffede3a5535fad31f224d6c67cd}\label{classGListImpl_a60240ffede3a5535fad31f224d6c67cd}} 
+{\bfseries G\+List\+Impl} ()
+\item 
+\mbox{\Hypertarget{classGListImpl_a3d11084965300dd569f3c0388c56d6eb}\label{classGListImpl_a3d11084965300dd569f3c0388c56d6eb}} 
+int {\bfseries operator==} (const \mbox{\hyperlink{classGListImpl}{G\+List\+Impl}}$<$ TI $>$ \&l2) const
+\item 
+\mbox{\Hypertarget{classGListImpl_a1f64ed4c6256053b1ddbbdc4b794e98d}\label{classGListImpl_a1f64ed4c6256053b1ddbbdc4b794e98d}} 
+int {\bfseries search} (const TI \&elt, \mbox{\hyperlink{classGPosition}{G\+Position}} \&pos) const
+\item 
+\mbox{\Hypertarget{classGListImpl_a8845613b758866058e007e9eae765ed7}\label{classGListImpl_a8845613b758866058e007e9eae765ed7}} 
+static \mbox{\hyperlink{structGCont_1_1Node}{Node}} $\ast$ {\bfseries newnode} (const TI \&elt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Container.\+h\end{DoxyCompactItemize}

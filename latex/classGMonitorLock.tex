@@ -1,0 +1,36 @@
+\hypertarget{classGMonitorLock}{}\doxysection{G\+Monitor\+Lock Class Reference}
+\label{classGMonitorLock}\index{GMonitorLock@{GMonitorLock}}
+
+
+{\ttfamily \#include $<$G\+Threads.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGMonitorLock_aeb0eed02c1198d23b2710131c62414c2}{G\+Monitor\+Lock}} (\mbox{\hyperlink{classGMonitor}{G\+Monitor}} $\ast$gsec)
+\item 
+\mbox{\hyperlink{classGMonitorLock_aadb0be2e861aded5c6cdd797ca7dff17}{$\sim$\+G\+Monitor\+Lock}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper for mutually exclusive code. This class locks a specified critical section (see \textbackslash{}\+Ref\{\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}}\}) at construction time and unlocks it at destruction time. It provides a convenient way to take advantage of the C++ implicit destruction of automatic variables in order to make sure that the monitor is released when exiting the protected code. The following code will release the monitor when the execution thread leaves the protected scope, either because the protected code has executed successfully, or because an exception was thrown. \textbackslash{}begin\{verbatim\} \{ -- protected scope static \mbox{\hyperlink{classGMonitor}{G\+Monitor}} the\+Monitor; \mbox{\hyperlink{classGMonitorLock}{G\+Monitor\+Lock}} lock(\&the\+Monitor) ... -- protected code \} \textbackslash{}end\{verbatim\} This construct will do nothing when passed a null pointer. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGMonitorLock_aeb0eed02c1198d23b2710131c62414c2}\label{classGMonitorLock_aeb0eed02c1198d23b2710131c62414c2}} 
+\index{GMonitorLock@{GMonitorLock}!GMonitorLock@{GMonitorLock}}
+\index{GMonitorLock@{GMonitorLock}!GMonitorLock@{GMonitorLock}}
+\doxysubsubsection{\texorpdfstring{GMonitorLock()}{GMonitorLock()}}
+{\footnotesize\ttfamily G\+Monitor\+Lock\+::\+G\+Monitor\+Lock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGMonitor}{G\+Monitor}} $\ast$}]{gsec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. Enters the monitor \#gsec\#. \mbox{\Hypertarget{classGMonitorLock_aadb0be2e861aded5c6cdd797ca7dff17}\label{classGMonitorLock_aadb0be2e861aded5c6cdd797ca7dff17}} 
+\index{GMonitorLock@{GMonitorLock}!````~GMonitorLock@{$\sim$GMonitorLock}}
+\index{````~GMonitorLock@{$\sim$GMonitorLock}!GMonitorLock@{GMonitorLock}}
+\doxysubsubsection{\texorpdfstring{$\sim$GMonitorLock()}{~GMonitorLock()}}
+{\footnotesize\ttfamily G\+Monitor\+Lock\+::$\sim$\+G\+Monitor\+Lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor. Leaves the associated monitor. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Threads.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,113 @@
+\hypertarget{classArrayRep}{}\doxysection{Array\+Rep Class Reference}
+\label{classArrayRep}\index{ArrayRep@{ArrayRep}}
+
+
+Inheritance diagram for Array\+Rep\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{classArrayRep__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Array\+Rep\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{classArrayRep__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArrayRep_aab79c3ab2bb73c11adb4a6111955287c}\label{classArrayRep_aab79c3ab2bb73c11adb4a6111955287c}} 
+{\bfseries Array\+Rep} (int elsize, void($\ast$xdestroy)(void $\ast$, int, int), void($\ast$xinit1)(void $\ast$, int, int), void($\ast$xinit2)(void $\ast$, int, int, const void $\ast$, int, int), void($\ast$xcopy)(void $\ast$, int, int, const void $\ast$, int, int), void($\ast$xinsert)(void $\ast$, int, int, const void $\ast$, int))
+\item 
+\mbox{\Hypertarget{classArrayRep_a2f06047d513560b9b756d32e65b04705}\label{classArrayRep_a2f06047d513560b9b756d32e65b04705}} 
+{\bfseries Array\+Rep} (int elsize, void($\ast$xdestroy)(void $\ast$, int, int), void($\ast$xinit1)(void $\ast$, int, int), void($\ast$xinit2)(void $\ast$, int, int, const void $\ast$, int, int), void($\ast$xcopy)(void $\ast$, int, int, const void $\ast$, int, int), void($\ast$xinsert)(void $\ast$, int, int, const void $\ast$, int), int hibound)
+\item 
+\mbox{\Hypertarget{classArrayRep_a0786ccc45f351eeba0b5343e8c90c5d5}\label{classArrayRep_a0786ccc45f351eeba0b5343e8c90c5d5}} 
+{\bfseries Array\+Rep} (int elsize, void($\ast$xdestroy)(void $\ast$, int, int), void($\ast$xinit1)(void $\ast$, int, int), void($\ast$xinit2)(void $\ast$, int, int, const void $\ast$, int, int), void($\ast$xcopy)(void $\ast$, int, int, const void $\ast$, int, int), void($\ast$xinsert)(void $\ast$, int, int, const void $\ast$, int), int lobound, int hibound)
+\item 
+\mbox{\Hypertarget{classArrayRep_a2923c38b7e748860d9c756c5d96e5e80}\label{classArrayRep_a2923c38b7e748860d9c756c5d96e5e80}} 
+{\bfseries Array\+Rep} (const \mbox{\hyperlink{classArrayRep}{Array\+Rep}} \&rep)
+\item 
+\mbox{\Hypertarget{classArrayRep_adbf47ee1e0881fd108d2063036364369}\label{classArrayRep_adbf47ee1e0881fd108d2063036364369}} 
+void {\bfseries resize} (int lobound, int hibound)
+\item 
+\mbox{\Hypertarget{classArrayRep_a0755d9641412366b3f0ad7d8a8434f8b}\label{classArrayRep_a0755d9641412366b3f0ad7d8a8434f8b}} 
+void {\bfseries shift} (int disp)
+\item 
+\mbox{\Hypertarget{classArrayRep_a671a79a7391776fff0b44e33dec33a19}\label{classArrayRep_a671a79a7391776fff0b44e33dec33a19}} 
+void {\bfseries del} (int n, unsigned int howmany=1)
+\item 
+\mbox{\Hypertarget{classArrayRep_a40472974738ff46b96e0f932c359b623}\label{classArrayRep_a40472974738ff46b96e0f932c359b623}} 
+void {\bfseries ins} (int n, const void $\ast$what, unsigned int howmany)
+\item 
+\mbox{\Hypertarget{classArrayRep_a825fd89b7dcb4f7f76e07d935d1fc133}\label{classArrayRep_a825fd89b7dcb4f7f76e07d935d1fc133}} 
+\mbox{\hyperlink{classArrayRep}{Array\+Rep}} \& {\bfseries operator=} (const \mbox{\hyperlink{classArrayRep}{Array\+Rep}} \&rep)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Arrays.\+h}\par
+{\em Files \#\char`\"{}\+Arrays.\+h\char`\"{}\# and \#\char`\"{}\+Arrays.\+cpp\char`\"{}\# implement three array template classes. \mbox{\hyperlink{structClass}{Class}} \textbackslash{}\+Ref\{\mbox{\hyperlink{classTArray}{T\+Array}}\} implements an array of objects of trivial types such as \#char\#, \#int\#, \#float\#, etc. It is faster than general implementation for any type done in \textbackslash{}\+Ref\{\mbox{\hyperlink{classDArray}{D\+Array}}\} because it does not cope with element\textquotesingle{}s constructors, destructors and copy operators. Although implemented as a template, which makes it possible to incorrectly use \textbackslash{}\+Ref\{\mbox{\hyperlink{classTArray}{T\+Array}}\} with non-\/trivial classes, it should not be done.
+
+A lot of things is shared by these three arrays. That is why there are more base classes\+: \textbackslash{}begin\{itemize\} \textbackslash{}item \textbackslash{}\+Ref\{\mbox{\hyperlink{classArrayBase}{Array\+Base}}\} defines functions independent of the elements type \textbackslash{}item \textbackslash{}\+Ref\{\mbox{\hyperlink{classArrayBaseT}{Array\+BaseT}}\} template class defining functions shared by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDArray}{D\+Array}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classTArray}{T\+Array}}\} \textbackslash{}end\{itemize\}
+
+The main difference between \textbackslash{}\+Ref\{\mbox{\hyperlink{classGArray}{G\+Array}}\} (now obsolete) and these ones is the copy-\/on-\/demand strategy, which allows you to copy array objects without copying the real data. It\textquotesingle{}s the same thing, which has been implemented in \textbackslash{}\+Ref\{G\+String\} long ago\+: as long as you don\textquotesingle{}t try to modify the underlying data, it may be shared between several copies of array objects. As soon as you attempt to make any changes, a private copy is created automatically and transparently for you -\/ the procedure, that we call \char`\"{}copy-\/on-\/demand\char`\"{}.
+
+Also, please note that now there is no separate class, which does fast sorting. Both \textbackslash{}\+Ref\{\mbox{\hyperlink{classTArray}{T\+Array}}\} (dynamic array for trivial types) and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDArray}{D\+Array}}\} (dynamic array for arbitrary types) can sort their elements.
+
+\{\textbackslash{}bf Historical comments\} --- Leon chose to implement his own arrays because the S\+TL classes were not universally available and the compilers were rarely able to deal with such a template galore. Later it became clear that there is no really good reason why arrays should be derived from containers. It was also suggested to create separate arrays implementation for simple classes and do the copy-\/on-\/demand strategy, which would allow to assign array objects without immediate copying of their elements.
+
+At this point \textbackslash{}\+Ref\{\mbox{\hyperlink{classDArray}{D\+Array}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classTArray}{T\+Array}}\} should only be used when it is critical to have the copy-\/on-\/demand feature. The \textbackslash{}\+Ref\{\mbox{\hyperlink{classGArray}{G\+Array}}\} implementation is a lot more efficient.
+
+@memo Template array classes. \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} -- Copy-\/on-\/demand implementation. 
+\end{DoxyAuthor}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArrayRep_a44f1719204b0dfbb21fe56cc2efd7f0b}\label{classArrayRep_a44f1719204b0dfbb21fe56cc2efd7f0b}} 
+int {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{classArrayRep_ac50b3ca6b75c87180f052c7f57b07118}\label{classArrayRep_ac50b3ca6b75c87180f052c7f57b07118}} 
+int {\bfseries lbound} () const
+\item 
+\mbox{\Hypertarget{classArrayRep_ae1839ad299666e8b94931a3e6c7bcf30}\label{classArrayRep_ae1839ad299666e8b94931a3e6c7bcf30}} 
+int {\bfseries hbound} () const
+\item 
+\mbox{\Hypertarget{classArrayRep_a910f3d7b32a220cb8a179bd513b2dd5d}\label{classArrayRep_a910f3d7b32a220cb8a179bd513b2dd5d}} 
+void {\bfseries empty} ()
+\item 
+\mbox{\Hypertarget{classArrayRep_a60a9fef616acad0e2722f5fe1b0c4593}\label{classArrayRep_a60a9fef616acad0e2722f5fe1b0c4593}} 
+void {\bfseries touch} (int n)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArrayRep_a5acb9d74bb4d2b1db1282dbd7a84703c}\label{classArrayRep_a5acb9d74bb4d2b1db1282dbd7a84703c}} 
+void $\ast$ {\bfseries data}
+\item 
+\mbox{\Hypertarget{classArrayRep_a8d2db94c3cccad8824432a0bd5f62ba5}\label{classArrayRep_a8d2db94c3cccad8824432a0bd5f62ba5}} 
+int {\bfseries minlo}
+\item 
+\mbox{\Hypertarget{classArrayRep_a36677eeaa5eeff03a23800932881a4a8}\label{classArrayRep_a36677eeaa5eeff03a23800932881a4a8}} 
+int {\bfseries maxhi}
+\item 
+\mbox{\Hypertarget{classArrayRep_ab1274d3ba4cc828986f05d210f48a4ab}\label{classArrayRep_ab1274d3ba4cc828986f05d210f48a4ab}} 
+int {\bfseries lobound}
+\item 
+\mbox{\Hypertarget{classArrayRep_adee89aca16ea4aee28473394e37a93c9}\label{classArrayRep_adee89aca16ea4aee28473394e37a93c9}} 
+int {\bfseries hibound}
+\item 
+\mbox{\Hypertarget{classArrayRep_a2a78f1e31f973e3570aafc797c72c05a}\label{classArrayRep_a2a78f1e31f973e3570aafc797c72c05a}} 
+int {\bfseries elsize}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Arrays.\+h\item 
+libdjvu/Arrays.\+cpp\end{DoxyCompactItemize}

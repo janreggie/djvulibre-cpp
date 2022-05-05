@@ -1,0 +1,43 @@
+\hypertarget{classGMapImpl}{}\doxysection{G\+Map\+Impl$<$ K, TI $>$ Class Template Reference}
+\label{classGMapImpl}\index{GMapImpl$<$ K, TI $>$@{GMapImpl$<$ K, TI $>$}}
+
+
+Inheritance diagram for G\+Map\+Impl$<$ K, TI $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classGMapImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Map\+Impl$<$ K, TI $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classGMapImpl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{Indent}\textbf{ Associative Maps}\par
+{\em These template classes implements a associative maps. The associative map contains an arbitrary number of entries. Each entry is a pair containing one element of type \#\+K\+T\+Y\+PE\# (named the \char`\"{}key\char`\"{}) and one element of type \#\+V\+T\+Y\+PE\# (named the \char`\"{}value\char`\"{}). All entries have distinct keys. These template class must be able to access the following functions\+: \textbackslash{}begin\{itemize\} \textbackslash{}item a \#\+V\+T\+Y\+PE\# default constructor \#\+V\+T\+Y\+P\+E\+::\+V\+T\+Y\+P\+E()\#, \textbackslash{}item a \#\+V\+T\+Y\+PE\# copy constructor \#\+V\+T\+Y\+P\+E\+::\+V\+T\+Y\+P\+E(const V\+T\+Y\+P\+E \&)\#, \textbackslash{}item optionally a \#\+V\+T\+Y\+PE\# destructor \#\+V\+T\+Y\+P\+E\+::$\sim$\+V\+T\+Y\+P\+E()\#, \textbackslash{}item a \#\+K\+T\+Y\+PE\# default constructor \#\+K\+T\+Y\+P\+E\+::\+K\+T\+Y\+P\+E()\#, \textbackslash{}item a \#\+K\+T\+Y\+PE\# copy constructor \#\+K\+T\+Y\+P\+E\+::\+K\+T\+Y\+P\+E(const K\+T\+Y\+P\+E \&)\#, \textbackslash{}item optionally a \#\+K\+T\+Y\+PE\# destructor \#\+K\+T\+Y\+P\+E\+::$\sim$\+K\+T\+Y\+P\+E()\#, \textbackslash{}item a \#\+K\+T\+Y\+PE\# comparison operator \#\+K\+T\+Y\+P\+E\+::operator==(const K\+T\+Y\+P\+E \&)\#, \textbackslash{}item and a \#\+K\+T\+Y\+PE\# hashing function \#hash(const K\+T\+Y\+P\+E\&)\#. \textbackslash{}end\{itemize\} The hashing function must return an \#unsigned int\# number. Multiple invocations of the hashing function with equal arguments (in the sense of \#\+K\+T\+Y\+P\+E\+::operator==\#) must always return the same number. ~\newline
+ Position objects (see \textbackslash{}\+Ref\{\mbox{\hyperlink{classGPosition}{G\+Position}}\}) may be used to iterate over the entries contained by an associative map. @memo Associative maps. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapImpl_a3483ca3cad568ff04ad2f6d38ecbd557}\label{classGMapImpl_a3483ca3cad568ff04ad2f6d38ecbd557}} 
+{\bfseries G\+Map\+Impl} ()
+\item 
+\mbox{\Hypertarget{classGMapImpl_a9408e3646550331a5e5a472da61eca71}\label{classGMapImpl_a9408e3646550331a5e5a472da61eca71}} 
+{\bfseries G\+Map\+Impl} (const G\+C\+O\+NT \mbox{\hyperlink{structGCont_1_1Traits}{Traits}} \&traits)
+\item 
+\mbox{\Hypertarget{classGMapImpl_a52a2b5a55d1a5c03bbaea6dcc019e837}\label{classGMapImpl_a52a2b5a55d1a5c03bbaea6dcc019e837}} 
+G\+C\+O\+NT \mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$ {\bfseries get\+\_\+or\+\_\+create} (const K \&key)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Container.\+h\end{DoxyCompactItemize}

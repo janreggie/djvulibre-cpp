@@ -1,0 +1,111 @@
+\hypertarget{classDjVuErrorList}{}\doxysection{Dj\+Vu\+Error\+List Class Reference}
+\label{classDjVuErrorList}\index{DjVuErrorList@{DjVuErrorList}}
+
+
+{\ttfamily \#include $<$Dj\+Vu\+Error\+List.\+h$>$}
+
+
+
+Inheritance diagram for Dj\+Vu\+Error\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classDjVuErrorList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+Error\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classDjVuErrorList__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuErrorList_ad037b1401303a3b47273839aee2b3609}\label{classDjVuErrorList_ad037b1401303a3b47273839aee2b3609}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} \mbox{\hyperlink{classDjVuErrorList_ad037b1401303a3b47273839aee2b3609}{set\+\_\+stream}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$)
+\begin{DoxyCompactList}\small\item\em This constructor allows the user to specify the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_a24ac9cc555c65ea249d20720f2554b95}\label{classDjVuErrorList_a24ac9cc555c65ea249d20720f2554b95}} 
+virtual bool \mbox{\hyperlink{classDjVuErrorList_a24ac9cc555c65ea249d20720f2554b95}{notify\+\_\+error}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&msg)
+\begin{DoxyCompactList}\small\item\em Append all error messages to the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_a18472b27f1c9c565434f5b1626527fcd}\label{classDjVuErrorList_a18472b27f1c9c565434f5b1626527fcd}} 
+virtual bool \mbox{\hyperlink{classDjVuErrorList_a18472b27f1c9c565434f5b1626527fcd}{notify\+\_\+status}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&msg)
+\begin{DoxyCompactList}\small\item\em Append all status messages to the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_a39672f2c718627c262ee62083047c44f}\label{classDjVuErrorList_a39672f2c718627c262ee62083047c44f}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuErrorList_a39672f2c718627c262ee62083047c44f}{Get\+Error}} (void)
+\begin{DoxyCompactList}\small\item\em Get one error message and clear that message from the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_ad99e6af303d71b08686281aced596aec}\label{classDjVuErrorList_ad99e6af303d71b08686281aced596aec}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuErrorList_ad99e6af303d71b08686281aced596aec}{Get\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Get one status message and clear that message from the list. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuErrorList_ab69d64d11c26a81f469d1664f584e518}{request\+\_\+data}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Dj\+Vu\+Error\+List.\+h}\par
+{\em This file implements a very simple class for redirecting port caster messages that would normally end up on stderr to a double linked list.
+
+@memo \mbox{\hyperlink{classDjVuErrorList}{Dj\+Vu\+Error\+List}} class. \begin{DoxyAuthor}{Author}
+Bill C Riemers \href{mailto:docbill@sourceforge.net}{\texttt{ docbill@sourceforge.\+net}} 
+\end{DoxyAuthor}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuErrorList_a7fe4b03c5235db8047f1c2319ef542b9}\label{classDjVuErrorList_a7fe4b03c5235db8047f1c2319ef542b9}} 
+void \mbox{\hyperlink{classDjVuErrorList_a7fe4b03c5235db8047f1c2319ef542b9}{connect}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} \&port)
+\begin{DoxyCompactList}\small\item\em Add a new class to have its messages redirected here. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_a9c3bd4fabdf721762b7f4350c8aa9796}\label{classDjVuErrorList_a9c3bd4fabdf721762b7f4350c8aa9796}} 
+\mbox{\hyperlink{classGList}{G\+List}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} $>$ \mbox{\hyperlink{classDjVuErrorList_a9c3bd4fabdf721762b7f4350c8aa9796}{Get\+Error\+List}} (void)
+\begin{DoxyCompactList}\small\item\em Get the listing of errors, and clear the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_a0c5afac203e60155cf8dcd07fbcc7c1f}\label{classDjVuErrorList_a0c5afac203e60155cf8dcd07fbcc7c1f}} 
+void \mbox{\hyperlink{classDjVuErrorList_a0c5afac203e60155cf8dcd07fbcc7c1f}{Clear\+Error}} (void)
+\begin{DoxyCompactList}\small\item\em Just clear the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_ab8fe0e1a6f7231ff7436e8918543f124}\label{classDjVuErrorList_ab8fe0e1a6f7231ff7436e8918543f124}} 
+bool \mbox{\hyperlink{classDjVuErrorList_ab8fe0e1a6f7231ff7436e8918543f124}{Has\+Error}} (void) const
+\begin{DoxyCompactList}\small\item\em Check if there are anymore error messages. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_a6cfe82f9c04c108d3a09b4b631941e3b}\label{classDjVuErrorList_a6cfe82f9c04c108d3a09b4b631941e3b}} 
+\mbox{\hyperlink{classGList}{G\+List}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} $>$ \mbox{\hyperlink{classDjVuErrorList_a6cfe82f9c04c108d3a09b4b631941e3b}{Get\+Status\+List}} (void)
+\begin{DoxyCompactList}\small\item\em Get the listing of status messages, and clear the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_ab82e0a01e9e56d0d857f9547235ef2b9}\label{classDjVuErrorList_ab82e0a01e9e56d0d857f9547235ef2b9}} 
+void \mbox{\hyperlink{classDjVuErrorList_ab82e0a01e9e56d0d857f9547235ef2b9}{Clear\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Just clear the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuErrorList_abaa89c70c1bbc46dd83651ed3cd280ae}\label{classDjVuErrorList_abaa89c70c1bbc46dd83651ed3cd280ae}} 
+bool \mbox{\hyperlink{classDjVuErrorList_abaa89c70c1bbc46dd83651ed3cd280ae}{Has\+Status}} (void) const
+\begin{DoxyCompactList}\small\item\em Check if there are any more status messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuErrorList_a5bfd74024cddac3a14bca822cde75f16}\label{classDjVuErrorList_a5bfd74024cddac3a14bca822cde75f16}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuErrorList}{Dj\+Vu\+Error\+List}} $>$ {\bfseries create} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuErrorList_a85281a6a88df4d2a207b224170cbd695}\label{classDjVuErrorList_a85281a6a88df4d2a207b224170cbd695}} 
+\mbox{\hyperlink{classDjVuErrorList_a85281a6a88df4d2a207b224170cbd695}{Dj\+Vu\+Error\+List}} (void)
+\begin{DoxyCompactList}\small\item\em The normal port caster constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDjVuErrorList}{Dj\+Vu\+Error\+List}}\# provides a convenient way to redirect error messages from classes derived from \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} to a list that can be accessed at any time. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuErrorList_ab69d64d11c26a81f469d1664f584e518}\label{classDjVuErrorList_ab69d64d11c26a81f469d1664f584e518}} 
+\index{DjVuErrorList@{DjVuErrorList}!request\_data@{request\_data}}
+\index{request\_data@{request\_data}!DjVuErrorList@{DjVuErrorList}}
+\doxysubsubsection{\texorpdfstring{request\_data()}{request\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+Error\+List\+::request\+\_\+data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This gets the data. We can\textquotesingle{}t use the simple port\textquotesingle{}s request data since we want to allow the user to specify the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuSimplePort_a2b5c6f47728d2e3df8bfd8d10ccf1f6d}{Dj\+Vu\+Simple\+Port}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+Error\+List.\+h\item 
+libdjvu/Dj\+Vu\+Error\+List.\+cpp\end{DoxyCompactItemize}

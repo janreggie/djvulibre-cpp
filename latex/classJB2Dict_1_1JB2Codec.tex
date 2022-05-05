@@ -1,0 +1,297 @@
+\hypertarget{classJB2Dict_1_1JB2Codec}{}\doxysection{J\+B2\+Dict\+::J\+B2\+Codec Class Reference}
+\label{classJB2Dict_1_1JB2Codec}\index{JB2Dict::JB2Codec@{JB2Dict::JB2Codec}}
+
+
+Inheritance diagram for J\+B2\+Dict\+::J\+B2\+Codec\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classJB2Dict_1_1JB2Codec__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for J\+B2\+Dict\+::J\+B2\+Codec\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJB2Dict_1_1JB2Codec__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJB2Dict_1_1JB2Codec_1_1Decode}{Decode}}
+\item 
+class \mbox{\hyperlink{classJB2Dict_1_1JB2Codec_1_1Encode}{Encode}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_af849d402ed2ace261caa6e80a92a9a2e}\label{classJB2Dict_1_1JB2Codec_af849d402ed2ace261caa6e80a92a9a2e}} 
+typedef unsigned int {\bfseries Num\+Context}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a995877b651b37ba0155b351e52739fe6}\label{classJB2Dict_1_1JB2Codec_a995877b651b37ba0155b351e52739fe6}} 
+{\bfseries J\+B2\+Codec} (const bool xencoding=false)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a19b3494403b00b6852a5cd24d4463ab1}\label{classJB2Dict_1_1JB2Codec_a19b3494403b00b6852a5cd24d4463ab1}} 
+{\bfseries J\+B2\+Codec} (const \mbox{\hyperlink{classJB2Dict_1_1JB2Codec}{J\+B2\+Codec}} \&ref)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a80dc84d9cc127a616d6e265f6e998d73}\label{classJB2Dict_1_1JB2Codec_a80dc84d9cc127a616d6e265f6e998d73}} 
+\mbox{\hyperlink{classJB2Dict_1_1JB2Codec}{J\+B2\+Codec}} \& {\bfseries operator=} (const \mbox{\hyperlink{classJB2Dict_1_1JB2Codec}{J\+B2\+Codec}} \&ref)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_ab0e56c75940f4e77841370f92c92c667}\label{classJB2Dict_1_1JB2Codec_ab0e56c75940f4e77841370f92c92c667}} 
+int {\bfseries Code\+Num} (int lo, int hi, Num\+Context $\ast$pctx, int v)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_ae74974b3da74f23f0cb0565e14f58e2d}\label{classJB2Dict_1_1JB2Codec_ae74974b3da74f23f0cb0565e14f58e2d}} 
+void {\bfseries reset\+\_\+numcoder} (void)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a19ec286ca0ed3876f4c9dc58c1ffa7a8}\label{classJB2Dict_1_1JB2Codec_a19ec286ca0ed3876f4c9dc58c1ffa7a8}} 
+void {\bfseries init\+\_\+library} (\mbox{\hyperlink{classJB2Dict}{J\+B2\+Dict}} \&jim)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a58a724c0454747883d8d325026730e38}\label{classJB2Dict_1_1JB2Codec_a58a724c0454747883d8d325026730e38}} 
+int {\bfseries add\+\_\+library} (const int shapeno, \mbox{\hyperlink{classJB2Shape}{J\+B2\+Shape}} \&jshp)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a70fe5315a36717e1ff3340c26e0b0d2f}\label{classJB2Dict_1_1JB2Codec_a70fe5315a36717e1ff3340c26e0b0d2f}} 
+void {\bfseries code\+\_\+relative\+\_\+location} (\mbox{\hyperlink{classJB2Blit}{J\+B2\+Blit}} $\ast$jblt, int rows, int columns)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a860335fd0c38a38d7c8fee74fe877766}\label{classJB2Dict_1_1JB2Codec_a860335fd0c38a38d7c8fee74fe877766}} 
+void {\bfseries code\+\_\+bitmap\+\_\+directly} (\mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&bm)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_ace7b2eb42edcc927556b3ac5df470b55}\label{classJB2Dict_1_1JB2Codec_ace7b2eb42edcc927556b3ac5df470b55}} 
+void {\bfseries code\+\_\+bitmap\+\_\+by\+\_\+cross\+\_\+coding} (\mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&bm, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $>$ \&cbm, const int libno)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a17cbdaceba9a85ece05254b2e1b94f47}\label{classJB2Dict_1_1JB2Codec_a17cbdaceba9a85ece05254b2e1b94f47}} 
+void {\bfseries code\+\_\+record} (int \&rectype, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classJB2Dict}{J\+B2\+Dict}} $>$ \&jim, \mbox{\hyperlink{classJB2Shape}{J\+B2\+Shape}} $\ast$jshp)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a7872994de8b30e6ac38c24181b0825d1}\label{classJB2Dict_1_1JB2Codec_a7872994de8b30e6ac38c24181b0825d1}} 
+void {\bfseries code\+\_\+record} (int \&rectype, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classJB2Image}{J\+B2\+Image}} $>$ \&jim, \mbox{\hyperlink{classJB2Shape}{J\+B2\+Shape}} $\ast$jshp, \mbox{\hyperlink{classJB2Blit}{J\+B2\+Blit}} $\ast$jblt)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_ab44edb5544a536730a29af7885b216b5}\label{classJB2Dict_1_1JB2Codec_ab44edb5544a536730a29af7885b216b5}} 
+virtual bool {\bfseries Code\+Bit} (const bool bit, Bit\+Context \&ctx)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a9e8d18aca597ed51b4a6c76d61c4389e}\label{classJB2Dict_1_1JB2Codec_a9e8d18aca597ed51b4a6c76d61c4389e}} 
+virtual void {\bfseries code\+\_\+comment} (\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&\mbox{\hyperlink{classJB2Dict_a6cbb253ff8271cafc54c496ae9fbd4a9}{comment}})=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a70469d7d9f03ead3431671a83aa12552}\label{classJB2Dict_1_1JB2Codec_a70469d7d9f03ead3431671a83aa12552}} 
+virtual void {\bfseries code\+\_\+record\+\_\+type} (int \&rectype)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a9faab5b7c0199cccc469e0533a69505f}\label{classJB2Dict_1_1JB2Codec_a9faab5b7c0199cccc469e0533a69505f}} 
+virtual int {\bfseries code\+\_\+match\+\_\+index} (int \&index, \mbox{\hyperlink{classJB2Dict}{J\+B2\+Dict}} \&jim)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a451e2e9239aaa67157a62eaeed5c7ecc}\label{classJB2Dict_1_1JB2Codec_a451e2e9239aaa67157a62eaeed5c7ecc}} 
+virtual void {\bfseries code\+\_\+inherited\+\_\+shape\+\_\+count} (\mbox{\hyperlink{classJB2Dict}{J\+B2\+Dict}} \&jim)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_af27f454cf80e0198cdae7ca11e40cdf6}\label{classJB2Dict_1_1JB2Codec_af27f454cf80e0198cdae7ca11e40cdf6}} 
+virtual void {\bfseries code\+\_\+image\+\_\+size} (\mbox{\hyperlink{classJB2Dict}{J\+B2\+Dict}} \&jim)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a1b284f36afc1bcdd7eb3f3992b963e13}\label{classJB2Dict_1_1JB2Codec_a1b284f36afc1bcdd7eb3f3992b963e13}} 
+virtual void {\bfseries code\+\_\+image\+\_\+size} (\mbox{\hyperlink{classJB2Image}{J\+B2\+Image}} \&jim)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a9a2583fbd80402dae0eed51267e14bc7}\label{classJB2Dict_1_1JB2Codec_a9a2583fbd80402dae0eed51267e14bc7}} 
+virtual void {\bfseries code\+\_\+absolute\+\_\+location} (\mbox{\hyperlink{classJB2Blit}{J\+B2\+Blit}} $\ast$jblt, int rows, int columns)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_adeba13849c12072956f59bc6abd23947}\label{classJB2Dict_1_1JB2Codec_adeba13849c12072956f59bc6abd23947}} 
+virtual void {\bfseries code\+\_\+absolute\+\_\+mark\+\_\+size} (\mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&bm, int border=0)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_acce3f56e959e433180829c091b3799ed}\label{classJB2Dict_1_1JB2Codec_acce3f56e959e433180829c091b3799ed}} 
+virtual void {\bfseries code\+\_\+relative\+\_\+mark\+\_\+size} (\mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&bm, int cw, int ch, int border=0)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a01b0965fefcd4d7fa880b6b1dd441647}\label{classJB2Dict_1_1JB2Codec_a01b0965fefcd4d7fa880b6b1dd441647}} 
+virtual void {\bfseries code\+\_\+bitmap\+\_\+directly} (\mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&bm, const int dw, int dy, unsigned char $\ast$up2, unsigned char $\ast$up1, unsigned char $\ast$up0)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a858ade5e8e9c50ca2a164ff13ceb1fd8}\label{classJB2Dict_1_1JB2Codec_a858ade5e8e9c50ca2a164ff13ceb1fd8}} 
+virtual void {\bfseries code\+\_\+bitmap\+\_\+by\+\_\+cross\+\_\+coding} (\mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&bm, \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&cbm, const int xd2c, const int dw, int dy, int cy, unsigned char $\ast$up1, unsigned char $\ast$up0, unsigned char $\ast$xup1, unsigned char $\ast$xup0, unsigned char $\ast$xdn1)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_ae061b2ba4f56e14a6bb58310472e3c02}\label{classJB2Dict_1_1JB2Codec_ae061b2ba4f56e14a6bb58310472e3c02}} 
+virtual int {\bfseries get\+\_\+diff} (const int x\+\_\+diff, Num\+Context \&rel\+\_\+loc)=0
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a8117d217b72f0a2e94f99fdd9b31c67b}\label{classJB2Dict_1_1JB2Codec_a8117d217b72f0a2e94f99fdd9b31c67b}} 
+int {\bfseries update\+\_\+short\+\_\+list} (const int v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_aff4d1dee25983accae04c475e897df9f}\label{classJB2Dict_1_1JB2Codec_aff4d1dee25983accae04c475e897df9f}} 
+static void {\bfseries compute\+\_\+bounding\+\_\+box} (\mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&cbm, Lib\+Rect \&lrect)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a4c4a8b5003604906718784a5bfe5471b}\label{classJB2Dict_1_1JB2Codec_a4c4a8b5003604906718784a5bfe5471b}} 
+int {\bfseries cur\+\_\+ncell}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a336f1e4c7a6aa5fc23a8dea54486d3a2}\label{classJB2Dict_1_1JB2Codec_a336f1e4c7a6aa5fc23a8dea54486d3a2}} 
+Bit\+Context $\ast$ {\bfseries bitcells}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a7f31fd86c94ed694397fac932948f9b1}\label{classJB2Dict_1_1JB2Codec_a7f31fd86c94ed694397fac932948f9b1}} 
+\mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}}$<$ Bit\+Context $>$ {\bfseries gbitcells}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a61d8dfab440a113520062289dbb3b497}\label{classJB2Dict_1_1JB2Codec_a61d8dfab440a113520062289dbb3b497}} 
+Num\+Context $\ast$ {\bfseries leftcell}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_aeaa27822bcc7bd45b3f7a5dd64e1ae20}\label{classJB2Dict_1_1JB2Codec_aeaa27822bcc7bd45b3f7a5dd64e1ae20}} 
+\mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}}$<$ Num\+Context $>$ {\bfseries gleftcell}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a75d19fc8e97e629b09d0e9d41515823a}\label{classJB2Dict_1_1JB2Codec_a75d19fc8e97e629b09d0e9d41515823a}} 
+Num\+Context $\ast$ {\bfseries rightcell}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a6ffec6692be5f39c148d9dfbd08f2155}\label{classJB2Dict_1_1JB2Codec_a6ffec6692be5f39c148d9dfbd08f2155}} 
+\mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}}$<$ Num\+Context $>$ {\bfseries grightcell}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a38cf31257f933da951fd3f313b423eee}\label{classJB2Dict_1_1JB2Codec_a38cf31257f933da951fd3f313b423eee}} 
+bool {\bfseries refinementp}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a1bf7e9ba4b8378e68c87c46758ba5f83}\label{classJB2Dict_1_1JB2Codec_a1bf7e9ba4b8378e68c87c46758ba5f83}} 
+char {\bfseries gotstartrecordp}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_aa8e5d1cea53bfbb7ef881f7a8172b876}\label{classJB2Dict_1_1JB2Codec_aa8e5d1cea53bfbb7ef881f7a8172b876}} 
+Num\+Context {\bfseries dist\+\_\+comment\+\_\+byte}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a2ec39ff4c5b6edaefdf8f08c1d109f98}\label{classJB2Dict_1_1JB2Codec_a2ec39ff4c5b6edaefdf8f08c1d109f98}} 
+Num\+Context {\bfseries dist\+\_\+comment\+\_\+length}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a5bfd1df020b57964d56e8f9db87251a3}\label{classJB2Dict_1_1JB2Codec_a5bfd1df020b57964d56e8f9db87251a3}} 
+Num\+Context {\bfseries dist\+\_\+record\+\_\+type}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_afa5b0032048a57ab6f41ae52fa9fb71c}\label{classJB2Dict_1_1JB2Codec_afa5b0032048a57ab6f41ae52fa9fb71c}} 
+Num\+Context {\bfseries dist\+\_\+match\+\_\+index}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_aa25096752a37b7db114a381bab89d27d}\label{classJB2Dict_1_1JB2Codec_aa25096752a37b7db114a381bab89d27d}} 
+Bit\+Context {\bfseries dist\+\_\+refinement\+\_\+flag}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a5af10ae3b3c780fe12f8c476ca7b4521}\label{classJB2Dict_1_1JB2Codec_a5af10ae3b3c780fe12f8c476ca7b4521}} 
+\mbox{\hyperlink{classGTArray}{G\+T\+Array}}$<$ int $>$ {\bfseries shape2lib}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a19ef5998dbc7c08f4d8d8209e4db2a67}\label{classJB2Dict_1_1JB2Codec_a19ef5998dbc7c08f4d8d8209e4db2a67}} 
+\mbox{\hyperlink{classGTArray}{G\+T\+Array}}$<$ int $>$ {\bfseries lib2shape}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a94cf22f9c3dbab2d56e0f9c7adab97bc}\label{classJB2Dict_1_1JB2Codec_a94cf22f9c3dbab2d56e0f9c7adab97bc}} 
+\mbox{\hyperlink{classGTArray}{G\+T\+Array}}$<$ Lib\+Rect $>$ {\bfseries libinfo}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_af172ed52dd4314976b5d62a6cf708674}\label{classJB2Dict_1_1JB2Codec_af172ed52dd4314976b5d62a6cf708674}} 
+Num\+Context {\bfseries abs\+\_\+loc\+\_\+x}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a345fd7fd5349f143a1737e7700d29da5}\label{classJB2Dict_1_1JB2Codec_a345fd7fd5349f143a1737e7700d29da5}} 
+Num\+Context {\bfseries abs\+\_\+loc\+\_\+y}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_afd075a32e1c3fcbe1352ce4a9869504e}\label{classJB2Dict_1_1JB2Codec_afd075a32e1c3fcbe1352ce4a9869504e}} 
+Num\+Context {\bfseries abs\+\_\+size\+\_\+x}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_aab2e0e58805ee485b2744b0a2439ea73}\label{classJB2Dict_1_1JB2Codec_aab2e0e58805ee485b2744b0a2439ea73}} 
+Num\+Context {\bfseries abs\+\_\+size\+\_\+y}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a100bacc6b084dc672c78bb4f3b877db3}\label{classJB2Dict_1_1JB2Codec_a100bacc6b084dc672c78bb4f3b877db3}} 
+Num\+Context {\bfseries image\+\_\+size\+\_\+dist}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a4963ad030570b8b6ce4bba4cd8a90f00}\label{classJB2Dict_1_1JB2Codec_a4963ad030570b8b6ce4bba4cd8a90f00}} 
+Num\+Context {\bfseries inherited\+\_\+shape\+\_\+count\+\_\+dist}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a038be8b181d4dc259123b9b5688e6dc5}\label{classJB2Dict_1_1JB2Codec_a038be8b181d4dc259123b9b5688e6dc5}} 
+Bit\+Context {\bfseries offset\+\_\+type\+\_\+dist}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_ad6901e9edf04bf444d054d4546fb9a3b}\label{classJB2Dict_1_1JB2Codec_ad6901e9edf04bf444d054d4546fb9a3b}} 
+Num\+Context {\bfseries rel\+\_\+loc\+\_\+x\+\_\+current}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a599ff41243778f7d7f1b4d951245f6c8}\label{classJB2Dict_1_1JB2Codec_a599ff41243778f7d7f1b4d951245f6c8}} 
+Num\+Context {\bfseries rel\+\_\+loc\+\_\+x\+\_\+last}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a83148d5cc280f44bdef491a20efa4a34}\label{classJB2Dict_1_1JB2Codec_a83148d5cc280f44bdef491a20efa4a34}} 
+Num\+Context {\bfseries rel\+\_\+loc\+\_\+y\+\_\+current}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a26d6334a13307b5d441f796e6c894286}\label{classJB2Dict_1_1JB2Codec_a26d6334a13307b5d441f796e6c894286}} 
+Num\+Context {\bfseries rel\+\_\+loc\+\_\+y\+\_\+last}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a894c696493281176c0dcc1f2af9d9c21}\label{classJB2Dict_1_1JB2Codec_a894c696493281176c0dcc1f2af9d9c21}} 
+Num\+Context {\bfseries rel\+\_\+size\+\_\+x}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a97eeff59fc25a4fc3d4831bab334c42f}\label{classJB2Dict_1_1JB2Codec_a97eeff59fc25a4fc3d4831bab334c42f}} 
+Num\+Context {\bfseries rel\+\_\+size\+\_\+y}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a7558d706c12c05b0151b6b69803ff262}\label{classJB2Dict_1_1JB2Codec_a7558d706c12c05b0151b6b69803ff262}} 
+int {\bfseries last\+\_\+bottom}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_abb0dfd06a1813dbc31250a84a18e9e89}\label{classJB2Dict_1_1JB2Codec_abb0dfd06a1813dbc31250a84a18e9e89}} 
+int {\bfseries last\+\_\+left}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_ad6439a4db39804b6ebbef1915d81b5cb}\label{classJB2Dict_1_1JB2Codec_ad6439a4db39804b6ebbef1915d81b5cb}} 
+int {\bfseries last\+\_\+right}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a9cff57446fe6482ca98aee90142c848f}\label{classJB2Dict_1_1JB2Codec_a9cff57446fe6482ca98aee90142c848f}} 
+int {\bfseries last\+\_\+row\+\_\+bottom}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_aa74bfbd60f03fcc2844364b301251051}\label{classJB2Dict_1_1JB2Codec_aa74bfbd60f03fcc2844364b301251051}} 
+int {\bfseries last\+\_\+row\+\_\+left}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_ababd91717a5654d40d57be133ddd8160}\label{classJB2Dict_1_1JB2Codec_ababd91717a5654d40d57be133ddd8160}} 
+int {\bfseries image\+\_\+columns}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a98cb9eae8f926dd06dc2335a9526f070}\label{classJB2Dict_1_1JB2Codec_a98cb9eae8f926dd06dc2335a9526f070}} 
+int {\bfseries image\+\_\+rows}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_aa94f9bac154d28f772c1446120e59fd9}\label{classJB2Dict_1_1JB2Codec_aa94f9bac154d28f772c1446120e59fd9}} 
+int {\bfseries short\+\_\+list} \mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_aa7da4f28669ec85374a0b17cf4169b80}\label{classJB2Dict_1_1JB2Codec_aa7da4f28669ec85374a0b17cf4169b80}} 
+int {\bfseries short\+\_\+list\+\_\+pos}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a16c00249f18352acfcb07385df605d51}\label{classJB2Dict_1_1JB2Codec_a16c00249f18352acfcb07385df605d51}} 
+Bit\+Context {\bfseries bitdist} \mbox{[}1024\mbox{]}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a04bfe16962394cbb626ed876317db0dd}\label{classJB2Dict_1_1JB2Codec_a04bfe16962394cbb626ed876317db0dd}} 
+Bit\+Context {\bfseries cbitdist} \mbox{[}2048\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{J\+B2 extensions for version 21.}
+\label{_amgrp4082480701c557fce6e3f19b7ff08a4c}%
+Two extensions of the J\+B2 encoding format have been introduced with Dj\+Vu files version 21. Both extensions maintain significant backward compatibility with previous version of the J\+B2 format. These extensions are described below by reference to the I\+C\+F\+DD proposal dated August 1999. Both extension make use of the unused record type value \#9\# (cf. I\+C\+F\+DD page 24) which has been renamed \#\+R\+E\+Q\+U\+I\+R\+E\+D\+\_\+\+D\+I\+C\+T\+\_\+\+O\+R\+\_\+\+R\+E\+S\+ET\#.
+
+\{\textbackslash{}bf Shared Shape Dictionaries\} --- This extension provides support for sharing symbol definitions between the pages of a document. To achieve this objective, the J\+B2 image data chunk must be able to address symbols defined elsewhere by a J\+B2 dictionary data chunk shared by all the pages of a document.
+
+The arithmetically encoded J\+B2 image data logically consist of a sequence of records. The decoder processes these records in sequence and maintains a library of symbols which can be addressed by the following records. The first record usually is a \`{}`Start Of Image'\textquotesingle{} record describing the size of the image.
+
+Starting with version 21, a \#\+R\+E\+Q\+U\+I\+R\+E\+D\+\_\+\+D\+I\+C\+T\+\_\+\+O\+R\+\_\+\+R\+E\+S\+ET\# (9) record type can appear \{{\itshape before\}} the \#\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+D\+A\+TA\# (0) record. The record type field is followed by a single number arithmetically encoded (cf. I\+C\+F\+DD page 26) using a sixteenth context (cf. I\+C\+F\+DD page 25). This record appears when the J\+B2 data chunk requires symbols encoded in a separate J\+B2 dictionary data chunk. The number (the \{\textbackslash{}bf dictionary size\}) indicates how many symbols should have been defined by the J\+B2 dictionary data chunk. The decoder should simply load these symbols in the symbol library and proceed as usual. New symbols potentially defined by the subsequent J\+B2 image data records will therefore be numbered with integers greater or equal than the dictionary size.
+
+The J\+B2 dictionary data format is a pure subset of the J\+B2 image data format. The \#\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+D\+A\+TA\# (0) record always specifies an image width of zero and an image height of zero. The only allowed record types are those defining library symbols only (\#\+N\+E\+W\+\_\+\+S\+Y\+M\+B\+O\+L\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+O\+N\+LY\# (2) and \#\+M\+A\+T\+C\+H\+E\+D\+\_\+\+R\+E\+F\+I\+N\+E\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+O\+N\+LY\# (5) cf. I\+C\+F\+DD page 24) followed by a final \#\+E\+N\+D\+\_\+\+O\+F\+\_\+\+D\+A\+TA\# (11) record.
+
+The J\+B2 dictionary data is usually located in an \{\textbackslash{}bf Djbz\} chunk. Each page \{\textbackslash{}bf F\+O\+RM\+:D\+J\+VU\} may directly contain a \{\textbackslash{}bf Djbz\} chunk, or may indirectly point to such a chunk using an \{\textbackslash{}bf I\+N\+CL\} chunk (cf. \textbackslash{}\+Ref\{Multipage Dj\+Vu documents.\}).
+
+\{\textbackslash{}bf Numcoder Reset\} --- This extension addresses a problem for hardware implementations. The encoding of numbers (cf. I\+C\+F\+DD page 26) potentially uses an unbounded number of binary coding contexts. These contexts are normally allocated when they are used for the first time (cf. I\+C\+F\+DD informative note, page 27).
+
+Starting with version 21, a \#\+R\+E\+Q\+U\+I\+R\+E\+D\+\_\+\+D\+I\+C\+T\+\_\+\+O\+R\+\_\+\+R\+E\+S\+ET\# (9) record type can appear \{{\itshape after\}} the \#\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+D\+A\+TA\# (0) record. The decoder should proceed with the next record after \{{\itshape clearing} all binary contexts used for coding numbers\}. This operation implies that all binary contexts previously allocated for coding numbers can be deallocated.
+
+Starting with version 21, the J\+B2 encoder should insert a \#\+R\+E\+Q\+U\+I\+R\+E\+D\+\_\+\+D\+I\+C\+T\+\_\+\+O\+R\+\_\+\+R\+E\+S\+ET\# record type whenever the number of these allocated binary contexts exceeds \#20000\#. Only very large documents ever reach such a large number of allocated binary contexts (e.\+g large maps). Hardware implementation however can benefit greatly from a hard bound on the total number of binary coding contexts. Old J\+B2 decoders will treat this record type as an \#\+E\+N\+D\+\_\+\+O\+F\+\_\+\+D\+A\+TA\# record and cleanly stop decoding (cf. I\+C\+F\+DD page 30, Image refinement data).
+
+\{\textbackslash{}bf References\} --- \textbackslash{}begin\{itemize\} \textbackslash{}item I\+C\+F\+DD Draft Proposed American National Standard, 1999-\/08-\/26. \textbackslash{}item Dj\+Vu Specification, \textbackslash{}\+U\+RL\{\href{http://www.lizardtech.com/djvu/sci/djvuspec}{\texttt{ http\+://www.\+lizardtech.\+com/djvu/sci/djvuspec}}\}. \textbackslash{}end\{itemize\}
+
+@memo Extensions to the J\+B2 format introduced in version 21. ~\newline
+ \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_accf073dfae58b6db1b63ab4f6b3084e2}\label{classJB2Dict_1_1JB2Codec_accf073dfae58b6db1b63ab4f6b3084e2}} 
+void {\bfseries code\+\_\+eventual\+\_\+lossless\+\_\+refinement} (void)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a20fdb76cc8214753998ceffe999beb92}\label{classJB2Dict_1_1JB2Codec_a20fdb76cc8214753998ceffe999beb92}} 
+void {\bfseries fill\+\_\+short\+\_\+list} (const int v)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_adcc8e4dc0894d196ded2e1cfc510cc65}\label{classJB2Dict_1_1JB2Codec_adcc8e4dc0894d196ded2e1cfc510cc65}} 
+static int {\bfseries get\+\_\+direct\+\_\+context} (unsigned char const $\ast$const up2, unsigned char const $\ast$const up1, unsigned char const $\ast$const up0, const int column)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a2cad2122e291741b1d881a14f907e5cc}\label{classJB2Dict_1_1JB2Codec_a2cad2122e291741b1d881a14f907e5cc}} 
+static int {\bfseries shift\+\_\+direct\+\_\+context} (const int context, const int next, unsigned char const $\ast$const up2, unsigned char const $\ast$const up1, unsigned char const $\ast$const up0, const int column)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_aaa0966e8c10cac4b8ae50631cec8fdc7}\label{classJB2Dict_1_1JB2Codec_aaa0966e8c10cac4b8ae50631cec8fdc7}} 
+static int {\bfseries get\+\_\+cross\+\_\+context} (unsigned char const $\ast$const up1, unsigned char const $\ast$const up0, unsigned char const $\ast$const xup1, unsigned char const $\ast$const xup0, unsigned char const $\ast$const xdn1, const int column)
+\item 
+\mbox{\Hypertarget{classJB2Dict_1_1JB2Codec_a3923e57184dadd9e6711f710c4d01896}\label{classJB2Dict_1_1JB2Codec_a3923e57184dadd9e6711f710c4d01896}} 
+static int {\bfseries shift\+\_\+cross\+\_\+context} (const int context, const int n, unsigned char const $\ast$const up1, unsigned char const $\ast$const up0, unsigned char const $\ast$const xup1, unsigned char const $\ast$const xup0, unsigned char const $\ast$const xdn1, const int column)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/J\+B2\+Image.\+h\item 
+libdjvu/J\+B2\+Image.\+cpp\end{DoxyCompactItemize}

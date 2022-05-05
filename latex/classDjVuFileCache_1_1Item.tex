@@ -1,0 +1,77 @@
+\hypertarget{classDjVuFileCache_1_1Item}{}\doxysection{Dj\+Vu\+File\+Cache\+::Item Class Reference}
+\label{classDjVuFileCache_1_1Item}\index{DjVuFileCache::Item@{DjVuFileCache::Item}}
+
+
+Inheritance diagram for Dj\+Vu\+File\+Cache\+::Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classDjVuFileCache_1_1Item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+File\+Cache\+::Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classDjVuFileCache_1_1Item__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Dj\+Vu\+File\+Cache.\+h}\par
+{\em Files \#\char`\"{}\+Dj\+Vu\+File\+Cache.\+h\char`\"{}\# and \#\char`\"{}\+Dj\+Vu\+File\+Cache.\+cpp\char`\"{}\# implement a simple caching mechanism for keeping a given number of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} instances alive. The cache estimates the size of its elements and gets rid of the oldest ones when necessary.
+
+See \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}}\} for details.
+
+@memo Simple \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} caching class. \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} 
+\end{DoxyAuthor}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_a54d4213d82c63bc6f1cdbf9cdedcbe70}\label{classDjVuFileCache_1_1Item_a54d4213d82c63bc6f1cdbf9cdedcbe70}} 
+virtual {\bfseries $\sim$\+Item} (void)
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_a853595f2b10b6bb021fbcee3bbfd5656}\label{classDjVuFileCache_1_1Item_a853595f2b10b6bb021fbcee3bbfd5656}} 
+time\+\_\+t {\bfseries get\+\_\+time} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_aa21be6ecea612144105f6ef519254a4f}\label{classDjVuFileCache_1_1Item_aa21be6ecea612144105f6ef519254a4f}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ {\bfseries get\+\_\+file} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_ac365f3840e5357d199e3f8e315b8cc6d}\label{classDjVuFileCache_1_1Item_ac365f3840e5357d199e3f8e315b8cc6d}} 
+unsigned int {\bfseries get\+\_\+size} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_a3573a9de1771c4ededc93843e092f441}\label{classDjVuFileCache_1_1Item_a3573a9de1771c4ededc93843e092f441}} 
+void {\bfseries refresh} (void)
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_af7e8acb67dff264a895624b4c70bfc9d}\label{classDjVuFileCache_1_1Item_af7e8acb67dff264a895624b4c70bfc9d}} 
+{\bfseries Item} (void)
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_ad205d9bc3c0a4f2d12830fd5c7b55c12}\label{classDjVuFileCache_1_1Item_ad205d9bc3c0a4f2d12830fd5c7b55c12}} 
+{\bfseries Item} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \&xfile)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_aa48873380f4bf86552a1aec467c735af}\label{classDjVuFileCache_1_1Item_aa48873380f4bf86552a1aec467c735af}} 
+static int {\bfseries qsort\+\_\+func} (const void $\ast$el1, const void $\ast$el2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_a9c812a97a049d39db10cbee18365e6f9}\label{classDjVuFileCache_1_1Item_a9c812a97a049d39db10cbee18365e6f9}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ {\bfseries file}
+\item 
+\mbox{\Hypertarget{classDjVuFileCache_1_1Item_ad494deb6f02f5d26df7c46b759593b3f}\label{classDjVuFileCache_1_1Item_ad494deb6f02f5d26df7c46b759593b3f}} 
+time\+\_\+t {\bfseries time}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+File\+Cache.\+h\item 
+libdjvu/Dj\+Vu\+File\+Cache.\+cpp\end{DoxyCompactItemize}

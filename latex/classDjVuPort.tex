@@ -1,0 +1,286 @@
+\hypertarget{classDjVuPort}{}\doxysection{Dj\+Vu\+Port Class Reference}
+\label{classDjVuPort}\index{DjVuPort@{DjVuPort}}
+
+
+{\ttfamily \#include $<$Dj\+Vu\+Port.\+h$>$}
+
+
+
+Inheritance diagram for Dj\+Vu\+Port\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDjVuPort__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+Port\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classDjVuPort__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDjVuPort_1_1DjVuPortCorpse}{Dj\+Vu\+Port\+Corpse}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDjVuPort_a78b0aef856e1385557748087a07cc77b}{Dj\+Vu\+Port}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} \&port)
+\item 
+\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} \& \mbox{\hyperlink{classDjVuPort_a7400decb51a99428d3f581fff64bbd35}{operator=}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} \&port)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Dj\+Vu\+Port.\+h}\par
+{\em Files \#\char`\"{}\+Dj\+Vu\+Port.\+h\char`\"{}\# and \#\char`\"{}\+Dj\+Vu\+Port.\+cpp\char`\"{}\# implement a communication mechanism between different parties involved in decoding Dj\+Vu files. It should be pretty clear that the creator of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} would like to receive some information about the progress of decoding, errors occurred, etc. It may also want to provide source data for decoders (like it\textquotesingle{}s done in the plugin where the real data is downloaded from the net and is fed into Dj\+Vu decoders).
+
+Normally this functionality is implemented by means of callbacks which are run when a given condition comes true. Unfortunately it\textquotesingle{}s not quite easy to implement this strategy in our case. The reason is that there may be more than one \char`\"{}client\char`\"{} working with the same document, and the document should send the information to each of the clients. This could be done by means of callback \{{\itshape lists\}}, of course, but we want to achieve more bulletproof results\+: we want to be sure that the client that we\textquotesingle{}re about to contact is still alive, and is not being destroyed by another thread. Besides, we are going to call these \char`\"{}callbacks\char`\"{} from many places, from many different classes. Maintaining multi-\/thread safe callback lists is very difficult.
+
+Finally, we want to provide some default implementation of these \char`\"{}callbacks\char`\"{} in the library, which should attempt to process the requests themselves if they can, and contact the client only if they\textquotesingle{}re unable to do it (like in the case of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort_a3209546237c836dc716d852fd6219add}{Dj\+Vu\+Port\+::request\+\_\+data}}\}() with local U\+RL where \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} can get the data from the hard drive itself not disturbing the document\textquotesingle{}s creator.
+
+Two classes implement a general communication mechanism\+: \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\}. Any sender and recipient of requests should be a subclass of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}. \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\} maintains a map of routes between \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}s, which should be configured by somebody else. Whenever a port wants to send a request, it calls the corresponding function of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\}, and the portcaster relays the request to all the destinations that it sees in the internal map.
+
+The \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\} is responsible for keeping the map up to date by getting rid of destinations that have been destroyed. Map updates are performed from a single place and are serialized by a global monitor.
+
+@memo Dj\+Vu decoder communication mechanism. \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}}\textbackslash{} L\textbackslash{}\textquotesingle{}eon Bottou \href{mailto:leonb@research.att.com}{\texttt{ leonb@research.\+att.\+com}} 
+\end{DoxyAuthor}
+}\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classDjVuPort_abb7ca38a52f07ac67a390e2e6ee4f4c3}{inherits}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&class\+\_\+name) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuPort_a0840d50e530d3bb781a3beb0820c250a}\label{classDjVuPort_a0840d50e530d3bb781a3beb0820c250a}} 
+static void $\ast$ {\bfseries operator new} (size\+\_\+t sz)
+\item 
+\mbox{\Hypertarget{classDjVuPort_afc0846c2bba8da7be10f870f24797755}\label{classDjVuPort_afc0846c2bba8da7be10f870f24797755}} 
+static void {\bfseries operator delete} (void $\ast$addr)
+\item 
+static \mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}} $\ast$ \mbox{\hyperlink{classDjVuPort_a72d5e8cd228f889758541b5eaab694a0}{get\+\_\+portcaster}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Notifications.}
+\label{_amgrp163534ad36f170b4bfe15d823a60c9c2}%
+These virtual functions may be overridden by the subclasses of \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. They are called by the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\} when the port is alive and when there is a route between the source of the notification and this port. \begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Error\+Recovery\+Action}} \{ {\bfseries A\+B\+O\+RT} =0, 
+{\bfseries S\+K\+I\+P\+\_\+\+P\+A\+G\+ES} =1, 
+{\bfseries S\+K\+I\+P\+\_\+\+C\+H\+U\+N\+KS} =2, 
+{\bfseries K\+E\+E\+P\+\_\+\+A\+LL} =3
+ \}
+\item 
+virtual \mbox{\hyperlink{classGURL}{G\+U\+RL}} \mbox{\hyperlink{classDjVuPort_ab86e3c55a46c33de9bb8bc9fe578eb7a}{id\+\_\+to\+\_\+url}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id)
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \mbox{\hyperlink{classDjVuPort_aea9cc03d9b3cc7565f28632f77983a74}{id\+\_\+to\+\_\+file}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id)
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuPort_a3209546237c836dc716d852fd6219add}{request\+\_\+data}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url)
+\item 
+virtual bool \mbox{\hyperlink{classDjVuPort_aa347211538752ebfb9de12f1d5ed1fd3}{notify\+\_\+error}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&msg)
+\item 
+virtual bool \mbox{\hyperlink{classDjVuPort_a67a50edaef92e6158c6f57d8075b1308}{notify\+\_\+status}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{classDjVuPort_a3d103ad5963dae2ecf58503a932467c2}{notify\+\_\+redisplay}} (const class \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $\ast$source)
+\item 
+virtual void \mbox{\hyperlink{classDjVuPort_a5ce5f4f78e5b607f9dcba9b1b54f5602}{notify\+\_\+relayout}} (const class \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $\ast$source)
+\item 
+virtual void \mbox{\hyperlink{classDjVuPort_a405351abbc501bd051764b07988b2861}{notify\+\_\+chunk\+\_\+done}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\item 
+virtual void \mbox{\hyperlink{classDjVuPort_a3909bb14c42bae05d433eb44993fb879}{notify\+\_\+file\+\_\+flags\+\_\+changed}} (const class \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $\ast$source, long set\+\_\+mask, long clr\+\_\+mask)
+\item 
+virtual void \mbox{\hyperlink{classDjVuPort_aa522666df6f9c65ffc8d161602f0fc2b}{notify\+\_\+doc\+\_\+flags\+\_\+changed}} (const class \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $\ast$source, long set\+\_\+mask, long clr\+\_\+mask)
+\item 
+virtual void \mbox{\hyperlink{classDjVuPort_a6b6c1df8da36e19c0a7799991cd4ea37}{notify\+\_\+decode\+\_\+progress}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, float done)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base class for notification targets. \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\# provides base functionality for classes willing to take part in sending and receiving messages generated during decoding process. You need to derive your class from \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\# if you want it to be able to send or receive requests. In addition, for receiving requests you should override one or more virtual function.
+
+\{\textbackslash{}bf Important remark\} --- All ports should be allocated on the heap using \#operator new\# and immediately secured using a \textbackslash{}\+Ref\{\mbox{\hyperlink{classGP}{GP}}\} smart pointer. Ports which are not secured by a smart-\/pointer are not considered \`{}`alive'\textquotesingle{} and never receive notifications! 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}\label{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}} 
+\index{DjVuPort@{DjVuPort}!ErrorRecoveryAction@{ErrorRecoveryAction}}
+\index{ErrorRecoveryAction@{ErrorRecoveryAction}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{ErrorRecoveryAction}{ErrorRecoveryAction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Dj\+Vu\+Port\+::\+Error\+Recovery\+Action}}}
+
+This is the standard types for defining what to do in case of errors. This is only used by some of the subclasses, but it needs to be defined here to guarantee all subclasses use the same enum types. In general, many errors are non recoverable. Using a setting other than A\+B\+O\+RT may just result in even more errors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDjVuPort_a78b0aef856e1385557748087a07cc77b}\label{classDjVuPort_a78b0aef856e1385557748087a07cc77b}} 
+\index{DjVuPort@{DjVuPort}!DjVuPort@{DjVuPort}}
+\index{DjVuPort@{DjVuPort}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{DjVuPort()}{DjVuPort()}}
+{\footnotesize\ttfamily Dj\+Vu\+Port\+::\+Dj\+Vu\+Port (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} \&}]{port }\end{DoxyParamCaption})}
+
+Copy constructor. When \#\+Dj\+Vu\+Port\#s are copied, the portcaster copies all incoming and outgoing routes of the original. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuPort_a72d5e8cd228f889758541b5eaab694a0}\label{classDjVuPort_a72d5e8cd228f889758541b5eaab694a0}} 
+\index{DjVuPort@{DjVuPort}!get\_portcaster@{get\_portcaster}}
+\index{get\_portcaster@{get\_portcaster}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{get\_portcaster()}{get\_portcaster()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}} $\ast$ Dj\+Vu\+Port\+::get\+\_\+portcaster (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Use this function to get a copy of the global \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\}. \mbox{\Hypertarget{classDjVuPort_aea9cc03d9b3cc7565f28632f77983a74}\label{classDjVuPort_aea9cc03d9b3cc7565f28632f77983a74}} 
+\index{DjVuPort@{DjVuPort}!id\_to\_file@{id\_to\_file}}
+\index{id\_to\_file@{id\_to\_file}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{id\_to\_file()}{id\_to\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ Dj\+Vu\+Port\+::id\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This request is used to get a file corresponding to the given ID. \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} is supposed to intercept it and either create a new instance of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} or reuse an existing one from the cache. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuDocument_a1e6b82e70e14fb096b11ae9cb5fcc4fe}{Dj\+Vu\+Document}}.
+
+\mbox{\Hypertarget{classDjVuPort_ab86e3c55a46c33de9bb8bc9fe578eb7a}\label{classDjVuPort_ab86e3c55a46c33de9bb8bc9fe578eb7a}} 
+\index{DjVuPort@{DjVuPort}!id\_to\_url@{id\_to\_url}}
+\index{id\_to\_url@{id\_to\_url}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{id\_to\_url()}{id\_to\_url()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGURL}{G\+U\+RL}} Dj\+Vu\+Port\+::id\+\_\+to\+\_\+url (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This request is issued to request translation of the ID, used in an Dj\+Vu I\+N\+CL chunk to a U\+RL, which may be used to request data associated with included file. \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} usually intercepts all such requests, and the user doesn\textquotesingle{}t have to worry about the translation 
+
+Reimplemented in \mbox{\hyperlink{classDjVuDocument_a747b5f621f7040ab29bd6e6974f3a4e8}{Dj\+Vu\+Document}}.
+
+\mbox{\Hypertarget{classDjVuPort_abb7ca38a52f07ac67a390e2e6ee4f4c3}\label{classDjVuPort_abb7ca38a52f07ac67a390e2e6ee4f4c3}} 
+\index{DjVuPort@{DjVuPort}!inherits@{inherits}}
+\index{inherits@{inherits}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{inherits()}{inherits()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Port\+::inherits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{class\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Should return 1 if the called class inherits class \#class\+\_\+name\#. When a destination receives a request, it can retrieve the pointer to the source \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. This virtual function should be able to help to identify the source of the request. For example, \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} is also derived from \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. In order for the receiver to recognize the sender, the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} should override this function to return \#\+T\+R\+UE\# when the \#class\+\_\+name\# is either \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\# or \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# 
+
+Reimplemented in \mbox{\hyperlink{classDjVuDocument_a3e45f0cc79c6d835d65852cbc1d98a60}{Dj\+Vu\+Document}}, \mbox{\hyperlink{classDjVuFile_a94d8425d8e01900ab857e05d7e3552cd}{Dj\+Vu\+File}}, \mbox{\hyperlink{classDjVuDocEditor_aad3d65d9764efc9a270a192a4fcd3e9d}{Dj\+Vu\+Doc\+Editor}}, \mbox{\hyperlink{classDjVuMemoryPort_a8ffedb7ce8b60a25e076bc5fd7ccd5b1}{Dj\+Vu\+Memory\+Port}}, \mbox{\hyperlink{classDjVuSimplePort_a4844783c321e79bc7d0cf4d3b99297ff}{Dj\+Vu\+Simple\+Port}}, \mbox{\hyperlink{structddjvu__savejob__s_a83bdae001e34eb98b60bb2cae822c284}{ddjvu\+\_\+savejob\+\_\+s}}, \mbox{\hyperlink{structddjvu__printjob__s_a8a8157189380d992be586d87f0686ca8}{ddjvu\+\_\+printjob\+\_\+s}}, \mbox{\hyperlink{structddjvu__runnablejob__s_aa9cc48d5a6d5b95affcc90513d996c15}{ddjvu\+\_\+runnablejob\+\_\+s}}, \mbox{\hyperlink{structddjvu__page__s_ab42e5e7e347191faf60f22aef427914a}{ddjvu\+\_\+page\+\_\+s}}, \mbox{\hyperlink{structddjvu__document__s_abdf7164a36e4c75c5930190fd7ab116e}{ddjvu\+\_\+document\+\_\+s}}, and \mbox{\hyperlink{structddjvu__job__s_a98cb2b9bcba490cadd398cb41b85c8bc}{ddjvu\+\_\+job\+\_\+s}}.
+
+\mbox{\Hypertarget{classDjVuPort_a405351abbc501bd051764b07988b2861}\label{classDjVuPort_a405351abbc501bd051764b07988b2861}} 
+\index{DjVuPort@{DjVuPort}!notify\_chunk\_done@{notify\_chunk\_done}}
+\index{notify\_chunk\_done@{notify\_chunk\_done}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{notify\_chunk\_done()}{notify\_chunk\_done()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Port\+::notify\+\_\+chunk\+\_\+done (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent when a new chunk has been decoded. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuFile_a4b02997bbc290ea1a05bcc940f0ba7ae}{Dj\+Vu\+File}}, \mbox{\hyperlink{classDjVuImageNotifier_a1e750687253b39317a56ccfe788ff982}{Dj\+Vu\+Image\+Notifier}}, \mbox{\hyperlink{classDjVuImage_a726aef69109434dff9b6605bd3f6512c}{Dj\+Vu\+Image}}, and \mbox{\hyperlink{structddjvu__page__s_a832709898544512faae47dc50a27da78}{ddjvu\+\_\+page\+\_\+s}}.
+
+\mbox{\Hypertarget{classDjVuPort_a6b6c1df8da36e19c0a7799991cd4ea37}\label{classDjVuPort_a6b6c1df8da36e19c0a7799991cd4ea37}} 
+\index{DjVuPort@{DjVuPort}!notify\_decode\_progress@{notify\_decode\_progress}}
+\index{notify\_decode\_progress@{notify\_decode\_progress}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{notify\_decode\_progress()}{notify\_decode\_progress()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Port\+::notify\+\_\+decode\+\_\+progress (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{float}]{done }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent from time to time while decoding is in progress. The purpose is obvious\+: to provide a way to know how much is done and how long the decoding will continue. Argument \#done\# is a number from 0 to 1 reflecting the progress. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuToPS_1_1DecodePort_a501ba92e2de9a724c8f62afc5d033e47}{Dj\+Vu\+To\+P\+S\+::\+Decode\+Port}}.
+
+\mbox{\Hypertarget{classDjVuPort_aa522666df6f9c65ffc8d161602f0fc2b}\label{classDjVuPort_aa522666df6f9c65ffc8d161602f0fc2b}} 
+\index{DjVuPort@{DjVuPort}!notify\_doc\_flags\_changed@{notify\_doc\_flags\_changed}}
+\index{notify\_doc\_flags\_changed@{notify\_doc\_flags\_changed}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{notify\_doc\_flags\_changed()}{notify\_doc\_flags\_changed()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Port\+::notify\+\_\+doc\+\_\+flags\+\_\+changed (\begin{DoxyParamCaption}\item[{const class \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $\ast$}]{source,  }\item[{long}]{set\+\_\+mask,  }\item[{long}]{clr\+\_\+mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent after the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} flags have been changed. This happens, for example, after it receives enough data and can determine its structure (\#\+B\+U\+N\+D\+L\+ED\#, \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\#, etc.).
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\}, which flags have been changed \\
+\hline
+{\em set\+\_\+mask} & bits, which have been set \\
+\hline
+{\em clr\+\_\+mask} & bits, which have been cleared \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuPort_aa347211538752ebfb9de12f1d5ed1fd3}\label{classDjVuPort_aa347211538752ebfb9de12f1d5ed1fd3}} 
+\index{DjVuPort@{DjVuPort}!notify\_error@{notify\_error}}
+\index{notify\_error@{notify\_error}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{notify\_error()}{notify\_error()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Port\+::notify\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent when an error occurs and the error message should be shown to the user. The receiver should return \#0\# if it is unable to process the request. Otherwise the receiver should return 1. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuSimplePort_af9009b4084a85b99cb969c96aa90c5d4}{Dj\+Vu\+Simple\+Port}}, \mbox{\hyperlink{classDjVuErrorList_a24ac9cc555c65ea249d20720f2554b95}{Dj\+Vu\+Error\+List}}, \mbox{\hyperlink{structddjvu__page__s_a56f61f03e9cc2dd01e576c3350ba1e41}{ddjvu\+\_\+page\+\_\+s}}, \mbox{\hyperlink{structddjvu__document__s_ac58e42dd9f8b942713b24e6c94e9b44b}{ddjvu\+\_\+document\+\_\+s}}, and \mbox{\hyperlink{structddjvu__job__s_a2af9b110b8f04a0502494131effc0798}{ddjvu\+\_\+job\+\_\+s}}.
+
+\mbox{\Hypertarget{classDjVuPort_a3909bb14c42bae05d433eb44993fb879}\label{classDjVuPort_a3909bb14c42bae05d433eb44993fb879}} 
+\index{DjVuPort@{DjVuPort}!notify\_file\_flags\_changed@{notify\_file\_flags\_changed}}
+\index{notify\_file\_flags\_changed@{notify\_file\_flags\_changed}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{notify\_file\_flags\_changed()}{notify\_file\_flags\_changed()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Port\+::notify\+\_\+file\+\_\+flags\+\_\+changed (\begin{DoxyParamCaption}\item[{const class \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $\ast$}]{source,  }\item[{long}]{set\+\_\+mask,  }\item[{long}]{clr\+\_\+mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent after the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} flags have been changed. This happens, for example, when\+: \textbackslash{}begin\{itemize\} \textbackslash{}item Decoding succeeded, failed or just stopped \textbackslash{}item All data has been received \textbackslash{}item All included files have been created \textbackslash{}end\{itemize\}
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\}, which flags have been changed \\
+\hline
+{\em set\+\_\+mask} & bits, which have been set \\
+\hline
+{\em clr\+\_\+mask} & bits, which have been cleared \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuPort_a3d103ad5963dae2ecf58503a932467c2}\label{classDjVuPort_a3d103ad5963dae2ecf58503a932467c2}} 
+\index{DjVuPort@{DjVuPort}!notify\_redisplay@{notify\_redisplay}}
+\index{notify\_redisplay@{notify\_redisplay}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{notify\_redisplay()}{notify\_redisplay()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Port\+::notify\+\_\+redisplay (\begin{DoxyParamCaption}\item[{const class \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $\ast$}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} when it should be redrawn. It may be used to implement progressive redisplay.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The sender of the request \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDjVuImageNotifier_a67deaffa0eca1bcc0ca28d4566ae6552}{Dj\+Vu\+Image\+Notifier}}, and \mbox{\hyperlink{structddjvu__page__s_aa919728170cf0620d35c40acfdf519f7}{ddjvu\+\_\+page\+\_\+s}}.
+
+\mbox{\Hypertarget{classDjVuPort_a5ce5f4f78e5b607f9dcba9b1b54f5602}\label{classDjVuPort_a5ce5f4f78e5b607f9dcba9b1b54f5602}} 
+\index{DjVuPort@{DjVuPort}!notify\_relayout@{notify\_relayout}}
+\index{notify\_relayout@{notify\_relayout}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{notify\_relayout()}{notify\_relayout()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Port\+::notify\+\_\+relayout (\begin{DoxyParamCaption}\item[{const class \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $\ast$}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent by \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} when its geometry has been changed as a result of decoding. It may be used to implement progressive redisplay. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuImageNotifier_a01af4f23e264060839d97e6282cad198}{Dj\+Vu\+Image\+Notifier}}, and \mbox{\hyperlink{structddjvu__page__s_ac96ba2eb1e515d4be1da4eac799d989d}{ddjvu\+\_\+page\+\_\+s}}.
+
+\mbox{\Hypertarget{classDjVuPort_a67a50edaef92e6158c6f57d8075b1308}\label{classDjVuPort_a67a50edaef92e6158c6f57d8075b1308}} 
+\index{DjVuPort@{DjVuPort}!notify\_status@{notify\_status}}
+\index{notify\_status@{notify\_status}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{notify\_status()}{notify\_status()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Port\+::notify\+\_\+status (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent to update the decoding status. The receiver should return \#0\# if it is unable to process the request. Otherwise the receiver should return 1. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuSimplePort_a430d0f5fd8eb8c4f820d83079d123379}{Dj\+Vu\+Simple\+Port}}, \mbox{\hyperlink{classDjVuErrorList_a18472b27f1c9c565434f5b1626527fcd}{Dj\+Vu\+Error\+List}}, \mbox{\hyperlink{structddjvu__page__s_ac7a3fafbae8e26ceb2518218a7dcb112}{ddjvu\+\_\+page\+\_\+s}}, \mbox{\hyperlink{structddjvu__document__s_aeb44a59f61618469e74fd78ee56eea9a}{ddjvu\+\_\+document\+\_\+s}}, and \mbox{\hyperlink{structddjvu__job__s_a8380cdf79b50652bcf3b12d30890e109}{ddjvu\+\_\+job\+\_\+s}}.
+
+\mbox{\Hypertarget{classDjVuPort_a7400decb51a99428d3f581fff64bbd35}\label{classDjVuPort_a7400decb51a99428d3f581fff64bbd35}} 
+\index{DjVuPort@{DjVuPort}!operator=@{operator=}}
+\index{operator=@{operator=}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} \& Dj\+Vu\+Port\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} \&}]{port }\end{DoxyParamCaption})}
+
+Copy operator. Similarly to the copy constructor, the portcaster copies all incoming and outgoing coming routes of the original. \mbox{\Hypertarget{classDjVuPort_a3209546237c836dc716d852fd6219add}\label{classDjVuPort_a3209546237c836dc716d852fd6219add}} 
+\index{DjVuPort@{DjVuPort}!request\_data@{request\_data}}
+\index{request\_data@{request\_data}!DjVuPort@{DjVuPort}}
+\doxysubsubsection{\texorpdfstring{request\_data()}{request\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+Port\+::request\+\_\+data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This request is issued when decoder needs additional data for decoding. Both \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} are initialized with a U\+RL, not the document data. As soon as they need the data, they call this function, whose responsibility is to locate the source of the data basing on the \#\+U\+RL\# passed and return it back in the form of the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\}. If this particular receiver is unable to fullfil the request, it should return \#0\#. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuImageNotifier_ac6d344a6a463eb56040a32f20f8f8844}{Dj\+Vu\+Image\+Notifier}}, \mbox{\hyperlink{classDjVuDocument_aacdeef00678b80fad8dd6a61e4786eb9}{Dj\+Vu\+Document}}, \mbox{\hyperlink{classDjVuDocEditor_a03ac8920fbc3267e5d82fb299683d680}{Dj\+Vu\+Doc\+Editor}}, \mbox{\hyperlink{classDjVuMemoryPort_a84371cb88992a7431d6f9a6a83910b68}{Dj\+Vu\+Memory\+Port}}, \mbox{\hyperlink{classDjVuSimplePort_a2b5c6f47728d2e3df8bfd8d10ccf1f6d}{Dj\+Vu\+Simple\+Port}}, \mbox{\hyperlink{classDjVuErrorList_ab69d64d11c26a81f469d1664f584e518}{Dj\+Vu\+Error\+List}}, and \mbox{\hyperlink{structddjvu__document__s_a764c9409e82d0196446f3881ebf36961}{ddjvu\+\_\+document\+\_\+s}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+Port.\+h\item 
+libdjvu/Dj\+Vu\+Port.\+cpp\end{DoxyCompactItemize}

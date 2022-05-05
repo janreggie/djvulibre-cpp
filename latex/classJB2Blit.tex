@@ -1,0 +1,45 @@
+\hypertarget{classJB2Blit}{}\doxysection{J\+B2\+Blit Class Reference}
+\label{classJB2Blit}\index{JB2Blit@{JB2Blit}}
+
+
+{\ttfamily \#include $<$J\+B2\+Image.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned short \mbox{\hyperlink{classJB2Blit_adddd8e6119e02d0fb69f9b6bcfb66802}{left}}
+\item 
+unsigned short \mbox{\hyperlink{classJB2Blit_a082a0c6f468626340a7cdd52f19cdbf1}{bottom}}
+\item 
+unsigned int \mbox{\hyperlink{classJB2Blit_ae8f46321ff4aaea50b01fc3e42005e69}{shapeno}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Blit data structure. A \mbox{\hyperlink{classJB2Image}{J\+B2\+Image}}\# contains an array of \mbox{\hyperlink{classJB2Blit}{J\+B2\+Blit}}\# data structures. Each array entry instructs the decoder to render a particular shape at a particular location. Members \mbox{\hyperlink{classJB2Blit_adddd8e6119e02d0fb69f9b6bcfb66802}{left}}\# and \mbox{\hyperlink{classJB2Blit_a082a0c6f468626340a7cdd52f19cdbf1}{bottom}}\# specify the coordinates of the bottom left corner of the shape bitmap. All coordinates are relative to the bottom left corner of the image. Member \mbox{\hyperlink{classJB2Blit_ae8f46321ff4aaea50b01fc3e42005e69}{shapeno}}\# is the subscript of the shape to be rendered. ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classJB2Blit_a082a0c6f468626340a7cdd52f19cdbf1}\label{classJB2Blit_a082a0c6f468626340a7cdd52f19cdbf1}} 
+\index{JB2Blit@{JB2Blit}!bottom@{bottom}}
+\index{bottom@{bottom}!JB2Blit@{JB2Blit}}
+\doxysubsubsection{\texorpdfstring{bottom}{bottom}}
+{\footnotesize\ttfamily unsigned short J\+B2\+Blit\+::bottom}
+
+Vertical coordinate of the blit. \mbox{\Hypertarget{classJB2Blit_adddd8e6119e02d0fb69f9b6bcfb66802}\label{classJB2Blit_adddd8e6119e02d0fb69f9b6bcfb66802}} 
+\index{JB2Blit@{JB2Blit}!left@{left}}
+\index{left@{left}!JB2Blit@{JB2Blit}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily unsigned short J\+B2\+Blit\+::left}
+
+Horizontal coordinate of the blit. \mbox{\Hypertarget{classJB2Blit_ae8f46321ff4aaea50b01fc3e42005e69}\label{classJB2Blit_ae8f46321ff4aaea50b01fc3e42005e69}} 
+\index{JB2Blit@{JB2Blit}!shapeno@{shapeno}}
+\index{shapeno@{shapeno}!JB2Blit@{JB2Blit}}
+\doxysubsubsection{\texorpdfstring{shapeno}{shapeno}}
+{\footnotesize\ttfamily unsigned int J\+B2\+Blit\+::shapeno}
+
+Index of the shape to blit. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/J\+B2\+Image.\+h\end{DoxyCompactItemize}

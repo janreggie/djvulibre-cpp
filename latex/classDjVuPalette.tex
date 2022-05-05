@@ -1,0 +1,223 @@
+\hypertarget{classDjVuPalette}{}\doxysection{Dj\+Vu\+Palette Class Reference}
+\label{classDjVuPalette}\index{DjVuPalette@{DjVuPalette}}
+
+
+Inheritance diagram for Dj\+Vu\+Palette\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classDjVuPalette__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+Palette\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classDjVuPalette__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuPalette_abcb599a2d6892956b0198236cdb2b30e}\label{classDjVuPalette_abcb599a2d6892956b0198236cdb2b30e}} 
+\mbox{\hyperlink{classDjVuPalette_abcb599a2d6892956b0198236cdb2b30e}{$\sim$\+Dj\+Vu\+Palette}} ()
+\begin{DoxyCompactList}\small\item\em Non-\/virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuPalette_a4965cf2b0efb72cf22a706a6f4672495}\label{classDjVuPalette_a4965cf2b0efb72cf22a706a6f4672495}} 
+{\bfseries Dj\+Vu\+Palette} (const \mbox{\hyperlink{classDjVuPalette}{Dj\+Vu\+Palette}} \&ref)
+\item 
+\mbox{\Hypertarget{classDjVuPalette_a8312269b67f40e9b2ecd33a2ca53a64a}\label{classDjVuPalette_a8312269b67f40e9b2ecd33a2ca53a64a}} 
+\mbox{\hyperlink{classDjVuPalette}{Dj\+Vu\+Palette}} \& {\bfseries operator=} (const \mbox{\hyperlink{classDjVuPalette}{Dj\+Vu\+Palette}} \&ref)
+\item 
+int \mbox{\hyperlink{classDjVuPalette_a5f4f15e2f54e80bf3db7095eca9c5c56}{compute\+\_\+palette}} (int maxcolors, int minboxsize=0)
+\item 
+int \mbox{\hyperlink{classDjVuPalette_a46ee963b40f368956d297f8485875a36}{compute\+\_\+pixmap\+\_\+palette}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&pm, int ncolors, int minboxsize=0)
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a43da3be3b34745db8895d55f53e3abc7}{quantize}} (\mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&pm)
+\item 
+int \mbox{\hyperlink{classDjVuPalette_a4c54c7c8016d278aee6eaf811dc72bf2}{compute\+\_\+palette\+\_\+and\+\_\+quantize}} (\mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&pm, int maxcolors, int minboxsize=0)
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a80416de9cc969d41cbce39c9d15bac4a}{color\+\_\+correct}} (double corr)
+\item 
+void \mbox{\hyperlink{classDjVuPalette_ae37daeadca245283236d410edcceca43}{encode\+\_\+rgb\+\_\+entries}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&bs) const
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a6c8a8ceaccbf5f6ee2d8f0613acbd50e}{decode\+\_\+rgb\+\_\+entries}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&bs, const int palettesize)
+\item 
+void \mbox{\hyperlink{classDjVuPalette_afc042e5637621693eac8d1f0174cb55d}{encode}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ bs) const
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a655d5db2882ef3ee5ac2cdb274abff49}{decode}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ bs)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Dj\+Vu\+Palette.\+h}\par
+{\em Files \#\char`\"{}\+Dj\+Vu\+Palette.\+h\char`\"{}\# and \#\char`\"{}\+Dj\+Vu\+Palette.\+cpp\char`\"{}\# implement a single class \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPalette}{Dj\+Vu\+Palette}}\} which provides facilities for computing optimal color palettes, coding color palettes, and coding sequences of color indices. @memo \mbox{\hyperlink{classDjVuPalette}{Dj\+Vu\+Palette}} header file \begin{DoxyAuthor}{Author}
+\+: L\textbackslash{}\textquotesingle{}eon Bottou \href{mailto:leonb@research.att.com}{\texttt{ leonb@research.\+att.\+com}} 
+\end{DoxyAuthor}
+}\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a4b55275dd13ba3e0fe38a82e8119d831}{histogram\+\_\+clear}} ()
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a602cfdcf4afc11c20aad2fc4982a19de}{histogram\+\_\+add}} (const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&p, int weight)
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a416966f95d1acfec0a6a05d3a5caa96d}{histogram\+\_\+add}} (const unsigned char $\ast$bgr, int weight)
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a5f44b0031f7776c1f1f24c75d87ae7af}{histogram\+\_\+norm\+\_\+and\+\_\+add}} (const int $\ast$bgr, int weight)
+\item 
+int \mbox{\hyperlink{classDjVuPalette_a3f61e2e40db75ec5716618b79d71ac85}{size}} () const
+\item 
+int \mbox{\hyperlink{classDjVuPalette_a1111941ac262f6299c001980ae05c8d7}{color\+\_\+to\+\_\+index}} (const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&p)
+\item 
+int \mbox{\hyperlink{classDjVuPalette_a234a28a4bef1d639f2582cecf6d95dc5}{color\+\_\+to\+\_\+index}} (const unsigned char $\ast$bgr)
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a847c1da159b8add36cff11802fd992bc}{index\+\_\+to\+\_\+color}} (int index, \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&p) const
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a87c76797709dbe457b781cd24a068b14}{index\+\_\+to\+\_\+color}} (int index, unsigned char $\ast$bgr) const
+\item 
+void \mbox{\hyperlink{classDjVuPalette_a420ca7cec35defe52023739811a1e1c9}{get\+\_\+color}} (int nth, \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&out) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuPalette_ad8f79822da950615b8fac94a17cff489}\label{classDjVuPalette_ad8f79822da950615b8fac94a17cff489}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPalette}{Dj\+Vu\+Palette}} $>$ \mbox{\hyperlink{classDjVuPalette_ad8f79822da950615b8fac94a17cff489}{create}} (void)
+\begin{DoxyCompactList}\small\item\em Generic creator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGTArray}{G\+T\+Array}}$<$ short $>$ \mbox{\hyperlink{classDjVuPalette_a7d36245411c75abd2e6901c0c4ba9441}{colordata}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuPalette_a80416de9cc969d41cbce39c9d15bac4a}\label{classDjVuPalette_a80416de9cc969d41cbce39c9d15bac4a}} 
+\index{DjVuPalette@{DjVuPalette}!color\_correct@{color\_correct}}
+\index{color\_correct@{color\_correct}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{color\_correct()}{color\_correct()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::color\+\_\+correct (\begin{DoxyParamCaption}\item[{double}]{corr }\end{DoxyParamCaption})}
+
+Applies a luminance gamma correction factor of \#corr\# to the palette entries. Values greater than \#1.\+0\# make the image brighter. Values smaller than \#1.\+0\# make the image darker. The documentation of program \textbackslash{}\+Ref\{ppmcoco\} explains how to properly use this function. \mbox{\Hypertarget{classDjVuPalette_a1111941ac262f6299c001980ae05c8d7}\label{classDjVuPalette_a1111941ac262f6299c001980ae05c8d7}} 
+\index{DjVuPalette@{DjVuPalette}!color\_to\_index@{color\_to\_index}}
+\index{color\_to\_index@{color\_to\_index}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{color\_to\_index()}{color\_to\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Dj\+Vu\+Palette\+::color\+\_\+to\+\_\+index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the best palette index for representing color \#p\#. \mbox{\Hypertarget{classDjVuPalette_a234a28a4bef1d639f2582cecf6d95dc5}\label{classDjVuPalette_a234a28a4bef1d639f2582cecf6d95dc5}} 
+\index{DjVuPalette@{DjVuPalette}!color\_to\_index@{color\_to\_index}}
+\index{color\_to\_index@{color\_to\_index}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{color\_to\_index()}{color\_to\_index()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Dj\+Vu\+Palette\+::color\+\_\+to\+\_\+index (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{bgr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the best palette index for representing color \#bgr\#. \mbox{\Hypertarget{classDjVuPalette_a5f4f15e2f54e80bf3db7095eca9c5c56}\label{classDjVuPalette_a5f4f15e2f54e80bf3db7095eca9c5c56}} 
+\index{DjVuPalette@{DjVuPalette}!compute\_palette@{compute\_palette}}
+\index{compute\_palette@{compute\_palette}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{compute\_palette()}{compute\_palette()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Palette\+::compute\+\_\+palette (\begin{DoxyParamCaption}\item[{int}]{maxcolors,  }\item[{int}]{minboxsize = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Computes an optimal palette for representing an image where colors appear according to the histogram. Argument \#maxcolors\# is the maximum number of colors allowed in the palette (up to 1024). Argument \#minboxsize\# controls the minimal size of the color cube area affected to a color palette entry. Returns the index of the dominant color. \mbox{\Hypertarget{classDjVuPalette_a4c54c7c8016d278aee6eaf811dc72bf2}\label{classDjVuPalette_a4c54c7c8016d278aee6eaf811dc72bf2}} 
+\index{DjVuPalette@{DjVuPalette}!compute\_palette\_and\_quantize@{compute\_palette\_and\_quantize}}
+\index{compute\_palette\_and\_quantize@{compute\_palette\_and\_quantize}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{compute\_palette\_and\_quantize()}{compute\_palette\_and\_quantize()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Palette\+::compute\+\_\+palette\+\_\+and\+\_\+quantize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&}]{pm,  }\item[{int}]{maxcolors,  }\item[{int}]{minboxsize = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Calls \textbackslash{}\+Ref\{compute\+\_\+pixmap\+\_\+palette\} and \textbackslash{}\+Ref\{quantize\}. \mbox{\Hypertarget{classDjVuPalette_a46ee963b40f368956d297f8485875a36}\label{classDjVuPalette_a46ee963b40f368956d297f8485875a36}} 
+\index{DjVuPalette@{DjVuPalette}!compute\_pixmap\_palette@{compute\_pixmap\_palette}}
+\index{compute\_pixmap\_palette@{compute\_pixmap\_palette}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{compute\_pixmap\_palette()}{compute\_pixmap\_palette()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Palette\+::compute\+\_\+pixmap\+\_\+palette (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&}]{pm,  }\item[{int}]{ncolors,  }\item[{int}]{minboxsize = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Computes the optimal palette for pixmap \#pm\#. This function builds the histogram for pixmap \#pm\# and computes the optimal palette using \textbackslash{}\+Ref\{compute\+\_\+palette\}. \mbox{\Hypertarget{classDjVuPalette_a655d5db2882ef3ee5ac2cdb274abff49}\label{classDjVuPalette_a655d5db2882ef3ee5ac2cdb274abff49}} 
+\index{DjVuPalette@{DjVuPalette}!decode@{decode}}
+\index{decode@{decode}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::decode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{bs }\end{DoxyParamCaption})}
+
+Initializes the object by reading data from bytestream \#bs\#. This function reads a version byte, the palette size, the palette and the color index sequence from bytestream \#bs\#. Note that the color histogram is never saved. \mbox{\Hypertarget{classDjVuPalette_a6c8a8ceaccbf5f6ee2d8f0613acbd50e}\label{classDjVuPalette_a6c8a8ceaccbf5f6ee2d8f0613acbd50e}} 
+\index{DjVuPalette@{DjVuPalette}!decode\_rgb\_entries@{decode\_rgb\_entries}}
+\index{decode\_rgb\_entries@{decode\_rgb\_entries}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{decode\_rgb\_entries()}{decode\_rgb\_entries()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::decode\+\_\+rgb\+\_\+entries (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{bs,  }\item[{const int}]{palettesize }\end{DoxyParamCaption})}
+
+Reads palette colors. This function initializes the palette colors by reading \#palettesize\# R\+GB triples from bytestream \#bs\#. \mbox{\Hypertarget{classDjVuPalette_afc042e5637621693eac8d1f0174cb55d}\label{classDjVuPalette_afc042e5637621693eac8d1f0174cb55d}} 
+\index{DjVuPalette@{DjVuPalette}!encode@{encode}}
+\index{encode@{encode}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{bs }\end{DoxyParamCaption}) const}
+
+Encodes the palette and the color index sequence. This function encodes the a version byte, the palette size, the palette colors and the color index sequence into bytestream \#bs\#. Note that the color histogram is never saved. \mbox{\Hypertarget{classDjVuPalette_ae37daeadca245283236d410edcceca43}\label{classDjVuPalette_ae37daeadca245283236d410edcceca43}} 
+\index{DjVuPalette@{DjVuPalette}!encode\_rgb\_entries@{encode\_rgb\_entries}}
+\index{encode\_rgb\_entries@{encode\_rgb\_entries}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{encode\_rgb\_entries()}{encode\_rgb\_entries()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::encode\+\_\+rgb\+\_\+entries (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{bs }\end{DoxyParamCaption}) const}
+
+Writes the palette colors. This function writes each palette color as a R\+GB triple into bytestream \#bs\#. \mbox{\Hypertarget{classDjVuPalette_a420ca7cec35defe52023739811a1e1c9}\label{classDjVuPalette_a420ca7cec35defe52023739811a1e1c9}} 
+\index{DjVuPalette@{DjVuPalette}!get\_color@{get\_color}}
+\index{get\_color@{get\_color}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{get\_color()}{get\_color()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::get\+\_\+color (\begin{DoxyParamCaption}\item[{int}]{nth,  }\item[{\mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns colors from the color index sequence. Pixel \#out\# is overwritten with the color corresponding to the \#nth\# element of the color sequence \textbackslash{}\+Ref\{colordata\}. \mbox{\Hypertarget{classDjVuPalette_a602cfdcf4afc11c20aad2fc4982a19de}\label{classDjVuPalette_a602cfdcf4afc11c20aad2fc4982a19de}} 
+\index{DjVuPalette@{DjVuPalette}!histogram\_add@{histogram\_add}}
+\index{histogram\_add@{histogram\_add}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{histogram\_add()}{histogram\_add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::histogram\+\_\+add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{p,  }\item[{int}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds the color specified by \#p\# to the histogram. Argument \#weight\# represent the number of pixels with this color. \mbox{\Hypertarget{classDjVuPalette_a416966f95d1acfec0a6a05d3a5caa96d}\label{classDjVuPalette_a416966f95d1acfec0a6a05d3a5caa96d}} 
+\index{DjVuPalette@{DjVuPalette}!histogram\_add@{histogram\_add}}
+\index{histogram\_add@{histogram\_add}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{histogram\_add()}{histogram\_add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::histogram\+\_\+add (\begin{DoxyParamCaption}\item[{const unsigned char $\ast$}]{bgr,  }\item[{int}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds the color specified by the triple \#bgr\# to the histogram. Argument \#weight\# represent the number of pixels with this color. \mbox{\Hypertarget{classDjVuPalette_a4b55275dd13ba3e0fe38a82e8119d831}\label{classDjVuPalette_a4b55275dd13ba3e0fe38a82e8119d831}} 
+\index{DjVuPalette@{DjVuPalette}!histogram\_clear@{histogram\_clear}}
+\index{histogram\_clear@{histogram\_clear}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{histogram\_clear()}{histogram\_clear()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::histogram\+\_\+clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets the color histogram to zero. \mbox{\Hypertarget{classDjVuPalette_a5f44b0031f7776c1f1f24c75d87ae7af}\label{classDjVuPalette_a5f44b0031f7776c1f1f24c75d87ae7af}} 
+\index{DjVuPalette@{DjVuPalette}!histogram\_norm\_and\_add@{histogram\_norm\_and\_add}}
+\index{histogram\_norm\_and\_add@{histogram\_norm\_and\_add}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{histogram\_norm\_and\_add()}{histogram\_norm\_and\_add()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::histogram\+\_\+norm\+\_\+and\+\_\+add (\begin{DoxyParamCaption}\item[{const int $\ast$}]{bgr,  }\item[{int}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds the color specified by the weighted triple \#bgr\# to the histogram. Argument \#weight\# represent the number of pixels with this color. This function will compute the actual color by dividing the elements of the \#bgr\# array by \#weight\# and then use the unnormalized values to compute the average color per bucket. This is all a way to avoid excessive loss of accuracy. \mbox{\Hypertarget{classDjVuPalette_a847c1da159b8add36cff11802fd992bc}\label{classDjVuPalette_a847c1da159b8add36cff11802fd992bc}} 
+\index{DjVuPalette@{DjVuPalette}!index\_to\_color@{index\_to\_color}}
+\index{index\_to\_color@{index\_to\_color}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{index\_to\_color()}{index\_to\_color()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::index\+\_\+to\+\_\+color (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Overwrites \#p\# with the color located at position \#index\# in the palette. \mbox{\Hypertarget{classDjVuPalette_a87c76797709dbe457b781cd24a068b14}\label{classDjVuPalette_a87c76797709dbe457b781cd24a068b14}} 
+\index{DjVuPalette@{DjVuPalette}!index\_to\_color@{index\_to\_color}}
+\index{index\_to\_color@{index\_to\_color}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{index\_to\_color()}{index\_to\_color()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::index\+\_\+to\+\_\+color (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{unsigned char $\ast$}]{bgr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Overwrites \#rgb\mbox{[}0..3\mbox{]}\# with the color located at position \#index\# in the palette. \mbox{\Hypertarget{classDjVuPalette_a43da3be3b34745db8895d55f53e3abc7}\label{classDjVuPalette_a43da3be3b34745db8895d55f53e3abc7}} 
+\index{DjVuPalette@{DjVuPalette}!quantize@{quantize}}
+\index{quantize@{quantize}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{quantize()}{quantize()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Palette\+::quantize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&}]{pm }\end{DoxyParamCaption})}
+
+Quantizes pixmap \#pm\#. All pixels are replaced by their closest approximation available in the palette. \mbox{\Hypertarget{classDjVuPalette_a3f61e2e40db75ec5716618b79d71ac85}\label{classDjVuPalette_a3f61e2e40db75ec5716618b79d71ac85}} 
+\index{DjVuPalette@{DjVuPalette}!size@{size}}
+\index{size@{size}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Palette\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of colors in the palette. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDjVuPalette_a7d36245411c75abd2e6901c0c4ba9441}\label{classDjVuPalette_a7d36245411c75abd2e6901c0c4ba9441}} 
+\index{DjVuPalette@{DjVuPalette}!colordata@{colordata}}
+\index{colordata@{colordata}!DjVuPalette@{DjVuPalette}}
+\doxysubsubsection{\texorpdfstring{colordata}{colordata}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGTArray}{G\+T\+Array}}$<$short$>$ Dj\+Vu\+Palette\+::colordata}
+
+Contains an optional sequence of color indices. Function \textbackslash{}\+Ref\{encode\} and \textbackslash{}\+Ref\{decode\} also encode and decode this sequence when such a sequence is provided. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+Palette.\+h\item 
+libdjvu/Dj\+Vu\+Palette.\+cpp\end{DoxyCompactItemize}

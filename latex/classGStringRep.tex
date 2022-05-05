@@ -1,0 +1,406 @@
+\hypertarget{classGStringRep}{}\doxysection{G\+String\+Rep Class Reference}
+\label{classGStringRep}\index{GStringRep@{GStringRep}}
+
+
+Inheritance diagram for G\+String\+Rep\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classGStringRep__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+String\+Rep\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classGStringRep__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGStringRep_1_1ChangeLocale}{Change\+Locale}}
+\item 
+class \mbox{\hyperlink{classGStringRep_1_1Unicode}{Unicode}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGStringRep_ae5aad44f10e34021a7380a2974868b29}\label{classGStringRep_ae5aad44f10e34021a7380a2974868b29}} 
+enum {\bfseries Encode\+Type} \{ \newline
+{\bfseries X\+U\+C\+S4}, 
+{\bfseries X\+U\+C\+S4\+BE}, 
+{\bfseries X\+U\+C\+S4\+LE}, 
+{\bfseries X\+U\+C\+S4\+\_\+2143}, 
+\newline
+{\bfseries X\+U\+C\+S4\+\_\+3412}, 
+{\bfseries X\+U\+T\+F16}, 
+{\bfseries X\+U\+T\+F16\+BE}, 
+{\bfseries X\+U\+T\+F16\+LE}, 
+\newline
+{\bfseries X\+U\+T\+F8}, 
+{\bfseries X\+E\+B\+C\+D\+IC}, 
+{\bfseries X\+O\+T\+H\+ER}
+ \}
+\item 
+\mbox{\Hypertarget{classGStringRep_ae5fc4dc0c0b065c9919972b2c5873305}\label{classGStringRep_ae5fc4dc0c0b065c9919972b2c5873305}} 
+enum {\bfseries Escape\+Mode} \{ {\bfseries U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+S\+C\+A\+P\+ED} =0, 
+{\bfseries I\+S\+\_\+\+E\+S\+C\+A\+P\+ED} =1, 
+{\bfseries N\+O\+T\+\_\+\+E\+S\+C\+A\+P\+ED} =2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGStringRep_aee3656636b471e5a31af47c0ce44872b}\label{classGStringRep_aee3656636b471e5a31af47c0ce44872b}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries blank} (const unsigned int sz) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_a2231f61e6727446a8493e7e7a7d068b5}\label{classGStringRep_a2231f61e6727446a8493e7e7a7d068b5}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries getbuf} (int n) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a5d1b88e14685a157ed900e9ce86b5297}\label{classGStringRep_a5d1b88e14685a157ed900e9ce86b5297}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries setat} (int n, char ch) const
+\item 
+\mbox{\Hypertarget{classGStringRep_aacfda8f47b2e1102bcf89de2ed74e7a4}\label{classGStringRep_aacfda8f47b2e1102bcf89de2ed74e7a4}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries append} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_a340e02ad31be8a4ff7ca6d65a70090e0}\label{classGStringRep_a340e02ad31be8a4ff7ca6d65a70090e0}} 
+virtual bool {\bfseries is\+U\+T\+F8} (void) const
+\item 
+\mbox{\Hypertarget{classGStringRep_ab36feae8ec72b46cb9b5c22bba834f52}\label{classGStringRep_ab36feae8ec72b46cb9b5c22bba834f52}} 
+virtual bool {\bfseries is\+Native} (void) const
+\item 
+\mbox{\Hypertarget{classGStringRep_aaa7ac6f0670df125ff2fa57753f06401}\label{classGStringRep_aaa7ac6f0670df125ff2fa57753f06401}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries to\+Native} (const Escape\+Mode escape=U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+S\+C\+A\+P\+ED) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_adb90787a1630c7d63b048a5c51288484}\label{classGStringRep_adb90787a1630c7d63b048a5c51288484}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries to\+U\+T\+F8} (const bool nothrow=false) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_a49069558d87d203c8ffd21b28aa1f465}\label{classGStringRep_a49069558d87d203c8ffd21b28aa1f465}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries to\+This} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&rep, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&locale=0) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_ad71021ca2cc8e18f84dfbcfb7f4c2a7f}\label{classGStringRep_ad71021ca2cc8e18f84dfbcfb7f4c2a7f}} 
+virtual int {\bfseries cmp} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2, const int len=(-\/1)) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_ad4fccfdec9448ae7020f28036da16dde}\label{classGStringRep_ad4fccfdec9448ae7020f28036da16dde}} 
+virtual int {\bfseries to\+Int} (void) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_ae08060e2af6b7810e55e62544994e117}\label{classGStringRep_ae08060e2af6b7810e55e62544994e117}} 
+virtual long int {\bfseries to\+Long} (const int pos, int \&endpos, const int base=10) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_afb022024baf0dd8fef4f162a66693433}\label{classGStringRep_afb022024baf0dd8fef4f162a66693433}} 
+virtual unsigned long {\bfseries to\+U\+Long} (const int pos, int \&endpos, const int base=10) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_ad520d02c629123059108678c0cdfbd7f}\label{classGStringRep_ad520d02c629123059108678c0cdfbd7f}} 
+virtual double {\bfseries to\+Double} (const int pos, int \&endpos) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_acd93b285e68a658d47ec21122debd72e}\label{classGStringRep_acd93b285e68a658d47ec21122debd72e}} 
+int {\bfseries next\+Char} (const int from=0) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a16e2b49043f420f0de18ed35108c87a0}\label{classGStringRep_a16e2b49043f420f0de18ed35108c87a0}} 
+int {\bfseries next\+Non\+Space} (const int from=0, const int len=(-\/1)) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a7674e458a3e5148d081079a6f7a66103}\label{classGStringRep_a7674e458a3e5148d081079a6f7a66103}} 
+int {\bfseries next\+Space} (const int from=0, const int len=(-\/1)) const
+\item 
+\mbox{\Hypertarget{classGStringRep_ab05a9f045a75e375149d767fe858d920}\label{classGStringRep_ab05a9f045a75e375149d767fe858d920}} 
+int {\bfseries first\+End\+Space} (int from=0, const int len=(-\/1)) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a0066b20141f2306dffbe0129fbea1b98}\label{classGStringRep_a0066b20141f2306dffbe0129fbea1b98}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries strdup} (const char $\ast$s) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a109ef5317701560f32ea1ac9feef345f}\label{classGStringRep_a109ef5317701560f32ea1ac9feef345f}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries append} (const char $\ast$s2) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a5719ebfb8039c2c5524fbdff13125969}\label{classGStringRep_a5719ebfb8039c2c5524fbdff13125969}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries concat} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s1, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a9e81c2c48dbd25b2b5fdb9d6f7834965}\label{classGStringRep_a9e81c2c48dbd25b2b5fdb9d6f7834965}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries concat} (const char $\ast$s1, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2) const
+\item 
+\mbox{\Hypertarget{classGStringRep_aa724b38a6aa179641b32dc7a1d0f63df}\label{classGStringRep_aa724b38a6aa179641b32dc7a1d0f63df}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries concat} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s1, const char $\ast$s2) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a726142e0e56f8a306780ad11e5c2e9df}\label{classGStringRep_a726142e0e56f8a306780ad11e5c2e9df}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries concat} (const char $\ast$s1, const char $\ast$s2) const
+\item 
+\mbox{\Hypertarget{classGStringRep_aa040e0bb56a54bbc0bab4abd5a799ef1}\label{classGStringRep_aa040e0bb56a54bbc0bab4abd5a799ef1}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries substr} (const char $\ast$s, const int start, const int length=(-\/1)) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a2aa93851089146e1f4677e58c8236134}\label{classGStringRep_a2aa93851089146e1f4677e58c8236134}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries substr} (const uint16\+\_\+t $\ast$s, const int start, const int length=(-\/1)) const
+\item 
+\mbox{\Hypertarget{classGStringRep_aab836db2f8c3a7a6dbf1221abaa1d0f1}\label{classGStringRep_aab836db2f8c3a7a6dbf1221abaa1d0f1}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries substr} (const uint32\+\_\+t $\ast$s, const int start, const int length=(-\/1)) const
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \mbox{\hyperlink{classGStringRep_a8be71aa3aa217c0bdd6801626b6102f8}{vformat}} (va\+\_\+list args) const
+\item 
+\mbox{\Hypertarget{classGStringRep_aab260fd3a9338976e56d5af56317e0f5}\label{classGStringRep_aab260fd3a9338976e56d5af56317e0f5}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries upcase} (void) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a8e7ae69b86eb418a9dab6e6ed6b2caab}\label{classGStringRep_a8e7ae69b86eb418a9dab6e6ed6b2caab}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries downcase} (void) const
+\item 
+\mbox{\Hypertarget{classGStringRep_add5d232aa8156fce9ccef2da6df4b2b5}\label{classGStringRep_add5d232aa8156fce9ccef2da6df4b2b5}} 
+int {\bfseries cmp} (const char $\ast$s2, const int len=(-\/1)) const
+\item 
+\mbox{\Hypertarget{classGStringRep_ad079fd2c597c593a9fcc5a31a6b4c796}\label{classGStringRep_ad079fd2c597c593a9fcc5a31a6b4c796}} 
+int {\bfseries get\+U\+C\+S4} (uint32\+\_\+t \&w, const int from) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a35bec1680927b6942398dea4aaf43589}\label{classGStringRep_a35bec1680927b6942398dea4aaf43589}} 
+virtual unsigned char $\ast$ {\bfseries U\+C\+S4to\+String} (const uint32\+\_\+t w, unsigned char $\ast$ptr, mbstate\+\_\+t $\ast$ps=0) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_a5b2ae73ea70515226e08f84bcb3513b0}\label{classGStringRep_a5b2ae73ea70515226e08f84bcb3513b0}} 
+int {\bfseries search} (char c, int from=0) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a17b4936a069ef0f953b5115bdd95c239}\label{classGStringRep_a17b4936a069ef0f953b5115bdd95c239}} 
+int {\bfseries search} (char const $\ast$str, int from=0) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a49b1031a30815a3f63ffc140c395ac33}\label{classGStringRep_a49b1031a30815a3f63ffc140c395ac33}} 
+int {\bfseries rsearch} (char c, int from=0) const
+\item 
+\mbox{\Hypertarget{classGStringRep_ab96c36bace1fe33164bd54910304199b}\label{classGStringRep_ab96c36bace1fe33164bd54910304199b}} 
+int {\bfseries rsearch} (char const $\ast$str, int from=0) const
+\item 
+\mbox{\Hypertarget{classGStringRep_ad575445e75566e4454b45aef13f0409d}\label{classGStringRep_ad575445e75566e4454b45aef13f0409d}} 
+int {\bfseries contains} (char const accept\mbox{[}$\,$\mbox{]}, int from=0) const
+\item 
+\mbox{\Hypertarget{classGStringRep_ad716e10b52c28e31280340b9b8c5cec4}\label{classGStringRep_ad716e10b52c28e31280340b9b8c5cec4}} 
+int {\bfseries rcontains} (char const accept\mbox{[}$\,$\mbox{]}, int from=0) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a27db09efb2c1b9042b67ebc2d56bc63b}\label{classGStringRep_a27db09efb2c1b9042b67ebc2d56bc63b}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries to\+Escaped} (const bool tosevenbit) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a6c377ee6fc7f2260c411c7d07c8f2913}\label{classGStringRep_a6c377ee6fc7f2260c411c7d07c8f2913}} 
+virtual bool {\bfseries is\+\_\+valid} (void) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_a0bef6d4bb664cd77e3d8ce4825d039ce}\label{classGStringRep_a0bef6d4bb664cd77e3d8ce4825d039ce}} 
+{\bfseries U\+T\+F8} (void)
+\item 
+\mbox{\Hypertarget{classGStringRep_a9c7c1a117a63b7b735433846c48ba20a}\label{classGStringRep_a9c7c1a117a63b7b735433846c48ba20a}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries blank} (const unsigned int sz=0) const
+\item 
+\mbox{\Hypertarget{classGStringRep_abe9b9c57b51485516bbd234315e9e14a}\label{classGStringRep_abe9b9c57b51485516bbd234315e9e14a}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries append} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a340e02ad31be8a4ff7ca6d65a70090e0}\label{classGStringRep_a340e02ad31be8a4ff7ca6d65a70090e0}} 
+virtual bool {\bfseries is\+U\+T\+F8} (void) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a3a611454f157b5c967e911b79173ff95}\label{classGStringRep_a3a611454f157b5c967e911b79173ff95}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries to\+Native} (const Escape\+Mode escape=U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+S\+C\+A\+P\+ED) const
+\item 
+\mbox{\Hypertarget{classGStringRep_acdf2a418caeaf5ce63f984757b1de52e}\label{classGStringRep_acdf2a418caeaf5ce63f984757b1de52e}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries to\+U\+T\+F8} (const bool nothrow=false) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a7d7fe1ba8a6e28db85375a03957abdd5}\label{classGStringRep_a7d7fe1ba8a6e28db85375a03957abdd5}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries to\+This} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&rep, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&) const
+\item 
+\mbox{\Hypertarget{classGStringRep_abf9fc557f096ac8d977b59fea303f4ff}\label{classGStringRep_abf9fc557f096ac8d977b59fea303f4ff}} 
+virtual int {\bfseries cmp} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2, const int len=(-\/1)) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a0a7627c512535c48b8822357f63384ea}\label{classGStringRep_a0a7627c512535c48b8822357f63384ea}} 
+virtual int {\bfseries to\+Int} (void) const
+\item 
+\mbox{\Hypertarget{classGStringRep_ad6ce01fbe939a7bd611edbe0bd2015a6}\label{classGStringRep_ad6ce01fbe939a7bd611edbe0bd2015a6}} 
+virtual long int {\bfseries to\+Long} (const int pos, int \&endpos, const int base=10) const
+\item 
+\mbox{\Hypertarget{classGStringRep_aab69ee3da2bdb440d1cd23a20014f552}\label{classGStringRep_aab69ee3da2bdb440d1cd23a20014f552}} 
+virtual unsigned long {\bfseries to\+U\+Long} (const int pos, int \&endpos, const int base=10) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a69a7df685d832f9686db7344d5315316}\label{classGStringRep_a69a7df685d832f9686db7344d5315316}} 
+virtual double {\bfseries to\+Double} (const int pos, int \&endpos) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a651b8f43e834389f051fc6512ddeca9d}\label{classGStringRep_a651b8f43e834389f051fc6512ddeca9d}} 
+virtual unsigned char $\ast$ {\bfseries U\+C\+S4to\+String} (const uint32\+\_\+t w, unsigned char $\ast$ptr, mbstate\+\_\+t $\ast$ps=0) const
+\item 
+\mbox{\Hypertarget{classGStringRep_aa4159819276a995e846882282fb66dd6}\label{classGStringRep_aa4159819276a995e846882282fb66dd6}} 
+virtual bool {\bfseries is\+\_\+valid} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGStringRep_a86a710634772da405506d7712ba47d91}\label{classGStringRep_a86a710634772da405506d7712ba47d91}} 
+{\footnotesize template$<$class T\+Y\+PE $>$ }\\static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const unsigned int sz, T\+Y\+PE $\ast$)
+\item 
+\mbox{\Hypertarget{classGStringRep_a9644d184324ebe6cb3ef484bc5761f59}\label{classGStringRep_a9644d184324ebe6cb3ef484bc5761f59}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries U\+T\+F8\+To\+Native} (const char $\ast$s, const Escape\+Mode escape=U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+S\+C\+A\+P\+ED)
+\item 
+\mbox{\Hypertarget{classGStringRep_afbddf676a315ac666f1eca8bea365811}\label{classGStringRep_afbddf676a315ac666f1eca8bea365811}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries Native\+To\+U\+T\+F8} (const char $\ast$s)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{classGStringRep_a79d6aa27fe6d12aedbabb468b42cf316}{U\+T\+F8to\+U\+C\+S4}} (unsigned char const $\ast$\&s, void const $\ast$const endptr)
+\item 
+static int \mbox{\hyperlink{classGStringRep_a55561197476b5599683f933fed78a2b6}{U\+T\+F8to\+U\+C\+S4}} (uint32\+\_\+t \&w, unsigned char const s\mbox{[}$\,$\mbox{]}, void const $\ast$const endptr)
+\item 
+static int \mbox{\hyperlink{classGStringRep_a911dd98fa79c98e471a5dfe0aee0bc16}{U\+T\+F16to\+U\+C\+S4}} (uint32\+\_\+t \&w, uint16\+\_\+t const $\ast$const s, void const $\ast$const eptr)
+\item 
+\mbox{\Hypertarget{classGStringRep_a46437fe5d08ba8209fdc4e0cd2f7c917}\label{classGStringRep_a46437fe5d08ba8209fdc4e0cd2f7c917}} 
+static int {\bfseries U\+C\+S4to\+U\+T\+F16} (uint32\+\_\+t w, uint16\+\_\+t \&w1, uint16\+\_\+t \&w2)
+\item 
+\mbox{\Hypertarget{classGStringRep_a20724938bcd9cff22baecd1d0cd87ebd}\label{classGStringRep_a20724938bcd9cff22baecd1d0cd87ebd}} 
+static int {\bfseries cmp} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s1, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2, const int len=(-\/1))
+\item 
+\mbox{\Hypertarget{classGStringRep_a1259d73c9fda29a0fdffacfefbe22d7d}\label{classGStringRep_a1259d73c9fda29a0fdffacfefbe22d7d}} 
+static int {\bfseries cmp} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s1, const char $\ast$s2, const int len=(-\/1))
+\item 
+\mbox{\Hypertarget{classGStringRep_aef83805e3ea6f5fd6deb90678e851587}\label{classGStringRep_aef83805e3ea6f5fd6deb90678e851587}} 
+static int {\bfseries cmp} (const char $\ast$s1, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2, const int len=(-\/1))
+\item 
+\mbox{\Hypertarget{classGStringRep_a0ea6b743f7ccff88e8da172f347ebf54}\label{classGStringRep_a0ea6b743f7ccff88e8da172f347ebf54}} 
+static int {\bfseries cmp} (const char $\ast$s1, const char $\ast$s2, const int len=(-\/1))
+\item 
+\mbox{\Hypertarget{classGStringRep_a8bf82b2a1823bbf235ff43bd90b3c287}\label{classGStringRep_a8bf82b2a1823bbf235ff43bd90b3c287}} 
+static unsigned char $\ast$ {\bfseries U\+C\+S4to\+U\+T\+F8} (const uint32\+\_\+t w, unsigned char $\ast$ptr)
+\item 
+\mbox{\Hypertarget{classGStringRep_aa8dcee0faebb273f4e7801b3b935e152}\label{classGStringRep_aa8dcee0faebb273f4e7801b3b935e152}} 
+static unsigned char $\ast$ {\bfseries U\+C\+S4to\+Native} (const uint32\+\_\+t w, unsigned char $\ast$ptr, mbstate\+\_\+t $\ast$ps)
+\item 
+\mbox{\Hypertarget{classGStringRep_ae34e424ab68507fc6abeff4b1f55c036}\label{classGStringRep_ae34e424ab68507fc6abeff4b1f55c036}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const unsigned int sz=0)
+\item 
+\mbox{\Hypertarget{classGStringRep_a69d18f1b03bce4256334f1f676a5543d}\label{classGStringRep_a69d18f1b03bce4256334f1f676a5543d}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const char $\ast$s)
+\item 
+\mbox{\Hypertarget{classGStringRep_ae6849c2ec5025864482bf62efb764007}\label{classGStringRep_ae6849c2ec5025864482bf62efb764007}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s1, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2)
+\item 
+\mbox{\Hypertarget{classGStringRep_adadeacdd81cb5e2b31fab7ddef6b875c}\label{classGStringRep_adadeacdd81cb5e2b31fab7ddef6b875c}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s1, const char $\ast$s2)
+\item 
+\mbox{\Hypertarget{classGStringRep_accea0eb0cbaab2a1266c656dfbabbc51}\label{classGStringRep_accea0eb0cbaab2a1266c656dfbabbc51}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const char $\ast$s1, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&s2)
+\item 
+\mbox{\Hypertarget{classGStringRep_ab082a9a92a8adc2e75e5b039b6cfbf6b}\label{classGStringRep_ab082a9a92a8adc2e75e5b039b6cfbf6b}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const char $\ast$s1, const char $\ast$s2)
+\item 
+\mbox{\Hypertarget{classGStringRep_ab2afc851f40346bb881184941950ddb9}\label{classGStringRep_ab2afc851f40346bb881184941950ddb9}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const char $\ast$s, const int start, const int length=(-\/1))
+\item 
+\mbox{\Hypertarget{classGStringRep_afb5258d8e2c3fdd5ad7a0066a78e2762}\label{classGStringRep_afb5258d8e2c3fdd5ad7a0066a78e2762}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const uint16\+\_\+t $\ast$s, const int start, const int length=(-\/1))
+\item 
+\mbox{\Hypertarget{classGStringRep_ae1fa1dac67f3ae334b5cddde1015b358}\label{classGStringRep_ae1fa1dac67f3ae334b5cddde1015b358}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const uint32\+\_\+t $\ast$s, const int start, const int length=(-\/1))
+\item 
+\mbox{\Hypertarget{classGStringRep_adb26a5d2f8661e03da3a197ac27c962d}\label{classGStringRep_adb26a5d2f8661e03da3a197ac27c962d}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create\+\_\+format} (const char fmt\mbox{[}$\,$\mbox{]},...)
+\item 
+\mbox{\Hypertarget{classGStringRep_a4bf98b35262fdac35b0ec6e269f39fe3}\label{classGStringRep_a4bf98b35262fdac35b0ec6e269f39fe3}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries create} (const char fmt\mbox{[}$\,$\mbox{]}, va\+\_\+list \&args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGStringRep_a5cb6d03a17405c72d5f415f0081011a3}\label{classGStringRep_a5cb6d03a17405c72d5f415f0081011a3}} 
+virtual uint32\+\_\+t {\bfseries get\+Valid\+U\+C\+S4} (const char $\ast$\&source) const =0
+\item 
+\mbox{\Hypertarget{classGStringRep_a792a586aa11c12ee5ceac1a58f9408cb}\label{classGStringRep_a792a586aa11c12ee5ceac1a58f9408cb}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ {\bfseries tocase} (bool($\ast$xiswcase)(const unsigned long wc), unsigned long($\ast$xtowcase)(const unsigned long wc)) const
+\item 
+\mbox{\Hypertarget{classGStringRep_ac5fb56834a96a8a2bfadde37bc807f76}\label{classGStringRep_ac5fb56834a96a8a2bfadde37bc807f76}} 
+const char $\ast$ {\bfseries is\+Char\+Type} (bool($\ast$xiswtest)(const unsigned long wc), const char $\ast$ptr, const bool reverse=false) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a824c03af0eae4a563567a5505045a796}\label{classGStringRep_a824c03af0eae4a563567a5505045a796}} 
+int {\bfseries next\+Char\+Type} (bool($\ast$xiswtest)(const unsigned long wc), const int from, const int len, const bool reverse=false) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a3e9e1dcd22f74cbe392a1a796c066d13}\label{classGStringRep_a3e9e1dcd22f74cbe392a1a796c066d13}} 
+virtual void {\bfseries set\+\_\+remainder} (void const $\ast$const buf, const unsigned int size, const Encode\+Type encodetype)
+\item 
+\mbox{\Hypertarget{classGStringRep_a333d6c8a0c0122c70a3645f1e30b9a69}\label{classGStringRep_a333d6c8a0c0122c70a3645f1e30b9a69}} 
+virtual void {\bfseries set\+\_\+remainder} (void const $\ast$const buf, const unsigned int size, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ \&encoding)
+\item 
+\mbox{\Hypertarget{classGStringRep_a875b38c38e78586acf650b7279a25296}\label{classGStringRep_a875b38c38e78586acf650b7279a25296}} 
+virtual void {\bfseries set\+\_\+remainder} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep_1_1Unicode}{Unicode}} $>$ \&remainder)
+\item 
+\mbox{\Hypertarget{classGStringRep_a085fa8b2e31c9cb49ac307943ec070d3}\label{classGStringRep_a085fa8b2e31c9cb49ac307943ec070d3}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep_1_1Unicode}{Unicode}} $>$ {\bfseries get\+\_\+remainder} (void) const
+\item 
+\mbox{\Hypertarget{classGStringRep_a26cc8b81ea4dcad821aeeef90d31b1e0}\label{classGStringRep_a26cc8b81ea4dcad821aeeef90d31b1e0}} 
+virtual uint32\+\_\+t {\bfseries get\+Valid\+U\+C\+S4} (const char $\ast$\&source) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGStringRep_a3ba482185f6926d49381adac4fe5a067}\label{classGStringRep_a3ba482185f6926d49381adac4fe5a067}} 
+static bool {\bfseries giswspace} (const unsigned long w)
+\item 
+\mbox{\Hypertarget{classGStringRep_a337c60e7be62b8e13fc2508d82630f0a}\label{classGStringRep_a337c60e7be62b8e13fc2508d82630f0a}} 
+static bool {\bfseries giswupper} (const unsigned long w)
+\item 
+\mbox{\Hypertarget{classGStringRep_a03b52569c8546a03ac947d1b2a8b4880}\label{classGStringRep_a03b52569c8546a03ac947d1b2a8b4880}} 
+static bool {\bfseries giswlower} (const unsigned long w)
+\item 
+\mbox{\Hypertarget{classGStringRep_a8caf6495e0e63ef23e72a24c3f920edf}\label{classGStringRep_a8caf6495e0e63ef23e72a24c3f920edf}} 
+static unsigned long {\bfseries gtowupper} (const unsigned long w)
+\item 
+\mbox{\Hypertarget{classGStringRep_a9f93bafbaa4093a28d4a5a2e41adce6b}\label{classGStringRep_a9f93bafbaa4093a28d4a5a2e41adce6b}} 
+static unsigned long {\bfseries gtowlower} (const unsigned long w)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGStringRep_a4167c62b9b37d0b696b2e4d473f42708}\label{classGStringRep_a4167c62b9b37d0b696b2e4d473f42708}} 
+int {\bfseries size}
+\item 
+\mbox{\Hypertarget{classGStringRep_a54d2fc575654167ebef0d3474a5e474f}\label{classGStringRep_a54d2fc575654167ebef0d3474a5e474f}} 
+char $\ast$ {\bfseries data}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGStringRep_a70060facd685c5dcadbe3a5bc524e1b3}\label{classGStringRep_a70060facd685c5dcadbe3a5bc524e1b3}} 
+class {\bfseries U\+T\+F8}
+\item 
+\mbox{\Hypertarget{classGStringRep_ae8af3abc96bda9236e3a12671ce05219}\label{classGStringRep_ae8af3abc96bda9236e3a12671ce05219}} 
+class {\bfseries Unicode}
+\item 
+\mbox{\Hypertarget{classGStringRep_a5042f08f0f5a8878675960b7ff6ae6cc}\label{classGStringRep_a5042f08f0f5a8878675960b7ff6ae6cc}} 
+class {\bfseries G\+Base\+String}
+\item 
+\mbox{\Hypertarget{classGStringRep_ad7474267d64cd0edd2e58eea5dfb3731}\label{classGStringRep_ad7474267d64cd0edd2e58eea5dfb3731}} 
+class {\bfseries G\+U\+T\+F8\+String}
+\item 
+\mbox{\Hypertarget{classGStringRep_a754f030a41257fad1706c1c17124b239}\label{classGStringRep_a754f030a41257fad1706c1c17124b239}} 
+class {\bfseries G\+Native\+String}
+\item 
+\mbox{\Hypertarget{classGStringRep_a08417d1443736423c529d2d83b1b0ec8}\label{classGStringRep_a08417d1443736423c529d2d83b1b0ec8}} 
+D\+J\+V\+U\+A\+PI unsigned int {\bfseries hash} (const \mbox{\hyperlink{classGBaseString}{G\+Base\+String}} \&ref)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGStringRep_a911dd98fa79c98e471a5dfe0aee0bc16}\label{classGStringRep_a911dd98fa79c98e471a5dfe0aee0bc16}} 
+\index{GStringRep@{GStringRep}!UTF16toUCS4@{UTF16toUCS4}}
+\index{UTF16toUCS4@{UTF16toUCS4}!GStringRep@{GStringRep}}
+\doxysubsubsection{\texorpdfstring{UTF16toUCS4()}{UTF16toUCS4()}}
+{\footnotesize\ttfamily int G\+String\+Rep\+::\+U\+T\+F16to\+U\+C\+S4 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \&}]{w,  }\item[{uint16\+\_\+t const $\ast$const}]{s,  }\item[{void const $\ast$const}]{eptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the next U\+C\+S4 word from the U\+T\+F16 string. \mbox{\Hypertarget{classGStringRep_a55561197476b5599683f933fed78a2b6}\label{classGStringRep_a55561197476b5599683f933fed78a2b6}} 
+\index{GStringRep@{GStringRep}!UTF8toUCS4@{UTF8toUCS4}}
+\index{UTF8toUCS4@{UTF8toUCS4}!GStringRep@{GStringRep}}
+\doxysubsubsection{\texorpdfstring{UTF8toUCS4()}{UTF8toUCS4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static int G\+String\+Rep\+::\+U\+T\+F8to\+U\+C\+S4 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \&}]{w,  }\item[{unsigned char const}]{s\mbox{[}$\,$\mbox{]},  }\item[{void const $\ast$const}]{endptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns the number of bytes in next U\+C\+S4 character, and sets \#w\# to the next U\+C\+S4 chacter. ~\newline
+ \mbox{\Hypertarget{classGStringRep_a79d6aa27fe6d12aedbabb468b42cf316}\label{classGStringRep_a79d6aa27fe6d12aedbabb468b42cf316}} 
+\index{GStringRep@{GStringRep}!UTF8toUCS4@{UTF8toUCS4}}
+\index{UTF8toUCS4@{UTF8toUCS4}!GStringRep@{GStringRep}}
+\doxysubsubsection{\texorpdfstring{UTF8toUCS4()}{UTF8toUCS4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t G\+String\+Rep\+::\+U\+T\+F8to\+U\+C\+S4 (\begin{DoxyParamCaption}\item[{unsigned char const $\ast$\&}]{s,  }\item[{void const $\ast$const}]{endptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the next U\+C\+S4 character, and updates the pointer s. \mbox{\Hypertarget{classGStringRep_a8be71aa3aa217c0bdd6801626b6102f8}\label{classGStringRep_a8be71aa3aa217c0bdd6801626b6102f8}} 
+\index{GStringRep@{GStringRep}!vformat@{vformat}}
+\index{vformat@{vformat}!GStringRep@{GStringRep}}
+\doxysubsubsection{\texorpdfstring{vformat()}{vformat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGStringRep}{G\+String\+Rep}} $>$ G\+String\+Rep\+::vformat (\begin{DoxyParamCaption}\item[{va\+\_\+list}]{args }\end{DoxyParamCaption}) const}
+
+Initializes a string with a formatted string (as in \#vprintf\#). The string is re-\/initialized with the characters generated according to the specified format \#fmt\# and using the optional arguments. See the A\+N\+S\+I-\/C function \#vprintf()\# for more information. The current implementation will cause a segmentation violation if the resulting string is longer than 32768 characters. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+String.\+h\item 
+libdjvu/G\+String.\+cpp\end{DoxyCompactItemize}

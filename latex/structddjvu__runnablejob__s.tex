@@ -1,0 +1,77 @@
+\hypertarget{structddjvu__runnablejob__s}{}\doxysection{ddjvu\+\_\+runnablejob\+\_\+s Struct Reference}
+\label{structddjvu__runnablejob__s}\index{ddjvu\_runnablejob\_s@{ddjvu\_runnablejob\_s}}
+
+
+Inheritance diagram for ddjvu\+\_\+runnablejob\+\_\+s\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{structddjvu__runnablejob__s__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ddjvu\+\_\+runnablejob\+\_\+s\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structddjvu__runnablejob__s__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structddjvu__runnablejob__s_aae92722d0b2eb87f08112e85f31ea129}\label{structddjvu__runnablejob__s_aae92722d0b2eb87f08112e85f31ea129}} 
+ddjvu\+\_\+status\+\_\+t {\bfseries start} ()
+\item 
+\mbox{\Hypertarget{structddjvu__runnablejob__s_a28b22a30c9be160d103e147aae2353f6}\label{structddjvu__runnablejob__s_a28b22a30c9be160d103e147aae2353f6}} 
+void {\bfseries progress} (int p)
+\item 
+\mbox{\Hypertarget{structddjvu__runnablejob__s_abd6ce74402a34dd93764b243f7d4d205}\label{structddjvu__runnablejob__s_abd6ce74402a34dd93764b243f7d4d205}} 
+virtual ddjvu\+\_\+status\+\_\+t {\bfseries run} ()=0
+\item 
+virtual bool \mbox{\hyperlink{structddjvu__runnablejob__s_aa9cc48d5a6d5b95affcc90513d996c15}{inherits}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&) const
+\item 
+\mbox{\Hypertarget{structddjvu__runnablejob__s_a5c11da65d5b280f42b597963e72121df}\label{structddjvu__runnablejob__s_a5c11da65d5b280f42b597963e72121df}} 
+virtual ddjvu\+\_\+status\+\_\+t {\bfseries status} ()
+\item 
+\mbox{\Hypertarget{structddjvu__runnablejob__s_aca77d865e957c2b98dd352d150237f78}\label{structddjvu__runnablejob__s_aca77d865e957c2b98dd352d150237f78}} 
+virtual void {\bfseries stop} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structddjvu__runnablejob__s_a153d6dd606f258dc67a46cfae3c461b2}\label{structddjvu__runnablejob__s_a153d6dd606f258dc67a46cfae3c461b2}} 
+bool {\bfseries mystop}
+\item 
+\mbox{\Hypertarget{structddjvu__runnablejob__s_a5b9d444b534ded0615ceebe85d7c9483}\label{structddjvu__runnablejob__s_a5b9d444b534ded0615ceebe85d7c9483}} 
+int {\bfseries myprogress}
+\item 
+\mbox{\Hypertarget{structddjvu__runnablejob__s_aff9490e3cb50c8d99e8c0c478c7ebe38}\label{structddjvu__runnablejob__s_aff9490e3cb50c8d99e8c0c478c7ebe38}} 
+ddjvu\+\_\+status\+\_\+t {\bfseries mystatus}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structddjvu__runnablejob__s_aa9cc48d5a6d5b95affcc90513d996c15}\label{structddjvu__runnablejob__s_aa9cc48d5a6d5b95affcc90513d996c15}} 
+\index{ddjvu\_runnablejob\_s@{ddjvu\_runnablejob\_s}!inherits@{inherits}}
+\index{inherits@{inherits}!ddjvu\_runnablejob\_s@{ddjvu\_runnablejob\_s}}
+\doxysubsubsection{\texorpdfstring{inherits()}{inherits()}}
+{\footnotesize\ttfamily bool ddjvu\+\_\+runnablejob\+\_\+s\+::inherits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{class\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Should return 1 if the called class inherits class \#class\+\_\+name\#. When a destination receives a request, it can retrieve the pointer to the source \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. This virtual function should be able to help to identify the source of the request. For example, \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} is also derived from \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. In order for the receiver to recognize the sender, the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} should override this function to return \#\+T\+R\+UE\# when the \#class\+\_\+name\# is either \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\# or \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# 
+
+Reimplemented from \mbox{\hyperlink{structddjvu__job__s_a98cb2b9bcba490cadd398cb41b85c8bc}{ddjvu\+\_\+job\+\_\+s}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{structddjvu__savejob__s_a83bdae001e34eb98b60bb2cae822c284}{ddjvu\+\_\+savejob\+\_\+s}}, and \mbox{\hyperlink{structddjvu__printjob__s_a8a8157189380d992be586d87f0686ca8}{ddjvu\+\_\+printjob\+\_\+s}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/ddjvuapi.\+cpp\end{DoxyCompactItemize}

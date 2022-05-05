@@ -1,0 +1,450 @@
+\hypertarget{classGPixmap}{}\doxysection{G\+Pixmap Class Reference}
+\label{classGPixmap}\index{GPixmap@{GPixmap}}
+
+
+{\ttfamily \#include $<$G\+Pixmap.\+h$>$}
+
+
+
+Inheritance diagram for G\+Pixmap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classGPixmap__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Pixmap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classGPixmap__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGPixmap_a61d12f65b6a4e33a87ee563c9b15c905}\label{classGPixmap_a61d12f65b6a4e33a87ee563c9b15c905}} 
+virtual \mbox{\hyperlink{classGPixmap_a61d12f65b6a4e33a87ee563c9b15c905}{$\sim$\+G\+Pixmap}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGPixmap_a567bfe6028aa30528d6eedd319776405}\label{classGPixmap_a567bfe6028aa30528d6eedd319776405}} 
+void {\bfseries destroy} (void)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Initialization.}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGPixmap_ab95e4707c0a699c86ad9d1b3483a76dc}{init}} (int nrows, int ncolumns, const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$filler=0)
+\item 
+void \mbox{\hyperlink{classGPixmap_aef77ebb85882b50eacb5fbd7b19cc5f8}{init}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&ref)
+\item 
+void \mbox{\hyperlink{classGPixmap_aadaa2d0c4b6fe5043753cc4a5aa0526a}{init}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&ref, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+void \mbox{\hyperlink{classGPixmap_ad9eea9793157e231a6a9c7c09088bac4}{init}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&ref, const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ramp=0)
+\item 
+void \mbox{\hyperlink{classGPixmap_a0abd12af31f470ba25b752abec2b5d7b}{init}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&ref, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect, const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ramp=0)
+\item 
+void \mbox{\hyperlink{classGPixmap_a67ac960cae70fb7536756520a10685d6}{init}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&ref)
+\item 
+\mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \& \mbox{\hyperlink{classGPixmap_a03e9702014924cf7d7ba63653e59d975}{operator=}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&ref)
+\item 
+\mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \& \mbox{\hyperlink{classGPixmap_a53659d364d01c3e90af77502ea670451}{operator=}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&ref)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Accessing pixels.}\par
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classGPixmap_a02f4e0653928728133f6c5ef2f301e5f}{rows}} () const
+\item 
+unsigned int \mbox{\hyperlink{classGPixmap_a46e67b2f137f3c964dc1c2bf1ff3d7c6}{columns}} () const
+\item 
+const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ \mbox{\hyperlink{classGPixmap_a90099c0d2e12aa04956b0358882a0f50}{operator\mbox{[}$\,$\mbox{]}}} (int row) const
+\item 
+\mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ \mbox{\hyperlink{classGPixmap_a4e5658ddc3fcf893e08187a354880432}{operator\mbox{[}$\,$\mbox{]}}} (int row)
+\item 
+unsigned int \mbox{\hyperlink{classGPixmap_a9e210cf515d15bf192d1957c8e87e762}{rowsize}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Resampling images.}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGPixmap_a179ae719c7bd1988d5881e88db534238}{downsample}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$src, int factor, const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$rect=0)
+\item 
+void \mbox{\hyperlink{classGPixmap_ac566650587ac00c29d24778de0c5eb55}{upsample}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$src, int factor, const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$rect=0)
+\item 
+void \mbox{\hyperlink{classGPixmap_a79c65a498869c94f246251d15c28f9e2}{downsample43}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$src, const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$rect=0)
+\item 
+void \mbox{\hyperlink{classGPixmap_a468fdfceabd80e02142d2b01308c4b7d}{upsample23}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$src, const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$rect=0)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Blitting and applying stencils.}\par
+{\em ~\newline
+ These function is essential for rendering Dj\+Vu images. The elementary functions are \textbackslash{}\+Ref\{attenuate\} and \textbackslash{}\+Ref\{blit\}. The combined functions \textbackslash{}\+Ref\{blend\} and \textbackslash{}\+Ref\{stencil\} should be viewed as optimizations. ~\newline
+ }\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGPixmap_aa6e63174179a93728e20b21898b581f5}{attenuate}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$bm, int x, int y)
+\item 
+void \mbox{\hyperlink{classGPixmap_a36319429c8194acad58d3b903343fd57}{blit}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$bm, int x, int y, const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$color)
+\item 
+void \mbox{\hyperlink{classGPixmap_abb213cfea7bdd7518c81c0f777f48e42}{blit}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$bm, int x, int y, const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$color)
+\item 
+void \mbox{\hyperlink{classGPixmap_afc207064d2f176ea42d1a02ae9fc8777}{blend}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$bm, int x, int y, const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$color)
+\item 
+void \mbox{\hyperlink{classGPixmap_a589ccf1b52ab64350d40c64218cf6d97}{stencil}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$bm, const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$pm, int pms, const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$pmr, double corr, \mbox{\hyperlink{structGPixel}{G\+Pixel}} white)
+\item 
+\mbox{\Hypertarget{classGPixmap_a345fc80cf70be9a03c4e0bffafb5d08c}\label{classGPixmap_a345fc80cf70be9a03c4e0bffafb5d08c}} 
+void {\bfseries stencil} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$bm, const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$pm, int pms, const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$pmr, double corr=1.\+0)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Miscellaneous.}\par
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classGPixmap_a07f766a7d3e5619d933787998f9c1c6a}{get\+\_\+memory\+\_\+usage}} () const
+\item 
+void \mbox{\hyperlink{classGPixmap_a2559404efa55d2c407f1af3eced076a3}{save\+\_\+ppm}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&bs, int raw=1) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{Indent}\textbf{ Construction.}\par
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classGPixmap_aef5961835893c57d9c0c330655be6506}{create}} (void)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classGPixmap_aa9c0d3a348ffd70f60ce46e9f5ffb539}{create}} (const int nrows, const int ncolumns, const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$filler=0)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classGPixmap_a0f03af017283c720818623b03ab427e6}{create}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&ref)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classGPixmap_a88d70a0fb929247c395ae3b9bb3c0495}{create}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&ref, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classGPixmap_aff50fef2946cedc9755537b8d969a33c}{create}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&ref)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classGPixmap_ac3e838b013a406c75da8145f723f9eff}{create}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&ref, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classGPixmap_a652949c0d6a9985e61da083bd057e635}{create}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&ref)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGPixmap_aea5d52fd12cbd57e4090f657506de53c}\label{classGPixmap_aea5d52fd12cbd57e4090f657506de53c}} 
+{\bfseries G\+Pixmap} (int nrows, int ncolumns, const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$filler=0)
+\item 
+\mbox{\Hypertarget{classGPixmap_a5a305620cc7beee2b919689d8ee609f0}\label{classGPixmap_a5a305620cc7beee2b919689d8ee609f0}} 
+{\bfseries G\+Pixmap} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&ref)
+\item 
+\mbox{\Hypertarget{classGPixmap_a1c2a4a555085135dba8b8fb2c7a90d22}\label{classGPixmap_a1c2a4a555085135dba8b8fb2c7a90d22}} 
+{\bfseries G\+Pixmap} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&ref, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+\mbox{\Hypertarget{classGPixmap_a4a6b82248a6fe73f3dbcd7db65ecdc1a}\label{classGPixmap_a4a6b82248a6fe73f3dbcd7db65ecdc1a}} 
+{\bfseries G\+Pixmap} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&ref)
+\item 
+\mbox{\Hypertarget{classGPixmap_a1e46d43ccd31214bbc651d40c67a8882}\label{classGPixmap_a1e46d43ccd31214bbc651d40c67a8882}} 
+{\bfseries G\+Pixmap} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&ref, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+\mbox{\Hypertarget{classGPixmap_a510240c93a7b1d0cfe02f548008cd44d}\label{classGPixmap_a510240c93a7b1d0cfe02f548008cd44d}} 
+{\bfseries G\+Pixmap} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&ref)
+\end{DoxyCompactItemize}
+\doxysubsection*{Manipulating colors.}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGPixmap_a36939ea9ff461db7d904b3cf9dba4132}{ordered\+\_\+666\+\_\+dither}} (int xmin=0, int ymin=0)
+\item 
+void \mbox{\hyperlink{classGPixmap_a2872d0e2065a7b30b1ae54bac4fc2686}{ordered\+\_\+32k\+\_\+dither}} (int xmin=0, int ymin=0)
+\item 
+void \mbox{\hyperlink{classGPixmap_abcf0ada14763951f6ff3517b11206114}{color\+\_\+correct}} (double corr)
+\item 
+\mbox{\Hypertarget{classGPixmap_ad4538db11c44de10b91466f1cc560516}\label{classGPixmap_ad4538db11c44de10b91466f1cc560516}} 
+void {\bfseries color\+\_\+correct} (double corr, \mbox{\hyperlink{structGPixel}{G\+Pixel}} white)
+\item 
+static void \mbox{\hyperlink{classGPixmap_ae8f756f4836a563a7504c1b9c4e40f35}{color\+\_\+correct}} (double corr, \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$pix, int npix)
+\item 
+\mbox{\Hypertarget{classGPixmap_a909059b678e5673b4c079b63106fb556}\label{classGPixmap_a909059b678e5673b4c079b63106fb556}} 
+static void {\bfseries color\+\_\+correct} (double corr, \mbox{\hyperlink{structGPixel}{G\+Pixel}} white, \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$pix, int npix)
+\end{DoxyCompactItemize}
+\doxysubsection*{Stealing or borrowing the memory buffer (advanced).}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGPixmap_a1ae02f4226f904857d9af5e5fd877478}\label{classGPixmap_a1ae02f4226f904857d9af5e5fd877478}} 
+unsigned short {\bfseries nrows}
+\item 
+\mbox{\Hypertarget{classGPixmap_ac3e6b27de2732c44308e970b2fa793d2}\label{classGPixmap_ac3e6b27de2732c44308e970b2fa793d2}} 
+unsigned short {\bfseries ncolumns}
+\item 
+\mbox{\Hypertarget{classGPixmap_a2b498961c86b69b698187ab2bc3ff3e1}\label{classGPixmap_a2b498961c86b69b698187ab2bc3ff3e1}} 
+unsigned short {\bfseries nrowsize}
+\item 
+\mbox{\Hypertarget{classGPixmap_a717bdc9d711f3aca6bc92fdd5f4732e1}\label{classGPixmap_a717bdc9d711f3aca6bc92fdd5f4732e1}} 
+\mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ {\bfseries pixels}
+\item 
+\mbox{\Hypertarget{classGPixmap_a1f5172231d9f05e6480ae37cc6b753ae}\label{classGPixmap_a1f5172231d9f05e6480ae37cc6b753ae}} 
+\mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ {\bfseries pixels\+\_\+data}
+\item 
+\mbox{\Hypertarget{classGPixmap_aab05b67b1d782ea524df9aab76d702c2}\label{classGPixmap_aab05b67b1d782ea524df9aab76d702c2}} 
+class {\bfseries Dj\+Vu\+\_\+\+Pix\+Image}
+\item 
+\mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ \mbox{\hyperlink{classGPixmap_a45ffe9ab0aa16143f3ca307dd11dae3b}{take\+\_\+data}} (size\+\_\+t \&offset)
+\item 
+void \mbox{\hyperlink{classGPixmap_a2adc90ddbc56313b39a3d0bc89279545}{borrow\+\_\+data}} (\mbox{\hyperlink{structGPixel}{G\+Pixel}} \&data, int w, int h)
+\item 
+\mbox{\Hypertarget{classGPixmap_a9f976a5c0636af0bbae76f8efbe40d35}\label{classGPixmap_a9f976a5c0636af0bbae76f8efbe40d35}} 
+void \mbox{\hyperlink{classGPixmap_a9f976a5c0636af0bbae76f8efbe40d35}{donate\+\_\+data}} (\mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$data, int w, int h)
+\begin{DoxyCompactList}\small\item\em Identical to the above, but \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} will do the delete \mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classGPixmap_ae66263e60d0eb2739199bcab63fe88aa}{rotate}} (int \mbox{\hyperlink{classGPEnabled_aaeebfa533635d29cc70aaa3620678734}{count}}=0)
+\item 
+\mbox{\Hypertarget{classGPixmap_a6df902756f94c8f2c5978d1627e0ad0f}\label{classGPixmap_a6df902756f94c8f2c5978d1627e0ad0f}} 
+int {\bfseries get\+\_\+grays} (void) const
+\item 
+\mbox{\Hypertarget{classGPixmap_aefcdabb0f54f7f95c42fb909bb6c8006}\label{classGPixmap_aefcdabb0f54f7f95c42fb909bb6c8006}} 
+void {\bfseries set\+\_\+grays} (int)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+R\+GB Color images. ~\newline
+ Instances of class \mbox{\hyperlink{classGPixmap}{G\+Pixmap}}\# represent color images as a two dimensional array of pixels \textbackslash{}\+Ref\{\mbox{\hyperlink{structGPixel}{G\+Pixel}}\}. The bracket operator returns a pointer to the pixels composing one line of the image. This pointer can be used as an array to read or write the pixels of this particular line. Following the general convention of the Dj\+Vu Reference Library, line zero is always the bottom line of the image. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGPixmap_aa6e63174179a93728e20b21898b581f5}\label{classGPixmap_aa6e63174179a93728e20b21898b581f5}} 
+\index{GPixmap@{GPixmap}!attenuate@{attenuate}}
+\index{attenuate@{attenuate}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{attenuate()}{attenuate()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::attenuate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$}]{bm,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Attenuates the color image in preparation for a blit. ~\newline
+ Bitmap \#bm\# is positionned at location \#x\#,\#y\# over this color image. The matching color image pixels are then multiplied by \#1.\+0-\/Alpha\# where \#\+Alpha\# denotes the gray value, in range \#\mbox{[}0,1\mbox{]}\#, represented by the corresponding pixel of bitmap \#bm\#. \mbox{\Hypertarget{classGPixmap_afc207064d2f176ea42d1a02ae9fc8777}\label{classGPixmap_afc207064d2f176ea42d1a02ae9fc8777}} 
+\index{GPixmap@{GPixmap}!blend@{blend}}
+\index{blend@{blend}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{blend()}{blend()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::blend (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$}]{bm,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$}]{color }\end{DoxyParamCaption})}
+
+Performs alpha blending. This function is similar to first calling \textbackslash{}\+Ref\{attenuate\} with alpha map \#bm\# and then calling \textbackslash{}\+Ref\{blit\} with alpha map \#bm\# and color map \#color\#. Both operations are performed together for efficiency reasons. \mbox{\Hypertarget{classGPixmap_a36319429c8194acad58d3b903343fd57}\label{classGPixmap_a36319429c8194acad58d3b903343fd57}} 
+\index{GPixmap@{GPixmap}!blit@{blit}}
+\index{blit@{blit}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{blit()}{blit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::blit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$}]{bm,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$}]{color }\end{DoxyParamCaption})}
+
+Blits solid color \#color\# through transparency mask \#bm\#. ~\newline
+ Bitmap \#bm\# is positionned at location \#x\#,\#y\# over this color image. The matching color image pixels are then modified by adding color \#color\# multiplied by \#\+Alpha\#, where \#\+Alpha\# denotes the gray value, in range \#\mbox{[}0,1\mbox{]}\#, represented by the corresponding pixel of bitmap \#bm\#. \mbox{\Hypertarget{classGPixmap_abb213cfea7bdd7518c81c0f777f48e42}\label{classGPixmap_abb213cfea7bdd7518c81c0f777f48e42}} 
+\index{GPixmap@{GPixmap}!blit@{blit}}
+\index{blit@{blit}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{blit()}{blit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::blit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$}]{bm,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$}]{color }\end{DoxyParamCaption})}
+
+Blits pixmap \#color\# through transparency mask \#bm\#. Bitmap \#bm\# is positionned at location \#x\#,\#y\# over this color image. The matching color image pixels are then modified by adding the corresponding pixel color in pixmap \#color\#, multiplied by \#\+Alpha\#, where \#\+Alpha\# denotes the gray value, in range \#\mbox{[}0,1\mbox{]}\#, represented by the corresponding pixel of bitmap \#bm\#. \mbox{\Hypertarget{classGPixmap_a2adc90ddbc56313b39a3d0bc89279545}\label{classGPixmap_a2adc90ddbc56313b39a3d0bc89279545}} 
+\index{GPixmap@{GPixmap}!borrow\_data@{borrow\_data}}
+\index{borrow\_data@{borrow\_data}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{borrow\_data()}{borrow\_data()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::borrow\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGPixel}{G\+Pixel}} \&}]{data,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes this \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by borrowing a memory segment. The \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} then directly addresses the memory buffer \#data\# provided by the user. This buffer must be large enough to hold \#w$\ast$h\# G\+Pixels. The \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} object does not \`{}`own'\textquotesingle{} the buffer\+: you must explicitly de-\/allocate the buffer using \#operator delete \mbox{[}$\,$\mbox{]}\#. This de-\/allocation should take place after the destruction or the re-\/initialization of the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} object. ~\newline
+ \mbox{\Hypertarget{classGPixmap_abcf0ada14763951f6ff3517b11206114}\label{classGPixmap_abcf0ada14763951f6ff3517b11206114}} 
+\index{GPixmap@{GPixmap}!color\_correct@{color\_correct}}
+\index{color\_correct@{color\_correct}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{color\_correct()}{color\_correct()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::color\+\_\+correct (\begin{DoxyParamCaption}\item[{double}]{corr }\end{DoxyParamCaption})}
+
+Applies a luminance gamma correction factor of \#corr\#. ~\newline
+ Values greater than \#1.\+0\# make the image brighter. ~\newline
+ Values smaller than \#1.\+0\# make the image darker. ~\newline
+ The documentation of program \textbackslash{}\+Ref\{ppmcoco\} explains how to properly use this function. \mbox{\Hypertarget{classGPixmap_ae8f756f4836a563a7504c1b9c4e40f35}\label{classGPixmap_ae8f756f4836a563a7504c1b9c4e40f35}} 
+\index{GPixmap@{GPixmap}!color\_correct@{color\_correct}}
+\index{color\_correct@{color\_correct}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{color\_correct()}{color\_correct()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::color\+\_\+correct (\begin{DoxyParamCaption}\item[{double}]{corr,  }\item[{\mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$}]{pix,  }\item[{int}]{npix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Applies a luminance gamma correction to an array of pixels. This function is \{{\itshape static\}} and does not modify this pixmap. \mbox{\Hypertarget{classGPixmap_a46e67b2f137f3c964dc1c2bf1ff3d7c6}\label{classGPixmap_a46e67b2f137f3c964dc1c2bf1ff3d7c6}} 
+\index{GPixmap@{GPixmap}!columns@{columns}}
+\index{columns@{columns}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{columns()}{columns()}}
+{\footnotesize\ttfamily unsigned int G\+Pixmap\+::columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of columns (the image width). \mbox{\Hypertarget{classGPixmap_a652949c0d6a9985e61da083bd057e635}\label{classGPixmap_a652949c0d6a9985e61da083bd057e635}} 
+\index{GPixmap@{GPixmap}!create@{create}}
+\index{create@{create}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGPixmap}{G\+Pixmap}}$>$ G\+Pixmap\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by reading P\+PM data from \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#ref\#. See \textbackslash{}\+Ref\{P\+NM and R\+LE file formats\} for more information. \mbox{\Hypertarget{classGPixmap_a0f03af017283c720818623b03ab427e6}\label{classGPixmap_a0f03af017283c720818623b03ab427e6}} 
+\index{GPixmap@{GPixmap}!create@{create}}
+\index{create@{create}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGPixmap}{G\+Pixmap}}$>$ G\+Pixmap\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by copying the gray level image \#ref\#. The constructed \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} has the same size as \#ref\#. The pixels are initialized with shades of grays copied from \#ref\#. \mbox{\Hypertarget{classGPixmap_a88d70a0fb929247c395ae3b9bb3c0495}\label{classGPixmap_a88d70a0fb929247c395ae3b9bb3c0495}} 
+\index{GPixmap@{GPixmap}!create@{create}}
+\index{create@{create}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGPixmap}{G\+Pixmap}}$>$ G\+Pixmap\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&}]{ref,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by copying the rectangle \#rect\# of the gray level image \#ref\#. The constructed \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} has the same size as rectangle \#rect\#. The pixels are initialized with shades of grays converted from the ink levels represented in \#ref\#. This conversion depends on the number of gray levels in \#ref\#. \mbox{\Hypertarget{classGPixmap_aff50fef2946cedc9755537b8d969a33c}\label{classGPixmap_aff50fef2946cedc9755537b8d969a33c}} 
+\index{GPixmap@{GPixmap}!create@{create}}
+\index{create@{create}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGPixmap}{G\+Pixmap}}$>$ G\+Pixmap\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Copy constructors. Creates a \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by replicating the size and the contents of \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \#ref\#. \mbox{\Hypertarget{classGPixmap_ac3e838b013a406c75da8145f723f9eff}\label{classGPixmap_ac3e838b013a406c75da8145f723f9eff}} 
+\index{GPixmap@{GPixmap}!create@{create}}
+\index{create@{create}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGPixmap}{G\+Pixmap}}$>$ G\+Pixmap\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&}]{ref,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by copying the rectangle \#rect\# of the color image \#ref\#. The constructed \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} has the same size as rectangle \#rect\#. The pixels are initialized with colors copied from \#ref\#. \mbox{\Hypertarget{classGPixmap_aa9c0d3a348ffd70f60ce46e9f5ffb539}\label{classGPixmap_aa9c0d3a348ffd70f60ce46e9f5ffb539}} 
+\index{GPixmap@{GPixmap}!create@{create}}
+\index{create@{create}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGPixmap}{G\+Pixmap}}$>$ G\+Pixmap\+::create (\begin{DoxyParamCaption}\item[{const int}]{nrows,  }\item[{const int}]{ncolumns,  }\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$}]{filler = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} with \#nrows\# rows and \#ncolumns\# columns. When the optional argument \#filler\# is specified, all pixels are initialized with the corresponding color. \mbox{\Hypertarget{classGPixmap_aef5961835893c57d9c0c330655be6506}\label{classGPixmap_aef5961835893c57d9c0c330655be6506}} 
+\index{GPixmap@{GPixmap}!create@{create}}
+\index{create@{create}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGPixmap}{G\+Pixmap}}$>$ G\+Pixmap\+::create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates an empty \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} object. The returned \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} has zero rows and zero columns. Use function \textbackslash{}\+Ref\{init\} to change the size of the image. \mbox{\Hypertarget{classGPixmap_a179ae719c7bd1988d5881e88db534238}\label{classGPixmap_a179ae719c7bd1988d5881e88db534238}} 
+\index{GPixmap@{GPixmap}!downsample@{downsample}}
+\index{downsample@{downsample}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{downsample()}{downsample()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::downsample (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$}]{src,  }\item[{int}]{factor,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$}]{rect = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Resets this \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} with a subsampled segment of color image \#src\#. This function conceptually rescales image \#src\# by a factor \#1\+:factor\#, and copies rectangle \#rect\# of the subsampled image into the current \mbox{\hyperlink{classGPixmap}{G\+Pixmap}}. The full subsampled image is copied if \#rect\# is a null pointer. Both operations are however performed together for efficiency reasons. Subsampling works by averaging the colors of the source pixels located in small squares of size \#factor\# times \#factor\#. \mbox{\Hypertarget{classGPixmap_a79c65a498869c94f246251d15c28f9e2}\label{classGPixmap_a79c65a498869c94f246251d15c28f9e2}} 
+\index{GPixmap@{GPixmap}!downsample43@{downsample43}}
+\index{downsample43@{downsample43}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{downsample43()}{downsample43()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::downsample43 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$}]{src,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$}]{rect = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Resets this \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} with a rescaled segment of \#src\# (zoom 75\%). This function conceptually rescales image \#src\# by a factor \#3\+:4\#, and copies rectangle \#rect\# of the rescaled image into the current \mbox{\hyperlink{classGPixmap}{G\+Pixmap}}. The full rescaled image is copied if \#rect\# is a null pointer. Both operations are however performed together for efficiency reasons. This function has been superseded by class \textbackslash{}\+Ref\{\mbox{\hyperlink{classGPixmapScaler}{G\+Pixmap\+Scaler}}\}. \mbox{\Hypertarget{classGPixmap_a07f766a7d3e5619d933787998f9c1c6a}\label{classGPixmap_a07f766a7d3e5619d933787998f9c1c6a}} 
+\index{GPixmap@{GPixmap}!get\_memory\_usage@{get\_memory\_usage}}
+\index{get\_memory\_usage@{get\_memory\_usage}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{get\_memory\_usage()}{get\_memory\_usage()}}
+{\footnotesize\ttfamily unsigned int G\+Pixmap\+::get\+\_\+memory\+\_\+usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of bytes allocated for this image. \mbox{\Hypertarget{classGPixmap_a67ac960cae70fb7536756520a10685d6}\label{classGPixmap_a67ac960cae70fb7536756520a10685d6}} 
+\index{GPixmap@{GPixmap}!init@{init}}
+\index{init@{init}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{ref }\end{DoxyParamCaption})}
+
+Resets the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by reading P\+PM data from \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#ref\#. See \textbackslash{}\+Ref\{P\+NM and R\+LE file formats\} for more information. \mbox{\Hypertarget{classGPixmap_ad9eea9793157e231a6a9c7c09088bac4}\label{classGPixmap_ad9eea9793157e231a6a9c7c09088bac4}} 
+\index{GPixmap@{GPixmap}!init@{init}}
+\index{init@{init}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&}]{ref,  }\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$}]{ramp = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Resets the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by copying the size and the contents of the gray level image \#ref\#. The optional argument \#ramp\# is an array of 256 pixel values used for mapping the gray levels to color values. Setting \#ramp\# to zero selects a linear ramp of shades of gray. \mbox{\Hypertarget{classGPixmap_a0abd12af31f470ba25b752abec2b5d7b}\label{classGPixmap_a0abd12af31f470ba25b752abec2b5d7b}} 
+\index{GPixmap@{GPixmap}!init@{init}}
+\index{init@{init}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&}]{ref,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect,  }\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$}]{ramp = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Resets the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by copying the rectangle \#rect\# of the gray level image \#ref\#. The optional argument \#ramp\# is an array of 256 pixel values used for mapping the gray levels to color values. Setting \#ramp\# to zero selects a linear ramp computed according to the maximal number of gray levels in \#ref\#. \mbox{\Hypertarget{classGPixmap_aef77ebb85882b50eacb5fbd7b19cc5f8}\label{classGPixmap_aef77ebb85882b50eacb5fbd7b19cc5f8}} 
+\index{GPixmap@{GPixmap}!init@{init}}
+\index{init@{init}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&}]{ref }\end{DoxyParamCaption})}
+
+Resets the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by copying the size and the contents of the color image \#ref\#. The previous content of the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} is discarded. \mbox{\Hypertarget{classGPixmap_aadaa2d0c4b6fe5043753cc4a5aa0526a}\label{classGPixmap_aadaa2d0c4b6fe5043753cc4a5aa0526a}} 
+\index{GPixmap@{GPixmap}!init@{init}}
+\index{init@{init}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&}]{ref,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption})}
+
+Resets the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by copying the rectangle \#rect\# of the color image \#ref\#. The previous content of the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} is discarded. \mbox{\Hypertarget{classGPixmap_ab95e4707c0a699c86ad9d1b3483a76dc}\label{classGPixmap_ab95e4707c0a699c86ad9d1b3483a76dc}} 
+\index{GPixmap@{GPixmap}!init@{init}}
+\index{init@{init}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void G\+Pixmap\+::init (\begin{DoxyParamCaption}\item[{int}]{nrows,  }\item[{int}]{ncolumns,  }\item[{const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$}]{filler = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Resets the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} to \#nrows\# rows and \#ncolumns\# columns. When the optional argument \#filler\# is specified, all pixels are initialized with the corresponding color. The previous content of the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} is discarded. \mbox{\Hypertarget{classGPixmap_a03e9702014924cf7d7ba63653e59d975}\label{classGPixmap_a03e9702014924cf7d7ba63653e59d975}} 
+\index{GPixmap@{GPixmap}!operator=@{operator=}}
+\index{operator=@{operator=}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \& G\+Pixmap\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by copying the gray level image \#ref\#. The pixels are initialized with shades of grays copied from \#ref\#. \mbox{\Hypertarget{classGPixmap_a53659d364d01c3e90af77502ea670451}\label{classGPixmap_a53659d364d01c3e90af77502ea670451}} 
+\index{GPixmap@{GPixmap}!operator=@{operator=}}
+\index{operator=@{operator=}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \& G\+Pixmap\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy operator. Resets the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} by copying the size and the contents of the color image \#ref\#. The previous content of the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} is discarded. \mbox{\Hypertarget{classGPixmap_a4e5658ddc3fcf893e08187a354880432}\label{classGPixmap_a4e5658ddc3fcf893e08187a354880432}} 
+\index{GPixmap@{GPixmap}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ G\+Pixmap\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a pointer to the first \mbox{\hyperlink{structGPixel}{G\+Pixel}} in row \#row\#. This pointer can be used as an array to read or write the row elements. \mbox{\Hypertarget{classGPixmap_a90099c0d2e12aa04956b0358882a0f50}\label{classGPixmap_a90099c0d2e12aa04956b0358882a0f50}} 
+\index{GPixmap@{GPixmap}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ G\+Pixmap\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a constant pointer to the first \mbox{\hyperlink{structGPixel}{G\+Pixel}} in row \#row\#. This pointer can be used as an array to read the row elements. \mbox{\Hypertarget{classGPixmap_a2872d0e2065a7b30b1ae54bac4fc2686}\label{classGPixmap_a2872d0e2065a7b30b1ae54bac4fc2686}} 
+\index{GPixmap@{GPixmap}!ordered\_32k\_dither@{ordered\_32k\_dither}}
+\index{ordered\_32k\_dither@{ordered\_32k\_dither}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{ordered\_32k\_dither()}{ordered\_32k\_dither()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::ordered\+\_\+32k\+\_\+dither (\begin{DoxyParamCaption}\item[{int}]{xmin = {\ttfamily 0},  }\item[{int}]{ymin = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Dithers the image to 32768 colors. This function applies an ordered dithering algorithm to reduce the image to 32768 predefined colors. These predefined colors are located on a color cube of 32x32x32 colors\+: the color R\+GB coordinates can only take values in which the three least significant bits are set to \#1\#. This is useful for displaying images with less than 24 bits per pixel. Arguments \#xmin\# and \#ymin\# control the position of the dithering grids. This is useful for dithering tiled images. Arguments \#xmin\# and \#ymin\# must be the position of the bottom left corner of the tile contained in this \mbox{\hyperlink{classGPixmap}{G\+Pixmap}}. Properly setting these arguments eliminates dithering artifacts on the tile boundaries. \mbox{\Hypertarget{classGPixmap_a36939ea9ff461db7d904b3cf9dba4132}\label{classGPixmap_a36939ea9ff461db7d904b3cf9dba4132}} 
+\index{GPixmap@{GPixmap}!ordered\_666\_dither@{ordered\_666\_dither}}
+\index{ordered\_666\_dither@{ordered\_666\_dither}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{ordered\_666\_dither()}{ordered\_666\_dither()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::ordered\+\_\+666\+\_\+dither (\begin{DoxyParamCaption}\item[{int}]{xmin = {\ttfamily 0},  }\item[{int}]{ymin = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Dithers the image to 216 colors. This function applies an ordered dithering algorithm to reduce the image to 216 predefined colors. These predefined colors are located on a color cube of 6x6x6 colors\+: the color R\+GB coordinates can only take the following values\+: \#0\#, \#51\#, \#102\#, \#163\#, \#214\# or \#255\#. This is useful for displaying images on a device supporting a maximum of 256 colors. Arguments \#xmin\# and \#ymin\# control the position of the dithering grids. This is useful for dithering tiled images. Arguments \#xmin\# and \#ymin\# must be the position of the bottom left corner of the tile contained in this \mbox{\hyperlink{classGPixmap}{G\+Pixmap}}. Properly setting these arguments eliminates dithering artifacts on the tile boundaries. \mbox{\Hypertarget{classGPixmap_ae66263e60d0eb2739199bcab63fe88aa}\label{classGPixmap_ae66263e60d0eb2739199bcab63fe88aa}} 
+\index{GPixmap@{GPixmap}!rotate@{rotate}}
+\index{rotate@{rotate}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ G\+Pixmap\+::rotate (\begin{DoxyParamCaption}\item[{int}]{count = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Rotates pixmap by 90, 180 or 270 degrees anticlockwise and returns a new pixmap, input pixmap is not changed. count can be 1, 2, or 3 for 90, 180, 270 degree rotation. It returns the same pixmap if not rotated. \mbox{\Hypertarget{classGPixmap_a02f4e0653928728133f6c5ef2f301e5f}\label{classGPixmap_a02f4e0653928728133f6c5ef2f301e5f}} 
+\index{GPixmap@{GPixmap}!rows@{rows}}
+\index{rows@{rows}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}}
+{\footnotesize\ttfamily unsigned int G\+Pixmap\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of rows (the image height). \mbox{\Hypertarget{classGPixmap_a9e210cf515d15bf192d1957c8e87e762}\label{classGPixmap_a9e210cf515d15bf192d1957c8e87e762}} 
+\index{GPixmap@{GPixmap}!rowsize@{rowsize}}
+\index{rowsize@{rowsize}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{rowsize()}{rowsize()}}
+{\footnotesize\ttfamily unsigned int G\+Pixmap\+::rowsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the length (in pixels) of a row in memory. This number is equal to the difference between pointers to pixels located in the same column in consecutive rows. This difference may be larger than the number of columns in the image. \mbox{\Hypertarget{classGPixmap_a2559404efa55d2c407f1af3eced076a3}\label{classGPixmap_a2559404efa55d2c407f1af3eced076a3}} 
+\index{GPixmap@{GPixmap}!save\_ppm@{save\_ppm}}
+\index{save\_ppm@{save\_ppm}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{save\_ppm()}{save\_ppm()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::save\+\_\+ppm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&}]{bs,  }\item[{int}]{raw = {\ttfamily 1} }\end{DoxyParamCaption}) const}
+
+Saves the image into \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#bs\# using the P\+PM format. Argument \#raw\# selects the {\ttfamily Raw P\+PM\textquotesingle{}\textquotesingle{} (1) or the}Ascii P\+PM\textquotesingle{}\textquotesingle{} (0) format. See \textbackslash{}\+Ref\{P\+NM and R\+LE file formats\} for more information. \mbox{\Hypertarget{classGPixmap_a589ccf1b52ab64350d40c64218cf6d97}\label{classGPixmap_a589ccf1b52ab64350d40c64218cf6d97}} 
+\index{GPixmap@{GPixmap}!stencil@{stencil}}
+\index{stencil@{stencil}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{stencil()}{stencil()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::stencil (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $\ast$}]{bm,  }\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$}]{pm,  }\item[{int}]{pms,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$}]{pmr,  }\item[{double}]{corr,  }\item[{\mbox{\hyperlink{structGPixel}{G\+Pixel}}}]{white }\end{DoxyParamCaption})}
+
+Resample color pixmap and performs color corrected alpha blending. This function conceptually computes an intermediate color image by first upsampling the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \#pm\# by a factor \#pms\+:1\# (see \textbackslash{}\+Ref\{upsample\}), extracting the sub-\/image designated by rectangle \#pmr\# and applying color correction \#corr\# (see \textbackslash{}\+Ref\{color\+\_\+correct\}). This intermediate color image is then blended into this pixel map according to the alpha map \#bm\# (see \textbackslash{}\+Ref\{blend\}). \mbox{\Hypertarget{classGPixmap_a45ffe9ab0aa16143f3ca307dd11dae3b}\label{classGPixmap_a45ffe9ab0aa16143f3ca307dd11dae3b}} 
+\index{GPixmap@{GPixmap}!take\_data@{take\_data}}
+\index{take\_data@{take\_data}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{take\_data()}{take\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGPixel}{G\+Pixel}} $\ast$ G\+Pixmap\+::take\+\_\+data (\begin{DoxyParamCaption}\item[{size\+\_\+t \&}]{offset }\end{DoxyParamCaption})}
+
+Steals the memory buffer of a \mbox{\hyperlink{classGPixmap}{G\+Pixmap}}. This function returns the address of the memory buffer allocated by this \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} object. The offset of the first pixel in the bottom line is written into variable \#offset\#. Other lines can be accessed using pointer arithmetic (see \textbackslash{}\+Ref\{rowsize\}). The \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} object no longer \`{}`owns'\textquotesingle{} the buffer\+: you must explicitly de-\/allocate the buffer using \#operator delete \mbox{[}$\,$\mbox{]}\#. This de-\/allocation should take place after the destruction or the re-\/initialization of the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} object. This function will return a null pointer if the \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} object does not \`{}`own'\textquotesingle{} the buffer in the first place. ~\newline
+ \mbox{\Hypertarget{classGPixmap_ac566650587ac00c29d24778de0c5eb55}\label{classGPixmap_ac566650587ac00c29d24778de0c5eb55}} 
+\index{GPixmap@{GPixmap}!upsample@{upsample}}
+\index{upsample@{upsample}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{upsample()}{upsample()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::upsample (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$}]{src,  }\item[{int}]{factor,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$}]{rect = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Resets this \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} with a oversampled segment of color image \#src\#. This function conceptually rescales image \#src\# by a factor \#factor\+:1\#, and copies rectangle \#rect\# of the oversampled image into the current \mbox{\hyperlink{classGPixmap}{G\+Pixmap}}. The full oversampled image is copied if \#rect\# is a null pointer. Both operations are however performed together for efficiency reasons. Oversampling works by replicating the color of the source pixels into squares of size \#factor\# times \#factor\#. \mbox{\Hypertarget{classGPixmap_a468fdfceabd80e02142d2b01308c4b7d}\label{classGPixmap_a468fdfceabd80e02142d2b01308c4b7d}} 
+\index{GPixmap@{GPixmap}!upsample23@{upsample23}}
+\index{upsample23@{upsample23}!GPixmap@{GPixmap}}
+\doxysubsubsection{\texorpdfstring{upsample23()}{upsample23()}}
+{\footnotesize\ttfamily void G\+Pixmap\+::upsample23 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $\ast$}]{src,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} $\ast$}]{rect = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Resets this \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} with a rescaled segment of \#src\# (zoom 150\%). This function conceptually rescales image \#src\# by a factor \#3\+:2\# and copies rectangle \#rect\# of the rescaled image into the current \mbox{\hyperlink{classGPixmap}{G\+Pixmap}}. The full rescaled image is copied if \#rect\# is a null pointer. Both operations are however performed together for efficiency reasons. This function has been superseded by class \textbackslash{}\+Ref\{\mbox{\hyperlink{classGPixmapScaler}{G\+Pixmap\+Scaler}}\}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Pixmap.\+h\item 
+libdjvu/G\+Pixmap.\+cpp\end{DoxyCompactItemize}

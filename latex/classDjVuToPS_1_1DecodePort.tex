@@ -1,0 +1,70 @@
+\hypertarget{classDjVuToPS_1_1DecodePort}{}\doxysection{Dj\+Vu\+To\+PS\+::Decode\+Port Class Reference}
+\label{classDjVuToPS_1_1DecodePort}\index{DjVuToPS::DecodePort@{DjVuToPS::DecodePort}}
+
+
+Inheritance diagram for Dj\+Vu\+To\+PS\+::Decode\+Port\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classDjVuToPS_1_1DecodePort__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+To\+PS\+::Decode\+Port\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDjVuToPS_1_1DecodePort__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuToPS_1_1DecodePort_a15d42547ded603075664e478cb63af5c}\label{classDjVuToPS_1_1DecodePort_a15d42547ded603075664e478cb63af5c}} 
+virtual void {\bfseries notify\+\_\+file\+\_\+flags\+\_\+changed} (const \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $\ast$, long, long)
+\item 
+virtual void \mbox{\hyperlink{classDjVuToPS_1_1DecodePort_a501ba92e2de9a724c8f62afc5d033e47}{notify\+\_\+decode\+\_\+progress}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$, float)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuToPS_1_1DecodePort_aa97fca9c73488700a60aeae3a3c87742}\label{classDjVuToPS_1_1DecodePort_aa97fca9c73488700a60aeae3a3c87742}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuToPS_1_1DecodePort}{Decode\+Port}} $>$ {\bfseries create} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuToPS_1_1DecodePort_a9d4981e3df07d4b5108fa9f4ccc34e42}\label{classDjVuToPS_1_1DecodePort_a9d4981e3df07d4b5108fa9f4ccc34e42}} 
+\mbox{\hyperlink{classGEvent}{G\+Event}} {\bfseries decode\+\_\+event}
+\item 
+\mbox{\Hypertarget{classDjVuToPS_1_1DecodePort_a45ba41b432ded51e1be7823c0a40fcb8}\label{classDjVuToPS_1_1DecodePort_a45ba41b432ded51e1be7823c0a40fcb8}} 
+bool {\bfseries decode\+\_\+event\+\_\+received}
+\item 
+\mbox{\Hypertarget{classDjVuToPS_1_1DecodePort_af6e4b8771c82ad9ff8cfc458f8b786d5}\label{classDjVuToPS_1_1DecodePort_af6e4b8771c82ad9ff8cfc458f8b786d5}} 
+double {\bfseries decode\+\_\+done}
+\item 
+\mbox{\Hypertarget{classDjVuToPS_1_1DecodePort_aacca302f62d5c8ee17a1588fcbdab3a2}\label{classDjVuToPS_1_1DecodePort_aacca302f62d5c8ee17a1588fcbdab3a2}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} {\bfseries decode\+\_\+page\+\_\+url}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuToPS_1_1DecodePort_a501ba92e2de9a724c8f62afc5d033e47}\label{classDjVuToPS_1_1DecodePort_a501ba92e2de9a724c8f62afc5d033e47}} 
+\index{DjVuToPS::DecodePort@{DjVuToPS::DecodePort}!notify\_decode\_progress@{notify\_decode\_progress}}
+\index{notify\_decode\_progress@{notify\_decode\_progress}!DjVuToPS::DecodePort@{DjVuToPS::DecodePort}}
+\doxysubsubsection{\texorpdfstring{notify\_decode\_progress()}{notify\_decode\_progress()}}
+{\footnotesize\ttfamily void Dj\+Vu\+To\+P\+S\+::\+Decode\+Port\+::notify\+\_\+decode\+\_\+progress (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{float}]{done }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent from time to time while decoding is in progress. The purpose is obvious\+: to provide a way to know how much is done and how long the decoding will continue. Argument \#done\# is a number from 0 to 1 reflecting the progress. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_a6b6c1df8da36e19c0a7799991cd4ea37}{Dj\+Vu\+Port}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+To\+P\+S.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,7 @@
+<map id="GMapArea" name="GMapArea">
+<area shape="rect" id="node1" title=" " alt="" coords="119,80,209,107"/>
+<area shape="rect" id="node3" href="$classGMapOval.html" title=" " alt="" coords="5,155,96,181"/>
+<area shape="rect" id="node4" href="$classGMapPoly.html" title=" " alt="" coords="120,155,208,181"/>
+<area shape="rect" id="node5" href="$classGMapRect.html" title=" " alt="" coords="233,155,322,181"/>
+<area shape="rect" id="node2" href="$classGPEnabled.html" title=" " alt="" coords="118,5,210,32"/>
+</map>

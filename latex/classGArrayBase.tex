@@ -1,0 +1,85 @@
+\hypertarget{classGArrayBase}{}\doxysection{G\+Array\+Base Class Reference}
+\label{classGArrayBase}\index{GArrayBase@{GArrayBase}}
+
+
+Inheritance diagram for G\+Array\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGArrayBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Array\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classGArrayBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGArrayBase_ae35b43190684e8e9cda6cce25e949369}\label{classGArrayBase_ae35b43190684e8e9cda6cce25e949369}} 
+{\bfseries G\+Array\+Base} (const \mbox{\hyperlink{classGArrayBase}{G\+Array\+Base}} \&ref)
+\item 
+\mbox{\Hypertarget{classGArrayBase_ac9bfe595a7ed0069e30804e74ee8c97c}\label{classGArrayBase_ac9bfe595a7ed0069e30804e74ee8c97c}} 
+{\bfseries G\+Array\+Base} (const \mbox{\hyperlink{structGCont_1_1Traits}{Traits}} \&traits)
+\item 
+\mbox{\Hypertarget{classGArrayBase_a1d6985d60d6caec2939f3b6bd5160006}\label{classGArrayBase_a1d6985d60d6caec2939f3b6bd5160006}} 
+{\bfseries G\+Array\+Base} (const \mbox{\hyperlink{structGCont_1_1Traits}{Traits}} \&traits, int lobound, int hibound)
+\item 
+\mbox{\Hypertarget{classGArrayBase_abc4166b74c0302fb2d720509ef0b1921}\label{classGArrayBase_abc4166b74c0302fb2d720509ef0b1921}} 
+\mbox{\hyperlink{classGArrayBase}{G\+Array\+Base}} \& {\bfseries operator=} (const \mbox{\hyperlink{classGArrayBase}{G\+Array\+Base}} \&ga)
+\item 
+\mbox{\Hypertarget{classGArrayBase_a0b85e738f658d897ab3e43c494d27a52}\label{classGArrayBase_a0b85e738f658d897ab3e43c494d27a52}} 
+void {\bfseries empty} ()
+\item 
+\mbox{\Hypertarget{classGArrayBase_a7c752d7298b209e81db4ec91fb07c3a5}\label{classGArrayBase_a7c752d7298b209e81db4ec91fb07c3a5}} 
+void {\bfseries touch} (int n)
+\item 
+\mbox{\Hypertarget{classGArrayBase_a0277832d137aaa06b520269277653f4a}\label{classGArrayBase_a0277832d137aaa06b520269277653f4a}} 
+void {\bfseries resize} (int lobound, int hibound)
+\item 
+\mbox{\Hypertarget{classGArrayBase_a16944988ee9eaace50925f4a0ad2a325}\label{classGArrayBase_a16944988ee9eaace50925f4a0ad2a325}} 
+void {\bfseries shift} (int disp)
+\item 
+\mbox{\Hypertarget{classGArrayBase_a2e695429cf624afb101ba6dcf3b25b5e}\label{classGArrayBase_a2e695429cf624afb101ba6dcf3b25b5e}} 
+void {\bfseries del} (int n, int howmany=1)
+\item 
+\mbox{\Hypertarget{classGArrayBase_aeaaee9e8b80fb9f4262cdbb485b94fee}\label{classGArrayBase_aeaaee9e8b80fb9f4262cdbb485b94fee}} 
+void {\bfseries ins} (int n, const void $\ast$src, int howmany=1)
+\item 
+\mbox{\Hypertarget{classGArrayBase_a01f652bf47c3db09475b987b19798871}\label{classGArrayBase_a01f652bf47c3db09475b987b19798871}} 
+void {\bfseries steal} (\mbox{\hyperlink{classGArrayBase}{G\+Array\+Base}} \&ga)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGArrayBase_ad973a34e914a3709799a3781e6a718e0}\label{classGArrayBase_ad973a34e914a3709799a3781e6a718e0}} 
+const \mbox{\hyperlink{structGCont_1_1Traits}{Traits}} \& {\bfseries traits}
+\item 
+\mbox{\Hypertarget{classGArrayBase_a12b7fa37b7d6abf00eb38a1d974091cf}\label{classGArrayBase_a12b7fa37b7d6abf00eb38a1d974091cf}} 
+void $\ast$ {\bfseries data}
+\item 
+\mbox{\Hypertarget{classGArrayBase_a8b265599a89057cf2856f42cf290304c}\label{classGArrayBase_a8b265599a89057cf2856f42cf290304c}} 
+int {\bfseries minlo}
+\item 
+\mbox{\Hypertarget{classGArrayBase_ad8e04abb078286c766bcc98bbf5b4480}\label{classGArrayBase_ad8e04abb078286c766bcc98bbf5b4480}} 
+int {\bfseries maxhi}
+\item 
+\mbox{\Hypertarget{classGArrayBase_ac12774b3099f55d9de0273e11aa4a48f}\label{classGArrayBase_ac12774b3099f55d9de0273e11aa4a48f}} 
+int {\bfseries lobound}
+\item 
+\mbox{\Hypertarget{classGArrayBase_a4665471d5c41c4a4ff6f0ee68fa38a45}\label{classGArrayBase_a4665471d5c41c4a4ff6f0ee68fa38a45}} 
+int {\bfseries hibound}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Container.\+h\item 
+libdjvu/G\+Container.\+cpp\end{DoxyCompactItemize}

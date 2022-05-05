@@ -1,0 +1,88 @@
+\hypertarget{classGSetBase}{}\doxysection{G\+Set\+Base Class Reference}
+\label{classGSetBase}\index{GSetBase@{GSetBase}}
+
+
+Inheritance diagram for G\+Set\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGSetBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Set\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classGSetBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGSetBase_a0706bfa1e075cc2fd3fc3a41f7648ae1}\label{classGSetBase_a0706bfa1e075cc2fd3fc3a41f7648ae1}} 
+\mbox{\hyperlink{classGSetBase}{G\+Set\+Base}} \& {\bfseries operator=} (const \mbox{\hyperlink{classGSetBase}{G\+Set\+Base}} \&ref)
+\item 
+\mbox{\Hypertarget{classGSetBase_ac7b3b429cf1da7de8a040b5567d5503e}\label{classGSetBase_ac7b3b429cf1da7de8a040b5567d5503e}} 
+\mbox{\hyperlink{classGPosition}{G\+Position}} {\bfseries firstpos} () const
+\item 
+\mbox{\Hypertarget{classGSetBase_abd0418fc63e8f3f6032c2e62a9c4924f}\label{classGSetBase_abd0418fc63e8f3f6032c2e62a9c4924f}} 
+void {\bfseries del} (\mbox{\hyperlink{classGPosition}{G\+Position}} \&pos)
+\item 
+\mbox{\Hypertarget{classGSetBase_a6b39ee4b53c33023ef5ba14637e5030c}\label{classGSetBase_a6b39ee4b53c33023ef5ba14637e5030c}} 
+void {\bfseries empty} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGSetBase_ab8a2ee3da8003f4dc583169ab1eedf56}\label{classGSetBase_ab8a2ee3da8003f4dc583169ab1eedf56}} 
+{\bfseries G\+Set\+Base} (const \mbox{\hyperlink{structGCont_1_1Traits}{Traits}} \&traits)
+\item 
+\mbox{\Hypertarget{classGSetBase_aa23a90fec3492ee1992a01b906bcac58}\label{classGSetBase_aa23a90fec3492ee1992a01b906bcac58}} 
+{\bfseries G\+Set\+Base} (const \mbox{\hyperlink{classGSetBase}{G\+Set\+Base}} \&ref)
+\item 
+\mbox{\Hypertarget{classGSetBase_a3aa1e8f5b510e916bbae6948b852feac}\label{classGSetBase_a3aa1e8f5b510e916bbae6948b852feac}} 
+\mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$ {\bfseries hashnode} (unsigned int hashcode) const
+\item 
+\mbox{\Hypertarget{classGSetBase_aff868dfce6cbadcefb4235753a5c0c29}\label{classGSetBase_aff868dfce6cbadcefb4235753a5c0c29}} 
+\mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$ {\bfseries installnode} (\mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$n)
+\item 
+\mbox{\Hypertarget{classGSetBase_af981e8b4f900eb29d2848ea136052f29}\label{classGSetBase_af981e8b4f900eb29d2848ea136052f29}} 
+void {\bfseries deletenode} (\mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$n)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGSetBase_a2e50a7407d886376f55ea8d2d6201ded}\label{classGSetBase_a2e50a7407d886376f55ea8d2d6201ded}} 
+static G\+C\+O\+NT \mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$ {\bfseries newnode} (const void $\ast$key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGSetBase_a56737768d0cfd21bf907d49493940919}\label{classGSetBase_a56737768d0cfd21bf907d49493940919}} 
+const \mbox{\hyperlink{structGCont_1_1Traits}{Traits}} \& {\bfseries traits}
+\item 
+\mbox{\Hypertarget{classGSetBase_a1ee4fddc8d2130adafcee3d962b0b905}\label{classGSetBase_a1ee4fddc8d2130adafcee3d962b0b905}} 
+int {\bfseries nelems}
+\item 
+\mbox{\Hypertarget{classGSetBase_a739cfa20f8a5301fca9f87d893a22513}\label{classGSetBase_a739cfa20f8a5301fca9f87d893a22513}} 
+int {\bfseries nbuckets}
+\item 
+\mbox{\Hypertarget{classGSetBase_a3dd5a445e49b80e5831c58b5fc0a111e}\label{classGSetBase_a3dd5a445e49b80e5831c58b5fc0a111e}} 
+\mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$$\ast$ {\bfseries table}
+\item 
+\mbox{\Hypertarget{classGSetBase_af57a8585292c87d66b64efadba5b57c9}\label{classGSetBase_af57a8585292c87d66b64efadba5b57c9}} 
+\mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}}$<$ \mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$ $>$ {\bfseries gtable}
+\item 
+\mbox{\Hypertarget{classGSetBase_a73107134eda54603331c5ca883f192be}\label{classGSetBase_a73107134eda54603331c5ca883f192be}} 
+\mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$ {\bfseries first}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Container.\+h\item 
+libdjvu/G\+Container.\+cpp\end{DoxyCompactItemize}

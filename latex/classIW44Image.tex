@@ -1,0 +1,258 @@
+\hypertarget{classIW44Image}{}\doxysection{I\+W44\+Image Class Reference}
+\label{classIW44Image}\index{IW44Image@{IW44Image}}
+
+
+{\ttfamily \#include $<$I\+W44\+Image.\+h$>$}
+
+
+
+Inheritance diagram for I\+W44\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classIW44Image__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for I\+W44\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classIW44Image__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structIW44Image_1_1Alloc}{Alloc}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classIW44Image_ad56895357ab779c7545655da359b6a06}{C\+R\+C\+B\+Mode}} \{ {\bfseries C\+R\+C\+Bnone}, 
+{\bfseries C\+R\+C\+Bhalf}, 
+{\bfseries C\+R\+C\+Bnormal}, 
+{\bfseries C\+R\+C\+Bfull}
+ \}
+\item 
+\mbox{\Hypertarget{classIW44Image_a733f038c099527567f4cbffe80417bf7}\label{classIW44Image_a733f038c099527567f4cbffe80417bf7}} 
+enum {\bfseries Image\+Type} \{ {\bfseries G\+R\+AY} =false, 
+{\bfseries C\+O\+L\+OR} =true
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classIW44Image_ab91294119b090ae23d889b0735242c75}{get\+\_\+width}} (void) const
+\item 
+int \mbox{\hyperlink{classIW44Image_ad62cd49589d9426c4f6342d9ffd7d9c0}{get\+\_\+height}} (void) const
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $>$ \mbox{\hyperlink{classIW44Image_a2c0b853dc86028a5bf471ed4b79ba197}{get\+\_\+bitmap}} (void)
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $>$ \mbox{\hyperlink{classIW44Image_af455c0f3464fe035467b00bd4c2520ee}{get\+\_\+bitmap}} (int subsample, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classIW44Image_a52f673649543c3100c752f23a8a0b869}{get\+\_\+pixmap}} (void)
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classIW44Image_aec84a3e90b3a3aa96815f142adf8c796}{get\+\_\+pixmap}} (int subsample, const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+virtual unsigned int \mbox{\hyperlink{classIW44Image_a636fb89d94fc2189e5fec53f493181bb}{get\+\_\+memory\+\_\+usage}} (void) const =0
+\item 
+virtual int \mbox{\hyperlink{classIW44Image_ac362f92934814951c781c5a9a24a0f5a}{get\+\_\+percent\+\_\+memory}} (void) const =0
+\item 
+virtual int \mbox{\hyperlink{classIW44Image_ac7c2dc316c22f4314a2f37110f968a5f}{encode\+\_\+chunk}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ gbs, const \mbox{\hyperlink{structIWEncoderParms}{I\+W\+Encoder\+Parms}} \&parms)
+\item 
+virtual void \mbox{\hyperlink{classIW44Image_a2994f4218681375f8b7f596ec0f0e4e2}{encode\+\_\+iff}} (\mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}} \&iff, int nchunks, const \mbox{\hyperlink{structIWEncoderParms}{I\+W\+Encoder\+Parms}} $\ast$parms)
+\item 
+virtual int \mbox{\hyperlink{classIW44Image_a3a24576bb5211143a00013709728f28e}{decode\+\_\+chunk}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ gbs)=0
+\item 
+virtual void \mbox{\hyperlink{classIW44Image_ae0b313326055a09d2ee153f2db764d18}{decode\+\_\+iff}} (\mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}} \&iff, int maxchunks=999)=0
+\item 
+virtual void \mbox{\hyperlink{classIW44Image_aa1e89520387b739eb81c7038771220f7}{close\+\_\+codec}} (void)=0
+\item 
+virtual int \mbox{\hyperlink{classIW44Image_a151ae5bd115504f54428a7a210e71fbe}{get\+\_\+serial}} (void)=0
+\item 
+virtual int \mbox{\hyperlink{classIW44Image_aea0e50f5f4f18421240bab9638d9d847}{parm\+\_\+crcbdelay}} (const int parm)
+\item 
+virtual void \mbox{\hyperlink{classIW44Image_a32925cb7fde0fb9f00c8e64865c0a489}{parm\+\_\+dbfrac}} (float frac)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} $>$ \mbox{\hyperlink{classIW44Image_a47b1b1877ebc9cda753faeed4996ce26}{create\+\_\+decode}} (const Image\+Type itype=C\+O\+L\+OR)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} $>$ \mbox{\hyperlink{classIW44Image_abc3632ea5f33c039c8d5df48db76ff2b}{create\+\_\+encode}} (const Image\+Type itype=C\+O\+L\+OR)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} $>$ \mbox{\hyperlink{classIW44Image_a4b7c64b97c6a2f73cbed167dccbb1286}{create\+\_\+encode}} (const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&bm, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $>$ mask=0)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} $>$ \mbox{\hyperlink{classIW44Image_a234fa67f7cee5b7783b18c51db70e682}{create\+\_\+encode}} (const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&bm, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $>$ mask=0, \mbox{\hyperlink{classIW44Image_ad56895357ab779c7545655da359b6a06}{C\+R\+C\+B\+Mode}} crcbmode=C\+R\+C\+Bnormal)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIW44Image_acaac46864fbc5f7f30865be74236a144}\label{classIW44Image_acaac46864fbc5f7f30865be74236a144}} 
+float {\bfseries db\+\_\+frac}
+\item 
+\mbox{\Hypertarget{classIW44Image_a4bdff43cf51a54ae0e8fcf6d77b139e7}\label{classIW44Image_a4bdff43cf51a54ae0e8fcf6d77b139e7}} 
+Map $\ast$ {\bfseries ymap}
+\item 
+\mbox{\Hypertarget{classIW44Image_a4f485890b2b1f12be037133af22274d7}\label{classIW44Image_a4f485890b2b1f12be037133af22274d7}} 
+Map $\ast$ {\bfseries cbmap}
+\item 
+\mbox{\Hypertarget{classIW44Image_a480fb26830d549095ed47a9ae7714922}\label{classIW44Image_a480fb26830d549095ed47a9ae7714922}} 
+Map $\ast$ {\bfseries crmap}
+\item 
+\mbox{\Hypertarget{classIW44Image_ad9581c6c132e224fa2f2eb25a507b4dc}\label{classIW44Image_ad9581c6c132e224fa2f2eb25a507b4dc}} 
+int {\bfseries cslice}
+\item 
+\mbox{\Hypertarget{classIW44Image_ab16be47a55a969502b248f7d1369034d}\label{classIW44Image_ab16be47a55a969502b248f7d1369034d}} 
+int {\bfseries cserial}
+\item 
+\mbox{\Hypertarget{classIW44Image_a0e04023ab10b07c9c695bcb01a7c772f}\label{classIW44Image_a0e04023ab10b07c9c695bcb01a7c772f}} 
+int {\bfseries cbytes}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I\+W44 encoded gray-\/level and color images. This class acts as a base for images represented as a collection of I\+W44 wavelet coefficients. The coefficients are stored in a memory efficient data structure. Member function \textbackslash{}\+Ref\{get\+\_\+bitmap\} renders an arbitrary segment of the image into a \textbackslash{}\+Ref\{\mbox{\hyperlink{classGBitmap}{G\+Bitmap}}\}. Member functions \textbackslash{}\+Ref\{decode\+\_\+iff\} and \textbackslash{}\+Ref\{encode\+\_\+iff\} read and write Dj\+Vu I\+W44 files (see \textbackslash{}\+Ref\{\mbox{\hyperlink{IW44Image_8h_source}{I\+W44\+Image.\+h}}\}). Both the copy constructor and the copy operator are declared as private members. It is therefore not possible to make multiple copies of instances of this class. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classIW44Image_ad56895357ab779c7545655da359b6a06}\label{classIW44Image_ad56895357ab779c7545655da359b6a06}} 
+\index{IW44Image@{IW44Image}!CRCBMode@{CRCBMode}}
+\index{CRCBMode@{CRCBMode}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{CRCBMode}{CRCBMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classIW44Image_ad56895357ab779c7545655da359b6a06}{I\+W44\+Image\+::\+C\+R\+C\+B\+Mode}}}
+
+Chrominance processing selector. The following constants may be used as argument to the following \textbackslash{}\+Ref\{I\+W\+Pixmap\} constructor to indicate how the chrominance information should be processed. There are four possible values\+: \textbackslash{}begin\{description\} \textbackslash{}item\mbox{[}C\+R\+C\+Bnone\+:\mbox{]} The wavelet transform will discard the chrominance information and only keep the luminance. The image will show in shades of gray. \textbackslash{}item\mbox{[}C\+R\+C\+Bhalf\+:\mbox{]} The wavelet transform will process the chrominance at only half the image resolution. This option creates smaller files but may create artifacts in highly colored images. \textbackslash{}item\mbox{[}C\+R\+C\+Bnormal\+:\mbox{]} The wavelet transform will process the chrominance at full resolution. This is the default. \textbackslash{}item\mbox{[}C\+R\+C\+Bfull\+:\mbox{]} The wavelet transform will process the chrominance at full resolution. This option also disables the chrominance encoding delay (see \textbackslash{}\+Ref\{parm\+\_\+crcbdelay\}) which usually reduces the bitrate associated with the chrominance information. \textbackslash{}end\{description\} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIW44Image_aa1e89520387b739eb81c7038771220f7}\label{classIW44Image_aa1e89520387b739eb81c7038771220f7}} 
+\index{IW44Image@{IW44Image}!close\_codec@{close\_codec}}
+\index{close\_codec@{close\_codec}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{close\_codec()}{close\_codec()}}
+{\footnotesize\ttfamily virtual void I\+W44\+Image\+::close\+\_\+codec (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Resets the encoder/decoder state. The first call to \mbox{\hyperlink{classIW44Image_a3a24576bb5211143a00013709728f28e}{decode\+\_\+chunk}}\# or \mbox{\hyperlink{classIW44Image_ac7c2dc316c22f4314a2f37110f968a5f}{encode\+\_\+chunk}}\# initializes the coder for encoding or decoding. Function \mbox{\hyperlink{classIW44Image_aa1e89520387b739eb81c7038771220f7}{close\+\_\+codec}}\# must be called after processing the last chunk in order to reset the coder and release the associated memory. \mbox{\Hypertarget{classIW44Image_a47b1b1877ebc9cda753faeed4996ce26}\label{classIW44Image_a47b1b1877ebc9cda753faeed4996ce26}} 
+\index{IW44Image@{IW44Image}!create\_decode@{create\_decode}}
+\index{create\_decode@{create\_decode}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{create\_decode()}{create\_decode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} $>$ I\+W44\+Image\+::create\+\_\+decode (\begin{DoxyParamCaption}\item[{const Image\+Type}]{itype = {\ttfamily COLOR} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Null constructor. Constructs an empty \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} object. This object does not contain anything meaningful. You must call function \textbackslash{}\+Ref\{init\}, \textbackslash{}\+Ref\{decode\+\_\+iff\} or \textbackslash{}\+Ref\{decode\+\_\+chunk\} to populate the wavelet coefficient data structure. You may not use \textbackslash{}\+Ref\{encode\+\_\+iff\} or \textbackslash{}\+Ref\{encode\+\_\+chunk\}. \mbox{\Hypertarget{classIW44Image_a4b7c64b97c6a2f73cbed167dccbb1286}\label{classIW44Image_a4b7c64b97c6a2f73cbed167dccbb1286}} 
+\index{IW44Image@{IW44Image}!create\_encode@{create\_encode}}
+\index{create\_encode@{create\_encode}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{create\_encode()}{create\_encode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} $>$ I\+W44\+Image\+::create\+\_\+encode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} \&}]{bm,  }\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $>$}]{mask = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes an I\+W\+Bitmap with image \#bm\#. This constructor performs the wavelet decomposition of image \#bm\# and records the corresponding wavelet coefficient. Argument \#mask\# is an optional bilevel image specifying the masked pixels (see \textbackslash{}\+Ref\{\mbox{\hyperlink{IW44Image_8h_source}{I\+W44\+Image.\+h}}\}). \mbox{\Hypertarget{classIW44Image_a234fa67f7cee5b7783b18c51db70e682}\label{classIW44Image_a234fa67f7cee5b7783b18c51db70e682}} 
+\index{IW44Image@{IW44Image}!create\_encode@{create\_encode}}
+\index{create\_encode@{create\_encode}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{create\_encode()}{create\_encode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} $>$ I\+W44\+Image\+::create\+\_\+encode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} \&}]{bm,  }\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} $>$}]{mask = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classIW44Image_ad56895357ab779c7545655da359b6a06}{C\+R\+C\+B\+Mode}}}]{crcbmode = {\ttfamily CRCBnormal} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initializes an I\+W\+Pixmap with color image \#bm\#. This constructor performs the wavelet decomposition of image \#bm\# and records the corresponding wavelet coefficient. Argument \#mask\# is an optional bilevel image specifying the masked pixels (see \textbackslash{}\+Ref\{\mbox{\hyperlink{IW44Image_8h_source}{I\+W44\+Image.\+h}}\}). Argument \#crcbmode\# specifies how the chrominance information should be encoded (see \textbackslash{}\+Ref\{C\+R\+C\+B\+Mode\}). \mbox{\Hypertarget{classIW44Image_abc3632ea5f33c039c8d5df48db76ff2b}\label{classIW44Image_abc3632ea5f33c039c8d5df48db76ff2b}} 
+\index{IW44Image@{IW44Image}!create\_encode@{create\_encode}}
+\index{create\_encode@{create\_encode}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{create\_encode()}{create\_encode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} $>$ I\+W44\+Image\+::create\+\_\+encode (\begin{DoxyParamCaption}\item[{const Image\+Type}]{itype = {\ttfamily COLOR} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Null constructor. Constructs an empty \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} object. This object does not contain anything meaningful. You must call function \textbackslash{}\+Ref\{init\}, \textbackslash{}\+Ref\{decode\+\_\+iff\} or \textbackslash{}\+Ref\{decode\+\_\+chunk\} to populate the wavelet coefficient data structure. You may then use \textbackslash{}\+Ref\{encode\+\_\+iff\} and \textbackslash{}\+Ref\{encode\+\_\+chunk\}. \mbox{\Hypertarget{classIW44Image_a3a24576bb5211143a00013709728f28e}\label{classIW44Image_a3a24576bb5211143a00013709728f28e}} 
+\index{IW44Image@{IW44Image}!decode\_chunk@{decode\_chunk}}
+\index{decode\_chunk@{decode\_chunk}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{decode\_chunk()}{decode\_chunk()}}
+{\footnotesize\ttfamily virtual int I\+W44\+Image\+::decode\+\_\+chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{gbs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Decodes one data chunk from \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#bs\#. Successive calls to \mbox{\hyperlink{classIW44Image_a3a24576bb5211143a00013709728f28e}{decode\+\_\+chunk}}\# decode successive chunks. You must call \mbox{\hyperlink{classIW44Image_aa1e89520387b739eb81c7038771220f7}{close\+\_\+codec}}\# after decoding the last chunk of a file. Note that function \mbox{\hyperlink{classIW44Image_a2c0b853dc86028a5bf471ed4b79ba197}{get\+\_\+bitmap}}\# and \mbox{\hyperlink{classIW44Image_a3a24576bb5211143a00013709728f28e}{decode\+\_\+chunk}}\# may be called simultaneously from two execution threads. \mbox{\Hypertarget{classIW44Image_ae0b313326055a09d2ee153f2db764d18}\label{classIW44Image_ae0b313326055a09d2ee153f2db764d18}} 
+\index{IW44Image@{IW44Image}!decode\_iff@{decode\_iff}}
+\index{decode\_iff@{decode\_iff}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{decode\_iff()}{decode\_iff()}}
+{\footnotesize\ttfamily virtual void I\+W44\+Image\+::decode\+\_\+iff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}} \&}]{iff,  }\item[{int}]{maxchunks = {\ttfamily 999} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function enters a composite chunk (identifier \#\+F\+O\+RM\+:B\+M44\#, or \#\+F\+O\+RM\+:P\+M44\#), and decodes a maximum of \#maxchunks\# data chunks (identifier \#\+B\+M44\#). Data for each chunk is processed using the function \mbox{\hyperlink{classIW44Image_a3a24576bb5211143a00013709728f28e}{decode\+\_\+chunk}}\#. \mbox{\Hypertarget{classIW44Image_ac7c2dc316c22f4314a2f37110f968a5f}\label{classIW44Image_ac7c2dc316c22f4314a2f37110f968a5f}} 
+\index{IW44Image@{IW44Image}!encode\_chunk@{encode\_chunk}}
+\index{encode\_chunk@{encode\_chunk}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{encode\_chunk()}{encode\_chunk()}}
+{\footnotesize\ttfamily int I\+W44\+Image\+::encode\+\_\+chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{gbs,  }\item[{const \mbox{\hyperlink{structIWEncoderParms}{I\+W\+Encoder\+Parms}} \&}]{parms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Encodes one data chunk into \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#bs\#. Parameter \#parms\# controls how much data is generated. The chunk data is written to \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#bs\# with no I\+FF header. Successive calls to \mbox{\hyperlink{classIW44Image_ac7c2dc316c22f4314a2f37110f968a5f}{encode\+\_\+chunk}}\# encode successive chunks. You must call \mbox{\hyperlink{classIW44Image_aa1e89520387b739eb81c7038771220f7}{close\+\_\+codec}}\# after encoding the last chunk of a file. \mbox{\Hypertarget{classIW44Image_a2994f4218681375f8b7f596ec0f0e4e2}\label{classIW44Image_a2994f4218681375f8b7f596ec0f0e4e2}} 
+\index{IW44Image@{IW44Image}!encode\_iff@{encode\_iff}}
+\index{encode\_iff@{encode\_iff}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{encode\_iff()}{encode\_iff()}}
+{\footnotesize\ttfamily void I\+W44\+Image\+::encode\+\_\+iff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}} \&}]{iff,  }\item[{int}]{nchunks,  }\item[{const \mbox{\hyperlink{structIWEncoderParms}{I\+W\+Encoder\+Parms}} $\ast$}]{parms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes a gray level image into Dj\+Vu I\+W44 file. This function creates a composite chunk (identifier \#\+F\+O\+RM\+:B\+M44\# or \#\+F\+O\+RM\+:P\+M44\#) composed of \#nchunks\# chunks (identifier \#\+B\+M44\# or \#\+P\+M44\#). Data for each chunk is generated with \mbox{\hyperlink{classIW44Image_ac7c2dc316c22f4314a2f37110f968a5f}{encode\+\_\+chunk}}\# using the corresponding parameters in array \#parms\#. \mbox{\Hypertarget{classIW44Image_af455c0f3464fe035467b00bd4c2520ee}\label{classIW44Image_af455c0f3464fe035467b00bd4c2520ee}} 
+\index{IW44Image@{IW44Image}!get\_bitmap@{get\_bitmap}}
+\index{get\_bitmap@{get\_bitmap}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{get\_bitmap()}{get\_bitmap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGBitmap}{G\+Bitmap}}$>$ I\+W44\+Image\+::get\+\_\+bitmap (\begin{DoxyParamCaption}\item[{int}]{subsample,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Reconstructs a segment of the image at a given scale. The subsampling ratio \#subsample\# must be a power of two between \#1\# and \#32\#. Argument \#rect\# specifies which segment of the subsampled image should be reconstructed. The reconstructed image is returned as a \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} object whose size is equal to the size of the rectangle \#rect\#. \mbox{\Hypertarget{classIW44Image_a2c0b853dc86028a5bf471ed4b79ba197}\label{classIW44Image_a2c0b853dc86028a5bf471ed4b79ba197}} 
+\index{IW44Image@{IW44Image}!get\_bitmap@{get\_bitmap}}
+\index{get\_bitmap@{get\_bitmap}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{get\_bitmap()}{get\_bitmap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGBitmap}{G\+Bitmap}}$>$ I\+W44\+Image\+::get\+\_\+bitmap (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Reconstructs the complete image. The reconstructed image is then returned as a \mbox{\hyperlink{classGBitmap}{G\+Bitmap}} object. \mbox{\Hypertarget{classIW44Image_ad62cd49589d9426c4f6342d9ffd7d9c0}\label{classIW44Image_ad62cd49589d9426c4f6342d9ffd7d9c0}} 
+\index{IW44Image@{IW44Image}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily int I\+W44\+Image\+::get\+\_\+height (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the height of the I\+W\+Bitmap image. \mbox{\Hypertarget{classIW44Image_a636fb89d94fc2189e5fec53f493181bb}\label{classIW44Image_a636fb89d94fc2189e5fec53f493181bb}} 
+\index{IW44Image@{IW44Image}!get\_memory\_usage@{get\_memory\_usage}}
+\index{get\_memory\_usage@{get\_memory\_usage}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{get\_memory\_usage()}{get\_memory\_usage()}}
+{\footnotesize\ttfamily virtual unsigned int I\+W44\+Image\+::get\+\_\+memory\+\_\+usage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the amount of memory used by the wavelet coefficients. This amount of memory is expressed in bytes. \mbox{\Hypertarget{classIW44Image_ac362f92934814951c781c5a9a24a0f5a}\label{classIW44Image_ac362f92934814951c781c5a9a24a0f5a}} 
+\index{IW44Image@{IW44Image}!get\_percent\_memory@{get\_percent\_memory}}
+\index{get\_percent\_memory@{get\_percent\_memory}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{get\_percent\_memory()}{get\_percent\_memory()}}
+{\footnotesize\ttfamily virtual int I\+W44\+Image\+::get\+\_\+percent\+\_\+memory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the filling ratio of the internal data structure. Wavelet coefficients are stored in a sparse array. This function tells what percentage of bins have been effectively allocated. \mbox{\Hypertarget{classIW44Image_aec84a3e90b3a3aa96815f142adf8c796}\label{classIW44Image_aec84a3e90b3a3aa96815f142adf8c796}} 
+\index{IW44Image@{IW44Image}!get\_pixmap@{get\_pixmap}}
+\index{get\_pixmap@{get\_pixmap}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{get\_pixmap()}{get\_pixmap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGPixmap}{G\+Pixmap}}$>$ I\+W44\+Image\+::get\+\_\+pixmap (\begin{DoxyParamCaption}\item[{int}]{subsample,  }\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Reconstructs a segment of the image at a given scale. The subsampling ratio \#subsample\# must be a power of two between \#1\# and \#32\#. Argument \#rect\# specifies which segment of the subsampled image should be reconstructed. The reconstructed image is returned as a \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} object whose size is equal to the size of the rectangle \#rect\#. \mbox{\Hypertarget{classIW44Image_a52f673649543c3100c752f23a8a0b869}\label{classIW44Image_a52f673649543c3100c752f23a8a0b869}} 
+\index{IW44Image@{IW44Image}!get\_pixmap@{get\_pixmap}}
+\index{get\_pixmap@{get\_pixmap}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{get\_pixmap()}{get\_pixmap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classGPixmap}{G\+Pixmap}}$>$ I\+W44\+Image\+::get\+\_\+pixmap (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Reconstructs the complete image. The reconstructed image is then returned as a \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} object. \mbox{\Hypertarget{classIW44Image_a151ae5bd115504f54428a7a210e71fbe}\label{classIW44Image_a151ae5bd115504f54428a7a210e71fbe}} 
+\index{IW44Image@{IW44Image}!get\_serial@{get\_serial}}
+\index{get\_serial@{get\_serial}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{get\_serial()}{get\_serial()}}
+{\footnotesize\ttfamily virtual int I\+W44\+Image\+::get\+\_\+serial (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the chunk serial number. This function returns the serial number of the last chunk encoded with \mbox{\hyperlink{classIW44Image_ac7c2dc316c22f4314a2f37110f968a5f}{encode\+\_\+chunk}}\# or decoded with \mbox{\hyperlink{classIW44Image_a3a24576bb5211143a00013709728f28e}{decode\+\_\+chunk}}\#. The first chunk always has serial number \#1\#. Successive chunks have increasing serial numbers. Value \#0\# is returned if this function is called before calling \mbox{\hyperlink{classIW44Image_ac7c2dc316c22f4314a2f37110f968a5f}{encode\+\_\+chunk}}\# or \mbox{\hyperlink{classIW44Image_a3a24576bb5211143a00013709728f28e}{decode\+\_\+chunk}}\# or after calling \mbox{\hyperlink{classIW44Image_aa1e89520387b739eb81c7038771220f7}{close\+\_\+codec}}\#. \mbox{\Hypertarget{classIW44Image_ab91294119b090ae23d889b0735242c75}\label{classIW44Image_ab91294119b090ae23d889b0735242c75}} 
+\index{IW44Image@{IW44Image}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}}
+{\footnotesize\ttfamily int I\+W44\+Image\+::get\+\_\+width (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the width of the I\+W\+Bitmap image. \mbox{\Hypertarget{classIW44Image_aea0e50f5f4f18421240bab9638d9d847}\label{classIW44Image_aea0e50f5f4f18421240bab9638d9d847}} 
+\index{IW44Image@{IW44Image}!parm\_crcbdelay@{parm\_crcbdelay}}
+\index{parm\_crcbdelay@{parm\_crcbdelay}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{parm\_crcbdelay()}{parm\_crcbdelay()}}
+{\footnotesize\ttfamily virtual int I\+W44\+Image\+::parm\+\_\+crcbdelay (\begin{DoxyParamCaption}\item[{const int}]{parm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the chrominance delay parameter. This function can be called before encoding the first color I\+W44 data chunk. Parameter \#parm\# is an encoding delay which reduces the bitrate associated with the chrominance information. The default chrominance encoding delay is 10. \mbox{\Hypertarget{classIW44Image_a32925cb7fde0fb9f00c8e64865c0a489}\label{classIW44Image_a32925cb7fde0fb9f00c8e64865c0a489}} 
+\index{IW44Image@{IW44Image}!parm\_dbfrac@{parm\_dbfrac}}
+\index{parm\_dbfrac@{parm\_dbfrac}!IW44Image@{IW44Image}}
+\doxysubsubsection{\texorpdfstring{parm\_dbfrac()}{parm\_dbfrac()}}
+{\footnotesize\ttfamily virtual void I\+W44\+Image\+::parm\+\_\+dbfrac (\begin{DoxyParamCaption}\item[{float}]{frac }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the \#dbfrac\# parameter. This function can be called before encoding the first I\+W44 data chunk. Parameter \#frac\# modifies the decibel estimation algorithm in such a way that the decibel target only pertains to the average error of the fraction \#frac\# of the most misrepresented 32x32 pixel blocks. Setting arguments \#frac\# to \#1.\+0\# restores the normal behavior. ~\newline
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/I\+W44\+Image.\+h\item 
+libdjvu/I\+W44\+Encode\+Codec.\+cpp\item 
+libdjvu/I\+W44\+Image.\+cpp\end{DoxyCompactItemize}

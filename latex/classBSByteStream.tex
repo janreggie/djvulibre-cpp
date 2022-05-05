@@ -1,0 +1,155 @@
+\hypertarget{classBSByteStream}{}\doxysection{B\+S\+Byte\+Stream Class Reference}
+\label{classBSByteStream}\index{BSByteStream@{BSByteStream}}
+
+
+{\ttfamily \#include $<$B\+S\+Byte\+Stream.\+h$>$}
+
+
+
+Inheritance diagram for B\+S\+Byte\+Stream\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBSByteStream__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\+S\+Byte\+Stream\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBSByteStream__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBSByteStream_1_1Decode}{Decode}}
+\item 
+class \mbox{\hyperlink{classBSByteStream_1_1Encode}{Encode}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBSByteStream_a766266abf18393eb5c3a1c9f35b8111d}\label{classBSByteStream_a766266abf18393eb5c3a1c9f35b8111d}} 
+enum \{ {\bfseries M\+I\+N\+B\+L\+O\+CK} =10, 
+{\bfseries M\+A\+X\+B\+L\+O\+CK} =4096
+ \}
+\item 
+\mbox{\Hypertarget{classBSByteStream_a6d8622203f56909a0b9716845be14568}\label{classBSByteStream_a6d8622203f56909a0b9716845be14568}} 
+enum \{ {\bfseries F\+R\+E\+Q\+M\+AX} =4, 
+{\bfseries C\+T\+X\+I\+DS} =3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual long \mbox{\hyperlink{classBSByteStream_a3afd626c4c292d4fae7527cb82f84540}{tell}} (void) const
+\item 
+virtual void \mbox{\hyperlink{classBSByteStream_ab4506bed8f8778ba256a43ae61d62646}{flush}} (void)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classBSByteStream_a4141b958133858910a52f9304d0faa30}{create}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ bs)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classBSByteStream_a9e72bd658d6fb71d34fd2215f4287d1a}{create}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ bs, const int blocksize)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBSByteStream_ac0dffb528913cb55bdb29985a95585d9}\label{classBSByteStream_ac0dffb528913cb55bdb29985a95585d9}} 
+{\bfseries B\+S\+Byte\+Stream} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ bs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBSByteStream_acfd897e06ca4e30c95aeda1cacdb2562}\label{classBSByteStream_acfd897e06ca4e30c95aeda1cacdb2562}} 
+long {\bfseries offset}
+\item 
+\mbox{\Hypertarget{classBSByteStream_aa67fcac0253eed8c1c952128aec3b657}\label{classBSByteStream_aa67fcac0253eed8c1c952128aec3b657}} 
+int {\bfseries bptr}
+\item 
+\mbox{\Hypertarget{classBSByteStream_a37124351d4e69252cb9bcb49674a7a0c}\label{classBSByteStream_a37124351d4e69252cb9bcb49674a7a0c}} 
+unsigned int {\bfseries blocksize}
+\item 
+\mbox{\Hypertarget{classBSByteStream_a5c2137da5fac8de78284c2242e4853c9}\label{classBSByteStream_a5c2137da5fac8de78284c2242e4853c9}} 
+int {\bfseries size}
+\item 
+\mbox{\Hypertarget{classBSByteStream_aad9af678ecb5ce00f4984fabc079e5b3}\label{classBSByteStream_aad9af678ecb5ce00f4984fabc079e5b3}} 
+\mbox{\hyperlink{classByteStream}{Byte\+Stream}} $\ast$ {\bfseries bs}
+\item 
+\mbox{\Hypertarget{classBSByteStream_a76407cfd479d637fb8fecc6e1727a0d9}\label{classBSByteStream_a76407cfd479d637fb8fecc6e1727a0d9}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ {\bfseries gbs}
+\item 
+\mbox{\Hypertarget{classBSByteStream_aecae5f335288da69835a544901b49720}\label{classBSByteStream_aecae5f335288da69835a544901b49720}} 
+unsigned char $\ast$ {\bfseries data}
+\item 
+\mbox{\Hypertarget{classBSByteStream_a3dec98a769998a6a19a88fa09a77d20b}\label{classBSByteStream_a3dec98a769998a6a19a88fa09a77d20b}} 
+\mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}}$<$ unsigned char $>$ {\bfseries gdata}
+\item 
+\mbox{\Hypertarget{classBSByteStream_af73ecca2c3f5236e44e0a7c9657d5107}\label{classBSByteStream_af73ecca2c3f5236e44e0a7c9657d5107}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classZPCodec}{Z\+P\+Codec}} $>$ {\bfseries gzp}
+\item 
+\mbox{\Hypertarget{classBSByteStream_a7dfbf22f78d9e8ca95e727f6f942cdfd}\label{classBSByteStream_a7dfbf22f78d9e8ca95e727f6f942cdfd}} 
+Bit\+Context {\bfseries ctx} \mbox{[}300\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Performs bzz compression/decompression.
+
+\mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}}\# defines a \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\} which transparently performs the B\+ZZ compression/decompression. The constructor of class \textbackslash{}\+Ref\{\mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}}\} takes another \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\} as argument. Any data written to the \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} is compressed and written to this second \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. Any data read from the \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} is internally generated by decompressing data read from the second \mbox{\hyperlink{classByteStream}{Byte\+Stream}}.
+
+Program \textbackslash{}\+Ref\{bzz\} demonstrates how to use this class. All the hard work is achieved by a simple \mbox{\hyperlink{classByteStream}{Byte\+Stream}} to \mbox{\hyperlink{classByteStream}{Byte\+Stream}} copy, as shown below. \textbackslash{}begin\{verbatim\} \mbox{\hyperlink{classGP}{G\+P$<$\+Byte\+Stream$>$}} in=\mbox{\hyperlink{classByteStream_ad479674d935ff53e45613ed922504067}{Byte\+Stream\+::create}}(infile,\char`\"{}rb\char`\"{}); \mbox{\hyperlink{classGP}{G\+P$<$\+Byte\+Stream$>$}} out=\mbox{\hyperlink{classByteStream_ad479674d935ff53e45613ed922504067}{Byte\+Stream\+::create}}(outfile,\char`\"{}wb\char`\"{}); if (encoding) \{ \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} bsb(out, blocksize); bsb.\+copy($\ast$in); \} else \{ \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} bsb(in); out-\/$>$copy(bsb); \} \textbackslash{}end\{verbatim\} Due to the block oriented nature of the Burrows-\/\+Wheeler transform, there is a very significant latency between the data input and the data output. You can use function \mbox{\hyperlink{classBSByteStream_ab4506bed8f8778ba256a43ae61d62646}{flush}}\# to force data output at the expense of compression efficiency.
+
+You should never directly access a \mbox{\hyperlink{classByteStream}{Byte\+Stream}} object connected to a valid \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} object. The \mbox{\hyperlink{classByteStream}{Byte\+Stream}} object can be accessed again after the destruction of the \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} object. Note that the encoder always flushes its internal buffers and writes a few final code bytes when the \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} object is destroyed. Note also that the decoder often reads a few bytes beyond the last code byte written by the encoder. This lag means that you must reposition the \mbox{\hyperlink{classByteStream}{Byte\+Stream}} after the destruction of the \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} object and before re-\/using the \mbox{\hyperlink{classByteStream}{Byte\+Stream}} object (see \textbackslash{}\+Ref\{\mbox{\hyperlink{classIFFByteStream}{I\+F\+F\+Byte\+Stream}}\}.) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBSByteStream_a4141b958133858910a52f9304d0faa30}\label{classBSByteStream_a4141b958133858910a52f9304d0faa30}} 
+\index{BSByteStream@{BSByteStream}!create@{create}}
+\index{create@{create}!BSByteStream@{BSByteStream}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ B\+S\+Byte\+Stream\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{bs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}}. The \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} will be used for decompressing data. \textbackslash{}begin\{description\} \textbackslash{}item\mbox{[}Decompression\mbox{]} The \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} is created and the decompressor initializes. Chunks of data will be read from \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#bs\# and decompressed into an internal buffer. Function \mbox{\hyperlink{classByteStream_ae69bbdbc77545f72488bde0639ae0e95}{read}}\# can be used to access the decompressed data. \textbackslash{}end\{description\} \mbox{\Hypertarget{classBSByteStream_a9e72bd658d6fb71d34fd2215f4287d1a}\label{classBSByteStream_a9e72bd658d6fb71d34fd2215f4287d1a}} 
+\index{BSByteStream@{BSByteStream}!create@{create}}
+\index{create@{create}!BSByteStream@{BSByteStream}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ B\+S\+Byte\+Stream\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{bs,  }\item[{const int}]{blocksize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Constructs a \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}}. The \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} will be used for compressing data. \textbackslash{}begin\{description\} \textbackslash{}item\mbox{[}Compression\mbox{]} Set \#blocksize\# to a positive number smaller than 4096 to initialize the compressor. Data written to the \mbox{\hyperlink{classBSByteStream}{B\+S\+Byte\+Stream}} will be accumulated into an internal buffer. The buffered data will be compressed and written to \mbox{\hyperlink{classByteStream}{Byte\+Stream}} \#bs\# whenever the buffer sizes reaches the maximum value specified by argument \#blocksize\# (in kilobytes). Using a larger block size usually increases the compression ratio at the expense of computation time. There is no need however to specify a block size larger than the total number of bytes to compress. Setting \#blocksize\# to \#1024\# is a good starting point. A minimal block size of 10 is silently enforced. \textbackslash{}end\{description\} \mbox{\Hypertarget{classBSByteStream_ab4506bed8f8778ba256a43ae61d62646}\label{classBSByteStream_ab4506bed8f8778ba256a43ae61d62646}} 
+\index{BSByteStream@{BSByteStream}!flush@{flush}}
+\index{flush@{flush}!BSByteStream@{BSByteStream}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily virtual void B\+S\+Byte\+Stream\+::flush (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Flushes all buffers in the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. Calling this function guarantees that pending data have been actually written (i.\+e. passed to the operating system). \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\# provides a default implementation which does nothing. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_a35993db0bf51666f6f60900d88c41dba}{Byte\+Stream}}.
+
+
+
+Implemented in \mbox{\hyperlink{classBSByteStream_1_1Encode_a0ba8f805838717bb146908ff8aa25dc3}{B\+S\+Byte\+Stream\+::\+Encode}}, and \mbox{\hyperlink{classBSByteStream_1_1Decode_af053edb53f525bafd282cbe0c7cbe9c0}{B\+S\+Byte\+Stream\+::\+Decode}}.
+
+\mbox{\Hypertarget{classBSByteStream_a3afd626c4c292d4fae7527cb82f84540}\label{classBSByteStream_a3afd626c4c292d4fae7527cb82f84540}} 
+\index{BSByteStream@{BSByteStream}!tell@{tell}}
+\index{tell@{tell}!BSByteStream@{BSByteStream}}
+\doxysubsubsection{\texorpdfstring{tell()}{tell()}}
+{\footnotesize\ttfamily long B\+S\+Byte\+Stream\+::tell (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the offset of the current position in the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. This function \{{\itshape must\}} be implemented by each subclass of \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\#. 
+
+Implements \mbox{\hyperlink{classByteStream_a6379ec44f814a160980d2dd5c5e25672}{Byte\+Stream}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/B\+S\+Byte\+Stream.\+h\item 
+libdjvu/B\+S\+Byte\+Stream.\+cpp\item 
+libdjvu/B\+S\+Encode\+Byte\+Stream.\+cpp\end{DoxyCompactItemize}

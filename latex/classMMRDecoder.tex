@@ -1,0 +1,109 @@
+\hypertarget{classMMRDecoder}{}\doxysection{M\+M\+R\+Decoder Class Reference}
+\label{classMMRDecoder}\index{MMRDecoder@{MMRDecoder}}
+
+
+{\ttfamily \#include $<$M\+M\+R\+Decoder.\+h$>$}
+
+
+
+Inheritance diagram for M\+M\+R\+Decoder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classMMRDecoder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for M\+M\+R\+Decoder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classMMRDecoder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMMRDecoder_1_1VLSource}{V\+L\+Source}}
+\item 
+class \mbox{\hyperlink{classMMRDecoder_1_1VLTable}{V\+L\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMMRDecoder_a81d770cdc9b097f9cab97d6956d788ec}\label{classMMRDecoder_a81d770cdc9b097f9cab97d6956d788ec}} 
+\mbox{\hyperlink{classMMRDecoder_a81d770cdc9b097f9cab97d6956d788ec}{$\sim$\+M\+M\+R\+Decoder}} ()
+\begin{DoxyCompactList}\small\item\em Non-\/virtual destructor. \end{DoxyCompactList}\item 
+const unsigned short $\ast$ \mbox{\hyperlink{classMMRDecoder_a0de0efac377c3ff39a968b8f1e2e4919}{scanruns}} (const unsigned short $\ast$$\ast$endptr=0)
+\item 
+const unsigned char $\ast$ \mbox{\hyperlink{classMMRDecoder_adcb6f40f308e92a6359136aeb7cdf833}{scanrle}} (const bool invert, const unsigned char $\ast$$\ast$endptr=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classJB2Image}{J\+B2\+Image}} $>$ \mbox{\hyperlink{classMMRDecoder_a395891afc13382c97688d0a64fab2870}{decode}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ gbs)
+\item 
+\mbox{\Hypertarget{classMMRDecoder_a8ca4294bca01e908c7b804e0ff3a8c0b}\label{classMMRDecoder_a8ca4294bca01e908c7b804e0ff3a8c0b}} 
+static bool \mbox{\hyperlink{classMMRDecoder_a8ca4294bca01e908c7b804e0ff3a8c0b}{decode\+\_\+header}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&inp, int \&width, int \&height, int \&invert)
+\begin{DoxyCompactList}\small\item\em Only decode the header. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classMMRDecoder}{M\+M\+R\+Decoder}} $>$ \mbox{\hyperlink{classMMRDecoder_a094baa09447c2eab7d57fdc4e9b0d6a7}{create}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ gbs, const int width, const int height, const bool striped=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMMRDecoder_a10f92a41fba7e3a895b708666db40415}\label{classMMRDecoder_a10f92a41fba7e3a895b708666db40415}} 
+{\bfseries M\+M\+R\+Decoder} (const int width, const int height)
+\item 
+\mbox{\Hypertarget{classMMRDecoder_abf4e759ff379f637edbe436662828348}\label{classMMRDecoder_abf4e759ff379f637edbe436662828348}} 
+void {\bfseries init} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ gbs, const bool striped=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMMRDecoder_a91a8861ff738e00049b41e32aea0b598}\label{classMMRDecoder_a91a8861ff738e00049b41e32aea0b598}} 
+class {\bfseries V\+L\+Source}
+\item 
+\mbox{\Hypertarget{classMMRDecoder_ad963c2f66a450a0485665e76947309a1}\label{classMMRDecoder_ad963c2f66a450a0485665e76947309a1}} 
+class {\bfseries V\+L\+Table}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{structClass}{Class}} for G4/\+M\+MR decoding. The simplest way to use this class is the static member function \textbackslash{}\+Ref\{\mbox{\hyperlink{classMMRDecoder_a395891afc13382c97688d0a64fab2870}{M\+M\+R\+Decoder\+::decode}}\}. This function internally creates an instance of \mbox{\hyperlink{classMMRDecoder}{M\+M\+R\+Decoder}}\# which processes the M\+MR data scanline by scanline. ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMMRDecoder_a094baa09447c2eab7d57fdc4e9b0d6a7}\label{classMMRDecoder_a094baa09447c2eab7d57fdc4e9b0d6a7}} 
+\index{MMRDecoder@{MMRDecoder}!create@{create}}
+\index{create@{create}!MMRDecoder@{MMRDecoder}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classMMRDecoder}{M\+M\+R\+Decoder}} $>$ M\+M\+R\+Decoder\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{gbs,  }\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{const bool}]{striped = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a \mbox{\hyperlink{classMMRDecoder}{M\+M\+R\+Decoder}} object for decoding an image of size \#width\# by \#height\#. Flag \$striped\# must be set if the image is composed of multiple stripes. \mbox{\Hypertarget{classMMRDecoder_a395891afc13382c97688d0a64fab2870}\label{classMMRDecoder_a395891afc13382c97688d0a64fab2870}} 
+\index{MMRDecoder@{MMRDecoder}!decode@{decode}}
+\index{decode@{decode}!MMRDecoder@{MMRDecoder}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classJB2Image}{J\+B2\+Image}} $>$ M\+M\+R\+Decoder\+::decode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{gbs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Main decoding routine that (a) decodes the header using \mbox{\hyperlink{classMMRDecoder_a8ca4294bca01e908c7b804e0ff3a8c0b}{decode\+\_\+header}}\#, (b) decodes the M\+MR data using an instance of \mbox{\hyperlink{classMMRDecoder}{M\+M\+R\+Decoder}}\#, and returns a new \textbackslash{}\+Ref\{\mbox{\hyperlink{classJB2Image}{J\+B2\+Image}}\} composed of tiles whose maximal width and height is derived from the size of the image. \mbox{\Hypertarget{classMMRDecoder_adcb6f40f308e92a6359136aeb7cdf833}\label{classMMRDecoder_adcb6f40f308e92a6359136aeb7cdf833}} 
+\index{MMRDecoder@{MMRDecoder}!scanrle@{scanrle}}
+\index{scanrle@{scanrle}!MMRDecoder@{MMRDecoder}}
+\doxysubsubsection{\texorpdfstring{scanrle()}{scanrle()}}
+{\footnotesize\ttfamily const unsigned char $\ast$ M\+M\+R\+Decoder\+::scanrle (\begin{DoxyParamCaption}\item[{const bool}]{invert,  }\item[{const unsigned char $\ast$$\ast$}]{endptr = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Decodes a scanline and returns a pointer to R\+LE encoded data. The buffer contains the length of the runs for the current line encoded as described in \textbackslash{}\+Ref\{P\+NM and R\+LE file formats\}.) The flag \#invert\# can be used to indicate that the M\+MR data is encoded in reverse video. The R\+LE data is followed by two zero bytes. The position of these two zeroes is stored in the pointer specified by the optional argument \#endptr\#. The buffer data should be processed before calling this function again. This is implemented by calling \textbackslash{}\+Ref\{\mbox{\hyperlink{classMMRDecoder_a0de0efac377c3ff39a968b8f1e2e4919}{M\+M\+R\+Decoder\+::scanruns}}\}. \mbox{\Hypertarget{classMMRDecoder_a0de0efac377c3ff39a968b8f1e2e4919}\label{classMMRDecoder_a0de0efac377c3ff39a968b8f1e2e4919}} 
+\index{MMRDecoder@{MMRDecoder}!scanruns@{scanruns}}
+\index{scanruns@{scanruns}!MMRDecoder@{MMRDecoder}}
+\doxysubsubsection{\texorpdfstring{scanruns()}{scanruns()}}
+{\footnotesize\ttfamily const unsigned short $\ast$ M\+M\+R\+Decoder\+::scanruns (\begin{DoxyParamCaption}\item[{const unsigned short $\ast$$\ast$}]{endptr = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Decodes a scanline and returns a pointer to an array of run lengths. The returned buffer contains the length of alternative white and black runs. These run lengths sum to the image width. They are followed by two zeroes. The position of these two zeroes is stored in the pointer specified by the optional argument \#endptr\#. The buffer data should be processed before calling this function again. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/M\+M\+R\+Decoder.\+h\item 
+libdjvu/M\+M\+R\+Decoder.\+cpp\end{DoxyCompactItemize}

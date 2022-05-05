@@ -1,0 +1,78 @@
+\hypertarget{classBSByteStream_1_1Encode}{}\doxysection{B\+S\+Byte\+Stream\+::Encode Class Reference}
+\label{classBSByteStream_1_1Encode}\index{BSByteStream::Encode@{BSByteStream::Encode}}
+
+
+Inheritance diagram for B\+S\+Byte\+Stream\+::Encode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classBSByteStream_1_1Encode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for B\+S\+Byte\+Stream\+::Encode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBSByteStream_1_1Encode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBSByteStream_1_1Encode_a0a7912fd4e39e82c225525c21c340794}{Encode}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ bs)
+\item 
+\mbox{\Hypertarget{classBSByteStream_1_1Encode_afe09ca0a4126b482d9366be32fc0e0ec}\label{classBSByteStream_1_1Encode_afe09ca0a4126b482d9366be32fc0e0ec}} 
+void {\bfseries init} (const int encoding)
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classBSByteStream_1_1Encode_a5c0043a6ee547295e0823f42c6a115ca}{write}} (const void $\ast$buffer, size\+\_\+t sz)
+\item 
+virtual void \mbox{\hyperlink{classBSByteStream_1_1Encode_a0ba8f805838717bb146908ff8aa25dc3}{flush}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBSByteStream_1_1Encode_aa0120dbfab7ef4604d866bd1f8a36d52}\label{classBSByteStream_1_1Encode_aa0120dbfab7ef4604d866bd1f8a36d52}} 
+unsigned int {\bfseries encode} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBSByteStream_1_1Encode_a0a7912fd4e39e82c225525c21c340794}\label{classBSByteStream_1_1Encode_a0a7912fd4e39e82c225525c21c340794}} 
+\index{BSByteStream::Encode@{BSByteStream::Encode}!Encode@{Encode}}
+\index{Encode@{Encode}!BSByteStream::Encode@{BSByteStream::Encode}}
+\doxysubsubsection{\texorpdfstring{Encode()}{Encode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBSByteStream_1_1Encode}{B\+S\+Byte\+Stream\+::\+Encode\+::\+Encode}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$}]{bs }\end{DoxyParamCaption})}
+
+Creates a Static object for allocating the memory area of length \#sz\# starting at address \#buffer\#. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBSByteStream_1_1Encode_a0ba8f805838717bb146908ff8aa25dc3}\label{classBSByteStream_1_1Encode_a0ba8f805838717bb146908ff8aa25dc3}} 
+\index{BSByteStream::Encode@{BSByteStream::Encode}!flush@{flush}}
+\index{flush@{flush}!BSByteStream::Encode@{BSByteStream::Encode}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily void B\+S\+Byte\+Stream\+::\+Encode\+::flush (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Flushes all buffers in the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. Calling this function guarantees that pending data have been actually written (i.\+e. passed to the operating system). \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\# provides a default implementation which does nothing. 
+
+Implements \mbox{\hyperlink{classBSByteStream_ab4506bed8f8778ba256a43ae61d62646}{B\+S\+Byte\+Stream}}.
+
+\mbox{\Hypertarget{classBSByteStream_1_1Encode_a5c0043a6ee547295e0823f42c6a115ca}\label{classBSByteStream_1_1Encode_a5c0043a6ee547295e0823f42c6a115ca}} 
+\index{BSByteStream::Encode@{BSByteStream::Encode}!write@{write}}
+\index{write@{write}!BSByteStream::Encode@{BSByteStream::Encode}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily size\+\_\+t B\+S\+Byte\+Stream\+::\+Encode\+::write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes data to a \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. This function \{{\itshape must\}} be implemented by each subclass of \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\#. At most \#size\# bytes from buffer \#buffer\# are written to the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. Function \mbox{\hyperlink{classBSByteStream_1_1Encode_a5c0043a6ee547295e0823f42c6a115ca}{write}}\# returns immediately if \#size\# is zero. The actual number of bytes written is returned. Function \mbox{\hyperlink{classBSByteStream_1_1Encode_a5c0043a6ee547295e0823f42c6a115ca}{write}}\# may also return a value greater than zero but smaller than \#size\# for internal reasons. Programs must be ready to handle these cases or use function \textbackslash{}\+Ref\{writall\}. Exception \textbackslash{}\+Ref\{\mbox{\hyperlink{classGException}{G\+Exception}}\} is thrown with a plain text error message whenever an error occurs. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_ac10e950d655e5dabb93af44e3a5da855}{Byte\+Stream}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/B\+S\+Encode\+Byte\+Stream.\+cpp\end{DoxyCompactItemize}

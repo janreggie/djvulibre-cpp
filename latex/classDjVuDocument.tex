@@ -1,0 +1,801 @@
+\hypertarget{classDjVuDocument}{}\doxysection{Dj\+Vu\+Document Class Reference}
+\label{classDjVuDocument}\index{DjVuDocument@{DjVuDocument}}
+
+
+{\ttfamily \#include $<$Dj\+Vu\+Document.\+h$>$}
+
+
+
+Inheritance diagram for Dj\+Vu\+Document\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classDjVuDocument__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+Document\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDjVuDocument__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDjVuDocument_1_1ThumbReq}{Thumb\+Req}}
+\item 
+class \mbox{\hyperlink{classDjVuDocument_1_1UnnamedFile}{Unnamed\+File}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classDjVuDocument_ae6e9c59b80b51617283d9d912dda401a}{D\+O\+C\+\_\+\+F\+L\+A\+GS}} \{ \newline
+{\bfseries D\+O\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+K\+N\+O\+WN} =1, 
+{\bfseries D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN} =2, 
+{\bfseries D\+O\+C\+\_\+\+N\+D\+I\+R\+\_\+\+K\+N\+O\+WN} =4, 
+{\bfseries D\+O\+C\+\_\+\+I\+N\+I\+T\+\_\+\+OK} =8, 
+\newline
+{\bfseries D\+O\+C\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+ED} =16
+ \}
+\item 
+enum \mbox{\hyperlink{classDjVuDocument_a7a16ee1376474be88e45505a3d17f5fa}{D\+O\+C\+\_\+\+T\+Y\+PE}} \{ \newline
+{\bfseries O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED} =1, 
+{\bfseries O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED}, 
+{\bfseries B\+U\+N\+D\+L\+ED}, 
+{\bfseries I\+N\+D\+I\+R\+E\+CT}, 
+\newline
+{\bfseries S\+I\+N\+G\+L\+E\+\_\+\+P\+A\+GE}, 
+{\bfseries U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+PE}
+ \}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_afedfdf314863065f67ef4efaa7147722}\label{classDjVuDocument_afedfdf314863065f67ef4efaa7147722}} 
+enum {\bfseries T\+H\+R\+E\+A\+D\+\_\+\+F\+L\+A\+GS} \{ {\bfseries S\+T\+A\+R\+T\+ED} =1, 
+{\bfseries F\+I\+N\+I\+S\+H\+ED} =2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a1a4464e4034d6be34ca0473f8dd8cc8a}\label{classDjVuDocument_a1a4464e4034d6be34ca0473f8dd8cc8a}} 
+virtual \mbox{\hyperlink{classDjVuDocument_a1a4464e4034d6be34ca0473f8dd8cc8a}{$\sim$\+Dj\+Vu\+Document}} (void)
+\begin{DoxyCompactList}\small\item\em Virtual Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDjVuDocument_af0725484fdb470903de22e463dddc559}{start\+\_\+init}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$ port=0, \mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$cache=0)
+\item 
+void \mbox{\hyperlink{classDjVuDocument_ab5a47f4f26043b2375d77287a91a7e53}{stop\+\_\+init}} (void)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_aa4a8430259f73fa512f98b8c48894ea4}\label{classDjVuDocument_aa4a8430259f73fa512f98b8c48894ea4}} 
+\mbox{\hyperlink{classGList}{G\+List}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} $>$ \mbox{\hyperlink{classDjVuDocument_aa4a8430259f73fa512f98b8c48894ea4}{get\+\_\+id\+\_\+list}} (void)
+\begin{DoxyCompactList}\small\item\em Returns a listing of id\textquotesingle{}s used by this document. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuDocument_a6250e54df8b640a081bf48fe51b33883}\label{classDjVuDocument_a6250e54df8b640a081bf48fe51b33883}} 
+void \mbox{\hyperlink{classDjVuDocument_a6250e54df8b640a081bf48fe51b33883}{map\+\_\+ids}} (\mbox{\hyperlink{classGMap}{G\+Map}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, void $\ast$ $>$ \&map)
+\begin{DoxyCompactList}\small\item\em Fill the id\textquotesingle{}s into a \mbox{\hyperlink{classGMap}{G\+Map}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Accessing pages}\par
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classDjVuDocument_a935fe87ca93e07352662f6a4a96dfaad}{get\+\_\+pages\+\_\+num}} (void) const
+\item 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} \mbox{\hyperlink{classDjVuDocument_a11ff0d3f1a6fcd62104b977bdc876cbe}{page\+\_\+to\+\_\+url}} (int page\+\_\+num) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a2575a844815f796d3f2e53c4f7b4a176}\label{classDjVuDocument_a2575a844815f796d3f2e53c4f7b4a176}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuDocument_a2575a844815f796d3f2e53c4f7b4a176}{page\+\_\+to\+\_\+id}} (int page\+\_\+num) const
+\begin{DoxyCompactList}\small\item\em Tranlate the page number to id... \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDjVuDocument_a5177efe524d7e426e14fc20501b07293}{url\+\_\+to\+\_\+page}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a324a7203ca5dd18b5db4d8e8f610a1b3}\label{classDjVuDocument_a324a7203ca5dd18b5db4d8e8f610a1b3}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuDocument_a324a7203ca5dd18b5db4d8e8f610a1b3}{url\+\_\+to\+\_\+id}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url) const
+\begin{DoxyCompactList}\small\item\em Map the specified url to it\textquotesingle{}s id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} \mbox{\hyperlink{classDjVuDocument_a70658cf0e588892f2a4072d94e920e21}{id\+\_\+to\+\_\+url}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_adf348b56838330516be1dbb1dcbd360f}\label{classDjVuDocument_adf348b56838330516be1dbb1dcbd360f}} 
+int \mbox{\hyperlink{classDjVuDocument_adf348b56838330516be1dbb1dcbd360f}{id\+\_\+to\+\_\+page}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id) const
+\begin{DoxyCompactList}\small\item\em Find out which page this id is... \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$ \mbox{\hyperlink{classDjVuDocument_a6aa69bcd92f5459cf118c165fc870589}{get\+\_\+page}} (int page\+\_\+num, bool sync=true, \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$port=0) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a34e2d538cc92e3cd2d17d46cbc5b79b6}\label{classDjVuDocument_a34e2d538cc92e3cd2d17d46cbc5b79b6}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$ {\bfseries get\+\_\+page} (int page\+\_\+num, bool sync=true, \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$port=0)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$ \mbox{\hyperlink{classDjVuDocument_a4b04b9cd32bdb1b56bdb3952d55543dc}{get\+\_\+page}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id, bool sync=true, \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$port=0)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \mbox{\hyperlink{classDjVuDocument_a4329389c6c36e86c8081a74fbffbbc73}{get\+\_\+djvu\+\_\+file}} (int page\+\_\+num, bool dont\+\_\+create=false) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a2c4609b5bed49ef0e8bd99ba09e4462d}\label{classDjVuDocument_a2c4609b5bed49ef0e8bd99ba09e4462d}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ {\bfseries get\+\_\+djvu\+\_\+file} (int page\+\_\+num, bool dont\+\_\+create=false)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \mbox{\hyperlink{classDjVuDocument_a713fdd179ae493e3bbff65afcd2e0ab7}{get\+\_\+djvu\+\_\+file}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id, bool dont\+\_\+create=false)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ab394d7e3394cc0c4206575f5902410ab}\label{classDjVuDocument_ab394d7e3394cc0c4206575f5902410ab}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ {\bfseries get\+\_\+djvu\+\_\+file} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, bool dont\+\_\+create=false)
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuDocument_a05a77ebb3ba6590c40afcc160c3e5ab6}{get\+\_\+thumbnail}} (int page\+\_\+num, bool dont\+\_\+decode)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a21c3cbe5fff5b6d4a38eedb763af6cd0}\label{classDjVuDocument_a21c3cbe5fff5b6d4a38eedb763af6cd0}} 
+float {\bfseries get\+\_\+thumbnails\+\_\+gamma} (void) const
+\item 
+bool \mbox{\hyperlink{classDjVuDocument_abcbe712ea2e65081b33db2409104428f}{wait\+\_\+for\+\_\+complete\+\_\+init}} (void)
+\item 
+int \mbox{\hyperlink{classDjVuDocument_a8241ef226c6b7e86c1f513132333dcd4}{wait\+\_\+get\+\_\+pages\+\_\+num}} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_add280aecbe484a5f5f9e8c490d00f677}\label{classDjVuDocument_add280aecbe484a5f5f9e8c490d00f677}} 
+\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$ \mbox{\hyperlink{classDjVuDocument_add280aecbe484a5f5f9e8c490d00f677}{get\+\_\+cache}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns cache being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ \mbox{\hyperlink{classDjVuDocument_a16ec7d73a1fd69f96a3d17526ac328f7}{create\+\_\+noinit}} (void)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ \mbox{\hyperlink{classDjVuDocument_ab36ff99276129092a1b384a26e6e2027}{create\+\_\+wait}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$ xport=0, \mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$const xcache=0)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ \mbox{\hyperlink{classDjVuDocument_a540f19cd4f1ef5da22c3bfc4d9b064a8}{create}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ pool, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$ xport=0, \mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$const xcache=0)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ \mbox{\hyperlink{classDjVuDocument_a8a3b83ff8acb9355d6bc5755ec80f9dd}{create}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&bs, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$ xport=0, \mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$const xcache=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDjVuDocument_a88324a79318218c99bbdefcad06a457b}{Dj\+Vu\+Document}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Dj\+Vu\+Document.\+h}
+\label{_amgrp8123d030a8247805d06dd8566cf3a4f0}%
+Files \#\char`\"{}\+Dj\+Vu\+Document.\+h\char`\"{}\# and \#\char`\"{}\+Dj\+Vu\+Document.\+cpp\char`\"{}\# contain implementation of the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} class -\/ the ideal tool for opening, decoding and saving Dj\+Vu single page and multi page documents.
+
+@memo Dj\+Vu document class. \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDjVuDocument_a463440276e898dfb35d371a03f13b920}{init}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$ port=0, \mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$cache=0)
+\item 
+bool \mbox{\hyperlink{classDjVuDocument_ad4b3df16746eb9b449d2130349b7d38a}{is\+\_\+init\+\_\+complete}} (void) const
+\item 
+bool \mbox{\hyperlink{classDjVuDocument_a81de9c4440fb4994e22f3b9edd1a2cda}{is\+\_\+init\+\_\+ok}} (void) const
+\item 
+void \mbox{\hyperlink{classDjVuDocument_a6cf0fc657c2d5239c7c2a39f25a2c9f9}{set\+\_\+needs\+\_\+compression}} (void)
+\item 
+bool \mbox{\hyperlink{classDjVuDocument_a44cedf199c42c93212519bffb865f35d}{needs\+\_\+compression}} (void) const
+\item 
+bool \mbox{\hyperlink{classDjVuDocument_ae64525ee632801e66ac98fca83db2000}{needs\+\_\+rename}} (void) const
+\item 
+bool \mbox{\hyperlink{classDjVuDocument_abf9720d1e53c776c8f743ed3218da1d3}{can\+\_\+compress}} (void) const
+\item 
+bool \mbox{\hyperlink{classDjVuDocument_af68c4ebb2664840052ef8c697698d71e}{is\+\_\+init\+\_\+failed}} (void) const
+\item 
+int \mbox{\hyperlink{classDjVuDocument_abeaa7adb929282cc7e5a413e0a487001}{get\+\_\+doc\+\_\+type}} (void) const
+\item 
+long \mbox{\hyperlink{classDjVuDocument_a2a9bcb80345d1c13cbf0deb2e018dd83}{get\+\_\+doc\+\_\+flags}} (void) const
+\item 
+bool \mbox{\hyperlink{classDjVuDocument_aa610d38dfb44221ab1d5cc075330f216}{is\+\_\+bundled}} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a24fa467428cc69abed6ca05ae50ec722}\label{classDjVuDocument_a24fa467428cc69abed6ca05ae50ec722}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} \mbox{\hyperlink{classDjVuDocument_a24fa467428cc69abed6ca05ae50ec722}{get\+\_\+init\+\_\+url}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the U\+RL passed to the \textbackslash{}\+Ref\{init\}() function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuDocument_ac86eafe693438dc818dd29b3d87ff9d1}{get\+\_\+init\+\_\+data\+\_\+pool}} (void) const
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ \mbox{\hyperlink{classDjVuDocument_a0b8c0c9f4ae43bd54a0b01fd05e4c022}{create}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$ xport=0, \mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$const xcache=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Saving document to disk}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ad64aae4f93988fa94e27b3acfc6a3135}\label{classDjVuDocument_ad64aae4f93988fa94e27b3acfc6a3135}} 
+static void($\ast$ {\bfseries djvu\+\_\+import\+\_\+codec} )(\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&pool, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, bool \&\mbox{\hyperlink{classDjVuDocument_a44cedf199c42c93212519bffb865f35d}{needs\+\_\+compression}}, bool \&\mbox{\hyperlink{classDjVuDocument_ae64525ee632801e66ac98fca83db2000}{needs\+\_\+rename}})
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a63121a3792519fef03f35a8693591429}\label{classDjVuDocument_a63121a3792519fef03f35a8693591429}} 
+static void($\ast$ {\bfseries djvu\+\_\+compress\+\_\+codec} )(\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&bs, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&where, bool bundled)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_af8e384711142a8d5c705f14b2dca995b}\label{classDjVuDocument_af8e384711142a8d5c705f14b2dca995b}} 
+static const float {\bfseries thumb\+\_\+gamma} =(float)2.\+20
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ae510003e203bbd00337f1f62ea4072cc}\label{classDjVuDocument_ae510003e203bbd00337f1f62ea4072cc}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} {\bfseries init\+\_\+url}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a445cea29527f316819e2cb3a7fc1e4ae}\label{classDjVuDocument_a445cea29527f316819e2cb3a7fc1e4ae}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ {\bfseries init\+\_\+data\+\_\+pool}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a5f64ca1ca2c70bc92d9d015b6e6ded79}\label{classDjVuDocument_a5f64ca1ca2c70bc92d9d015b6e6ded79}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}} $>$ {\bfseries djvm\+\_\+dir}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a5327db1f7641131d6b9bdafbea8f81fa}\label{classDjVuDocument_a5327db1f7641131d6b9bdafbea8f81fa}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmNav}{Dj\+Vm\+Nav}} $>$ {\bfseries djvm\+\_\+nav}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a4991fe68157046706d8030b75a509ca1}\label{classDjVuDocument_a4991fe68157046706d8030b75a509ca1}} 
+int {\bfseries doc\+\_\+type}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ac319c3449e59fbe1038eb09cf8465420}\label{classDjVuDocument_ac319c3449e59fbe1038eb09cf8465420}} 
+bool {\bfseries needs\+\_\+compression\+\_\+flag}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_adc292071f0a8a7d73e62e23ac01e372b}\label{classDjVuDocument_adc292071f0a8a7d73e62e23ac01e372b}} 
+bool {\bfseries can\+\_\+compress\+\_\+flag}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_abb2e190724ae31051c88b85fc8967b06}\label{classDjVuDocument_abb2e190724ae31051c88b85fc8967b06}} 
+bool {\bfseries needs\+\_\+rename\+\_\+flag}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a24ab35a038c3dc4a4d8bde70a7e6b610}\label{classDjVuDocument_a24ab35a038c3dc4a4d8bde70a7e6b610}} 
+bool {\bfseries has\+\_\+url\+\_\+names}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a969e894a5b1c027eb85860d06290b85e}\label{classDjVuDocument_a969e894a5b1c027eb85860d06290b85e}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries url\+\_\+names\+\_\+lock}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a8ac045f9530634384d806b6eb117a175}\label{classDjVuDocument_a8ac045f9530634384d806b6eb117a175}} 
+\mbox{\hyperlink{classGList}{G\+List}}$<$ \mbox{\hyperlink{classGURL}{G\+U\+RL}} $>$ {\bfseries url\+\_\+names}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a20ea13e2f81dd6f3dac23c72326ecad5}\label{classDjVuDocument_a20ea13e2f81dd6f3dac23c72326ecad5}} 
+\mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Error\+Recovery\+Action}} {\bfseries recover\+\_\+errors}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ab7e00133686e313b4595a630cd4bcbd2}\label{classDjVuDocument_ab7e00133686e313b4595a630cd4bcbd2}} 
+bool {\bfseries verbose\+\_\+eof}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a56d8bce5496a6c641d2bd5e71aa020da}\label{classDjVuDocument_a56d8bce5496a6c641d2bd5e71aa020da}} 
+bool {\bfseries init\+\_\+started}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a3f5201aac37b69cf7b11e8cdcec8f161}\label{classDjVuDocument_a3f5201aac37b69cf7b11e8cdcec8f161}} 
+\mbox{\hyperlink{classGSafeFlags}{G\+Safe\+Flags}} {\bfseries flags}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a554e06a852e3af8f39e86771c634f86f}\label{classDjVuDocument_a554e06a852e3af8f39e86771c634f86f}} 
+\mbox{\hyperlink{classGSafeFlags}{G\+Safe\+Flags}} {\bfseries init\+\_\+thread\+\_\+flags}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a2d18713870ff48ac29ea82e1442571af}\label{classDjVuDocument_a2d18713870ff48ac29ea82e1442571af}} 
+\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$ {\bfseries cache}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a3d01dea2581ee29cc90081414bfa1491}\label{classDjVuDocument_a3d01dea2581ee29cc90081414bfa1491}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuSimplePort}{Dj\+Vu\+Simple\+Port}} $>$ {\bfseries simple\+\_\+port}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ac76354d60869b006cfe0469a4fda1483}\label{classDjVuDocument_ac76354d60869b006cfe0469a4fda1483}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDir0}{Dj\+Vm\+Dir0}} $>$ {\bfseries djvm\+\_\+dir0}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a9bc4e571ac18f551e9920352dc327118}\label{classDjVuDocument_a9bc4e571ac18f551e9920352dc327118}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}} $>$ {\bfseries ndir}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a9596e778089be01d99fcf7682231818b}\label{classDjVuDocument_a9596e778089be01d99fcf7682231818b}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} {\bfseries first\+\_\+page\+\_\+name}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_af3f2f663a79e02cfb3ad5609e882dd7c}\label{classDjVuDocument_af3f2f663a79e02cfb3ad5609e882dd7c}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ {\bfseries ndir\+\_\+file}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ad8cc0f51951dca05239a9f99a002b902}\label{classDjVuDocument_ad8cc0f51951dca05239a9f99a002b902}} 
+\mbox{\hyperlink{classGPList}{G\+P\+List}}$<$ \mbox{\hyperlink{classDjVuDocument_1_1UnnamedFile}{Unnamed\+File}} $>$ {\bfseries ufiles\+\_\+list}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ac8d6bbc6b292413a80c0b728e5951a9b}\label{classDjVuDocument_ac8d6bbc6b292413a80c0b728e5951a9b}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries ufiles\+\_\+lock}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_adba4555e5b7b64e2d55764617f20916f}\label{classDjVuDocument_adba4555e5b7b64e2d55764617f20916f}} 
+\mbox{\hyperlink{classGPList}{G\+P\+List}}$<$ \mbox{\hyperlink{classDjVuDocument_1_1ThumbReq}{Thumb\+Req}} $>$ {\bfseries threqs\+\_\+list}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_aab7f8c0b5ce5aa3dc3576981a298ca20}\label{classDjVuDocument_aab7f8c0b5ce5aa3dc3576981a298ca20}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries threqs\+\_\+lock}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a32e092585cb8c12538c18164bf316415}\label{classDjVuDocument_a32e092585cb8c12538c18164bf316415}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ {\bfseries init\+\_\+life\+\_\+saver}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_aa7930e0fbbdd72074fedcc6eb6960629}\label{classDjVuDocument_aa7930e0fbbdd72074fedcc6eb6960629}} 
+\mbox{\hyperlink{classGThread}{G\+Thread}} {\bfseries init\+\_\+thr}
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a48d71f4cd9a8c43ed5e1815ce99922f6}\label{classDjVuDocument_a48d71f4cd9a8c43ed5e1815ce99922f6}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ {\bfseries url\+\_\+to\+\_\+file} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, bool dont\+\_\+create=false) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ad4e646a3086da9319ce94cc35e898b06}\label{classDjVuDocument_ad4e646a3086da9319ce94cc35e898b06}} 
+void {\bfseries init\+\_\+thread} (void)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_afc499d5834d09d9503acfdc2c53eccfa}\label{classDjVuDocument_afc499d5834d09d9503acfdc2c53eccfa}} 
+void {\bfseries check} () const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_aa88f4e8d2ac4a34cc39fe7814567bd01}\label{classDjVuDocument_aa88f4e8d2ac4a34cc39fe7814567bd01}} 
+void {\bfseries process\+\_\+threqs} (void)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a43676f1baf789b56756d7862a58df220}\label{classDjVuDocument_a43676f1baf789b56756d7862a58df220}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument_1_1ThumbReq}{Thumb\+Req}} $>$ {\bfseries add\+\_\+thumb\+\_\+req} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument_1_1ThumbReq}{Thumb\+Req}} $>$ \&thumb\+\_\+req)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a1899757e20574fcac0c320b96e3d5378}\label{classDjVuDocument_a1899757e20574fcac0c320b96e3d5378}} 
+void {\bfseries add\+\_\+to\+\_\+cache} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \&f)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_af53224794e524ceb94fddb40d74bcc88}\label{classDjVuDocument_af53224794e524ceb94fddb40d74bcc88}} 
+void {\bfseries check\+\_\+unnamed\+\_\+files} (void)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_ae356a954694a9f16c7bdba5fa84e4967}\label{classDjVuDocument_ae356a954694a9f16c7bdba5fa84e4967}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} {\bfseries get\+\_\+int\+\_\+prefix} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a0e700398eb5f9aa2b995fff7f21efffd}\label{classDjVuDocument_a0e700398eb5f9aa2b995fff7f21efffd}} 
+void {\bfseries set\+\_\+file\+\_\+aliases} (const \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $\ast$file)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a7bf4e8050a92ecb1daa03ec8d7d4eb0b}\label{classDjVuDocument_a7bf4e8050a92ecb1daa03ec8d7d4eb0b}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} {\bfseries invent\+\_\+url} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name) const
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDoc}{Dj\+Vm\+Doc}} $>$ \mbox{\hyperlink{classDjVuDocument_a11793b2e1e69fbff6631a4bfdaf4e5ff}{get\+\_\+djvm\+\_\+doc}} (void)
+\item 
+virtual void \mbox{\hyperlink{classDjVuDocument_a83d0b0e54f455500f8b88774591a359e}{write}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&str, bool force\+\_\+djvm=false)
+\item 
+virtual void \mbox{\hyperlink{classDjVuDocument_abd4cd79ee7c7971ed590ea035aa48061}{write}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&str, const \mbox{\hyperlink{classGMap}{G\+Map}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, void $\ast$ $>$ \&reserved)
+\item 
+void \mbox{\hyperlink{classDjVuDocument_ab1f30abb986d0d2aa1f008a2e4f1514d}{expand}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&codebase, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&idx\+\_\+name)
+\item 
+virtual void \mbox{\hyperlink{classDjVuDocument_af24cfa661e3b5a8664edafd31e9d614f}{save\+\_\+as}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&where, bool bundled=0)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}} $>$ \mbox{\hyperlink{classDjVuDocument_ab20e7f5095be0dafff4720d684d5175a}{get\+\_\+djvm\+\_\+dir}} (void) const
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmNav}{Dj\+Vm\+Nav}} $>$ \mbox{\hyperlink{classDjVuDocument_a7c5032a05fc9ecb18690b174021aade6}{get\+\_\+djvm\+\_\+nav}} (void) const
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDir0}{Dj\+Vm\+Dir0}} $>$ \mbox{\hyperlink{classDjVuDocument_af51747ef600d57b7c8e11d8494fe3843}{get\+\_\+djvm\+\_\+dir0}} (void) const
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}} $>$ \mbox{\hyperlink{classDjVuDocument_aa6408e980c0813d21e3ce6b0bebcf724}{get\+\_\+nav\+\_\+dir}} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a7bab7ab130b4a0350013ca9df2734b87}\label{classDjVuDocument_a7bab7ab130b4a0350013ca9df2734b87}} 
+void \mbox{\hyperlink{classDjVuDocument_a7bab7ab130b4a0350013ca9df2734b87}{write\+Dj\+Vu\+X\+ML}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&gstr\+\_\+out, int flags, int page=-\/1) const
+\begin{DoxyCompactList}\small\item\em Create a complete Dj\+Vu\+X\+ML file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuDocument_a3e45f0cc79c6d835d65852cbc1d98a60}\label{classDjVuDocument_a3e45f0cc79c6d835d65852cbc1d98a60}} 
+virtual bool \mbox{\hyperlink{classDjVuDocument_a3e45f0cc79c6d835d65852cbc1d98a60}{inherits}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&class\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Returns T\+R\+UE if \#class\+\_\+name\# is \#\char`\"{}\+Dj\+Vu\+Document\char`\"{}\# or \#\char`\"{}\+Dj\+Vu\+Port\char`\"{}\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuDocument_a747b5f621f7040ab29bd6e6974f3a4e8}\label{classDjVuDocument_a747b5f621f7040ab29bd6e6974f3a4e8}} 
+virtual \mbox{\hyperlink{classGURL}{G\+U\+RL}} \mbox{\hyperlink{classDjVuDocument_a747b5f621f7040ab29bd6e6974f3a4e8}{id\+\_\+to\+\_\+url}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id)
+\begin{DoxyCompactList}\small\item\em Converts the specified id to a U\+RL. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \mbox{\hyperlink{classDjVuDocument_a1e6b82e70e14fb096b11ae9cb5fcc4fe}{id\+\_\+to\+\_\+file}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id)
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuDocument_aacdeef00678b80fad8dd6a61e4786eb9}{request\+\_\+data}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_afcaf3bdea8739a6517e9988f65556714}\label{classDjVuDocument_afcaf3bdea8739a6517e9988f65556714}} 
+virtual void {\bfseries notify\+\_\+file\+\_\+flags\+\_\+changed} (const \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $\ast$source, long set\+\_\+mask, long clr\+\_\+mask)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_adafdac848bffe27f84299241fdb3c424}\label{classDjVuDocument_adafdac848bffe27f84299241fdb3c424}} 
+virtual \mbox{\hyperlink{classGList}{G\+List}}$<$ \mbox{\hyperlink{classGURL}{G\+U\+RL}} $>$ {\bfseries get\+\_\+url\+\_\+names} (void)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a8afa2f958d29afa7ead6d9cabaac95c0}\label{classDjVuDocument_a8afa2f958d29afa7ead6d9cabaac95c0}} 
+virtual void {\bfseries set\+\_\+recover\+\_\+errors} (\mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Error\+Recovery\+Action}}=A\+B\+O\+RT)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a7af29a490e733aa6e98e61f4b4dbacae}\label{classDjVuDocument_a7af29a490e733aa6e98e61f4b4dbacae}} 
+virtual void {\bfseries set\+\_\+verbose\+\_\+eof} (bool=true)
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a9b33aaec3f0ad820a4d9441b227046b4}\label{classDjVuDocument_a9b33aaec3f0ad820a4d9441b227046b4}} 
+static void {\bfseries set\+\_\+compress\+\_\+codec} (void($\ast$codec)(\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&where, bool bundled))
+\item 
+\mbox{\Hypertarget{classDjVuDocument_a16760b2d5a01d01664b1b582cba25368}\label{classDjVuDocument_a16760b2d5a01d01664b1b582cba25368}} 
+static void {\bfseries set\+\_\+import\+\_\+codec} (void($\ast$codec)(\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, bool \&, bool \&))
+\item 
+\mbox{\Hypertarget{classDjVuDocument_afe455b52db2c1d0f22a9af656b79b893}\label{classDjVuDocument_afe455b52db2c1d0f22a9af656b79b893}} 
+static void {\bfseries static\+\_\+init\+\_\+thread} (void $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# provides convenient interface for opening, decoding and saving back Dj\+Vu documents in single page and multi page formats.
+
+\{\textbackslash{}bf Input formats\} It can read multi page Dj\+Vu documents in either of the 4 formats\+: 2 obsolete (\{{\itshape old} bundled\} and \{{\itshape old} indexed\}) and two new (\{{\itshape new} bundled\} and \{{\itshape new} indirect\}).
+
+\{\textbackslash{}bf Output formats\} To encourage users to switch to the new formats, the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# can save documents back only in the new formats\+: \{{\itshape bundled\}} and \{{\itshape indirect\}}.
+
+\{\textbackslash{}bf Conversion.\} Since \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# can open Dj\+Vu documents in an obsolete format and save it in any of the two new formats (\{{\itshape new} bundled\} and \{{\itshape new} indirect\}), this class can be used for conversion from obsolete formats to the new ones. Although it can also do conversion between the new two formats, it\textquotesingle{}s not the best way to do it. Please refer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDoc}{Dj\+Vm\+Doc}}\} for details.
+
+\{\textbackslash{}bf Decoding.\} \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# provides convenient interface for obtaining \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} corresponding to any page of the document. It uses \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}}\} to do caching thus avoiding unnecessary multiple decoding of the same page. The real decoding though is accomplished by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\}.
+
+\{\textbackslash{}bf Messenging.\} Being derived from \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}, \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# takes an active part in exchanging messages (requests and notifications) between different parties involved in decoding. It reports (relays) errors, progress information and even handles some requests for data (when these requests deal with local files).
+
+Typical usage of \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# class in a threadless command line program would be the following\+: \textbackslash{}begin\{verbatim\} static const char file\+\_\+name\mbox{[}\mbox{]}=\char`\"{}/tmp/document.\+djvu\char`\"{}; \mbox{\hyperlink{classGP}{G\+P$<$\+Dj\+Vu\+Document$>$}} doc=Dj\+Vu\+Document\+::create\+\_\+wait(file\+\_\+name); const int pages=doc-\/$>$\mbox{\hyperlink{classDjVuDocument_a935fe87ca93e07352662f6a4a96dfaad}{get\+\_\+pages\+\_\+num()}}; for(int page=0;page$<$pages;page++) \{ \mbox{\hyperlink{classGP}{G\+P$<$\+Dj\+Vu\+Image$>$}} dimg=doc-\/$>$get\+\_\+page(page); Do something \}; \textbackslash{}end\{verbatim\}
+
+\{\textbackslash{}bf \mbox{\hyperlink{classComments}{Comments}} for the code above\} \textbackslash{}begin\{enumerate\} \textbackslash{}item Since the document is assumed to be stored on the hard drive, we don\textquotesingle{}t have to cope with \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}s and can pass \#\+Z\+E\+RO\# pointer to the \textbackslash{}\+Ref\{init\}() function. \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# can access local data itself. In the case of a plugin though, one would have to implement his own \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}, which would handle requests for data arising when the document is being decoded. \textbackslash{}item In a threaded program instead of calling the \textbackslash{}\+Ref\{init\}() function one can call \textbackslash{}\+Ref\{start\+\_\+init\}() and \textbackslash{}\+Ref\{stop\+\_\+init\}() to initiate and interrupt initialization carried out in another thread. This possibility of initializing the document in another thread has been added specially for the plugin because the initialization itself requires data, which is not immediately available in the plugin. Thus, to prevent the main thread from blocking, we perform initialization in a separate thread. To check if the class is completely and successfully initialized, use \textbackslash{}\+Ref\{is\+\_\+init\+\_\+ok\}(). To see if there was an error, use \textbackslash{}\+Ref\{is\+\_\+init\+\_\+failed\}(). To know when initialization is over (whether successfully or not), use \textbackslash{}\+Ref\{is\+\_\+init\+\_\+complete\}(). To wait for this to happen use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}(). Once again, all these things are not required for single-\/threaded program.
+
+Another difference between single-\/threaded and multi-\/threaded environments is that in a single-\/threaded program, the image is fully decoded before it\textquotesingle{}s returned. In a multi-\/threaded application decoding starts in a separate thread, and the pointer to the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} being decoded is returned immediately. This has been done to enable progressive redisplay in the Dj\+Vu plugin. Use communication mechanism provided by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\} to learn about progress of decoding. Or try \#dimg-\/$>$wait\+\_\+for\+\_\+complete\+\_\+decode()\# to wait until the decoding ends. \textbackslash{}item See Also\+: \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\}, \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\}, \textbackslash{}\+Ref\{\mbox{\hyperlink{classGOS}{G\+OS}}\}. \textbackslash{}end\{enumerate\}
+
+\{\textbackslash{}bf Initialization\} As mentioned above, the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# can go through several stages of initialization. The functionality is gradually added while it passes one stage after another\+: \textbackslash{}begin\{enumerate\} \textbackslash{}item First of all, immediately after the object is created \textbackslash{}\+Ref\{init\}() or \textbackslash{}\+Ref\{start\+\_\+init\}() functions must be called. \{\textbackslash{}bf Nothing\} will work until this is done. \textbackslash{}\+Ref\{init\}() function will not return until the initialization is complete. You need to make sure, that enough data is available. \{\textbackslash{}bf Do not call \textbackslash{}\+Ref\{init\}() in the plugin\}. \textbackslash{}\+Ref\{start\+\_\+init\}() will start initialization in another thread. Use \textbackslash{}\+Ref\{stop\+\_\+init\}() to interrupt it. Use \textbackslash{}\+Ref\{is\+\_\+init\+\_\+complete\}() to check the initialization progress. Use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}() to wait for init to finish. \textbackslash{}item The first thing the initializing code learns about the document is its type (\#\+B\+U\+N\+D\+L\+ED\#, \#\+I\+N\+D\+I\+R\+E\+CT\#, \#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# or \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\#). As soon as it happens, document flags are changed and \mbox{\hyperlink{classDjVuPort_aa522666df6f9c65ffc8d161602f0fc2b}{notify\+\_\+doc\+\_\+flags\+\_\+changed()}}\# request is sent through the communication mechanism provided by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\}. \textbackslash{}item After the document type becomes known, the initializing code proceeds with learning the document structure. Gradually the flags are updated with values\+: \textbackslash{}begin\{itemize\} \textbackslash{}item \#\+D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN\#\+: Contents of the document became known. This is meaningful for \#\+B\+U\+N\+D\+L\+ED\#, \#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# and \#\+I\+N\+D\+I\+R\+E\+CT\# documents only. \textbackslash{}item \#\+D\+O\+C\+\_\+\+N\+D\+I\+R\+\_\+\+K\+N\+O\+WN\#\+: Contents of the document navigation directory became known. This is meaningful for old-\/style documents (\#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# and \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\#) only \textbackslash{}item \#\+D\+O\+C\+\_\+\+I\+N\+I\+T\+\_\+\+OK\# or \#\+D\+O\+C\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+ED\#\+: The initializating code finished. \textbackslash{}end\{itemize\} \textbackslash{}end\{enumerate\} 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDjVuDocument_ae6e9c59b80b51617283d9d912dda401a}\label{classDjVuDocument_ae6e9c59b80b51617283d9d912dda401a}} 
+\index{DjVuDocument@{DjVuDocument}!DOC\_FLAGS@{DOC\_FLAGS}}
+\index{DOC\_FLAGS@{DOC\_FLAGS}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{DOC\_FLAGS}{DOC\_FLAGS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDjVuDocument_ae6e9c59b80b51617283d9d912dda401a}{Dj\+Vu\+Document\+::\+D\+O\+C\+\_\+\+F\+L\+A\+GS}}}
+
+Flags describing the document initialization state. \textbackslash{}begin\{itemize\} \textbackslash{}item \#\+D\+O\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+K\+N\+O\+WN\#\+: The type of the document has been learnt. \textbackslash{}item \#\+D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN\#\+: Contents of the document became known. This is meaningful for \#\+B\+U\+N\+D\+L\+ED\#, \#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# and \#\+I\+N\+D\+I\+R\+E\+CT\# documents only. \textbackslash{}item \#\+D\+O\+C\+\_\+\+N\+D\+I\+R\+\_\+\+K\+N\+O\+WN\#\+: Contents of the document navigation directory became known. This is meaningful for old-\/style documents (\#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# and \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\#) only \textbackslash{}item \#\+D\+O\+C\+\_\+\+I\+N\+I\+T\+\_\+\+OK\#\+: The initialization has completed successfully. \textbackslash{}item \#\+D\+O\+C\+\_\+\+I\+N\+I\+T\+\_\+\+F\+A\+I\+L\+ED\#\+: The initialization failed. \textbackslash{}end\{itemize\} \mbox{\Hypertarget{classDjVuDocument_a7a16ee1376474be88e45505a3d17f5fa}\label{classDjVuDocument_a7a16ee1376474be88e45505a3d17f5fa}} 
+\index{DjVuDocument@{DjVuDocument}!DOC\_TYPE@{DOC\_TYPE}}
+\index{DOC\_TYPE@{DOC\_TYPE}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{DOC\_TYPE}{DOC\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDjVuDocument_a7a16ee1376474be88e45505a3d17f5fa}{Dj\+Vu\+Document\+::\+D\+O\+C\+\_\+\+T\+Y\+PE}}}
+
+Specifies the format of \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\#. There are currently 4 Dj\+Vu multipage formats recognized by the library. Two of them are obsolete and should not be used. \textbackslash{}begin\{enumerate\} \textbackslash{}item \#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# -\/ Obsolete bundled format \textbackslash{}item \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\# -\/ Obsolete multipage format where every page is stored in a separate file and \char`\"{}includes\char`\"{} (by means of an \#\+I\+N\+CL\# chunk) the file with the document directory. \textbackslash{}item \#\+S\+I\+N\+G\+L\+E\+\_\+\+P\+A\+GE\# -\/ Single page document. Basically a file with either \#\+F\+O\+RM\+:D\+J\+VU\# or \#\+F\+O\+RM\+:I\+W44\# and no multipage information. For example, \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\# documents with document directory do not qualify even if they contain only one page. \textbackslash{}item \#\+B\+U\+N\+D\+L\+ED\# -\/ Currently supported bundled format \textbackslash{}item \#\+I\+N\+D\+I\+R\+E\+CT\# -\/ Currently supported \char`\"{}expanded\char`\"{} format, where every page and component is stored in a separate file. There is also a \{{\itshape top-\/level\}} file with the document directory. \textbackslash{}end\{enumerate\} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDjVuDocument_a88324a79318218c99bbdefcad06a457b}\label{classDjVuDocument_a88324a79318218c99bbdefcad06a457b}} 
+\index{DjVuDocument@{DjVuDocument}!DjVuDocument@{DjVuDocument}}
+\index{DjVuDocument@{DjVuDocument}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{DjVuDocument()}{DjVuDocument()}}
+{\footnotesize\ttfamily Dj\+Vu\+Document\+::\+Dj\+Vu\+Document (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Default creator. Please call functions \textbackslash{}\+Ref\{init\}() or \textbackslash{}\+Ref\{start\+\_\+init\}() before you start working with the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\#. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuDocument_abf9720d1e53c776c8f743ed3218da1d3}\label{classDjVuDocument_abf9720d1e53c776c8f743ed3218da1d3}} 
+\index{DjVuDocument@{DjVuDocument}!can\_compress@{can\_compress}}
+\index{can\_compress@{can\_compress}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{can\_compress()}{can\_compress()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Document\+::can\+\_\+compress (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# if this file must be renamed before saving. \mbox{\Hypertarget{classDjVuDocument_a8a3b83ff8acb9355d6bc5755ec80f9dd}\label{classDjVuDocument_a8a3b83ff8acb9355d6bc5755ec80f9dd}} 
+\index{DjVuDocument@{DjVuDocument}!create@{create}}
+\index{create@{create}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ Dj\+Vu\+Document\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{bs,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$}]{xport = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$const}]{xcache = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a version of \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} which has begun initializing. \mbox{\Hypertarget{classDjVuDocument_a0b8c0c9f4ae43bd54a0b01fd05e4c022}\label{classDjVuDocument_a0b8c0c9f4ae43bd54a0b01fd05e4c022}} 
+\index{DjVuDocument@{DjVuDocument}!create@{create}}
+\index{create@{create}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ Dj\+Vu\+Document\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$}]{xport = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$const}]{xcache = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Create a version of \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} which has begun initializing. \mbox{\Hypertarget{classDjVuDocument_a540f19cd4f1ef5da22c3bfc4d9b064a8}\label{classDjVuDocument_a540f19cd4f1ef5da22c3bfc4d9b064a8}} 
+\index{DjVuDocument@{DjVuDocument}!create@{create}}
+\index{create@{create}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ Dj\+Vu\+Document\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$}]{pool,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$}]{xport = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$const}]{xcache = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a version of \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} which has begun initializing. \mbox{\Hypertarget{classDjVuDocument_a16ec7d73a1fd69f96a3d17526ac328f7}\label{classDjVuDocument_a16ec7d73a1fd69f96a3d17526ac328f7}} 
+\index{DjVuDocument@{DjVuDocument}!create\_noinit@{create\_noinit}}
+\index{create\_noinit@{create\_noinit}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{create\_noinit()}{create\_noinit()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classGP}{GP}}$<$\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}$>$ Dj\+Vu\+Document\+::create\+\_\+noinit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+This creates a \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} without initializing it. \mbox{\Hypertarget{classDjVuDocument_ab36ff99276129092a1b384a26e6e2027}\label{classDjVuDocument_ab36ff99276129092a1b384a26e6e2027}} 
+\index{DjVuDocument@{DjVuDocument}!create\_wait@{create\_wait}}
+\index{create\_wait@{create\_wait}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{create\_wait()}{create\_wait()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} $>$ Dj\+Vu\+Document\+::create\+\_\+wait (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$}]{xport = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$const}]{xcache = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a version of \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}} which has finished initializing. \mbox{\Hypertarget{classDjVuDocument_ab1f30abb986d0d2aa1f008a2e4f1514d}\label{classDjVuDocument_ab1f30abb986d0d2aa1f008a2e4f1514d}} 
+\index{DjVuDocument@{DjVuDocument}!expand@{expand}}
+\index{expand@{expand}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{expand()}{expand()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Document\+::expand (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{codebase,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{idx\+\_\+name }\end{DoxyParamCaption})}
+
+Saves the document in the \{{\itshape new} indirect\} format when every page and component are stored in separate files. This format is ideal for web publishing because it allows direct access to any page and component. In addition to it, a top-\/level file containing the list of all components will be created. To view the document later in the plugin or in the viewer one should load the top-\/level file.
+
+\{\textbackslash{}bf Plugin Warning\}. This function will read contents of the whole document. Thus, if you call it from the main thread (the thread, which transfers data from Netscape), the plugin will block.
+
+
+\begin{DoxyParams}{Parameters}
+{\em codebase} & -\/ Name of the directory which the document should be expanded into. \\
+\hline
+{\em idx\+\_\+name} & -\/ Name of the top-\/level file containing the document directory (basically, list of all files composing the document). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuDocument_ab20e7f5095be0dafff4720d684d5175a}\label{classDjVuDocument_ab20e7f5095be0dafff4720d684d5175a}} 
+\index{DjVuDocument@{DjVuDocument}!get\_djvm\_dir@{get\_djvm\_dir}}
+\index{get\_djvm\_dir@{get\_djvm\_dir}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_djvm\_dir()}{get\_djvm\_dir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}} $>$ Dj\+Vu\+Document\+::get\+\_\+djvm\+\_\+dir (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns pointer to the internal directory of the document, if it is in one of the new formats\+: \#\+B\+U\+N\+D\+L\+ED\# or \#\+I\+N\+D\+I\+R\+E\+CT\#. Otherwise (if the format of the input document is obsolete), \#\+Z\+E\+RO\# is returned.
+
+\#\+Z\+E\+RO\# will also be returned if the initializing thread has not learnt enough information about the document (\#\+D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# has not been set yet). Check \textbackslash{}\+Ref\{is\+\_\+init\+\_\+complete\}() and \textbackslash{}\+Ref\{init\}() for details. \mbox{\Hypertarget{classDjVuDocument_af51747ef600d57b7c8e11d8494fe3843}\label{classDjVuDocument_af51747ef600d57b7c8e11d8494fe3843}} 
+\index{DjVuDocument@{DjVuDocument}!get\_djvm\_dir0@{get\_djvm\_dir0}}
+\index{get\_djvm\_dir0@{get\_djvm\_dir0}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_djvm\_dir0()}{get\_djvm\_dir0()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDir0}{Dj\+Vm\+Dir0}} $>$ Dj\+Vu\+Document\+::get\+\_\+djvm\+\_\+dir0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns pointer to the internal directory of the document, if it is in obsolete \#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# format.
+
+\#\+Z\+E\+RO\# will also be returned if the initializing thread has not learnt enough information about the document (\#\+D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# has not been set yet). Check \textbackslash{}\+Ref\{is\+\_\+init\+\_\+complete\}() and \textbackslash{}\+Ref\{init\}() for details. \mbox{\Hypertarget{classDjVuDocument_a11793b2e1e69fbff6631a4bfdaf4e5ff}\label{classDjVuDocument_a11793b2e1e69fbff6631a4bfdaf4e5ff}} 
+\index{DjVuDocument@{DjVuDocument}!get\_djvm\_doc@{get\_djvm\_doc}}
+\index{get\_djvm\_doc@{get\_djvm\_doc}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_djvm\_doc()}{get\_djvm\_doc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmDoc}{Dj\+Vm\+Doc}} $>$ Dj\+Vu\+Document\+::get\+\_\+djvm\+\_\+doc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns pointer to the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDoc}{Dj\+Vm\+Doc}}\} class, which can save the document contents on the hard disk in one of the two new formats\+: \{{\itshape bundled\}} and \{{\itshape indirect\}}. You may also want to look at \textbackslash{}\+Ref\{write\}() and \textbackslash{}\+Ref\{expand\}() if you are interested in how to save the document.
+
+\{\textbackslash{}bf Plugin Warning\}. This function will read contents of the whole document. Thus, if you call it from the main thread (the thread, which transfers data from Netscape), the plugin will block. \mbox{\Hypertarget{classDjVuDocument_a7c5032a05fc9ecb18690b174021aade6}\label{classDjVuDocument_a7c5032a05fc9ecb18690b174021aade6}} 
+\index{DjVuDocument@{DjVuDocument}!get\_djvm\_nav@{get\_djvm\_nav}}
+\index{get\_djvm\_nav@{get\_djvm\_nav}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_djvm\_nav()}{get\_djvm\_nav()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVmNav}{Dj\+Vm\+Nav}} $>$ Dj\+Vu\+Document\+::get\+\_\+djvm\+\_\+nav (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns pointer to the document bookmarks. This applies to \#\+B\+U\+N\+D\+L\+ED\# and \#\+I\+N\+D\+I\+R\+E\+CT\# documents.
+
+\#\+Z\+E\+RO\# will also be returned if the initializing thread has not learnt enough information about the document (\#\+D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# has not been set yet). Check \textbackslash{}\+Ref\{is\+\_\+init\+\_\+complete\}() and \textbackslash{}\+Ref\{init\}() for details. \mbox{\Hypertarget{classDjVuDocument_a713fdd179ae493e3bbff65afcd2e0ab7}\label{classDjVuDocument_a713fdd179ae493e3bbff65afcd2e0ab7}} 
+\index{DjVuDocument@{DjVuDocument}!get\_djvu\_file@{get\_djvu\_file}}
+\index{get\_djvu\_file@{get\_djvu\_file}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_djvu\_file()}{get\_djvu\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ Dj\+Vu\+Document\+::get\+\_\+djvu\+\_\+file (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id,  }\item[{bool}]{dont\+\_\+create = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Returns \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} corresponding to the specified ID. This function behaves exactly as the \mbox{\hyperlink{classDjVuDocument_a4329389c6c36e86c8081a74fbffbbc73}{get\+\_\+djvu\+\_\+file()}}\# function above. The only thing worth mentioning here is how the \#\+ID\# parameter is treated. \begin{DoxyVerb}First off, \Ref{id_to_url}() is called.  If not successfull,
+\end{DoxyVerb}
+ the function checks, if the ID contains a number. If so, it just calls the \mbox{\hyperlink{classDjVuDocument_a4329389c6c36e86c8081a74fbffbbc73}{get\+\_\+djvu\+\_\+file()}}\# function above. If ID is \#\+Z\+E\+RO\# or just empty, page number \#-\/1\# is assumed.
+
+If \#dont\+\_\+create\# is \#\+F\+A\+L\+SE\# the function will return the file only if it already exists. \mbox{\Hypertarget{classDjVuDocument_a4329389c6c36e86c8081a74fbffbbc73}\label{classDjVuDocument_a4329389c6c36e86c8081a74fbffbbc73}} 
+\index{DjVuDocument@{DjVuDocument}!get\_djvu\_file@{get\_djvu\_file}}
+\index{get\_djvu\_file@{get\_djvu\_file}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_djvu\_file()}{get\_djvu\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ Dj\+Vu\+Document\+::get\+\_\+djvu\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num,  }\item[{bool}]{dont\+\_\+create = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+Returns \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} corresponding to the specified page. Normally it translates the page number to the U\+RL using \textbackslash{}\+Ref\{page\+\_\+to\+\_\+url\}() and then creates \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} initializing it with data from the U\+RL.
+
+The behavior becomes different, though in the case when the document structure is unknown at the moment this function is called. In this situations it invents a temporary U\+RL, creates a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\}, initializes it with this U\+RL and returns immediately. The caller may start decoding the file right away (if necessary). The decoding will block but will automatically continue as soon as enough information is collected about the document. This trick should be quite transparent to the user and helps to prevent the main thread from blocking. The decoding will unblock and this function will stop using this \char`\"{}trick\char`\"{} as soon as \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# passes some given stages of initialization and \textbackslash{}\+Ref\{page\+\_\+to\+\_\+url\}(), \textbackslash{}\+Ref\{id\+\_\+to\+\_\+url\}() functions start working properly.
+
+If \#dont\+\_\+create\# is \#\+F\+A\+L\+SE\# the function will return the file only if it already exists.
+
+\{\textbackslash{}bf Note\+:\} To wait for the initialization to complete use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}(). For single threaded applications the initialization completes before the \textbackslash{}\+Ref\{init\}() function returns. \mbox{\Hypertarget{classDjVuDocument_a2a9bcb80345d1c13cbf0deb2e018dd83}\label{classDjVuDocument_a2a9bcb80345d1c13cbf0deb2e018dd83}} 
+\index{DjVuDocument@{DjVuDocument}!get\_doc\_flags@{get\_doc\_flags}}
+\index{get\_doc\_flags@{get\_doc\_flags}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_doc\_flags()}{get\_doc\_flags()}}
+{\footnotesize\ttfamily long Dj\+Vu\+Document\+::get\+\_\+doc\+\_\+flags (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the document flags. The flags describe the degree in which the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# object is initialized. Every time the flags are changed, a \mbox{\hyperlink{classDjVuPort_aa522666df6f9c65ffc8d161602f0fc2b}{notify\+\_\+doc\+\_\+flags\+\_\+changed()}}\# notification is distributed using the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\} communication mechanism.
+
+\{\textbackslash{}bf Note\+:\} To wait for the initialization to complete use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}(). For single threaded applications the initialization completes before the \textbackslash{}\+Ref\{init\}() function returns. \mbox{\Hypertarget{classDjVuDocument_abeaa7adb929282cc7e5a413e0a487001}\label{classDjVuDocument_abeaa7adb929282cc7e5a413e0a487001}} 
+\index{DjVuDocument@{DjVuDocument}!get\_doc\_type@{get\_doc\_type}}
+\index{get\_doc\_type@{get\_doc\_type}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_doc\_type()}{get\_doc\_type()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Document\+::get\+\_\+doc\+\_\+type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+If the document has already learnt its type, the function will returns it\+: \#\+Dj\+Vu\+Document\+::\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# or \#\+Dj\+Vu\+Document\+::\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\# or \#\+Dj\+Vu\+Document\+::\+S\+I\+N\+G\+L\+E\+\_\+\+P\+A\+GE\# or \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\+:B\+U\+N\+D\+L\+ED\# or \#\+Dj\+Vu\+Document\+::\+I\+N\+D\+I\+R\+E\+CT\#. The first two formats are obsolete. Otherwise (if the type is unknown yet), \#\+U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+PE\# will be returned.
+
+\{\textbackslash{}bf Note\+:\} To check the stage of the document initialization use \textbackslash{}\+Ref\{get\+\_\+flags\}() or \textbackslash{}\+Ref\{is\+\_\+init\+\_\+complete\}() functions. To wait for the initialization to complete use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}(). For single threaded applications the initialization completes before the \textbackslash{}\+Ref\{init\}() function returns. \mbox{\Hypertarget{classDjVuDocument_ac86eafe693438dc818dd29b3d87ff9d1}\label{classDjVuDocument_ac86eafe693438dc818dd29b3d87ff9d1}} 
+\index{DjVuDocument@{DjVuDocument}!get\_init\_data\_pool@{get\_init\_data\_pool}}
+\index{get\_init\_data\_pool@{get\_init\_data\_pool}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_init\_data\_pool()}{get\_init\_data\_pool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+Document\+::get\+\_\+init\+\_\+data\+\_\+pool (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns data corresponding to the U\+RL passed to the \textbackslash{}\+Ref\{init\}() function.
+
+\{\textbackslash{}bf Note\+:\} The pointer returned is guaranteed to be non-\/\#\+Z\+E\+RO\# only after the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# learns its type (passes through the first stage of initialization process). Please refer to \textbackslash{}\+Ref\{init\}() for details. \mbox{\Hypertarget{classDjVuDocument_aa6408e980c0813d21e3ce6b0bebcf724}\label{classDjVuDocument_aa6408e980c0813d21e3ce6b0bebcf724}} 
+\index{DjVuDocument@{DjVuDocument}!get\_nav\_dir@{get\_nav\_dir}}
+\index{get\_nav\_dir@{get\_nav\_dir}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_nav\_dir()}{get\_nav\_dir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}} $>$ Dj\+Vu\+Document\+::get\+\_\+nav\+\_\+dir (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns pointer to \{{\itshape navigation} directory\} of the document. The navigation directory is a Dj\+Vu file containing only one chunk \#\+N\+D\+IR\# inside a \#\+F\+O\+RM\+:D\+J\+VI\# with the list of all document pages. \mbox{\Hypertarget{classDjVuDocument_a4b04b9cd32bdb1b56bdb3952d55543dc}\label{classDjVuDocument_a4b04b9cd32bdb1b56bdb3952d55543dc}} 
+\index{DjVuDocument@{DjVuDocument}!get\_page@{get\_page}}
+\index{get\_page@{get\_page}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_page()}{get\_page()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$ Dj\+Vu\+Document\+::get\+\_\+page (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id,  }\item[{bool}]{sync = {\ttfamily true},  }\item[{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{port = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Returns \textbackslash{}\+Ref\{\mbox{\hyperlink{classGP}{GP}}\} pointer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} corresponding to the specified ID. This function behaves exactly as the \mbox{\hyperlink{classDjVuDocument_a6aa69bcd92f5459cf118c165fc870589}{get\+\_\+page()}}\# function above. The only thing worth mentioning here is how the \#\+ID\# parameter is treated.
+
+First of all the function checks, if the ID contains a number. If so, it just calls the \mbox{\hyperlink{classDjVuDocument_a6aa69bcd92f5459cf118c165fc870589}{get\+\_\+page()}}\# function above. If ID is \#\+Z\+E\+RO\# or just empty, page number \#-\/1\# is assumed. Otherwise the ID is translated to the U\+RL using \textbackslash{}\+Ref\{id\+\_\+to\+\_\+url\}(). \mbox{\Hypertarget{classDjVuDocument_a6aa69bcd92f5459cf118c165fc870589}\label{classDjVuDocument_a6aa69bcd92f5459cf118c165fc870589}} 
+\index{DjVuDocument@{DjVuDocument}!get\_page@{get\_page}}
+\index{get\_page@{get\_page}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_page()}{get\_page()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} $>$ Dj\+Vu\+Document\+::get\+\_\+page (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num,  }\item[{bool}]{sync = {\ttfamily true},  }\item[{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{port = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+Returns \textbackslash{}\+Ref\{\mbox{\hyperlink{classGP}{GP}}\} pointer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} corresponding to page \#page\+\_\+num\#. If caching is enabled, and there is a \{{\itshape fully} decoded\} \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} in the cache, the image will be reused and will be returned fully decoded. Otherwise, if multi-\/threaded behavior is allowed, and \#sync\# is set to \#\+F\+A\+L\+SE\#, the decoding will be started in a separate thread, which enables to do progressive redisplay. Thus, in this case the image returned may be partially decoded.
+
+Negative \#page\+\_\+num\# has a special meaning for the \{{\itshape old} indexed\} multipage documents\+: the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# will start decoding of the U\+RL with which it has been initialized. For other formats page \#-\/1\# is the same as page \#0\#.
+
+\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# can also connect the created page to the specified \#port\# \{{\itshape before} starting decoding\}. This option will allow the future owner of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} to receive all messages and requests generated during its decoding.
+
+If this function is called before the document\textquotesingle{}s structure becomes known (the initialization process completes), the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\}, which the returned image will be attached to, will be assigned a temporary artificial U\+RL, which will be corrected as soon as enough information becomes available. The trick prevents the main thread from blocking and in some cases helps to start decoding earlier. The U\+RL is corrected and decoding will start as soon as \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# passes some given stages of initialization and \textbackslash{}\+Ref\{page\+\_\+to\+\_\+url\}(), \textbackslash{}\+Ref\{id\+\_\+to\+\_\+url\}() functions start working properly. Please look through their description for details.
+
+\{\textbackslash{}bf Note\+:\} To wait for the initialization to complete use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}(). For single threaded applications the initialization completes before the \textbackslash{}\+Ref\{init\}() function returns.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page\+\_\+num} & Number of the page to be decoded \\
+\hline
+{\em sync} & When set to \#\+T\+R\+UE\# the function will not return until the page is completely decoded. Otherwise, in a multi-\/threaded program, this function will start decoding in a new thread and will return a partially decoded image. Refer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage_aeb799b137951d12dd8a3df733be89b2b}{Dj\+Vu\+Image\+::wait\+\_\+for\+\_\+complete\+\_\+decode}}\}() and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile_a8f77b3a19fe7a9ec6cec4a8e79197f53}{Dj\+Vu\+File\+::is\+\_\+decode\+\_\+ok}}\}(). \\
+\hline
+{\em port} & A pointer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}, that the created image will be connected to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuDocument_a935fe87ca93e07352662f6a4a96dfaad}\label{classDjVuDocument_a935fe87ca93e07352662f6a4a96dfaad}} 
+\index{DjVuDocument@{DjVuDocument}!get\_pages\_num@{get\_pages\_num}}
+\index{get\_pages\_num@{get\_pages\_num}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_pages\_num()}{get\_pages\_num()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Document\+::get\+\_\+pages\+\_\+num (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the number of pages in the document. If there is still insufficient information about the document structure (initialization has not finished yet), \#1\# will be returned. Please refer to \textbackslash{}\+Ref\{init\}() for details. \mbox{\Hypertarget{classDjVuDocument_a05a77ebb3ba6590c40afcc160c3e5ab6}\label{classDjVuDocument_a05a77ebb3ba6590c40afcc160c3e5ab6}} 
+\index{DjVuDocument@{DjVuDocument}!get\_thumbnail@{get\_thumbnail}}
+\index{get\_thumbnail@{get\_thumbnail}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{get\_thumbnail()}{get\_thumbnail()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+Document\+::get\+\_\+thumbnail (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num,  }\item[{bool}]{dont\+\_\+decode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\} containing one chunk \#\+T\+H44\# with the encoded thumbnail for the specified page. The function first looks for thumbnails enclosed into the document and if it fails to find one, it decodes the required page and creates the thumbnail on the fly (unless \#dont\+\_\+decode\# is true).
+
+\{\textbackslash{}bf Note\+:\} It may happen that the returned \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\} will not contain all the data you need. In this case you will need to install a trigger into the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\} to learn when the data actually arrives. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuDocEditor_a0730e899c8133889336415747cdb62af}{Dj\+Vu\+Doc\+Editor}}.
+
+\mbox{\Hypertarget{classDjVuDocument_a1e6b82e70e14fb096b11ae9cb5fcc4fe}\label{classDjVuDocument_a1e6b82e70e14fb096b11ae9cb5fcc4fe}} 
+\index{DjVuDocument@{DjVuDocument}!id\_to\_file@{id\_to\_file}}
+\index{id\_to\_file@{id\_to\_file}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{id\_to\_file()}{id\_to\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ Dj\+Vu\+Document\+::id\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This request is used to get a file corresponding to the given ID. \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} is supposed to intercept it and either create a new instance of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} or reuse an existing one from the cache. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_aea9cc03d9b3cc7565f28632f77983a74}{Dj\+Vu\+Port}}.
+
+\mbox{\Hypertarget{classDjVuDocument_a70658cf0e588892f2a4072d94e920e21}\label{classDjVuDocument_a70658cf0e588892f2a4072d94e920e21}} 
+\index{DjVuDocument@{DjVuDocument}!id\_to\_url@{id\_to\_url}}
+\index{id\_to\_url@{id\_to\_url}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{id\_to\_url()}{id\_to\_url()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGURL}{G\+U\+RL}} Dj\+Vu\+Document\+::id\+\_\+to\+\_\+url (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id }\end{DoxyParamCaption}) const}
+
+Translates the textual ID to the complete U\+RL if possible.
+
+Depending on the document format the translation is done in the following way\+: \textbackslash{}begin\{itemize\} \textbackslash{}item For \#\+B\+U\+N\+D\+L\+ED\# and \#\+I\+N\+D\+I\+R\+E\+CT\# documents the function scans the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}}\} (the document directory) and matches the ID against\+: \textbackslash{}begin\{enumerate\} \textbackslash{}item File ID from the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}}\} \textbackslash{}item File name from the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVmDir}{Dj\+Vm\+Dir}}\} \textbackslash{}end\{enumerate\} Then for \#\+B\+U\+N\+D\+L\+ED\# document the U\+RL is obtained by appending the \#name\# of the found file to the document\textquotesingle{}s U\+RL.
+
+For \#\+I\+N\+D\+I\+R\+E\+CT\# documents the U\+RL is obtained by appending the \#name\# of the found file to the U\+RL of the directory containing the document. \textbackslash{}item For \#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# documents the function compares the ID with internal name of every file inside the bundle and composes an artificial U\+RL by appending the file name to the document\textquotesingle{}s U\+RL. \textbackslash{}item For \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\# or \#\+S\+I\+N\+G\+L\+E\+\_\+\+P\+A\+GE\# documents the function composes the U\+RL by appending the ID to the U\+RL of the directory containing the document. \textbackslash{}end\{itemize\}
+
+If information obtained by the initialization thread is not sufficient yet, the \mbox{\hyperlink{classDjVuDocument_a70658cf0e588892f2a4072d94e920e21}{id\+\_\+to\+\_\+url()}}\# may return an empty U\+RL. Depending on the document type, the information is sufficient when \textbackslash{}begin\{itemize\} \textbackslash{}item \#\+B\+U\+N\+D\+L\+ED\# and \#\+I\+N\+D\+I\+R\+E\+CT\#\+: \#\+D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# flag is set. \textbackslash{}item \#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# and \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\# and \#\+S\+I\+N\+G\+L\+E\+\_\+\+P\+A\+GE\#\+: \#\+D\+O\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+K\+N\+O\+WN\# flag is set. \textbackslash{}end\{itemize\} \mbox{\Hypertarget{classDjVuDocument_a463440276e898dfb35d371a03f13b920}\label{classDjVuDocument_a463440276e898dfb35d371a03f13b920}} 
+\index{DjVuDocument@{DjVuDocument}!init@{init}}
+\index{init@{init}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Document\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$}]{port = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$}]{cache = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes the document.
+
+Contrary to \textbackslash{}\+Ref\{start\+\_\+init\}(), which just starts the initialization thread in a multi-\/threaded environment, this function does not return until the initialization completes (either successfully or not). Basically, it calls \textbackslash{}\+Ref\{start\+\_\+init\}() and then \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}(). \mbox{\Hypertarget{classDjVuDocument_aa610d38dfb44221ab1d5cc075330f216}\label{classDjVuDocument_aa610d38dfb44221ab1d5cc075330f216}} 
+\index{DjVuDocument@{DjVuDocument}!is\_bundled@{is\_bundled}}
+\index{is\_bundled@{is\_bundled}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{is\_bundled()}{is\_bundled()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Document\+::is\+\_\+bundled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# if the document is in bundled format (either in \#\+Dj\+Vu\+Document\+::\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# or \#\+Dj\+Vu\+Document\+::\+B\+U\+N\+D\+L\+ED\# formats). \mbox{\Hypertarget{classDjVuDocument_ad4b3df16746eb9b449d2130349b7d38a}\label{classDjVuDocument_ad4b3df16746eb9b449d2130349b7d38a}} 
+\index{DjVuDocument@{DjVuDocument}!is\_init\_complete@{is\_init\_complete}}
+\index{is\_init\_complete@{is\_init\_complete}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{is\_init\_complete()}{is\_init\_complete()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Document\+::is\+\_\+init\+\_\+complete (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# if the initialization thread finished (does not matter successfully or not). As soon as it happens, the document becomes completely initialized and its every function should work properly. Please refer to the description of \textbackslash{}\+Ref\{init\}() function and of the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# class to learn about the initializing stages.
+
+To wait for the initialization to complete use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}() function.
+
+To query the initialization stage use \textbackslash{}\+Ref\{get\+\_\+flags\}() function.
+
+To learn whether initialization was successful or not, use \textbackslash{}\+Ref\{is\+\_\+init\+\_\+ok\}() and \textbackslash{}\+Ref\{is\+\_\+init\+\_\+failed\}().
+
+\{\textbackslash{}bf Note\+:\} In a single threaded application the initialization completes before the \textbackslash{}\+Ref\{init\}() function returns. \mbox{\Hypertarget{classDjVuDocument_af68c4ebb2664840052ef8c697698d71e}\label{classDjVuDocument_af68c4ebb2664840052ef8c697698d71e}} 
+\index{DjVuDocument@{DjVuDocument}!is\_init\_failed@{is\_init\_failed}}
+\index{is\_init\_failed@{is\_init\_failed}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{is\_init\_failed()}{is\_init\_failed()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Document\+::is\+\_\+init\+\_\+failed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# is the initialization thread failed.
+
+See \textbackslash{}\+Ref\{is\+\_\+init\+\_\+complete\}() and \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}() for more details. \mbox{\Hypertarget{classDjVuDocument_a81de9c4440fb4994e22f3b9edd1a2cda}\label{classDjVuDocument_a81de9c4440fb4994e22f3b9edd1a2cda}} 
+\index{DjVuDocument@{DjVuDocument}!is\_init\_ok@{is\_init\_ok}}
+\index{is\_init\_ok@{is\_init\_ok}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{is\_init\_ok()}{is\_init\_ok()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Document\+::is\+\_\+init\+\_\+ok (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# is the initialization thread finished successfully.
+
+See \textbackslash{}\+Ref\{is\+\_\+init\+\_\+complete\}() and \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}() for more details. \mbox{\Hypertarget{classDjVuDocument_a44cedf199c42c93212519bffb865f35d}\label{classDjVuDocument_a44cedf199c42c93212519bffb865f35d}} 
+\index{DjVuDocument@{DjVuDocument}!needs\_compression@{needs\_compression}}
+\index{needs\_compression@{needs\_compression}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{needs\_compression()}{needs\_compression()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Document\+::needs\+\_\+compression (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# if there are uncompressed pages in this document. \mbox{\Hypertarget{classDjVuDocument_ae64525ee632801e66ac98fca83db2000}\label{classDjVuDocument_ae64525ee632801e66ac98fca83db2000}} 
+\index{DjVuDocument@{DjVuDocument}!needs\_rename@{needs\_rename}}
+\index{needs\_rename@{needs\_rename}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{needs\_rename()}{needs\_rename()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Document\+::needs\+\_\+rename (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# if this file must be renamed before saving. \mbox{\Hypertarget{classDjVuDocument_a11ff0d3f1a6fcd62104b977bdc876cbe}\label{classDjVuDocument_a11ff0d3f1a6fcd62104b977bdc876cbe}} 
+\index{DjVuDocument@{DjVuDocument}!page\_to\_url@{page\_to\_url}}
+\index{page\_to\_url@{page\_to\_url}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{page\_to\_url()}{page\_to\_url()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGURL}{G\+U\+RL}} Dj\+Vu\+Document\+::page\+\_\+to\+\_\+url (\begin{DoxyParamCaption}\item[{int}]{page\+\_\+num }\end{DoxyParamCaption}) const}
+
+Translates the page number to the full U\+RL of the page. This U\+RL is \char`\"{}artificial\char`\"{} for the \{{\itshape bundled\}} formats and is obtained by appending the page name to the document\textquotesingle{}s U\+RL honoring possible \#;\# and \#?\# in it. Negative page number has a special meaning for \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\# documents\+: it points to the U\+RL, which the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# has been initialized with. For other formats this is the same as page \#0\#.
+
+The function tries it best to map the page number to the U\+RL. Although, if the document structure has not been fully discovered yet, an empty U\+RL will be returned. Use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}() to wait until the document initialization completes. Refer to \textbackslash{}\+Ref\{init\}() for details.
+
+Depending on the document format, the function assumes, that there is enough information to complete the request when\+: \textbackslash{}begin\{itemize\} \textbackslash{}item \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\#\+: If \#page\+\_\+num$<$0\#, \#\+D\+O\+C\+\_\+\+T\+Y\+P\+E\+\_\+\+K\+N\+O\+WN\# flag must be set. Otherwise \#\+D\+O\+C\+\_\+\+N\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# must be set. \textbackslash{}item \#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\#\+: If \#page\+\_\+num=0\#, \#\+D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# flag must be set. Otherwise \#\+D\+O\+C\+\_\+\+N\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# flag must be set. \textbackslash{}item \#\+I\+N\+D\+I\+R\+E\+CT\# and \#\+B\+U\+N\+D\+L\+ED\#\+: \#\+D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# flag must be set. \textbackslash{}end\{itemize\} \mbox{\Hypertarget{classDjVuDocument_aacdeef00678b80fad8dd6a61e4786eb9}\label{classDjVuDocument_aacdeef00678b80fad8dd6a61e4786eb9}} 
+\index{DjVuDocument@{DjVuDocument}!request\_data@{request\_data}}
+\index{request\_data@{request\_data}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{request\_data()}{request\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+Document\+::request\+\_\+data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This request is issued when decoder needs additional data for decoding. Both \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} are initialized with a U\+RL, not the document data. As soon as they need the data, they call this function, whose responsibility is to locate the source of the data basing on the \#\+U\+RL\# passed and return it back in the form of the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\}. If this particular receiver is unable to fullfil the request, it should return \#0\#. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_a3209546237c836dc716d852fd6219add}{Dj\+Vu\+Port}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classDjVuDocEditor_a03ac8920fbc3267e5d82fb299683d680}{Dj\+Vu\+Doc\+Editor}}.
+
+\mbox{\Hypertarget{classDjVuDocument_af24cfa661e3b5a8664edafd31e9d614f}\label{classDjVuDocument_af24cfa661e3b5a8664edafd31e9d614f}} 
+\index{DjVuDocument@{DjVuDocument}!save\_as@{save\_as}}
+\index{save\_as@{save\_as}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{save\_as()}{save\_as()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Document\+::save\+\_\+as (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{where,  }\item[{bool}]{bundled = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function can be used instead of \textbackslash{}\+Ref\{write\}() and \textbackslash{}\+Ref\{expand\}(). It allows to save the document either in the new \#\+B\+U\+N\+D\+L\+ED\# format or in the new \#\+I\+N\+D\+I\+R\+E\+CT\# format depending on the value of parameter \#bundled\#.
+
+Depending on the document\textquotesingle{}s type, the meaning of \#where\# is\+: \textbackslash{}begin\{itemize\} \textbackslash{}item For \#\+B\+U\+N\+D\+L\+ED\# documents this is the name of the file \textbackslash{}item For \#\+I\+N\+D\+I\+R\+E\+CT\# documents this is the name of top-\/level index file. All document files will be saved into the save directory where the index file will resize. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuDocEditor_ac081e3c161f75498c6c95471e3ed9abf}{Dj\+Vu\+Doc\+Editor}}.
+
+\mbox{\Hypertarget{classDjVuDocument_a6cf0fc657c2d5239c7c2a39f25a2c9f9}\label{classDjVuDocument_a6cf0fc657c2d5239c7c2a39f25a2c9f9}} 
+\index{DjVuDocument@{DjVuDocument}!set\_needs\_compression@{set\_needs\_compression}}
+\index{set\_needs\_compression@{set\_needs\_compression}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{set\_needs\_compression()}{set\_needs\_compression()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Document\+::set\+\_\+needs\+\_\+compression (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Forces compression with the next save\+\_\+as function. \mbox{\Hypertarget{classDjVuDocument_af0725484fdb470903de22e463dddc559}\label{classDjVuDocument_af0725484fdb470903de22e463dddc559}} 
+\index{DjVuDocument@{DjVuDocument}!start\_init@{start\_init}}
+\index{start\_init@{start\_init}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{start\_init()}{start\_init()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Document\+::start\+\_\+init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$}]{port = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classDjVuFileCache}{Dj\+Vu\+File\+Cache}} $\ast$}]{cache = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Initializes the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# object using an existing document. This function should be called once after creating the object. The \#url\# should point to the real data, and the creator of the document should be ready to return this data to the document if it\textquotesingle{}s not stored locally (in which case \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# can access it itself).
+
+\{\textbackslash{}bf Initializing thread\} In a single-\/threaded application, the \mbox{\hyperlink{classDjVuDocument_af0725484fdb470903de22e463dddc559}{start\+\_\+init()}}\# function performs the complete initialization of the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# before it returns. In a multi-\/threaded application, though, it initializes some internal variables, requests data for the document and starts a new \{{\itshape initializing\}} thread, which is responsible for determining the document type and structure and completing the initialization process. This additional complication is justified in the case of the Dj\+Vu plugin because performing initialization requires data and in the plugin the data can be supplied by the main thread only. Thus, if the initialization was completed by the main thread, the plugin would run out of data and block.
+
+\{\textbackslash{}bf Stages of initialization\} Immediately after the \mbox{\hyperlink{classDjVuDocument_af0725484fdb470903de22e463dddc559}{start\+\_\+init()}}\# function terminates, the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# object is ready for use. Its functionality will not be complete (until the initializing thread finishes), but the object is still very useful. Such functions as \textbackslash{}\+Ref\{get\+\_\+page\}() or \textbackslash{}\+Ref\{get\+\_\+djvu\+\_\+file\}() or \textbackslash{}\+Ref\{id\+\_\+to\+\_\+url\}() may be called before the initializing thread completes. This allows the Dj\+Vu plugin start decoding as soon as possible without waiting for all data to arrive.
+
+To query the current stage of initialization you can use \textbackslash{}\+Ref\{get\+\_\+doc\+\_\+flags\}() function or listen to the \mbox{\hyperlink{classDjVuPort_aa522666df6f9c65ffc8d161602f0fc2b}{notify\+\_\+doc\+\_\+flags\+\_\+changed()}}\# notifications distributed with the help of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\}. To wait for the initialization to complete use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+complete\+\_\+init\}(). To stop initialization call \textbackslash{}\+Ref\{stop\+\_\+init\}().
+
+\{\textbackslash{}bf Querying data\} The query for data is done using the communication mechanism provided by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\}. If \#port\# is not \#\+Z\+E\+RO\#, then the request for data will be forwarded to it. If it \{\textbackslash{}bf is\} \#\+Z\+E\+RO\# then \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# will create an internal instance of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuSimplePort}{Dj\+Vu\+Simple\+Port}}\} and will use it to access local files and report errors to \#stderr\#. In short, if the document file is stored on the local hard disk, and you\textquotesingle{}re OK about reporting errors to \#stderr\#, you may pass \#\+Z\+E\+RO\# pointer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} as \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# can take care of this situation by itself.
+
+\{\textbackslash{}bf The U\+RL\} Depending on the document type the \#url\# should point to\+: \textbackslash{}begin\{itemize\} \textbackslash{}item \{\textbackslash{}bf Old bundled\} and \{\textbackslash{}bf New bundled\} formats\+: to the document itself. \textbackslash{}item \{\textbackslash{}bf Old indexed\} format\+: to any page of the document. \textbackslash{}item \{\textbackslash{}bf New indirect\} format\+: to the top-\/level file of the document. If (like in the \{{\itshape old} indexed\} format) you point the \#url\# to a page, the page \{{\itshape will\}} be decoded, but it will \{{\itshape not\}} be recognized to be part of the document. \textbackslash{}end\{itemize\}
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\+RL pointing to the document. If the document is in a \{{\itshape bundled\}} format then the U\+RL should point to it. If the document is in the \{{\itshape old} indexed\} format then U\+RL may point to any page of this document. For \{{\itshape new} indirect\} format the U\+RL should point to the top-\/level file of the document. \\
+\hline
+{\em port} & If not \#\+Z\+E\+RO\#, all requests and notifications will be sent to it. Otherwise \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# will create an internal instance of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuSimplePort}{Dj\+Vu\+Simple\+Port}}\} for these purposes. It\textquotesingle{}s OK to make it \#\+Z\+E\+RO\# if you\textquotesingle{}re writing a command line tool, which should work with files on the hard disk only because \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# can access such files itself. \\
+\hline
+{\em cache} & It\textquotesingle{}s used to cache decoded \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\}s and is actually useful in the plugin only. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuDocument_ab5a47f4f26043b2375d77287a91a7e53}\label{classDjVuDocument_ab5a47f4f26043b2375d77287a91a7e53}} 
+\index{DjVuDocument@{DjVuDocument}!stop\_init@{stop\_init}}
+\index{stop\_init@{stop\_init}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{stop\_init()}{stop\_init()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Document\+::stop\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Call this function when you don\textquotesingle{}t need the \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\# any more. In a multi-\/threaded environment it will stop initialization thread, if it is currently running. \{\textbackslash{}bf You will not be able to start the initialization again. Thus, after calling this function the document should not be used any more\}. \mbox{\Hypertarget{classDjVuDocument_a5177efe524d7e426e14fc20501b07293}\label{classDjVuDocument_a5177efe524d7e426e14fc20501b07293}} 
+\index{DjVuDocument@{DjVuDocument}!url\_to\_page@{url\_to\_page}}
+\index{url\_to\_page@{url\_to\_page}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{url\_to\_page()}{url\_to\_page()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Document\+::url\+\_\+to\+\_\+page (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url }\end{DoxyParamCaption}) const}
+
+Translates the page U\+RL back to page number. Returns \#-\/1\# if the page is not in the document or the document\textquotesingle{}s structure has not been learnt yet.
+
+Depending on the document format, the function starts working properly as soon as\+: \textbackslash{}begin\{itemize\} \textbackslash{}item \#\+O\+L\+D\+\_\+\+I\+N\+D\+E\+X\+ED\# and \#\+O\+L\+D\+\_\+\+B\+U\+N\+D\+L\+ED\# and \#\+S\+I\+N\+G\+L\+E\+\_\+\+P\+A\+GE\#\+: \#\+D\+O\+C\+\_\+\+N\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# is set \textbackslash{}item \#\+I\+N\+D\+I\+R\+E\+CT\# and \#\+B\+U\+N\+D\+L\+ED\#\+: \#\+D\+O\+C\+\_\+\+D\+I\+R\+\_\+\+K\+N\+O\+WN\# is set. \textbackslash{}end\{itemize\} \mbox{\Hypertarget{classDjVuDocument_abcbe712ea2e65081b33db2409104428f}\label{classDjVuDocument_abcbe712ea2e65081b33db2409104428f}} 
+\index{DjVuDocument@{DjVuDocument}!wait\_for\_complete\_init@{wait\_for\_complete\_init}}
+\index{wait\_for\_complete\_init@{wait\_for\_complete\_init}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_complete\_init()}{wait\_for\_complete\_init()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+Document\+::wait\+\_\+for\+\_\+complete\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Waits until the document initialization process finishes. It can finish either successfully or not. Use \textbackslash{}\+Ref\{is\+\_\+init\+\_\+ok\}() and \textbackslash{}\+Ref\{is\+\_\+init\+\_\+failed\}() to learn the result code.
+
+As described in \textbackslash{}\+Ref\{start\+\_\+init\}(), for multi-\/threaded applications the initialization is carried out in parallel with the main thread. This function blocks the calling thread until the initializing thread reads enough data, receives information about the document format and exits. This function returns \#true\# if the initialization is successful. You can use \textbackslash{}\+Ref\{get\+\_\+flags\}() or \textbackslash{}\+Ref\{is\+\_\+init\+\_\+complete\}() to check more precisely the degree of initialization. Use \textbackslash{}\+Ref\{stop\+\_\+init\}() to interrupt initialization. \mbox{\Hypertarget{classDjVuDocument_a8241ef226c6b7e86c1f513132333dcd4}\label{classDjVuDocument_a8241ef226c6b7e86c1f513132333dcd4}} 
+\index{DjVuDocument@{DjVuDocument}!wait\_get\_pages\_num@{wait\_get\_pages\_num}}
+\index{wait\_get\_pages\_num@{wait\_get\_pages\_num}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{wait\_get\_pages\_num()}{wait\_get\_pages\_num()}}
+{\footnotesize\ttfamily int Dj\+Vu\+Document\+::wait\+\_\+get\+\_\+pages\+\_\+num (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Wait until we known the number of pages and return. \mbox{\Hypertarget{classDjVuDocument_a83d0b0e54f455500f8b88774591a359e}\label{classDjVuDocument_a83d0b0e54f455500f8b88774591a359e}} 
+\index{DjVuDocument@{DjVuDocument}!write@{write}}
+\index{write@{write}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Document\+::write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{str,  }\item[{bool}]{force\+\_\+djvm = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Saves the document in the \{{\itshape new} bundled\} format. All the data is \char`\"{}bundled\char`\"{} into one file and this file is written into the passed stream.
+
+If \#force\+\_\+djvm\# is \#\+T\+R\+UE\# then even one page documents will be saved in the \#\+D\+J\+VM B\+U\+N\+D\+L\+ED\# format (inside a \#\+F\+O\+RM\+:D\+J\+VM\#);
+
+\{\textbackslash{}bf Plugin Warning\}. This function will read contents of the whole document. Thus, if you call it from the main thread (the thread, which transfers data from Netscape), the plugin will block. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuDocEditor_a02338ba5c0833a590602c8cf1bdd73c0}{Dj\+Vu\+Doc\+Editor}}.
+
+\mbox{\Hypertarget{classDjVuDocument_abd4cd79ee7c7971ed590ea035aa48061}\label{classDjVuDocument_abd4cd79ee7c7971ed590ea035aa48061}} 
+\index{DjVuDocument@{DjVuDocument}!write@{write}}
+\index{write@{write}!DjVuDocument@{DjVuDocument}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+Document\+::write (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{str,  }\item[{const \mbox{\hyperlink{classGMap}{G\+Map}}$<$ \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}}, void $\ast$ $>$ \&}]{reserved }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Always save as bundled, renaming any files conflicting with the the names in the supplied \mbox{\hyperlink{classGMap}{G\+Map}}. 
+
+Reimplemented in \mbox{\hyperlink{classDjVuDocEditor_ac0110c3e41732b8e0c8f657d30e7810b}{Dj\+Vu\+Doc\+Editor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+Document.\+h\item 
+libdjvu/Dj\+Vu\+Document.\+cpp\end{DoxyCompactItemize}

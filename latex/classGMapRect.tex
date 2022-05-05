@@ -1,0 +1,142 @@
+\hypertarget{classGMapRect}{}\doxysection{G\+Map\+Rect Class Reference}
+\label{classGMapRect}\index{GMapRect@{GMapRect}}
+
+
+{\ttfamily \#include $<$G\+Map\+Areas.\+h$>$}
+
+
+
+Inheritance diagram for G\+Map\+Rect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classGMapRect__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Map\+Rect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classGMapRect__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapRect_a3728ec8332d894b5ddd099f1a5ecf083}\label{classGMapRect_a3728ec8332d894b5ddd099f1a5ecf083}} 
+int \mbox{\hyperlink{classGMapRect_a3728ec8332d894b5ddd099f1a5ecf083}{get\+\_\+width}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the width of the rectangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapRect_a1825ab3499aabe0ed575d2cd45364a2f}\label{classGMapRect_a1825ab3499aabe0ed575d2cd45364a2f}} 
+int \mbox{\hyperlink{classGMapRect_a1825ab3499aabe0ed575d2cd45364a2f}{get\+\_\+height}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the height of the rectangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapRect_aef5ef9c2cd05d6a24f55a0c05e98fa00}\label{classGMapRect_aef5ef9c2cd05d6a24f55a0c05e98fa00}} 
+\mbox{\hyperlink{classGMapRect}{G\+Map\+Rect}} \& \mbox{\hyperlink{classGMapRect_aef5ef9c2cd05d6a24f55a0c05e98fa00}{operator=}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\begin{DoxyCompactList}\small\item\em Changes the \mbox{\hyperlink{classGMapRect}{G\+Map\+Rect}}\#\textquotesingle{}s geometry. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapRect_a33043b371c0ef7c8d5217eec0aa964c0}\label{classGMapRect_a33043b371c0ef7c8d5217eec0aa964c0}} 
+virtual \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} {\bfseries get\+\_\+xmltag} (const int height) const
+\item 
+\mbox{\Hypertarget{classGMapRect_a77f09944efef67651a8659f0c14e184c}\label{classGMapRect_a77f09944efef67651a8659f0c14e184c}} 
+virtual const Map\+Area\+Type \mbox{\hyperlink{classGMapRect_a77f09944efef67651a8659f0c14e184c}{get\+\_\+shape\+\_\+type}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns Map\+Rect. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapRect_acbad664eb8a7d2d302a7853c4144be0e}\label{classGMapRect_acbad664eb8a7d2d302a7853c4144be0e}} 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGMapArea}{G\+Map\+Area}} $>$ \mbox{\hyperlink{classGMapRect_acbad664eb8a7d2d302a7853c4144be0e}{get\+\_\+copy}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns a copy of the rectangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapRect_af93af0ef400a4fddc91777979a4e8edf}\label{classGMapRect_af93af0ef400a4fddc91777979a4e8edf}} 
+virtual void \mbox{\hyperlink{classGMapRect_af93af0ef400a4fddc91777979a4e8edf}{map}} (\mbox{\hyperlink{classGRectMapper}{G\+Rect\+Mapper}} \&mapper)
+\begin{DoxyCompactList}\small\item\em Virtual function maps rectangle from one area to another using mapper. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapRect_a18e1780b55310602e250be367c1a448a}\label{classGMapRect_a18e1780b55310602e250be367c1a448a}} 
+virtual void \mbox{\hyperlink{classGMapRect_a18e1780b55310602e250be367c1a448a}{unmap}} (\mbox{\hyperlink{classGRectMapper}{G\+Rect\+Mapper}} \&mapper)
+\begin{DoxyCompactList}\small\item\em Virtual function unmaps rectangle from one area to another using mapper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapRect_a0ed9214f445e2a8575c57035955ce51b}\label{classGMapRect_a0ed9214f445e2a8575c57035955ce51b}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGMapRect}{G\+Map\+Rect}} $>$ \mbox{\hyperlink{classGMapRect_a0ed9214f445e2a8575c57035955ce51b}{create}} (void)
+\begin{DoxyCompactList}\small\item\em Default creator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapRect_a872d3ff5d8d319a3c4e0f88c3fd4b1b4}\label{classGMapRect_a872d3ff5d8d319a3c4e0f88c3fd4b1b4}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGMapRect}{G\+Map\+Rect}} $>$ \mbox{\hyperlink{classGMapRect_a872d3ff5d8d319a3c4e0f88c3fd4b1b4}{create}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\begin{DoxyCompactList}\small\item\em Create with the specified \mbox{\hyperlink{classGRect}{G\+Rect}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapRect_a657e8efdf8f051abd51692563d441b38}\label{classGMapRect_a657e8efdf8f051abd51692563d441b38}} 
+{\bfseries G\+Map\+Rect} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+\mbox{\Hypertarget{classGMapRect_aa80b18d07de72d2a66e6410055735c4a}\label{classGMapRect_aa80b18d07de72d2a66e6410055735c4a}} 
+virtual void {\bfseries gma\+\_\+move} (int dx, int dy)
+\item 
+\mbox{\Hypertarget{classGMapRect_a6ca9a8a02402810a3967db4eebc07d07}\label{classGMapRect_a6ca9a8a02402810a3967db4eebc07d07}} 
+virtual void {\bfseries gma\+\_\+resize} (int new\+\_\+width, int new\+\_\+height)
+\item 
+\mbox{\Hypertarget{classGMapRect_aa2c9f3da7e2ec734b880d6621c80d881}\label{classGMapRect_aa2c9f3da7e2ec734b880d6621c80d881}} 
+virtual void {\bfseries gma\+\_\+transform} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&grect)
+\item 
+\mbox{\Hypertarget{classGMapRect_a651eb2d77dd7701d267a188f9b372bba}\label{classGMapRect_a651eb2d77dd7701d267a188f9b372bba}} 
+virtual bool {\bfseries gma\+\_\+is\+\_\+point\+\_\+inside} (const int x, const int y) const
+\item 
+\mbox{\Hypertarget{classGMapRect_abc2374f904f7f166fc98e239319f1788}\label{classGMapRect_abc2374f904f7f166fc98e239319f1788}} 
+virtual \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} {\bfseries gma\+\_\+print} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapRect_ae6729bec6228d085d7be70f29e52b9ee}\label{classGMapRect_ae6729bec6228d085d7be70f29e52b9ee}} 
+int {\bfseries xmin}
+\item 
+\mbox{\Hypertarget{classGMapRect_ab89c70e4d219e196211be767526cbebd}\label{classGMapRect_ab89c70e4d219e196211be767526cbebd}} 
+int {\bfseries ymin}
+\item 
+\mbox{\Hypertarget{classGMapRect_a4b893c68b00e76d50951e4b07604c034}\label{classGMapRect_a4b893c68b00e76d50951e4b07604c034}} 
+int {\bfseries xmax}
+\item 
+\mbox{\Hypertarget{classGMapRect_a5460f9f8762c40c72570deba964dba5c}\label{classGMapRect_a5460f9f8762c40c72570deba964dba5c}} 
+int {\bfseries ymax}
+\end{DoxyCompactItemize}
+\doxysubsection*{G\+Map\+Areas.\+h}
+\label{_amgrp7f4144df4046c1505fd4806c7e1d347a}%
+Files \#\char`\"{}\+G\+Map\+Areas.\+h\char`\"{}\# and \#\char`\"{}\+G\+Map\+Areas.\+cpp\char`\"{}\# implement base objects used by the plugin to display and manage hyperlinks and highlighted areas inside a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} page.
+
+The currently supported areas can be rectangular (\textbackslash{}\+Ref\{\mbox{\hyperlink{classGMapRect}{G\+Map\+Rect}}\}), elliptical (\textbackslash{}\+Ref\{\mbox{\hyperlink{classGMapOval}{G\+Map\+Oval}}\}) and polygonal (\textbackslash{}\+Ref\{\mbox{\hyperlink{classGMapPoly}{G\+Map\+Poly}}\}). Every map area besides the definition of its shape contains information about display style and optional \{\textbackslash{}bf U\+RL\}, which it may refer to. If this \{\textbackslash{}bf U\+RL\} is not empty then the map area will work like a hyperlink.
+
+The classes also implement some useful functions to ease geometry manipulations
+
+@memo Definition of base map area classes \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGMapRect_a471602723f515fed9178e9005140c24d}\label{classGMapRect_a471602723f515fed9178e9005140c24d}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+xmin} (void) const
+\item 
+\mbox{\Hypertarget{classGMapRect_a4db21adf67777e8c4da50527f0735176}\label{classGMapRect_a4db21adf67777e8c4da50527f0735176}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+ymin} (void) const
+\item 
+\mbox{\Hypertarget{classGMapRect_ab86bafd34170d4f82a8c3c416875e4fa}\label{classGMapRect_ab86bafd34170d4f82a8c3c416875e4fa}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+xmax} (void) const
+\item 
+\mbox{\Hypertarget{classGMapRect_a66e506c1aee68d66ed7007ad396bfeec}\label{classGMapRect_a66e506c1aee68d66ed7007ad396bfeec}} 
+virtual int {\bfseries gma\+\_\+get\+\_\+ymax} (void) const
+\item 
+\mbox{\Hypertarget{classGMapRect_ac4be12e64fd38c9b303f4cc376d466b8}\label{classGMapRect_ac4be12e64fd38c9b303f4cc376d466b8}} 
+virtual const char $\ast$const {\bfseries gma\+\_\+check\+\_\+object} (void) const
+\item 
+\mbox{\Hypertarget{classGMapRect_a64201037ca9b5acd23a3f2b8c4c18cb7}\label{classGMapRect_a64201037ca9b5acd23a3f2b8c4c18cb7}} 
+\mbox{\hyperlink{classGMapRect_a64201037ca9b5acd23a3f2b8c4c18cb7}{operator G\+Rect}} (void)
+\begin{DoxyCompactList}\small\item\em Returns \textbackslash{}\+Ref\{\mbox{\hyperlink{classGRect}{G\+Rect}}\} describing the map area\textquotesingle{}s rectangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGMapRect_ae653d0c0da0ed624f898a728ab054145}\label{classGMapRect_ae653d0c0da0ed624f898a728ab054145}} 
+virtual const char $\ast$const \mbox{\hyperlink{classGMapRect_ae653d0c0da0ed624f898a728ab054145}{get\+\_\+shape\+\_\+name}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns \#\char`\"{}rect\char`\"{}\#. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implements rectangular map areas. This is the only kind of map areas supporting \#\+S\+H\+A\+D\+O\+W\+\_\+\+I\+N\+\_\+\+B\+O\+R\+D\+ER\#, \#\+S\+H\+A\+D\+O\+W\+\_\+\+O\+U\+T\+\_\+\+B\+O\+R\+D\+ER\#, \#\+S\+H\+A\+D\+O\+W\+\_\+\+E\+I\+N\+\_\+\+B\+O\+R\+D\+ER\# and \#\+S\+H\+A\+D\+O\+W\+\_\+\+E\+O\+U\+T\+\_\+\+B\+O\+R\+D\+ER\# types of border and area highlighting. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Map\+Areas.\+h\item 
+libdjvu/G\+Map\+Areas.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,51 @@
+\hypertarget{classMMXControl}{}\doxysection{M\+M\+X\+Control Class Reference}
+\label{classMMXControl}\index{MMXControl@{MMXControl}}
+
+
+{\ttfamily \#include $<$M\+M\+X.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classMMXControl_a54cc79286ee00ec7945abd02c3f028a3}{enable\+\_\+mmx}} ()
+\item 
+static int \mbox{\hyperlink{classMMXControl_a1cd7af400fa6fcdb6613ae0d2e4dcab6}{disable\+\_\+mmx}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classMMXControl_a545aba6748fe8f7ec702dbc11991b63a}{mmxflag}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+M\+MX Control. \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classMMXControl}{M\+M\+X\+Control}}\# encapsulates a few static functions for globally enabling or disabling M\+MX support. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMMXControl_a1cd7af400fa6fcdb6613ae0d2e4dcab6}\label{classMMXControl_a1cd7af400fa6fcdb6613ae0d2e4dcab6}} 
+\index{MMXControl@{MMXControl}!disable\_mmx@{disable\_mmx}}
+\index{disable\_mmx@{disable\_mmx}!MMXControl@{MMXControl}}
+\doxysubsubsection{\texorpdfstring{disable\_mmx()}{disable\_mmx()}}
+{\footnotesize\ttfamily int M\+M\+X\+Control\+::disable\+\_\+mmx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Disables M\+MX or similar technologies. The transforms will then be performed using the baseline code. \mbox{\Hypertarget{classMMXControl_a54cc79286ee00ec7945abd02c3f028a3}\label{classMMXControl_a54cc79286ee00ec7945abd02c3f028a3}} 
+\index{MMXControl@{MMXControl}!enable\_mmx@{enable\_mmx}}
+\index{enable\_mmx@{enable\_mmx}!MMXControl@{MMXControl}}
+\doxysubsubsection{\texorpdfstring{enable\_mmx()}{enable\_mmx()}}
+{\footnotesize\ttfamily int M\+M\+X\+Control\+::enable\+\_\+mmx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Detects and enable M\+MX or similar technologies. This function checks whether the C\+PU supports a vectorial instruction set (such as Intel\textquotesingle{}s M\+MX) and enables them. Returns a boolean indicating whether such an instruction set is available. Speedups factors may vary. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMMXControl_a545aba6748fe8f7ec702dbc11991b63a}\label{classMMXControl_a545aba6748fe8f7ec702dbc11991b63a}} 
+\index{MMXControl@{MMXControl}!mmxflag@{mmxflag}}
+\index{mmxflag@{mmxflag}!MMXControl@{MMXControl}}
+\doxysubsubsection{\texorpdfstring{mmxflag}{mmxflag}}
+{\footnotesize\ttfamily int M\+M\+X\+Control\+::mmxflag = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+Contains a value greater than zero if the C\+PU supports vectorial instructions. A negative value means that you must call \textbackslash{}\+Ref\{enable\+\_\+mmx\} and test the value again. Direct access to this member should only be used to transfer the instruction flow to the vectorial branch of the code. Never modify the value of this variable. Use \mbox{\hyperlink{classMMXControl_a54cc79286ee00ec7945abd02c3f028a3}{enable\+\_\+mmx}}\# or \mbox{\hyperlink{classMMXControl_a1cd7af400fa6fcdb6613ae0d2e4dcab6}{disable\+\_\+mmx}}\# instead. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/M\+M\+X.\+h\item 
+libdjvu/M\+M\+X.\+cpp\end{DoxyCompactItemize}

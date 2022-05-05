@@ -1,0 +1,114 @@
+\hypertarget{classDjVuAnno}{}\doxysection{Dj\+Vu\+Anno Class Reference}
+\label{classDjVuAnno}\index{DjVuAnno@{DjVuAnno}}
+
+
+{\ttfamily \#include $<$Dj\+Vu\+Anno.\+h$>$}
+
+
+
+Inheritance diagram for Dj\+Vu\+Anno\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classDjVuAnno__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+Anno\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classDjVuAnno__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDjVuAnno_a13f745ba20c6b9f1a8a5f8c920f3e0e8}{decode}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&bs)
+\item 
+void \mbox{\hyperlink{classDjVuAnno_a1d833c8f52a28ed5084cdb81339ccdf4}{encode}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&bs)
+\item 
+\mbox{\Hypertarget{classDjVuAnno_a7b6276b81b3063cffad3a10c1c0dc4db}\label{classDjVuAnno_a7b6276b81b3063cffad3a10c1c0dc4db}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuAnno}{Dj\+Vu\+Anno}} $>$ \mbox{\hyperlink{classDjVuAnno_a7b6276b81b3063cffad3a10c1c0dc4db}{copy}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns a copy of this object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDjVuAnno_a644dc3b3d300f543f15520b499a1c4fc}{merge}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuAnno}{Dj\+Vu\+Anno}} $>$ \&anno)
+\item 
+\mbox{\Hypertarget{classDjVuAnno_a547559f8c1abfeae78c3eb151ae7b192}\label{classDjVuAnno_a547559f8c1abfeae78c3eb151ae7b192}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuAnno_a547559f8c1abfeae78c3eb151ae7b192}{get\+\_\+xmlmap}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name, const int height) const
+\begin{DoxyCompactList}\small\item\em Obtain the $<$\+M\+A\+P$>$$<$/\+M\+A\+P$>$ tag for these annotations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuAnno_a0f9cf6f142bac3d89d646b519606032d}\label{classDjVuAnno_a0f9cf6f142bac3d89d646b519606032d}} 
+void \mbox{\hyperlink{classDjVuAnno_a0f9cf6f142bac3d89d646b519606032d}{write\+Map}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&bs, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name, const int height) const
+\begin{DoxyCompactList}\small\item\em Write the $<$\+M\+A\+P$>$$<$/\+M\+A\+P$>$ tag for these annotations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuAnno_a47a3344b86e9b3762b190a99b9c5079b}\label{classDjVuAnno_a47a3344b86e9b3762b190a99b9c5079b}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuAnno_a47a3344b86e9b3762b190a99b9c5079b}{get\+\_\+paramtags}} (void) const
+\begin{DoxyCompactList}\small\item\em Obtain the X\+ML flags for the default specifications. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuAnno_aa1277645bb73551a57a9d1783fbc305b}\label{classDjVuAnno_aa1277645bb73551a57a9d1783fbc305b}} 
+void \mbox{\hyperlink{classDjVuAnno_aa1277645bb73551a57a9d1783fbc305b}{write\+Param}} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&out\+\_\+str) const
+\begin{DoxyCompactList}\small\item\em Write the X\+ML flags for the default specifications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Dj\+Vu\+Anno.\+h}\par
+{\em Files \#\char`\"{}\+Dj\+Vu\+Anno.\+h\char`\"{}\# and \#\char`\"{}\+Dj\+Vu\+Anno.\+cpp\char`\"{}\# implement the mechanism for annotating Dj\+Vu\+Images. Annotations are additional instructions for the plugin about how the image should be displayed. The exact format of annotations is not strictly defined. The only requirement is that they have to be stored as a sequence of chunks inside a \#\+F\+O\+RM\+:A\+N\+NO\#.
+
+This file implements annotations understood by the Dj\+Vu plugins and encoders.
+
+using\+: contents of \#\+A\+NT$\ast$\# chunks.
+
+Contents of the \#\+F\+O\+RM\+:A\+N\+NO\# should be passed to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuAnno_a13f745ba20c6b9f1a8a5f8c920f3e0e8}{Dj\+Vu\+Anno\+::decode}}\}() for parsing, which initializes \textbackslash{}\+Ref\{Dj\+Vu\+Anno\+::\+A\+NT\} and fills them with decoded data. @memo Implements support for \mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}} annotations \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}} 
+\end{DoxyAuthor}
+}\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classDjVuAnno_a0f13d5d96542460c1d86e352b98d69fa}{get\+\_\+memory\+\_\+usage}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuAnno_ac923abd9134d30a9caa01b724182b4f9}\label{classDjVuAnno_ac923abd9134d30a9caa01b724182b4f9}} 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuAnno}{Dj\+Vu\+Anno}} $>$ \mbox{\hyperlink{classDjVuAnno_ac923abd9134d30a9caa01b724182b4f9}{create}} (void)
+\begin{DoxyCompactList}\small\item\em Creation method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuAnno_afbb7635604a240c9a86ae8ad64daaee5}\label{classDjVuAnno_afbb7635604a240c9a86ae8ad64daaee5}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuANT}{Dj\+Vu\+A\+NT}} $>$ {\bfseries ant}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This is a top-\/level class containing annotations of a Dj\+Vu document (or just a page). It has only two functions\+: \textbackslash{}\+Ref\{encode\}() and \textbackslash{}\+Ref\{decode\}(). Both of them work with a sequence of annotation chunks from \#\+F\+O\+RM\+:A\+N\+NO\# form. Basing on the name of the chunks they call \mbox{\hyperlink{classDjVuAnno_a1d833c8f52a28ed5084cdb81339ccdf4}{encode()}}\# and \mbox{\hyperlink{classDjVuAnno_a13f745ba20c6b9f1a8a5f8c920f3e0e8}{decode()}}\# functions of the proper annotation structure (like \textbackslash{}\+Ref\{A\+NT\}). The real work of encoding and decoding is done by lower-\/level classes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuAnno_a13f745ba20c6b9f1a8a5f8c920f3e0e8}\label{classDjVuAnno_a13f745ba20c6b9f1a8a5f8c920f3e0e8}} 
+\index{DjVuAnno@{DjVuAnno}!decode@{decode}}
+\index{decode@{decode}!DjVuAnno@{DjVuAnno}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Anno\+::decode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{bs }\end{DoxyParamCaption})}
+
+Decodes a sequence of annotation chunks and merges contents of every chunk with previously decoded information. This function should be called right after applying \textbackslash{}\+Ref\{\mbox{\hyperlink{classIFFByteStream_a090b649ebbbf504069eac0d62452c8a6}{I\+F\+F\+Byte\+Stream\+::get\+\_\+chunk}}\}() to data from \#\+F\+O\+RM\+:A\+N\+NO\#. \mbox{\Hypertarget{classDjVuAnno_a1d833c8f52a28ed5084cdb81339ccdf4}\label{classDjVuAnno_a1d833c8f52a28ed5084cdb81339ccdf4}} 
+\index{DjVuAnno@{DjVuAnno}!encode@{encode}}
+\index{encode@{encode}!DjVuAnno@{DjVuAnno}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Anno\+::encode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{bs }\end{DoxyParamCaption})}
+
+Encodes all annotations back into a sequence of chunks to be put inside a \#\+F\+O\+RM\+:A\+N\+NO\#. \mbox{\Hypertarget{classDjVuAnno_a0f13d5d96542460c1d86e352b98d69fa}\label{classDjVuAnno_a0f13d5d96542460c1d86e352b98d69fa}} 
+\index{DjVuAnno@{DjVuAnno}!get\_memory\_usage@{get\_memory\_usage}}
+\index{get\_memory\_usage@{get\_memory\_usage}!DjVuAnno@{DjVuAnno}}
+\doxysubsubsection{\texorpdfstring{get\_memory\_usage()}{get\_memory\_usage()}}
+{\footnotesize\ttfamily unsigned int Dj\+Vu\+Anno\+::get\+\_\+memory\+\_\+usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of bytes needed by this data structure. It\textquotesingle{}s used by caching routines to estimate the size of a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\}. \mbox{\Hypertarget{classDjVuAnno_a644dc3b3d300f543f15520b499a1c4fc}\label{classDjVuAnno_a644dc3b3d300f543f15520b499a1c4fc}} 
+\index{DjVuAnno@{DjVuAnno}!merge@{merge}}
+\index{merge@{merge}!DjVuAnno@{DjVuAnno}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Anno\+::merge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuAnno}{Dj\+Vu\+Anno}} $>$ \&}]{anno }\end{DoxyParamCaption})}
+
+Merged the contents of this class and of annotations pointed by \#anno\# pointer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+Anno.\+h\item 
+libdjvu/Dj\+Vu\+Anno.\+cpp\end{DoxyCompactItemize}

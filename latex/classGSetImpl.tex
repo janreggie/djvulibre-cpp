@@ -1,0 +1,58 @@
+\hypertarget{classGSetImpl}{}\doxysection{G\+Set\+Impl$<$ K $>$ Class Template Reference}
+\label{classGSetImpl}\index{GSetImpl$<$ K $>$@{GSetImpl$<$ K $>$}}
+
+
+Inheritance diagram for G\+Set\+Impl$<$ K $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classGSetImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Set\+Impl$<$ K $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classGSetImpl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGSetImpl_ae1df9f874a0540b6ec69f9b7eaf5597e}\label{classGSetImpl_ae1df9f874a0540b6ec69f9b7eaf5597e}} 
+\mbox{\hyperlink{classGPosition}{G\+Position}} {\bfseries contains} (const K \&key) const
+\item 
+\mbox{\Hypertarget{classGSetImpl_a09afa10e81b3c56b39f80149ae444f76}\label{classGSetImpl_a09afa10e81b3c56b39f80149ae444f76}} 
+void {\bfseries del} (const K \&key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{Indent}\textbf{ Associative Maps}\par
+{\em These template classes implements a associative maps. The associative map contains an arbitrary number of entries. Each entry is a pair containing one element of type \#\+K\+T\+Y\+PE\# (named the \char`\"{}key\char`\"{}) and one element of type \#\+V\+T\+Y\+PE\# (named the \char`\"{}value\char`\"{}). All entries have distinct keys. These template class must be able to access the following functions\+: \textbackslash{}begin\{itemize\} \textbackslash{}item a \#\+V\+T\+Y\+PE\# default constructor \#\+V\+T\+Y\+P\+E\+::\+V\+T\+Y\+P\+E()\#, \textbackslash{}item a \#\+V\+T\+Y\+PE\# copy constructor \#\+V\+T\+Y\+P\+E\+::\+V\+T\+Y\+P\+E(const V\+T\+Y\+P\+E \&)\#, \textbackslash{}item optionally a \#\+V\+T\+Y\+PE\# destructor \#\+V\+T\+Y\+P\+E\+::$\sim$\+V\+T\+Y\+P\+E()\#, \textbackslash{}item a \#\+K\+T\+Y\+PE\# default constructor \#\+K\+T\+Y\+P\+E\+::\+K\+T\+Y\+P\+E()\#, \textbackslash{}item a \#\+K\+T\+Y\+PE\# copy constructor \#\+K\+T\+Y\+P\+E\+::\+K\+T\+Y\+P\+E(const K\+T\+Y\+P\+E \&)\#, \textbackslash{}item optionally a \#\+K\+T\+Y\+PE\# destructor \#\+K\+T\+Y\+P\+E\+::$\sim$\+K\+T\+Y\+P\+E()\#, \textbackslash{}item a \#\+K\+T\+Y\+PE\# comparison operator \#\+K\+T\+Y\+P\+E\+::operator==(const K\+T\+Y\+P\+E \&)\#, \textbackslash{}item and a \#\+K\+T\+Y\+PE\# hashing function \#hash(const K\+T\+Y\+P\+E\&)\#. \textbackslash{}end\{itemize\} The hashing function must return an \#unsigned int\# number. Multiple invocations of the hashing function with equal arguments (in the sense of \#\+K\+T\+Y\+P\+E\+::operator==\#) must always return the same number. ~\newline
+ Position objects (see \textbackslash{}\+Ref\{\mbox{\hyperlink{classGPosition}{G\+Position}}\}) may be used to iterate over the entries contained by an associative map. @memo Associative maps. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGSetImpl_acf059ff207becfe9830b45ee556369f3}\label{classGSetImpl_acf059ff207becfe9830b45ee556369f3}} 
+{\bfseries G\+Set\+Impl} ()
+\item 
+\mbox{\Hypertarget{classGSetImpl_ab5e16262e42250662937cf3399cc576d}\label{classGSetImpl_ab5e16262e42250662937cf3399cc576d}} 
+{\bfseries G\+Set\+Impl} (const \mbox{\hyperlink{structGCont_1_1Traits}{Traits}} \&traits)
+\item 
+\mbox{\Hypertarget{classGSetImpl_a5afa533178cbb8b80c3ce926d2cf5844}\label{classGSetImpl_a5afa533178cbb8b80c3ce926d2cf5844}} 
+\mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$ {\bfseries get} (const K \&key) const
+\item 
+\mbox{\Hypertarget{classGSetImpl_ae80111c8c20d327ad0991ab4b3bd3b29}\label{classGSetImpl_ae80111c8c20d327ad0991ab4b3bd3b29}} 
+\mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$ {\bfseries get\+\_\+or\+\_\+throw} (const K \&key) const
+\item 
+\mbox{\Hypertarget{classGSetImpl_ac720bf36ca483a79ca2b7a815b73e77f}\label{classGSetImpl_ac720bf36ca483a79ca2b7a815b73e77f}} 
+\mbox{\hyperlink{structGCont_1_1HNode}{H\+Node}} $\ast$ {\bfseries get\+\_\+or\+\_\+create} (const K \&key)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Container.\+h\end{DoxyCompactItemize}

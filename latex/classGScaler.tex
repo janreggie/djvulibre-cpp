@@ -1,0 +1,128 @@
+\hypertarget{classGScaler}{}\doxysection{G\+Scaler Class Reference}
+\label{classGScaler}\index{GScaler@{GScaler}}
+
+
+{\ttfamily \#include $<$G\+Scaler.\+h$>$}
+
+
+
+Inheritance diagram for G\+Scaler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classGScaler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+Scaler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classGScaler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGScaler_a778e8d3e07b23ccd5fc335c10a5af30c}{set\+\_\+input\+\_\+size}} (int w, int h)
+\item 
+void \mbox{\hyperlink{classGScaler_afe49c265810cd581d1974ef0cc50079c}{set\+\_\+output\+\_\+size}} (int w, int h)
+\item 
+void \mbox{\hyperlink{classGScaler_a1766ab30983e73d5021e3632f991343d}{set\+\_\+horz\+\_\+ratio}} (int numer, int denom)
+\item 
+void \mbox{\hyperlink{classGScaler_aa81cba9df7af772b8d5f7e695b41bc69}{set\+\_\+vert\+\_\+ratio}} (int numer, int denom)
+\item 
+void \mbox{\hyperlink{classGScaler_a065a024ed262724d7ce01205655c4b18}{get\+\_\+input\+\_\+rect}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&desired\+\_\+output, \mbox{\hyperlink{classGRect}{G\+Rect}} \&required\+\_\+input)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGScaler_ad2ef83363797a32c8e54297018f246e5}\label{classGScaler_ad2ef83363797a32c8e54297018f246e5}} 
+void {\bfseries make\+\_\+rectangles} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&desired, \mbox{\hyperlink{classGRect}{G\+Rect}} \&red, \mbox{\hyperlink{classGRect}{G\+Rect}} \&inp)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGScaler_a6e14950ce1c3eb2e455993298c4c5b8d}\label{classGScaler_a6e14950ce1c3eb2e455993298c4c5b8d}} 
+int {\bfseries inw}
+\item 
+\mbox{\Hypertarget{classGScaler_ac0e92d95474b69a25efcd75b95801f00}\label{classGScaler_ac0e92d95474b69a25efcd75b95801f00}} 
+int {\bfseries inh}
+\item 
+\mbox{\Hypertarget{classGScaler_a60127aee0e1cb8283f89a78f34c90feb}\label{classGScaler_a60127aee0e1cb8283f89a78f34c90feb}} 
+int {\bfseries xshift}
+\item 
+\mbox{\Hypertarget{classGScaler_a8ae93f0b6ae2215084c29725ad1cdced}\label{classGScaler_a8ae93f0b6ae2215084c29725ad1cdced}} 
+int {\bfseries yshift}
+\item 
+\mbox{\Hypertarget{classGScaler_abecbb28228fa9cf03c4394d16a43ebf7}\label{classGScaler_abecbb28228fa9cf03c4394d16a43ebf7}} 
+int {\bfseries redw}
+\item 
+\mbox{\Hypertarget{classGScaler_a2b7cf9aa30a57bb196155f740353b4d7}\label{classGScaler_a2b7cf9aa30a57bb196155f740353b4d7}} 
+int {\bfseries redh}
+\item 
+\mbox{\Hypertarget{classGScaler_ae4b9b5d572b9775e46fd0bdf16cbef41}\label{classGScaler_ae4b9b5d572b9775e46fd0bdf16cbef41}} 
+int {\bfseries outw}
+\item 
+\mbox{\Hypertarget{classGScaler_a445212222578a121e9f46b89efcd17d7}\label{classGScaler_a445212222578a121e9f46b89efcd17d7}} 
+int {\bfseries outh}
+\item 
+\mbox{\Hypertarget{classGScaler_aa35f5e163de2c23f61cac2705bc995d5}\label{classGScaler_aa35f5e163de2c23f61cac2705bc995d5}} 
+int $\ast$ {\bfseries vcoord}
+\item 
+\mbox{\Hypertarget{classGScaler_a998d2a4f7ac1912ef9417378756fc09b}\label{classGScaler_a998d2a4f7ac1912ef9417378756fc09b}} 
+\mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}}$<$ int $>$ {\bfseries gvcoord}
+\item 
+\mbox{\Hypertarget{classGScaler_a37b7f17a274966fd4760dbe2da529326}\label{classGScaler_a37b7f17a274966fd4760dbe2da529326}} 
+int $\ast$ {\bfseries hcoord}
+\item 
+\mbox{\Hypertarget{classGScaler_a38b86a20b8a57787bcbe9020eb0c2460}\label{classGScaler_a38b86a20b8a57787bcbe9020eb0c2460}} 
+\mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}}$<$ int $>$ {\bfseries ghcoord}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for \mbox{\hyperlink{classGBitmapScaler}{G\+Bitmap\+Scaler}} and \mbox{\hyperlink{classGPixmapScaler}{G\+Pixmap\+Scaler}}. This base class implements the common elements of class \textbackslash{}\+Ref\{\mbox{\hyperlink{classGBitmapScaler}{G\+Bitmap\+Scaler}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classGPixmapScaler}{G\+Pixmap\+Scaler}}\}. Functions \textbackslash{}\+Ref\{set\+\_\+input\+\_\+size\} and \textbackslash{}\+Ref\{set\+\_\+output\+\_\+size\} are used to specify the size of the input image and the size of the output image. Functions \textbackslash{}\+Ref\{set\+\_\+horz\+\_\+ratio\} and \textbackslash{}\+Ref\{set\+\_\+vert\+\_\+ratio\} may be used to override the scaling ratios computed from the image sizes. You can then call function \textbackslash{}\+Ref\{get\+\_\+input\+\_\+rect\} to know which pixels of the input image are necessary to compute a specified rectangular zone of the output image. The actual computation is then performed by calling function \#scale\# in class \textbackslash{}\+Ref\{\mbox{\hyperlink{classGBitmapScaler}{G\+Bitmap\+Scaler}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classGPixmapScaler}{G\+Pixmap\+Scaler}}\}. ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGScaler_a065a024ed262724d7ce01205655c4b18}\label{classGScaler_a065a024ed262724d7ce01205655c4b18}} 
+\index{GScaler@{GScaler}!get\_input\_rect@{get\_input\_rect}}
+\index{get\_input\_rect@{get\_input\_rect}!GScaler@{GScaler}}
+\doxysubsubsection{\texorpdfstring{get\_input\_rect()}{get\_input\_rect()}}
+{\footnotesize\ttfamily void G\+Scaler\+::get\+\_\+input\+\_\+rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{desired\+\_\+output,  }\item[{\mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{required\+\_\+input }\end{DoxyParamCaption})}
+
+Computes which input pixels are required to compute specified output pixels. Let us assume that we only need a part of the output image. This part is defined by rectangle \#desired\+\_\+output\#. Only a part of the input image is necessary to compute the output pixels. Function \mbox{\hyperlink{classGScaler_a065a024ed262724d7ce01205655c4b18}{get\+\_\+input\+\_\+rect}}\# computes the coordinates of that part of the input image, and stores them into rectangle \#required\+\_\+input\#. ~\newline
+ \mbox{\Hypertarget{classGScaler_a1766ab30983e73d5021e3632f991343d}\label{classGScaler_a1766ab30983e73d5021e3632f991343d}} 
+\index{GScaler@{GScaler}!set\_horz\_ratio@{set\_horz\_ratio}}
+\index{set\_horz\_ratio@{set\_horz\_ratio}!GScaler@{GScaler}}
+\doxysubsubsection{\texorpdfstring{set\_horz\_ratio()}{set\_horz\_ratio()}}
+{\footnotesize\ttfamily void G\+Scaler\+::set\+\_\+horz\+\_\+ratio (\begin{DoxyParamCaption}\item[{int}]{numer,  }\item[{int}]{denom }\end{DoxyParamCaption})}
+
+Sets the horizontal scaling ratio \#numer/denom\#. This function may be used to force an exact scaling ratio. The scaling ratios are otherwise derived from the sizes of the input and output images. \mbox{\Hypertarget{classGScaler_a778e8d3e07b23ccd5fc335c10a5af30c}\label{classGScaler_a778e8d3e07b23ccd5fc335c10a5af30c}} 
+\index{GScaler@{GScaler}!set\_input\_size@{set\_input\_size}}
+\index{set\_input\_size@{set\_input\_size}!GScaler@{GScaler}}
+\doxysubsubsection{\texorpdfstring{set\_input\_size()}{set\_input\_size()}}
+{\footnotesize\ttfamily void G\+Scaler\+::set\+\_\+input\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+Sets the size of the input image. Argument \#w\# (resp. \#h\#) contains the horizontal (resp. vertical) size of the input image. This size is used to initialize the internal data structures of the scaler object. \mbox{\Hypertarget{classGScaler_afe49c265810cd581d1974ef0cc50079c}\label{classGScaler_afe49c265810cd581d1974ef0cc50079c}} 
+\index{GScaler@{GScaler}!set\_output\_size@{set\_output\_size}}
+\index{set\_output\_size@{set\_output\_size}!GScaler@{GScaler}}
+\doxysubsubsection{\texorpdfstring{set\_output\_size()}{set\_output\_size()}}
+{\footnotesize\ttfamily void G\+Scaler\+::set\+\_\+output\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+Sets the size of the output image. Argument \#w\# (resp. \#h\#) contains the horizontal (resp. vertical) size of the output image. This size is used to initialize the internal data structures of the scaler object. \mbox{\Hypertarget{classGScaler_aa81cba9df7af772b8d5f7e695b41bc69}\label{classGScaler_aa81cba9df7af772b8d5f7e695b41bc69}} 
+\index{GScaler@{GScaler}!set\_vert\_ratio@{set\_vert\_ratio}}
+\index{set\_vert\_ratio@{set\_vert\_ratio}!GScaler@{GScaler}}
+\doxysubsubsection{\texorpdfstring{set\_vert\_ratio()}{set\_vert\_ratio()}}
+{\footnotesize\ttfamily void G\+Scaler\+::set\+\_\+vert\+\_\+ratio (\begin{DoxyParamCaption}\item[{int}]{numer,  }\item[{int}]{denom }\end{DoxyParamCaption})}
+
+Sets the vertical scaling ratio to \#numer/denom\#. This function may be used to force an exact scaling ratio. The scaling ratios are otherwise derived from the sizes of the input and output images. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Scaler.\+h\item 
+libdjvu/G\+Scaler.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+<map id="ddjvu_job_s" name="ddjvu_job_s">
+<area shape="rect" id="node1" title=" " alt="" coords="180,155,279,181"/>
+<area shape="rect" id="node4" href="$structddjvu__document__s.html" title=" " alt="" coords="5,229,149,256"/>
+<area shape="rect" id="node5" href="$structddjvu__page__s.html" title=" " alt="" coords="174,229,285,256"/>
+<area shape="rect" id="node6" href="$structddjvu__runnablejob__s.html" title=" " alt="" coords="309,229,465,256"/>
+<area shape="rect" id="node2" href="$classDjVuPort.html" title=" " alt="" coords="190,80,269,107"/>
+<area shape="rect" id="node3" href="$classGPEnabled.html" title=" " alt="" coords="183,5,275,32"/>
+<area shape="rect" id="node7" href="$structddjvu__printjob__s.html" title=" " alt="" coords="245,304,374,331"/>
+<area shape="rect" id="node8" href="$structddjvu__savejob__s.html" title=" " alt="" coords="399,304,529,331"/>
+</map>

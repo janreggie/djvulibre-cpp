@@ -1,0 +1,192 @@
+\hypertarget{classByteStream_1_1Memory}{}\doxysection{Byte\+Stream\+::Memory Class Reference}
+\label{classByteStream_1_1Memory}\index{ByteStream::Memory@{ByteStream::Memory}}
+
+
+Inheritance diagram for Byte\+Stream\+::Memory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classByteStream_1_1Memory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Byte\+Stream\+::Memory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classByteStream_1_1Memory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classByteStream_1_1Memory_ac4330f9132f561835fe0ca219773ae41}{Memory}} ()
+\item 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classByteStream_1_1Memory_a0202403dd4c9d1e89936f20a3bcbc12e}{init}} (const void $\ast$const buffer, const size\+\_\+t \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}})
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classByteStream_1_1Memory_a60d433b8501529d1fa640de85f4433ad}{read}} (void $\ast$buffer, size\+\_\+t \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}})
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classByteStream_1_1Memory_a353c576bec160e97db7f605fc980a7ef}{write}} (const void $\ast$buffer, size\+\_\+t \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}})
+\item 
+virtual int \mbox{\hyperlink{classByteStream_1_1Memory_a8d51e2b55083bc2c5051e6ee211e8240}{seek}} (long offset, int whence=S\+E\+E\+K\+\_\+\+S\+ET, bool nothrow=false)
+\item 
+virtual long \mbox{\hyperlink{classByteStream_1_1Memory_a1225e6b4cc7bd2cba6ff6852d5a977c8}{tell}} (void) const
+\item 
+void \mbox{\hyperlink{classByteStream_1_1Memory_a0afebca222f5bfdebbe373157447fcf8}{empty}} ()
+\item 
+virtual long \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}} (void) const
+\item 
+char \& \mbox{\hyperlink{classByteStream_1_1Memory_ac2576a7b4ac2cfe49a3ca463fc588f71}{operator\mbox{[}$\,$\mbox{]}}} (int n)
+\item 
+\mbox{\Hypertarget{classByteStream_1_1Memory_aedafbf8ae4fc3590e481f2c8c74129f8}\label{classByteStream_1_1Memory_aedafbf8ae4fc3590e481f2c8c74129f8}} 
+char \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (long n)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classByteStream_1_1Memory_aaa4f7467497ab8ba789f5c3280a35d9b}{readat}} (void $\ast$buffer, size\+\_\+t sz, long pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{classByteStream_1_1Memory_a167b29ce8a9933f36743a46359bc7a1e}{bsize}}
+\item 
+int \mbox{\hyperlink{classByteStream_1_1Memory_a632833d1602f1925508779e4ee92e6f2}{nblocks}}
+\item 
+char $\ast$$\ast$ \mbox{\hyperlink{classByteStream_1_1Memory_a0419466de27eed156cd13b50c8f61de4}{blocks}}
+\item 
+\mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}}$<$ char $\ast$ $>$ \mbox{\hyperlink{classByteStream_1_1Memory_a36367c953ebc20b111d37ca2e297029d}{gblocks}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classByteStream}{Byte\+Stream}} interface managing a memory buffer. ~\newline
+ \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classByteStream_1_1Memory}{Byte\+Stream\+::\+Memory}}\# manages a dynamically resizable buffer from which data can be read or written. The buffer itself is organized as an array of blocks of 4096 bytes. ~\newline
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classByteStream_1_1Memory_ac4330f9132f561835fe0ca219773ae41}\label{classByteStream_1_1Memory_ac4330f9132f561835fe0ca219773ae41}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!Memory@{Memory}}
+\index{Memory@{Memory}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{Memory()}{Memory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classByteStream_1_1Memory}{Byte\+Stream\+::\+Memory\+::\+Memory}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty \mbox{\hyperlink{classByteStream_1_1Memory}{Byte\+Stream\+::\+Memory}}. The buffer is initially empty. You must first use function \mbox{\hyperlink{classByteStream_1_1Memory_a353c576bec160e97db7f605fc980a7ef}{write}}\# to store data into the buffer, use function \mbox{\hyperlink{classByteStream_1_1Memory_a8d51e2b55083bc2c5051e6ee211e8240}{seek}}\# to rewind the current position, and function \mbox{\hyperlink{classByteStream_1_1Memory_a60d433b8501529d1fa640de85f4433ad}{read}}\# to read the data back. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classByteStream_1_1Memory_a0afebca222f5bfdebbe373157447fcf8}\label{classByteStream_1_1Memory_a0afebca222f5bfdebbe373157447fcf8}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!empty@{empty}}
+\index{empty@{empty}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily void Byte\+Stream\+::\+Memory\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Erases everything in the \mbox{\hyperlink{classByteStream_1_1Memory}{Memory}}. The current location is reset to zero. \mbox{\Hypertarget{classByteStream_1_1Memory_a0202403dd4c9d1e89936f20a3bcbc12e}\label{classByteStream_1_1Memory_a0202403dd4c9d1e89936f20a3bcbc12e}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!init@{init}}
+\index{init@{init}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} Byte\+Stream\+::\+Memory\+::init (\begin{DoxyParamCaption}\item[{const void $\ast$const}]{buffer,  }\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Constructs a \mbox{\hyperlink{classByteStream_1_1Memory}{Memory}} by copying initial data. The \mbox{\hyperlink{classByteStream_1_1Memory}{Memory}} buffer is initialized with \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}}\# bytes copied from the memory area pointed to by \#buffer\#. \mbox{\Hypertarget{classByteStream_1_1Memory_ac2576a7b4ac2cfe49a3ca463fc588f71}\label{classByteStream_1_1Memory_ac2576a7b4ac2cfe49a3ca463fc588f71}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily char \& Byte\+Stream\+::\+Memory\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a reference to the byte at offset \#n\#. This reference can be used to read (as in \#mbs\mbox{[}n\mbox{]}\#) or modify (as in \#mbs\mbox{[}n\mbox{]}=c\#) the contents of the buffer. \mbox{\Hypertarget{classByteStream_1_1Memory_a60d433b8501529d1fa640de85f4433ad}\label{classByteStream_1_1Memory_a60d433b8501529d1fa640de85f4433ad}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!read@{read}}
+\index{read@{read}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Stream\+::\+Memory\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reads data from a \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. This function \{{\itshape must\}} be implemented by each subclass of \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\#. At most \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}}\# bytes are read from the \mbox{\hyperlink{classByteStream}{Byte\+Stream}} and stored in the memory area pointed to by \#buffer\#. Function \mbox{\hyperlink{classByteStream_1_1Memory_a60d433b8501529d1fa640de85f4433ad}{read}}\# returns immediately if \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}}\# is zero. The actual number of bytes read is returned. Function \mbox{\hyperlink{classByteStream_1_1Memory_a60d433b8501529d1fa640de85f4433ad}{read}}\# returns a number of bytes smaller than \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}}\# if the end-\/of-\/file mark is reached before filling the buffer. Subsequent invocations will always return value \#0\#. Function \mbox{\hyperlink{classByteStream_1_1Memory_a60d433b8501529d1fa640de85f4433ad}{read}}\# may also return a value greater than zero but smaller than \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}}\# for internal reasons. Programs must be ready to handle these cases or use function \textbackslash{}\+Ref\{readall\}. Exception \textbackslash{}\+Ref\{\mbox{\hyperlink{classGException}{G\+Exception}}\} is thrown with a plain text error message whenever an error occurs. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_ae69bbdbc77545f72488bde0639ae0e95}{Byte\+Stream}}.
+
+\mbox{\Hypertarget{classByteStream_1_1Memory_aaa4f7467497ab8ba789f5c3280a35d9b}\label{classByteStream_1_1Memory_aaa4f7467497ab8ba789f5c3280a35d9b}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!readat@{readat}}
+\index{readat@{readat}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{readat()}{readat()}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Stream\+::\+Memory\+::readat (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{sz,  }\item[{long}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Reads data from a random position. This function reads at most \#sz\# bytes at position \#pos\# into \#buffer\# and returns the actual number of bytes read. The current position is unchanged. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_ae6eb7cb9411fb20f1778bc290f2417be}{Byte\+Stream}}.
+
+\mbox{\Hypertarget{classByteStream_1_1Memory_a8d51e2b55083bc2c5051e6ee211e8240}\label{classByteStream_1_1Memory_a8d51e2b55083bc2c5051e6ee211e8240}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!seek@{seek}}
+\index{seek@{seek}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily int Byte\+Stream\+::\+Memory\+::seek (\begin{DoxyParamCaption}\item[{long}]{offset,  }\item[{int}]{whence = {\ttfamily SEEK\+\_\+SET},  }\item[{bool}]{nothrow = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the current position for reading or writing the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\# provides a default implementation able to seek forward by calling function \mbox{\hyperlink{classByteStream_1_1Memory_a60d433b8501529d1fa640de85f4433ad}{read}}\# until reaching the desired position. Subclasses implementing better seek capabilities must override this default implementation. The new current position is computed by applying displacement \#offset\# to the position represented by argument \#whence\#. The following values are recognized for argument \#whence\#\+: \textbackslash{}begin\{description\} \textbackslash{}item\mbox{[}\#\+S\+E\+E\+K\+\_\+\+S\+ET\#\mbox{]} Argument \#offset\# indicates the position relative to the beginning of the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. \textbackslash{}item\mbox{[}\#\+S\+E\+E\+K\+\_\+\+C\+UR\#\mbox{]} Argument \#offset\# is a signed displacement relative to the current position. \textbackslash{}item\mbox{[}\#\+S\+E\+E\+K\+\_\+\+E\+ND\#\mbox{]} Argument \#offset\# is a displacement relative to the end of the file. It is then advisable to provide a negative value for \#offset\#. \textbackslash{}end\{description\} Results are undefined whenever the new position is greater than the total size of the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}.
+
+\{\textbackslash{}bf Error reporting\}\+: If \mbox{\hyperlink{classByteStream_1_1Memory_a8d51e2b55083bc2c5051e6ee211e8240}{seek()}}\# succeeds, \#0\# is returned. Otherwise it either returns \#-\/1\# (if \#nothrow\# is set to \#\+F\+A\+L\+SE\#) or throws the \textbackslash{}\+Ref\{\mbox{\hyperlink{classGException}{G\+Exception}}\} exception. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_a601ef5bf4d183b262472e1e1f7c9a2ad}{Byte\+Stream}}.
+
+\mbox{\Hypertarget{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}\label{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!size@{size}}
+\index{size@{size}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily long Byte\+Stream\+::\+Memory\+::size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns the total number of bytes contained in the buffer. Valid offsets for function \mbox{\hyperlink{classByteStream_1_1Memory_a8d51e2b55083bc2c5051e6ee211e8240}{seek}}\# range from 0 to the value returned by this function. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{Byte\+Stream}}.
+
+\mbox{\Hypertarget{classByteStream_1_1Memory_a1225e6b4cc7bd2cba6ff6852d5a977c8}\label{classByteStream_1_1Memory_a1225e6b4cc7bd2cba6ff6852d5a977c8}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!tell@{tell}}
+\index{tell@{tell}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{tell()}{tell()}}
+{\footnotesize\ttfamily long Byte\+Stream\+::\+Memory\+::tell (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the offset of the current position in the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. This function \{{\itshape must\}} be implemented by each subclass of \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\#. 
+
+Implements \mbox{\hyperlink{classByteStream_a6379ec44f814a160980d2dd5c5e25672}{Byte\+Stream}}.
+
+\mbox{\Hypertarget{classByteStream_1_1Memory_a353c576bec160e97db7f605fc980a7ef}\label{classByteStream_1_1Memory_a353c576bec160e97db7f605fc980a7ef}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!write@{write}}
+\index{write@{write}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Stream\+::\+Memory\+::write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes data to a \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. This function \{{\itshape must\}} be implemented by each subclass of \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\#. At most \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}}\# bytes from buffer \#buffer\# are written to the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. Function \mbox{\hyperlink{classByteStream_1_1Memory_a353c576bec160e97db7f605fc980a7ef}{write}}\# returns immediately if \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}}\# is zero. The actual number of bytes written is returned. Function \mbox{\hyperlink{classByteStream_1_1Memory_a353c576bec160e97db7f605fc980a7ef}{write}}\# may also return a value greater than zero but smaller than \mbox{\hyperlink{classByteStream_1_1Memory_a1c7b52e3f451a4721f93c71791283e99}{size}}\# for internal reasons. Programs must be ready to handle these cases or use function \textbackslash{}\+Ref\{writall\}. Exception \textbackslash{}\+Ref\{\mbox{\hyperlink{classGException}{G\+Exception}}\} is thrown with a plain text error message whenever an error occurs. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_ac10e950d655e5dabb93af44e3a5da855}{Byte\+Stream}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classByteStream_1_1Memory_a0419466de27eed156cd13b50c8f61de4}\label{classByteStream_1_1Memory_a0419466de27eed156cd13b50c8f61de4}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!blocks@{blocks}}
+\index{blocks@{blocks}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{blocks}{blocks}}
+{\footnotesize\ttfamily char$\ast$$\ast$ Byte\+Stream\+::\+Memory\+::blocks\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointers (possibly null) to 4096 bytes blocks. \mbox{\Hypertarget{classByteStream_1_1Memory_a167b29ce8a9933f36743a46359bc7a1e}\label{classByteStream_1_1Memory_a167b29ce8a9933f36743a46359bc7a1e}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!bsize@{bsize}}
+\index{bsize@{bsize}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{bsize}{bsize}}
+{\footnotesize\ttfamily long Byte\+Stream\+::\+Memory\+::bsize\hspace{0.3cm}{\ttfamily [protected]}}
+
+Number of bytes in internal buffer. \mbox{\Hypertarget{classByteStream_1_1Memory_a36367c953ebc20b111d37ca2e297029d}\label{classByteStream_1_1Memory_a36367c953ebc20b111d37ca2e297029d}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!gblocks@{gblocks}}
+\index{gblocks@{gblocks}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{gblocks}{gblocks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPBuffer}{G\+P\+Buffer}}$<$char $\ast$$>$ Byte\+Stream\+::\+Memory\+::gblocks\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointers (possibly null) to 4096 bytes blocks. \mbox{\Hypertarget{classByteStream_1_1Memory_a632833d1602f1925508779e4ee92e6f2}\label{classByteStream_1_1Memory_a632833d1602f1925508779e4ee92e6f2}} 
+\index{ByteStream::Memory@{ByteStream::Memory}!nblocks@{nblocks}}
+\index{nblocks@{nblocks}!ByteStream::Memory@{ByteStream::Memory}}
+\doxysubsubsection{\texorpdfstring{nblocks}{nblocks}}
+{\footnotesize\ttfamily int Byte\+Stream\+::\+Memory\+::nblocks\hspace{0.3cm}{\ttfamily [protected]}}
+
+Number of 4096 bytes blocks. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Byte\+Stream.\+cpp\end{DoxyCompactItemize}

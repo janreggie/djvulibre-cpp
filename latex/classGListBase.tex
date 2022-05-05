@@ -1,0 +1,88 @@
+\hypertarget{classGListBase}{}\doxysection{G\+List\+Base Class Reference}
+\label{classGListBase}\index{GListBase@{GListBase}}
+
+
+Inheritance diagram for G\+List\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGListBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for G\+List\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classGListBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGListBase_a2c58245ef290bde1dd637b44303ee36a}\label{classGListBase_a2c58245ef290bde1dd637b44303ee36a}} 
+\mbox{\hyperlink{classGListBase}{G\+List\+Base}} \& {\bfseries operator=} (const \mbox{\hyperlink{classGListBase}{G\+List\+Base}} \&gl)
+\item 
+\mbox{\Hypertarget{classGListBase_a8f0d0a4c961ab6704db12a31bad42a02}\label{classGListBase_a8f0d0a4c961ab6704db12a31bad42a02}} 
+\mbox{\hyperlink{classGPosition}{G\+Position}} {\bfseries firstpos} () const
+\item 
+\mbox{\Hypertarget{classGListBase_ae2a57df433fc45eaa3a72e0d286f05ad}\label{classGListBase_ae2a57df433fc45eaa3a72e0d286f05ad}} 
+\mbox{\hyperlink{classGPosition}{G\+Position}} {\bfseries lastpos} () const
+\item 
+\mbox{\Hypertarget{classGListBase_addffe4617742c73f10cda879a6709dc4}\label{classGListBase_addffe4617742c73f10cda879a6709dc4}} 
+bool {\bfseries isempty} () const
+\item 
+\mbox{\Hypertarget{classGListBase_ad8f07669374db40498b1f84fdc36b4a4}\label{classGListBase_ad8f07669374db40498b1f84fdc36b4a4}} 
+\mbox{\hyperlink{classGPosition}{G\+Position}} {\bfseries nth} (unsigned int n) const
+\item 
+\mbox{\Hypertarget{classGListBase_a4752cb24528b0fa1b26d51c18c3160a2}\label{classGListBase_a4752cb24528b0fa1b26d51c18c3160a2}} 
+void {\bfseries empty} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGListBase_a3f34cd3d08137f14bcdaf406742fc3a0}\label{classGListBase_a3f34cd3d08137f14bcdaf406742fc3a0}} 
+{\bfseries G\+List\+Base} (const Traits \&traits)
+\item 
+\mbox{\Hypertarget{classGListBase_a31ccefe4223001617fb6dc2f59887c9b}\label{classGListBase_a31ccefe4223001617fb6dc2f59887c9b}} 
+{\bfseries G\+List\+Base} (const \mbox{\hyperlink{classGListBase}{G\+List\+Base}} \&ref)
+\item 
+\mbox{\Hypertarget{classGListBase_abbf52e83b68340046bc7664139e43b66}\label{classGListBase_abbf52e83b68340046bc7664139e43b66}} 
+void {\bfseries append} (\mbox{\hyperlink{structGCont_1_1Node}{Node}} $\ast$n)
+\item 
+\mbox{\Hypertarget{classGListBase_a261a01739270e798f13dbb8045fba62f}\label{classGListBase_a261a01739270e798f13dbb8045fba62f}} 
+void {\bfseries prepend} (\mbox{\hyperlink{structGCont_1_1Node}{Node}} $\ast$n)
+\item 
+\mbox{\Hypertarget{classGListBase_af0525bad3ec8a027ee83bb17abfdb537}\label{classGListBase_af0525bad3ec8a027ee83bb17abfdb537}} 
+void {\bfseries insert\+\_\+after} (\mbox{\hyperlink{classGPosition}{G\+Position}} pos, \mbox{\hyperlink{structGCont_1_1Node}{Node}} $\ast$n)
+\item 
+\mbox{\Hypertarget{classGListBase_ac44f8a4667f6c81adfcd44b5919e08ad}\label{classGListBase_ac44f8a4667f6c81adfcd44b5919e08ad}} 
+void {\bfseries insert\+\_\+before} (\mbox{\hyperlink{classGPosition}{G\+Position}} pos, \mbox{\hyperlink{structGCont_1_1Node}{Node}} $\ast$n)
+\item 
+\mbox{\Hypertarget{classGListBase_ab600917dbfd437d5022dadbf5a0ba8c7}\label{classGListBase_ab600917dbfd437d5022dadbf5a0ba8c7}} 
+void {\bfseries insert\+\_\+before} (\mbox{\hyperlink{classGPosition}{G\+Position}} pos, \mbox{\hyperlink{classGListBase}{G\+List\+Base}} \&fromlist, \mbox{\hyperlink{classGPosition}{G\+Position}} \&frompos)
+\item 
+\mbox{\Hypertarget{classGListBase_ab0f7d8b55587aa7c20b8723a24af0506}\label{classGListBase_ab0f7d8b55587aa7c20b8723a24af0506}} 
+void {\bfseries del} (\mbox{\hyperlink{classGPosition}{G\+Position}} \&pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGListBase_a91a979d7708eb76f4c11fcc34628b525}\label{classGListBase_a91a979d7708eb76f4c11fcc34628b525}} 
+const Traits \& {\bfseries traits}
+\item 
+\mbox{\Hypertarget{classGListBase_af5f58e3d1cc00c3f24cdfaa4dbe530d1}\label{classGListBase_af5f58e3d1cc00c3f24cdfaa4dbe530d1}} 
+int {\bfseries nelem}
+\item 
+\mbox{\Hypertarget{classGListBase_a62727158d36869511a938c5d2c5ace7d}\label{classGListBase_a62727158d36869511a938c5d2c5ace7d}} 
+\mbox{\hyperlink{structGCont_1_1Node}{Node}} {\bfseries head}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Container.\+h\item 
+libdjvu/G\+Container.\+cpp\end{DoxyCompactItemize}

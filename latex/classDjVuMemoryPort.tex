@@ -1,0 +1,82 @@
+\hypertarget{classDjVuMemoryPort}{}\doxysection{Dj\+Vu\+Memory\+Port Class Reference}
+\label{classDjVuMemoryPort}\index{DjVuMemoryPort@{DjVuMemoryPort}}
+
+
+{\ttfamily \#include $<$Dj\+Vu\+Port.\+h$>$}
+
+
+
+Inheritance diagram for Dj\+Vu\+Memory\+Port\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classDjVuMemoryPort__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+Memory\+Port\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classDjVuMemoryPort__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuMemoryPort_a84371cb88992a7431d6f9a6a83910b68}{request\+\_\+data}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url)
+\item 
+void \mbox{\hyperlink{classDjVuMemoryPort_a50a766b19485d995d1d40c282d9f6070}{add\+\_\+data}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&pool)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Dj\+Vu\+Port.\+h}\par
+{\em Files \#\char`\"{}\+Dj\+Vu\+Port.\+h\char`\"{}\# and \#\char`\"{}\+Dj\+Vu\+Port.\+cpp\char`\"{}\# implement a communication mechanism between different parties involved in decoding Dj\+Vu files. It should be pretty clear that the creator of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} would like to receive some information about the progress of decoding, errors occurred, etc. It may also want to provide source data for decoders (like it\textquotesingle{}s done in the plugin where the real data is downloaded from the net and is fed into Dj\+Vu decoders).
+
+Normally this functionality is implemented by means of callbacks which are run when a given condition comes true. Unfortunately it\textquotesingle{}s not quite easy to implement this strategy in our case. The reason is that there may be more than one \char`\"{}client\char`\"{} working with the same document, and the document should send the information to each of the clients. This could be done by means of callback \{{\itshape lists\}}, of course, but we want to achieve more bulletproof results\+: we want to be sure that the client that we\textquotesingle{}re about to contact is still alive, and is not being destroyed by another thread. Besides, we are going to call these \char`\"{}callbacks\char`\"{} from many places, from many different classes. Maintaining multi-\/thread safe callback lists is very difficult.
+
+Finally, we want to provide some default implementation of these \char`\"{}callbacks\char`\"{} in the library, which should attempt to process the requests themselves if they can, and contact the client only if they\textquotesingle{}re unable to do it (like in the case of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort_a3209546237c836dc716d852fd6219add}{Dj\+Vu\+Port\+::request\+\_\+data}}\}() with local U\+RL where \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} can get the data from the hard drive itself not disturbing the document\textquotesingle{}s creator.
+
+Two classes implement a general communication mechanism\+: \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\}. Any sender and recipient of requests should be a subclass of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}. \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\} maintains a map of routes between \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}s, which should be configured by somebody else. Whenever a port wants to send a request, it calls the corresponding function of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\}, and the portcaster relays the request to all the destinations that it sees in the internal map.
+
+The \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\} is responsible for keeping the map up to date by getting rid of destinations that have been destroyed. Map updates are performed from a single place and are serialized by a global monitor.
+
+@memo Dj\+Vu decoder communication mechanism. \begin{DoxyAuthor}{Author}
+Andrei Erofeev \href{mailto:eaf@geocities.com}{\texttt{ eaf@geocities.\+com}}\textbackslash{} L\textbackslash{}\textquotesingle{}eon Bottou \href{mailto:leonb@research.att.com}{\texttt{ leonb@research.\+att.\+com}} 
+\end{DoxyAuthor}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuMemoryPort_a8ffedb7ce8b60a25e076bc5fd7ccd5b1}\label{classDjVuMemoryPort_a8ffedb7ce8b60a25e076bc5fd7ccd5b1}} 
+virtual bool \mbox{\hyperlink{classDjVuMemoryPort_a8ffedb7ce8b60a25e076bc5fd7ccd5b1}{inherits}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&class\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Returns 1 if \#class\+\_\+name\# is \#\char`\"{}\+Dj\+Vu\+Port\char`\"{}\# or \#\char`\"{}\+Dj\+Vu\+Memory\+Port\char`\"{}\#. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Memory based port. This \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} maintains a map associating pseudo urls with data segments. It processes the \mbox{\hyperlink{classDjVuMemoryPort_a84371cb88992a7431d6f9a6a83910b68}{request\+\_\+data}}\# notifications according to this map. After initializing the port, you should add as many pairs \#$<$url, pool$>$\# as needed need and add a route from a \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} or \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} to this port. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuMemoryPort_a50a766b19485d995d1d40c282d9f6070}\label{classDjVuMemoryPort_a50a766b19485d995d1d40c282d9f6070}} 
+\index{DjVuMemoryPort@{DjVuMemoryPort}!add\_data@{add\_data}}
+\index{add\_data@{add\_data}!DjVuMemoryPort@{DjVuMemoryPort}}
+\doxysubsubsection{\texorpdfstring{add\_data()}{add\_data()}}
+{\footnotesize\ttfamily void Dj\+Vu\+Memory\+Port\+::add\+\_\+data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url,  }\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&}]{pool }\end{DoxyParamCaption})}
+
+Adds \#$<$url, pool$>$\# pair to the internal map. From now on, if somebody asks for data corresponding to the \#url\#, it will be returning the \#pool\# \mbox{\Hypertarget{classDjVuMemoryPort_a84371cb88992a7431d6f9a6a83910b68}\label{classDjVuMemoryPort_a84371cb88992a7431d6f9a6a83910b68}} 
+\index{DjVuMemoryPort@{DjVuMemoryPort}!request\_data@{request\_data}}
+\index{request\_data@{request\_data}!DjVuMemoryPort@{DjVuMemoryPort}}
+\doxysubsubsection{\texorpdfstring{request\_data()}{request\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+Memory\+Port\+::request\+\_\+data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+If \#url\# is one of those, that have been added before by means of \textbackslash{}\+Ref\{add\+\_\+data\}() function, it will return the associated \textbackslash{}\+Ref\{\mbox{\hyperlink{classDataPool}{Data\+Pool}}\}. \#\+Z\+E\+RO\# otherwize. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_a3209546237c836dc716d852fd6219add}{Dj\+Vu\+Port}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+Port.\+h\item 
+libdjvu/Dj\+Vu\+Port.\+cpp\end{DoxyCompactItemize}

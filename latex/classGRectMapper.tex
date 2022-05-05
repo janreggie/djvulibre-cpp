@@ -1,0 +1,142 @@
+\hypertarget{classGRectMapper}{}\doxysection{G\+Rect\+Mapper Class Reference}
+\label{classGRectMapper}\index{GRectMapper@{GRectMapper}}
+
+
+{\ttfamily \#include $<$G\+Rect.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGRectMapper_1_1GRatio}{G\+Ratio}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGRectMapper_a4c2624e837230ef66b52cc9bbfd44bda}{G\+Rect\+Mapper}} ()
+\item 
+void \mbox{\hyperlink{classGRectMapper_adee992440b1b62060a7d820f744493c4}{clear}} ()
+\item 
+void \mbox{\hyperlink{classGRectMapper_ae008b71d6ad5207706f19da020668888}{set\+\_\+input}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+\mbox{\hyperlink{classGRect}{G\+Rect}} \mbox{\hyperlink{classGRectMapper_ac28e11260f34d0d75c9eba577f026418}{get\+\_\+input}} ()
+\item 
+void \mbox{\hyperlink{classGRectMapper_aace54b12860f9995ae7d38c125588785}{set\+\_\+output}} (const \mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+\mbox{\hyperlink{classGRect}{G\+Rect}} \mbox{\hyperlink{classGRectMapper_a34f496ae06a2a51ee8faa349fa72a549}{get\+\_\+output}} ()
+\item 
+void \mbox{\hyperlink{classGRectMapper_a0644817d6511edb11f06826ff13a7667}{rotate}} (int count=1)
+\item 
+void \mbox{\hyperlink{classGRectMapper_a3161b7a625427b59d6622292b221e707}{mirrorx}} ()
+\item 
+void \mbox{\hyperlink{classGRectMapper_ada7f41b97ce9320fdba7924acd2e41e1}{mirrory}} ()
+\item 
+void \mbox{\hyperlink{classGRectMapper_ab980a47a6e623ae20fc64c347145c7fe}{map}} (int \&x, int \&y)
+\item 
+void \mbox{\hyperlink{classGRectMapper_aa5f703a507102ff38818fc044e07e5a9}{map}} (\mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\item 
+void \mbox{\hyperlink{classGRectMapper_ac3d958b378c433645a330cf596220300}{unmap}} (int \&x, int \&y)
+\item 
+void \mbox{\hyperlink{classGRectMapper_a6d538173e4fb9e5659cc34627b8c5282}{unmap}} (\mbox{\hyperlink{classGRect}{G\+Rect}} \&rect)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGRectMapper_a7889759ff6ef11536100a410d15f2eec}\label{classGRectMapper_a7889759ff6ef11536100a410d15f2eec}} 
+int {\bfseries operator$\ast$} (int n, \mbox{\hyperlink{structGRectMapper_1_1GRatio}{G\+Ratio}} r)
+\item 
+\mbox{\Hypertarget{classGRectMapper_acae9a2a392aaf7a6394463650f097bd5}\label{classGRectMapper_acae9a2a392aaf7a6394463650f097bd5}} 
+int {\bfseries operator/} (int n, \mbox{\hyperlink{structGRectMapper_1_1GRatio}{G\+Ratio}} r)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Maps points from one rectangle to another rectangle. This class represents a relation between the points of two rectangles. Given the coordinates of a point in the first rectangle (input rectangle), function \textbackslash{}\+Ref\{map\} computes the coordinates of the corresponding point in the second rectangle (the output rectangle). This function actually implements an affine transform which maps the corners of the first rectangle onto the matching corners of the second rectangle. The scaling operation is performed using integer fraction arithmetic in order to maximize accuracy. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGRectMapper_a4c2624e837230ef66b52cc9bbfd44bda}\label{classGRectMapper_a4c2624e837230ef66b52cc9bbfd44bda}} 
+\index{GRectMapper@{GRectMapper}!GRectMapper@{GRectMapper}}
+\index{GRectMapper@{GRectMapper}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{GRectMapper()}{GRectMapper()}}
+{\footnotesize\ttfamily G\+Rect\+Mapper\+::\+G\+Rect\+Mapper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a rectangle mapper. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGRectMapper_adee992440b1b62060a7d820f744493c4}\label{classGRectMapper_adee992440b1b62060a7d820f744493c4}} 
+\index{GRectMapper@{GRectMapper}!clear@{clear}}
+\index{clear@{clear}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Resets the rectangle mapper state. Both the input rectangle and the output rectangle are marked as undefined. \mbox{\Hypertarget{classGRectMapper_ac28e11260f34d0d75c9eba577f026418}\label{classGRectMapper_ac28e11260f34d0d75c9eba577f026418}} 
+\index{GRectMapper@{GRectMapper}!get\_input@{get\_input}}
+\index{get\_input@{get\_input}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{get\_input()}{get\_input()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGRect}{G\+Rect}} G\+Rect\+Mapper\+::get\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the input rectangle. \mbox{\Hypertarget{classGRectMapper_a34f496ae06a2a51ee8faa349fa72a549}\label{classGRectMapper_a34f496ae06a2a51ee8faa349fa72a549}} 
+\index{GRectMapper@{GRectMapper}!get\_output@{get\_output}}
+\index{get\_output@{get\_output}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{get\_output()}{get\_output()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGRect}{G\+Rect}} G\+Rect\+Mapper\+::get\+\_\+output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the output rectangle. \mbox{\Hypertarget{classGRectMapper_aa5f703a507102ff38818fc044e07e5a9}\label{classGRectMapper_aa5f703a507102ff38818fc044e07e5a9}} 
+\index{GRectMapper@{GRectMapper}!map@{map}}
+\index{map@{map}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption})}
+
+Maps a rectangle according to the affine transform. This operation consists in mapping the rectangle corners and reordering the corners in the canonical rectangle representation. Variable \#rect\# is overwritten with the new rectangle coordinates. \mbox{\Hypertarget{classGRectMapper_ab980a47a6e623ae20fc64c347145c7fe}\label{classGRectMapper_ab980a47a6e623ae20fc64c347145c7fe}} 
+\index{GRectMapper@{GRectMapper}!map@{map}}
+\index{map@{map}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::map (\begin{DoxyParamCaption}\item[{int \&}]{x,  }\item[{int \&}]{y }\end{DoxyParamCaption})}
+
+Maps a point according to the affine transform. Variables \#x\# and \#y\# initially contain the coordinates of a point. This operation overwrites these variables with the coordinates of a second point located in the same position relative to the corners of the output rectangle as the first point relative to the matching corners of the input rectangle. Coordinates are rounded to the nearest integer. \mbox{\Hypertarget{classGRectMapper_a3161b7a625427b59d6622292b221e707}\label{classGRectMapper_a3161b7a625427b59d6622292b221e707}} 
+\index{GRectMapper@{GRectMapper}!mirrorx@{mirrorx}}
+\index{mirrorx@{mirrorx}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{mirrorx()}{mirrorx()}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::mirrorx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Composes the affine transform with a symmetry with respect to the vertical line crossing the center of the output rectangle. This operation essentially is a modification of the match between the corners of the input rectangle and the corners of the output rectangle. \mbox{\Hypertarget{classGRectMapper_ada7f41b97ce9320fdba7924acd2e41e1}\label{classGRectMapper_ada7f41b97ce9320fdba7924acd2e41e1}} 
+\index{GRectMapper@{GRectMapper}!mirrory@{mirrory}}
+\index{mirrory@{mirrory}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{mirrory()}{mirrory()}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::mirrory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Composes the affine transform with a symmetry with respect to the horizontal line crossing the center of the output rectangle. This operation essentially is a modification of the match between the corners of the input rectangle and the corners of the output rectangle. \mbox{\Hypertarget{classGRectMapper_a0644817d6511edb11f06826ff13a7667}\label{classGRectMapper_a0644817d6511edb11f06826ff13a7667}} 
+\index{GRectMapper@{GRectMapper}!rotate@{rotate}}
+\index{rotate@{rotate}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::rotate (\begin{DoxyParamCaption}\item[{int}]{count = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Composes the affine transform with a rotation of \#count\# quarter turns counter-\/clockwise. This operation essentially is a modification of the match between the corners of the input rectangle and the corners of the output rectangle. \mbox{\Hypertarget{classGRectMapper_ae008b71d6ad5207706f19da020668888}\label{classGRectMapper_ae008b71d6ad5207706f19da020668888}} 
+\index{GRectMapper@{GRectMapper}!set\_input@{set\_input}}
+\index{set\_input@{set\_input}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{set\_input()}{set\_input()}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::set\+\_\+input (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption})}
+
+Sets the input rectangle. \mbox{\Hypertarget{classGRectMapper_aace54b12860f9995ae7d38c125588785}\label{classGRectMapper_aace54b12860f9995ae7d38c125588785}} 
+\index{GRectMapper@{GRectMapper}!set\_output@{set\_output}}
+\index{set\_output@{set\_output}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{set\_output()}{set\_output()}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::set\+\_\+output (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption})}
+
+Sets the output rectangle. \mbox{\Hypertarget{classGRectMapper_a6d538173e4fb9e5659cc34627b8c5282}\label{classGRectMapper_a6d538173e4fb9e5659cc34627b8c5282}} 
+\index{GRectMapper@{GRectMapper}!unmap@{unmap}}
+\index{unmap@{unmap}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{unmap()}{unmap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::unmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGRect}{G\+Rect}} \&}]{rect }\end{DoxyParamCaption})}
+
+Maps a rectangle according to the inverse of the affine transform. This operation consists in mapping the rectangle corners and reordering the corners in the canonical rectangle representation. Variable \#rect\# is overwritten with the new rectangle coordinates. \mbox{\Hypertarget{classGRectMapper_ac3d958b378c433645a330cf596220300}\label{classGRectMapper_ac3d958b378c433645a330cf596220300}} 
+\index{GRectMapper@{GRectMapper}!unmap@{unmap}}
+\index{unmap@{unmap}!GRectMapper@{GRectMapper}}
+\doxysubsubsection{\texorpdfstring{unmap()}{unmap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+Rect\+Mapper\+::unmap (\begin{DoxyParamCaption}\item[{int \&}]{x,  }\item[{int \&}]{y }\end{DoxyParamCaption})}
+
+Maps a point according to the inverse of the affine transform. Variables \#x\# and \#y\# initially contain the coordinates of a point. This operation overwrites these variables with the coordinates of a second point located in the same position relative to the corners of input rectangle as the first point relative to the matching corners of the input rectangle. Coordinates are rounded to the nearest integer. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/G\+Rect.\+h\item 
+libdjvu/G\+Rect.\+cpp\end{DoxyCompactItemize}

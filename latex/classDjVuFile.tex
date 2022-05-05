@@ -1,0 +1,663 @@
+\hypertarget{classDjVuFile}{}\doxysection{Dj\+Vu\+File Class Reference}
+\label{classDjVuFile}\index{DjVuFile@{DjVuFile}}
+
+
+{\ttfamily \#include $<$Dj\+Vu\+File.\+h$>$}
+
+
+
+Inheritance diagram for Dj\+Vu\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classDjVuFile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dj\+Vu\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDjVuFile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuFile_ad7cb6aa7282f7c4e4a0f163b0517c858}\label{classDjVuFile_ad7cb6aa7282f7c4e4a0f163b0517c858}} 
+enum \{ \newline
+{\bfseries D\+E\+C\+O\+D\+I\+NG} =1, 
+{\bfseries D\+E\+C\+O\+D\+E\+\_\+\+OK} =2, 
+{\bfseries D\+E\+C\+O\+D\+E\+\_\+\+F\+A\+I\+L\+ED} =4, 
+{\bfseries D\+E\+C\+O\+D\+E\+\_\+\+S\+T\+O\+P\+P\+ED} =8, 
+\newline
+{\bfseries D\+A\+T\+A\+\_\+\+P\+R\+E\+S\+E\+NT} =16, 
+{\bfseries A\+L\+L\+\_\+\+D\+A\+T\+A\+\_\+\+P\+R\+E\+S\+E\+NT} =32, 
+{\bfseries I\+N\+C\+L\+\_\+\+F\+I\+L\+E\+S\+\_\+\+C\+R\+E\+A\+T\+ED} =64, 
+{\bfseries M\+O\+D\+I\+F\+I\+ED} =128, 
+\newline
+{\bfseries D\+O\+N\+T\+\_\+\+S\+T\+A\+R\+T\+\_\+\+D\+E\+C\+O\+DE} =256, 
+{\bfseries S\+T\+O\+P\+P\+ED} =512, 
+{\bfseries B\+L\+O\+C\+K\+E\+D\+\_\+\+S\+T\+O\+P\+P\+ED} =1024, 
+{\bfseries C\+A\+N\+\_\+\+C\+O\+M\+P\+R\+E\+SS} =2048, 
+\newline
+{\bfseries N\+E\+E\+D\+S\+\_\+\+C\+O\+M\+P\+R\+E\+S\+S\+I\+ON} =4096
+ \}
+\item 
+\mbox{\Hypertarget{classDjVuFile_ad0c698349802f3c1b3552cc14656f48c}\label{classDjVuFile_ad0c698349802f3c1b3552cc14656f48c}} 
+enum \{ {\bfseries S\+T\+A\+R\+T\+ED} =1, 
+{\bfseries F\+I\+N\+I\+S\+H\+ED} =2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ \#Dj\+Vu\+File\# flags query functions}\par
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{classDjVuFile_a2b41a8d41510e81bf87aa04b35964fc9}{get\+\_\+flags}} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFile_a4ce06c6417ecb57301e94599f9c65aea}\label{classDjVuFile_a4ce06c6417ecb57301e94599f9c65aea}} 
+bool \mbox{\hyperlink{classDjVuFile_a4ce06c6417ecb57301e94599f9c65aea}{is\+\_\+decoding}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns \#\+T\+R\+UE\# if the file is being decoded. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a8f77b3a19fe7a9ec6cec4a8e79197f53}\label{classDjVuFile_a8f77b3a19fe7a9ec6cec4a8e79197f53}} 
+bool \mbox{\hyperlink{classDjVuFile_a8f77b3a19fe7a9ec6cec4a8e79197f53}{is\+\_\+decode\+\_\+ok}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns \#\+T\+R\+UE\# if decoding of the file has finished successfully. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a1ac065d7c6e62f291a5f7952c7e9a70b}\label{classDjVuFile_a1ac065d7c6e62f291a5f7952c7e9a70b}} 
+bool \mbox{\hyperlink{classDjVuFile_a1ac065d7c6e62f291a5f7952c7e9a70b}{is\+\_\+decode\+\_\+failed}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns \#\+T\+R\+UE\# if decoding of the file has failed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDjVuFile_a0de5c0a2ae59af30e878679e9bc38d0a}{is\+\_\+decode\+\_\+stopped}} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFile_a359c19afae7197b1ec310bbed1a3105b}\label{classDjVuFile_a359c19afae7197b1ec310bbed1a3105b}} 
+bool \mbox{\hyperlink{classDjVuFile_a359c19afae7197b1ec310bbed1a3105b}{is\+\_\+data\+\_\+present}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns \#\+T\+R\+UE\# if this file has received all data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDjVuFile_a4157feb195ba647141f5bb15d45dc6f0}{is\+\_\+all\+\_\+data\+\_\+present}} (void) const
+\item 
+bool \mbox{\hyperlink{classDjVuFile_a1a1825701fb72e7c3a9ea54f61762cef}{are\+\_\+incl\+\_\+files\+\_\+created}} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFile_a49d5358b201e5fa341b68a37655648e8}\label{classDjVuFile_a49d5358b201e5fa341b68a37655648e8}} 
+bool {\bfseries is\+\_\+modified} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFile_aa0aa45763321e05d918221d6590bdb30}\label{classDjVuFile_aa0aa45763321e05d918221d6590bdb30}} 
+bool {\bfseries needs\+\_\+compression} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFile_a3c62863b9c88242c42bf243ea14d385e}\label{classDjVuFile_a3c62863b9c88242c42bf243ea14d385e}} 
+bool {\bfseries can\+\_\+compress} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFile_a224ac51a040b032597ada1654ee2cfac}\label{classDjVuFile_a224ac51a040b032597ada1654ee2cfac}} 
+void {\bfseries set\+\_\+modified} (bool m)
+\item 
+\mbox{\Hypertarget{classDjVuFile_af099f1548b6eaed8086049d598a17d00}\label{classDjVuFile_af099f1548b6eaed8086049d598a17d00}} 
+void {\bfseries set\+\_\+needs\+\_\+compression} (bool m)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a637050f44a00c2e3c796eb20d666929c}\label{classDjVuFile_a637050f44a00c2e3c796eb20d666929c}} 
+void {\bfseries set\+\_\+can\+\_\+compress} (bool m)
+\item 
+\mbox{\Hypertarget{classDjVuFile_aabff5b9b22703a082389f2071f48ca52}\label{classDjVuFile_aabff5b9b22703a082389f2071f48ca52}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} \mbox{\hyperlink{classDjVuFile_aabff5b9b22703a082389f2071f48ca52}{get\+\_\+url}} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the U\+RL assigned to this file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Decoded file contents}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuFile_aa2f849ca2575f937cd412989fedfc3cb}\label{classDjVuFile_aa2f849ca2575f937cd412989fedfc3cb}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuInfo}{Dj\+Vu\+Info}} $>$ \mbox{\hyperlink{classDjVuFile_aa2f849ca2575f937cd412989fedfc3cb}{info}}
+\begin{DoxyCompactList}\small\item\em Pointer to the Dj\+Vu file information component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_ab4e9cabf135ad72a8f507b5b77eb2297}\label{classDjVuFile_ab4e9cabf135ad72a8f507b5b77eb2297}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classIW44Image}{I\+W44\+Image}} $>$ \mbox{\hyperlink{classDjVuFile_ab4e9cabf135ad72a8f507b5b77eb2297}{bg44}}
+\begin{DoxyCompactList}\small\item\em Pointer to the background component of Dj\+Vu image (I\+W44 encoded). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_afd35510ca3fd6b5edb403eb087eb0007}\label{classDjVuFile_afd35510ca3fd6b5edb403eb087eb0007}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classDjVuFile_afd35510ca3fd6b5edb403eb087eb0007}{bgpm}}
+\begin{DoxyCompactList}\small\item\em Pointer to the background component of Dj\+Vu image (Raw). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a1a65aff87bc46c1f3c9ba0073d8a1b8b}\label{classDjVuFile_a1a65aff87bc46c1f3c9ba0073d8a1b8b}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classJB2Image}{J\+B2\+Image}} $>$ \mbox{\hyperlink{classDjVuFile_a1a65aff87bc46c1f3c9ba0073d8a1b8b}{fgjb}}
+\begin{DoxyCompactList}\small\item\em Pointer to the mask of foreground component of Dj\+Vu image (J\+B2 encoded). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a392bb8878f50dc3cdee7938eec2f20d1}\label{classDjVuFile_a392bb8878f50dc3cdee7938eec2f20d1}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classJB2Dict}{J\+B2\+Dict}} $>$ \mbox{\hyperlink{classDjVuFile_a392bb8878f50dc3cdee7938eec2f20d1}{fgjd}}
+\begin{DoxyCompactList}\small\item\em Pointer to the optional shape dictionary for the mask (J\+B2 encoded). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_ab87f7c2820b9323c39383a415849df51}\label{classDjVuFile_ab87f7c2820b9323c39383a415849df51}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$ \mbox{\hyperlink{classDjVuFile_ab87f7c2820b9323c39383a415849df51}{fgpm}}
+\begin{DoxyCompactList}\small\item\em Pointer to a colors layer for the foreground component of Dj\+Vu image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a6f89d7da776e2beedf1dfb25b5804f0b}\label{classDjVuFile_a6f89d7da776e2beedf1dfb25b5804f0b}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPalette}{Dj\+Vu\+Palette}} $>$ \mbox{\hyperlink{classDjVuFile_a6f89d7da776e2beedf1dfb25b5804f0b}{fgbc}}
+\begin{DoxyCompactList}\small\item\em Pointer to a colors vector for the foreground component of Dj\+Vu image. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a04ad64e67f9e28a6ed97b522739335df}\label{classDjVuFile_a04ad64e67f9e28a6ed97b522739335df}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classDjVuFile_a04ad64e67f9e28a6ed97b522739335df}{anno}}
+\begin{DoxyCompactList}\small\item\em Pointer to collected annotation chunks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a90dbd523ff65c916aac64920ef8a36d3}\label{classDjVuFile_a90dbd523ff65c916aac64920ef8a36d3}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classDjVuFile_a90dbd523ff65c916aac64920ef8a36d3}{text}}
+\begin{DoxyCompactList}\small\item\em Pointer to collected hiddentext chunks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a75bc5fd3439ff3d779f3550e909f8f6b}\label{classDjVuFile_a75bc5fd3439ff3d779f3550e909f8f6b}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classDjVuFile_a75bc5fd3439ff3d779f3550e909f8f6b}{meta}}
+\begin{DoxyCompactList}\small\item\em Pointer to meta data chunks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_ace9c52538fd0d4bc6fe2d64f840b1fca}\label{classDjVuFile_ace9c52538fd0d4bc6fe2d64f840b1fca}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}} $>$ \mbox{\hyperlink{classDjVuFile_ace9c52538fd0d4bc6fe2d64f840b1fca}{dir}}
+\begin{DoxyCompactList}\small\item\em Pointer to the {\itshape old} navigation directory contained in this file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_aafbdea843cb3977065172caa9b6a91e8}\label{classDjVuFile_aafbdea843cb3977065172caa9b6a91e8}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuFile_aafbdea843cb3977065172caa9b6a91e8}{description}}
+\begin{DoxyCompactList}\small\item\em Description of the file formed during decoding. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_af7cdad2f05bcb2862c6c011ddbd19326}\label{classDjVuFile_af7cdad2f05bcb2862c6c011ddbd19326}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuFile_af7cdad2f05bcb2862c6c011ddbd19326}{mimetype}}
+\begin{DoxyCompactList}\small\item\em M\+I\+ME type string describing the Dj\+Vu data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_aef39da6e22f003e785e30cb2b0a9ec33}\label{classDjVuFile_aef39da6e22f003e785e30cb2b0a9ec33}} 
+int \mbox{\hyperlink{classDjVuFile_aef39da6e22f003e785e30cb2b0a9ec33}{file\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Size of the file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDjVuFile_a46a778f6fd978276d00d7b753866fb64}{Dj\+Vu\+File}} (void)
+\item 
+\mbox{\Hypertarget{classDjVuFile_ac4d301c99a155aa52ebd07277e545d92}\label{classDjVuFile_ac4d301c99a155aa52ebd07277e545d92}} 
+virtual {\bfseries $\sim$\+Dj\+Vu\+File} (void)
+\item 
+void \mbox{\hyperlink{classDjVuFile_a822396003bce30c2e6db711e435bbe2b}{init}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&str)
+\item 
+void \mbox{\hyperlink{classDjVuFile_ac0f6c7b2f6250ad5541ec6c3636f59f7}{init}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$ port=0)
+\item 
+void \mbox{\hyperlink{classDjVuFile_a37e3dd5b0537d50c343819aa98421414}{disable\+\_\+standard\+\_\+port}} (void)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}} $>$ \mbox{\hyperlink{classDjVuFile_a65f438cd6736614956b008e621b57e37}{find\+\_\+ndir}} (void)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \mbox{\hyperlink{classDjVuFile_a79f771c177660583167e1127d0bae9cd}{create}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&str, const \mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Error\+Recovery\+Action}} recover\+\_\+action=A\+B\+O\+RT, const bool verbose\+\_\+eof=true)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \mbox{\hyperlink{classDjVuFile_a1ad54005cf8b31a8ab5201532fe1f5df}{create}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$ port=0, const \mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Error\+Recovery\+Action}} recover\+\_\+action=A\+B\+O\+RT, const bool verbose\+\_\+eof=true)
+\end{DoxyCompactItemize}
+\doxysubsection*{Decode control routines}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDjVuFile_a8951a8afbb9259d7bf2bdbd8553333b7}{start\+\_\+decode}} (void)
+\item 
+bool \mbox{\hyperlink{classDjVuFile_a09a413ed26c248ac7e3bd1e7b41d2ece}{resume\+\_\+decode}} (const bool sync=false)
+\item 
+void \mbox{\hyperlink{classDjVuFile_a2f7d0e0f97a390ef669f8fb11145d0c7}{stop\+\_\+decode}} (bool sync)
+\item 
+void \mbox{\hyperlink{classDjVuFile_ad811346d4ee8801cde8423d85f010d0e}{stop}} (bool only\+\_\+blocked)
+\item 
+void \mbox{\hyperlink{classDjVuFile_a360df428ee158bc58f98420c390f696c}{wait\+\_\+for\+\_\+finish}} (void)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}} $>$ \mbox{\hyperlink{classDjVuFile_a0926fade9a914ab12431aba3f692c06b}{decode\+\_\+ndir}} (void)
+\item 
+\mbox{\Hypertarget{classDjVuFile_aefda77400d834d1155044d910b87aa66}\label{classDjVuFile_aefda77400d834d1155044d910b87aa66}} 
+void \mbox{\hyperlink{classDjVuFile_aefda77400d834d1155044d910b87aa66}{reset}} (void)
+\begin{DoxyCompactList}\small\item\em Clears all decoded components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDjVuFile_a73693e8af95fa59641aa8a35190e7bd5}{process\+\_\+incl\+\_\+chunks}} (void)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a641d20d69d80fbd8d5c0a6cd0e7d87f7}\label{classDjVuFile_a641d20d69d80fbd8d5c0a6cd0e7d87f7}} 
+unsigned int {\bfseries get\+\_\+memory\+\_\+usage} (void) const
+\item 
+\mbox{\hyperlink{classGPList}{G\+P\+List}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ \mbox{\hyperlink{classDjVuFile_aaeb47332f5c734548c8474c4680b03f5}{get\+\_\+included\+\_\+files}} (bool only\+\_\+created=true)
+\item 
+void \mbox{\hyperlink{classDjVuFile_a639cbe1ed8f3340630bba1d6c108380a}{insert\+\_\+file}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id, int chunk\+\_\+num=1)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a7f354a03c773ec6ea376e593afe56b71}\label{classDjVuFile_a7f354a03c773ec6ea376e593afe56b71}} 
+void \mbox{\hyperlink{classDjVuFile_a7f354a03c773ec6ea376e593afe56b71}{unlink\+\_\+file}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&id)
+\begin{DoxyCompactList}\small\item\em Will get rid of included file with the given \#id\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a1f82246e5bb9c7014538af181ae6731a}\label{classDjVuFile_a1f82246e5bb9c7014538af181ae6731a}} 
+int \mbox{\hyperlink{classDjVuFile_a1f82246e5bb9c7014538af181ae6731a}{get\+\_\+chunks\+\_\+number}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the number of chunks in the I\+FF file data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_ae976ef2d217d9d4bb5486cb4f1e4db77}\label{classDjVuFile_ae976ef2d217d9d4bb5486cb4f1e4db77}} 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classDjVuFile_ae976ef2d217d9d4bb5486cb4f1e4db77}{get\+\_\+chunk\+\_\+name}} (int chunk\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Returns the name of chunk number \#chunk\+\_\+num\#. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDjVuFile_a992998d887a35149a889f5910413d167}\label{classDjVuFile_a992998d887a35149a889f5910413d167}} 
+bool \mbox{\hyperlink{classDjVuFile_a992998d887a35149a889f5910413d167}{contains\+\_\+chunk}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&chunk\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Returns 1 if this file contains chunk with name \#chunk\+\_\+name\#. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classDjVuFile_acff1bbadeffdc1545e2eb64149ab495c}{get\+\_\+merged\+\_\+anno}} (int $\ast$max\+\_\+level\+\_\+ptr=0)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classDjVuFile_a968a5668be051dc9e703a4092b781988}{get\+\_\+anno}} (void)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classDjVuFile_a6db8bccd758e318a3d74731f47b2173f}{get\+\_\+text}} (void)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classDjVuFile_a91efb2833d615a1a1669539312edef76}{get\+\_\+meta}} (void)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classDjVuFile_af83c424dd15f4b619b58a12e69b7307f}{get\+\_\+merged\+\_\+anno}} (const \mbox{\hyperlink{classGList}{G\+List}}$<$ \mbox{\hyperlink{classGURL}{G\+U\+RL}} $>$ \&ignore\+\_\+list, int $\ast$max\+\_\+level\+\_\+ptr)
+\item 
+void \mbox{\hyperlink{classDjVuFile_a224c4cc4c10a2af135deeb01e4567e2c}{remove\+\_\+anno}} (void)
+\item 
+void \mbox{\hyperlink{classDjVuFile_a4b7b36c12207872ed7ea078bb51d8550}{remove\+\_\+text}} (void)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a205f1a0f88fcc16fa086398a705c85e3}\label{classDjVuFile_a205f1a0f88fcc16fa086398a705c85e3}} 
+void \mbox{\hyperlink{classDjVuFile_a205f1a0f88fcc16fa086398a705c85e3}{remove\+\_\+meta}} (void)
+\begin{DoxyCompactList}\small\item\em Clears the meta data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDjVuFile_a7785bec155c7e3aa15a7483823e12106}{contains\+\_\+anno}} (void)
+\item 
+bool \mbox{\hyperlink{classDjVuFile_a3d73222c1fd1cd2e721ff19f861364b4}{contains\+\_\+text}} (void)
+\item 
+bool \mbox{\hyperlink{classDjVuFile_abc2a79b4be9acfeb7bd8f0df6263a668}{contains\+\_\+meta}} (void)
+\item 
+void \mbox{\hyperlink{classDjVuFile_a35259c6849fd8ba9741559ca4bb4966f}{change\+\_\+info}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuInfo}{Dj\+Vu\+Info}} $>$ \mbox{\hyperlink{classDjVuFile_aa2f849ca2575f937cd412989fedfc3cb}{info}}, const bool do\+\_\+reset=false)
+\item 
+void \mbox{\hyperlink{classDjVuFile_ab9b9eccf52257b49b95bba8688c68ee5}{change\+\_\+text}} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuTXT}{Dj\+Vu\+T\+XT}} $>$ txt, const bool do\+\_\+reset=false)
+\item 
+void \mbox{\hyperlink{classDjVuFile_ad00197b32139815f3a3c66564b9c808d}{change\+\_\+meta}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&\mbox{\hyperlink{classDjVuFile_a75bc5fd3439ff3d779f3550e909f8f6b}{meta}}, const bool do\+\_\+reset=false)
+\item 
+static \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuFile_adc457492793bd0bb1ba8ab80319ef68c}{unlink\+\_\+file}} (const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&data, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Encoding routines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDjVuFile_aa5218113d665fd0e7245d83847ce1f39}\label{classDjVuFile_aa5218113d665fd0e7245d83847ce1f39}} 
+\mbox{\hyperlink{classGURL}{G\+U\+RL}} {\bfseries url}
+\item 
+\mbox{\Hypertarget{classDjVuFile_a0b119c8ce657f7099a219d2c4a8270a5}\label{classDjVuFile_a0b119c8ce657f7099a219d2c4a8270a5}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ {\bfseries data\+\_\+pool}
+\item 
+\mbox{\Hypertarget{classDjVuFile_acc56eca2416c5456effe7771327c9214}\label{classDjVuFile_acc56eca2416c5456effe7771327c9214}} 
+\mbox{\hyperlink{classGPList}{G\+P\+List}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ {\bfseries inc\+\_\+files\+\_\+list}
+\item 
+\mbox{\Hypertarget{classDjVuFile_ad56e5f810623b030f3d037c95d48a6fc}\label{classDjVuFile_ad56e5f810623b030f3d037c95d48a6fc}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries inc\+\_\+files\+\_\+lock}
+\item 
+\mbox{\Hypertarget{classDjVuFile_a1532164a54f5b46685c45073e4267e84}\label{classDjVuFile_a1532164a54f5b46685c45073e4267e84}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries anno\+\_\+lock}
+\item 
+\mbox{\Hypertarget{classDjVuFile_a28773fa460f222cd80bd605eb15ee858}\label{classDjVuFile_a28773fa460f222cd80bd605eb15ee858}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries text\+\_\+lock}
+\item 
+\mbox{\Hypertarget{classDjVuFile_ae0aecd26dc57a1ebaa5f06dddee12e22}\label{classDjVuFile_ae0aecd26dc57a1ebaa5f06dddee12e22}} 
+\mbox{\hyperlink{classGCriticalSection}{G\+Critical\+Section}} {\bfseries meta\+\_\+lock}
+\item 
+\mbox{\Hypertarget{classDjVuFile_a0a94c1c6150c664012e83629c5280d4f}\label{classDjVuFile_a0a94c1c6150c664012e83629c5280d4f}} 
+\mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Error\+Recovery\+Action}} {\bfseries recover\+\_\+errors}
+\item 
+\mbox{\Hypertarget{classDjVuFile_af8c5b331840b9ed8e3b5c5452bb222d5}\label{classDjVuFile_af8c5b331840b9ed8e3b5c5452bb222d5}} 
+bool {\bfseries verbose\+\_\+eof}
+\item 
+\mbox{\Hypertarget{classDjVuFile_a94a3d7a3b7fe9b6a40c7702e35ae40fd}\label{classDjVuFile_a94a3d7a3b7fe9b6a40c7702e35ae40fd}} 
+int {\bfseries chunks\+\_\+number}
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \mbox{\hyperlink{classDjVuFile_a041c0dd1ddde789cfca96038e60e9feb}{get\+\_\+djvu\+\_\+bytestream}} (const bool included\+\_\+too, const bool no\+\_\+ndir=true)
+\item 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \mbox{\hyperlink{classDjVuFile_af6b1d6bd1bcb697fc7ce78cdfd2382d9}{get\+\_\+djvu\+\_\+data}} (const bool included\+\_\+too, const bool no\+\_\+ndir=true)
+\item 
+\mbox{\Hypertarget{classDjVuFile_aab418cc61d7e15ec8da2df8688edf349}\label{classDjVuFile_aab418cc61d7e15ec8da2df8688edf349}} 
+\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ {\bfseries get\+\_\+init\+\_\+data\+\_\+pool} (void) const
+\item 
+\mbox{\Hypertarget{classDjVuFile_a07cffae6ccf06f497ec663f2931324bc}\label{classDjVuFile_a07cffae6ccf06f497ec663f2931324bc}} 
+void {\bfseries move} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&dir\+\_\+url)
+\item 
+void \mbox{\hyperlink{classDjVuFile_a86ec797922fe4e583e4f6e5488a778bd}{set\+\_\+name}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a4757786df5cf8723e37c443cff4b029a}\label{classDjVuFile_a4757786df5cf8723e37c443cff4b029a}} 
+\mbox{\hyperlink{classGSafeFlags}{G\+Safe\+Flags}} \& {\bfseries get\+\_\+safe\+\_\+flags} (void)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a6dbbb2035136d5579af40684bed9b72d}\label{classDjVuFile_a6dbbb2035136d5579af40684bed9b72d}} 
+void {\bfseries merge\+\_\+anno} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&out)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a47dd7caeffa097eed45d1deb686cdd70}\label{classDjVuFile_a47dd7caeffa097eed45d1deb686cdd70}} 
+void {\bfseries get\+\_\+text} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&out)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a37081bcacff0821c24fccee4cab0e0fd}\label{classDjVuFile_a37081bcacff0821c24fccee4cab0e0fd}} 
+void {\bfseries get\+\_\+meta} (\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&out)
+\item 
+\mbox{\Hypertarget{classDjVuFile_ab0e91b63eef34edbec627213828e13f0}\label{classDjVuFile_ab0e91b63eef34edbec627213828e13f0}} 
+void {\bfseries rebuild\+\_\+data\+\_\+pool} (void)
+\item 
+virtual bool \mbox{\hyperlink{classDjVuFile_a94d8425d8e01900ab857e05d7e3552cd}{inherits}} (const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&class\+\_\+name) const
+\item 
+virtual void \mbox{\hyperlink{classDjVuFile_a4b02997bbc290ea1a05bcc940f0ba7ae}{notify\+\_\+chunk\+\_\+done}} (const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$source, const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&name)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a5e356e4b51dd63b2a06ee21c99ff2e4a}\label{classDjVuFile_a5e356e4b51dd63b2a06ee21c99ff2e4a}} 
+virtual void {\bfseries notify\+\_\+file\+\_\+flags\+\_\+changed} (const \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $\ast$source, long set\+\_\+mask, long clr\+\_\+mask)
+\item 
+\mbox{\Hypertarget{classDjVuFile_ac2a2fa33bcb960ef9681bfa2e2ead2c0}\label{classDjVuFile_ac2a2fa33bcb960ef9681bfa2e2ead2c0}} 
+virtual void {\bfseries set\+\_\+recover\+\_\+errors} (const \mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Error\+Recovery\+Action}}=A\+B\+O\+RT)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a98fa5f67d7d08ca6f8aa325ee24c4f63}\label{classDjVuFile_a98fa5f67d7d08ca6f8aa325ee24c4f63}} 
+virtual void {\bfseries set\+\_\+verbose\+\_\+eof} (const bool verbose\+\_\+eof=true)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a3b6893afb55ccdd49fe860aaa731783d}\label{classDjVuFile_a3b6893afb55ccdd49fe860aaa731783d}} 
+virtual void {\bfseries report\+\_\+error} (const \mbox{\hyperlink{classGException}{G\+Exception}} \&ex, const bool=true)
+\item 
+\mbox{\Hypertarget{classDjVuFile_a2c282f3431069ecf094ec88e043db018}\label{classDjVuFile_a2c282f3431069ecf094ec88e043db018}} 
+static void {\bfseries set\+\_\+decode\+\_\+codec} (\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classGPixmap}{G\+Pixmap}} $>$($\ast$codec)(\mbox{\hyperlink{classByteStream}{Byte\+Stream}} \&bs))
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# plays the central role in decoding \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\}s. First of all, it represents a Dj\+Vu file whether it\textquotesingle{}s part of a multipage all-\/in-\/one-\/file Dj\+Vu document, or part of a multipage Dj\+Vu document where every page is in a separate file, or the whole single page document. \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# can read its contents from a file and store it back when necessary.
+
+Second, \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# does the greatest part of decoding work. In the past this was the responsibility of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\}. Now, with the introduction of the multipage Dj\+Vu formats, the decoding routines have been extracted from the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} and put into this separate class \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\#.
+
+As \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage}{Dj\+Vu\+Image}}\} before, \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# now contains public class variables corresponding to every component, that can ever be decoded from a Dj\+Vu file (such as \#\+I\+N\+FO\# chunk, \#\+B\+G44\# chunk, \#\+S\+J\+BZ\# chunk, etc.).
+
+As before, the decoding is initiated by a single function (\textbackslash{}\+Ref\{start\+\_\+decode\}() in this case, and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuImage_a24c91a159a1b4cae1f8b1d0d2055fe33}{Dj\+Vu\+Image\+::decode}}\}() before). The difference is that \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# now handles threads creation itself. When you call the \textbackslash{}\+Ref\{start\+\_\+decode\}() function, it creates the decoding thread, which starts decoding, and which can create additional threads\+: one per each file included into this one.
+
+\{\textbackslash{}bf Inclusion\} is also a new feature specifically designed for a multipage document. Indeed, inside a given document there can be a lot of things shared between its pages. Examples can be the document annotation (\textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuAnno}{Dj\+Vu\+Anno}}\}) and other things like shared shapes and dictionary (to be implemented). To avoid putting these chunks into every page, we have invented new chunk called \#\+I\+N\+CL\# which purpose is to make the decoder open the specified file and decode it.
+
+\{\textbackslash{}bf Source of data.\} The \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# can be initialized in two ways\+: \textbackslash{}begin\{itemize\} \textbackslash{}item With \#\+U\+RL\# and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}. In this case \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# will request its data thru the communication mechanism provided by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} in the constructor. If this file references (includes) any other file, data for them will also be requested in the same way. \textbackslash{}item With \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\}. In this case the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# will read its data directly from the passed stream. This constructor has been added to simplify creation of \#\+Dj\+Vu\+File\#s, which do no include anything else. In this case the \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\} is enough for the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# to initialize. \textbackslash{}end\{itemize\}
+
+\{\textbackslash{}bf Progress information.\} \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# does not do decoding silently. Instead, it sends a whole set of notifications through the mechanism provided by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\}. It tells the user of the class about the progress of the decoding, about possible errors, chunk being decoded, etc. The data is requested using this mechanism too.
+
+\{\textbackslash{}bf Creating.\} Depending on where you have data of the Dj\+Vu file, the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# can be initialized in two ways\+: \textbackslash{}begin\{itemize\} \textbackslash{}item By providing \#\+U\+RL\# and pointer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}. In this case \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# will request data using communication mechanism provided by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\}. This is useful when the data is on the web or when this file includes other files. \textbackslash{}item By providing a \textbackslash{}\+Ref\{\mbox{\hyperlink{classByteStream}{Byte\+Stream}}\} with the data for the file. Use it only when the file doesn\textquotesingle{}t include other files. \textbackslash{}end\{itemize\} There is also a bunch of functions provided for composing the desired \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} and modifying \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# structure. The examples are \textbackslash{}\+Ref\{delete\+\_\+chunks\}(), \textbackslash{}\+Ref\{insert\+\_\+chunk\}(), \textbackslash{}\+Ref\{include\+\_\+file\}() and \textbackslash{}\+Ref\{unlink\+\_\+file\}().
+
+\{\textbackslash{}bf Caching.\} In the case of plugin it\textquotesingle{}s important to do the caching of decoded images or files. \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# appears to be the best candidate for caching, and that\textquotesingle{}s why it supports this procedure. Whenever a \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# is successfully decoded, it\textquotesingle{}s added to the cache by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\}. Next time somebody needs it, it will be extracted from the cache directly by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} and won\textquotesingle{}t be decoded again.
+
+\{\textbackslash{}bf U\+R\+Ls.\} Historically the biggest strain is put on making the decoder available for Netscape and IE plugins where the original files reside somewhere in the net. That is why \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# uses \{\textbackslash{}bf U\+R\+Ls\} to identify itself and other files. If you\textquotesingle{}re working with files on the hard disk, you have to use the local U\+R\+Ls instead of file names. A good way to do two way conversion is the \textbackslash{}\+Ref\{\mbox{\hyperlink{classGOS}{G\+OS}}\} class. Sometimes it happens that a given file does not reside anywhere but the memory. No problem in this case either. There is a special port \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuMemoryPort}{Dj\+Vu\+Memory\+Port}}\}, which can associate any U\+RL with the corresponding data in the memory. All you need to do is to invent your own U\+RL prefix for this case. \char`\"{}\#memory\+:\#\char`\"{} will do. The usage of absolute U\+R\+Ls has many advantages among which is the capability to cache files with their U\+RL being the cache key.
+
+Please note, that the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# class has been designed to work closely with \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\}. So please review the documentation on this class too. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDjVuFile_a46a778f6fd978276d00d7b753866fb64}\label{classDjVuFile_a46a778f6fd978276d00d7b753866fb64}} 
+\index{DjVuFile@{DjVuFile}!DjVuFile@{DjVuFile}}
+\index{DjVuFile@{DjVuFile}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{DjVuFile()}{DjVuFile()}}
+{\footnotesize\ttfamily Dj\+Vu\+File\+::\+Dj\+Vu\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Default constructor. Must follow with an \mbox{\hyperlink{classDjVuFile_a822396003bce30c2e6db711e435bbe2b}{init()}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDjVuFile_a1a1825701fb72e7c3a9ea54f61762cef}\label{classDjVuFile_a1a1825701fb72e7c3a9ea54f61762cef}} 
+\index{DjVuFile@{DjVuFile}!are\_incl\_files\_created@{are\_incl\_files\_created}}
+\index{are\_incl\_files\_created@{are\_incl\_files\_created}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{are\_incl\_files\_created()}{are\_incl\_files\_created()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+File\+::are\+\_\+incl\+\_\+files\+\_\+created (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# if all included files have been created. Only when this function returns 1, the \textbackslash{}\+Ref\{get\+\_\+included\+\_\+files\}() returns the correct information. \mbox{\Hypertarget{classDjVuFile_a35259c6849fd8ba9741559ca4bb4966f}\label{classDjVuFile_a35259c6849fd8ba9741559ca4bb4966f}} 
+\index{DjVuFile@{DjVuFile}!change\_info@{change\_info}}
+\index{change\_info@{change\_info}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{change\_info()}{change\_info()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::change\+\_\+info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuInfo}{Dj\+Vu\+Info}} $>$}]{info,  }\item[{const bool}]{do\+\_\+reset = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Changes the value of the hiddentext. \mbox{\Hypertarget{classDjVuFile_ad00197b32139815f3a3c66564b9c808d}\label{classDjVuFile_ad00197b32139815f3a3c66564b9c808d}} 
+\index{DjVuFile@{DjVuFile}!change\_meta@{change\_meta}}
+\index{change\_meta@{change\_meta}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{change\_meta()}{change\_meta()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::change\+\_\+meta (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{meta,  }\item[{const bool}]{do\+\_\+reset = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Changes the value of the metadata. \mbox{\Hypertarget{classDjVuFile_ab9b9eccf52257b49b95bba8688c68ee5}\label{classDjVuFile_ab9b9eccf52257b49b95bba8688c68ee5}} 
+\index{DjVuFile@{DjVuFile}!change\_text@{change\_text}}
+\index{change\_text@{change\_text}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{change\_text()}{change\_text()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::change\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuTXT}{Dj\+Vu\+T\+XT}} $>$}]{txt,  }\item[{const bool}]{do\+\_\+reset = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Changes the value of the hiddentext. \mbox{\Hypertarget{classDjVuFile_a7785bec155c7e3aa15a7483823e12106}\label{classDjVuFile_a7785bec155c7e3aa15a7483823e12106}} 
+\index{DjVuFile@{DjVuFile}!contains\_anno@{contains\_anno}}
+\index{contains\_anno@{contains\_anno}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{contains\_anno()}{contains\_anno()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+File\+::contains\+\_\+anno (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns \#\+T\+R\+UE\# if the file contains annotation chunks. Known annotation chunks at the time of writing this help are\+: \{\textbackslash{}bf A\+N\+Ta\}, \{\textbackslash{}bf A\+N\+Tz\}, \{\textbackslash{}bf F\+O\+RM\+:A\+N\+NO\}. \mbox{\Hypertarget{classDjVuFile_abc2a79b4be9acfeb7bd8f0df6263a668}\label{classDjVuFile_abc2a79b4be9acfeb7bd8f0df6263a668}} 
+\index{DjVuFile@{DjVuFile}!contains\_meta@{contains\_meta}}
+\index{contains\_meta@{contains\_meta}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{contains\_meta()}{contains\_meta()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+File\+::contains\+\_\+meta (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns \#\+T\+R\+UE\# if the file contains metadata chunks. Known metadata chunks at the time of writing this help are\+: \{\textbackslash{}bf M\+E\+Ta\}, and \{\textbackslash{}bf M\+E\+Tz\}. \mbox{\Hypertarget{classDjVuFile_a3d73222c1fd1cd2e721ff19f861364b4}\label{classDjVuFile_a3d73222c1fd1cd2e721ff19f861364b4}} 
+\index{DjVuFile@{DjVuFile}!contains\_text@{contains\_text}}
+\index{contains\_text@{contains\_text}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{contains\_text()}{contains\_text()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+File\+::contains\+\_\+text (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns \#\+T\+R\+UE\# if the file contains hiddentext chunks. Known hiddentext chunks at the time of writing this help are\+: \{\textbackslash{}bf T\+X\+Ta\}, and \{\textbackslash{}bf T\+X\+Tz\}. \mbox{\Hypertarget{classDjVuFile_a79f771c177660583167e1127d0bae9cd}\label{classDjVuFile_a79f771c177660583167e1127d0bae9cd}} 
+\index{DjVuFile@{DjVuFile}!create@{create}}
+\index{create@{create}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ Dj\+Vu\+File\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{str,  }\item[{const \mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Error\+Recovery\+Action}}}]{recover\+\_\+action = {\ttfamily ABORT},  }\item[{const bool}]{verbose\+\_\+eof = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creator, does the init(\+Byte\+Stream \&str) \mbox{\Hypertarget{classDjVuFile_a1ad54005cf8b31a8ab5201532fe1f5df}\label{classDjVuFile_a1ad54005cf8b31a8ab5201532fe1f5df}} 
+\index{DjVuFile@{DjVuFile}!create@{create}}
+\index{create@{create}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ Dj\+Vu\+File\+::create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$}]{port = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{classDjVuPort_afb839e8d139dd9f651f6cec8e0dd88bb}{Error\+Recovery\+Action}}}]{recover\+\_\+action = {\ttfamily ABORT},  }\item[{const bool}]{verbose\+\_\+eof = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creator, does the init(const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, \mbox{\hyperlink{classGP}{G\+P$<$\+Dj\+Vu\+Port$>$}} port=0) \mbox{\Hypertarget{classDjVuFile_a0926fade9a914ab12431aba3f692c06b}\label{classDjVuFile_a0926fade9a914ab12431aba3f692c06b}} 
+\index{DjVuFile@{DjVuFile}!decode\_ndir@{decode\_ndir}}
+\index{decode\_ndir@{decode\_ndir}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{decode\_ndir()}{decode\_ndir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}} $>$ Dj\+Vu\+File\+::decode\+\_\+ndir (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Looks for \#\+N\+D\+IR\# chunk (navigation directory), and decodes its contents. If the \#\+N\+D\+IR\# chunk has not been found in \{{\itshape this\}} file, but this file includes others, the procedure will continue recursively. This function is useful to obtain the document navigation directory before any page has been decoded. After it returns the directory can be obtained by calling \textbackslash{}\+Ref\{find\+\_\+ndir\}() function.
+
+\{\textbackslash{}bf Warning.\} Contrary to \textbackslash{}\+Ref\{start\+\_\+decode\}(), this function does not return before it completely decodes the directory. Make sure, that this file and all included files have enough data. \mbox{\Hypertarget{classDjVuFile_a37e3dd5b0537d50c343819aa98421414}\label{classDjVuFile_a37e3dd5b0537d50c343819aa98421414}} 
+\index{DjVuFile@{DjVuFile}!disable\_standard\_port@{disable\_standard\_port}}
+\index{disable\_standard\_port@{disable\_standard\_port}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{disable\_standard\_port()}{disable\_standard\_port()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::disable\+\_\+standard\+\_\+port (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Disables the built-\/in port for accessing local files, which may have been created in the case when the \#port\# argument to the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile_a46a778f6fd978276d00d7b753866fb64}{Dj\+Vu\+File\+::\+Dj\+Vu\+File}}\}() constructor is \#\+Z\+E\+RO\# \mbox{\Hypertarget{classDjVuFile_a65f438cd6736614956b008e621b57e37}\label{classDjVuFile_a65f438cd6736614956b008e621b57e37}} 
+\index{DjVuFile@{DjVuFile}!find\_ndir@{find\_ndir}}
+\index{find\_ndir@{find\_ndir}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{find\_ndir()}{find\_ndir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}} $>$ Dj\+Vu\+File\+::find\+\_\+ndir (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Looks for \#decoded\# navigation directory (\textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuNavDir}{Dj\+Vu\+Nav\+Dir}}\}) in this or included files. Returns \#\+Z\+E\+RO\# if nothing could be found.
+
+\{\textbackslash{}bf Note.\} This function does \{\textbackslash{}bf not\} attempt to decode \#\+N\+D\+IR\# chunks. It is looking for predecoded components. \#\+N\+D\+IR\# can be decoded either during regular decoding (initiated by \textbackslash{}\+Ref\{start\+\_\+decode\}() function) or by \textbackslash{}\+Ref\{decode\+\_\+ndir\}() function, which processes this and included files recursively in search of \#\+N\+D\+IR\# chunks and decodes them. \mbox{\Hypertarget{classDjVuFile_a968a5668be051dc9e703a4092b781988}\label{classDjVuFile_a968a5668be051dc9e703a4092b781988}} 
+\index{DjVuFile@{DjVuFile}!get\_anno@{get\_anno}}
+\index{get\_anno@{get\_anno}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{get\_anno()}{get\_anno()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ Dj\+Vu\+File\+::get\+\_\+anno (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the annotation chunks (\#\char`\"{}\+A\+N\+Ta\char`\"{}\# and \#\char`\"{}\+A\+N\+Tz\char`\"{}\#). This function may be used even when the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# has not been decoded yet. If all data has been received for this \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\#, it will gather hidden text and return the result. If no hidden text has been found, \#\+Z\+E\+RO\# will be returned.
+
+\{\textbackslash{}bf Summary\+:\} This function will return complete annotations only when the \textbackslash{}\+Ref\{is\+\_\+all\+\_\+data\+\_\+present\}() returns \#\+T\+R\+UE\#. \mbox{\Hypertarget{classDjVuFile_a041c0dd1ddde789cfca96038e60e9feb}\label{classDjVuFile_a041c0dd1ddde789cfca96038e60e9feb}} 
+\index{DjVuFile@{DjVuFile}!get\_djvu\_bytestream@{get\_djvu\_bytestream}}
+\index{get\_djvu\_bytestream@{get\_djvu\_bytestream}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{get\_djvu\_bytestream()}{get\_djvu\_bytestream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ Dj\+Vu\+File\+::get\+\_\+djvu\+\_\+bytestream (\begin{DoxyParamCaption}\item[{const bool}]{included\+\_\+too,  }\item[{const bool}]{no\+\_\+ndir = {\ttfamily true} }\end{DoxyParamCaption})}
+
+The main function that encodes data back into binary stream. The data returned will reflect possible changes made into the chunk structure, annotation chunks and navigation directory chunk \#\+N\+D\+IR\#.
+
+\{\textbackslash{}bf Note\+:\} The file stream will not have the magic \#0x41,0x54,0x26,0x54\# at the beginning.
+
+
+\begin{DoxyParams}{Parameters}
+{\em included\+\_\+too} & Process included files too. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuFile_af6b1d6bd1bcb697fc7ce78cdfd2382d9}\label{classDjVuFile_af6b1d6bd1bcb697fc7ce78cdfd2382d9}} 
+\index{DjVuFile@{DjVuFile}!get\_djvu\_data@{get\_djvu\_data}}
+\index{get\_djvu\_data@{get\_djvu\_data}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{get\_djvu\_data()}{get\_djvu\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+File\+::get\+\_\+djvu\+\_\+data (\begin{DoxyParamCaption}\item[{const bool}]{included\+\_\+too,  }\item[{const bool}]{no\+\_\+ndir = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Same as \textbackslash{}\+Ref\{get\+\_\+djvu\+\_\+bytestream\}(), returning a \mbox{\hyperlink{classDataPool}{Data\+Pool}}. 
+\begin{DoxyParams}{Parameters}
+{\em included\+\_\+too} & Process included files too. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuFile_a2b41a8d41510e81bf87aa04b35964fc9}\label{classDjVuFile_a2b41a8d41510e81bf87aa04b35964fc9}} 
+\index{DjVuFile@{DjVuFile}!get\_flags@{get\_flags}}
+\index{get\_flags@{get\_flags}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{get\_flags()}{get\_flags()}}
+{\footnotesize\ttfamily long Dj\+Vu\+File\+::get\+\_\+flags (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# flags. The value returned is the result of O\+Ring one or more of the following constants\+: \textbackslash{}begin\{itemize\} \textbackslash{}item \#\+D\+E\+C\+O\+D\+I\+NG\# The decoding is in progress \textbackslash{}item \#\+D\+E\+C\+O\+D\+E\+\_\+\+OK\# The decoding has finished successfully \textbackslash{}item \#\+D\+E\+C\+O\+D\+E\+\_\+\+F\+A\+I\+L\+ED\# The decoding has failed \textbackslash{}item \#\+D\+E\+C\+O\+D\+E\+\_\+\+S\+T\+O\+P\+P\+ED\# The decoding has been stopped by \textbackslash{}\+Ref\{stop\+\_\+decode\}() function \textbackslash{}item \#\+D\+A\+T\+A\+\_\+\+P\+R\+E\+S\+E\+NT\# All data for this file has been received. It\textquotesingle{}s especially important in the case of Netscape or IE plugins when the data is being received while the decoding is done. \textbackslash{}item \#\+A\+L\+L\+\_\+\+D\+A\+T\+A\+\_\+\+P\+R\+E\+S\+E\+NT\# Not only data for this file, but also for all included file has been received. \textbackslash{}item \#\+I\+N\+C\+L\+\_\+\+F\+I\+L\+E\+S\+\_\+\+C\+R\+E\+A\+T\+ED\# All \#\+I\+N\+CL\# and \#\+I\+N\+CF\# chunks have been processed and the corresponding \#\+Dj\+Vu\+File\#s created. This is important to know to be sure that the list returned by \textbackslash{}\+Ref\{get\+\_\+included\+\_\+files\}() is OK. \textbackslash{}end\{itemize\} \mbox{\Hypertarget{classDjVuFile_aaeb47332f5c734548c8474c4680b03f5}\label{classDjVuFile_aaeb47332f5c734548c8474c4680b03f5}} 
+\index{DjVuFile@{DjVuFile}!get\_included\_files@{get\_included\_files}}
+\index{get\_included\_files@{get\_included\_files}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{get\_included\_files()}{get\_included\_files()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGPList}{G\+P\+List}}$<$ \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}} $>$ Dj\+Vu\+File\+::get\+\_\+included\+\_\+files (\begin{DoxyParamCaption}\item[{bool}]{only\+\_\+created = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Returns the list of included Dj\+Vu\+Files.
+
+\{\textbackslash{}bf Warning.\} Included files are normally created during decoding. Before that they do not exist. If you call this function at that time and set \#only\+\_\+created\# to \#\+F\+A\+L\+SE\# then it will have to read all the data from this file in order to find \#\+I\+N\+CL\# chunks, which may block your application, if not all data is available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em only\+\_\+created} & If \#\+T\+R\+UE\#, the file will not try to process \#\+I\+N\+CL\# chunks and load referenced files. It will return just those files, which have already been created during the decoding procedure. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuFile_af83c424dd15f4b619b58a12e69b7307f}\label{classDjVuFile_af83c424dd15f4b619b58a12e69b7307f}} 
+\index{DjVuFile@{DjVuFile}!get\_merged\_anno@{get\_merged\_anno}}
+\index{get\_merged\_anno@{get\_merged\_anno}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{get\_merged\_anno()}{get\_merged\_anno()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ Dj\+Vu\+File\+::get\+\_\+merged\+\_\+anno (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGList}{G\+List}}$<$ \mbox{\hyperlink{classGURL}{G\+U\+RL}} $>$ \&}]{ignore\+\_\+list,  }\item[{int $\ast$}]{max\+\_\+level\+\_\+ptr }\end{DoxyParamCaption})}
+
+Goes down the hierarchy of \#\+Dj\+Vu\+File\#s and merges their annotations. (shouldn\textquotesingle{}t this one be private?). 
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+level\+\_\+ptr} & If this pointer is not Z\+E\+RO, the function will use it to store the maximum level at which annotations were found. Top-\/level page files have Z\+E\+RO \#level\#. \\
+\hline
+{\em ignore\+\_\+list} & The function will not process included \#\+Dj\+Vu\+File\#s with U\+R\+Ls matching those mentioned in this \#ignore\+\_\+list\#. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuFile_acff1bbadeffdc1545e2eb64149ab495c}\label{classDjVuFile_acff1bbadeffdc1545e2eb64149ab495c}} 
+\index{DjVuFile@{DjVuFile}!get\_merged\_anno@{get\_merged\_anno}}
+\index{get\_merged\_anno@{get\_merged\_anno}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{get\_merged\_anno()}{get\_merged\_anno()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ Dj\+Vu\+File\+::get\+\_\+merged\+\_\+anno (\begin{DoxyParamCaption}\item[{int $\ast$}]{max\+\_\+level\+\_\+ptr = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Processes the included files hierarchy and returns merged annotations. This function may be used even when the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# has not been decoded yet. If all data has been received for this \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# and all included \#\+Dj\+Vu\+File\#s, it will will gather annotations from them and will return the result. If no annotations have been found, \#\+Z\+E\+RO\# will be returned. If either this \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# or any of the included files do not have all the data, the function will use the results of decoding, which may have been started with the \textbackslash{}\+Ref\{start\+\_\+decode\}() function. Otherwise \#\+Z\+E\+RO\# will be returned as well.
+
+If \#max\+\_\+level\+\_\+ptr\# pointer is not zero, the function will use it to store the maximum level number from which annotations have been obtained. \#\+Z\+E\+RO\# level corresponds to the top-\/level page file.
+
+\{\textbackslash{}bf Summary\+:\} This function will return complete annotations only when the \textbackslash{}\+Ref\{is\+\_\+all\+\_\+data\+\_\+present\}() returns \#\+T\+R\+UE\#. \mbox{\Hypertarget{classDjVuFile_a91efb2833d615a1a1669539312edef76}\label{classDjVuFile_a91efb2833d615a1a1669539312edef76}} 
+\index{DjVuFile@{DjVuFile}!get\_meta@{get\_meta}}
+\index{get\_meta@{get\_meta}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{get\_meta()}{get\_meta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ Dj\+Vu\+File\+::get\+\_\+meta (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the meta chunks (\#\char`\"{}\+M\+E\+Ta\char`\"{}\# and \#\char`\"{}\+M\+E\+Tz\char`\"{}\#). This function may be used even when the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# has not been decoded yet. If all data has been received for this \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\#, it will gather metadata and return the result. If no hidden text has been found, \#\+Z\+E\+RO\# will be returned.
+
+\{\textbackslash{}bf Summary\+:\} This function will return complete meta data only when the \textbackslash{}\+Ref\{is\+\_\+all\+\_\+data\+\_\+present\}() returns \#\+T\+R\+UE\#. \mbox{\Hypertarget{classDjVuFile_a6db8bccd758e318a3d74731f47b2173f}\label{classDjVuFile_a6db8bccd758e318a3d74731f47b2173f}} 
+\index{DjVuFile@{DjVuFile}!get\_text@{get\_text}}
+\index{get\_text@{get\_text}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{get\_text()}{get\_text()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ Dj\+Vu\+File\+::get\+\_\+text (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns the text chunks (\#\char`\"{}\+T\+X\+Ta\char`\"{}\# and \#\char`\"{}\+T\+X\+Tz\char`\"{}\#). This function may be used even when the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# has not been decoded yet. If all data has been received for this \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\#, it will gather hidden text and return the result. If no hidden text has been found, \#\+Z\+E\+RO\# will be returned.
+
+\{\textbackslash{}bf Summary\+:\} This function will return complete hidden text layers only when the \textbackslash{}\+Ref\{is\+\_\+all\+\_\+data\+\_\+present\}() returns \#\+T\+R\+UE\#. \mbox{\Hypertarget{classDjVuFile_a94d8425d8e01900ab857e05d7e3552cd}\label{classDjVuFile_a94d8425d8e01900ab857e05d7e3552cd}} 
+\index{DjVuFile@{DjVuFile}!inherits@{inherits}}
+\index{inherits@{inherits}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{inherits()}{inherits()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+File\+::inherits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{class\+\_\+name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Should return 1 if the called class inherits class \#class\+\_\+name\#. When a destination receives a request, it can retrieve the pointer to the source \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. This virtual function should be able to help to identify the source of the request. For example, \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} is also derived from \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\#. In order for the receiver to recognize the sender, the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\} should override this function to return \#\+T\+R\+UE\# when the \#class\+\_\+name\# is either \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\# or \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_abb7ca38a52f07ac67a390e2e6ee4f4c3}{Dj\+Vu\+Port}}.
+
+\mbox{\Hypertarget{classDjVuFile_a822396003bce30c2e6db711e435bbe2b}\label{classDjVuFile_a822396003bce30c2e6db711e435bbe2b}} 
+\index{DjVuFile@{DjVuFile}!init@{init}}
+\index{init@{init}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classByteStream}{Byte\+Stream}} $>$ \&}]{str }\end{DoxyParamCaption})}
+
+Initializes a \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# object. This is a simplified initializer, which is not supposed to be used for decoding or creating \#\+Dj\+Vu\+File\#s, which include other files.
+
+If the file is stored on the hard drive, you may also use the other constructor and pass it the file\textquotesingle{}s U\+RL and \#\+Z\+E\+RO\# \#port\#. The \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# will read the data itself.
+
+If you want to receive error messages and notifications, you may connect the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# to your own \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} after it has been constructed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The stream containing data for the file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuFile_ac0f6c7b2f6250ad5541ec6c3636f59f7}\label{classDjVuFile_ac0f6c7b2f6250ad5541ec6c3636f59f7}} 
+\index{DjVuFile@{DjVuFile}!init@{init}}
+\index{init@{init}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url,  }\item[{\mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $>$}]{port = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Initializes a \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# object. As you can notice, the data is not directly passed to this function. The \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# will ask for it through the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} mechanism before the constructor finishes. If the data is stored locally on the hard disk then the pointer to \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} may be set to \#\+Z\+E\+RO\#, which will make \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# read all data from the hard disk and report all errors to \#stderr\#.
+
+\{\textbackslash{}bf Note\}. If the file includes (by means of \#\+I\+N\+CL\# chunks) other files then you should be ready to \textbackslash{}begin\{enumerate\} \textbackslash{}item Reply to requests \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort_ab86e3c55a46c33de9bb8bc9fe578eb7a}{Dj\+Vu\+Port\+::id\+\_\+to\+\_\+url}}\}() issued to translate I\+Ds (used in \#\+I\+N\+CL\# chunks) to absolute U\+R\+Ls. Usually, when the file is created by \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\} this job is done by it. If you construct such a file manually, be prepared to do the ID to U\+RL translation \textbackslash{}item Provide data for all included files. \textbackslash{}end\{enumerate\}
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & The U\+RL assigned to this file. It will be used when the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# asks for data. \\
+\hline
+{\em port} & All communication between \#\+Dj\+Vu\+File\#s and \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}\}s is done through the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}}\} mechanism. If the \{{\itshape url\}} is not local or the data does not reside on the hard disk, the \{{\itshape port\}} parameter must not be \#\+Z\+E\+RO\#. If the \{{\itshape port\}} is \#\+Z\+E\+RO\# then \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# will create an internal instance of \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuSimplePort}{Dj\+Vu\+Simple\+Port}}\} for accessing local files and reporting errors. It can later be disabled by means of \textbackslash{}\+Ref\{disable\+\_\+standard\+\_\+port\}() function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDjVuFile_a639cbe1ed8f3340630bba1d6c108380a}\label{classDjVuFile_a639cbe1ed8f3340630bba1d6c108380a}} 
+\index{DjVuFile@{DjVuFile}!insert\_file@{insert\_file}}
+\index{insert\_file@{insert\_file}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{insert\_file()}{insert\_file()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::insert\+\_\+file (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{id,  }\item[{int}]{chunk\+\_\+num = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Includes a \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# with the specified \#id\# into this one. This function will also insert an \#\+I\+N\+CL\# chunk at position \#chunk\+\_\+num\#. The function will request data for the included file and will create it before returning. \mbox{\Hypertarget{classDjVuFile_a4157feb195ba647141f5bb15d45dc6f0}\label{classDjVuFile_a4157feb195ba647141f5bb15d45dc6f0}} 
+\index{DjVuFile@{DjVuFile}!is\_all\_data\_present@{is\_all\_data\_present}}
+\index{is\_all\_data\_present@{is\_all\_data\_present}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{is\_all\_data\_present()}{is\_all\_data\_present()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+File\+::is\+\_\+all\+\_\+data\+\_\+present (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# if this file \{\textbackslash{}bf and\} all included files have received all data. \mbox{\Hypertarget{classDjVuFile_a0de5c0a2ae59af30e878679e9bc38d0a}\label{classDjVuFile_a0de5c0a2ae59af30e878679e9bc38d0a}} 
+\index{DjVuFile@{DjVuFile}!is\_decode\_stopped@{is\_decode\_stopped}}
+\index{is\_decode\_stopped@{is\_decode\_stopped}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{is\_decode\_stopped()}{is\_decode\_stopped()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+File\+::is\+\_\+decode\+\_\+stopped (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \#\+T\+R\+UE\# if decoding of the file has been stopped by \textbackslash{}\+Ref\{stop\+\_\+decode\}() function. \mbox{\Hypertarget{classDjVuFile_a4b02997bbc290ea1a05bcc940f0ba7ae}\label{classDjVuFile_a4b02997bbc290ea1a05bcc940f0ba7ae}} 
+\index{DjVuFile@{DjVuFile}!notify\_chunk\_done@{notify\_chunk\_done}}
+\index{notify\_chunk\_done@{notify\_chunk\_done}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{notify\_chunk\_done()}{notify\_chunk\_done()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::notify\+\_\+chunk\+\_\+done (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDjVuPort}{Dj\+Vu\+Port}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This notification is sent when a new chunk has been decoded. 
+
+Reimplemented from \mbox{\hyperlink{classDjVuPort_a405351abbc501bd051764b07988b2861}{Dj\+Vu\+Port}}.
+
+\mbox{\Hypertarget{classDjVuFile_a73693e8af95fa59641aa8a35190e7bd5}\label{classDjVuFile_a73693e8af95fa59641aa8a35190e7bd5}} 
+\index{DjVuFile@{DjVuFile}!process\_incl\_chunks@{process\_incl\_chunks}}
+\index{process\_incl\_chunks@{process\_incl\_chunks}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{process\_incl\_chunks()}{process\_incl\_chunks()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::process\+\_\+incl\+\_\+chunks (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Processes \#\+I\+N\+CL\# chunks and creates included files. Normally you won\textquotesingle{}t need to call this function because included files are created automatically when the file is being decoded. But if due to some reason you\textquotesingle{}d like to obtain the list of included files without decoding this file, this is an ideal function to call.
+
+\{\textbackslash{}bf Warning.\} This function does not return before it reads the whole file, which may block your application under some circumstances if not all data is available. \mbox{\Hypertarget{classDjVuFile_a224c4cc4c10a2af135deeb01e4567e2c}\label{classDjVuFile_a224c4cc4c10a2af135deeb01e4567e2c}} 
+\index{DjVuFile@{DjVuFile}!remove\_anno@{remove\_anno}}
+\index{remove\_anno@{remove\_anno}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{remove\_anno()}{remove\_anno()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::remove\+\_\+anno (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Clears this file of all annotations. \mbox{\Hypertarget{classDjVuFile_a4b7b36c12207872ed7ea078bb51d8550}\label{classDjVuFile_a4b7b36c12207872ed7ea078bb51d8550}} 
+\index{DjVuFile@{DjVuFile}!remove\_text@{remove\_text}}
+\index{remove\_text@{remove\_text}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{remove\_text()}{remove\_text()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::remove\+\_\+text (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Clears the hidden text. \mbox{\Hypertarget{classDjVuFile_a09a413ed26c248ac7e3bd1e7b41d2ece}\label{classDjVuFile_a09a413ed26c248ac7e3bd1e7b41d2ece}} 
+\index{DjVuFile@{DjVuFile}!resume\_decode@{resume\_decode}}
+\index{resume\_decode@{resume\_decode}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{resume\_decode()}{resume\_decode()}}
+{\footnotesize\ttfamily bool Dj\+Vu\+File\+::resume\+\_\+decode (\begin{DoxyParamCaption}\item[{const bool}]{sync = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Start the decode iff not already decoded. If sync is true, wait wait for decode to complete. Returns true of start\+\_\+decode is called. \mbox{\Hypertarget{classDjVuFile_a86ec797922fe4e583e4f6e5488a778bd}\label{classDjVuFile_a86ec797922fe4e583e4f6e5488a778bd}} 
+\index{DjVuFile@{DjVuFile}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{name }\end{DoxyParamCaption})}
+
+Internal. Used by \mbox{\hyperlink{classDjVuDocument}{Dj\+Vu\+Document}}. The \#name\# should \{\textbackslash{}bf not\} be encoded with \textbackslash{}\+Ref\{G\+O\+S\+::encode\+\_\+reserved\}(). \mbox{\Hypertarget{classDjVuFile_a8951a8afbb9259d7bf2bdbd8553333b7}\label{classDjVuFile_a8951a8afbb9259d7bf2bdbd8553333b7}} 
+\index{DjVuFile@{DjVuFile}!start\_decode@{start\_decode}}
+\index{start\_decode@{start\_decode}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{start\_decode()}{start\_decode()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::start\+\_\+decode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Starts decode. If threads are enabled, the decoding will be done in another thread. Be sure to use \textbackslash{}\+Ref\{wait\+\_\+for\+\_\+finish\}() or listen for notifications sent through the \textbackslash{}\+Ref\{\mbox{\hyperlink{classDjVuPortcaster}{Dj\+Vu\+Portcaster}}\} to remain in sync. \mbox{\Hypertarget{classDjVuFile_ad811346d4ee8801cde8423d85f010d0e}\label{classDjVuFile_ad811346d4ee8801cde8423d85f010d0e}} 
+\index{DjVuFile@{DjVuFile}!stop@{stop}}
+\index{stop@{stop}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::stop (\begin{DoxyParamCaption}\item[{bool}]{only\+\_\+blocked }\end{DoxyParamCaption})}
+
+Recursively stops all data-\/related operations.
+
+Depending on the value of \#only\+\_\+blocked\# flag this works as follows\+: \textbackslash{}begin\{itemize\} \textbackslash{}item If \#only\+\_\+blocked\# is \#\+T\+R\+UE\#, the function will make sure, that any further access to the file\textquotesingle{}s data will result in a \#\+S\+T\+OP\# exception if the desired data is not available (and the thread would normally block). \textbackslash{}item If \#only\+\_\+blocked\# is \#\+F\+A\+L\+SE\#, then \{\textbackslash{}bf any\} further access to the file\textquotesingle{}s data will result in immediate \#\+S\+T\+OP\# exception. \textbackslash{}end\{itemize\}
+
+The action of this function is recursive, meaning that any \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# included into this one will also be stopped.
+
+Use this function when you don\textquotesingle{}t need the \mbox{\hyperlink{classDjVuFile}{Dj\+Vu\+File}}\# anymore. The results cannot be undone, and the whole idea is to make all threads working with this file exit with the \#\+S\+T\+OP\# exception. \mbox{\Hypertarget{classDjVuFile_a2f7d0e0f97a390ef669f8fb11145d0c7}\label{classDjVuFile_a2f7d0e0f97a390ef669f8fb11145d0c7}} 
+\index{DjVuFile@{DjVuFile}!stop\_decode@{stop\_decode}}
+\index{stop\_decode@{stop\_decode}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{stop\_decode()}{stop\_decode()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::stop\+\_\+decode (\begin{DoxyParamCaption}\item[{bool}]{sync }\end{DoxyParamCaption})}
+
+Stops decode. If \#sync\# is 1 then the function will not return until the decoding thread actually dies. Otherwise it will just signal the thread to stop and will return immediately. Decoding of all included files will be stopped too. \mbox{\Hypertarget{classDjVuFile_adc457492793bd0bb1ba8ab80319ef68c}\label{classDjVuFile_adc457492793bd0bb1ba8ab80319ef68c}} 
+\index{DjVuFile@{DjVuFile}!unlink\_file@{unlink\_file}}
+\index{unlink\_file@{unlink\_file}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{unlink\_file()}{unlink\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ Dj\+Vu\+File\+::unlink\+\_\+file (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGP}{GP}}$<$ \mbox{\hyperlink{classDataPool}{Data\+Pool}} $>$ \&}]{data,  }\item[{const \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Will find an \#\+I\+N\+CL\# chunk containing \#name\# in input \#data\# and will remove it \mbox{\Hypertarget{classDjVuFile_a360df428ee158bc58f98420c390f696c}\label{classDjVuFile_a360df428ee158bc58f98420c390f696c}} 
+\index{DjVuFile@{DjVuFile}!wait\_for\_finish@{wait\_for\_finish}}
+\index{wait\_for\_finish@{wait\_for\_finish}!DjVuFile@{DjVuFile}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_finish()}{wait\_for\_finish()}}
+{\footnotesize\ttfamily void Dj\+Vu\+File\+::wait\+\_\+for\+\_\+finish (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Wait for the decoding to finish. This will wait for the termination of included files too. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Dj\+Vu\+File.\+h\item 
+libdjvu/Dj\+Vu\+File.\+cpp\end{DoxyCompactItemize}

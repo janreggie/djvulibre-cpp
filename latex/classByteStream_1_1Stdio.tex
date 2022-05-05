@@ -1,0 +1,135 @@
+\hypertarget{classByteStream_1_1Stdio}{}\doxysection{Byte\+Stream\+::Stdio Class Reference}
+\label{classByteStream_1_1Stdio}\index{ByteStream::Stdio@{ByteStream::Stdio}}
+
+
+Inheritance diagram for Byte\+Stream\+::Stdio\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classByteStream_1_1Stdio__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Byte\+Stream\+::Stdio\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classByteStream_1_1Stdio__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classByteStream_1_1Stdio_a92d88430d73b7072edf42d9c5f27fbb0}{init}} (const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&url, const char $\ast$const mode)
+\item 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classByteStream_1_1Stdio_a71e25422c34f7478dd14a91563f3187b}{init}} (F\+I\+LE $\ast$const f, const char $\ast$const mode=\char`\"{}rb\char`\"{}, const bool closeme=false)
+\item 
+\mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} \mbox{\hyperlink{classByteStream_1_1Stdio_ad00d1a3ed82190b44747d01fae811943}{init}} (const char mode\mbox{[}$\,$\mbox{]})
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classByteStream_1_1Stdio_a9d10abdb8459f59dcd79b909a744a1ab}{read}} (void $\ast$buffer, size\+\_\+t \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{size}})
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classByteStream_1_1Stdio_ab98ef3346548c05494029037a043c3bc}{write}} (const void $\ast$buffer, size\+\_\+t \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{size}})
+\item 
+virtual void \mbox{\hyperlink{classByteStream_1_1Stdio_abb8b7b09eedc6cad471fe0f397cc3ad7}{flush}} (void)
+\item 
+virtual int \mbox{\hyperlink{classByteStream_1_1Stdio_a192cea80ee0b71c24abf66177d71f960}{seek}} (long offset, int whence=S\+E\+E\+K\+\_\+\+S\+ET, bool nothrow=false)
+\item 
+virtual long \mbox{\hyperlink{classByteStream_1_1Stdio_aa6fd0dd5fdcf2f392f9ad7611ed58ed9}{tell}} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classByteStream_1_1Stdio_aac776efa6e0c5d7a8cae7c776644ab5d}\label{classByteStream_1_1Stdio_aac776efa6e0c5d7a8cae7c776644ab5d}} 
+F\+I\+LE $\ast$ {\bfseries fp}
+\item 
+\mbox{\Hypertarget{classByteStream_1_1Stdio_a98c7fd9b5e7f79244b49b9efeae54792}\label{classByteStream_1_1Stdio_a98c7fd9b5e7f79244b49b9efeae54792}} 
+long {\bfseries pos}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classByteStream}{Byte\+Stream}} interface for stdio files. The virtual member functions \mbox{\hyperlink{classByteStream_1_1Stdio_a9d10abdb8459f59dcd79b909a744a1ab}{read}}\#, \mbox{\hyperlink{classByteStream_1_1Stdio_ab98ef3346548c05494029037a043c3bc}{write}}\#, \mbox{\hyperlink{classByteStream_1_1Stdio_aa6fd0dd5fdcf2f392f9ad7611ed58ed9}{tell}}\# and \mbox{\hyperlink{classByteStream_1_1Stdio_a192cea80ee0b71c24abf66177d71f960}{seek}}\# are mapped to the well known stdio functions \#fread\#, \#fwrite\#, \#ftell\# and \#fseek\#. \begin{DoxySeeAlso}{See also}
+Unix man page fopen(3), fread(3), fwrite(3), ftell(3), fseek(3) 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classByteStream_1_1Stdio_abb8b7b09eedc6cad471fe0f397cc3ad7}\label{classByteStream_1_1Stdio_abb8b7b09eedc6cad471fe0f397cc3ad7}} 
+\index{ByteStream::Stdio@{ByteStream::Stdio}!flush@{flush}}
+\index{flush@{flush}!ByteStream::Stdio@{ByteStream::Stdio}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily void Byte\+Stream\+::\+Stdio\+::flush (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Flushes all buffers in the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. Calling this function guarantees that pending data have been actually written (i.\+e. passed to the operating system). \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\# provides a default implementation which does nothing. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_a35993db0bf51666f6f60900d88c41dba}{Byte\+Stream}}.
+
+\mbox{\Hypertarget{classByteStream_1_1Stdio_ad00d1a3ed82190b44747d01fae811943}\label{classByteStream_1_1Stdio_ad00d1a3ed82190b44747d01fae811943}} 
+\index{ByteStream::Stdio@{ByteStream::Stdio}!init@{init}}
+\index{init@{init}!ByteStream::Stdio@{ByteStream::Stdio}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} Byte\+Stream\+::\+Stdio\+::init (\begin{DoxyParamCaption}\item[{const char}]{mode\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Initializes from stdio \mbox{\Hypertarget{classByteStream_1_1Stdio_a92d88430d73b7072edf42d9c5f27fbb0}\label{classByteStream_1_1Stdio_a92d88430d73b7072edf42d9c5f27fbb0}} 
+\index{ByteStream::Stdio@{ByteStream::Stdio}!init@{init}}
+\index{init@{init}!ByteStream::Stdio@{ByteStream::Stdio}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} Byte\+Stream\+::\+Stdio\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGURL}{G\+U\+RL}} \&}]{url,  }\item[{const char $\ast$const}]{mode }\end{DoxyParamCaption})}
+
+Constructs a \mbox{\hyperlink{classByteStream}{Byte\+Stream}} for accessing the file named \#url\#. Arguments \#url\# and \#mode\# are similar to the arguments of the well known stdio function \#fopen\#. In addition a url of \#-\/\# will be interpreted as the standard output or the standard input according to \#mode\#. This constructor will open a stdio file and construct a \mbox{\hyperlink{classByteStream}{Byte\+Stream}} object accessing this file. Destroying the \mbox{\hyperlink{classByteStream}{Byte\+Stream}} object will flush and close the associated stdio file. Returns an error code if the stdio file cannot be opened. \mbox{\Hypertarget{classByteStream_1_1Stdio_a71e25422c34f7478dd14a91563f3187b}\label{classByteStream_1_1Stdio_a71e25422c34f7478dd14a91563f3187b}} 
+\index{ByteStream::Stdio@{ByteStream::Stdio}!init@{init}}
+\index{init@{init}!ByteStream::Stdio@{ByteStream::Stdio}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUTF8String}{G\+U\+T\+F8\+String}} Byte\+Stream\+::\+Stdio\+::init (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$const}]{f,  }\item[{const char $\ast$const}]{mode = {\ttfamily \char`\"{}rb\char`\"{}},  }\item[{const bool}]{closeme = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Constructs a \mbox{\hyperlink{classByteStream}{Byte\+Stream}} for accessing the stdio file \#f\#. Argument \#mode\# indicates the type of the stdio file, as in the well known stdio function \#fopen\#. Destroying the \mbox{\hyperlink{classByteStream}{Byte\+Stream}} object will not close the stdio file \#f\# unless closeme is true. \mbox{\Hypertarget{classByteStream_1_1Stdio_a9d10abdb8459f59dcd79b909a744a1ab}\label{classByteStream_1_1Stdio_a9d10abdb8459f59dcd79b909a744a1ab}} 
+\index{ByteStream::Stdio@{ByteStream::Stdio}!read@{read}}
+\index{read@{read}!ByteStream::Stdio@{ByteStream::Stdio}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Stream\+::\+Stdio\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reads data from a \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. This function \{{\itshape must\}} be implemented by each subclass of \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\#. At most \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{size}}\# bytes are read from the \mbox{\hyperlink{classByteStream}{Byte\+Stream}} and stored in the memory area pointed to by \#buffer\#. Function \mbox{\hyperlink{classByteStream_1_1Stdio_a9d10abdb8459f59dcd79b909a744a1ab}{read}}\# returns immediately if \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{size}}\# is zero. The actual number of bytes read is returned. Function \mbox{\hyperlink{classByteStream_1_1Stdio_a9d10abdb8459f59dcd79b909a744a1ab}{read}}\# returns a number of bytes smaller than \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{size}}\# if the end-\/of-\/file mark is reached before filling the buffer. Subsequent invocations will always return value \#0\#. Function \mbox{\hyperlink{classByteStream_1_1Stdio_a9d10abdb8459f59dcd79b909a744a1ab}{read}}\# may also return a value greater than zero but smaller than \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{size}}\# for internal reasons. Programs must be ready to handle these cases or use function \textbackslash{}\+Ref\{readall\}. Exception \textbackslash{}\+Ref\{\mbox{\hyperlink{classGException}{G\+Exception}}\} is thrown with a plain text error message whenever an error occurs. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_ae69bbdbc77545f72488bde0639ae0e95}{Byte\+Stream}}.
+
+\mbox{\Hypertarget{classByteStream_1_1Stdio_a192cea80ee0b71c24abf66177d71f960}\label{classByteStream_1_1Stdio_a192cea80ee0b71c24abf66177d71f960}} 
+\index{ByteStream::Stdio@{ByteStream::Stdio}!seek@{seek}}
+\index{seek@{seek}!ByteStream::Stdio@{ByteStream::Stdio}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily int Byte\+Stream\+::\+Stdio\+::seek (\begin{DoxyParamCaption}\item[{long}]{offset,  }\item[{int}]{whence = {\ttfamily SEEK\+\_\+SET},  }\item[{bool}]{nothrow = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the current position for reading or writing the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. \mbox{\hyperlink{structClass}{Class}} \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\# provides a default implementation able to seek forward by calling function \mbox{\hyperlink{classByteStream_1_1Stdio_a9d10abdb8459f59dcd79b909a744a1ab}{read}}\# until reaching the desired position. Subclasses implementing better seek capabilities must override this default implementation. The new current position is computed by applying displacement \#offset\# to the position represented by argument \#whence\#. The following values are recognized for argument \#whence\#\+: \textbackslash{}begin\{description\} \textbackslash{}item\mbox{[}\#\+S\+E\+E\+K\+\_\+\+S\+ET\#\mbox{]} Argument \#offset\# indicates the position relative to the beginning of the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. \textbackslash{}item\mbox{[}\#\+S\+E\+E\+K\+\_\+\+C\+UR\#\mbox{]} Argument \#offset\# is a signed displacement relative to the current position. \textbackslash{}item\mbox{[}\#\+S\+E\+E\+K\+\_\+\+E\+ND\#\mbox{]} Argument \#offset\# is a displacement relative to the end of the file. It is then advisable to provide a negative value for \#offset\#. \textbackslash{}end\{description\} Results are undefined whenever the new position is greater than the total size of the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}.
+
+\{\textbackslash{}bf Error reporting\}\+: If \mbox{\hyperlink{classByteStream_1_1Stdio_a192cea80ee0b71c24abf66177d71f960}{seek()}}\# succeeds, \#0\# is returned. Otherwise it either returns \#-\/1\# (if \#nothrow\# is set to \#\+F\+A\+L\+SE\#) or throws the \textbackslash{}\+Ref\{\mbox{\hyperlink{classGException}{G\+Exception}}\} exception. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_a601ef5bf4d183b262472e1e1f7c9a2ad}{Byte\+Stream}}.
+
+\mbox{\Hypertarget{classByteStream_1_1Stdio_aa6fd0dd5fdcf2f392f9ad7611ed58ed9}\label{classByteStream_1_1Stdio_aa6fd0dd5fdcf2f392f9ad7611ed58ed9}} 
+\index{ByteStream::Stdio@{ByteStream::Stdio}!tell@{tell}}
+\index{tell@{tell}!ByteStream::Stdio@{ByteStream::Stdio}}
+\doxysubsubsection{\texorpdfstring{tell()}{tell()}}
+{\footnotesize\ttfamily long Byte\+Stream\+::\+Stdio\+::tell (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the offset of the current position in the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. This function \{{\itshape must\}} be implemented by each subclass of \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\#. 
+
+Implements \mbox{\hyperlink{classByteStream_a6379ec44f814a160980d2dd5c5e25672}{Byte\+Stream}}.
+
+\mbox{\Hypertarget{classByteStream_1_1Stdio_ab98ef3346548c05494029037a043c3bc}\label{classByteStream_1_1Stdio_ab98ef3346548c05494029037a043c3bc}} 
+\index{ByteStream::Stdio@{ByteStream::Stdio}!write@{write}}
+\index{write@{write}!ByteStream::Stdio@{ByteStream::Stdio}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily size\+\_\+t Byte\+Stream\+::\+Stdio\+::write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Writes data to a \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. This function \{{\itshape must\}} be implemented by each subclass of \mbox{\hyperlink{classByteStream}{Byte\+Stream}}\#. At most \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{size}}\# bytes from buffer \#buffer\# are written to the \mbox{\hyperlink{classByteStream}{Byte\+Stream}}. Function \mbox{\hyperlink{classByteStream_1_1Stdio_ab98ef3346548c05494029037a043c3bc}{write}}\# returns immediately if \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{size}}\# is zero. The actual number of bytes written is returned. Function \mbox{\hyperlink{classByteStream_1_1Stdio_ab98ef3346548c05494029037a043c3bc}{write}}\# may also return a value greater than zero but smaller than \mbox{\hyperlink{classByteStream_aa33b66a4401b7ab98953158b766a8dec}{size}}\# for internal reasons. Programs must be ready to handle these cases or use function \textbackslash{}\+Ref\{writall\}. Exception \textbackslash{}\+Ref\{\mbox{\hyperlink{classGException}{G\+Exception}}\} is thrown with a plain text error message whenever an error occurs. 
+
+Reimplemented from \mbox{\hyperlink{classByteStream_ac10e950d655e5dabb93af44e3a5da855}{Byte\+Stream}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libdjvu/Byte\+Stream.\+cpp\end{DoxyCompactItemize}
