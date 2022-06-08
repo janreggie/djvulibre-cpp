@@ -62,6 +62,7 @@
 
 #include "debug.h"
 
+#define DEBUGLVL 100 // Artificially induce debug mode
 #if ( DEBUGLVL > 0 )
 
 #include "GThreads.h"

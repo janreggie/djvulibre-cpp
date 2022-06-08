@@ -120,6 +120,7 @@ namespace DJVU {
     Leon Bottou <leonb@research.att.com> -- cleanups */
 //@{
 
+#define DEBUGLVL 100 // Artificially induce debug mode
 #ifndef DEBUGLVL
 # ifdef NDEBUG
 #  define DEBUGLVL 0

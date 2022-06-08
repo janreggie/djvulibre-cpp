@@ -73,6 +73,11 @@
 #include <string.h>
 #include <stddef.h>
 #include <stdlib.h>
+
+#if ! defined(UNIX) && defined(__linux__)
+#define UNIX 1
+#endif
+
 #ifdef _WIN32
 # include <tchar.h>
 # include <windows.h>

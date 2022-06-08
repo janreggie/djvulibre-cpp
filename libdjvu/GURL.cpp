@@ -99,6 +99,10 @@
 #endif
 #endif
 
+#if ! defined(UNIX) && defined(__linux__)
+#define UNIX 1
+#endif
+
 #if defined(UNIX) || defined(OS2)
 #include <unistd.h>
 #include <sys/types.h>

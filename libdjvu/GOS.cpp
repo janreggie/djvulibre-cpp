@@ -72,7 +72,7 @@
 #include <math.h>
 #include <string.h>
 
-#if defined(__CYGWIN32__)
+#if defined(__CYGWIN32__) || !defined(_WIN32)
 # define UNIX 1
 #endif
 
