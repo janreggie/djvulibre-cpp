@@ -118,12 +118,7 @@
 # endif
 #endif
 
-#ifdef HAVE_NAMESPACES
 namespace DJVU {
-# ifdef NOT_DEFINED // Just to fool emacs c++ mode
-}
-# endif
-#endif
 
 /** Exception class.  
     The library always uses macros #G_TRY#, #G_THROW#, #G_CATCH# and #G_ENDCATCH# for
@@ -239,10 +234,6 @@ private:
 
 // -------------- THE END
 
-#ifdef HAVE_NAMESPACES
 }
-# ifndef NOT_USING_DJVU_NAMESPACE
 using namespace DJVU;
-# endif
-#endif
 #endif

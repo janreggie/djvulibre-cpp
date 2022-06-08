@@ -65,12 +65,7 @@
 
 #include "DjVuPort.h"
 
-#ifdef HAVE_NAMESPACES
 namespace DJVU {
-# ifdef NOT_DEFINED // Just to fool emacs c++ mode
-}
-#endif
-#endif
 
 // These classes have been declared to be referenced in the h file
 // but are actually #include'd in the cpp file.
@@ -1062,10 +1057,6 @@ DjVuDocument::set_verbose_eof(bool verbose)
 //@}
 
 
-#ifdef HAVE_NAMESPACES
 }
-# ifndef NOT_USING_DJVU_NAMESPACE
 using namespace DJVU;
-# endif
-#endif
 #endif

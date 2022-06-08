@@ -36,13 +36,8 @@
 
 #include "miniexp.h"
 
-#ifdef HAVE_NAMESPACES
 # define BEGIN_ANONYMOUS_NAMESPACE namespace {
 # define END_ANONYMOUS_NAMESPACE }
-#else
-# define BEGIN_ANONYMOUS_NAMESPACE 
-# define END_ANONYMOUS_NAMESPACE
-#endif
 
 
 /* -------------------------------------------------- */

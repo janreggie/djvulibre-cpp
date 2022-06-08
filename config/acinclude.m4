@@ -192,37 +192,6 @@ if test "$ac_cv_cxx_member_templates" = yes; then
 fi
 ])
 
-
-dnl -------------------------------------------------------
-dnl @synopsis AC_CXX_NAMESPACES
-dnl Define HAVE_NAMESPACES if the compiler supports
-dnl namespaces.
-dnl -------------------------------------------------------
-AC_DEFUN([AC_CXX_NAMESPACES],
-[AC_CACHE_CHECK(whether the compiler implements namespaces,
-ac_cv_cxx_namespaces,
-[ AC_LANG_PUSH([C++])
-  AC_COMPILE_IFELSE(
-  [AC_LANG_PROGRAM(
-   [[
-namespace Outer { namespace Inner { int i = 0; }}
-   ]],
-   [[
-using namespace Outer::Inner;
-return i;
-   ]])],
-  [ac_cv_cxx_namespaces=yes],
-  [ac_cv_cxx_namespaces=no])
-  AC_LANG_POP([C++])
-])
-if test "$ac_cv_cxx_namespaces" = yes && test "$ac_debug" = no; then
-  AC_DEFINE(HAVE_NAMESPACES,1,
-             [define if the compiler implements namespaces])
-fi
-])
-
-
-
 dnl -------------------------------------------------------
 dnl @synopsis AC_CXX_TYPENAME
 dnl Define HAVE_TYPENAME if the compiler recognizes 

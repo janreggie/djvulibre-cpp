@@ -67,7 +67,6 @@
 #include <ctype.h>
 #include <locale.h>
 
-#ifdef HAVE_NAMESPACES
 namespace DJVU {
   struct ddjvu_context_s;
   struct ddjvu_job_s;
@@ -81,10 +80,6 @@ namespace DJVU {
   struct ddjvu_savejob_s;
 }
 using namespace DJVU;
-# define DJVUNS DJVU::
-#else
-# define DJVUNS /**/
-#endif
 
 #include "GException.h"
 #include "GSmartPointer.h"
@@ -125,7 +120,7 @@ using namespace DJVU;
 // Private structures
 
 
-struct DJVUNS ddjvu_message_p : public GPEnabled
+struct DJVU::ddjvu_message_p : public GPEnabled
 {
   GNativeString tmp1;
   GNativeString tmp2;
@@ -133,7 +128,7 @@ struct DJVUNS ddjvu_message_p : public GPEnabled
   ddjvu_message_p() { memset(&p, 0, sizeof(p)); }
 };
 
-struct DJVUNS ddjvu_thumbnail_p : public GPEnabled
+struct DJVU::ddjvu_thumbnail_p : public GPEnabled
 {
   ddjvu_document_t *document;
   int pagenum;
@@ -147,7 +142,7 @@ struct DJVUNS ddjvu_thumbnail_p : public GPEnabled
 // Context, Jobs, Document, Pages
 
 
-struct DJVUNS ddjvu_context_s : public GPEnabled
+struct DJVU::ddjvu_context_s : public GPEnabled
 {
   GMonitor monitor;
   GP<DjVuFileCache> cache;
@@ -158,7 +153,7 @@ struct DJVUNS ddjvu_context_s : public GPEnabled
   void *callbackarg;
 };
 
-struct DJVUNS ddjvu_job_s : public DjVuPort
+struct DJVU::ddjvu_job_s : public DjVuPort
 {
   GMonitor monitor;
   void *userdata;
@@ -176,7 +171,7 @@ struct DJVUNS ddjvu_job_s : public DjVuPort
   virtual void stop() {}
 };
 
-struct DJVUNS ddjvu_document_s : public ddjvu_job_s
+struct DJVU::ddjvu_document_s : public ddjvu_job_s
 {
   GP<DjVuDocument> doc;
   GPMap<int,DataPool> streams;
@@ -201,7 +196,7 @@ struct DJVUNS ddjvu_document_s : public ddjvu_job_s
   bool want_pageinfo(void);
 };
 
-struct DJVUNS ddjvu_page_s : public ddjvu_job_s
+struct DJVU::ddjvu_page_s : public ddjvu_job_s
 {
   GP<DjVuImage> img;
   ddjvu_job_t *job;
@@ -2041,7 +2036,7 @@ ddjvu_unmap_rect(ddjvu_rectmapper_t *mapper, ddjvu_rect_t *rect)
 // ----------------------------------------
 // Render
 
-struct DJVUNS ddjvu_format_s
+struct DJVU::ddjvu_format_s
 {
   ddjvu_format_style_t style;
   uint32_t rgb[3][256];
@@ -2648,7 +2643,7 @@ ddjvu_thumbnail_render(ddjvu_document_t *document, int pagenum,
 // ----------------------------------------
 // Threaded jobs
 
-struct DJVUNS ddjvu_runnablejob_s : public ddjvu_job_s
+struct DJVU::ddjvu_runnablejob_s : public ddjvu_job_s
 {
   bool mystop;
   int  myprogress;
@@ -2763,7 +2758,7 @@ ddjvu_runnablejob_s::stop()
 // ----------------------------------------
 // Printing
 
-struct DJVUNS ddjvu_printjob_s : public ddjvu_runnablejob_s
+struct DJVU::ddjvu_printjob_s : public ddjvu_runnablejob_s
 {
   DjVuToPS printer;
   GUTF8String pages;
@@ -3095,7 +3090,7 @@ ddjvu_document_print(ddjvu_document_t *document, FILE *output,
 // ----------------------------------------
 // Saving
 
-struct DJVUNS ddjvu_savejob_s : public ddjvu_runnablejob_s
+struct DJVU::ddjvu_savejob_s : public ddjvu_runnablejob_s
 {
   GP<ByteStream> obs;
   GURL           odir;  
