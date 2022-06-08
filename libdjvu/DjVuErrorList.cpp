@@ -69,12 +69,7 @@
 #include <string.h>
 
 
-#ifdef HAVE_NAMESPACES
 namespace DJVU {
-# ifdef NOT_DEFINED // Just to fool emacs c++ mode
-}
-#endif
-#endif
 
 
 DjVuErrorList::DjVuErrorList() {}
@@ -165,9 +160,4 @@ DjVuErrorList::request_data(const DjVuPort * source, const GURL & url)
 }
  
 
-#ifdef HAVE_NAMESPACES
 }
-# ifndef NOT_USING_DJVU_NAMESPACE
-using namespace DJVU;
-# endif
-#endif
