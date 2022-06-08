@@ -67,50 +67,7 @@
 #include "GSmartPointer.h"
 #include <string.h>
 
-#ifdef HAVE_NAMESPACES
 namespace DJVU {
-# ifdef NOT_DEFINED // Just to fool emacs c++ mode
-}
-#endif
-#endif
-
-
-// Supports old iterators (first/last/next/prev) on lists and maps?
-#ifndef GCONTAINER_OLD_ITERATORS
-#define GCONTAINER_OLD_ITERATORS 1
-#endif
-
-// Check array bounds at runtime ?
-#ifndef GCONTAINER_BOUNDS_CHECK
-#define GCONTAINER_BOUNDS_CHECK 1
-#endif
-
-// Clears allocated memory prior to running constructors ?
-#ifndef GCONTAINER_ZERO_FILL
-#define GCONTAINER_ZERO_FILL 1
-#endif
-
-// Avoid member templates (needed by old compilers)
-#ifndef GCONTAINER_NO_MEMBER_TEMPLATES
-#if defined(__GNUC__) && (__GNUC__==2) && (__GNUC_MINOR__<91)
-#define GCONTAINER_NO_MEMBER_TEMPLATES 1
-#elif defined(_MSC_VER) && !defined(__ICL)
-#define GCONTAINER_NO_MEMBER_TEMPLATES 1
-#elif defined(__MWERKS__)
-#define GCONTAINER_NO_MEMBER_TEMPLATES 1
-#else
-#define GCONTAINER_NO_MEMBER_TEMPLATES 0
-#endif
-#endif
-
-// Define typename when needed
-#ifndef GCONTAINER_NO_TYPENAME
-#define GCONTAINER_NO_TYPENAME 0
-#endif
-#if GCONTAINER_NO_TYPENAME
-#define typename /**/
-#endif
-
 
 /** @name GContainer.h
 
@@ -228,15 +185,9 @@ hash(const double & x)
 #endif
 
 
-// GPEnabled inhertenced removed again so the code works on more machines.
 class GCont
-#if GCONTAINER_NO_MEMBER_TEMPLATES
-{
-};
-#else
 {
 public:
-#endif
   // --- Pointers to type management functions
   struct Traits
   {
@@ -246,9 +197,7 @@ public:
     void      (*copy)    (void *dst, const void* src, int n, int zap);
     void      (*fini)    (void *dst, int n);
   };
-#if !GCONTAINER_NO_MEMBER_TEMPLATES
 protected:
-#endif
   // --- Management of simple types
   template <int SZ> class TrivTraits
   {
@@ -313,19 +262,11 @@ protected:
   {
     T val;
   };
-#if !GCONTAINER_NO_MEMBER_TEMPLATES
 };
-#endif
 
 
-#if !GCONTAINER_NO_MEMBER_TEMPLATES
-#define GCONT GCont::
-#else
-#define GCONT
-#endif
-
-template <int SZ> const GCONT Traits & 
-GCONT TrivTraits<SZ>::traits()
+template <int SZ> const GCont::Traits & 
+GCont::TrivTraits<SZ>::traits()
 {
   static const Traits theTraits = {
     SZ,
@@ -337,8 +278,8 @@ GCONT TrivTraits<SZ>::traits()
   return theTraits;
 }
 
-template <class T> const GCONT Traits & 
-GCONT NormTraits<T>::traits()
+template <class T> const GCont::Traits & 
+GCont::NormTraits<T>::traits()
 {
   static const Traits theTraits = {
     sizeof(T),
@@ -610,12 +551,10 @@ GArrayTemplate<TYPE>::sort(int lo, int hi)
 template<class TYPE> inline TYPE&
 GArrayTemplate<TYPE>::operator[](int const n)
 {
-#if GCONTAINER_BOUNDS_CHECK
   if (n<lobound || n>hibound)
   {
     G_THROW( ERR_MSG("GContainer.illegal_subscript") ); 
   }
-#endif
   return ((TYPE*)data)[n-minlo];
 }
 
@@ -623,12 +562,10 @@ GArrayTemplate<TYPE>::operator[](int const n)
 template<class TYPE> inline const TYPE &
 GArrayTemplate<TYPE>::operator[](int const n) const
 {
-#if GCONTAINER_BOUNDS_CHECK
   if (n<lobound || n>hibound)
   {
     G_THROW( ERR_MSG("GContainer.illegal_subscript") ); 
   }
-#endif
   return ((const TYPE*)data)[n-minlo];
 }
 
@@ -654,17 +591,17 @@ public:
       empty. Member function #touch# and #resize# provide convenient ways
       to enlarge the subscript range. */
   GArray() 
-    : GArrayTemplate<TYPE>(GCONT NormTraits<TYPE>::traits() ) {}
+    : GArrayTemplate<TYPE>(GCont::NormTraits<TYPE>::traits() ) {}
   /** Constructs an array with subscripts in range 0 to #hibound#. 
       The subscript range can be subsequently modified with member functions
       #touch# and #resize#. */
   GArray(int hi) 
-    : GArrayTemplate<TYPE>(GCONT NormTraits<TYPE>::traits(), 0, hi ) {}
+    : GArrayTemplate<TYPE>(GCont::NormTraits<TYPE>::traits(), 0, hi ) {}
   /** Constructs an array with subscripts in range #lobound# to #hibound#.  
       The subscript range can be subsequently modified with member functions
       #touch# and #resize#. */
   GArray(int lo, int hi) 
-    : GArrayTemplate<TYPE>(GCONT NormTraits<TYPE>::traits(), lo, hi ) {}
+    : GArrayTemplate<TYPE>(GCont::NormTraits<TYPE>::traits(), lo, hi ) {}
   // Copy operator
   GArray& operator=(const GArray &r)
     { GArrayBase::operator=(r); return *this; }
@@ -684,11 +621,11 @@ class GPArray : public GArrayTemplate<GP<TYPE> >
 {
 public:
   GPArray() 
-    : GArrayTemplate<GP<TYPE> >(GCONT NormTraits<GPBase>::traits() ) {}
+    : GArrayTemplate<GP<TYPE> >(GCont::NormTraits<GPBase>::traits() ) {}
   GPArray(int hi) 
-    : GArrayTemplate<GP<TYPE> >(GCONT NormTraits<GPBase>::traits(), 0, hi ) {}
+    : GArrayTemplate<GP<TYPE> >(GCont::NormTraits<GPBase>::traits(), 0, hi ) {}
   GPArray(int lo, int hi) 
-    : GArrayTemplate<GP<TYPE> >(GCONT NormTraits<GPBase>::traits(), lo, hi ) {}
+    : GArrayTemplate<GP<TYPE> >(GCont::NormTraits<GPBase>::traits(), lo, hi ) {}
   // Copy operator
   GPArray& operator=(const GPArray &r)
     { GArrayBase::operator=(r); return *this; }
@@ -707,11 +644,11 @@ class GTArray : public GArrayTemplate<TYPE>
 {
 public:
   GTArray() 
-    : GArrayTemplate<TYPE>(GCONT TrivTraits<sizeof(TYPE)>::traits() ) {}
+    : GArrayTemplate<TYPE>(GCont::TrivTraits<sizeof(TYPE)>::traits() ) {}
   GTArray(int hi) 
-    : GArrayTemplate<TYPE>(GCONT TrivTraits<sizeof(TYPE)>::traits(), 0, hi ) {}
+    : GArrayTemplate<TYPE>(GCont::TrivTraits<sizeof(TYPE)>::traits(), 0, hi ) {}
   GTArray(int lo, int hi) 
-    : GArrayTemplate<TYPE>(GCONT TrivTraits<sizeof(TYPE)>::traits(), lo, hi ) {}
+    : GArrayTemplate<TYPE>(GCont::TrivTraits<sizeof(TYPE)>::traits(), lo, hi ) {}
   // Copy operator
   GTArray& operator=(const GTArray &r)
     { GArrayBase::operator=(r); return *this; }
@@ -789,17 +726,10 @@ public:
     { if (ptr) ptr = ptr->prev; return *this; }
   // Internal. Do not use.
   GPosition(Node *p, void *c) : ptr(p), cont(c) {}
-#if GCONTAINER_BOUNDS_CHECK
   Node *check(void *c) 
     { if (!ptr || c!=cont) throw_invalid(c); return ptr; }
   const Node *check(void *c) const
     { if (!ptr || c!=cont) throw_invalid(c); return ptr; }
-#else
-  Node *check(void *c) 
-    { return ptr; }
-  const Node *check(void *c) const
-    { return ptr; }
-#endif
 protected:
   Node *ptr;
   void *cont;
@@ -838,7 +768,7 @@ public:
 template<class TI>
 class GListImpl : public GListBase
 {
-  typedef GCONT ListNode<TI> LNode;
+  typedef GCont::ListNode<TI> LNode;
 protected:
   GListImpl();
   static Node * newnode(const TI &elt);
@@ -848,17 +778,15 @@ protected:
 
 template<class TI> 
 GListImpl<TI>::GListImpl() 
-  : GListBase( GCONT NormTraits<LNode>::traits() ) 
+  : GListBase( GCont::NormTraits<LNode>::traits() ) 
 { 
 }
 
-template<class TI> GCONT Node *
+template<class TI> GCont::Node *
 GListImpl<TI>::newnode(const TI &elt)
 {
   LNode  *n = (LNode *) operator new (sizeof(LNode ));
-#if GCONTAINER_ZERO_FILL
   memset((void*)n, 0, sizeof(LNode ));
-#endif
   new ((void*)&(n->val)) TI(elt);
   return (Node*) n;
 }
@@ -893,7 +821,7 @@ GListImpl<TI>::search(const TI &elt, GPosition &pos) const
 template <class TYPE, class TI>
 class GListTemplate : protected GListImpl<TI>
 {
-  typedef GCONT ListNode<TI> LNode;
+  typedef GCont::ListNode<TI> LNode;
 public:
   // -- ACCESS
   /** Returns the number of elements in the list. */
@@ -994,19 +922,6 @@ public:
       nothing unless position #pos# is a valid position. */
   void del(GPosition &pos)
     { GListImpl<TI>::del(pos); }
-  /* Old iterators. Do not use. */
-#if GCONTAINER_OLD_ITERATORS
-  void first(GPosition &pos) const { pos = firstpos(); }
-  void last(GPosition &pos) const { pos = lastpos(); }
-  const TYPE *next(GPosition &pos) const 
-    { if (!pos) return 0; const TYPE *x=&((*this)[pos]); ++pos; return x; }
-  const TYPE *prev(GPosition &pos) const 
-    { if (!pos) return 0; const TYPE *x=&((*this)[pos]); --pos; return x; }
-  TYPE *next(GPosition &pos)
-    { if (!pos) return 0; TYPE *x=&((*this)[pos]); ++pos; return x; }
-  TYPE *prev(GPosition &pos)
-    { if (!pos) return 0; TYPE *x=&((*this)[pos]); --pos; return x; }
-#endif
 };
 
 
@@ -1084,7 +999,7 @@ class DJVUAPI GSetBase : public GCont
 protected:
   GSetBase(const Traits &traits);
   GSetBase(const GSetBase &ref);
-  static GCONT HNode *newnode(const void *key);
+  static GCont::HNode *newnode(const void *key);
   HNode *hashnode(unsigned int hashcode) const;
   HNode *installnode(HNode *n);
   void   deletenode(HNode *n);
@@ -1109,7 +1024,7 @@ public:
 template <class K>
 class GSetImpl : public GSetBase
 {
-  typedef GCONT SetNode<K> SNode;
+  typedef GCont::SetNode<K> SNode;
 protected:
   GSetImpl();
   GSetImpl(const Traits &traits);
@@ -1125,7 +1040,7 @@ public:
 
 template<class K>
 GSetImpl<K>::GSetImpl()
-  : GSetBase( GCONT NormTraits<GCONT SetNode<K> >::traits() )
+  : GSetBase( GCont::NormTraits<GCont::SetNode<K> >::traits() )
 { 
 }
 
@@ -1135,7 +1050,7 @@ GSetImpl<K>::GSetImpl(const Traits &traits)
 { 
 }
 
-template<class K> GCONT HNode *
+template<class K> GCont::HNode *
 GSetImpl<K>::get(const K &key) const
 { 
   unsigned int hashcode = hash(key);
@@ -1144,8 +1059,7 @@ GSetImpl<K>::get(const K &key) const
   return 0;
 }
 
-#if GCONTAINER_BOUNDS_CHECK
-template<class K> GCONT HNode *
+template<class K> GCont::HNode *
 GSetImpl<K>::get_or_throw(const K &key) const
 { 
   HNode *m = get(key);
@@ -1155,23 +1069,14 @@ GSetImpl<K>::get_or_throw(const K &key) const
   }
   return m;
 }
-#else
-template<class K> inline GCONT HNode *
-GSetImpl<K>::get_or_throw(const K &key) const
-{ 
-  return get(key);
-}
-#endif
 
-template<class K> GCONT HNode *
+template<class K> GCont::HNode *
 GSetImpl<K>::get_or_create(const K &key)
 {
   HNode *m = get(key);
   if (m) return m;
   SNode *n = (SNode*) operator new (sizeof(SNode));
-#if GCONTAINER_ZERO_FILL
   memset((void*)n, 0, sizeof(SNode));
-#endif
   new ((void*)&(n->key)) K ( key );
   n->hashcode = hash((const K&)(n->key));
   installnode(n);
@@ -1181,34 +1086,32 @@ GSetImpl<K>::get_or_create(const K &key)
 template <class K, class TI>
 class GMapImpl : public GSetImpl<K>
 {
-  typedef GCONT MapNode<K,TI> MNode;
+  typedef GCont::MapNode<K,TI> MNode;
 protected:
   GMapImpl();
-  GMapImpl(const GCONT Traits &traits);
-  GCONT HNode* get_or_create(const K &key);
+  GMapImpl(const GCont::Traits &traits);
+  GCont::HNode* get_or_create(const K &key);
 };
 
 template<class K, class TI>
 GMapImpl<K,TI>::GMapImpl()
-  : GSetImpl<K> ( GCONT NormTraits<GCONT MapNode<K,TI> >::traits() ) 
+  : GSetImpl<K> ( GCont::NormTraits<GCont::MapNode<K,TI> >::traits() ) 
 { 
 }
 
 template<class K, class TI>
-GMapImpl<K,TI>::GMapImpl(const GCONT Traits &traits)
+GMapImpl<K,TI>::GMapImpl(const GCont::Traits &traits)
   : GSetImpl<K>(traits) 
 { 
 }
 
-template<class K, class TI> GCONT HNode *
+template<class K, class TI> GCont::HNode *
 GMapImpl<K,TI>::get_or_create(const K &key)
 {
-  GCONT HNode *m = this->get(key);
+  GCont::HNode *m = this->get(key);
   if (m) return m;
   MNode *n = (MNode*) operator new (sizeof(MNode));
-#if GCONTAINER_ZERO_FILL
   memset((void*)n, 0, sizeof(MNode));
-#endif
   new ((void*)&(n->key)) K  (key);
   new ((void*)&(n->val)) TI ();
   n->hashcode = hash((const K&)(n->key));
@@ -1227,7 +1130,7 @@ GMapImpl<K,TI>::get_or_create(const K &key)
 template <class KTYPE, class VTYPE, class TI>
 class GMapTemplate : protected GMapImpl<KTYPE,TI>
 {
-  typedef GCONT MapNode<KTYPE,TI> MNode;
+  typedef GCont::MapNode<KTYPE,TI> MNode;
 public:
   /** Returns the number of elements in the map. */
   int size() const
@@ -1294,14 +1197,6 @@ public:
       Nothing is done if there is no entry for key #key#. */
   void del(const KTYPE &key)
     { GMapImpl<KTYPE,TI>::del(key); }
-  /* Old iterators. Do not use. */
-#if GCONTAINER_OLD_ITERATORS
-  void first(GPosition &pos) const { pos = firstpos(); }
-  const VTYPE *next(GPosition &pos) const 
-    { if (!pos) return 0; const VTYPE *x=&((*this)[pos]); ++pos; return x; }
-  VTYPE *next(GPosition &pos)
-    { if (!pos) return 0; VTYPE *x=&((*this)[pos]); ++pos; return x; }
-#endif
 };
 
 
@@ -1355,13 +1250,5 @@ public:
 
 // ------------ THE END
 
-
-#ifdef HAVE_NAMESPACES
 }
-# ifndef NOT_USING_DJVU_NAMESPACE
-using namespace DJVU;
-# endif
 #endif
-#endif
-
-

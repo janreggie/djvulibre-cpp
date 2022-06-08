@@ -63,12 +63,7 @@
 #include "GContainer.h"
 
 
-#ifdef HAVE_NAMESPACES
 namespace DJVU {
-# ifdef NOT_DEFINED // Just to fool emacs c++ mode
-}
-#endif
-#endif
 
 
 // ------------------------------------------------------------
@@ -90,7 +85,7 @@ GArrayBase::GArrayBase(const GArrayBase &ref)
 }
 
 
-GArrayBase::GArrayBase(const GCONT Traits &traits)
+GArrayBase::GArrayBase(const GCont::Traits &traits)
   : traits(traits), data(0),
     minlo(0), maxhi(-1),
     lobound(0), hibound(-1)
@@ -98,7 +93,7 @@ GArrayBase::GArrayBase(const GCONT Traits &traits)
 }
 
 
-GArrayBase::GArrayBase(const GCONT Traits &traits, int lobound, int hibound)
+GArrayBase::GArrayBase(const GCont::Traits &traits, int lobound, int hibound)
   : traits(traits), data(0),
     minlo(0), maxhi(-1),
     lobound(0), hibound(-1)
@@ -218,9 +213,7 @@ GArrayBase::resize(int lo, int hi)
   int end = hi;
   int bytesize = traits.size * (nmaxhi-nminlo+1);
   void *ndata = ::operator new(bytesize);
-#if GCONTAINER_ZERO_FILL
   memset(ndata, 0, bytesize);  // slower but cleaner
-#endif
   G_TRY
     {
       if (lo < lobound)
@@ -311,9 +304,7 @@ GArrayBase::ins(int n, const void *src, int howmany)
         nmaxhi += (nmaxhi < 8 ? 8 : (nmaxhi > 32768 ? 32768 : nmaxhi));
       int bytesize = traits.size * (nmaxhi-minlo+1);
       void *ndata = ::operator new (bytesize);
-#if GCONTAINER_ZERO_FILL
       memset(ndata, 0, bytesize);
-#endif
       G_TRY
         {
           if (hibound >= lobound)
@@ -658,14 +649,14 @@ GSetBase::~GSetBase()
 }
 
 
-GCONT HNode *
+GCont::HNode *
 GSetBase::hashnode(unsigned int hashcode) const
 {
   int bucket = hashcode % nbuckets;
   return table[bucket];
 }
 
-GCONT HNode *
+GCont::HNode *
 GSetBase::installnode(HNode *n)
 {
   // Rehash if table is more than 60% full
@@ -704,7 +695,7 @@ GSetBase::insertnode(HNode *n)
 
 
 void   
-GSetBase::deletenode(GCONT HNode *n)
+GSetBase::deletenode(GCont::HNode *n)
 {
   if (n == 0) 
     return;
@@ -804,10 +795,4 @@ GSetBase::empty()
 }
 
 
-#ifdef HAVE_NAMESPACES
 }
-# ifndef NOT_USING_DJVU_NAMESPACE
-using namespace DJVU;
-# endif
-#endif
-
