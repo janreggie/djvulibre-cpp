@@ -77,7 +77,12 @@
 #include "GSmartPointer.h"
 #include "GException.h"
 
+#ifdef HAVE_NAMESPACES
 namespace DJVU {
+# ifdef NOT_DEFINED // Just to fool emacs c++ mode
+}
+#endif
+#endif
 
 
 // ------ GPENABLED
@@ -196,5 +201,10 @@ GPBufferBase::set(const size_t t,const char c)
 }
 
 
+#ifdef HAVE_NAMESPACES
 }
+# ifndef NOT_USING_DJVU_NAMESPACE
+using namespace DJVU;
+# endif
+#endif
 

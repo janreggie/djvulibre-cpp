@@ -68,7 +68,12 @@
 #include "GException.h"
 
 
+#ifdef HAVE_NAMESPACES
 namespace DJVU {
+# ifdef NOT_DEFINED // Just to fool emacs c++ mode
+}
+#endif
+#endif
 
 // -- Local utilities
 
@@ -444,4 +449,9 @@ GRectMapper::get_output()
 }
 
 
+#ifdef HAVE_NAMESPACES
 }
+# ifndef NOT_USING_DJVU_NAMESPACE
+using namespace DJVU;
+# endif
+#endif

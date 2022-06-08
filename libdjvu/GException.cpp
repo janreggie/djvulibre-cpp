@@ -69,7 +69,12 @@
 #include "debug.h"
 
 
+#ifdef HAVE_NAMESPACES
 namespace DJVU {
+# ifdef NOT_DEFINED // Just to fool emacs c++ mode
+}
+#endif
+#endif
 
 
 // - Author: Leon Bottou, 05/1997
@@ -218,5 +223,10 @@ static void (*old_handler)() = set_new_handler(throw_memory_error);
 #endif // !NEED_DJVU_MEMORY
 
 
+#ifdef HAVE_NAMESPACES
 }
+# ifndef NOT_USING_DJVU_NAMESPACE
+using namespace DJVU;
+# endif
+#endif
 

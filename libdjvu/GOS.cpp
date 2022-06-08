@@ -126,7 +126,12 @@
 # endif
 #endif
 
+#ifdef HAVE_NAMESPACES
 namespace DJVU {
+# ifdef NOT_DEFINED // Just to fool emacs c++ mode
+}
+#endif
+#endif
 
 
 #if defined(AUTOCONF) && !defined(HAVE_STRERROR)
@@ -351,5 +356,10 @@ GOS::getenv(const GUTF8String &name)
 
 
 
+#ifdef HAVE_NAMESPACES
 }
+# ifndef NOT_USING_DJVU_NAMESPACE
+using namespace DJVU;
+# endif
+#endif
 

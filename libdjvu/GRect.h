@@ -78,7 +78,12 @@
 
 #include "DjVuGlobal.h"
 
+#ifdef HAVE_NAMESPACES
 namespace DJVU {
+# ifdef NOT_DEFINED // Just to fool emacs c++ mode
+}
+#endif
+#endif
 
 
 /* Flag to indicate that this djvulibre version
@@ -340,5 +345,10 @@ operator!=(const GRect & r1, const GRect & r2)
 
 // ---- THE END
 
+#ifdef HAVE_NAMESPACES
 }
+# ifndef NOT_USING_DJVU_NAMESPACE
+using namespace DJVU;
+# endif
+#endif
 #endif

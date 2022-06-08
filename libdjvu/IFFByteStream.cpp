@@ -71,7 +71,12 @@
 #include "IFFByteStream.h"
 
 
+#ifdef HAVE_NAMESPACES
 namespace DJVU {
+# ifdef NOT_DEFINED // Just to fool emacs c++ mode
+}
+#endif
+#endif
 
 
 // Constructor
@@ -556,4 +561,9 @@ IFFByteStream::compare(IFFByteStream &iff)
 }
 
 
+#ifdef HAVE_NAMESPACES
 }
+# ifndef NOT_USING_DJVU_NAMESPACE
+using namespace DJVU;
+# endif
+#endif

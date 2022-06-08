@@ -101,7 +101,12 @@
 #include "Arrays.h"
 #include <stdio.h>
 
+#ifdef HAVE_NAMESPACES
 namespace DJVU {
+# ifdef NOT_DEFINED // Just to fool emacs c++ mode
+}
+#endif
+#endif
 
 class GURL;
 class GUTF8String;
@@ -395,6 +400,11 @@ private:
 
 // ------------ THE END
 
+#ifdef HAVE_NAMESPACES
 }
+# ifndef NOT_USING_DJVU_NAMESPACE
+using namespace DJVU;
+# endif
+#endif
 #endif
 
