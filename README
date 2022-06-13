@@ -252,4 +252,8 @@ You may instead specify an alternate directory with DESTDIR=...
    about the arguments of the script 'configure'.
  
 
+More changes
+============
 
+- Install `autoconf-archive`
+- Use namespaces and C++ 17 version
