@@ -615,7 +615,7 @@ GBitmap::euclidian_ratio(int a, int b, int &q, int &r)
 inline int
 GBitmap::read_run(unsigned char *&data)
 {
-  register int z=*data++;
+  int z=*data++;
   return (z>=RUNOVERFLOWVALUE)?
     ((z&~RUNOVERFLOWVALUE)<<8)|(*data++):z;
 }
@@ -623,7 +623,7 @@ GBitmap::read_run(unsigned char *&data)
 inline int
 GBitmap::read_run(const unsigned char *&data)
 {
-  register int z=*data++;
+  int z=*data++;
   return (z>=RUNOVERFLOWVALUE)?
     ((z&~RUNOVERFLOWVALUE)<<8)|(*data++):z;
 }
