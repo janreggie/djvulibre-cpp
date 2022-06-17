@@ -1,8 +1,0 @@
-<map id="GBitmapScaler" name="GBitmapScaler">
-<area shape="rect" id="node1" title=" " alt="" coords="141,305,260,332"/>
-<area shape="rect" id="node2" href="$classGScaler.html" title=" " alt="" coords="109,213,181,240"/>
-<area shape="rect" id="node3" href="$classGPEnabled.html" title=" " alt="" coords="5,81,97,108"/>
-<area shape="rect" id="node4" href="$classGPBuffer.html" title=" " alt="" coords="121,81,248,108"/>
-<area shape="rect" id="node5" href="$classGPBufferBase.html" title=" " alt="" coords="180,5,291,32"/>
-<area shape="rect" id="node6" href="$classGPBuffer.html" title=" " alt="" coords="209,132,363,173"/>
-</map>
