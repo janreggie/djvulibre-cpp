@@ -105,7 +105,7 @@ BSByteStream::BSByteStream(GP<ByteStream> xbs)
   gbs(xbs), gdata(data,0)
 {
   // Initialize context array
-  memset(ctx, 0, sizeof(ctx));
+  std::memset(ctx, 0, sizeof(ctx));
 }
 
 BSByteStream::~BSByteStream() {}
@@ -235,9 +235,9 @@ BSByteStream::Decode::decode(void)
     0xF0,0xF1,0xF2,0xF3,0xF4,0xF5,0xF6,0xF7,
     0xF8,0xF9,0xFA,0xFB,0xFC,0xFD,0xFE,0xFF};
   unsigned char mtf[256];
-  memcpy(mtf,xmtf,sizeof(xmtf));
+  std::memcpy(mtf,xmtf,sizeof(xmtf));
   unsigned int freq[FREQMAX];
-  memset(freq,0,sizeof(freq));
+  std::memset(freq,0,sizeof(freq));
   int fadd = 4;
   // Decode
   int mtfno = 3;
@@ -316,7 +316,7 @@ BSByteStream::Decode::decode(void)
   // Allocate pointers
   unsigned int *posn;
   GPBuffer<unsigned int> gposn(posn,blocksize);
-  memset(posn, 0, sizeof(unsigned int)*size);
+  std::memset(posn, 0, sizeof(unsigned int)*size);
   // Prepare count buffer
   int count[256];
   for (i=0; i<256; i++)
@@ -398,7 +398,7 @@ BSByteStream::Decode::read(void *buffer, size_t sz)
       // Transfer
       if (buffer && bytes)
         {
-          memcpy(buffer, data+bptr, bytes);
+          std::memcpy(buffer, data+bptr, bytes);
           buffer = (void*)((char*)buffer + bytes);
         }
       size -= bytes;

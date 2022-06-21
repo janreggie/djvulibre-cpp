@@ -176,7 +176,7 @@ ArrayRep::resize(int lo, int hi)
   int bytesize=elsize*(nmaxhi-nminlo+1);
   void * ndata;
   GPBufferBase gndata(ndata,bytesize,1);
-  memset(ndata, 0, bytesize);
+  std::memset(ndata, 0, bytesize);
   // initialize
   init1(ndata, lo-nminlo, lobound-1-nminlo);
   init2(ndata, lobound-nminlo, hibound-nminlo,
@@ -211,8 +211,7 @@ ArrayRep::del(int n, unsigned int howmany)
       return;
    if ((int)(n + howmany) > hibound +1)
       G_THROW( ERR_MSG("arrays.ill_arg") );
-   copy(data, n-minlo, hibound-howmany-minlo,
-	data, n+howmany-minlo, hibound-minlo);
+   copy(data, n-minlo, hibound-howmany-minlo, data, n+howmany-minlo, hibound-minlo);
    destroy(data, hibound+1-howmany-minlo, hibound-minlo);
    hibound = hibound - howmany;
 }
@@ -230,9 +229,8 @@ ArrayRep::ins(int n, const void * what, unsigned int howmany)
       int bytesize = elsize*(nmaxhi-minlo+1);
       void *ndata;
       GPBufferBase gndata(ndata,bytesize,1);
-      memset(ndata, 0, bytesize);
-      copy(ndata, lobound-minlo, hibound-minlo,
-	   data, lobound-minlo, hibound-minlo);
+      std::memset(ndata, 0, bytesize);
+      copy(ndata, lobound-minlo, hibound-minlo, data, lobound-minlo, hibound-minlo);
       destroy(data, lobound-minlo, hibound-minlo);
       data=ndata;
       maxhi = nmaxhi;
