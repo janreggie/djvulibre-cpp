@@ -19,7 +19,10 @@
     "system_error": "cpp",
     "atomic": "cpp",
     "limits": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "array": "cpp",
+    "memory_resource": "cpp",
+    "functional": "cpp"
   },
   "makefile.makefilePath": "./Makefile",
   "clang-format.fallbackStyle": "Google",

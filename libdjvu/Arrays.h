@@ -157,17 +157,18 @@ class DJVUAPI ArrayRep : public _ArrayRep {
   ArrayRep &operator=(const ArrayRep &rep);
 
   // All data is public because DArray... classes will need access to it
-  void *data;
-  int minlo;
-  int maxhi;
-  int lobound;
-  int hibound;
-  int elsize;
+  void *data_;
+  int minlo_;
+  int maxhi_;
+  int lobound_;
+  int hibound_;
+  int elsize_;
 
  private:
   // These functions can't be virtual as they're called from constructors and
-  // destructors. destroy(): should destroy elements in data[] array from 'lo'
-  // to 'hi'
+  // destructors.
+
+  // destroy(): should destroy elements in data[] array from 'lo' to 'hi'
   void (*destroy)(void *data, int lo, int hi);
   // init1(): should initialize elements in data[] from 'lo' to 'hi'
   // using default constructors
@@ -184,20 +185,20 @@ class DJVUAPI ArrayRep : public _ArrayRep {
   void (*insert)(void *data, int els, int where, const void *what, int howmany);
 };
 
-inline int ArrayRep::size() const { return hibound - lobound + 1; }
+inline int ArrayRep::size() const { return hibound_ - lobound_ + 1; }
 
-inline int ArrayRep::lbound() const { return lobound; }
+inline int ArrayRep::lbound() const { return lobound_; }
 
-inline int ArrayRep::hbound() const { return hibound; }
+inline int ArrayRep::hbound() const { return hibound_; }
 
 inline void ArrayRep::empty() { resize(0, -1); }
 
 inline void ArrayRep::touch(int n) {
-  if (hibound < lobound) {
+  if (hibound_ < lobound_) {
     resize(n, n);
   } else {
-    int nlo = lobound;
-    int nhi = hibound;
+    int nlo = lobound_;
+    int nhi = hibound_;
     if (n < nlo) nlo = n;
     if (n > nhi) nhi = n;
     resize(nlo, nhi);
@@ -206,64 +207,71 @@ inline void ArrayRep::touch(int n) {
 
 // ArrayBase is a dynamic array base class.
 //
-// This is an auxiliary base class for DArray and TArray implementing some
-// shared functions independent of the type of array elements. It's not supposed
-// to be constructed by hand. Use DArray and TArray instead.
+// Warning: This is an auxiliary base class for DArray and TArray
+// implementing some shared functions independent of the type of array elements.
+// It's not supposed to be constructed by hand.
+// Use DArray and TArray instead.
 class DJVUAPI ArrayBase : protected _ArrayBase {
  protected:
   void check(void);
   void detach(void);
 
-  ArrayBase(void){};
+  ArrayBase(void) {}
 
  public:
-  /// Returns the number of elements in the array
+  // Returns the number of elements in the array
   int size() const;
-  /** Returns the lower bound of the valid subscript range. */
+  // Returns the lower bound of the valid subscript range.
   int lbound() const;
-  /** Returns the upper bound of the valid subscript range. */
+  // Returns the upper bound of the valid subscript range.
   int hbound() const;
-  /** Erases the array contents. All elements in the array are destroyed.
-      The valid subscript range is set to the empty range. */
+  // Erases the array contents. All elements in the array are destroyed.
+  // The valid subscript range is set to the empty range.
   void empty();
-  /** Extends the subscript range so that is contains `n`.
-      This function does nothing if #n# is already int the valid subscript
-     range. If the valid range was empty, both the lower bound and the upper
-     bound are set to #n#.  Otherwise the valid subscript range is extended to
-     encompass #n#. This function is very handy when called before setting an
-     array element: \begin{verbatim} int lineno=1; DArray<GString> a; while (!
-     end_of_file()) { a.touch[lineno]; a[lineno++] = read_a_line();
-      }
-      \end{verbatim}
-  */
+
+  // Extends the subscript range so that is contains `n`.
+  // This function does nothing if `n` is already int the valid subscript range.
+  // If the valid range was empty,
+  // both the lower bound and the upper bound are set to `n`.
+  // Otherwise the valid subscript range is extended to encompass `n`.
+  // This function is very handy when called before setting an array element:
+  //
+  // ```c++
+  // int lineno=1;
+  // DArray<GString> a;
+  // while (! end_of_file()) {
+  //   a.touch(lineno);
+  //   a[lineno++] = read_a_line();
+  // }
+  // ```
   void touch(int n);
-  /** Resets the valid subscript range to #0#---#hibound#.
-      This function may destroy some array elements and may construct
-      new array elements with the null constructor. Setting #hibound# to
-      #-1# resets the valid subscript range to the empty range.
-      @param hibound upper bound of the new subscript range. */
+
+  // Resets the valid subscript range to `0` to `hibound`.
+  // This function may destroy some array elements
+  // and may construct new array elements with the null constructor.
+  // Setting `hibound` to `-1` resets the valid subscript range to empty.
   void resize(int hibound);
-  /** Resets the valid subscript range to #lobound#---#hibound#.
-      This function may destroy some array elements and may construct
-      new array elements with the null constructor. Setting #lobound# to #0# and
-      #hibound# to #-1# resets the valid subscript range to the empty range.
-      @param lobound lower bound of the new subscript range.
-      @param hibound upper bound of the new subscript range. */
+
+  // Resets the valid subscript range to `lobound` to `hibound`.
+  // This function may destroy some array elements
+  // and may construct new array elements with the null constructor.
+  // resize(0, -1) == resize(-1) == empty().
   void resize(int lobound, int hibound);
-  /** Shifts the valid subscript range. Argument #disp# is added to both
-      bounds of the valid subscript range. Array elements previously
-      located at subscript #x# will now be located at subscript #x+disp#. */
+
+  // Shifts the valid subscript range.
+  // Argument `disp` is added to both bounds of the valid subscript range.
+  // Array elements previously located at subscript `x`
+  // will now be located at subscript `x+disp`.
   void shift(int disp);
-  /** Deletes array elements. The array elements corresponding to
-      subscripts #n#...#n+howmany-1# are destroyed. All array elements
-      previously located at subscripts greater or equal to #n+howmany#
-      are moved to subscripts starting with #n#. The new subscript upper
-      bound is reduced in order to account for this shift.
-      @param n subscript of the first element to delete.
-      @param howmany number of elements to delete. */
+
+  // Deletes `howmany` elements starting from `n`.
+  // Array elements with subscripts `n` to `n+howmany-1` are destroyed.
+  // All array elements previously located at subscripts >= `n+howmany`
+  // are moved to subscripts starting with `n`.
+  // The new subscript upper bound is reduced to account for this shift.
   void del(int n, unsigned int howmany = 1);
 
-  virtual ~ArrayBase(void){};
+  virtual ~ArrayBase(void) {}
 };
 
 inline void ArrayBase::detach(void) {
@@ -278,11 +286,11 @@ inline void ArrayBase::check(void) {
 inline int ArrayBase::size() const { return ((const ArrayRep *)get())->size(); }
 
 inline int ArrayBase::lbound() const {
-  return ((const ArrayRep *)get())->lobound;
+  return ((const ArrayRep *)get())->lobound_;
 }
 
 inline int ArrayBase::hbound() const {
-  return ((const ArrayRep *)get())->hibound;
+  return ((const ArrayRep *)get())->hibound_;
 }
 
 inline void ArrayBase::empty() {
@@ -313,75 +321,69 @@ inline void ArrayBase::del(int n, unsigned int howmany) {
   ((ArrayRep *)get())->del(n, howmany);
 }
 
-/** Dynamic array template base class.
-    This is an auxiliary template base class for \Ref{DArray} and \Ref{TArray}
-    implementing some shared functions which {\em depend} on the type of
-    the array elements (this is contrary to \Ref{ArrayBase}).
-    It's not supposed to be constructed by hands. Use \Ref{DArray} and
-    \Ref{TArray} instead.
-    */
-
+// ArrayBaseT implements a dynamic array template base class.
+// This is an auxiliary template base class for DArray and TArray
+// implementing some shared functions
+// which *depend* on the type of the array elements
+// (this is contrary to ArrayBase).
+//
+// Warning: It's not supposed to be constructed by hand.
+// Use DArray and TArray instead.
 template <class TYPE>
 class ArrayBaseT : public ArrayBase {
  public:
-  virtual ~ArrayBaseT(void){};
+  virtual ~ArrayBaseT(void) {}
 
-  /** Returns a reference to the array element for subscript #n#.  This
-      reference can be used for both reading (as "#a[n]#") and writing (as
-      "#a[n]=v#") an array element.  This operation will not extend the valid
-      subscript range: an exception \Ref{GException} is thrown if argument #n#
-      is not in the valid subscript range. */
+  // Returns a reference to the array element for subscript `n`.
+  // This reference can be used for reading (`a[n]`) and writing (`a[n]=v`).
+  // This operation will not extend the valid subscript range:
+  // an exception GException is thrown if argument `n` is outside the range.
   TYPE &operator[](int n);
-  /** Returns a constant reference to the array element for subscript #n#.
-      This reference can only be used for reading (as "#a[n]#") an array
-      element.  This operation will not extend the valid subscript range: an
-      exception \Ref{GException} is thrown if argument #n# is not in the valid
-      subscript range.  This variant of #operator[]# is necessary when dealing
-      with a #const DArray<TYPE>#. */
+
+  // Returns a constant reference to the array element for subscript `n`.
+  // This reference can only be used for reading (`a[n]`).
+  // This operation will not extend the valid subscript range:
+  //  an exception GException is thrown if argument `n` is outside the range.
+  // This const method is necessary when dealing with a `const DArray<TYPE>`.
   const TYPE &operator[](int n) const;
 
-  /** Returns a pointer for reading or writing the array elements.  This
-      pointer can be used to access the array elements with the same
-      subscripts and the usual bracket syntax.  This pointer remains valid as
-      long as the valid subscript range is unchanged. If you change the
-      subscript range, you must stop using the pointers returned by prior
-      invocation of this conversion operator. */
+  // Returns a pointer for reading or writing the array elements.
+  // This pointer can be used to access the array elements with the same
+  // subscripts and the usual bracket syntax.  This pointer remains valid
+  // as long as the valid subscript range is unchanged.
+  // If you change the subscript range, you must stop using the pointers
+  // returned by prior invocation of this conversion operator.
   operator TYPE *();
-  /** Returns a pointer for reading (but not modifying) the array elements.
-      This pointer can be used to access the array elements with the same
-      subscripts and the usual bracket syntax.  This pointer remains valid as
-      long as the valid subscript range is unchanged. If you change the
-      subscript range, you must stop using the pointers returned by prior
-      invocation of this conversion operator. */
+
+  // Returns a pointer for reading (but not modifying) the array elements.
+  // This pointer can be used to access the array elements with the same
+  // subscripts and the usual bracket syntax.  This pointer remains valid
+  // as long as the valid subscript range is unchanged.
+  // If you change the subscript range, you must stop using the pointers
+  // returned by prior invocation of this conversion operator.
   operator const TYPE *() const;
 
-  /** Insert new elements into an array. This function inserts
-      #howmany# elements at position #n# into the array. The initial value #val#
-      is copied into the new elements. All array elements previously located at
-     subscripts #n# and higher are moved to subscripts #n+howmany# and higher.
-     The upper bound of the valid subscript range is increased in order to
-     account for this shift.
-      @param n subscript of the first inserted element.
-      @param val initial value of the new elements.
-      @param howmany number of elements to insert. */
+  // Insert new elements into an array.
+  // This function inserts `howmany` elements at position `n` into the array.
+  // The initial value `val` is copied into the new elements.
+  // All array elements previously located at subscripts `n` and higher
+  // are moved to subscripts `n+howmany` and higher.
+  // The upper bound of the valid subscript range is increased
+  // in order to account for this shift.
   void ins(int n, const TYPE &val, unsigned int howmany = 1);
 
-  /** Sort array elements.  Sort all array elements in ascending order.  Array
-      elements are compared using the less-or-equal comparison operator for
-      type #TYPE#. */
+  // Sort all array elements in ascending order.
+  // Array elements are compared using the <= comparison operator for type TYPE.
   void sort();
-  /** Sort array elements in subscript range #lo# to #hi#.  Sort all array
-      elements whose subscripts are in range #lo#..#hi# in ascending order.
-      The other elements of the array are left untouched.  An exception is
-      thrown if arguments #lo# and #hi# are not in the valid subscript range.
-      Array elements are compared using the less-or-equal comparison operator
-      for type #TYPE#.
-      @param lo low bound for the subscripts of the elements to sort.
-      @param hi high bound for the subscripts of the elements to sort. */
+
+  // Sort all array elements whose subscripts are `lo`..`hi` in ascending order.
+  // The other elements of the array are left untouched.
+  // An exception is thrown if arguments `lo` and `hi` are not valid.
+  // Array elements are compared using the <= comparison operator for type TYPE.
   void sort(int lo, int hi);
 
  protected:
-  ArrayBaseT(void){};
+  ArrayBaseT(void) {}
 
  private:
   // Callbacks called from ArrayRep
@@ -400,13 +402,13 @@ inline ArrayBaseT<TYPE>::operator TYPE *() {
   check();
 
   ArrayRep *rep = (ArrayRep *)get();
-  return &((TYPE *)rep->data)[-rep->minlo];
+  return &((TYPE *)rep->data_)[-rep->minlo_];
 }
 
 template <class TYPE>
 inline ArrayBaseT<TYPE>::operator const TYPE *() const {
   const ArrayRep *rep = (const ArrayRep *)get();
-  return &((const TYPE *)rep->data)[-rep->minlo];
+  return &((const TYPE *)rep->data_)[-rep->minlo_];
 }
 
 template <class TYPE>
@@ -414,15 +416,17 @@ inline TYPE &ArrayBaseT<TYPE>::operator[](int n) {
   check();
 
   ArrayRep *rep = (ArrayRep *)get();
-  if (n < rep->lobound || n > rep->hibound) G_THROW(ERR_MSG("arrays.ill_sub"));
-  return ((TYPE *)rep->data)[n - rep->minlo];
+  if (n < rep->lobound_ || n > rep->hibound_)
+    G_THROW(ERR_MSG("arrays.ill_sub"));
+  return ((TYPE *)rep->data_)[n - rep->minlo_];
 }
 
 template <class TYPE>
 inline const TYPE &ArrayBaseT<TYPE>::operator[](int n) const {
   const ArrayRep *rep = (const ArrayRep *)get();
-  if (n < rep->lobound || n > rep->hibound) G_THROW(ERR_MSG("arrays.ill_sub"));
-  return ((const TYPE *)rep->data)[n - rep->minlo];
+  if (n < rep->lobound_ || n > rep->hibound_)
+    G_THROW(ERR_MSG("arrays.ill_sub"));
+  return ((const TYPE *)rep->data_)[n - rep->minlo_];
 }
 
 template <class TYPE>
@@ -482,39 +486,26 @@ void ArrayBaseT<TYPE>::sort(int lo, int hi) {
   sort(l, hi);
 }
 
-/** Dynamic array for simple types.
-    Template class #TArray<TYPE># implements an array of
-    elements of {\em simple} type #TYPE#. {\em Simple} means that the type
-    may be #char#, #int#, #float# etc. The limitation is imposed by the
-    way in which the #TArray# is working with its elements: it's not trying
-    to execute elements' constructors, destructors or copy operators. It's
-    just doing bitwise copy. Except for this it's pretty much the same as
-    \Ref{DArray}.
-
-    Please note that most of the methods are implemented in the base classes
-    \Ref{ArrayBase} and \Ref{ArrayBaseT}.
-*/
-
+// TArray<TYPE> implements an array of elements of *simple* type TYPE.
+// Simple means that the type may be char, int, float, etc.
+// The limitation is imposed by the way in which TArray works with its elements:
+// it does not execute elements' constructors, destructors or copy operators,
+// instead just doing bitwise copy.
+// Except for this it's pretty much the same as DArray.
+//
+// Please note that most of the methods are implemented in the base classes
+// ArrayBase and ArrayBaseT.
 template <class TYPE>
 class TArray : public ArrayBaseT<TYPE> {
  public:
-  /** Constructs an empty array. The valid subscript range is initially
-      empty. Member function #touch# and #resize# provide convenient ways
-      to enlarge the subscript range. */
+  // Constructs an empty array.
   TArray();
-  /** Constructs an array with subscripts in range 0 to #hibound#.
-      The subscript range can be subsequently modified with member functions
-      #touch# and #resize#.
-      @param hibound upper bound of the initial subscript range. */
-  TArray(int hibound);
-  /** Constructs an array with subscripts in range #lobound# to #hibound#.
-      The subscript range can be subsequently modified with member functions
-      #touch# and #resize#.
-      @param lobound lower bound of the initial subscript range.
-      @param hibound upper bound of the initial subscript range. */
+  // Constructs an array with subscripts in range 0 to `hibound`.
+  explicit TArray(int hibound);
+  // Constructs an array with subscripts in range `lobound` to `hibound`.
   TArray(int lobound, int hibound);
 
-  virtual ~TArray(){};
+  virtual ~TArray() {}
 
  private:
   // Callbacks called from ArrayRep
@@ -573,52 +564,43 @@ TArray<TYPE>::TArray(int lo, int hi) {
 
 // inline removal ends
 
-/** Dynamic array for general types.
-    Template class #DArray<TYPE># implements an array of
-    elements of type #TYPE#.  Each element is identified by an integer
-    subscript.  The valid subscripts range is defined by dynamically
-    adjustable lower- and upper-bounds.  Besides accessing and setting
-    elements, member functions are provided to insert or delete elements at
-    specified positions.
-
-    This template class must be able to access
-    \begin{itemize}
-    \item a null constructor #TYPE::TYPE()#,
-    \item a copy constructor #TYPE::TYPE(const TYPE &)#,
-    \item and a copy operator #TYPE & operator=(const TYPE &)#.
-    \end{itemize}
-
-    The class offers "copy-on-demand" policy, which means that when you
-    copy the array object, array elements will stay intact as long as you
-    don't try to modify them. As soon as you make an attempt to change
-    array contents, the copying is done automatically and transparently
-    for you - the procedure that we call "copy-on-demand". This is the main
-    difference between this class and \Ref{GArray} (now obsolete)
-
-    Please note that most of the methods are implemented in the base classes
-    \Ref{ArrayBase} and \Ref{ArrayBaseT}.
-*/
-
+// DArray is a dynamic array for general types.
+// Template class DArray<TYPE> implements an array of elements of type TYPE.
+// Each element is identified by an integer subscript.
+// The valid subscripts range is defined by dynamically adjustable lower- and
+// upper-bounds. Besides accessing and setting elements, member functions
+// are provided to insert or delete elements at specified positions.
+//
+// This template class must be able to access:
+// - a null constructor TYPE::TYPE(),
+// - a copy constructor TYPE::TYPE(const TYPE &),
+// - and a copy operator TYPE & operator=(const TYPE &).
+//
+// The class offers "copy-on-demand" policy,
+// which means that when you copy the array object, array elements will stay
+// intact as long as you don't try to modify them.
+// As soon as you make an attempt to change array contents,
+// the copying is done automatically and transparently for you:
+// the procedure that we call "copy-on-demand".
+// This is the main difference between this class and GArray (now obsolete).
+//
+// Please note that most of the methods
+// are implemented in the base classes ArrayBase and ArrayBaseT.
 template <class TYPE>
 class DArray : public ArrayBaseT<TYPE> {
  public:
-  /** Constructs an empty array. The valid subscript range is initially
-      empty. Member function #touch# and #resize# provide convenient ways
-      to enlarge the subscript range. */
+  // Constructs an empty array.
+  // The valid subscript range is initially empty.
+  // The subscript range can be modified with member fxns `touch` and `resize`.
   DArray(void);
-  /** Constructs an array with subscripts in range 0 to #hibound#.
-      The subscript range can be subsequently modified with member functions
-      #touch# and #resize#.
-      @param hibound upper bound of the initial subscript range. */
-  DArray(const int hibound);
-  /** Constructs an array with subscripts in range #lobound# to #hibound#.
-      The subscript range can be subsequently modified with member functions
-      #touch# and #resize#.
-      @param lobound lower bound of the initial subscript range.
-      @param hibound upper bound of the initial subscript range. */
+  // Constructs an array with subscripts in range 0 to `hibound`.
+  // The subscript range can be modified with member fxns `touch` and `resize`.
+  explicit DArray(const int hibound);
+  // Constructs an array with subscripts in range `lobound` to `hibound`.
+  // The subscript range can be modified with member fxns `touch` and `resize`.
   DArray(const int lobound, const int hibound);
 
-  virtual ~DArray(){};
+  virtual ~DArray() {}
 
  private:
   // Callbacks called from ArrayRep
@@ -725,7 +707,7 @@ class DPArray : public DArray<GPBase> {
  public:
   // -- CONSTRUCTORS
   DPArray();
-  DPArray(int hibound);
+  explicit DPArray(int hibound);
   DPArray(int lobound, int hibound);
   DPArray(const DPArray<TYPE> &gc);
   // -- DESTRUCTOR
@@ -735,11 +717,7 @@ class DPArray : public DArray<GPBase> {
   const GP<TYPE> &operator[](int n) const;
   // -- CONVERSION
   operator GP<TYPE> *();
-
-#ifndef __MWERKS__  // MCW can't compile
   operator const GP<TYPE> *();
-#endif
-
   operator const GP<TYPE> *() const;
   // -- ALTERATION
   void ins(int n, const GP<TYPE> &val, unsigned int howmany = 1);
@@ -777,12 +755,10 @@ inline DPArray<TYPE>::operator GP<TYPE> *() {
   return (GP<TYPE> *)DArray<GPBase>::operator GPBase *();
 }
 
-#ifndef __MWERKS__  // MCW can't compile
 template <class TYPE>
 inline DPArray<TYPE>::operator const GP<TYPE> *() {
   return (const GP<TYPE> *)DArray<GPBase>::operator const GPBase *();
 }
-#endif
 
 template <class TYPE>
 inline DPArray<TYPE>::operator const GP<TYPE> *() const {
