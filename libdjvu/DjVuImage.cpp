@@ -76,6 +76,7 @@
 #include "BSByteStream.h"
 #include "debug.h"
 #include <stdarg.h>
+#include <tuple>
 
 
 namespace DJVU {
@@ -1103,8 +1104,8 @@ do_bitmap(const DjVuImage &dimg, BImager get,
     {
       GRectMapper mapper;
       mapper.rotate(-dimg.get_rotate());
-      mapper.map(rect);
-      mapper.map(all);
+      rect = mapper.map(rect);
+      all = mapper.map(all);
     }
   // Sanity
   if (! ( all.contains(rect.xmin, rect.ymin) &&
@@ -1168,8 +1169,8 @@ do_pixmap(const DjVuImage &dimg, PImager get,
     {
       GRectMapper mapper;
       mapper.rotate(-dimg.get_rotate());
-      mapper.map(rect);
-      mapper.map(all);
+      rect = mapper.map(rect);
+      all = mapper.map(all);
     }
   
   // Sanity
@@ -1336,7 +1337,7 @@ DjVuImage::map(GRect &rect) const
         mapper.set_input(input);
         mapper.set_output(output);               
         mapper.rotate(-rotate_count);
-        mapper.map(rect);
+        rect = mapper.map(rect);
     }
 }
 
@@ -1355,7 +1356,7 @@ DjVuImage::unmap(GRect &rect) const
         mapper.set_input(input);
         mapper.set_output(output);               
         mapper.rotate(-rotate_count);
-        mapper.unmap(rect);
+        rect = mapper.unmap(rect);
     }
 }
 
@@ -1374,7 +1375,7 @@ DjVuImage::map(int &x, int &y) const
         mapper.set_input(input);
         mapper.set_output(output);               
         mapper.rotate(-rotate_count);
-        mapper.map(x, y);
+        std::tie(x, y) = mapper.map(x, y);
     }
 }
 
@@ -1393,7 +1394,7 @@ DjVuImage::unmap(int &x, int &y) const
         mapper.set_input(input);
         mapper.set_output(output);               
         mapper.rotate(-rotate_count);
-        mapper.unmap(x, y);
+        std::tie(x, y) = mapper.unmap(x, y);
     }
 }
 

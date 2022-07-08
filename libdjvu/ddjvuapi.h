@@ -1177,7 +1177,7 @@ ddjvu_rectmapper_release(ddjvu_rectmapper_t *mapper);
    to a point or a rectangle */
 
 DDJVUAPI void 
-ddjvu_map_point(ddjvu_rectmapper_t *mapper, int *x, int *y);
+ddjvu_map_point(ddjvu_rectmapper_t *mapper, int &x, int &y);
 
 DDJVUAPI void 
 ddjvu_map_rect(ddjvu_rectmapper_t *mapper, ddjvu_rect_t *rect);
@@ -1188,7 +1188,7 @@ ddjvu_map_rect(ddjvu_rectmapper_t *mapper, ddjvu_rect_t *rect);
    to a point or a rectangle */
 
 DDJVUAPI void 
-ddjvu_unmap_point(ddjvu_rectmapper_t *mapper, int *x, int *y);
+ddjvu_unmap_point(ddjvu_rectmapper_t *mapper, int &x, int &y);
 
 DDJVUAPI void 
 ddjvu_unmap_rect(ddjvu_rectmapper_t *mapper, ddjvu_rect_t *rect);

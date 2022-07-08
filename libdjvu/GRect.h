@@ -96,7 +96,7 @@ class DJVUAPI GRect {
   /// Returns true if rectangles #r1# and #r2# are equal.
   friend bool operator==(const GRect &r1, const GRect &r2);
   /// Returns true if rectangles #r1# and #r2# are not equal.
-  friend int operator!=(const GRect &r1, const GRect &r2);
+  friend bool operator!=(const GRect &r1, const GRect &r2);
   /** Resets the rectangle to the empty rectangle */
   void clear();
   /** Fatten the rectangle. Both vertical sides of the rectangle are pushed
@@ -177,32 +177,24 @@ class DJVUAPI GRectMapper {
       same position relative to the corners of the output rectangle as the
       first point relative to the matching corners of the input rectangle.
       Coordinates are rounded to the nearest integer. */
-  void map(int &x, int &y);
-  /// map2 replaces map(int&, int&)
-  std::pair<int, int> map2(int x, int y);
+  std::pair<int, int> map(int x, int y);
   /** Maps a rectangle according to the affine transform. This operation
       consists in mapping the rectangle corners and reordering the corners
      in the canonical rectangle representation.  Variable #rect# is
      overwritten with the new rectangle coordinates. */
-  void map(GRect &rect);
-  /// map2 replaces map(GRect&)
-  GRect map2(const GRect &rect);
+  GRect map(const GRect &rect);
   /** Maps a point according to the inverse of the affine transform.
       Variables #x# and #y# initially contain the coordinates of a point. This
       operation overwrites these variables with the coordinates of a second
       point located in the same position relative to the corners of input
       rectangle as the first point relative to the matching corners of the
       input rectangle. Coordinates are rounded to the nearest integer. */
-  void unmap(int &x, int &y);
-  /// unmap2 replaces unmap(int&,int&)
-  std::pair<int, int> unmap2(int x, int y);
+  std::pair<int, int> unmap(int x, int y);
   /** Maps a rectangle according to the inverse of the affine transform. This
       operation consists in mapping the rectangle corners and reordering the
       corners in the canonical rectangle representation.  Variable #rect# is
       overwritten with the new rectangle coordinates. */
-  void unmap(GRect &rect);
-  /// unmap2 replaces unmap(GRect&)
-  GRect unmap2(const GRect &rect);
+  GRect unmap(const GRect &rect);
 
  public:
   // GRatio
@@ -251,7 +243,7 @@ inline int GRect::contains(int x, int y) const {
 
 inline void GRect::clear() { xmin = xmax = ymin = ymax = 0; }
 
-inline int operator!=(const GRect &r1, const GRect &r2) { return !(r1 == r2); }
+inline bool operator!=(const GRect &r1, const GRect &r2) { return !(r1 == r2); }
 
 // ---- THE END
 

@@ -2088,7 +2088,7 @@ print(ByteStream &str,
   mapper.set_input(img_rect);
   GRect full_rect(0, 0, dimg->get_width(), dimg->get_height());
   mapper.set_output(full_rect);
-  mapper.map(prn_rect);
+  prn_rect = mapper.map(prn_rect);
   int image_dpi =  dimg->get_dpi();
   if (override_dpi>0) 
     image_dpi = override_dpi;

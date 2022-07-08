@@ -64,6 +64,7 @@
 #include "GException.h"
 #include "debug.h"
 
+#include <tuple>
 #include <math.h>
 #include <stdio.h>
 
@@ -354,34 +355,6 @@ GMapArea::print(void)
    return total;
 }
 
-/*
-void 
-GMapArea::map(GRectMapper &mapper)
-{
-    get_bound_rect();
-    GRect rect = GRect(xmin, ymin, xmax, ymax);
-    mapper.map(rect);
-    xmin = rect.xmin;
-    ymin = rect.ymin;
-    xmax = rect.xmax;
-    ymax = rect.ymax;
-    clear_bounds();
-}
-void 
-GMapArea::unmap(GRectMapper &mapper)
-{
-    get_bound_rect();
-    GRect rect = GRect(xmin, ymin, xmax, ymax);
-    mapper.unmap(rect);
-    xmin = rect.xmin;
-    ymin = rect.ymin;
-    xmax = rect.xmax;
-    ymax = rect.ymax;
-    clear_bounds();
-}
-*/
-
-
 /// Virtual function generating a list of defining coordinates
 /// (default are the opposite corners of the enclosing rectangle)
 void GMapArea::get_coords( GList<int> & CoordList ) const
@@ -428,7 +401,7 @@ GMapRect::map(GRectMapper &mapper)
     rect.xmax = xmax;
     rect.ymin = ymin;
     rect.ymax = ymax;
-    mapper.map(rect);
+    rect = mapper.map(rect);
     xmin = rect.xmin;
     ymin = rect.ymin;
     xmax = rect.xmax;
@@ -444,7 +417,7 @@ GMapRect::unmap(GRectMapper &mapper)
     rect.xmax = xmax;
     rect.ymin = ymin;
     rect.ymax = ymax;
-    mapper.unmap(rect);
+    rect = mapper.unmap(rect);
     xmin = rect.xmin;
     ymin = rect.ymin;
     xmax = rect.xmax;
@@ -761,23 +734,19 @@ void GMapPoly::get_coords( GList<int> & CoordList ) const
 void 
 GMapPoly::map(GRectMapper &mapper)
 {
-    get_bound_rect();
-    for(int i=0; i<points; i++)
-    {
-        mapper.map(xx[i], yy[i]);
-    }
-    clear_bounds();
+  get_bound_rect();
+  for(int i=0; i<points; i++)
+    std::tie(xx[i], yy[i]) = mapper.map(xx[i], yy[i]);
+  clear_bounds();
 }
 
 void 
 GMapPoly::unmap(GRectMapper &mapper)
 {
-    get_bound_rect();
-    for(int i=0; i<points; i++)
-    {
-        mapper.unmap(xx[i], yy[i]);
-    }
-    clear_bounds();
+  get_bound_rect();
+  for(int i=0; i<points; i++)
+    std::tie(xx[i], yy[i]) = mapper.unmap(xx[i], yy[i]);
+  clear_bounds();
 }
 
 
@@ -864,7 +833,7 @@ GMapOval::map(GRectMapper &mapper)
     rect.xmax = xmax;
     rect.ymin = ymin;
     rect.ymax = ymax;
-    mapper.map(rect);
+    rect = mapper.map(rect);
     xmin = rect.xmin;
     ymin = rect.ymin;
     xmax = rect.xmax;
@@ -882,7 +851,7 @@ GMapOval::unmap(GRectMapper &mapper)
     rect.xmax = xmax;
     rect.ymin = ymin;
     rect.ymax = ymax;
-    mapper.unmap(rect);
+    rect = mapper.unmap(rect);
     xmin = rect.xmin;
     ymin = rect.ymin;
     xmax = rect.xmax;

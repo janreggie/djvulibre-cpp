@@ -66,6 +66,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <locale.h>
+#include <tuple>
 
 namespace DJVU {
   struct ddjvu_context_s;
@@ -1995,11 +1996,11 @@ ddjvu_rectmapper_release(ddjvu_rectmapper_t *mapper)
 }
 
 void 
-ddjvu_map_point(ddjvu_rectmapper_t *mapper, int *x, int *y)
+ddjvu_map_point(ddjvu_rectmapper_t *mapper, int &x, int &y)
 {
   GRectMapper *gmapper = (GRectMapper*)mapper;
   if (! gmapper) return;
-  gmapper->map(*x,*y);
+  std::tie(x, y) = gmapper->map(x, y);
 }
 
 void 
@@ -2009,16 +2010,16 @@ ddjvu_map_rect(ddjvu_rectmapper_t *mapper, ddjvu_rect_t *rect)
   if (! gmapper) return;
   GRect grect;
   rect2grect(rect,grect);
-  gmapper->map(grect);
+  grect = gmapper->map(grect);
   grect2rect(grect,rect);
 }
 
 void 
-ddjvu_unmap_point(ddjvu_rectmapper_t *mapper, int *x, int *y)
+ddjvu_unmap_point(ddjvu_rectmapper_t *mapper, int &x, int &y)
 {
   GRectMapper *gmapper = (GRectMapper*)mapper;
   if (! gmapper) return;
-  gmapper->unmap(*x,*y);
+  std::tie(x, y) = gmapper->unmap(x,y);
 }
 
 void 
@@ -2028,7 +2029,7 @@ ddjvu_unmap_rect(ddjvu_rectmapper_t *mapper, ddjvu_rect_t *rect)
   if (! gmapper) return;
   GRect grect;
   rect2grect(rect,grect);
-  gmapper->unmap(grect);
+  grect = gmapper->unmap(grect);
   grect2rect(grect,rect);
 }
 

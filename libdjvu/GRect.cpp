@@ -284,21 +284,7 @@ void GRectMapper::precalc() {
   rh = GRatio(rectTo.height(), rectFrom.height());
 }
 
-void GRectMapper::map(int &x, int &y) {
-  int mx = x;
-  int my = y;
-  // precalc
-  if (!(rw.p && rh.p)) precalc();
-  // swap and mirror
-  if (code & SWAPXY) std::swap(mx, my);
-  if (code & MIRRORX) mx = rectFrom.xmin + rectFrom.xmax - mx;
-  if (code & MIRRORY) my = rectFrom.ymin + rectFrom.ymax - my;
-  // scale and translate
-  x = rectTo.xmin + (mx - rectFrom.xmin) * rw;
-  y = rectTo.ymin + (my - rectFrom.ymin) * rh;
-}
-
-std::pair<int, int> GRectMapper::map2(int x, int y) {
+std::pair<int, int> GRectMapper::map(int x, int y) {
   int mx = x;
   int my = y;
   // precalc
@@ -313,21 +299,7 @@ std::pair<int, int> GRectMapper::map2(int x, int y) {
   return {x, y};
 }
 
-void GRectMapper::unmap(int &x, int &y) {
-  // precalc
-  if (!(rw.p && rh.p)) precalc();
-  // scale and translate
-  int mx = rectFrom.xmin + (x - rectTo.xmin) / rw;
-  int my = rectFrom.ymin + (y - rectTo.ymin) / rh;
-  //  mirror and swap
-  if (code & MIRRORX) mx = rectFrom.xmin + rectFrom.xmax - mx;
-  if (code & MIRRORY) my = rectFrom.ymin + rectFrom.ymax - my;
-  if (code & SWAPXY) std::swap(mx, my);
-  x = mx;
-  y = my;
-}
-
-std::pair<int, int> GRectMapper::unmap2(int x, int y) {
+std::pair<int, int> GRectMapper::unmap(int x, int y) {
   // precalc
   if (!(rw.p && rh.p)) precalc();
   // scale and translate
@@ -340,27 +312,22 @@ std::pair<int, int> GRectMapper::unmap2(int x, int y) {
   return {mx, my};
 }
 
-void GRectMapper::map(GRect &rect) {
-  map(rect.xmin, rect.ymin);
-  map(rect.xmax, rect.ymax);
-  if (rect.xmin >= rect.xmax) std::swap(rect.xmin, rect.xmax);
-  if (rect.ymin >= rect.ymax) std::swap(rect.ymin, rect.ymax);
-}
-
-GRect GRectMapper::map2(const GRect &rect) {
+GRect GRectMapper::map(const GRect &rect) {
   GRect r;
-  std::tie(r.xmin, r.ymin) = map2(rect.xmin, rect.ymin);
-  std::tie(r.xmax, r.ymax) = map2(rect.xmax, rect.ymax);
+  std::tie(r.xmin, r.ymin) = map(rect.xmin, rect.ymin);
+  std::tie(r.xmax, r.ymax) = map(rect.xmax, rect.ymax);
   if (r.xmin > r.xmax) std::swap(r.xmin, r.xmax);
   if (r.ymin > r.ymax) std::swap(r.ymin, r.ymax);
   return r;
 }
 
-void GRectMapper::unmap(GRect &rect) {
-  unmap(rect.xmin, rect.ymin);
-  unmap(rect.xmax, rect.ymax);
-  if (rect.xmin >= rect.xmax) std::swap(rect.xmin, rect.xmax);
-  if (rect.ymin >= rect.ymax) std::swap(rect.ymin, rect.ymax);
+GRect GRectMapper::unmap(const GRect &rect) {
+  GRect r;
+  std::tie(r.xmin, r.ymin) = unmap(rect.xmin, rect.ymin);
+  std::tie(r.xmax, r.ymax) = unmap(rect.xmax, rect.ymax);
+  if (r.xmin >= r.xmax) std::swap(r.xmin, r.xmax);
+  if (r.ymin >= r.ymax) std::swap(r.ymin, r.ymax);
+  return r;
 }
 
 GRect GRectMapper::get_input() { return rectFrom; }

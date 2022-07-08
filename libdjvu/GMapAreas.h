@@ -316,7 +316,7 @@ public:
       /// Virtual function unmaps rectangle from one area to another using mapper
    virtual void unmap(GRectMapper &mapper);
 protected:
-   int			xmin, ymin, xmax, ymax;
+   int			xmin, ymin, xmax, ymax; // TODO: Why not GRrect?
    virtual int		gma_get_xmin(void) const;
    virtual int		gma_get_ymin(void) const;
    virtual int		gma_get_xmax(void) const;

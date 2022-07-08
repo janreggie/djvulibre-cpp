@@ -1391,7 +1391,7 @@ Comments::textflush(void)
           for (GPosition p = words; p; ++p)
             {
               word = words[p];
-              mapper.map(word->r);
+              word->r = mapper.map(word->r);
               if (! lzone)
                 {
                   if (! txt)
