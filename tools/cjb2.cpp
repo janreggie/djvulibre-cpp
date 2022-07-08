@@ -421,10 +421,10 @@ CCImage::make_ccs_from_ccids()
           npix += run->x2 - run->x1 + 1;
         }
       cc.npix = npix;
-      cc.bb.xmin = xmin;
-      cc.bb.ymin = ymin;
-      cc.bb.xmax = xmax + 1;
-      cc.bb.ymax = ymax + 1;
+      cc.bb.xmin_ = xmin;
+      cc.bb.ymin_ = ymin;
+      cc.bb.xmax_ = xmax + 1;
+      cc.bb.ymax_ = ymax + 1;
     }
 }
 
@@ -472,8 +472,8 @@ CCImage::merge_and_split_ccs()
       int ccwidth = cc->bb.width();
       if (ccheight<=smallsize && ccwidth<=smallsize)
         {
-          int gridi = (cc->bb.ymin+cc->bb.ymax)/splitsize/2;
-          int gridj = (cc->bb.xmin+cc->bb.xmax)/splitsize/2;
+          int gridi = (cc->bb.ymin_+cc->bb.ymax_)/splitsize/2;
+          int gridj = (cc->bb.xmin_+cc->bb.xmax_)/splitsize/2;
           int newccid = ncc + gridi*gridwidth + gridj;
           for(int runid=cc->frun; runid<cc->frun+cc->nrun; runid++)
             runs[runid].ccid = newccid;
@@ -531,10 +531,10 @@ CCImage::merge_and_split_ccs()
 static int 
 top_edges_descending (const void *pa, const void *pb)
 {
-  if (((CC*) pa)->bb.ymax != ((CC*) pb)->bb.ymax)
-    return (((CC*) pb)->bb.ymax - ((CC*) pa)->bb.ymax);
-  if (((CC*) pa)->bb.xmin != ((CC*) pb)->bb.xmin)
-    return (((CC*) pa)->bb.xmin - ((CC*) pb)->bb.xmin);
+  if (((CC*) pa)->bb.ymax_ != ((CC*) pb)->bb.ymax_)
+    return (((CC*) pb)->bb.ymax_ - ((CC*) pa)->bb.ymax_);
+  if (((CC*) pa)->bb.xmin_ != ((CC*) pb)->bb.xmin_)
+    return (((CC*) pa)->bb.xmin_ - ((CC*) pb)->bb.xmin_);
   return (((CC*) pa)->frun - ((CC*) pb)->frun);
 }
 
@@ -543,10 +543,10 @@ top_edges_descending (const void *pa, const void *pb)
 static int 
 left_edges_ascending (const void *pa, const void *pb)
 {
-  if (((CC*) pa)->bb.xmin != ((CC*) pb)->bb.xmin)
-    return (((CC*) pa)->bb.xmin - ((CC*) pb)->bb.xmin);
-  if (((CC*) pb)->bb.ymax != ((CC*) pa)->bb.ymax)
-    return (((CC*) pb)->bb.ymax - ((CC*) pa)->bb.ymax);
+  if (((CC*) pa)->bb.xmin_ != ((CC*) pb)->bb.xmin_)
+    return (((CC*) pa)->bb.xmin_ - ((CC*) pb)->bb.xmin_);
+  if (((CC*) pb)->bb.ymax_ != ((CC*) pa)->bb.ymax_)
+    return (((CC*) pb)->bb.ymax_ - ((CC*) pa)->bb.ymax_);
   return (((CC*) pa)->frun - ((CC*) pb)->frun);
 }
 
@@ -583,13 +583,13 @@ CCImage::sort_in_reading_order()
     {
       // - Gather first line approximation
       int nccno;
-      int sublist_top = ccarray[ccno].bb.ymax-1;
-      int sublist_bottom = ccarray[ccno].bb.ymin;
+      int sublist_top = ccarray[ccno].bb.ymax_-1;
+      int sublist_bottom = ccarray[ccno].bb.ymin_;
       for (nccno=ccno; nccno < nregularccs; nccno++)
         {
-          if (ccarray[nccno].bb.ymax-1 < sublist_bottom) break;
-          if (ccarray[nccno].bb.ymax-1 < sublist_top - maxtopchange) break;
-          int bottom = ccarray[nccno].bb.ymin;
+          if (ccarray[nccno].bb.ymax_-1 < sublist_bottom) break;
+          if (ccarray[nccno].bb.ymax_-1 < sublist_top - maxtopchange) break;
+          int bottom = ccarray[nccno].bb.ymin_;
           bottoms[nccno-ccno] = bottom;
           if (bottom < sublist_bottom)
             sublist_bottom = bottom;
@@ -602,7 +602,7 @@ CCImage::sort_in_reading_order()
           int bottom = bottoms[ (nccno-ccno-1)/2 ];
           // - Compose final line
           for (nccno=ccno; nccno < nregularccs; nccno++)
-            if (ccarray[nccno].bb.ymax-1 < bottom)
+            if (ccarray[nccno].bb.ymax_-1 < bottom)
               break;
           // - Sort final line
           qsort (ccarray+ccno, nccno-ccno, sizeof(CC), left_edges_ascending);
@@ -634,13 +634,13 @@ CCImage::get_bitmap_for_cc(const int ccid) const
   const Run *prun = & runs[(int)cc.frun];
   for (int i=0; i<cc.nrun; i++,prun++)
     {
-      if (prun->y<bb.ymin || prun->y>=bb.ymax)
+      if (prun->y<bb.ymin_ || prun->y>=bb.ymax_)
         G_THROW("Internal error (y bounds)");
-      if (prun->x1<bb.xmin || prun->x2>=bb.xmax)
+      if (prun->x1<bb.xmin_ || prun->x2>=bb.xmax_)
         G_THROW("Internal error (x bounds)");
-      unsigned char *row = (*bits)[prun->y - bb.ymin];
+      unsigned char *row = (*bits)[prun->y - bb.ymin_];
       for (int x=prun->x1; x<=prun->x2; x++)
-        row[x - bb.xmin] = 1;
+        row[x - bb.xmin_] = 1;
     }
   return bits;
 }
@@ -667,8 +667,8 @@ CCImage::get_jb2image() const
       if (ccid >= nregularccs)
         shape.userdata |= JB2SHAPE_SPECIAL;
       blit.shapeno = jimg->add_shape(shape);
-      blit.left = ccs[ccid].bb.xmin;
-      blit.bottom = ccs[ccid].bb.ymin;
+      blit.left = ccs[ccid].bb.xmin_;
+      blit.bottom = ccs[ccid].bb.ymin_;
       jimg->add_blit(blit);
       shape.bits->compress();
     }

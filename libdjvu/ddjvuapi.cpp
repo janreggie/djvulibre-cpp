@@ -1937,10 +1937,10 @@ ddjvu_page_get_initial_rotation(ddjvu_page_t *page)
 static void
 rect2grect(const ddjvu_rect_t *r, GRect &g)
 {
-  g.xmin = r->x;
-  g.ymin = r->y;
-  g.xmax = r->x + r->w;
-  g.ymax = r->y + r->h;
+  g.xmin_ = r->x;
+  g.ymin_ = r->y;
+  g.xmax_ = r->x + r->w;
+  g.ymax_ = r->y + r->h;
 }
 
 static void
@@ -1953,8 +1953,8 @@ grect2rect(const GRect &g, ddjvu_rect_t *r)
     }
   else
     {
-      r->x = g.xmin;
-      r->y = g.ymin;
+      r->x = g.xmin_;
+      r->y = g.ymin_;
       r->w = g.width();
       r->h = g.height();
     }
@@ -2443,10 +2443,10 @@ ddjvu_page_render(ddjvu_page_t *page,
       rect2grect(renderrect, rrect);
       if (format && format->ytoptobottom)
         {
-          prect.ymin = renderrect->y + renderrect->h;
-          prect.ymax = prect.ymin + pagerect->h;
-          rrect.ymin = pagerect->y + pagerect->h;
-          rrect.ymax = rrect.ymin + renderrect->h;
+          prect.ymin_ = renderrect->y + renderrect->h;
+          prect.ymax_ = prect.ymin_ + pagerect->h;
+          rrect.ymin_ = pagerect->y + pagerect->h;
+          rrect.ymax_ = rrect.ymin_ + renderrect->h;
         }
 
       DjVuImage *img = page->img;
@@ -2482,8 +2482,8 @@ ddjvu_page_render(ddjvu_page_t *page,
         }
       if (pm)
         {
-          int dx = rrect.xmin - prect.xmin;
-          int dy = rrect.ymin - prect.xmin;
+          int dx = rrect.xmin_ - prect.xmin_;
+          int dy = rrect.ymin_ - prect.xmin_;
           fmt_dither(pm, format, dx, dy);
           fmt_convert(pm, format, imagebuffer, rowsize);
           return 2;
@@ -3593,10 +3593,10 @@ pagetext_sub(const GP<DjVuTXT> &txt, DjVuTXT::Zone &zone,
   const char *s = zone_names[zinfo].name;
   if (s)
     {
-      p = miniexp_cons(miniexp_number(zone.rect.ymax), p);
-      p = miniexp_cons(miniexp_number(zone.rect.xmax), p);
-      p = miniexp_cons(miniexp_number(zone.rect.ymin), p);
-      p = miniexp_cons(miniexp_number(zone.rect.xmin), p);
+      p = miniexp_cons(miniexp_number(zone.rect.ymax_), p);
+      p = miniexp_cons(miniexp_number(zone.rect.xmax_), p);
+      p = miniexp_cons(miniexp_number(zone.rect.ymin_), p);
+      p = miniexp_cons(miniexp_number(zone.rect.xmin_), p);
       p = miniexp_cons(miniexp_symbol(s), p);
       return p;
     }

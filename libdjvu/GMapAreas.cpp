@@ -189,8 +189,8 @@ GMapArea::resize(int new_width, int new_height)
 void
 GMapArea::transform(const GRect & grect)
 {
-   if (grect.xmin!=get_xmin() || grect.ymin!=get_ymin() ||
-       grect.xmax!=get_xmax() || grect.ymax!=get_ymax())
+   if (grect.xmin_!=get_xmin() || grect.ymin_!=get_ymin() ||
+       grect.xmax_!=get_xmax() || grect.ymax_!=get_ymax())
    {
      gma_transform(grect);
      bounds_initialized=false;
@@ -380,8 +380,8 @@ GMapRect::gma_resize(int new_width, int new_height)
 void
 GMapRect::gma_transform(const GRect & grect)
 {
-   xmin=grect.xmin; ymin=grect.ymin;
-   xmax=grect.xmax; ymax=grect.ymax;
+   xmin=grect.xmin_; ymin=grect.ymin_;
+   xmax=grect.xmax_; ymax=grect.ymax_;
 }
 
 GUTF8String
@@ -397,15 +397,15 @@ GMapRect::map(GRectMapper &mapper)
 {
     get_bound_rect();
     GRect rect;
-    rect.xmin = xmin;
-    rect.xmax = xmax;
-    rect.ymin = ymin;
-    rect.ymax = ymax;
+    rect.xmin_ = xmin;
+    rect.xmax_ = xmax;
+    rect.ymin_ = ymin;
+    rect.ymax_ = ymax;
     rect = mapper.map(rect);
-    xmin = rect.xmin;
-    ymin = rect.ymin;
-    xmax = rect.xmax;
-    ymax = rect.ymax;
+    xmin = rect.xmin_;
+    ymin = rect.ymin_;
+    xmax = rect.xmax_;
+    ymax = rect.ymax_;
     clear_bounds();
 }
 void 
@@ -413,15 +413,15 @@ GMapRect::unmap(GRectMapper &mapper)
 {
     get_bound_rect();
     GRect rect;
-    rect.xmin = xmin;
-    rect.xmax = xmax;
-    rect.ymin = ymin;
-    rect.ymax = ymax;
+    rect.xmin_ = xmin;
+    rect.xmax_ = xmax;
+    rect.ymin_ = ymin;
+    rect.ymax_ = ymax;
     rect = mapper.unmap(rect);
-    xmin = rect.xmin;
-    ymin = rect.ymin;
-    xmax = rect.xmax;
-    ymax = rect.ymax;
+    xmin = rect.xmin_;
+    ymin = rect.ymin_;
+    xmax = rect.xmax_;
+    ymax = rect.ymax_;
     clear_bounds();
 }
 
@@ -442,16 +442,16 @@ GMapPoly::does_side_cross_rect(const GRect & grect, int side)
    int xmax=x1+x2-xmin;
    int ymax=y1+y2-ymin;
 
-   if (xmax<grect.xmin || xmin>grect.xmax ||
-       ymax<grect.ymin || ymin>grect.ymax)
+   if (xmax<grect.xmin_ || xmin>grect.xmax_ ||
+       ymax<grect.ymin_ || ymin>grect.ymax_)
      return false;
 
    return
-     (x1>=grect.xmin && x1<=grect.xmax && y1>=grect.ymin && y1<=grect.ymax) ||
-     (x2>=grect.xmin && x2<=grect.xmax && y2>=grect.ymin && y2<=grect.ymax) ||
-     do_segments_intersect(grect.xmin, grect.ymin, grect.xmax, grect.ymax,
+     (x1>=grect.xmin_ && x1<=grect.xmax_ && y1>=grect.ymin_ && y1<=grect.ymax_) ||
+     (x2>=grect.xmin_ && x2<=grect.xmax_ && y2>=grect.ymin_ && y2<=grect.ymax_) ||
+     do_segments_intersect(grect.xmin_, grect.ymin_, grect.xmax_, grect.ymax_,
 			   x1, y1, x2, y2) ||
-     do_segments_intersect(grect.xmax, grect.ymin, grect.xmin, grect.ymax,
+     do_segments_intersect(grect.xmax_, grect.ymin_, grect.xmin_, grect.ymax_,
 			   x1, y1, x2, y2);
 }
 
@@ -654,8 +654,8 @@ GMapPoly::gma_transform(const GRect & grect)
    int xmin=get_xmin(), ymin=get_ymin();
    for(int i=0;i<points;i++)
    {
-      xx[i]=grect.xmin+(xx[i]-xmin)*grect.width()/width;
-      yy[i]=grect.ymin+(yy[i]-ymin)*grect.height()/height;
+      xx[i]=grect.xmin_+(xx[i]-xmin)*grect.width()/width;
+      yy[i]=grect.ymin_+(yy[i]-ymin)*grect.height()/height;
    }
 }
 
@@ -766,8 +766,8 @@ GMapOval::gma_resize(int new_width, int new_height)
 void
 GMapOval::gma_transform(const GRect & grect)
 {
-   xmin=grect.xmin; ymin=grect.ymin;
-   xmax=grect.xmax; ymax=grect.ymax;
+   xmin=grect.xmin_; ymin=grect.ymin_;
+   xmax=grect.xmax_; ymax=grect.ymax_;
    initialize();
 }
 
@@ -810,8 +810,8 @@ GMapOval::initialize(void)
    }
 }
 
-GMapOval::GMapOval(const GRect & rect) : xmin(rect.xmin), ymin(rect.ymin),
-   xmax(rect.xmax), ymax(rect.ymax)
+GMapOval::GMapOval(const GRect & rect) : xmin(rect.xmin_), ymin(rect.ymin_),
+   xmax(rect.xmax_), ymax(rect.ymax_)
 {
    initialize();
 }
@@ -829,15 +829,15 @@ GMapOval::map(GRectMapper &mapper)
 {
     get_bound_rect();
     GRect rect;
-    rect.xmin = xmin;
-    rect.xmax = xmax;
-    rect.ymin = ymin;
-    rect.ymax = ymax;
+    rect.xmin_ = xmin;
+    rect.xmax_ = xmax;
+    rect.ymin_ = ymin;
+    rect.ymax_ = ymax;
     rect = mapper.map(rect);
-    xmin = rect.xmin;
-    ymin = rect.ymin;
-    xmax = rect.xmax;
-    ymax = rect.ymax;
+    xmin = rect.xmin_;
+    ymin = rect.ymin_;
+    xmax = rect.xmax_;
+    ymax = rect.ymax_;
     clear_bounds();
     initialize();
 }
@@ -847,15 +847,15 @@ GMapOval::unmap(GRectMapper &mapper)
 {
     get_bound_rect();
     GRect rect;
-    rect.xmin = xmin;
-    rect.xmax = xmax;
-    rect.ymin = ymin;
-    rect.ymax = ymax;
+    rect.xmin_ = xmin;
+    rect.xmax_ = xmax;
+    rect.ymin_ = ymin;
+    rect.ymax_ = ymax;
     rect = mapper.unmap(rect);
-    xmin = rect.xmin;
-    ymin = rect.ymin;
-    xmax = rect.xmax;
-    ymax = rect.ymax;
+    xmin = rect.xmin_;
+    ymin = rect.ymin_;
+    xmax = rect.xmax_;
+    ymax = rect.ymax_;
     clear_bounds();
     initialize();
 }
@@ -866,16 +866,16 @@ GMapArea::GMapArea(void) : target("_self"), border_type(NO_BORDER),
 
 GMapRect::GMapRect(void) : xmin(0), ymin(0), xmax(0), ymax(0) {}
 
-GMapRect::GMapRect(const GRect & rect) : xmin(rect.xmin), ymin(rect.ymin),
-   xmax(rect.xmax), ymax(rect.ymax) {}
+GMapRect::GMapRect(const GRect & rect) : xmin(rect.xmin_), ymin(rect.ymin_),
+   xmax(rect.xmax_), ymax(rect.ymax_) {}
 
 GMapRect &
 GMapRect::operator=(const GRect & rect)
 {
-   xmin=rect.xmin;
-   xmax=rect.xmax;
-   ymin=rect.ymin;
-   ymax=rect.ymax;
+   xmin=rect.xmin_;
+   xmax=rect.xmax_;
+   ymin=rect.ymin_;
+   ymax=rect.ymax_;
    return *this;
 }
 

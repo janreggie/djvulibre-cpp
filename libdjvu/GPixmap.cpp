@@ -339,7 +339,7 @@ GPixmap::init(const GBitmap &ref, const GRect &rect, const GPixel *userramp)
   // compute destination rectangle
   GRect rect2(0, 0, ref.columns(), ref.rows() );
   rect2.intersect(rect2, rect);
-  rect2.translate(-rect.xmin, -rect.ymin);
+  rect2.translate(-rect.xmin_, -rect.ymin_);
   // copy bits
   if (! rect2.isempty())
   {
@@ -354,11 +354,11 @@ GPixmap::init(const GBitmap &ref, const GRect &rect, const GPixel *userramp)
           ramp = new_gray_ramp(ref.get_grays(),xramp);
 	}
     // copy pixels
-    for (int y=rect2.ymin; y<rect2.ymax; y++)
+    for (int y=rect2.ymin_; y<rect2.ymax_; y++)
     {
       GPixel *dst = (*this)[y];
-      const unsigned char *src = ref[y+rect.ymin] + rect.xmin;
-      for (int x=rect2.xmin; x<rect2.xmax; x++)
+      const unsigned char *src = ref[y+rect.ymin_] + rect.xmin_;
+      for (int x=rect2.xmin_; x<rect2.xmax_; x++)
         dst[x] = ramp[ src[x] ];
     }
     // free ramp
@@ -392,15 +392,15 @@ GPixmap::init(const GPixmap &ref, const GRect &rect)
   // compute destination rectangle
   GRect rect2(0, 0, ref.columns(), ref.rows() );
   rect2.intersect(rect2, rect);
-  rect2.translate(-rect.xmin, -rect.ymin);
+  rect2.translate(-rect.xmin_, -rect.ymin_);
   // copy bits
   if (! rect2.isempty())
   {
-    for (int y=rect2.ymin; y<rect2.ymax; y++)
+    for (int y=rect2.ymin_; y<rect2.ymax_; y++)
     {
       GPixel *dst = (*this)[y];
-      const GPixel *src = ref[y+rect.ymin] + rect.xmin;
-      for (int x=rect2.xmin; x<rect2.xmax; x++)
+      const GPixel *src = ref[y+rect.ymin_] + rect.xmin_;
+      for (int x=rect2.xmin_; x<rect2.xmax_; x++)
         dst[x] = src[x];
     }
   }
@@ -887,10 +887,10 @@ GPixmap::downsample(const GPixmap *src, int factor, const GRect *pdr)
   GRect rect(0, 0, (src->columns()+factor-1)/factor, (src->rows()+factor-1)/factor);
   if (pdr != 0)
   {
-    if (pdr->xmin < rect.xmin || 
-        pdr->ymin < rect.ymin || 
-        pdr->xmax > rect.xmax || 
-        pdr->ymax > rect.ymax  )
+    if (pdr->xmin_ < rect.xmin_ || 
+        pdr->ymin_ < rect.ymin_ || 
+        pdr->xmax_ > rect.xmax_ || 
+        pdr->ymax_ > rect.ymax_  )
       G_THROW( ERR_MSG("GPixmap.overflow1") );
     rect = *pdr;
   }
@@ -909,8 +909,8 @@ GPixmap::downsample(const GPixmap *src, int factor, const GRect *pdr)
   init(rect.height(), rect.width(), 0);
 
   // determine starting and ending points in source rectangle
-  int sy = rect.ymin * factor;
-  int sxz = rect.xmin * factor;
+  int sy = rect.ymin_ * factor;
+  int sxz = rect.xmin_ * factor;
 
 
   // loop over source rows
@@ -973,10 +973,10 @@ GPixmap::upsample(const GPixmap *src, int factor, const GRect *pdr)
   GRect rect(0, 0, src->columns()*factor, src->rows()*factor);
   if (pdr != 0)
   {
-    if (pdr->xmin < rect.xmin || 
-        pdr->ymin < rect.ymin || 
-        pdr->xmax > rect.xmax || 
-        pdr->ymax > rect.ymax  )
+    if (pdr->xmin_ < rect.xmin_ || 
+        pdr->ymin_ < rect.ymin_ || 
+        pdr->xmax_ > rect.xmax_ || 
+        pdr->ymax_ > rect.ymax_  )
       G_THROW( ERR_MSG("GPixmap.overflow2") );
     rect = *pdr;
   }
@@ -984,8 +984,8 @@ GPixmap::upsample(const GPixmap *src, int factor, const GRect *pdr)
   init(rect.height(), rect.width(), 0);
   // compute starting point in source rectangle
   int sy, sy1, sxz, sx1z;
-  euclidian_ratio(rect.ymin, factor, sy, sy1);
-  euclidian_ratio(rect.xmin, factor, sxz, sx1z);
+  euclidian_ratio(rect.ymin_, factor, sy, sy1);
+  euclidian_ratio(rect.xmin_, factor, sxz, sx1z);
   // loop over rows
   const GPixel *sptr = (*src)[sy];
   GPixel *dptr = (*this)[0];
@@ -1177,10 +1177,10 @@ GPixmap::downsample43(const GPixmap *src, const GRect *pdr)
   GRect rect(0, 0, destwidth, destheight);
   if (pdr != 0)
   {
-    if (pdr->xmin < rect.xmin || 
-        pdr->ymin < rect.ymin || 
-        pdr->xmax > rect.xmax || 
-        pdr->ymax > rect.ymax  )
+    if (pdr->xmin_ < rect.xmin_ || 
+        pdr->ymin_ < rect.ymin_ || 
+        pdr->xmax_ > rect.xmax_ || 
+        pdr->ymax_ > rect.ymax_  )
       G_THROW( ERR_MSG("GPixmap.overflow3") );
     rect = *pdr;
     destwidth = rect.width();
@@ -1192,8 +1192,8 @@ GPixmap::downsample43(const GPixmap *src, const GRect *pdr)
   // compute bounds
   int dxz, dy;   // location of bottomleft block in destination image
   int sxz, sy;   // location of bottomleft block in source image
-  euclidian_ratio(rect.ymin, 3, sy, dy);
-  euclidian_ratio(rect.xmin, 3, sxz, dxz);
+  euclidian_ratio(rect.ymin_, 3, sy, dy);
+  euclidian_ratio(rect.xmin_, 3, sxz, dxz);
   sxz = 4 * sxz;   
   sy  = 4 * sy;
   dxz = - dxz;
@@ -1267,10 +1267,10 @@ GPixmap::upsample23(const GPixmap *src, const GRect *pdr)
   GRect rect(0, 0, destwidth, destheight);
   if (pdr != 0)
   {
-    if (pdr->xmin < rect.xmin || 
-        pdr->ymin < rect.ymin || 
-        pdr->xmax > rect.xmax || 
-        pdr->ymax > rect.ymax  )
+    if (pdr->xmin_ < rect.xmin_ || 
+        pdr->ymin_ < rect.ymin_ || 
+        pdr->xmax_ > rect.xmax_ || 
+        pdr->ymax_ > rect.ymax_  )
       G_THROW( ERR_MSG("GPixmap.overflow4") );
     rect = *pdr;
     destwidth = rect.width();
@@ -1282,8 +1282,8 @@ GPixmap::upsample23(const GPixmap *src, const GRect *pdr)
   // compute bounds
   int dxz, dy;   // location of bottomleft block in destination image
   int sxz, sy;   // location of bottomleft block in source image
-  euclidian_ratio(rect.ymin, 3, sy, dy);
-  euclidian_ratio(rect.xmin, 3, sxz, dxz);
+  euclidian_ratio(rect.ymin_, 3, sy, dy);
+  euclidian_ratio(rect.xmin_, 3, sxz, dxz);
   sxz = 2 * sxz;   
   sy  = 2 * sy;
   dxz = - dxz;
@@ -1595,10 +1595,10 @@ GPixmap::stencil(const GBitmap *bm,
   GRect rect(0, 0, pm->columns()*pms, pm->rows()*pms);
   if (pmr != 0)
     {
-      if (pmr->xmin < rect.xmin || 
-          pmr->ymin < rect.ymin || 
-          pmr->xmax > rect.xmax || 
-          pmr->ymax > rect.ymax  )
+      if (pmr->xmin_ < rect.xmin_ || 
+          pmr->ymin_ < rect.ymin_ || 
+          pmr->xmax_ > rect.xmax_ || 
+          pmr->ymax_ > rect.ymax_  )
         G_THROW( ERR_MSG("GPixmap.overflow5") );
       rect = *pmr;
     }
@@ -1624,8 +1624,8 @@ GPixmap::stencil(const GBitmap *bm,
   color_correction_table_cache(corr, white, gtable);
   // Compute starting point in blown up foreground pixmap
   int fgy, fgy1, fgxz, fgx1z;
-  euclidian_ratio(rect.ymin, pms, fgy, fgy1);
-  euclidian_ratio(rect.xmin, pms, fgxz, fgx1z);
+  euclidian_ratio(rect.ymin_, pms, fgy, fgy1);
+  euclidian_ratio(rect.xmin_, pms, fgxz, fgx1z);
   const GPixel *fg = (*pm)[fgy];
   const unsigned char *src = (*bm)[0];
   GPixel *dst = (*this)[0];

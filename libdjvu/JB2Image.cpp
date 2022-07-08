@@ -304,8 +304,8 @@ JB2Image::get_bitmap(const GRect &rect, int subsample, int align, int dispy) con
 {
   if (width==0 || height==0)
     G_THROW( ERR_MSG("JB2Image.cant_create") );
-  int rxmin = rect.xmin * subsample;
-  int rymin = rect.ymin * subsample;
+  int rxmin = rect.xmin_ * subsample;
+  int rymin = rect.ymin_ * subsample;
   int swidth = rect.width();
   int sheight = rect.height();
   int border = ((swidth + align - 1) & ~(align - 1)) - swidth;

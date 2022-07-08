@@ -186,7 +186,7 @@ DjVuTXT::Zone::encode(
   // Modify text_start and bounding rectangle based on the context
   // (whether there is a previous non-zero same-level-child or parent)
   int start=text_start;
-  int x=rect.xmin, y=rect.ymin;
+  int x=rect.xmin_, y=rect.ymin_;
   int width=rect.width(), height=rect.height();
   if (prev)
   {
@@ -195,23 +195,23 @@ DjVuTXT::Zone::encode(
       // Encode offset from the lower left corner of the previous
       // child in the coord system in that corner with x to the
       // right and y down
-      x=x-prev->rect.xmin;
-      y=prev->rect.ymin-(y+height);
+      x=x-prev->rect.xmin_;
+      y=prev->rect.ymin_-(y+height);
     } else // Either COLUMN or WORD or CHARACTER
     {
       // Encode offset from the lower right corner of the previous
       // child in the coord system in that corner with x to the
       // right and y up
-      x=x-prev->rect.xmax;
-      y=y-prev->rect.ymin;
+      x=x-prev->rect.xmax_;
+      y=y-prev->rect.ymin_;
     }
     start-=prev->text_start+prev->text_length;
   } else if (parent)
   {
     // Encode offset from the upper left corner of the parent
     // in the coord system in that corner with x to the right and y down
-    x=x-parent->rect.xmin;
-    y=parent->rect.ymax-(y+height);
+    x=x-parent->rect.xmin_;
+    y=parent->rect.ymax_-(y+height);
     start-=parent->text_start;
   }
   // Encode rectangle
@@ -259,18 +259,18 @@ DjVuTXT::Zone::decode(const GP<ByteStream> &gbs, int maxtext,
   {
     if (ztype==PAGE || ztype==PARAGRAPH || ztype==LINE)
     {
-      x=x+prev->rect.xmin;
-      y=prev->rect.ymin-(y+height);
+      x=x+prev->rect.xmin_;
+      y=prev->rect.ymin_-(y+height);
     } else // Either COLUMN or WORD or CHARACTER
     {
-      x=x+prev->rect.xmax;
-      y=y+prev->rect.ymin;
+      x=x+prev->rect.xmax_;
+      y=y+prev->rect.ymin_;
     }
     text_start+=prev->text_start+prev->text_length;
   } else if (parent)
   {
-    x=x+parent->rect.xmin;
-    y=parent->rect.ymax-(y+height);
+    x=x+parent->rect.xmin_;
+    y=parent->rect.ymax_-(y+height);
     text_start+=parent->text_start;
   }
   rect=GRect(x, y, width, height);
@@ -364,12 +364,12 @@ static inline bool
 intersects_zone(GRect box, const GRect &zone)
 {
   return
-    ((box.xmin < zone.xmin)
-      ?(box.xmax >= zone.xmin)
-      :(box.xmin <= zone.xmax))
-    &&((box.ymin < zone.ymin)
-      ?(box.ymax >= zone.ymin)
-      :(box.ymin <= zone.ymax));
+    ((box.xmin_ < zone.xmin_)
+      ?(box.xmax_ >= zone.xmin_)
+      :(box.xmin_ <= zone.xmax_))
+    &&((box.ymin_ < zone.ymin_)
+      ?(box.ymax_ >= zone.ymin_)
+      :(box.ymin_ <= zone.ymax_));
 }
 
 void
@@ -461,18 +461,18 @@ DjVuTXT::Zone::get_smallest(GList<GRect> &list, const int padding) const
       const GRect &xrect=zone_parent->rect;
       if(xrect.height() < xrect.width())
         {
-          list.append(GRect(rect.xmin-padding,xrect.ymin-padding,rect.width()
+          list.append(GRect(rect.xmin_-padding,xrect.ymin_-padding,rect.width()
                             +2*padding,xrect.height()+2*padding));
         }
       else
         {
-          list.append(GRect(xrect.xmin-padding,rect.ymin-padding,xrect.width()
+          list.append(GRect(xrect.xmin_-padding,rect.ymin_-padding,xrect.width()
                             +2*padding,rect.height()+2*padding));
         }
     }
   else
     {
-      list.append(GRect(rect.xmin-padding,rect.ymin-padding,rect.width()
+      list.append(GRect(rect.xmin_-padding,rect.ymin_-padding,rect.width()
                         +2*padding,rect.height()+2*padding));
     }
 }
@@ -893,8 +893,8 @@ writeText( ByteStream & str_out,
   {
     GUTF8String coords;
     coords.format("coords=\"%d,%d,%d,%d\"",
-      zone.rect.xmin, WindowHeight - 1 - zone.rect.ymin,
-      zone.rect.xmax, WindowHeight - 1 - zone.rect.ymax);
+      zone.rect.xmin_, WindowHeight - 1 - zone.rect.ymin_,
+      zone.rect.xmax_, WindowHeight - 1 - zone.rect.ymax_);
     const int start=zone.text_start;
     const int end=textUTF8.firstEndSpace(start,zone.text_length);
     str_out.writestring(start_tag(zone.ztype,coords));

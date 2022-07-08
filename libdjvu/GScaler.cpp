@@ -255,8 +255,8 @@ void
 GScaler::make_rectangles(const GRect &desired, GRect &red, GRect &inp)
 {
   // Parameter validation
-  if (desired.xmin<0 || desired.ymin<0 ||
-      desired.xmax>outw || desired.ymax>outh )
+  if (desired.xmin_<0 || desired.ymin_<0 ||
+      desired.xmax_>outw || desired.ymax_>outh )
     G_THROW( ERR_MSG("GScaler.too_big") );
   // Compute ratio (if not done yet)
   if (!vcoord) 
@@ -264,20 +264,20 @@ GScaler::make_rectangles(const GRect &desired, GRect &red, GRect &inp)
   if (!hcoord) 
     set_horz_ratio(0,0);
   // Compute reduced bounds
-  red.xmin = (hcoord[desired.xmin]) >> FRACBITS;
-  red.ymin = (vcoord[desired.ymin]) >> FRACBITS;
-  red.xmax = (hcoord[desired.xmax-1]+FRACSIZE-1) >> FRACBITS;
-  red.ymax = (vcoord[desired.ymax-1]+FRACSIZE-1) >> FRACBITS;
+  red.xmin_ = (hcoord[desired.xmin_]) >> FRACBITS;
+  red.ymin_ = (vcoord[desired.ymin_]) >> FRACBITS;
+  red.xmax_ = (hcoord[desired.xmax_-1]+FRACSIZE-1) >> FRACBITS;
+  red.ymax_ = (vcoord[desired.ymax_-1]+FRACSIZE-1) >> FRACBITS;
   // Borders
-  red.xmin = maxi(red.xmin, 0);
-  red.xmax = mini(red.xmax+1, redw);
-  red.ymin = maxi(red.ymin, 0);
-  red.ymax = mini(red.ymax+1, redh);
+  red.xmin_ = maxi(red.xmin_, 0);
+  red.xmax_ = mini(red.xmax_+1, redw);
+  red.ymin_ = maxi(red.ymin_, 0);
+  red.ymax_ = mini(red.ymax_+1, redh);
   // Input
-  inp.xmin = maxi(red.xmin<<xshift, 0); 
-  inp.xmax = mini(red.xmax<<xshift, inw); 
-  inp.ymin = maxi(red.ymin<<yshift, 0); 
-  inp.ymax = mini(red.ymax<<yshift, inh); 
+  inp.xmin_ = maxi(red.xmin_<<xshift, 0); 
+  inp.xmax_ = mini(red.xmax_<<xshift, inw); 
+  inp.ymin_ = maxi(red.ymin_<<yshift, 0); 
+  inp.ymax_ = mini(red.ymax_<<yshift, inh); 
 }
 
 
@@ -322,10 +322,10 @@ GBitmapScaler::get_line(int fy,
                         const GRect &provided_input,
                         const GBitmap &input )
 {
-  if (fy < required_red.ymin)
-    fy = required_red.ymin; 
-  else if (fy >= required_red.ymax)
-    fy = required_red.ymax - 1;
+  if (fy < required_red.ymin_)
+    fy = required_red.ymin_; 
+  else if (fy >= required_red.ymax_)
+    fy = required_red.ymax_ - 1;
   // Cached line
   if (fy == l2)
     return p2;
@@ -340,9 +340,9 @@ GBitmapScaler::get_line(int fy,
   if (xshift==0 && yshift==0)
     {
       // Fast mode
-      int dx = required_red.xmin-provided_input.xmin;
-      int dx1 = required_red.xmax-provided_input.xmin;
-      const unsigned char *inp1 = input[fy-provided_input.ymin] + dx;
+      int dx = required_red.xmin_-provided_input.xmin_;
+      int dx1 = required_red.xmax_-provided_input.xmin_;
+      const unsigned char *inp1 = input[fy-provided_input.ymin_] + dx;
       while (dx++ < dx1)
         *p++ = conv[*inp1++];
       return p2;
@@ -351,20 +351,20 @@ GBitmapScaler::get_line(int fy,
     {
       // Compute location of line
       GRect line;
-      line.xmin = required_red.xmin << xshift;
-      line.xmax = required_red.xmax << xshift;
-      line.ymin = fy << yshift;
-      line.ymax = (fy+1) << yshift;
+      line.xmin_ = required_red.xmin_ << xshift;
+      line.xmax_ = required_red.xmax_ << xshift;
+      line.ymin_ = fy << yshift;
+      line.ymax_ = (fy+1) << yshift;
       line.intersect(line, provided_input);
-      line.translate(-provided_input.xmin, -provided_input.ymin);
+      line.translate(-provided_input.xmin_, -provided_input.ymin_);
       // Prepare variables
-      const unsigned char *botline = input[line.ymin];
+      const unsigned char *botline = input[line.ymin_];
       int rowsize = input.rowsize();
       int sw = 1<<xshift;
       int div = xshift+yshift;
       int rnd = 1<<(div-1);
       // Compute averages
-      for (int x=line.xmin; x<line.xmax; x+=sw,p++)
+      for (int x=line.xmin_; x<line.xmax_; x+=sw,p++)
         {
           int g=0, s=0;
           const unsigned char *inp0 = botline + x;
@@ -372,7 +372,7 @@ GBitmapScaler::get_line(int fy,
           for (int sy=0; sy<sy1; sy++,inp0+=rowsize)
 	    {
 	      const unsigned char *inp1;
-	      const unsigned char *inp2 = inp0 + mini(x+sw, line.xmax) - x;
+	      const unsigned char *inp2 = inp0 + mini(x+sw, line.xmax_) - x;
 	      for (inp1=inp0; inp1<inp2; inp1++)
 		{
 		  g += conv[*inp1];
@@ -402,10 +402,10 @@ GBitmapScaler::scale( const GRect &provided_input, const GBitmap &input,
   if (provided_input.width() != (int)input.columns() ||
       provided_input.height() != (int)input.rows() )
     G_THROW( ERR_MSG("GScaler.no_match") );
-  if (provided_input.xmin > required_input.xmin ||
-      provided_input.ymin > required_input.ymin ||
-      provided_input.xmax < required_input.xmax ||
-      provided_input.ymax < required_input.ymax  )
+  if (provided_input.xmin_ > required_input.xmin_ ||
+      provided_input.ymin_ > required_input.ymin_ ||
+      provided_input.xmax_ < required_input.xmax_ ||
+      provided_input.ymax_ < required_input.ymax_  )
     G_THROW( ERR_MSG("GScaler.too_small") );
   // Adjust output pixmap
   if (desired_output.width() != (int)output.columns() ||
@@ -433,7 +433,7 @@ GBitmapScaler::scale( const GRect &provided_input, const GBitmap &input,
         :255;
     }
   // Loop on output lines
-  for (int y=desired_output.ymin; y<desired_output.ymax; y++)
+  for (int y=desired_output.ymin_; y<desired_output.ymax_; y++)
     {
       // Perform vertical interpolation
       {
@@ -460,10 +460,10 @@ GBitmapScaler::scale( const GRect &provided_input, const GBitmap &input,
         // Prepare for side effects
         lbuffer[0]   = lbuffer[1];
         lbuffer[bufw+1] = lbuffer[bufw];
-        unsigned char *line = lbuffer+1-required_red.xmin;
-        unsigned char *dest  = output[y-desired_output.ymin];
+        unsigned char *line = lbuffer+1-required_red.xmin_;
+        unsigned char *dest  = output[y-desired_output.ymin_];
         // Loop horizontally
-        for (int x=desired_output.xmin; x<desired_output.xmax; x++)
+        for (int x=desired_output.xmin_; x<desired_output.xmax_; x++)
           {
             int n = hcoord[x];
             const unsigned char *lower = line + (n>>FRACBITS);
@@ -520,10 +520,10 @@ GPixmapScaler::get_line(int fy,
                         const GRect &provided_input,
                         const GPixmap &input )
 {
-  if (fy < required_red.ymin)
-    fy = required_red.ymin; 
-  else if (fy >= required_red.ymax)
-    fy = required_red.ymax - 1;
+  if (fy < required_red.ymin_)
+    fy = required_red.ymin_; 
+  else if (fy >= required_red.ymax_)
+    fy = required_red.ymax_ - 1;
   // Cached line
   if (fy == l2)
     return p2;
@@ -537,20 +537,20 @@ GPixmapScaler::get_line(int fy,
   l2 = fy;
   // Compute location of line
   GRect line;
-  line.xmin = required_red.xmin << xshift;
-  line.xmax = required_red.xmax << xshift;
-  line.ymin = fy << yshift;
-  line.ymax = (fy+1) << yshift;
+  line.xmin_ = required_red.xmin_ << xshift;
+  line.xmax_ = required_red.xmax_ << xshift;
+  line.ymin_ = fy << yshift;
+  line.ymax_ = (fy+1) << yshift;
   line.intersect(line, provided_input);
-  line.translate(-provided_input.xmin, -provided_input.ymin);
+  line.translate(-provided_input.xmin_, -provided_input.ymin_);
   // Prepare variables
-  const GPixel *botline = input[line.ymin];
+  const GPixel *botline = input[line.ymin_];
   int rowsize = input.rowsize();
   int sw = 1<<xshift;
   int div = xshift+yshift;
   int rnd = 1<<(div-1);
   // Compute averages
-  for (int x=line.xmin; x<line.xmax; x+=sw,p++)
+  for (int x=line.xmin_; x<line.xmax_; x+=sw,p++)
     {
       int r=0, g=0, b=0, s=0;
       const GPixel *inp0 = botline + x;
@@ -558,7 +558,7 @@ GPixmapScaler::get_line(int fy,
       for (int sy=0; sy<sy1; sy++,inp0+=rowsize)
         {
 	  const GPixel *inp1;
-	  const GPixel *inp2 = inp0 + mini(x+sw, line.xmax) - x;
+	  const GPixel *inp2 = inp0 + mini(x+sw, line.xmax_) - x;
           for (inp1 = inp0; inp1<inp2; inp1++)
             {
               r += inp1->r;  
@@ -597,10 +597,10 @@ GPixmapScaler::scale( const GRect &provided_input, const GPixmap &input,
   if (provided_input.width() != (int)input.columns() ||
       provided_input.height() != (int)input.rows() )
     G_THROW( ERR_MSG("GScaler.no_match") );
-  if (provided_input.xmin > required_input.xmin ||
-      provided_input.ymin > required_input.ymin ||
-      provided_input.xmax < required_input.xmax ||
-      provided_input.ymax < required_input.ymax  )
+  if (provided_input.xmin_ > required_input.xmin_ ||
+      provided_input.ymin_ > required_input.ymin_ ||
+      provided_input.xmax_ < required_input.xmax_ ||
+      provided_input.ymax_ < required_input.ymax_  )
     G_THROW( ERR_MSG("GScaler.too_small") );
   // Adjust output pixmap
   if (desired_output.width() != (int)output.columns() ||
@@ -620,7 +620,7 @@ GPixmapScaler::scale( const GRect &provided_input, const GPixmap &input,
       l1 = l2 = -1;
     }
   // Loop on output lines
-  for (int y=desired_output.ymin; y<desired_output.ymax; y++)
+  for (int y=desired_output.ymin_; y<desired_output.ymax_; y++)
     {
       // Perform vertical interpolation
       {
@@ -636,11 +636,11 @@ GPixmapScaler::scale( const GRect &provided_input, const GPixmap &input,
           }
         else
           {
-            int dx = required_red.xmin-provided_input.xmin;
-            fy1 = maxi(fy1, required_red.ymin);
-            fy2 = mini(fy2, required_red.ymax-1);
-            lower = input[fy1-provided_input.ymin] + dx;
-            upper = input[fy2-provided_input.ymin] + dx;
+            int dx = required_red.xmin_-provided_input.xmin_;
+            fy1 = maxi(fy1, required_red.ymin_);
+            fy2 = mini(fy2, required_red.ymax_-1);
+            lower = input[fy1-provided_input.ymin_] + dx;
+            upper = input[fy2-provided_input.ymin_] + dx;
           }
         // Compute line
         GPixel *dest = lbuffer+1;
@@ -664,10 +664,10 @@ GPixmapScaler::scale( const GRect &provided_input, const GPixmap &input,
         // Prepare for side effects
         lbuffer[0]   = lbuffer[1];
         lbuffer[bufw+1] = lbuffer[bufw];
-        GPixel *line = lbuffer+1-required_red.xmin;
-        GPixel *dest  = output[y-desired_output.ymin];
+        GPixel *line = lbuffer+1-required_red.xmin_;
+        GPixel *dest  = output[y-desired_output.ymin_];
         // Loop horizontally
-        for (int x=desired_output.xmin; x<desired_output.xmax; x++,dest++)
+        for (int x=desired_output.xmin_; x<desired_output.xmax_; x++,dest++)
           {
             const int n = hcoord[x];
             const GPixel *lower = line + (n>>FRACBITS);

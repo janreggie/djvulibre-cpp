@@ -1519,8 +1519,8 @@ print_txt_sub(const GP<DjVuTXT> &txt, DjVuTXT::Zone &zone,
   GUTF8String message = "(bogus";
   if (zone_names()[zinfo].name)
     message.format("(%s %d %d %d %d", zone_names()[zinfo].name,
-                   zone.rect.xmin, zone.rect.ymin, 
-                   zone.rect.xmax, zone.rect.ymax);
+                   zone.rect.xmin_, zone.rect.ymin_, 
+                   zone.rect.xmax_, zone.rect.ymax_);
   out->write((const char*)message, message.length());
   // Zone children
   if (zone.children.isempty()) 
@@ -1664,30 +1664,30 @@ construct_djvutxt_sub(ParsingByteStream &pbs,
   if (!str || !str.is_int()) 
     nerror: verror("Syntax error in txt data: number expected,\n\tnear '%s%s'",
                    (const char*)ToNative(str), pbs.get_error_context());  
-  zone.rect.xmin = atoi(str);
+  zone.rect.xmin_ = atoi(str);
   str = pbs.get_token(true);
   if (!str || !str.is_int()) 
     goto nerror;
-  zone.rect.ymin = atoi(str);
+  zone.rect.ymin_ = atoi(str);
   str = pbs.get_token(true);
   if (!str || !str.is_int()) 
     goto nerror;
-  zone.rect.xmax = atoi(str);
+  zone.rect.xmax_ = atoi(str);
   str = pbs.get_token(true);
   if (!str || !str.is_int()) 
     goto nerror;
-  zone.rect.ymax = atoi(str);
-  if (zone.rect.xmin > zone.rect.xmax) 
+  zone.rect.ymax_ = atoi(str);
+  if (zone.rect.xmin_ > zone.rect.xmax_) 
     {
-      int tmp = zone.rect.xmin; 
-      zone.rect.xmin=zone.rect.xmax; 
-      zone.rect.xmax=tmp; 
+      int tmp = zone.rect.xmin_; 
+      zone.rect.xmin_=zone.rect.xmax_; 
+      zone.rect.xmax_=tmp; 
     }
-  if (zone.rect.ymin > zone.rect.ymax)
+  if (zone.rect.ymin_ > zone.rect.ymax_)
     {
-      int tmp = zone.rect.ymin; 
-      zone.rect.ymin=zone.rect.ymax; 
-      zone.rect.ymax=tmp; 
+      int tmp = zone.rect.ymin_; 
+      zone.rect.ymin_=zone.rect.ymax_; 
+      zone.rect.ymax_=tmp; 
     }
   // Continue processing
   c = pbs.get_spaces(true);

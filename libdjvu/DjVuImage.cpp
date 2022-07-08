@@ -708,15 +708,15 @@ DjVuImage::get_bg_pixmap(const GRect &rect,
         {
           GRect nrect = rect;
           GRect xrect = rect;
-          xrect.xmin = (xrect.xmin/3)*4;
-          xrect.ymin = (xrect.ymin/3)*4;
-          xrect.xmax = ((xrect.xmax+2)/3)*4;
-          xrect.ymax = ((xrect.ymax+2)/3)*4;
-          nrect.translate(-xrect.xmin*3/4, -xrect.ymin*3/4);
-          if (xrect.xmax > w) 
-            xrect.xmax = w;
-          if (xrect.ymax > h) 
-            xrect.ymax = h;
+          xrect.xmin_ = (xrect.xmin_/3)*4;
+          xrect.ymin_ = (xrect.ymin_/3)*4;
+          xrect.xmax_ = ((xrect.xmax_+2)/3)*4;
+          xrect.ymax_ = ((xrect.ymax_+2)/3)*4;
+          nrect.translate(-xrect.xmin_*3/4, -xrect.ymin_*3/4);
+          if (xrect.xmax_ > w) 
+            xrect.xmax_ = w;
+          if (xrect.ymax_ > h) 
+            xrect.ymax_ = h;
           GP<GPixmap> ipm = bg44->get_pixmap(1,xrect);
           pm = GPixmap::create();
           pm->downsample43(ipm, &nrect);
@@ -849,17 +849,17 @@ DjVuImage::stencil(GPixmap *pm, const GRect &rect,
       // Decode bitmap
       bm = GBitmap::create(rect.height(), rect.width());
       bm->set_grays(1+subsample*subsample);
-      int rxmin = rect.xmin * subsample;
-      int rymin = rect.ymin * subsample;
+      int rxmin = rect.xmin_ * subsample;
+      int rymin = rect.ymin_ * subsample;
       for (int blitno = 0; blitno < jimg->get_blit_count(); blitno++)
         {
           const JB2Blit *pblit = jimg->get_blit(blitno);
           const JB2Shape  &pshape = jimg->get_shape(pblit->shapeno);
           if (pshape.bits &&
-              pblit->left <= rect.xmax * subsample &&
-              pblit->bottom <= rect.ymax * subsample &&
-              pblit->left+(int)pshape.bits->columns() >= rect.xmin*subsample &&
-              pblit->bottom+(int)pshape.bits->rows() >= rect.ymin*subsample )
+              pblit->left <= rect.xmax_ * subsample &&
+              pblit->bottom <= rect.ymax_ * subsample &&
+              pblit->left+(int)pshape.bits->columns() >= rect.xmin_*subsample &&
+              pblit->bottom+(int)pshape.bits->rows() >= rect.ymin_*subsample )
             {
               // Record component list
               if (fgbc) components.append(blitno);
@@ -918,17 +918,17 @@ DjVuImage::stencil(GPixmap *pm, const GRect &rect,
               ++pos;
             }
           // Round alpha map rectangle
-          comprect.xmin = comprect.xmin / subsample;
-          comprect.ymin = comprect.ymin / subsample;
-          comprect.xmax = (comprect.xmax+subsample-1) / subsample;
-          comprect.ymax = (comprect.ymax+subsample-1) / subsample;
+          comprect.xmin_ = comprect.xmin_ / subsample;
+          comprect.ymin_ = comprect.ymin_ / subsample;
+          comprect.xmax_ = (comprect.xmax_+subsample-1) / subsample;
+          comprect.ymax_ = (comprect.ymax_+subsample-1) / subsample;
           comprect.intersect(comprect, rect);
           // Compute alpha map for that color
           bm = 0;
           bm = GBitmap::create(comprect.height(), comprect.width());
           bm->set_grays(1+subsample*subsample);
-          int rxmin = comprect.xmin * subsample;
-          int rymin = comprect.ymin * subsample;
+          int rxmin = comprect.xmin_ * subsample;
+          int rymin = comprect.ymin_ * subsample;
           for (pos=compset; pos; ++pos)
             {
               int blitno = compset[pos];
@@ -939,7 +939,7 @@ DjVuImage::stencil(GPixmap *pm, const GRect &rect,
                        subsample);
             }
           // Blend color into background pixmap
-          pm->blit(bm, comprect.xmin-rect.xmin, comprect.ymin-rect.ymin, 
+          pm->blit(bm, comprect.xmin_-rect.xmin_, comprect.ymin_-rect.ymin_, 
                    &colors[colorindex]);
         }
       return 1;
@@ -1108,8 +1108,8 @@ do_bitmap(const DjVuImage &dimg, BImager get,
       all = mapper.map(all);
     }
   // Sanity
-  if (! ( all.contains(rect.xmin, rect.ymin) &&
-          all.contains(rect.xmax-1, rect.ymax-1) ))
+  if (! ( all.contains(rect.xmin_, rect.ymin_) &&
+          all.contains(rect.xmax_-1, rect.ymax_-1) ))
     G_THROW( ERR_MSG("DjVuImage.bad_rect") );
   // Check for integral reduction
   int red;
@@ -1119,7 +1119,7 @@ do_bitmap(const DjVuImage &dimg, BImager get,
   int rw = all.width();
   int rh = all.height();
   GRect zrect = rect; 
-  zrect.translate(-all.xmin, -all.ymin);
+  zrect.translate(-all.xmin_, -all.ymin_);
   for (red=1; red<=15; red++)
     if (rw*red>w-red && rw*red<w+red && rh*red>h-red && rh*red<h+red)
     {
@@ -1174,8 +1174,8 @@ do_pixmap(const DjVuImage &dimg, PImager get,
     }
   
   // Sanity
-  if (! ( all.contains(rect.xmin, rect.ymin) &&
-          all.contains(rect.xmax-1, rect.ymax-1) ))
+  if (! ( all.contains(rect.xmin_, rect.ymin_) &&
+          all.contains(rect.xmax_-1, rect.ymax_-1) ))
     G_THROW( ERR_MSG("DjVuImage.bad_rect2") );
   // Check for integral reduction
   int red, w=0, h=0, rw=0, rh=0;
@@ -1184,7 +1184,7 @@ do_pixmap(const DjVuImage &dimg, PImager get,
   rw = all.width();
   rh = all.height();
   GRect zrect = rect; 
-  zrect.translate(-all.xmin, -all.ymin);
+  zrect.translate(-all.xmin_, -all.ymin_);
   for (red=1; red<=15; red++)
     if (rw*red>w-red && rw*red<w+red && rh*red>h-red && rh*red<h+red)
     {

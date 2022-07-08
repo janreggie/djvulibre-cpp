@@ -99,10 +99,11 @@ class DJVUAPI GRect {
   friend bool operator!=(const GRect &r1, const GRect &r2);
   /** Resets the rectangle to the empty rectangle */
   void clear();
-  /** Fatten the rectangle. Both vertical sides of the rectangle are pushed
-      apart by #dx# units. Both horizontal sides of the rectangle are pushed
-      apart by #dy# units. Setting arguments #dx# (resp. #dy#) to a negative
-      value reduces the rectangle horizontal (resp. vertical) size. */
+  /// Fatten the rectangle.
+  /// Both vertical sides of the rectangle are pushed apart by #dx# units.
+  /// Both horizontal sides of the rectangle are pushed apart by #dy# units.
+  /// Setting arguments #dx# (resp. #dy#) to a negative value
+  /// reduces the rectangle horizontal (resp. vertical) size.
   int inflate(int dx, int dy);
   /** Translate the rectangle. The new rectangle is composed of all the points
       of the old rectangle translated by #dx# units horizontally and #dy#
@@ -123,13 +124,13 @@ class DJVUAPI GRect {
 
  public:
   /** Minimal horizontal point coordinate of the rectangle. */
-  int xmin;
+  int xmin_;
   /** Minimal vertical point coordinate of the rectangle. */
-  int ymin;
+  int ymin_;
   /** Maximal horizontal point coordinate of the rectangle. */
-  int xmax;
+  int xmax_;
   /** Maximal vertical point coordinate of the rectangle. */
-  int ymax;
+  int ymax_;
 };
 
 /** Maps points from one rectangle to another rectangle.  This class
@@ -222,26 +223,26 @@ class DJVUAPI GRectMapper {
 
 // ---- INLINES
 
-inline GRect::GRect() : xmin(0), ymin(0), xmax(0), ymax(0) {}
+inline GRect::GRect() : xmin_(0), ymin_(0), xmax_(0), ymax_(0) {}
 
 inline GRect::GRect(int xmin, int ymin, unsigned int width, unsigned int height)
-    : xmin(xmin), ymin(ymin), xmax(xmin + width), ymax(ymin + height) {}
+    : xmin_(xmin), ymin_(ymin), xmax_(xmin + width), ymax_(ymin + height) {}
 
-inline int GRect::width() const { return xmax - xmin; }
+inline int GRect::width() const { return xmax_ - xmin_; }
 
-inline int GRect::height() const { return ymax - ymin; }
+inline int GRect::height() const { return ymax_ - ymin_; }
 
-inline bool GRect::isempty() const { return (xmin >= xmax || ymin >= ymax); }
+inline bool GRect::isempty() const { return (xmin_ >= xmax_ || ymin_ >= ymax_); }
 
 inline int GRect::area() const {
-  return isempty() ? 0 : (xmax - xmin) * (ymax - ymin);
+  return isempty() ? 0 : (xmax_ - xmin_) * (ymax_ - ymin_);
 }
 
 inline int GRect::contains(int x, int y) const {
-  return (x >= xmin && x < xmax && y >= ymin && y < ymax);
+  return (x >= xmin_ && x < xmax_ && y >= ymin_ && y < ymax_);
 }
 
-inline void GRect::clear() { xmin = xmax = ymin = ymax = 0; }
+inline void GRect::clear() { xmin_ = xmax_ = ymin_ = ymax_ = 0; }
 
 inline bool operator!=(const GRect &r1, const GRect &r2) { return !(r1 == r2); }
 

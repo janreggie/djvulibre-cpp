@@ -985,10 +985,10 @@ print_fg_3layer(ByteStream &str,
   int br = brush->rows();
   int bc = brush->columns();
   int red = compute_red(dimg->get_width(),dimg->get_height(),bc,br);
-  prn_rect.ymin = (cprn_rect.ymin)/red;
-  prn_rect.xmin = (cprn_rect.xmin)/red;
-  prn_rect.ymax = (cprn_rect.ymax+red-1)/red;
-  prn_rect.xmax = (cprn_rect.xmax+red-1)/red;
+  prn_rect.ymin_ = (cprn_rect.ymin_)/red;
+  prn_rect.xmin_ = (cprn_rect.xmin_)/red;
+  prn_rect.ymax_ = (cprn_rect.ymax_+red-1)/red;
+  prn_rect.xmax_ = (cprn_rect.xmax_+red-1)/red;
   int color_nb = ((options.get_color()) ? 3 : 1);
   GP<JB2Image> jb2 = dimg->get_fgjb();
   if (! jb2) return;
@@ -1026,11 +1026,11 @@ print_fg_3layer(ByteStream &str,
   unsigned char *s_ascii_encoded;
   GPBuffer<unsigned char> gs_ascii_encoded(s_ascii_encoded,pw*ph*2*color_nb);
     {
-      for (int y=prn_rect.ymin; y<prn_rect.ymax; y+=ph)
-        for (int x=prn_rect.xmin; x<prn_rect.xmax; x+=pw)
+      for (int y=prn_rect.ymin_; y<prn_rect.ymax_; y+=ph)
+        for (int x=prn_rect.xmin_; x<prn_rect.xmax_; x+=pw)
           {
-            int w = ((x+pw > prn_rect.xmax) ? prn_rect.xmax-x : pw);
-            int h = ((y+ph > prn_rect.ymax) ? prn_rect.ymax-y : ph);
+            int w = ((x+pw > prn_rect.xmax_) ? prn_rect.xmax_-x : pw);
+            int h = ((y+ph > prn_rect.ymax_) ? prn_rect.ymax_-y : ph);
             int currentx = x * red;
             int currenty = y * red;
             // Find first intersecting blit
@@ -1231,7 +1231,7 @@ print_fg(ByteStream &str,
   write(str,
     "-%d -%d translate\n"
     "0 0 moveto\n",
-    prn_rect.xmin, prn_rect.ymin);
+    prn_rect.xmin_, prn_rect.ymin_);
   // Print the foreground layer
   if (dimg->get_fgpm() && !(options.get_mode()==Options::BW)) 
     print_fg_3layer(str, dimg, prn_rect, blit_list);
@@ -1257,13 +1257,13 @@ print_bg(ByteStream &str,
   write(str, 
         "gsave -%d -%d translate\n"
         "/bgred %d def bgred bgred scale\n",
-        cprn_rect.xmin % red, 
-        cprn_rect.ymin % red, 
+        cprn_rect.xmin_ % red, 
+        cprn_rect.ymin_ % red, 
         red);
-  prn_rect.ymin = (cprn_rect.ymin)/red;
-  prn_rect.ymax = (cprn_rect.ymax+red-1)/red;
-  prn_rect.xmin = (cprn_rect.xmin)/red;
-  prn_rect.xmax = (cprn_rect.xmax+red-1)/red;
+  prn_rect.ymin_ = (cprn_rect.ymin_)/red;
+  prn_rect.ymax_ = (cprn_rect.ymax_+red-1)/red;
+  prn_rect.xmin_ = (cprn_rect.xmin_)/red;
+  prn_rect.xmax_ = (cprn_rect.xmax_+red-1)/red;
   // Display image
   int band_bytes = 125000;
   int band_height = band_bytes/prn_rect.width();
@@ -1320,15 +1320,15 @@ print_bg(ByteStream &str,
     // Start storing image in bands
     unsigned char * rle_out_end = rle_out;
     GRect grectBand = prn_rect;
-    grectBand.ymax = grectBand.ymin;
-    while(grectBand.ymax < prn_rect.ymax)
+    grectBand.ymax_ = grectBand.ymin_;
+    while(grectBand.ymax_ < prn_rect.ymax_)
       {
         GP<GPixmap> pm = 0;
         // Compute next band
-        grectBand.ymin=grectBand.ymax;
-        grectBand.ymax=grectBand.ymin+band_bytes/grectBand.width();
-        if (grectBand.ymax>prn_rect.ymax)
-          grectBand.ymax=prn_rect.ymax;
+        grectBand.ymin_=grectBand.ymax_;
+        grectBand.ymax_=grectBand.ymin_+band_bytes/grectBand.width();
+        if (grectBand.ymax_>prn_rect.ymax_)
+          grectBand.ymax_=prn_rect.ymax_;
         pm = get_bg_pixmap(dimg, grectBand);
         unsigned char *buf_ptr = buffer;
         if (pm)
@@ -1419,8 +1419,8 @@ print_bg(ByteStream &str,
         str.writall(buffer, buf_ptr-buffer);
         if (prn_progress_cb)
           {
-            double done=(double)(grectBand.ymax 
-                                 - prn_rect.ymin)/prn_rect.height();
+            double done=(double)(grectBand.ymax_ 
+                                 - prn_rect.ymin_)/prn_rect.height();
             if ((int) (20*print_done)!=(int) (20*done))
               {
                 print_done=done;
@@ -1512,14 +1512,14 @@ print_image_lev1(ByteStream &str,
     {
       // Start storing image in bands
       GRect grectBand = prn_rect;
-      grectBand.ymax = grectBand.ymin;
-      while(grectBand.ymax < prn_rect.ymax)
+      grectBand.ymax_ = grectBand.ymin_;
+      while(grectBand.ymax_ < prn_rect.ymax_)
         {
           // Compute next band
-          grectBand.ymin = grectBand.ymax;
-          grectBand.ymax = grectBand.ymin+band_bytes/grectBand.width();
-          if (grectBand.ymax > prn_rect.ymax)
-            grectBand.ymax = prn_rect.ymax;
+          grectBand.ymin_ = grectBand.ymax_;
+          grectBand.ymax_ = grectBand.ymin_+band_bytes/grectBand.width();
+          if (grectBand.ymax_ > prn_rect.ymax_)
+            grectBand.ymax_ = prn_rect.ymax_;
           GRect all(0,0, dimg->get_width(),dimg->get_height());
           pm = 0;
           bm = 0;
@@ -1616,8 +1616,8 @@ print_image_lev1(ByteStream &str,
           str.writall(buffer, buf_ptr-buffer);
           if (prn_progress_cb)
             {
-              double done=(double) (grectBand.ymax 
-                                    - prn_rect.ymin)/prn_rect.height();
+              double done=(double) (grectBand.ymax_ 
+                                    - prn_rect.ymin_)/prn_rect.height();
               if ((int) (20*print_done)!=(int) (20*done))
                 {
                   print_done=done;
@@ -1705,14 +1705,14 @@ print_image_lev2(ByteStream &str,
       // Start storing image in bands
       unsigned char * rle_out_end = rle_out;
       GRect grectBand = prn_rect;
-      grectBand.ymax = grectBand.ymin;
-      while(grectBand.ymax < prn_rect.ymax)
+      grectBand.ymax_ = grectBand.ymin_;
+      while(grectBand.ymax_ < prn_rect.ymax_)
         {
           // Compute next band
-          grectBand.ymin = grectBand.ymax;
-          grectBand.ymax = grectBand.ymin+band_bytes/grectBand.width();
-          if (grectBand.ymax > prn_rect.ymax)
-            grectBand.ymax = prn_rect.ymax;
+          grectBand.ymin_ = grectBand.ymax_;
+          grectBand.ymax_ = grectBand.ymin_+band_bytes/grectBand.width();
+          if (grectBand.ymax_ > prn_rect.ymax_)
+            grectBand.ymax_ = prn_rect.ymax_;
           GRect all(0,0, dimg->get_width(),dimg->get_height());
           pm = 0;
           if (options.get_mode() == Options::FORE)
@@ -1804,7 +1804,7 @@ print_image_lev2(ByteStream &str,
                   if (refresh_cb) 
                     refresh_cb(refresh_cl_data);
                 }
-              if (grectBand.ymax >= prn_rect.ymax)
+              if (grectBand.ymax_ >= prn_rect.ymax_)
                 {
                   *rle_out_end++ = 0x80; // Add EOF marker
                   buf_ptr = ASCII85_encode(buf_ptr, rle_out, rle_out_end);
@@ -1816,8 +1816,8 @@ print_image_lev2(ByteStream &str,
           str.writall(buffer, buf_ptr-buffer);
           if (prn_progress_cb)
             {
-              double done=(double) (grectBand.ymax
-                                    - prn_rect.ymin)/prn_rect.height();
+              double done=(double) (grectBand.ymax_
+                                    - prn_rect.ymin_)/prn_rect.height();
               if ((int) (20*print_done)!=(int) (20*done))
                 {
                   print_done=done;
@@ -1948,11 +1948,11 @@ print_txt_sub(DjVuTXT &txt, DjVuTXT::Zone &zone,
       print_ps_string(data,length,out);
       out.write(")",1);
       GUTF8String message;
-      int tmpx= zone.rect.xmin-lastx;
-      int tmpy= zone.rect.ymin-lasty;
+      int tmpx= zone.rect.xmin_-lastx;
+      int tmpy= zone.rect.ymin_-lasty;
       message.format(" %d %d S \n", tmpx, tmpy);
-      lastx=zone.rect.xmin;
-      lasty=zone.rect.ymin;
+      lastx=zone.rect.xmin_;
+      lasty=zone.rect.ymin_;
       out.write((const char*)message, message.length());
     }
   else
@@ -1960,7 +1960,7 @@ print_txt_sub(DjVuTXT &txt, DjVuTXT::Zone &zone,
       if (zone.ztype==DjVuTXT::LINE)
         {
           GUTF8String message;
-          message.format("%d F\n",zone.rect.ymax-zone.rect.ymin);
+          message.format("%d F\n",zone.rect.ymax_-zone.rect.ymin_);
           out.write((const char*)message,message.length());
         }
       for (GPosition pos=zone.children; pos; ++pos)
@@ -2074,9 +2074,9 @@ print(ByteStream &str,
   DEBUG_MAKE_INDENT(3);
   GRect prn_rect;
   prn_rect.intersect(prn_rect_in, img_rect);
-  DEBUG_MSG("prn_rect=(" << prn_rect.xmin << ", " << prn_rect.ymin << ", " <<
+  DEBUG_MSG("prn_rect=(" << prn_rect.xmin_ << ", " << prn_rect.ymin_ << ", " <<
             prn_rect.width() << ", " << prn_rect.height() << ")\n");
-  DEBUG_MSG("img_rect=(" << img_rect.xmin << ", " << img_rect.ymin << ", " <<
+  DEBUG_MSG("img_rect=(" << img_rect.xmin_ << ", " << img_rect.ymin_ << ", " <<
             img_rect.width() << ", " << img_rect.height() << ")\n");
   if (!dimg)
     G_THROW(ERR_MSG("DjVuToPS.empty_image"));

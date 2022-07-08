@@ -272,15 +272,15 @@ GBitmap::init(const GBitmap &ref, const GRect &rect, int border)
       // compute destination rectangle
       GRect rect2(0, 0, ref.columns(), ref.rows() );
       rect2.intersect(rect2, rect);
-      rect2.translate(-rect.xmin, -rect.ymin);
+      rect2.translate(-rect.xmin_, -rect.ymin_);
       // copy bits
       if (! rect2.isempty())
         {
-          for (int y=rect2.ymin; y<rect2.ymax; y++)
+          for (int y=rect2.ymin_; y<rect2.ymax_; y++)
             {
               unsigned char *dst = (*this)[y];
-              const unsigned char *src = ref[y+rect.ymin] + rect.xmin;
-              for (int x=rect2.xmin; x<rect2.xmax; x++)
+              const unsigned char *src = ref[y+rect.ymin_] + rect.xmin_;
+              for (int x=rect2.xmin_; x<rect2.xmax_; x++)
                 dst[x] = src[x];
             }
         }
@@ -1178,10 +1178,10 @@ GBitmap::rle_get_rect(GRect &rect) const
     return 0;
   int area = 0;
   unsigned char *runs = rle;
-  rect.xmin = ncolumns;
-  rect.ymin = nrows;
-  rect.xmax = 0;
-  rect.ymax = 0;
+  rect.xmin_ = ncolumns;
+  rect.ymin_ = nrows;
+  rect.xmax_ = 0;
+  rect.ymax_ = 0;
   int r = nrows;
   while (--r >= 0)
     {
@@ -1195,10 +1195,10 @@ GBitmap::rle_get_rect(GRect &rect) const
             {
               if (p)
                 {
-                  if (c < rect.xmin) 
-                    rect.xmin = c;
-                  if ((c += x) > rect.xmax) 
-                    rect.xmax = c-1;
+                  if (c < rect.xmin_) 
+                    rect.xmin_ = c;
+                  if ((c += x) > rect.xmax_) 
+                    rect.xmax_ = c-1;
                   n += x;
                 }
               else
@@ -1211,9 +1211,9 @@ GBitmap::rle_get_rect(GRect &rect) const
       area += n;
       if (n)
         {
-          rect.ymin = r;
-          if (r > rect.ymax) 
-            rect.ymax = r;
+          rect.ymin_ = r;
+          if (r > rect.ymax_) 
+            rect.ymax_ = r;
         }
     }
   if (area==0)

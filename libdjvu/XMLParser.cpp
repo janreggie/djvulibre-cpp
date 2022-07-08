@@ -828,13 +828,13 @@ make_child_layer(
   }
   DjVuTXT::Zone &self = *self_ptr;
   self.text_start = bs.tell();
-  int &xmin=self.rect.xmin, &ymin=self.rect.ymin, 
-    &xmax=self.rect.xmax, &ymax=self.rect.ymax;
+  int &xmin=self.rect.xmin_, &ymin=self.rect.ymin_, 
+    &xmax=self.rect.xmax_, &ymax=self.rect.ymax_;
   GRect default_rect;
-  default_rect.xmin=max(parent.rect.xmax,parent.rect.xmin);
-  default_rect.xmax=min(parent.rect.xmax,parent.rect.xmin);
-  default_rect.ymin=max(parent.rect.ymax,parent.rect.ymin);
-  default_rect.ymax=min(parent.rect.ymax,parent.rect.ymin);
+  default_rect.xmin_=max(parent.rect.xmax_,parent.rect.xmin_);
+  default_rect.xmax_=min(parent.rect.xmax_,parent.rect.xmin_);
+  default_rect.ymin_=max(parent.rect.ymax_,parent.rect.ymin_);
+  default_rect.ymax_=min(parent.rect.ymax_,parent.rect.ymin_);
   // Now if there are coordinates, use those.
   GPosition pos(tag.get_args().contains("coords"));
   if(pos)
@@ -917,18 +917,18 @@ make_child_layer(
         self.rect=default_rect;
 	if ((retval = make_child_layer(self, *t, bs, height, ws, hs)))
         {
-          xmin=min(save_rect.xmin,xmin);
-          xmax=max(save_rect.xmax,xmax);
-          ymin=min(save_rect.ymin,ymin);
-          ymax=max(save_rect.ymax,ymax);
+          xmin=min(save_rect.xmin_,xmin);
+          xmax=max(save_rect.xmax_,xmax);
+          ymin=min(save_rect.ymin_,ymin);
+          ymax=max(save_rect.ymax_,ymax);
         }else
         {
           // If the child doesn't have coordinates, we need to use a box
           // at least as big as the parent's coordinates.
-          xmin=min(save_rect.xmin,default_rect.xmax);
-          xmax=max(save_rect.xmax,default_rect.xmin);
-          ymin=min(save_rect.ymin,default_rect.ymax);
-          ymax=max(save_rect.ymax,default_rect.ymin);
+          xmin=min(save_rect.xmin_,default_rect.xmax_);
+          xmax=max(save_rect.xmax_,default_rect.xmin_);
+          ymin=min(save_rect.ymin_,default_rect.ymax_);
+          ymax=max(save_rect.ymax_,default_rect.ymin_);
           for(; pos; ++pos)
           {
             const GP<lt_XMLTags> t(tag.get_content()[pos].tag);
@@ -950,10 +950,10 @@ make_child_layer(
       self.text_length = bs.tell() - self.text_start;
     }
   }
-  parent.rect.xmin=min(xmin,parent.rect.xmin);
-  parent.rect.ymin=min(ymin,parent.rect.ymin);
-  parent.rect.xmax=max(xmax,parent.rect.xmax);
-  parent.rect.ymax=max(ymax,parent.rect.ymax);
+  parent.rect.xmin_=min(xmin,parent.rect.xmin_);
+  parent.rect.ymin_=min(ymin,parent.rect.ymin_);
+  parent.rect.xmax_=max(xmax,parent.rect.xmax_);
+  parent.rect.ymax_=max(ymax,parent.rect.ymax_);
   if(xmin>xmax)
   {
     const int t=xmin;
@@ -1028,10 +1028,10 @@ lt_XMLParser::Impl::ChangeText(
     const int w=info->width;
     txt->page_zone.text_start = 0;
     DjVuTXT::Zone &parent=txt->page_zone;
-    parent.rect.xmin=0;
-    parent.rect.ymin=0;
-    parent.rect.ymax=h;
-    parent.rect.xmax=w;
+    parent.rect.xmin_=0;
+    parent.rect.ymin_=0;
+    parent.rect.ymax_=h;
+    parent.rect.xmax_=w;
     double ws=1.0;
     if(width && width != w)
     {

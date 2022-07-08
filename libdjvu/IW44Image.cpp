@@ -744,7 +744,7 @@ IW44Image::Map::image(int subsample, const GRect &rect,
   if (rect.isempty())
     G_THROW( ERR_MSG("IW44Image.empty_rect") );    
   GRect irect(0,0,(iw+subsample-1)/subsample,(ih+subsample-1)/subsample);
-  if (rect.xmin<0 || rect.ymin<0 || rect.xmax>irect.xmax || rect.ymax>irect.ymax)
+  if (rect.xmin_<0 || rect.ymin_<0 || rect.xmax_>irect.xmax_ || rect.ymax_>irect.ymax_)
     G_THROW( ERR_MSG("IW44Image.bad_rect") );
   // Multiresolution rectangles 
   // -- needed[i] tells which coeffs are required for the next step
@@ -760,40 +760,40 @@ IW44Image::Map::image(int subsample, const GRect &rect,
       needed[i].inflate(iw_border*r, iw_border*r);
       needed[i].intersect(needed[i], irect);
       r += r;
-      recomp[i].xmin = (needed[i].xmin + r-1) & ~(r-1);
-      recomp[i].xmax = (needed[i].xmax) & ~(r-1);
-      recomp[i].ymin = (needed[i].ymin + r-1) & ~(r-1);
-      recomp[i].ymax = (needed[i].ymax) & ~(r-1);
+      recomp[i].xmin_ = (needed[i].xmin_ + r-1) & ~(r-1);
+      recomp[i].xmax_ = (needed[i].xmax_) & ~(r-1);
+      recomp[i].ymin_ = (needed[i].ymin_ + r-1) & ~(r-1);
+      recomp[i].ymax_ = (needed[i].ymax_) & ~(r-1);
     }
   // Working rectangle
   // -- a rectangle large enough to hold all the data
   GRect work;
-  work.xmin = (needed[0].xmin) & ~(boxsize-1);
-  work.ymin = (needed[0].ymin) & ~(boxsize-1);
-  work.xmax = ((needed[0].xmax-1) & ~(boxsize-1) ) + boxsize;
-  work.ymax = ((needed[0].ymax-1) & ~(boxsize-1) ) + boxsize;
+  work.xmin_ = (needed[0].xmin_) & ~(boxsize-1);
+  work.ymin_ = (needed[0].ymin_) & ~(boxsize-1);
+  work.xmax_ = ((needed[0].xmax_-1) & ~(boxsize-1) ) + boxsize;
+  work.ymax_ = ((needed[0].ymax_-1) & ~(boxsize-1) ) + boxsize;
   // -- allocate work buffer
-  int dataw = work.xmax - work.xmin;     // Note: cannot use inline width() or height()
-  int datah = work.ymax - work.ymin;     // because Intel C++ compiler optimizes it wrong !
+  int dataw = work.xmax_ - work.xmin_;     // Note: cannot use inline width() or height()
+  int datah = work.ymax_ - work.ymin_;     // because Intel C++ compiler optimizes it wrong !
   short *data;
   GPBuffer<short> gdata(data,dataw*datah);
   // Fill working rectangle
   // -- loop over liftblocks rows
   short *ldata = data;
   int blkw = (bw>>5);
-  const IW44Image::Block *lblock = blocks + (work.ymin>>nlevel)*blkw + (work.xmin>>nlevel);
-  for (int by=work.ymin; by<work.ymax; by+=boxsize)
+  const IW44Image::Block *lblock = blocks + (work.ymin_>>nlevel)*blkw + (work.xmin_>>nlevel);
+  for (int by=work.ymin_; by<work.ymax_; by+=boxsize)
     {
       // -- loop over liftblocks in row
       const IW44Image::Block *block = lblock;
       short *rdata = ldata;
-      for (int bx=work.xmin; bx<work.xmax; bx+=boxsize)        
+      for (int bx=work.xmin_; bx<work.xmax_; bx+=boxsize)        
         {
           // -- decide how much to load
           int mlevel = nlevel;
           if (nlevel>2)
-            if (bx+31<needed[2].xmin || bx>needed[2].xmax ||
-                by+31<needed[2].ymin || by>needed[2].ymax )
+            if (bx+31<needed[2].xmin_ || bx>needed[2].xmax_ ||
+                by+31<needed[2].ymin_ || by>needed[2].ymax_ )
               mlevel = 2;
           int bmax   = ((1<<(mlevel+mlevel))+15)>>4;
           int ppinc  = (1<<(nlevel-mlevel));
@@ -822,35 +822,35 @@ IW44Image::Map::image(int subsample, const GRect &rect,
   for (i=0; i<nlevel; i++)
     {
       GRect comp = needed[i];
-      comp.xmin = comp.xmin & ~(r-1);
-      comp.ymin = comp.ymin & ~(r-1);
-      comp.translate(-work.xmin, -work.ymin);
+      comp.xmin_ = comp.xmin_ & ~(r-1);
+      comp.ymin_ = comp.ymin_ & ~(r-1);
+      comp.translate(-work.xmin_, -work.ymin_);
       // Fast mode shortcuts finer resolution
       if (fast && i>=4) 
         {
-          short *pp = data + comp.ymin*dataw;
-          for (int ii=comp.ymin; ii<comp.ymax; ii+=2, pp+=dataw+dataw)
-            for (int jj=comp.xmin; jj<comp.xmax; jj+=2)
+          short *pp = data + comp.ymin_*dataw;
+          for (int ii=comp.ymin_; ii<comp.ymax_; ii+=2, pp+=dataw+dataw)
+            for (int jj=comp.xmin_; jj<comp.xmax_; jj+=2)
               pp[jj+dataw] = pp[jj+dataw+1] = pp[jj+1] = pp[jj];
           break;
         }
       else
         {
-          short *pp = data + comp.ymin*dataw + comp.xmin;
+          short *pp = data + comp.ymin_*dataw + comp.xmin_;
           IW44Image::Transform::Decode::backward(pp, comp.width(), comp.height(), dataw, r, r>>1);
         }
       r = r>>1;
     }
   // Copy result into image
   GRect nrect = rect;
-  nrect.translate(-work.xmin, -work.ymin);
-  short *p = data + nrect.ymin*dataw;
+  nrect.translate(-work.xmin_, -work.ymin_);
+  short *p = data + nrect.ymin_*dataw;
   signed char *row = img8;  
-  for (i=nrect.ymin; i<nrect.ymax; i++)
+  for (i=nrect.ymin_; i<nrect.ymax_; i++)
     {
       int j;
       signed char *pix = row;
-      for (j=nrect.xmin; j<nrect.xmax; j+=1,pix+=pixsep)
+      for (j=nrect.xmin_; j<nrect.xmax_; j+=1,pix+=pixsep)
         {
           int x = (p[j] + iw_round) >> iw_shift;
           if (x < -128)
