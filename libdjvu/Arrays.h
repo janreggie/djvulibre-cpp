@@ -4,8 +4,8 @@
 // Copyright [1999-2001] LizardTech, Inc.
 
 // Files `Arrays.h` and `Arrays.cpp` implement three array template classes.
-// Class TArray implements an array of objects of trivial types such as #char#,
-// #int#, #float#, etc. It is faster than general implementation for any type
+// Class TArray implements an array of objects of trivial types such as char,
+// int, float, etc. It is faster than general implementation for any type
 // done in DArray because it does not cope with element's constructors,
 // destructors and copy operators. Although implemented as a template, which
 // makes it possible to incorrectly use TArray with non-trivial classes,
@@ -25,9 +25,9 @@
 // to make any changes, a private copy is created automatically and
 // transparently for you - the procedure, that we call "copy-on-demand".
 //
-// Also, please note that now there is no separate class, which does fast
-// sorting. Both TArray (dynamic array for trivial types) and DArray (dynamic
-// array for arbitrary types) can sort their elements.
+// Also, please note that now there is no separate class which does fast sort.
+// Both TArray (dynamic array for trivial types) and DArray (dynamic array for
+// arbitrary types) can sort their elements.
 //
 //                        Historical comments
 //
@@ -64,26 +64,26 @@ class _ArrayRep {
   friend class _ArrayBase;
 
  public:
-  _ArrayRep(void) : count_(0) {}
+  _ArrayRep() : count_(0) {}
   _ArrayRep(const _ArrayRep &) {}
-  virtual ~_ArrayRep(void) {}
+  virtual ~_ArrayRep() {}
 
   _ArrayRep &operator=(const _ArrayRep &) { return *this; }
 
-  int get_count(void) const { return count_; }
+  int get_count() const { return count_; }
 
  private:
   // Reference counter
   int count_;
-  void ref(void) { count_++; }
-  void unref(void) {
+  void ref() { count_++; }
+  void unref() {
     if (--count_ == 0) delete this;
   }
 };
 
 class _ArrayBase {
  public:
-  _ArrayBase(void) : rep(0) {}
+  _ArrayBase() : rep(0) {}
   _ArrayBase(const _ArrayBase &ab) : rep(nullptr) {
     if (ab.rep) ab.rep->ref();
     rep = ab.rep;
@@ -92,14 +92,14 @@ class _ArrayBase {
     if (ar) ar->ref();
     rep = ar;
   }
-  virtual ~_ArrayBase(void) {
+  virtual ~_ArrayBase() {
     if (rep) {
       rep->unref();
       rep = nullptr;
     }
   }
 
-  _ArrayRep *get(void) const { return rep; }
+  _ArrayRep *get() const { return rep; }
   _ArrayBase &assign(_ArrayRep *ar) {
     if (ar) ar->ref();
     if (rep) rep->unref();
@@ -213,10 +213,10 @@ inline void ArrayRep::touch(int n) {
 // Use DArray and TArray instead.
 class DJVUAPI ArrayBase : protected _ArrayBase {
  protected:
-  void check(void);
-  void detach(void);
+  void check();
+  void detach();
 
-  ArrayBase(void) {}
+  ArrayBase() {}
 
  public:
   // Returns the number of elements in the array
@@ -230,7 +230,7 @@ class DJVUAPI ArrayBase : protected _ArrayBase {
   void empty();
 
   // Extends the subscript range so that is contains `n`.
-  // This function does nothing if `n` is already int the valid subscript range.
+  // This function does nothing if `n` is already in the valid subscript range.
   // If the valid range was empty,
   // both the lower bound and the upper bound are set to `n`.
   // Otherwise the valid subscript range is extended to encompass `n`.
@@ -271,16 +271,16 @@ class DJVUAPI ArrayBase : protected _ArrayBase {
   // The new subscript upper bound is reduced to account for this shift.
   void del(int n, unsigned int howmany = 1);
 
-  virtual ~ArrayBase(void) {}
+  virtual ~ArrayBase() {}
 };
 
-inline void ArrayBase::detach(void) {
-  ArrayRep *new_rep = new ArrayRep(*(ArrayRep *)get());
-  assign(new_rep);
+inline void ArrayBase::check() {
+  if (get()->get_count() > 1) detach();
 }
 
-inline void ArrayBase::check(void) {
-  if (get()->get_count() > 1) detach();
+inline void ArrayBase::detach() {
+  ArrayRep *new_rep = new ArrayRep(*(ArrayRep *)get());
+  assign(new_rep);
 }
 
 inline int ArrayBase::size() const { return ((const ArrayRep *)get())->size(); }
@@ -332,7 +332,7 @@ inline void ArrayBase::del(int n, unsigned int howmany) {
 template <class TYPE>
 class ArrayBaseT : public ArrayBase {
  public:
-  virtual ~ArrayBaseT(void) {}
+  virtual ~ArrayBaseT() {}
 
   // Returns a reference to the array element for subscript `n`.
   // This reference can be used for reading (`a[n]`) and writing (`a[n]=v`).
@@ -383,7 +383,7 @@ class ArrayBaseT : public ArrayBase {
   void sort(int lo, int hi);
 
  protected:
-  ArrayBaseT(void) {}
+  ArrayBaseT() {}
 
  private:
   // Callbacks called from ArrayRep
@@ -592,7 +592,7 @@ class DArray : public ArrayBaseT<TYPE> {
   // Constructs an empty array.
   // The valid subscript range is initially empty.
   // The subscript range can be modified with member fxns `touch` and `resize`.
-  DArray(void);
+  DArray();
   // Constructs an array with subscripts in range 0 to `hibound`.
   // The subscript range can be modified with member fxns `touch` and `resize`.
   explicit DArray(const int hibound);

@@ -22,7 +22,15 @@
     "typeinfo": "cpp",
     "array": "cpp",
     "memory_resource": "cpp",
-    "functional": "cpp"
+    "functional": "cpp",
+    "bit": "cpp",
+    "algorithm": "cpp",
+    "memory": "cpp",
+    "initializer_list": "cpp",
+    "stdexcept": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "utility": "cpp"
   },
   "makefile.makefilePath": "./Makefile",
   "clang-format.fallbackStyle": "Google",
