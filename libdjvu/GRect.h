@@ -1,67 +1,16 @@
-//C-  -*- C++ -*-
-//C- -------------------------------------------------------------------
-//C- DjVuLibre-3.5
-//C- Copyright (c) 2002  Leon Bottou and Yann Le Cun.
-//C- Copyright (c) 2001  AT&T
-//C-
-//C- This software is subject to, and may be distributed under, the
-//C- GNU General Public License, either Version 2 of the license,
-//C- or (at your option) any later version. The license should have
-//C- accompanied the software or you may obtain a copy of the license
-//C- from the Free Software Foundation at http://www.fsf.org .
-//C-
-//C- This program is distributed in the hope that it will be useful,
-//C- but WITHOUT ANY WARRANTY; without even the implied warranty of
-//C- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//C- GNU General Public License for more details.
-//C- 
-//C- DjVuLibre-3.5 is derived from the DjVu(r) Reference Library from
-//C- Lizardtech Software.  Lizardtech Software has authorized us to
-//C- replace the original DjVu(r) Reference Library notice by the following
-//C- text (see doc/lizard2002.djvu and doc/lizardtech2007.djvu):
-//C-
-//C-  ------------------------------------------------------------------
-//C- | DjVu (r) Reference Library (v. 3.5)
-//C- | Copyright (c) 1999-2001 LizardTech, Inc. All Rights Reserved.
-//C- | The DjVu Reference Library is protected by U.S. Pat. No.
-//C- | 6,058,214 and patents pending.
-//C- |
-//C- | This software is subject to, and may be distributed under, the
-//C- | GNU General Public License, either Version 2 of the license,
-//C- | or (at your option) any later version. The license should have
-//C- | accompanied the software or you may obtain a copy of the license
-//C- | from the Free Software Foundation at http://www.fsf.org .
-//C- |
-//C- | The computer code originally released by LizardTech under this
-//C- | license and unmodified by other parties is deemed "the LIZARDTECH
-//C- | ORIGINAL CODE."  Subject to any third party intellectual property
-//C- | claims, LizardTech grants recipient a worldwide, royalty-free, 
-//C- | non-exclusive license to make, use, sell, or otherwise dispose of 
-//C- | the LIZARDTECH ORIGINAL CODE or of programs derived from the 
-//C- | LIZARDTECH ORIGINAL CODE in compliance with the terms of the GNU 
-//C- | General Public License.   This grant only confers the right to 
-//C- | infringe patent claims underlying the LIZARDTECH ORIGINAL CODE to 
-//C- | the extent such infringement is reasonably necessary to enable 
-//C- | recipient to make, have made, practice, sell, or otherwise dispose 
-//C- | of the LIZARDTECH ORIGINAL CODE (or portions thereof) and not to 
-//C- | any greater extent that may be necessary to utilize further 
-//C- | modifications or combinations.
-//C- |
-//C- | The LIZARDTECH ORIGINAL CODE is provided "AS IS" WITHOUT WARRANTY
-//C- | OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
-//C- | TO ANY WARRANTY OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF
-//C- | MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-//C- +------------------------------------------------------------------
+// Copyright [2022] Jan Reggie Dela Cruz
+// Copyright [2002] Léon Bottou and Yann Le Cun.
+// Copyright [2001] AT&T
+// Copyright [1999-2001] LizardTech, Inc.
 
-#ifndef _GRECT_H_
-#define _GRECT_H_
+#ifndef LIBDJVU_GRECT_H_
+#define LIBDJVU_GRECT_H_
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "./config.h"
 #endif
 #if NEED_GNUG_PRAGMAS
-# pragma interface
+#pragma interface
 #endif
-
 
 /** @name GRect.h
     Files #"GRect.h"# and #"GRect.cpp"# implement basic operations on
@@ -71,23 +20,15 @@
     as rational numbers.
     @memo
     Rectangle manipulation class.
-    @author
-    L\'eon Bottou <leonb@research.att.com> -- initial implementation.
+    @author L\'eon Bottou <leonb@research.att.com> -- initial implementation.
 */
 //@{
+
+#include <utility>
 
 #include "DjVuGlobal.h"
 
 namespace DJVU {
-
-
-/* Flag to indicate that this djvulibre version
-   gets rid of all the crap about orientation bits.
-   All rotation code has been fixed and consistently
-   implements counter-clockwise rotations. */
-
-#define GRECT_WITHOUT_ORIENTATION_BITS 1
-
 
 /** @name Point Coordinates vs. Pixel Coordinates
 
@@ -120,67 +61,67 @@ namespace DJVU {
 //@{
 //@}
 
-
-
 /** Rectangle class.  Each instance of this class represents a rectangle whose
     sides are parallel to the axis. Such a rectangle represents all the points
     whose coordinates lies between well defined minimal and maximal values.
     Member functions can combine several rectangles by computing the
     intersection of rectangles (\Ref{intersect}) or the smallest rectangle
     enclosing two rectangles (\Ref{recthull}).  */
-
-class DJVUAPI GRect 
-{
-public:
-  /** Constructs an empty rectangle */
+class DJVUAPI GRect {
+ public:
+  /// Constructs an empty rectangle
   GRect();
-  /** Constructs a rectangle given its minimal coordinates #xmin# and #ymin#,
-      and its measurements #width# and #height#. Setting #width# or #height# to zero
-      produces an empty rectangle.  */
-  GRect(int xmin, int ymin, unsigned int width=0, unsigned int height=0);
-  /** Returns the rectangle width. */
-  int  width() const;
-  /** Returns the rectangle height. */
-  int  height() const;
-  /** Returns the area of the rectangle. */
-  int  area() const;
-  /** Returns true if the rectangle is empty. */
-  bool  isempty() const;
-  /** Returns true if the rectangle contains pixel (#x#,#y#).  A rectangle
-      contains all pixels with horizontal pixel coordinates in range #xmin#
-      (inclusive) to #xmax# (exclusive) and vertical coordinates #ymin#
-      (inclusive) to #ymax# (exclusive). */
-  int  contains(int x, int y) const;
-  /** Returns true if this rectangle contains the passed rectangle #rect#.
-      The function basically checks, that the intersection of this rectangle
-      with #rect# is #rect#. */
-  int  contains(const GRect & rect) const;
-  /** Returns true if rectangles #r1# and #r2# are equal. */
-  friend int operator==(const GRect & r1, const GRect & r2);
-  /** Returns true if rectangles #r1# and #r2# are not equal. */
-  friend int operator!=(const GRect & r1, const GRect & r2);
+  /// Constructs a rectangle given its minimal coordinates #xmin# and #ymin#,
+  /// and its measurements #width# and #height#.
+  /// Setting #width# or #height# to zero produces an empty rectangle.
+  GRect(int xmin, int ymin, unsigned int width = 0, unsigned int height = 0);
+
+  /// Returns the rectangle width.
+  int width() const;
+  /// Returns the rectangle height.
+  int height() const;
+  /// Returns the area of the rectangle.
+  int area() const;
+  /// Returns true if the rectangle is empty.
+  bool isempty() const;
+  /// Returns true if the rectangle contains pixel (#x#,#y#).
+  /// A rectangle contains all pixels with horizontal pixel coordinates
+  /// in range #xmin# (inclusive) to #xmax# (exclusive)
+  /// and vertical coordinates #ymin# (inclusive) to #ymax# (exclusive).
+  int contains(int x, int y) const;
+  /// Returns true if this rectangle contains the passed rectangle #rect#.
+  /// The function basically checks that the intersection of this rectangle
+  /// with #rect# is #rect#.
+  int contains(const GRect &rect) const;
+  /// Returns true if rectangles #r1# and #r2# are equal.
+  friend bool operator==(const GRect &r1, const GRect &r2);
+  /// Returns true if rectangles #r1# and #r2# are not equal.
+  friend int operator!=(const GRect &r1, const GRect &r2);
   /** Resets the rectangle to the empty rectangle */
   void clear();
   /** Fatten the rectangle. Both vertical sides of the rectangle are pushed
       apart by #dx# units. Both horizontal sides of the rectangle are pushed
       apart by #dy# units. Setting arguments #dx# (resp. #dy#) to a negative
       value reduces the rectangle horizontal (resp. vertical) size. */
-  int  inflate(int dx, int dy);
+  int inflate(int dx, int dy);
   /** Translate the rectangle. The new rectangle is composed of all the points
       of the old rectangle translated by #dx# units horizontally and #dy#
       units vertically. */
-  int  translate(int dx, int dy);
+  int translate(int dx, int dy);
   /** Sets the rectangle to the intersection of rectangles #rect1# and #rect2#.
       This function returns true if the intersection rectangle is not empty. */
-  int  intersect(const GRect &rect1, const GRect &rect2);
+  int intersect(const GRect &rect1, const GRect &rect2);
   /** Sets the rectangle to the smallest rectangle containing the points of
       both rectangles #rect1# and #rect2#. This function returns true if the
       created rectangle is not empty. */
-  int  recthull(const GRect &rect1, const GRect &rect2);
+  int recthull(const GRect &rect1, const GRect &rect2);
   /** Multiplies xmin, ymin, xmax, ymax by factor and scales the rectangle*/
   void scale(float factor);
-  /** Multiplies xmin, xmax by xfactor and ymin, ymax by yfactor and scales the rectangle*/
+  /** Multiplies xmin, xmax by xfactor and ymin, ymax by yfactor and scales the
+   * rectangle*/
   void scale(float xfactor, float yfactor);
+
+ public:
   /** Minimal horizontal point coordinate of the rectangle. */
   int xmin;
   /** Minimal vertical point coordinate of the rectangle. */
@@ -191,7 +132,6 @@ public:
   int ymax;
 };
 
-
 /** Maps points from one rectangle to another rectangle.  This class
     represents a relation between the points of two rectangles. Given the
     coordinates of a point in the first rectangle (input rectangle), function
@@ -201,9 +141,8 @@ public:
     matching corners of the second rectangle. The scaling operation is
     performed using integer fraction arithmetic in order to maximize
     accuracy. */
-class DJVUAPI GRectMapper 
-{
-public:
+class DJVUAPI GRectMapper {
+ public:
   /** Constructs a rectangle mapper. */
   GRectMapper();
   /** Resets the rectangle mapper state. Both the input rectangle
@@ -221,7 +160,7 @@ public:
       counter-clockwise.  This operation essentially is a modification of the
       match between the corners of the input rectangle and the corners of the
       output rectangle. */
-  void rotate(int count=1);
+  void rotate(int count = 1);
   /** Composes the affine transform with a symmetry with respect to the
       vertical line crossing the center of the output rectangle.  This
       operation essentially is a modification of the match between the corners
@@ -239,11 +178,15 @@ public:
       first point relative to the matching corners of the input rectangle.
       Coordinates are rounded to the nearest integer. */
   void map(int &x, int &y);
+  /// map2 replaces map(int&, int&)
+  std::pair<int, int> map2(int x, int y);
   /** Maps a rectangle according to the affine transform. This operation
-      consists in mapping the rectangle corners and reordering the corners in
-      the canonical rectangle representation.  Variable #rect# is overwritten
-      with the new rectangle coordinates. */
+      consists in mapping the rectangle corners and reordering the corners
+     in the canonical rectangle representation.  Variable #rect# is
+     overwritten with the new rectangle coordinates. */
   void map(GRect &rect);
+  /// map2 replaces map(GRect&)
+  GRect map2(const GRect &rect);
   /** Maps a point according to the inverse of the affine transform.
       Variables #x# and #y# initially contain the coordinates of a point. This
       operation overwrites these variables with the coordinates of a second
@@ -251,95 +194,66 @@ public:
       rectangle as the first point relative to the matching corners of the
       input rectangle. Coordinates are rounded to the nearest integer. */
   void unmap(int &x, int &y);
+  /// unmap2 replaces unmap(int&,int&)
+  std::pair<int, int> unmap2(int x, int y);
   /** Maps a rectangle according to the inverse of the affine transform. This
       operation consists in mapping the rectangle corners and reordering the
       corners in the canonical rectangle representation.  Variable #rect# is
       overwritten with the new rectangle coordinates. */
   void unmap(GRect &rect);
-public:
+  /// unmap2 replaces unmap(GRect&)
+  GRect unmap2(const GRect &rect);
+
+ public:
   // GRatio
   struct GRatio {
-    GRatio ();
-    GRatio (int p, int q);
+    GRatio();
+    GRatio(int p, int q);
     int p;
     int q;
   };
-private:
+
+ private:
   // Data
   GRect rectFrom;
   GRect rectTo;
-  int   code;
+  int code;
   // Helper
-  void  precalc();
-  friend int operator*(int n, GRatio r ); 
-  friend int operator/(int n, GRatio r ); 
+  void precalc();
+  friend int operator*(int n, GRatio r);
+  friend int operator/(int n, GRatio r);
   GRatio rw;
   GRatio rh;
 };
 
-
 //@}
-
-
 
 // ---- INLINES
 
-inline
-GRect::GRect()
-: xmin(0), ymin(0), xmax(0), ymax(0)
-{
+inline GRect::GRect() : xmin(0), ymin(0), xmax(0), ymax(0) {}
+
+inline GRect::GRect(int xmin, int ymin, unsigned int width, unsigned int height)
+    : xmin(xmin), ymin(ymin), xmax(xmin + width), ymax(ymin + height) {}
+
+inline int GRect::width() const { return xmax - xmin; }
+
+inline int GRect::height() const { return ymax - ymin; }
+
+inline bool GRect::isempty() const { return (xmin >= xmax || ymin >= ymax); }
+
+inline int GRect::area() const {
+  return isempty() ? 0 : (xmax - xmin) * (ymax - ymin);
 }
 
-inline 
-GRect::GRect(int xmin, int ymin, unsigned int width, unsigned int height)
-: xmin(xmin), ymin(ymin), xmax(xmin+width), ymax(ymin+height)
-{
+inline int GRect::contains(int x, int y) const {
+  return (x >= xmin && x < xmax && y >= ymin && y < ymax);
 }
 
-inline int 
-GRect::width() const
-{
-  return xmax - xmin;
-}
+inline void GRect::clear() { xmin = xmax = ymin = ymax = 0; }
 
-inline int 
-GRect::height() const
-{
-  return ymax - ymin;
-}
-
-inline bool 
-GRect::isempty() const
-{
-  return (xmin>=xmax || ymin>=ymax);
-}
-
-inline int 
-GRect::area() const
-{
-  return isempty() ? 0 : (xmax-xmin)*(ymax-ymin);
-}
-
-inline int
-GRect::contains(int x, int y) const
-{
-  return (x>=xmin && x<xmax && y>=ymin && y<ymax);
-}
-  
-inline void 
-GRect::clear()
-{
-  xmin = xmax = ymin = ymax = 0;
-}
-
-inline int
-operator!=(const GRect & r1, const GRect & r2)
-{
-   return !(r1==r2);
-}
+inline int operator!=(const GRect &r1, const GRect &r2) { return !(r1 == r2); }
 
 // ---- THE END
 
-}
-using namespace DJVU;
-#endif
+}  // namespace DJVU
+#endif  // LIBDJVU_GRECT_H_

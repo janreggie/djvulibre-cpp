@@ -1,5 +1,5 @@
 // Copyright [2022] Jan Reggie Dela Cruz
-// Copyright [2002] Leon Bottou and Yann Le Cun.
+// Copyright [2002] Léon Bottou and Yann Le Cun.
 // Copyright [2001] AT&T
 // Copyright [1999-2001] LizardTech, Inc.
 
