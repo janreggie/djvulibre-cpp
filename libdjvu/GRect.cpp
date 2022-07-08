@@ -54,7 +54,7 @@
 // C- +------------------------------------------------------------------
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "./config.h"
 #endif
 #if NEED_GNUG_PRAGMAS
 #pragma implementation
@@ -90,11 +90,11 @@ static inline int imax(int x, int y) {
 
 bool operator==(const GRect &r1, const GRect &r2) {
   if (r1.isempty() && r2.isempty()) return true;
-  return (r1.xmin_ == r2.xmin_ && r1.xmax_ == r2.xmax_ && r1.ymin_ == r2.ymin_ &&
-          r1.ymax_ == r2.ymax_);
+  return (r1.xmin_ == r2.xmin_ && r1.xmax_ == r2.xmax_ &&
+          r1.ymin_ == r2.ymin_ && r1.ymax_ == r2.ymax_);
 }
 
-int GRect::inflate(int dx, int dy) {
+bool GRect::inflate(int dx, int dy) {
   xmin_ -= dx;
   xmax_ += dx;
   ymin_ -= dy;
@@ -104,7 +104,7 @@ int GRect::inflate(int dx, int dy) {
   return 0;
 }
 
-int GRect::translate(int dx, int dy) {
+bool GRect::translate(int dx, int dy) {
   xmin_ += dx;
   xmax_ += dx;
   ymin_ += dy;
@@ -114,7 +114,7 @@ int GRect::translate(int dx, int dy) {
   return 0;
 }
 
-int GRect::intersect(const GRect &rect1, const GRect &rect2) {
+bool GRect::intersect(const GRect &rect1, const GRect &rect2) {
   xmin_ = imax(rect1.xmin_, rect2.xmin_);
   xmax_ = imin(rect1.xmax_, rect2.xmax_);
   ymin_ = imax(rect1.ymin_, rect2.ymin_);
@@ -124,7 +124,7 @@ int GRect::intersect(const GRect &rect1, const GRect &rect2) {
   return 0;
 }
 
-int GRect::recthull(const GRect &rect1, const GRect &rect2) {
+bool GRect::recthull(const GRect &rect1, const GRect &rect2) {
   if (rect1.isempty()) {
     xmin_ = rect2.xmin_;
     xmax_ = rect2.xmax_;
@@ -146,7 +146,7 @@ int GRect::recthull(const GRect &rect1, const GRect &rect2) {
   return 1;
 }
 
-int GRect::contains(const GRect &rect) const {
+bool GRect::contains(const GRect &rect) const {
   GRect tmp_rect;
   tmp_rect.intersect(*this, rect);
   return tmp_rect == rect;

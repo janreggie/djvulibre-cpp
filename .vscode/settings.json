@@ -30,7 +30,8 @@
     "stdexcept": "cpp",
     "tuple": "cpp",
     "type_traits": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "iosfwd": "cpp"
   },
   "makefile.makefilePath": "./Makefile",
   "clang-format.fallbackStyle": "Google",
