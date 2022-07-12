@@ -31,7 +31,8 @@
     "tuple": "cpp",
     "type_traits": "cpp",
     "utility": "cpp",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "exception": "cpp"
   },
   "makefile.makefilePath": "./Makefile",
   "clang-format.fallbackStyle": "Google",

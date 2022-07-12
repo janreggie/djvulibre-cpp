@@ -118,6 +118,8 @@ AC_DEFUN([AC_OPTIMIZE],[
    fi
    AC_CHECK_CC_OPT([-Wall])
    AC_CHECK_CXX_OPT([-Wall])
+   AC_CHECK_CC_OPT([-Wextra])
+   AC_CHECK_CXX_OPT([-Wextra])
    case x"$ac_debug" in
 changequote(<<, >>)dnl
      x[0-9]) defines="-DDEBUGLVL=$ac_debug" ;;

@@ -1,57 +1,7 @@
-// C-  -*- C++ -*-
-// C- -------------------------------------------------------------------
-// C- DjVuLibre-3.5
-// C- Copyright (c) 2002  Leon Bottou and Yann Le Cun.
-// C- Copyright (c) 2001  AT&T
-// C-
-// C- This software is subject to, and may be distributed under, the
-// C- GNU General Public License, either Version 2 of the license,
-// C- or (at your option) any later version. The license should have
-// C- accompanied the software or you may obtain a copy of the license
-// C- from the Free Software Foundation at http://www.fsf.org .
-// C-
-// C- This program is distributed in the hope that it will be useful,
-// C- but WITHOUT ANY WARRANTY; without even the implied warranty of
-// C- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// C- GNU General Public License for more details.
-// C-
-// C- DjVuLibre-3.5 is derived from the DjVu(r) Reference Library from
-// C- Lizardtech Software.  Lizardtech Software has authorized us to
-// C- replace the original DjVu(r) Reference Library notice by the following
-// C- text (see doc/lizard2002.djvu and doc/lizardtech2007.djvu):
-// C-
-// C-  ------------------------------------------------------------------
-// C- | DjVu (r) Reference Library (v. 3.5)
-// C- | Copyright (c) 1999-2001 LizardTech, Inc. All Rights Reserved.
-// C- | The DjVu Reference Library is protected by U.S. Pat. No.
-// C- | 6,058,214 and patents pending.
-// C- |
-// C- | This software is subject to, and may be distributed under, the
-// C- | GNU General Public License, either Version 2 of the license,
-// C- | or (at your option) any later version. The license should have
-// C- | accompanied the software or you may obtain a copy of the license
-// C- | from the Free Software Foundation at http://www.fsf.org .
-// C- |
-// C- | The computer code originally released by LizardTech under this
-// C- | license and unmodified by other parties is deemed "the LIZARDTECH
-// C- | ORIGINAL CODE."  Subject to any third party intellectual property
-// C- | claims, LizardTech grants recipient a worldwide, royalty-free,
-// C- | non-exclusive license to make, use, sell, or otherwise dispose of
-// C- | the LIZARDTECH ORIGINAL CODE or of programs derived from the
-// C- | LIZARDTECH ORIGINAL CODE in compliance with the terms of the GNU
-// C- | General Public License.   This grant only confers the right to
-// C- | infringe patent claims underlying the LIZARDTECH ORIGINAL CODE to
-// C- | the extent such infringement is reasonably necessary to enable
-// C- | recipient to make, have made, practice, sell, or otherwise dispose
-// C- | of the LIZARDTECH ORIGINAL CODE (or portions thereof) and not to
-// C- | any greater extent that may be necessary to utilize further
-// C- | modifications or combinations.
-// C- |
-// C- | The LIZARDTECH ORIGINAL CODE is provided "AS IS" WITHOUT WARRANTY
-// C- | OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
-// C- | TO ANY WARRANTY OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF
-// C- | MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-// C- +------------------------------------------------------------------
+// Copyright [2022] Jan Reggie Dela Cruz
+// Copyright [2002] Léon Bottou and Yann Le Cun.
+// Copyright [2001] AT&T
+// Copyright [1999-2001] LizardTech, Inc.
 
 #ifdef HAVE_CONFIG_H
 #include "./config.h"
@@ -63,28 +13,14 @@
 // -- Implementation of class GRect and GRectMapper
 // - Author: Leon Bottou, 05/1997
 
+#include <algorithm>
+#include <cstdint>
 #include <tuple>
 
 #include "GException.h"
 #include "GRect.h"
 
 namespace DJVU {
-
-// -- Local utilities
-
-static inline int imin(int x, int y) {
-  if (x < y)
-    return x;
-  else
-    return y;
-}
-
-static inline int imax(int x, int y) {
-  if (x > y)
-    return x;
-  else
-    return y;
-}
 
 // -- Class GRect
 
@@ -99,9 +35,9 @@ bool GRect::inflate(int dx, int dy) {
   xmax_ += dx;
   ymin_ -= dy;
   ymax_ += dy;
-  if (!isempty()) return 1;
+  if (!isempty()) return true;
   xmin_ = ymin_ = xmax_ = ymax_ = 0;
-  return 0;
+  return false;
 }
 
 bool GRect::translate(int dx, int dy) {
@@ -109,19 +45,19 @@ bool GRect::translate(int dx, int dy) {
   xmax_ += dx;
   ymin_ += dy;
   ymax_ += dy;
-  if (!isempty()) return 1;
+  if (!isempty()) return true;
   xmin_ = ymin_ = xmax_ = ymax_ = 0;
-  return 0;
+  return false;
 }
 
 bool GRect::intersect(const GRect &rect1, const GRect &rect2) {
-  xmin_ = imax(rect1.xmin_, rect2.xmin_);
-  xmax_ = imin(rect1.xmax_, rect2.xmax_);
-  ymin_ = imax(rect1.ymin_, rect2.ymin_);
-  ymax_ = imin(rect1.ymax_, rect2.ymax_);
-  if (!isempty()) return 1;
+  xmin_ = std::max(rect1.xmin_, rect2.xmin_);
+  xmax_ = std::min(rect1.xmax_, rect2.xmax_);
+  ymin_ = std::max(rect1.ymin_, rect2.ymin_);
+  ymax_ = std::min(rect1.ymax_, rect2.ymax_);
+  if (!isempty()) return true;
   xmin_ = ymin_ = xmax_ = ymax_ = 0;
-  return 0;
+  return false;
 }
 
 bool GRect::recthull(const GRect &rect1, const GRect &rect2) {
@@ -139,11 +75,11 @@ bool GRect::recthull(const GRect &rect1, const GRect &rect2) {
     ymax_ = rect1.ymax_;
     return !isempty();
   }
-  xmin_ = imin(rect1.xmin_, rect2.xmin_);
-  xmax_ = imax(rect1.xmax_, rect2.xmax_);
-  ymin_ = imin(rect1.ymin_, rect2.ymin_);
-  ymax_ = imax(rect1.ymax_, rect2.ymax_);
-  return 1;
+  xmin_ = std::min(rect1.xmin_, rect2.xmin_);
+  xmax_ = std::max(rect1.xmax_, rect2.xmax_);
+  ymin_ = std::min(rect1.ymin_, rect2.ymin_);
+  ymax_ = std::max(rect1.ymax_, rect2.ymax_);
+  return true;
 }
 
 bool GRect::contains(const GRect &rect) const {
@@ -153,18 +89,19 @@ bool GRect::contains(const GRect &rect) const {
 }
 
 void GRect::scale(float factor) {
-  xmin_ = (int)(((float)xmin_) * factor);
-  ymin_ = (int)(((float)ymin_) * factor);
-  xmax_ = (int)(((float)xmax_) * factor);
-  ymax_ = (int)(((float)ymax_) * factor);
+  xmin_ = static_cast<int>(xmin_ * factor);
+  ymin_ = static_cast<int>(ymin_ * factor);
+  xmax_ = static_cast<int>(xmax_ * factor);
+  ymax_ = static_cast<int>(ymax_ * factor);
 }
 
 void GRect::scale(float xfactor, float yfactor) {
-  xmin_ = (int)(((float)xmin_) * xfactor);
-  ymin_ = (int)(((float)ymin_) * yfactor);
-  xmax_ = (int)(((float)xmax_) * xfactor);
-  ymax_ = (int)(((float)ymax_) * yfactor);
+  xmin_ = static_cast<int>(xmin_ * xfactor);
+  ymin_ = static_cast<int>(ymin_ * yfactor);
+  xmax_ = static_cast<int>(xmax_ * xfactor);
+  ymax_ = static_cast<int>(ymax_ * yfactor);
 }
+
 // -- Class GRatio
 
 inline GRectMapper::GRatio::GRatio() : p(0), q(1) {}
@@ -193,18 +130,12 @@ inline GRectMapper::GRatio::GRatio(int p, int q) : p(p), q(q) {
   q /= gcd;
 }
 
-#ifdef HAVE_LONG_LONG_INT
-#define llint_t long long int
-#else
-#define llint_t long int
-#endif
-
 inline int operator*(int n, GRectMapper::GRatio r) {
   /* [LB] -- This computation is carried out with integers and
      rational numbers because it must be exact.  Some lizard changed
      it to double and this is wrong.  I suspect they did so because
      they encountered overflow issues.  Let's use long long ints. */
-  llint_t x = (llint_t)n * (llint_t)r.p;
+  int64_t x = (int64_t)n * (int64_t)r.p;
   if (x >= 0)
     return ((r.q / 2 + x) / r.q);
   else
@@ -213,7 +144,7 @@ inline int operator*(int n, GRectMapper::GRatio r) {
 
 inline int operator/(int n, GRectMapper::GRatio r) {
   /* [LB] -- See comment in operator*() above. */
-  llint_t x = (llint_t)n * (llint_t)r.q;
+  int64_t x = (int64_t)n * (int64_t)r.q;
   if (x >= 0)
     return ((r.p / 2 + x) / r.p);
   else
@@ -222,93 +153,89 @@ inline int operator/(int n, GRectMapper::GRatio r) {
 
 // -- Class GRectMapper
 
-#define MIRRORX 1
-#define MIRRORY 2
-#define SWAPXY 4
-
 GRectMapper::GRectMapper()
-    : rectFrom(0, 0, 1, 1), rectTo(0, 0, 1, 1), code(0) {}
+    : rectFrom_(0, 0, 1, 1), rectTo_(0, 0, 1, 1), code_(0) {}
 
 void GRectMapper::clear() {
-  rectFrom = GRect(0, 0, 1, 1);
-  rectTo = GRect(0, 0, 1, 1);
-  code = 0;
+  rectFrom_ = GRect(0, 0, 1, 1);
+  rectTo_ = GRect(0, 0, 1, 1);
+  code_ = 0;
 }
 
 void GRectMapper::set_input(const GRect &rect) {
   if (rect.isempty()) G_THROW(ERR_MSG("GRect.empty_rect1"));
-  rectFrom = rect;
-  if (code & SWAPXY) {
-    std::swap(rectFrom.xmin_, rectFrom.ymin_);
-    std::swap(rectFrom.xmax_, rectFrom.ymax_);
+  rectFrom_ = rect;
+  if (code_ & SWAPXY) {
+    std::swap(rectFrom_.xmin_, rectFrom_.ymin_);
+    std::swap(rectFrom_.xmax_, rectFrom_.ymax_);
   }
-  rw = rh = GRatio();
+  rw_ = rh_ = GRatio();
 }
 
 void GRectMapper::set_output(const GRect &rect) {
   if (rect.isempty()) G_THROW(ERR_MSG("GRect.empty_rect2"));
-  rectTo = rect;
-  rw = rh = GRatio();
+  rectTo_ = rect;
+  rw_ = rh_ = GRatio();
 }
 
 void GRectMapper::rotate(int count) {
-  int oldcode = code;
+  int oldcode = code_;
   switch (count & 0x3) {
     case 1:
-      code ^= (code & SWAPXY) ? MIRRORY : MIRRORX;
-      code ^= SWAPXY;
+      code_ ^= (code_ & SWAPXY) ? MIRRORY : MIRRORX;
+      code_ ^= SWAPXY;
       break;
     case 2:
-      code ^= (MIRRORX | MIRRORY);
+      code_ ^= (MIRRORX | MIRRORY);
       break;
     case 3:
-      code ^= (code & SWAPXY) ? MIRRORX : MIRRORY;
-      code ^= SWAPXY;
+      code_ ^= (code_ & SWAPXY) ? MIRRORX : MIRRORY;
+      code_ ^= SWAPXY;
       break;
   }
-  if ((oldcode ^ code) & SWAPXY) {
-    std::swap(rectFrom.xmin_, rectFrom.ymin_);
-    std::swap(rectFrom.xmax_, rectFrom.ymax_);
-    rw = rh = GRatio();
+  if ((oldcode ^ code_) & SWAPXY) {
+    std::swap(rectFrom_.xmin_, rectFrom_.ymin_);
+    std::swap(rectFrom_.xmax_, rectFrom_.ymax_);
+    rw_ = rh_ = GRatio();
   }
 }
 
-void GRectMapper::mirrorx() { code ^= MIRRORX; }
+void GRectMapper::mirrorx() { code_ ^= MIRRORX; }
 
-void GRectMapper::mirrory() { code ^= MIRRORY; }
+void GRectMapper::mirrory() { code_ ^= MIRRORY; }
 
 void GRectMapper::precalc() {
-  if (rectTo.isempty() || rectFrom.isempty())
+  if (rectTo_.isempty() || rectFrom_.isempty())
     G_THROW(ERR_MSG("GRect.empty_rect3"));
-  rw = GRatio(rectTo.width(), rectFrom.width());
-  rh = GRatio(rectTo.height(), rectFrom.height());
+  rw_ = GRatio(rectTo_.width(), rectFrom_.width());
+  rh_ = GRatio(rectTo_.height(), rectFrom_.height());
 }
 
 std::pair<int, int> GRectMapper::map(int x, int y) {
   int mx = x;
   int my = y;
   // precalc
-  if (!(rw.p && rh.p)) precalc();
+  if (!(rw_.p && rh_.p)) precalc();
   // swap and mirror
-  if (code & SWAPXY) std::swap(mx, my);
-  if (code & MIRRORX) mx = rectFrom.xmin_ + rectFrom.xmax_ - mx;
-  if (code & MIRRORY) my = rectFrom.ymin_ + rectFrom.ymax_ - my;
+  if (code_ & SWAPXY) std::swap(mx, my);
+  if (code_ & MIRRORX) mx = rectFrom_.xmin_ + rectFrom_.xmax_ - mx;
+  if (code_ & MIRRORY) my = rectFrom_.ymin_ + rectFrom_.ymax_ - my;
   // scale and translate
-  x = rectTo.xmin_ + (mx - rectFrom.xmin_) * rw;
-  y = rectTo.ymin_ + (my - rectFrom.ymin_) * rh;
+  x = rectTo_.xmin_ + (mx - rectFrom_.xmin_) * rw_;
+  y = rectTo_.ymin_ + (my - rectFrom_.ymin_) * rh_;
   return {x, y};
 }
 
 std::pair<int, int> GRectMapper::unmap(int x, int y) {
   // precalc
-  if (!(rw.p && rh.p)) precalc();
+  if (!(rw_.p && rh_.p)) precalc();
   // scale and translate
-  int mx = rectFrom.xmin_ + (x - rectTo.xmin_) / rw;
-  int my = rectFrom.ymin_ + (y - rectTo.ymin_) / rh;
+  int mx = rectFrom_.xmin_ + (x - rectTo_.xmin_) / rw_;
+  int my = rectFrom_.ymin_ + (y - rectTo_.ymin_) / rh_;
   //  mirror and swap
-  if (code & MIRRORX) mx = rectFrom.xmin_ + rectFrom.xmax_ - mx;
-  if (code & MIRRORY) my = rectFrom.ymin_ + rectFrom.ymax_ - my;
-  if (code & SWAPXY) std::swap(mx, my);
+  if (code_ & MIRRORX) mx = rectFrom_.xmin_ + rectFrom_.xmax_ - mx;
+  if (code_ & MIRRORY) my = rectFrom_.ymin_ + rectFrom_.ymax_ - my;
+  if (code_ & SWAPXY) std::swap(mx, my);
   return {mx, my};
 }
 
@@ -330,8 +257,8 @@ GRect GRectMapper::unmap(const GRect &rect) {
   return r;
 }
 
-GRect GRectMapper::get_input() { return rectFrom; }
+GRect GRectMapper::get_input() { return rectFrom_; }
 
-GRect GRectMapper::get_output() { return rectTo; }
+GRect GRectMapper::get_output() { return rectTo_; }
 
 }  // namespace DJVU

@@ -112,6 +112,8 @@ class DJVUAPI GRect {
   /// Returns whether the resulting rectangle is not-empty.
   bool recthull(const GRect &rect1, const GRect &rect2);
   /// Multiplies xmin, ymin, xmax, ymax by factor and scales the rectangle
+  ///
+  /// TODO: Convert to double
   void scale(float factor);
   /// Multiplies xmin, xmax by xfactor and ymin, ymax by yfactor
   /// and scales the rectangle
@@ -193,15 +195,21 @@ class DJVUAPI GRectMapper {
 
  private:
   // Data
-  GRect rectFrom;
-  GRect rectTo;
-  int code;
+  GRect rectFrom_;
+  GRect rectTo_;
+  unsigned char code_;
+
+  // code_ is a bit array encoding the following transforms:
+  static constexpr unsigned char MIRRORX = 1;
+  static constexpr unsigned char MIRRORY = 2;
+  static constexpr unsigned char SWAPXY  = 4;
+
   // Helper
   void precalc();
   friend int operator*(int n, GRatio r);
   friend int operator/(int n, GRatio r);
-  GRatio rw;
-  GRatio rh;
+  GRatio rw_;
+  GRatio rh_;
 };
 
 // ---- INLINES
