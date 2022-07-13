@@ -19416,6 +19416,40 @@ printf "%s\n" "no" >&6; }
     :
  fi
 
+
+ opt="-Wextra"
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if $CXX accepts $opt" >&5
+printf %s "checking if $CXX accepts $opt... " >&6; }
+ echo 'void f(){}' > conftest.c
+ if test -z "`${CC} ${CFLAGS} $opt -c conftest.c 2>&1`"; then
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+printf "%s\n" "yes" >&6; }
+    rm conftest.*
+    CFLAGS="$CFLAGS $opt"
+ else
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+printf "%s\n" "no" >&6; }
+    rm conftest.*
+    :
+ fi
+
+
+ opt="-Wextra"
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if $CXX accepts $opt" >&5
+printf %s "checking if $CXX accepts $opt... " >&6; }
+ echo 'void f(){}' > conftest.cc
+ if test -z "`${CXX} ${CXXFLAGS} $opt -c conftest.cc 2>&1`"; then
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+printf "%s\n" "yes" >&6; }
+    rm conftest.*
+    CXXFLAGS="$CXXFLAGS $opt"
+ else
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+printf "%s\n" "no" >&6; }
+    rm conftest.*
+    :
+ fi
+
    case x"$ac_debug" in
      x[0-9]) defines="-DDEBUGLVL=$ac_debug" ;;
      xr*)    defines="-DRUNTIME_DEBUG_ONLY" ;;
