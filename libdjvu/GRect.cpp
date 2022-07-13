@@ -13,6 +13,7 @@
 
 #include <algorithm>
 #include <cstdint>
+#include <numeric>
 #include <tuple>
 
 #include "GException.h"
@@ -111,19 +112,7 @@ inline GRectMapper::GRatio::GRatio(int p, int q) : p(p), q(q) {
     p = -p;
     q = -q;
   }
-  int gcd = 1;
-  int g1 = p;
-  int g2 = q;
-  if (g1 > g2) {
-    gcd = g1;
-    g1 = g2;
-    g2 = gcd;
-  }
-  while (g1 > 0) {
-    gcd = g1;
-    g1 = g2 % g1;
-    g2 = gcd;
-  }
+  int gcd = std::gcd(p, q);
   p /= gcd;
   q /= gcd;
 }
@@ -213,7 +202,7 @@ std::pair<int, int> GRectMapper::map(int x, int y) {
   int mx = x;
   int my = y;
   // precalc
-  if (!(rw_.p && rh_.p)) precalc();
+  if (rw_.p == 0 || rh_.p == 0) precalc();
   // swap and mirror
   if (code_ & SWAPXY) std::swap(mx, my);
   if (code_ & MIRRORX) mx = rectFrom_.xmin_ + rectFrom_.xmax_ - mx;
@@ -226,7 +215,7 @@ std::pair<int, int> GRectMapper::map(int x, int y) {
 
 std::pair<int, int> GRectMapper::unmap(int x, int y) {
   // precalc
-  if (!(rw_.p && rh_.p)) precalc();
+  if (rw_.p == 0 || rh_.p == 0) precalc();
   // scale and translate
   int mx = rectFrom_.xmin_ + (x - rectTo_.xmin_) / rw_;
   int my = rectFrom_.ymin_ + (y - rectTo_.ymin_) / rh_;

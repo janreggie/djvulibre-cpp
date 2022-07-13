@@ -9,16 +9,13 @@
 #include "./config.h"
 #endif
 
-/** @name GRect.h
-    Files #"GRect.h"# and #"GRect.cpp"# implement basic operations on
-    rectangles. Class \Ref{GRect} is used to represent rectangles.  Class
-    \Ref{GRectMapper} represent the correspondence between points relative to
-    given rectangles.  Class \Ref{GRatio} is used to represent scaling factors
-    as rational numbers.
-    @memo
-    Rectangle manipulation class.
-    @author L\'eon Bottou <leonb@research.att.com> -- initial implementation.
-*/
+/// \file GRect.h
+///
+/// Files "GRect.h" and "GRect.cpp" implement basic operations on rectangles.
+/// Class \Ref{GRect} is used to represent rectangles.
+/// Class \Ref{GRectMapper} represent the correspondence between points
+/// relative to given rectangles.
+/// Class \Ref{GRatio} is used to represent scaling factors as rational numbers.
 
 #include <utility>
 
@@ -55,12 +52,15 @@ namespace DJVU {
     image pixel with the highest coordinates.
 */
 
-/** Rectangle class.  Each instance of this class represents a rectangle whose
-    sides are parallel to the axis. Such a rectangle represents all the points
-    whose coordinates lies between well defined minimal and maximal values.
-    Member functions can combine several rectangles by computing the
-    intersection of rectangles (\Ref{intersect}) or the smallest rectangle
-    enclosing two rectangles (\Ref{recthull}).  */
+/// \class GRect
+/// \brief Rectangle class
+///
+/// Each instance of this class represents a rectangle whose sides are parallel
+/// to the axis. Such a rectangle represents all the points whose coordinates
+/// lies between well defined minimal and maximal values. Member functions can
+/// combine several rectangles by computing the intersection of rectangles
+/// (\Ref{intersect}) or the smallest rectangle enclosing two rectangles
+/// (\Ref{recthull}).
 class DJVUAPI GRect {
  public:
   /// Constructs an empty rectangle
@@ -123,15 +123,17 @@ class DJVUAPI GRect {
   int ymax_;
 };
 
-/** Maps points from one rectangle to another rectangle.  This class
-    represents a relation between the points of two rectangles. Given the
-    coordinates of a point in the first rectangle (input rectangle), function
-    \Ref{map} computes the coordinates of the corresponding point in the
-    second rectangle (the output rectangle).  This function actually implements
-    an affine transform which maps the corners of the first rectangle onto the
-    matching corners of the second rectangle. The scaling operation is
-    performed using integer fraction arithmetic in order to maximize
-    accuracy. */
+/// \class GRectMapper
+/// \brief Maps points from one rectangle to another rectangle.
+///
+/// This class represents a relation between the points of two rectangles.
+/// Given the coordinates of a point in the first rectangle (input rectangle),
+/// function \Ref{map} computes the coordinates of the corresponding point in
+/// the second rectangle (the output rectangle).
+/// This function actually implements an affine transform which maps the corners
+/// of the first rectangle onto the matching corners of the second rectangle.
+/// The scaling operation is performed using integer fraction arithmetic in
+/// order to maximize accuracy.
 class DJVUAPI GRectMapper {
  public:
   /// Constructs a rectangle mapper.
@@ -197,9 +199,7 @@ class DJVUAPI GRectMapper {
   unsigned char code_;
 
   // code_ is a bit array encoding the following transforms:
-  static constexpr unsigned char MIRRORX = 1;
-  static constexpr unsigned char MIRRORY = 2;
-  static constexpr unsigned char SWAPXY  = 4;
+  static constexpr unsigned char MIRRORX = 1, MIRRORY = 2, SWAPXY = 4;
 
   // Helper
   void precalc();
