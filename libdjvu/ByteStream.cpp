@@ -62,9 +62,7 @@
 #ifdef HAVE_CONFIG_H
 # include "config.h"
 #endif
-#if NEED_GNUG_PRAGMAS
-# pragma implementation
-#endif
+
 
 // - Author: Leon Bottou, 04/1997
 

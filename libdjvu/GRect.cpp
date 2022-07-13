@@ -6,9 +6,7 @@
 #ifdef HAVE_CONFIG_H
 #include "./config.h"
 #endif
-#if NEED_GNUG_PRAGMAS
-#pragma implementation
-#endif
+
 
 // -- Implementation of class GRect and GRectMapper
 // - Author: Leon Bottou, 05/1997

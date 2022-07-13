@@ -56,9 +56,7 @@
 #ifdef HAVE_CONFIG_H
 # include "config.h"
 #endif
-#if NEED_GNUG_PRAGMAS
-# pragma implementation
-#endif
+
 
 // From: Leon Bottou, 1/31/2002
 // All these XML messages are Lizardtech innovations.

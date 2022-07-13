@@ -56,9 +56,7 @@
 #ifdef HAVE_CONFIG_H
 # include "config.h"
 #endif
-#if NEED_GNUG_PRAGMAS
-# pragma implementation
-#endif
+
 
 // This file defines machine independent classes
 // for running and synchronizing threads.

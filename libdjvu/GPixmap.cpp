@@ -56,9 +56,7 @@
 #ifdef HAVE_CONFIG_H
 # include "config.h"
 #endif
-#if NEED_GNUG_PRAGMAS
-# pragma implementation
-#endif
+
 
 // -- Implements class PIXMAP
 // Author: Leon Bottou 07/1997

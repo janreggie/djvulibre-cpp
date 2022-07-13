@@ -58,9 +58,7 @@
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-#if NEED_GNUG_PRAGMAS
-# pragma interface
-#endif
+
 
 // From: Leon Bottou, 1/31/2002
 // All these I18N XML messages are Lizardtech innovations.
