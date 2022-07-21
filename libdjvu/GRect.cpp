@@ -4,7 +4,7 @@
 // Copyright [1999-2001] LizardTech, Inc.
 
 #ifdef HAVE_CONFIG_H
-#include "./config.h"
+#include "config.h"
 #endif
 
 

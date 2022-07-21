@@ -733,7 +733,7 @@ protected:
   void *cont;
   friend class GListBase;
   friend class GSetBase;
-  void throw_invalid(void *c) const no_return;
+  [[ noreturn ]] void throw_invalid(void *c) const;
 };
 
 

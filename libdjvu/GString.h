@@ -711,7 +711,7 @@ public:
 #endif
 protected:
   const char *gstr;
-  static void throw_illegal_subscript() no_return;
+  [[ noreturn ]] static void throw_illegal_subscript();
   static const char *nullstr;
 public:
   GNativeString UTF8ToNative(
