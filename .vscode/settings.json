@@ -38,4 +38,7 @@
   "clang-format.fallbackStyle": "Google",
   "cmake.configureOnOpen": false,
   "editor.rulers": [80],
+  "cpplint.excludes": [
+    "runtime/references"
+  ]
 }

@@ -10,6 +10,7 @@
 #endif
 
 #include <cstdint>
+
 #include "GSmartPointer.h"
 #ifndef NDEBUG
 #include "GException.h"
@@ -55,7 +56,7 @@ class ByteStream;
 /// image.  The width of this border can be modified using the function
 /// \Ref{minborder}.  The border pixels are initialized to zero and therefore
 /// represent white pixels.  You should never write anything into border
-/// pixels because they are shared between images and between lines. 
+/// pixels because they are shared between images and between lines.
 class DJVUAPI GBitmap : public GPEnabled {
  protected:
   GBitmap(void);
@@ -63,7 +64,7 @@ class DJVUAPI GBitmap : public GPEnabled {
   GBitmap(const GBitmap &ref);
   GBitmap(const GBitmap &ref, int border);
   GBitmap(const GBitmap &ref, const GRect &rect, int border = 0);
-  GBitmap(ByteStream &ref, int border = 0);
+  explicit GBitmap(ByteStream &ref, int border = 0);
 
  public:
   virtual ~GBitmap();
@@ -73,17 +74,19 @@ class DJVUAPI GBitmap : public GPEnabled {
   /// Use function \Ref{init} to change the size of the image.
   static GP<GBitmap> create(void) { return new GBitmap; }
 
-  /// Constructs a GBitmap with #nrows# rows and #ncolumns# columns.  All
-  /// pixels are initialized to white. The optional argument #border#
-  /// specifies the size of the optional border of white pixels surrounding
-  /// the image.  The number of gray levels is initially set to #2#. 
+  /// Constructs a GBitmap with #nrows# rows and #ncolumns# columns.
+  /// All pixels are initialized to white.
+  /// The optional argument #border# specifies the size of the optional border
+  /// of white pixels surrounding the image.
+  /// The number of gray levels is initially set to #2#.
   static GP<GBitmap> create(const int nrows, const int ncolumns,
                             const int border = 0) {
     return new GBitmap(nrows, ncolumns, border);
   }
 
-  /// Copy constructor. Constructs a GBitmap by replicating the size, the
-  /// border and the contents of GBitmap #ref#.
+  /// Copy constructor.
+  /// Constructs a GBitmap by replicating the size, the border
+  /// and the contents of GBitmap #ref#.
   static GP<GBitmap> create(const GBitmap &ref) { return new GBitmap(ref); }
 
   /// Constructs a GBitmap by copying the contents of GBitmap #ref#.
@@ -92,9 +95,9 @@ class DJVUAPI GBitmap : public GPEnabled {
     return new GBitmap(ref, border);
   }
 
-  /// Constructs a GBitmap by copying a rectangular segment #rect# of GBitmap
-  /// #ref#.  The optional argument #border# specifies the size of the
-  /// optional border of white pixels surrounding the image.
+  /// Constructs a GBitmap by copying a rectangular segment #rect# from #ref#.
+  /// Optional #border# specifies the size of the border of white pixels
+  /// surrounding the image.
   static GP<GBitmap> create(const GBitmap &ref, const GRect &rect,
                             const int border = 0) {
     return new GBitmap(ref, rect, border);
@@ -102,8 +105,8 @@ class DJVUAPI GBitmap : public GPEnabled {
 
   /// Constructs a GBitmap by reading PBM, PGM or RLE data from ByteStream
   /// #ref# into this GBitmap. The optional argument #border# specifies the
-  /// size of the optional border of white pixels surrounding the image.  See
-  /// \Ref{PNM and RLE file formats} for more information. 
+  /// size of the optional border of white pixels surrounding the image.
+  /// See \Ref{PNM and RLE file formats} for more information.
   static GP<GBitmap> create(ByteStream &ref, const int border = 0) {
     return new GBitmap(ref, border);
   }
@@ -340,15 +343,15 @@ class DJVUAPI GBitmap : public GPEnabled {
   /// de-allocation should take place after the destruction or the
   /// re-initialization of the GBitmap object.  This function will return a
   /// null pointer if the GBitmap object does not ``own'' the buffer in the
-  /// first place. 
-  unsigned char *take_data(size_t &offset);
+  /// first place.
+  unsigned char *take_data(std::size_t &offset);
   /// Initializes this GBitmap by borrowing a memory segment.  The GBitmap
   /// then directly addresses the memory buffer #data# provided by the user.
   /// This buffer must be large enough to hold #w*h# bytes representing each
   /// one pixel.  The GBitmap object does not ``own'' the buffer: you must
   /// explicitly de-allocate the buffer using #operator delete []#.  This
   /// de-allocation should take place after the destruction or the
-  /// re-initialization of the GBitmap object. 
+  /// re-initialization of the GBitmap object.
   inline void borrow_data(unsigned char &data, int w, int h);
   /// Same as borrow_data, except GBitmap will call #delete[]#.
   void donate_data(unsigned char *data, int w, int h);
@@ -362,7 +365,7 @@ class DJVUAPI GBitmap : public GPEnabled {
   /// deallocate this buffer when appropriate: you should not deallocate this
   /// buffer yourself.  The encoding of buffer #rledata# is similar to the
   /// data segment of the RLE file format (without the header) documented in
-  /// \Ref{PNM and RLE file formats}. 
+  /// \Ref{PNM and RLE file formats}.
   void donate_rle(unsigned char *rledata, unsigned int rledatalen, int w,
                   int h);
   /// Static function for parsing run data.
@@ -383,40 +386,39 @@ class DJVUAPI GBitmap : public GPEnabled {
   GP<GBitmap> rotate(int count = 0);
 
   /// Some constants
-  static constexpr unsigned int MAXRUNSIZE = 0x3fff,
-                                RUNOVERFLOWVALUE = 0xc0,
-                                RUNMSBMASK = 0x3f,
-                                RUNLSBMASK = 0xff;
+  static constexpr unsigned int MAXRUNSIZE = 0x3fff, RUNOVERFLOWVALUE = 0xc0,
+                                RUNMSBMASK = 0x3f, RUNLSBMASK = 0xff;
 
  protected:
   // bitmap components
-  std::uint16_t nrows;
-  std::uint16_t ncolumns;
-  std::uint16_t border;
-  std::uint16_t bytes_per_row;
-  std::uint16_t grays;
-  unsigned char *bytes;
-  unsigned char *bytes_data;
-  GPBuffer<unsigned char> gbytes_data;
-  unsigned char *rle;
-  GPBuffer<unsigned char> grle;
-  unsigned char **rlerows;
-  GPBuffer<unsigned char *> grlerows;
-  unsigned int rlelength;
+  std::uint16_t nrows_;
+  std::uint16_t ncolumns_;
+  std::uint16_t border_;
+  std::uint16_t bytes_per_row_;
+  std::uint16_t grays_;
+  unsigned char *bytes_;
+  unsigned char *bytes_data_;
+  GPBuffer<unsigned char> gbytes_data_;
+  unsigned char *rle_;
+  GPBuffer<unsigned char> grle_;
+  unsigned char **rlerows_;
+  GPBuffer<unsigned char *> grlerows_;
+  unsigned int rlelength_;
 
  private:
-  GMonitor *monitorptr;
+  GMonitor *monitorptr_;
 
  public:
   class ZeroBuffer;
   friend class ZeroBuffer;
-  GP<ZeroBuffer> gzerobuffer;
+  GP<ZeroBuffer> gzerobuffer_;
 
  private:
-  static int zerosize;
-  static unsigned char *zerobuffer;
+  static int zerosize_;
+  static unsigned char *zerobuffer_;
   static GP<ZeroBuffer> zeroes(int ncolumns);
   static unsigned int read_integer(char &lookahead, ByteStream &ref);
+  // TODO(janreggie): ret. std::pair<q,r> and put in implementation as "divmod"
   static void euclidian_ratio(int a, int b, int &q, int &r);
   int encode(unsigned char *&pruns, GPBuffer<unsigned char> &gpruns) const;
   void decode(unsigned char *runs);
@@ -476,44 +478,44 @@ class DJVUAPI GBitmap : public GPEnabled {
 
 // ---------------- IMPLEMENTATION
 
-inline unsigned int GBitmap::rows() const { return nrows; }
+inline unsigned int GBitmap::rows() const { return nrows_; }
 
-inline unsigned int GBitmap::columns() const { return ncolumns; }
+inline unsigned int GBitmap::columns() const { return ncolumns_; }
 
-inline unsigned int GBitmap::rowsize() const { return bytes_per_row; }
+inline unsigned int GBitmap::rowsize() const { return bytes_per_row_; }
 
-inline int GBitmap::get_grays() const { return grays; }
+inline int GBitmap::get_grays() const { return grays_; }
 
 inline unsigned char *GBitmap::operator[](int row) {
-  if (!bytes) uncompress();
-  if (row < 0 || row >= nrows || !bytes) {
+  if (!bytes_) uncompress();
+  if (row < 0 || row >= nrows_ || !bytes_) {
 #ifndef NDEBUG
-    if (zerosize < bytes_per_row + border)
+    if (zerosize_ < bytes_per_row + border)
       G_THROW(ERR_MSG("GBitmap.zero_small"));
 #endif
-    return zerobuffer + border;
+    return zerobuffer_ + border_;
   }
-  return &bytes[row * bytes_per_row + border];
+  return &bytes_[row * bytes_per_row_ + border_];
 }
 
 inline const unsigned char *GBitmap::operator[](int row) const {
-  if (!bytes) ((GBitmap *)this)->uncompress();
-  if (row < 0 || row >= nrows || !bytes) {
+  if (!bytes_) ((GBitmap *)this)->uncompress();
+  if (row < 0 || row >= nrows_ || !bytes_) {
 #ifndef NDEBUG
-    if (zerosize < bytes_per_row + border)
+    if (zerosize_ < bytes_per_row + border)
       G_THROW(ERR_MSG("GBitmap.zero_small"));
 #endif
-    return zerobuffer + border;
+    return zerobuffer_ + border_;
   }
-  return &bytes[row * bytes_per_row + border];
+  return &bytes_[row * bytes_per_row_ + border_];
 }
 
 inline GBitmap &GBitmap::operator=(const GBitmap &ref) {
-  init(ref, ref.border);
+  init(ref, ref.border_);
   return *this;
 }
 
-inline GMonitor *GBitmap::monitor() const { return monitorptr; }
+inline GMonitor *GBitmap::monitor() const { return monitorptr_; }
 
 inline void GBitmap::euclidian_ratio(int a, int b, int &q, int &r) {
   q = a / b;
@@ -551,7 +553,7 @@ inline void GBitmap::append_run(unsigned char *&data, int count) {
 
 inline void GBitmap::borrow_data(unsigned char &data, int w, int h) {
   donate_data(&data, w, h);
-  bytes_data = 0;
+  bytes_data_ = 0;
 }
 }  // namespace DJVU
 
